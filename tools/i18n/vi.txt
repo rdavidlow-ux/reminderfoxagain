@@ -832,3 +832,24 @@
 831| Đã thêm chủ đề “{s}”
 832| Xóa chủ đề?
 833| Chủ đề “{s}” sẽ bị xóa. Ứng dụng trở về chủ đề mặc định.
+834| Tệp
+835| Sửa
+836| Cửa sổ
+837| Cài đặt…
+838| Giới thiệu {app}
+839| Ẩn {app}
+840| Đóng cửa sổ
+841| Lời nhắc, việc cần làm và báo thức
+842| Khởi động ReminderFoxAgain khi đăng nhập
+843| Như trong hệ thống
+844| Mặc định (theo hệ thống)
+845| Tiếp tục chạy trên thanh menu khi đóng cửa sổ
+846| Hiện số trên biểu tượng Dock
+847| Hiện số trên biểu tượng khay
+848| Hiện tệp lời nhắc trong Finder
+849| Hiện tệp lời nhắc trong trình quản lý tệp
+850| Màn hình của bạn không hiện biểu tượng khay, nên đóng cửa sổ sẽ thoát ứng dụng. Để vẫn nhận báo thức khi đóng cửa sổ, hãy thêm một tiện ích khay (trên GNOME: “AppIndicator and KStatusNotifierItem Support”).
+851| Mặc định là Cáo, sáng hoặc tối theo hệ thống. Mục gắn sao có màu riêng trong mỗi chủ đề. Tương phản cao dùng đen, trắng, vàng và lục lam với chữ lớn hơn và nét đậm hơn.
+852| Như trong hệ thống ({s})
+853| Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Mac — lời tri ân tiện ích ReminderFox gốc.
+854| Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Linux — lời tri ân tiện ích ReminderFox gốc.

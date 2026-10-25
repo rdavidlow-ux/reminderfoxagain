@@ -1,0 +1,8 @@
+# ReminderFoxAgain (installed by its .deb): allows the user namespaces Chromium's sandbox uses
+abi <abi/4.0>,
+include <tunables/global>
+
+profile reminderfoxagain /opt/ReminderFoxAgain/reminderfoxagain flags=(unconfined) {
+  userns,
+  include if exists <local/reminderfoxagain>
+}

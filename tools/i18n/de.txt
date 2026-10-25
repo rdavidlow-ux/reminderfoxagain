@@ -832,3 +832,24 @@
 831| Design „{s}“ hinzugefügt
 832| Design löschen?
 833| Das Design „{s}“ wird gelöscht. Die App kehrt zum Standard-Design zurück.
+834| Ablage
+835| Bearbeiten
+836| Fenster
+837| Einstellungen…
+838| Über {app}
+839| {app} ausblenden
+840| Fenster schließen
+841| Erinnerungen, Aufgaben und Alarme
+842| ReminderFoxAgain bei der Anmeldung starten
+843| Wie im System
+844| Standard (wie das System)
+845| In der Menüleiste weiterlaufen, wenn das Fenster geschlossen wird
+846| Eine Zahl auf dem Dock-Symbol anzeigen
+847| Eine Zahl auf dem Symbol im Infobereich anzeigen
+848| Die Erinnerungsdatei im Finder zeigen
+849| Die Erinnerungsdatei im Dateimanager zeigen
+850| Ihr Desktop zeigt keine Symbole im Infobereich, daher beendet das Schließen des Fensters die App. Damit Alarme auch bei geschlossenem Fenster erscheinen, fügen Sie eine Erweiterung für den Infobereich hinzu (unter GNOME „AppIndicator and KStatusNotifierItem Support“).
+851| Standard ist Fuchs, hell oder dunkel passend zum System. Markierte Einträge haben in jedem Design ihre eigene Farbe. Hoher Kontrast nutzt Schwarz, Weiß, Gelb und Cyan mit größerer Schrift und kräftigeren Linien.
+852| Wie im System ({s})
+853| Ihre Erinnerungen, Aufgaben und Alarme als Mac-App — eine Hommage an das ursprüngliche ReminderFox-Add-on.
+854| Ihre Erinnerungen, Aufgaben und Alarme als Linux-App — eine Hommage an das ursprüngliche ReminderFox-Add-on.

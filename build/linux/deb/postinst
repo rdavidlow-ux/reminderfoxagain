@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+# Chromium's sandbox helper must be setuid root (the app won't start sandboxed without it where user namespaces are off)
+chmod 4755 /opt/ReminderFoxAgain/chrome-sandbox || true
+# Ubuntu 24.04 and later: let the app make its own user namespaces, as other Electron apps do
+if [ -e /etc/apparmor.d/abi/4.0 ] && [ -d /etc/apparmor.d ]; then
+  cp /usr/share/reminderfoxagain/apparmor-profile /etc/apparmor.d/reminderfoxagain
+  if command -v apparmor_parser >/dev/null 2>&1 && aa-enabled --quiet 2>/dev/null; then apparmor_parser -r -T -W /etc/apparmor.d/reminderfoxagain || true; fi
+fi
+command -v update-desktop-database >/dev/null 2>&1 && update-desktop-database -q /usr/share/applications || true
+command -v gtk-update-icon-cache >/dev/null 2>&1 && gtk-update-icon-cache -q -t /usr/share/icons/hicolor || true
+exit 0

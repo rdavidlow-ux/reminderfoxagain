@@ -832,3 +832,24 @@
 831| Dodano motyw „{s}”
 832| Usunąć motyw?
 833| Motyw „{s}” zostanie usunięty. Aplikacja wróci do motywu domyślnego.
+834| Plik
+835| Edycja
+836| Okno
+837| Ustawienia…
+838| {app} — informacje
+839| Ukryj {app}
+840| Zamknij okno
+841| Przypomnienia, zadania i alarmy
+842| Uruchamiaj ReminderFoxAgain po zalogowaniu
+843| Jak w systemie
+844| Domyślny (jak w systemie)
+845| Działaj dalej na pasku menu po zamknięciu okna
+846| Pokazuj liczbę na ikonie w Docku
+847| Pokazuj liczbę na ikonie w zasobniku
+848| Pokaż plik przypomnień w Finderze
+849| Pokaż plik przypomnień w menedżerze plików
+850| Twój pulpit nie pokazuje ikon w zasobniku, więc zamknięcie okna kończy aplikację. Aby alarmy pojawiały się przy zamkniętym oknie, dodaj rozszerzenie zasobnika (w GNOME „AppIndicator and KStatusNotifierItem Support”).
+851| Domyślny to Lis, jasny lub ciemny zgodnie z systemem. Pozycje z gwiazdką mają własny kolor w każdym motywie. Wysoki kontrast używa czerni, bieli, żółci i cyjanu z większym tekstem i grubszymi liniami.
+852| Jak w systemie ({s})
+853| Twoje przypomnienia, zadania i alarmy jako aplikacja Mac — hołd dla oryginalnego dodatku ReminderFox.
+854| Twoje przypomnienia, zadania i alarmy jako aplikacja Linux — hołd dla oryginalnego dodatku ReminderFox.

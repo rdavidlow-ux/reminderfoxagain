@@ -832,3 +832,24 @@
 831| „{s}” téma hozzáadva
 832| Törli a témát?
 833| A(z) „{s}” téma törlődik. Az alkalmazás visszatér az alapértelmezett témához.
+834| Fájl
+835| Szerkesztés
+836| Ablak
+837| Beállítások…
+838| A(z) {app} névjegye
+839| {app} elrejtése
+840| Ablak bezárása
+841| Emlékeztetők, teendők és riasztások
+842| A ReminderFoxAgain indítása bejelentkezéskor
+843| Mint a rendszerben
+844| Alapértelmezett (a rendszert követi)
+845| Futás a menüsorban az ablak bezárása után is
+846| Szám megjelenítése a Dock ikonján
+847| Szám megjelenítése a tálcaikonon
+848| Az emlékeztetőfájl megjelenítése a Finderben
+849| Az emlékeztetőfájl megjelenítése a fájlkezelőben
+850| Az asztala nem mutat tálcaikonokat, ezért az ablak bezárása kilép az alkalmazásból. Hogy a riasztások zárt ablaknál is megjelenjenek, adjon hozzá egy tálcabővítményt (GNOME alatt: „AppIndicator and KStatusNotifierItem Support”).
+851| Az alapértelmezett a Róka, világos vagy sötét a rendszernek megfelelően. A csillagozott elemeknek minden témában saját színük van. A nagy kontraszt fekete, fehér, sárga és cián színt használ nagyobb szöveggel és vastagabb vonalakkal.
+852| Mint a rendszerben ({s})
+853| Emlékeztetők, teendők és riasztások Mac-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.
+854| Emlékeztetők, teendők és riasztások Linux-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.

@@ -832,3 +832,24 @@
 831| Temat ”{s}” tillagt
 832| Ta bort temat?
 833| Temat ”{s}” tas bort. Appen går tillbaka till standardtemat.
+834| Arkiv
+835| Redigera
+836| Fönster
+837| Inställningar…
+838| Om {app}
+839| Göm {app}
+840| Stäng fönster
+841| Påminnelser, uppgifter och larm
+842| Starta ReminderFoxAgain när du loggar in
+843| Som i systemet
+844| Standard (följer systemet)
+845| Fortsätt köra i menyraden när fönstret stängs
+846| Visa ett tal på Dock-symbolen
+847| Visa ett tal på ikonen i meddelandefältet
+848| Visa påminnelsefilen i Finder
+849| Visa påminnelsefilen i filhanteraren
+850| Ditt skrivbord visar inga ikoner i meddelandefältet, så att stänga fönstret avslutar appen. För att få larm med fönstret stängt, lägg till ett tillägg för meddelandefältet (i GNOME: ”AppIndicator and KStatusNotifierItem Support”).
+851| Standard är Räv, ljust eller mörkt efter systemet. Stjärnmärkta poster har en egen färg i varje tema. Hög kontrast använder svart, vitt, gult och cyan med större text och kraftigare linjer.
+852| Som i systemet ({s})
+853| Dina påminnelser, uppgifter och larm som en Mac-app — en hyllning till det ursprungliga ReminderFox-tillägget.
+854| Dina påminnelser, uppgifter och larm som en Linux-app — en hyllning till det ursprungliga ReminderFox-tillägget.

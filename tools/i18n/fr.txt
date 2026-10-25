@@ -832,3 +832,24 @@
 831| Thème « {s} » ajouté
 832| Supprimer le thème ?
 833| Le thème « {s} » sera supprimé. L'application revient au thème par défaut.
+834| Fichier
+835| Édition
+836| Fenêtre
+837| Réglages…
+838| À propos de {app}
+839| Masquer {app}
+840| Fermer la fenêtre
+841| Rappels, tâches et alarmes
+842| Démarrer ReminderFoxAgain à l'ouverture de session
+843| Comme dans le système
+844| Par défaut (comme le système)
+845| Rester dans la barre des menus quand la fenêtre est fermée
+846| Afficher un nombre sur l'icône du Dock
+847| Afficher un nombre sur l'icône de la zone de notification
+848| Afficher le fichier des rappels dans le Finder
+849| Afficher le fichier des rappels dans le gestionnaire de fichiers
+850| Votre bureau n'affiche pas d'icônes de notification : fermer la fenêtre quitte l'application. Pour que les alarmes continuent fenêtre fermée, ajoutez une extension de zone de notification (sous GNOME, « AppIndicator and KStatusNotifierItem Support »).
+851| Par défaut : Renard, clair ou sombre selon le système. Les éléments étoilés ont leur propre couleur dans chaque thème. Le contraste élevé utilise noir, blanc, jaune et cyan avec un texte plus grand et des lignes plus épaisses.
+852| Comme dans le système ({s})
+853| Vos rappels, tâches et alarmes dans une application Mac — un hommage au module ReminderFox original.
+854| Vos rappels, tâches et alarmes dans une application Linux — un hommage au module ReminderFox original.

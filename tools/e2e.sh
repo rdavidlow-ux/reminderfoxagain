@@ -42,6 +42,27 @@ LANG=fr_FR.UTF-8 LC_ALL=fr_FR.UTF-8 LANGUAGE=fr run i18n-system-fr basic i18n.js
 run i18n-pick basic i18n-pick.js
 KEEP=i18n-pick run i18n-picked basic i18n.js
 RF_LANG=ar run i18n-ar basic i18n.js
+# platforms (0.9.0): the wording and shortcuts for macOS and Linux, a GNOME desktop without tray icons, start at login
+RF_FAKE_PLATFORM=win32 run platform-windows basic platform.js
+RF_FAKE_PLATFORM=darwin run platform-macos basic platform.js
+RF_FAKE_PLATFORM=darwin RF_LANG=de run platform-macos-de basic platform.js
+RF_FAKE_PLATFORM=linux RF_TEST_AUTOSTART=1 run platform-linux basic platform.js
+f="$TMP/profile-platform-linux/autostart/reminderfoxagain.desktop"
+echo "E2E Linux: autostart entry written: $([ -f "$f" ] && grep -c -e '^Exec="reminderfoxagain" --hidden$' -e '^X-GNOME-Autostart-enabled=true$' "$f" || echo 0) (expected 2)$([ -f "$f" ] && [ "$(grep -c -e '^Exec="reminderfoxagain" --hidden$' -e '^X-GNOME-Autostart-enabled=true$' "$f")" = 2 ] || echo '  WRONG')" | tee "$TMP/autostart.log"
+RF_FAKE_PLATFORM=linux RF_FAKE_TRAYLESS=1 run platform-linux-trayless basic platform.js
+# the macOS application menu: labels and shortcuts (RF_PRINT_MENU prints it and the app quits)
+menu() { RF_FAKE_PLATFORM=darwin RF_PRINT_MENU=1 RF_LANG="$1" XDG_CONFIG_HOME="$TMP/menu-$1" RF_DATA_DIR="$TMP/menu-$1/data" timeout 60 xvfb-run -a ./node_modules/.bin/electron . --no-sandbox --disable-gpu 2>/dev/null | sed -n 's/^RF_MENU //p'; }
+menu en > "$TMP/menu-en.json"; menu de > "$TMP/menu-de.json"
+node -e '
+const [en, de] = process.argv.slice(1).map((f) => JSON.parse(require("fs").readFileSync(f, "utf8")));
+const chk = (n, g, w) => console.log(`E2E macOS menu: ${n}: ${g} (expected ${w})${String(g) === String(w) ? "" : "  WRONG"}`);
+const acc = (m) => m.flatMap((t) => (t.submenu || []).filter((i) => i.accelerator).map((i) => i.accelerator)).join(" ");
+chk("menus", en.map((t) => t.label).join(","), "ReminderFoxAgain,File,Edit,View,Window");
+chk("shortcuts", acc(en), "Command+, Command+Q Command+N Command+T Shift+Command+A Command+I Command+E Command+B Command+G Command+F");
+chk("Edit is the standard menu (copy, paste, undo)", en[2].role, "editMenu");
+chk("German menus", de.map((t) => t.label).join(","), "ReminderFoxAgain,Ablage,Bearbeiten,Ansicht,Fenster");
+chk("German: same shortcuts", acc(de), acc(en));
+' "$TMP/menu-en.json" "$TMP/menu-de.json" | tee "$TMP/menu.log"
 for w in 990 1180; do
   SIZE=${w}x760 run "layout-$w-bills" bills layout.js
   SIZE=${w}x760 run "layout-$w-basic" basic layout.js

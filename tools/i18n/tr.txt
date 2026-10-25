@@ -832,3 +832,24 @@
 831| “{s}” teması eklendi
 832| Tema silinsin mi?
 833| “{s}” teması silinecek. Uygulama varsayılan temaya döner.
+834| Dosya
+835| Düzen
+836| Pencere
+837| Ayarlar…
+838| {app} Hakkında
+839| {app} Uygulamasını Gizle
+840| Pencereyi kapat
+841| Hatırlatıcılar, görevler ve alarmlar
+842| Oturum açınca ReminderFoxAgain'i başlat
+843| Sistemdeki gibi
+844| Varsayılan (sistemi izler)
+845| Pencere kapatılınca menü çubuğunda çalışmaya devam et
+846| Dock simgesinde bir sayı göster
+847| Tepsi simgesinde bir sayı göster
+848| Hatırlatıcı dosyasını Finder'da göster
+849| Hatırlatıcı dosyasını dosya yöneticisinde göster
+850| Masaüstünüz tepsi simgelerini göstermiyor, bu yüzden pencereyi kapatmak uygulamadan çıkar. Pencere kapalıyken alarmların gelmesi için bir tepsi uzantısı ekleyin (GNOME'da “AppIndicator and KStatusNotifierItem Support”).
+851| Varsayılan, sisteme göre Tilki, açık veya koyu temadır. Yıldızlı öğelerin her temada kendi rengi vardır. Yüksek karşıtlık; siyah, beyaz, sarı ve camgöbeği ile daha büyük yazı ve daha kalın çizgiler kullanır.
+852| Sistemdeki gibi ({s})
+853| Hatırlatıcılarınız, görevleriniz ve alarmlarınız bir Mac uygulamasında — özgün ReminderFox eklentisine bir saygı duruşu.
+854| Hatırlatıcılarınız, görevleriniz ve alarmlarınız bir Linux uygulamasında — özgün ReminderFox eklentisine bir saygı duruşu.

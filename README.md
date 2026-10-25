@@ -1,24 +1,28 @@
-# ReminderFoxAgain 0.8.1
+# ReminderFoxAgain 0.9.0
 
-A standalone Windows 11 desktop app for reminders, to-dos and pop-up alarms — a tribute to the original
+A desktop app for Windows, macOS and Linux for reminders, to-dos and pop-up alarms — a tribute to the original
 [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and
 Daniel Lee with Guenter Wahl, which kept people's birthdays, bills and to-dos on time for many years. ReminderFoxAgain
 carries its ideas forward as a desktop app: it reads and writes ReminderFox's own iCalendar file, so everything its
 users built up comes along unchanged.
 
-## Download
+## New in 0.9.0 — macOS and Linux
 
-The ready-to-install Windows release is on the **Releases** page of this repository: put the `.bat`, the `.ps1`, the
-`.asar` and the six `runtime` parts in one folder and double-click **Install or Update ReminderFoxAgain.bat** (see
-[Install](#install-windows-per-user-no-administrator-rights) below). `SHA256SUMS.txt` lists every file's checksum.
-
-## What's in this repository
-
-| Folder | What it holds |
-| --- | --- |
-| `src/`, `test/`, `tools/`, `installer/`, `assets/`, `build.sh` | The app's source, tests, build and installer (see [Develop](#develop)) |
-| `docs/` | The [Quick Start](docs/quick-start.md), [User's Guide](docs/users-guide.md), [Technical System Design](docs/technical-system-design.md) and [Developer's Guide](docs/developers-guide.md) (also as Word files in `docs/word/`), the feature-gap spreadsheet and every screenshot |
-| `build-prompt/` | The build prompt pack: a specification an AI coding agent can rebuild the app from, for Windows, Linux, macOS, Android or iOS |
+- **macOS** (Apple silicon and Intel, macOS 13 Ventura or later): one universal app. It has the usual menu bar menus
+  (ReminderFoxAgain, File, Edit, View, Window) with ⌘ shortcuts — ⌘N new reminder, ⌘T new list item, ⇧⌘A quick alarm
+  (⌘Q quits, as on every Mac), ⌘, Settings, ⌘I import, ⌘E export, ⌘F search, ⌘G go to, ⌘B calendar panel — and the
+  window shows ⌘ in its tooltips. The fox sits in the menu bar; closing the window keeps the app running (click the
+  Dock icon to bring it back); alarms bounce the Dock icon and post a notification; the Dock icon shows the count of
+  reminders due today. Start at login uses the Login Items of System Settings.
+- **Linux** (x64 and arm64): a `.deb` for Debian, Ubuntu, Mint and the like, and a `.tar.gz` that installs for you
+  without root. Alarms post a desktop notification as well as opening the alarm window; start at login writes
+  `~/.config/autostart/reminderfoxagain.desktop`. On GNOME, which shows no tray icons without an extension, the app
+  notices and closing the window quits instead (Settings says so and names the extension to add).
+- **The wording follows the system**: "Start ReminderFoxAgain when you log in", "Default (follows the system)",
+  "As in your system", "menu bar" and "Dock" on macOS, in every language.
+- **Finding your old ReminderFox file** looks in the Firefox, Thunderbird, SeaMonkey, Waterfox and Pale Moon profiles
+  of each system (on Linux also the Snap and Flatpak ones).
+- Windows is unchanged apart from the version.
 
 ## New in 0.8.1 — keep your place, your own themes
 
@@ -305,7 +309,48 @@ Data moved over from the ReminderFox add-on now behaves the same way it did ther
   focus outlines, underlined starred titles and links — for low vision). Themes live in `src/ui/themes.css`.
   A saved theme of "Light" from 0.2.3 (which was the Fox look) becomes "Fox".
 
-## Install (Windows, per user, no administrator rights)
+## Install
+
+Download the files for your system from the [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
+
+### macOS
+
+1. Download `ReminderFoxAgain-0.9.0-macos-universal.zip` and double-click it to unzip.
+2. Drag **ReminderFoxAgain.app** into **Applications**.
+3. The first time, macOS says it can't check the app for malicious software: it is signed ad hoc, not by an Apple
+   developer account, and not notarized. Open it once anyway — on macOS 15 Sequoia and later, try to open it, then
+   System Settings → **Privacy & Security** → **Open Anyway**; on macOS 13–14, Control-click the app → **Open** →
+   **Open**. Or in Terminal: `xattr -dr com.apple.quarantine /Applications/ReminderFoxAgain.app`.
+
+To update, quit the app (menu bar fox → Quit, or ⌘Q) and replace the app in Applications with the new one. To remove
+it, drag it to the Bin. Your data is in `~/Library/Application Support/ReminderFoxAgain` and stays where it is.
+
+### Linux
+
+**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.0_amd64.deb` (`arm64` for ARM) and run
+`sudo apt install ./reminderfoxagain_0.9.0_amd64.deb` (or open it with your software centre). Updating is the same
+command with the newer file; `sudo apt remove reminderfoxagain` removes it. The package puts the app in
+`/opt/ReminderFoxAgain` with the command `reminderfoxagain`, a menu entry and icons, and sets up Chromium's sandbox
+(on Ubuntu 24.04 and later it adds the AppArmor profile Electron apps need).
+
+**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.0-linux-x64.tar.gz` (or `-arm64`), then:
+
+```sh
+tar -xzf ReminderFoxAgain-0.9.0-linux-x64.tar.gz
+cd ReminderFoxAgain-0.9.0-linux-x64
+./install.sh          # again with a newer download to update
+./uninstall.sh        # removes the app, keeps your reminders (--purge removes them too)
+```
+
+It installs to `~/.local/opt/ReminderFoxAgain` with the launcher `~/.local/bin/reminderfoxagain` and a menu entry.
+Where the system doesn't let apps build their own sandbox (unprivileged user namespaces turned off), the launcher
+starts the app with `--no-sandbox`, and install.sh says so; the .deb doesn't need that.
+
+Needs the usual desktop libraries (GTK 3, NSS, ALSA, libgbm). On **GNOME**, add the "AppIndicator and
+KStatusNotifierItem Support" extension (Ubuntu has it already) to see the fox in the top bar and keep the app
+running with the window closed. Your data is in `~/.config/ReminderFoxAgain`.
+
+### Windows (per user, no administrator rights)
 
 Put every file from `dist/release/` in one folder and double-click **Install or Update ReminderFoxAgain.bat**.
 
@@ -313,10 +358,10 @@ Put every file from `dist/release/` in one folder and double-click **Install or 
 | --- | --- |
 | `Install or Update ReminderFoxAgain.bat` | always |
 | `ReminderFoxAgain-Setup.ps1` | always |
-| `ReminderFoxAgain-app-0.8.1.asar` | always |
-| `ReminderFoxAgain-runtime-0.8.1.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
+| `ReminderFoxAgain-app-0.9.0.asar` | always |
+| `ReminderFoxAgain-runtime-0.9.0.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
 
-Updating a 0.7.x install needs only the .bat, the .ps1 and the .asar; the setup reuses the installed runtime. When
+Updating a 0.7.x or 0.8.x install needs only the .bat, the .ps1 and the .asar; the setup reuses the installed runtime. When
 updating from 0.6.x, include the runtime parts too: the earlier runtime has English date pickers only, and the setup
 replaces it when the parts are there (without them the app still works and is translated, but the date and time
 pickers stay in English). The
@@ -337,6 +382,8 @@ npm test                 # unit tests (node:test); build.sh runs them in seven t
 npm start                # run the app (RF_DATA_DIR=<folder> keeps your real data out of it)
 node tools/i18n/build.js # rebuild src/ui/locales/ after editing tools/i18n/*.txt
 ./build.sh               # Windows x64 release in dist/release/ (identical hashes on every build)
+./build-linux.sh         # Linux .tar.gz and .deb, x64 and arm64, in dist/release-linux/ (ARCHS=x64 for one)
+./build-macos.sh         # macOS universal .zip in dist/release-macos/ (on Linux; needs rcodesign for the ad-hoc signature)
 ```
 
 | Path | What it is |
@@ -349,6 +396,8 @@ node tools/i18n/build.js # rebuild src/ui/locales/ after editing tools/i18n/*.tx
 | `tools/i18n/` | `catalog.txt` (every English string, the keys), `<language>.txt` (its translations, one numbered line each) and `build.js` (checks placeholders and writes `src/ui/locales/`) |
 | `test/store.test.js`, `test/i18n.test.js` | 30 data-layer and 5 translation unit tests against `test/reminderfox-addon-sample.ics` and `test/reminderfox-addon-full.ics` (`test/reminderfox-addon-prefs.js` is an add-on profile's prefs for the list import check) |
 | `installer/` | Setup template (filled in by `build.sh` via `fill-setup.sh`) and the .bat |
+| `build/linux/` | install.sh, uninstall.sh, the menu entry, icons and the .deb's scripts and AppArmor profile |
+| `build/macos/` | The icon, Info.plist additions, entitlements, `universal.mjs` (joins the arm64 and x64 apps) and `lipo` (a small stand-in for Apple's, so the universal app builds on Linux) |
 | `tools/` | Sample data, screenshots, UI checks and installer tests |
 
 ### Checks (need Xvfb; the installer test needs PowerShell 7)
@@ -357,6 +406,7 @@ node tools/i18n/build.js # rebuild src/ui/locales/ after editing tools/i18n/*.tx
 for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done
 tools/e2e.sh             # UI checks (incl. every theme's contrast and starred colours, and German, French from the system locale, Japanese picked in Settings, Arabic right to left, and the continuous alarm sound in the alarm window): every line shows the value and the expected one; no WRONG/ERROR lines
 tools/test-setup.sh      # 20 checks (optional argument: the pwsh binary)
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.0-linux-x64.tar.gz   # 19 checks in a fake home
 tools/shots.sh shots/    # every screen, to compare with reference/screenshots/
 tools/screenshot.sh <dataDir> <out.png> [script.js]
 node tools/sounds.js <outDir>   # the built-in alarm sounds as .wav files (for platforms that need sound files)
@@ -365,7 +415,8 @@ node tools/sample-data.js <dataDir> basic|bills
 
 Test hooks: `RF_DATA_DIR` (data folder), `RF_LANG` (a language for the run, e.g. `de`, `ar`), `RF_I18N_COLLECT=<file>` (writes every text shown without a translation), `RF_SCREENSHOT`,
 `RF_SCRIPT`, `RF_ALARM_SCRIPT` (scripts run inside the main and alarm windows; see `tools/screenshot.sh` and `tools/e2e.sh`) and `RF_WINDOW_SIZE=WxH` (fixed window size, used by
-the layout checks). The main window exposes `window.__rf` (state and helpers) and `window.__rfx` (the feature dialogs); the alarm window exposes `window.__rfAlarm` (`ring`, `silence`) and `window.__rfRinging`. A reminder pop-up open at
+the layout checks). `RF_FAKE_PLATFORM=darwin|linux|win32` runs the app as on that system (wording, shortcuts, menus), `RF_PRINT_MENU=1` prints the
+macOS menu and quits, `RF_FAKE_TRAYLESS=1` acts as a desktop without tray icons, and `RF_TEST_AUTOSTART=1` lets an unpackaged app write its start-at-login entry. The main window exposes `window.__rf` (state and helpers) and `window.__rfx` (the feature dialogs); the alarm window exposes `window.__rfAlarm` (`ring`, `silence`) and `window.__rfRinging`. A reminder pop-up open at
 screenshot time is saved as `<out>-popup.png`.
 
 ## Licence
@@ -376,7 +427,7 @@ version. It is distributed in the hope that it will be useful, but WITHOUT ANY W
 warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See [LICENSE](LICENSE) for the full text.
 
 It uses [ical.js](https://github.com/kewisch/ical.js) (Mozilla Public License 2.0) and [Electron](https://www.electronjs.org/)
-(MIT), whose licences allow this; the Windows runtime parts carry Electron's and Chromium's own licence files.
+(MIT), whose licences allow this; the runtime parts, the Linux packages and the macOS app carry Electron's and Chromium's own licence files.
 
 ## With thanks
 

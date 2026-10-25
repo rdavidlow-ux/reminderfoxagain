@@ -136,7 +136,7 @@
   void fTime;
   function setFormats(st) { F.date = (st && st.dateFormat) || ''; F.time = (st && st.timeFormat) || ''; }
   const SAMPLE = new Date(2026, 9, 17);
-  const DATE_FORMATS = [['', T('As in Windows ({s})', { s: fShort.format(SAMPLE) })], ['dmy-text', `17 ${MON(SAMPLE)}`], ['iso', '2026-10-17'], ['mdy', '10/17/2026'], ['dmy', '17/10/2026'], ['dmy-dot', '17.10.2026']];
+  const DATE_FORMATS = [['', T(RF.platform && RF.platform !== 'windows' ? 'As in your system ({s})' : 'As in Windows ({s})', { s: fShort.format(SAMPLE) })], ['dmy-text', `17 ${MON(SAMPLE)}`], ['iso', '2026-10-17'], ['mdy', '10/17/2026'], ['dmy', '17/10/2026'], ['dmy-dot', '17.10.2026']];
 
   const UNITS = { seconds: 1, minutes: 60, hours: 3600 };
   const snooze = {

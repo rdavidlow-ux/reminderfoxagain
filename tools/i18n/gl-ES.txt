@@ -832,3 +832,24 @@
 831| Engadiuse o tema «{s}»
 832| Eliminar o tema?
 833| Eliminarase o tema «{s}». A aplicación volve ao tema predeterminado.
+834| Ficheiro
+835| Editar
+836| Ventá
+837| Axustes…
+838| Acerca de {app}
+839| Agochar {app}
+840| Pechar a ventá
+841| Lembretes, tarefas e alarmas
+842| Iniciar ReminderFoxAgain ao iniciar sesión
+843| Como no sistema
+844| Predeterminado (como o sistema)
+845| Seguir na barra de menús ao pechar a ventá
+846| Mostrar un número na icona do Dock
+847| Mostrar un número na icona da bandexa
+848| Mostrar o ficheiro de lembretes no Finder
+849| Mostrar o ficheiro de lembretes no xestor de ficheiros
+850| O seu escritorio non mostra iconas na bandexa, así que pechar a ventá sae da aplicación. Para seguir recibindo alarmas coa ventá pechada, engada unha extensión de bandexa (en GNOME, «AppIndicator and KStatusNotifierItem Support»).
+851| O predeterminado é Raposo, claro ou escuro segundo o sistema. Os elementos destacados teñen a súa cor en cada tema. O alto contraste usa negro, branco, amarelo e ciano con texto máis grande e liñas máis grosas.
+852| Como no sistema ({s})
+853| Os seus lembretes, tarefas e alarmas como aplicación de Mac: unha homenaxe ao complemento ReminderFox orixinal.
+854| Os seus lembretes, tarefas e alarmas como aplicación de Linux: unha homenaxe ao complemento ReminderFox orixinal.

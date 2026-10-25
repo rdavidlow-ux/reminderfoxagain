@@ -832,3 +832,24 @@
 831| Tema „{s}” a fost adăugată
 832| Ștergeți tema?
 833| Tema „{s}” va fi ștearsă. Aplicația revine la tema implicită.
+834| Fișier
+835| Editare
+836| Fereastră
+837| Configurări…
+838| Despre {app}
+839| Ascunde {app}
+840| Închide fereastra
+841| Mementouri, sarcini și alarme
+842| Pornește ReminderFoxAgain la autentificare
+843| Ca în sistem
+844| Implicită (ca sistemul)
+845| Continuă în bara de meniu când fereastra e închisă
+846| Afișează un număr pe pictograma din Dock
+847| Afișează un număr pe pictograma din zona de notificare
+848| Afișează fișierul de mementouri în Finder
+849| Afișează fișierul de mementouri în managerul de fișiere
+850| Desktopul dvs. nu afișează pictograme în zona de notificare, deci închiderea ferestrei închide aplicația. Ca alarmele să apară cu fereastra închisă, adăugați o extensie pentru zona de notificare (în GNOME, „AppIndicator and KStatusNotifierItem Support”).
+851| Implicită este Vulpe, luminoasă sau întunecată după sistem. Elementele cu stea au culoarea lor în fiecare temă. Contrastul ridicat folosește negru, alb, galben și cyan, cu text mai mare și linii mai groase.
+852| Ca în sistem ({s})
+853| Mementourile, sarcinile și alarmele dvs. ca aplicație Mac — un omagiu adus suplimentului ReminderFox original.
+854| Mementourile, sarcinile și alarmele dvs. ca aplicație Linux — un omagiu adus suplimentului ReminderFox original.

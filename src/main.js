@@ -3,7 +3,8 @@
 const path = require('path');
 const fs = require('fs');
 const os = require('os');
-const { app, BrowserWindow, ipcMain, Tray, Menu, shell, dialog, nativeImage, screen, powerMonitor, nativeTheme } = require('electron');
+const { app, BrowserWindow, ipcMain, Tray, Menu, shell, dialog, nativeImage, screen, powerMonitor, nativeTheme, Notification } = require('electron');
+const { execFileSync } = require('child_process');
 const { Store, dayKey, timeKey, setPhrases } = require('./core/store');
 const I18N = require('./ui/i18n.js');
 
@@ -12,11 +13,20 @@ const APP_NAME = 'ReminderFoxAgain';
 const APP_ID = 'org.reminderfoxagain.desktop';
 const ROOT = path.join(__dirname, '..');
 const ICON = path.join(ROOT, 'assets', 'icon.png');
-const TRAY_ICON = path.join(ROOT, 'assets', 'tray.png');
+// The desktop the app runs on (0.9.0). RF_FAKE_PLATFORM=darwin|linux|win32 is a test hook: the host takes that
+// platform's branches where it can without the real system (menus, labels, paths, close behaviour).
+const PLATFORM = ['darwin', 'linux', 'win32'].includes(process.env.RF_FAKE_PLATFORM) ? process.env.RF_FAKE_PLATFORM : process.platform;
+const IS_MAC = PLATFORM === 'darwin';
+const IS_LINUX = PLATFORM === 'linux';
+const IS_WIN = PLATFORM === 'win32';
+const OS_NAME = IS_MAC ? 'macos' : IS_LINUX ? 'linux' : 'windows';
+const REAL_MAC = process.platform === 'darwin';
+// the menu-bar icon on macOS is a template image (black and clear) that macOS tints for light and dark menu bars
+const TRAY_ICON = path.join(ROOT, 'assets', IS_MAC ? 'trayTemplate.png' : 'tray.png');
 const HOUR = 3600000;
 const DAY = 24 * HOUR;
 
-app.setAppUserModelId(APP_ID);
+if (IS_WIN) app.setAppUserModelId(APP_ID);
 app.setName(APP_NAME);
 app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
 
@@ -210,7 +220,7 @@ function meta() {
     categories: allCategories(), todoLists: orderedLists(), settings: state.settings, suspend: suspendedUntil(),
     listCounts: store.listCounts(), categoryCounts: store.categoryCounts(),
     dataFile: DATA_FILE, count: store.count(), archiveCount: archive.count(), archiveFile: ARCHIVE_FILE,
-    loadError, version: VERSION, archiveMoved,
+    loadError, version: VERSION, archiveMoved, platform: OS_NAME, trayMissing,
   };
 }
 
@@ -259,7 +269,7 @@ function createMain(showIt) {
   if (forced) Object.assign(opts, { width: Number(forced[1]), height: Number(forced[2]) });
   else if (b && b.width >= 820 && b.height >= 540 && onScreen(b)) Object.assign(opts, { x: b.x, y: b.y, width: b.width, height: b.height });
   mainWin = new BrowserWindow(opts);
-  mainWin.removeMenu();
+  if (!IS_MAC) mainWin.removeMenu(); // macOS has the application menu (Edit gives ⌘C/⌘V in text boxes)
   secure(mainWin);
   mainWin.loadFile(path.join(__dirname, 'ui', 'index.html'));
   mainWin.webContents.on('did-finish-load', () => applyZoom(mainWin));
@@ -277,6 +287,8 @@ function createMain(showIt) {
   mainWin.on('move', remember);
   mainWin.on('close', (e) => {
     if (quitting) return;
+    // macOS: closing the window hides it; the app stays in the Dock and menu bar, and ⌘Q quits
+    if (IS_MAC) { e.preventDefault(); mainWin.hide(); return; }
     if (state.settings.closeToTray && tray) {
       e.preventDefault();
       mainWin.hide();
@@ -309,11 +321,14 @@ function createAlarmWin() {
     frame: false, alwaysOnTop: true, resizable: true, skipTaskbar: false, show: false, focusable: true,
     backgroundColor: bgColor(), title: tr('{app} alarm', { app: APP_NAME }), icon: ICON, webPreferences: webPrefs(),
   });
-  alarmWin.removeMenu();
+  if (!IS_MAC) alarmWin.removeMenu();
+  if (IS_MAC) {
+    try { alarmWin.setAlwaysOnTop(true, 'floating'); alarmWin.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true }); } catch (e) { /* older macOS */ }
+  }
   secure(alarmWin);
   alarmWin.loadFile(path.join(__dirname, 'ui', 'alarm.html'));
   alarmWin.webContents.on('did-finish-load', () => applyZoom(alarmWin));
-  alarmWin.once('ready-to-show', () => { if (alarmWin && !alarmWin.isDestroyed()) { alarmWin.showInactive(); alarmWin.flashFrame(true); } });
+  alarmWin.once('ready-to-show', () => { if (alarmWin && !alarmWin.isDestroyed()) { alarmWin.showInactive(); attention(); } });
   alarmWin.on('page-title-updated', (e) => e.preventDefault());
   alarmWin.on('closed', () => { alarmWin = null; shownKeys = new Set(); });
 }
@@ -354,12 +369,13 @@ function loadLanguage() {
 const tr = (s, vars) => L.t(s, vars);
 const I18N_COLLECT = process.env.RF_I18N_COLLECT || '';
 ipcMain.on('i18n:get', (e) => {
-  e.returnValue = { lang: uiLang, dict: uiDict, dateLocale: dateLocale(), collect: !!I18N_COLLECT, systemLang: I18N.resolve('', systemLocale()) };
+  e.returnValue = { lang: uiLang, dict: uiDict, dateLocale: dateLocale(), collect: !!I18N_COLLECT, systemLang: I18N.resolve('', systemLocale()), platform: OS_NAME };
 });
 ipcMain.on('i18n:missing', (e, text) => { if (I18N_COLLECT) try { fs.appendFileSync(I18N_COLLECT, `${JSON.stringify(String(text))}\n`); } catch (err) { /* ignore */ } });
 function applyLanguage() {
   loadLanguage();
   if (tray) { tray.setContextMenu(trayMenu()); lastTip = ''; updateTray(); }
+  buildAppMenu();
   for (const w of [mainWin, alarmWin, sliderWin]) if (w && !w.isDestroyed()) w.webContents.reload();
 }
 
@@ -429,9 +445,26 @@ function trayMenu() {
     { label: tr('Quit {app}', { app: APP_NAME }), click: () => { quitting = true; app.quit(); } },
   ]);
 }
-function createTray() {
+// Linux: GNOME shows tray icons only with the AppIndicator extension (a StatusNotifier watcher on D-Bus). Without one,
+// the app can't be reopened from a tray, so "keep running in the tray" is off until you choose it (and Settings says why).
+let trayMissing = false;
+function statusNotifierMissing() {
+  if (!IS_LINUX || process.platform !== 'linux') return false;
+  if (process.env.RF_FAKE_TRAYLESS) return process.env.RF_FAKE_TRAYLESS === '1';
+  if (!/gnome/i.test(process.env.XDG_CURRENT_DESKTOP || '')) return false;
   try {
-    tray = new Tray(nativeImage.createFromPath(TRAY_ICON));
+    const out = execFileSync('gdbus', ['call', '--session', '--dest', 'org.freedesktop.DBus', '--object-path', '/org/freedesktop/DBus',
+      '--method', 'org.freedesktop.DBus.NameHasOwner', 'org.kde.StatusNotifierWatcher'], { timeout: 1500, encoding: 'utf8' });
+    return /false/.test(out);
+  } catch (e) { return false; } // no gdbus: assume trays work
+}
+function createTray() {
+  trayMissing = statusNotifierMissing();
+  if (trayMissing && !state.settings.closeToTrayChosen) state.settings.closeToTray = false;
+  try {
+    const img = nativeImage.createFromPath(TRAY_ICON);
+    if (IS_MAC) img.setTemplateImage(true);
+    tray = new Tray(img);
   } catch (e) { tray = null; return; }
   tray.setContextMenu(trayMenu());
   tray.on('click', showMain);
@@ -450,12 +483,103 @@ function send(win, ch, payload) {
   if (win.webContents.isLoading()) win.webContents.once('did-finish-load', go); else go();
 }
 
-// ---------------------------------------------------------------- start with Windows
+// ---------------------------------------------------------------- start when you log in (settings.startWithWindows)
+// Windows: the user Run key; macOS: a login item; Linux: ~/.config/autostart/reminderfoxagain.desktop (Electron's
+// login items don't work there). Only a packaged app registers itself, unless RF_TEST_AUTOSTART is set (tests).
+const AUTOSTART_FILE = () => path.join(process.env.XDG_CONFIG_HOME || path.join(os.homedir(), '.config'), 'autostart', 'reminderfoxagain.desktop');
+function launcherPath() {
+  // the launcher that goes with this copy: /usr/bin for the .deb (in /opt), ~/.local/bin for install.sh (it adds
+  // --no-sandbox where the system needs it), else this executable
+  const exe = process.execPath;
+  const cands = exe.startsWith('/opt/') ? ['/usr/bin/reminderfoxagain'] : exe.startsWith(path.join(os.homedir(), '.local')) ? [path.join(os.homedir(), '.local', 'bin', 'reminderfoxagain')] : [];
+  for (const p of cands) { try { fs.accessSync(p, fs.constants.X_OK); return p; } catch (e) { /* none */ } }
+  return exe;
+}
 function applyLoginItem() {
-  if (!app.isPackaged || process.platform !== 'win32') return;
+  if (!app.isPackaged && !process.env.RF_TEST_AUTOSTART) return;
+  const on = !!state.settings.startWithWindows;
   try {
-    app.setLoginItemSettings({ openAtLogin: !!state.settings.startWithWindows, args: ['--hidden'], name: APP_ID });
+    if (IS_LINUX) {
+      const f = AUTOSTART_FILE();
+      if (on) {
+        fs.mkdirSync(path.dirname(f), { recursive: true });
+        const exec = process.env.RF_TEST_AUTOSTART ? 'reminderfoxagain' : launcherPath();
+        writeAtomic(f, `[Desktop Entry]\nType=Application\nName=${APP_NAME}\nComment=${tr('Reminders, to-dos and alarms')}\nExec="${exec}" --hidden\nIcon=reminderfoxagain\nTerminal=false\nX-GNOME-Autostart-enabled=true\nStartupWMClass=${APP_NAME}\n`);
+      } else if (exists(f)) fs.unlinkSync(f);
+    } else if (IS_MAC && REAL_MAC) {
+      app.setLoginItemSettings({ openAtLogin: on, openAsHidden: true });
+    } else if (IS_WIN && process.platform === 'win32') {
+      app.setLoginItemSettings({ openAtLogin: on, args: ['--hidden'], name: APP_ID });
+    }
   } catch (e) { console.error('login item', e.message); }
+}
+
+// ---------------------------------------------------------------- getting attention for a new alarm
+function attention() {
+  try {
+    if (IS_MAC && REAL_MAC && app.dock) app.dock.bounce('informational');
+    else if (alarmWin && !alarmWin.isDestroyed()) alarmWin.flashFrame(true);
+  } catch (e) { /* optional */ }
+}
+// Linux and macOS also post a desktop notification, in case the alarm window is behind a full-screen app; clicking
+// it shows the alarm window. (Windows shows the alarm window over everything already.)
+function notifyFresh(fresh) {
+  if (IS_WIN || !fresh.length || process.env.RF_SCREENSHOT || process.env.RF_SCRIPT) return;
+  try {
+    if (!Notification.isSupported()) return;
+    const first = fresh[0];
+    const n = new Notification({ title: fresh.length > 1 ? tr('{n} reminders', { n: fresh.length }) : first.summary || APP_NAME, body: fresh.length > 1 ? fresh.map((a) => a.summary).join(', ') : APP_NAME, silent: true });
+    n.on('click', () => { if (alarmWin && !alarmWin.isDestroyed()) { alarmWin.show(); alarmWin.focus(); } });
+    n.show();
+  } catch (e) { /* no notification service */ }
+}
+
+// ---------------------------------------------------------------- macOS application menu
+// Required on macOS: without an Edit menu, ⌘C/⌘V/⌘X/⌘A/⌘Z don't work in text boxes. The items send the same ui:*
+// events as the tray menu. RF_PRINT_MENU=1 prints the template (labels and accelerators) for the checks.
+function appMenuTemplate() {
+  const ui = (ch, payload) => () => { showMain(); send(mainWin, ch, payload); };
+  return [
+    { label: APP_NAME, submenu: [
+      { label: tr('About {app}', { app: APP_NAME }), click: ui('ui:settings', { panel: 'general' }) },
+      { type: 'separator' },
+      { label: tr('Settings…'), accelerator: 'Command+,', click: ui('ui:settings') },
+      { type: 'separator' },
+      { role: 'services' },
+      { type: 'separator' },
+      { role: 'hide', label: tr('Hide {app}', { app: APP_NAME }) }, { role: 'hideOthers' }, { role: 'unhide' },
+      { type: 'separator' },
+      { label: tr('Quit {app}', { app: APP_NAME }), accelerator: 'Command+Q', click: () => { quitting = true; app.quit(); } },
+    ] },
+    { label: tr('File'), submenu: [
+      { label: tr('Add reminder…'), accelerator: 'Command+N', click: ui('ui:new', { kind: 'event' }) },
+      { label: tr('Add list item…'), accelerator: 'Command+T', click: ui('ui:new', { kind: 'todo' }) },
+      { label: tr('Quick alarm…'), accelerator: 'Shift+Command+A', click: ui('ui:quick') },
+      { type: 'separator' },
+      { label: tr('Import an .ics file…'), accelerator: 'Command+I', click: ui('ui:import') },
+      { label: tr('Export to .ics…'), accelerator: 'Command+E', click: ui('ui:export') },
+      { type: 'separator' },
+      { role: 'close', label: tr('Close window') },
+    ] },
+    { role: 'editMenu', label: tr('Edit') },
+    { label: tr('View'), submenu: [
+      { label: tr('Show or hide the calendar panel'), accelerator: 'Command+B', click: ui('ui:side') },
+      { label: tr('Go to…'), accelerator: 'Command+G', click: ui('ui:goto') },
+      { label: tr('Search'), accelerator: 'Command+F', click: ui('ui:find') },
+      { type: 'separator' },
+      { role: 'togglefullscreen' },
+    ] },
+    { role: 'windowMenu', label: tr('Window') },
+  ];
+}
+function buildAppMenu() {
+  if (!IS_MAC) return;
+  const t = appMenuTemplate();
+  if (process.env.RF_PRINT_MENU) {
+    const flat = (items) => items.map((i) => ({ label: i.label || null, role: i.role || null, accelerator: i.accelerator || null, type: i.type || null, submenu: Array.isArray(i.submenu) ? flat(i.submenu) : undefined }));
+    console.log(`RF_MENU ${JSON.stringify(flat(t))}`);
+  }
+  try { Menu.setApplicationMenu(Menu.buildFromTemplate(t)); } catch (e) { console.error('menu', e.message); }
 }
 
 // ---------------------------------------------------------------- alarms
@@ -504,9 +628,10 @@ function checkAlarms() {
     else {
       if (!alarmWin.isVisible()) alarmWin.showInactive();
       alarmWin.moveTop();
-      alarmWin.flashFrame(true);
+      attention();
       send(alarmWin, 'alarms:ring');
     }
+    notifyFresh(fresh);
     for (const a of fresh) shownKeys.add(a.key);
   }
   for (const k of [...shownKeys]) if (!seen.has(k)) shownKeys.delete(k);
@@ -778,7 +903,22 @@ function addLists(names) {
 function findOldFiles() {
   const appData = app.getPath('appData');
   const home = os.homedir();
-  const roots = [
+  const roots = IS_MAC ? [
+    path.join(home, 'Library', 'Application Support', 'Firefox', 'Profiles'),
+    path.join(home, 'Library', 'Thunderbird', 'Profiles'),
+    path.join(home, 'Library', 'Application Support', 'SeaMonkey', 'Profiles'),
+    path.join(home, 'Library', 'Application Support', 'Waterfox', 'Profiles'),
+  ] : IS_LINUX ? [
+    path.join(home, '.mozilla', 'firefox'),
+    path.join(home, '.thunderbird'),
+    path.join(home, 'snap', 'firefox', 'common', '.mozilla', 'firefox'),
+    path.join(home, 'snap', 'thunderbird', 'common', '.thunderbird'),
+    path.join(home, '.var', 'app', 'org.mozilla.firefox', '.mozilla', 'firefox'),
+    path.join(home, '.var', 'app', 'org.mozilla.Thunderbird', '.thunderbird'),
+    path.join(home, '.mozilla', 'seamonkey'),
+    path.join(home, '.waterfox'),
+    path.join(home, '.moonchild productions', 'pale moon'),
+  ] : [
     path.join(appData, 'Mozilla', 'Firefox', 'Profiles'),
     path.join(appData, 'Thunderbird', 'Profiles'),
     path.join(appData, 'Mozilla', 'SeaMonkey', 'Profiles'),
@@ -827,10 +967,12 @@ function setupIpc() {
   handle('data:openFolder', () => { if (exists(DATA_FILE)) shell.showItemInFolder(DATA_FILE); else shell.openPath(DATA_DIR); return true; });
   handle('open:url', (e, u) => openExternal(u));
   handle('settings:set', (e, patch) => {
+    if (patch && 'closeToTray' in patch) patch = { ...patch, closeToTrayChosen: true };
     state.settings = { ...state.settings, ...(patch || {}) };
     delete state.settings.snoozeMinutes;
     saveState(true);
     if (patch && 'startWithWindows' in patch) applyLoginItem();
+    if (patch && 'language' in patch) setTimeout(buildAppMenu, 60);
     if (patch && ('theme' in patch || 'customThemes' in patch)) applyNativeTheme();
     if (patch && 'textSize' in patch) for (const w of [mainWin, alarmWin, sliderWin]) applyZoom(w);
     if (patch && Object.keys(patch).some((k) => k.startsWith('slider'))) armSlider();
@@ -939,9 +1081,15 @@ function setupIpc() {
   // badge (images drawn by the main window)
   handle('badge:set', (e, trayUrl, overlayUrl, text, count) => {
     try {
-      if (tray) tray.setImage(trayUrl ? nativeImage.createFromDataURL(trayUrl) : nativeImage.createFromPath(TRAY_ICON));
-      if (mainWin && !mainWin.isDestroyed() && typeof mainWin.setOverlayIcon === 'function') mainWin.setOverlayIcon(overlayUrl ? nativeImage.createFromDataURL(overlayUrl) : null, text || '');
-      if (process.platform !== 'win32') app.setBadgeCount(Number(count) || 0);
+      const n = Number(count) || 0;
+      if (IS_MAC) {
+        // the menu-bar icon stays the template image; the count goes on the Dock icon
+        if (REAL_MAC && app.dock) app.dock.setBadge(n ? String(n) : '');
+      } else {
+        if (tray) tray.setImage(trayUrl ? nativeImage.createFromDataURL(trayUrl) : nativeImage.createFromPath(TRAY_ICON));
+        if (IS_WIN && mainWin && !mainWin.isDestroyed() && typeof mainWin.setOverlayIcon === 'function') mainWin.setOverlayIcon(overlayUrl ? nativeImage.createFromDataURL(overlayUrl) : null, text || '');
+        if (IS_LINUX) app.setBadgeCount(n); // the Unity launcher API, where the desktop supports it
+      }
     } catch (err) { /* badges are optional */ }
     return true;
   });
@@ -1046,7 +1194,8 @@ if (!app.requestSingleInstanceLock()) {
 } else {
   app.on('second-instance', () => showMain());
   app.on('before-quit', () => { quitting = true; saveState(true); });
-  app.on('window-all-closed', () => { if (quitting || !tray) app.quit(); });
+  app.on('window-all-closed', () => { if (IS_MAC && !quitting) return; if (quitting || !tray) app.quit(); });
+  app.on('activate', () => { if (IS_MAC) showMain(); }); // the Dock icon
   app.whenReady().then(() => {
     fs.mkdirSync(DATA_DIR, { recursive: true });
     loadState();
@@ -1057,6 +1206,8 @@ if (!app.requestSingleInstanceLock()) {
     applyNativeTheme();
     setupIpc();
     applyLoginItem();
+    buildAppMenu();
+    if (process.env.RF_PRINT_MENU) { app.exit(0); return; }
     createTray();
     const hidden = process.argv.includes('--hidden') && !process.env.RF_SCREENSHOT;
     createMain(!hidden);

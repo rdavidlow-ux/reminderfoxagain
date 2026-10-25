@@ -1,8 +1,8 @@
 {
   "name": "reminderfoxagain",
   "productName": "ReminderFoxAgain",
-  "version": "0.8.1",
-  "description": "Reminders, to-dos and pop-up alarms for Windows — a tribute to the original ReminderFox add-on.",
+  "version": "0.9.0",
+  "description": "Reminders, to-dos and pop-up alarms for Windows, macOS and Linux — a tribute to the original ReminderFox add-on.",
   "main": "src/main.js",
   "author": "ReminderFoxAgain",
   "license": "GPL-3.0-or-later",
@@ -10,7 +10,7 @@
   "scripts": {
     "start": "electron .",
     "test": "node --test test/",
-    "package": "electron-packager . ReminderFoxAgain --platform=win32 --arch=x64 --icon=assets/icon.ico --out=dist --overwrite --asar --app-copyright=ReminderFoxAgain --win32metadata.FileDescription=ReminderFoxAgain --win32metadata.ProductName=ReminderFoxAgain --win32metadata.CompanyName=ReminderFoxAgain --ignore=^/test --ignore=^/tools --ignore=^/shots --ignore=^/dist --ignore=^/installer --ignore=\\.zip$ --ignore=^/build\\.sh$ --ignore=^/docs --ignore=\"\\.md$\" --ignore=\"^/node_modules/(?!ical\\.js)\" --ignore=\"^/node_modules/ical\\.js/(lib|dist/types)\""
+    "package": "electron-packager . ReminderFoxAgain --platform=win32 --arch=x64 --icon=assets/icon.ico --out=dist --overwrite --asar --app-copyright=ReminderFoxAgain --win32metadata.FileDescription=ReminderFoxAgain --win32metadata.ProductName=ReminderFoxAgain --win32metadata.CompanyName=ReminderFoxAgain --ignore=^/test --ignore=^/tools --ignore=^/shots --ignore=^/dist --ignore=^/installer --ignore=\\.zip$ --ignore=\"^/build($|/)\" --ignore=\"^/build.*\\.sh$\" --ignore=^/docs --ignore=\"\\.md$\" --ignore=\"^/node_modules/(?!ical\\.js)\" --ignore=\"^/node_modules/ical\\.js/(lib|dist/types)\""
   },
   "dependencies": {
     "ical.js": "2.2.1"

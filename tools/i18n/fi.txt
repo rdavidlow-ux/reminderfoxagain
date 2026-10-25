@@ -832,3 +832,24 @@
 831| Teema ”{s}” lisätty
 832| Poistetaanko teema?
 833| Teema ”{s}” poistetaan. Sovellus palaa oletusteemaan.
+834| Arkisto
+835| Muokkaa
+836| Ikkuna
+837| Asetukset…
+838| Tietoja: {app}
+839| Kätke {app}
+840| Sulje ikkuna
+841| Muistutukset, tehtävät ja hälytykset
+842| Käynnistä ReminderFoxAgain kirjautuessasi sisään
+843| Kuten järjestelmässä
+844| Oletus (järjestelmän mukaan)
+845| Jatka valikkorivillä, kun ikkuna suljetaan
+846| Näytä luku Dockin kuvakkeessa
+847| Näytä luku ilmaisinalueen kuvakkeessa
+848| Näytä muistutustiedosto Finderissa
+849| Näytä muistutustiedosto tiedostonhallinnassa
+850| Työpöytäsi ei näytä ilmaisinalueen kuvakkeita, joten ikkunan sulkeminen lopettaa sovelluksen. Jotta hälytykset tulevat ikkunan ollessa suljettuna, lisää ilmaisinalueen laajennus (GNOMEssa ”AppIndicator and KStatusNotifierItem Support”).
+851| Oletus on Kettu, vaalea tai tumma järjestelmän mukaan. Tähdellä merkityillä kohdilla on oma värinsä joka teemassa. Suuri kontrasti käyttää mustaa, valkoista, keltaista ja syaania sekä isompaa tekstiä ja paksumpia viivoja.
+852| Kuten järjestelmässä ({s})
+853| Muistutuksesi, tehtäväsi ja hälytyksesi Mac-sovelluksena — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle.
+854| Muistutuksesi, tehtäväsi ja hälytyksesi Linux-sovelluksena — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle.

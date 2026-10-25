@@ -832,3 +832,24 @@
 831| Motív „{s}“ pridaný
 832| Odstrániť motív?
 833| Motív „{s}“ bude odstránený. Aplikácia sa vráti k predvolenému motívu.
+834| Súbor
+835| Upraviť
+836| Okno
+837| Nastavenia…
+838| O aplikácii {app}
+839| Skryť {app}
+840| Zavrieť okno
+841| Pripomienky, úlohy a alarmy
+842| Spúšťať ReminderFoxAgain po prihlásení
+843| Ako v systéme
+844| Predvolený (podľa systému)
+845| Pri zatvorení okna bežať ďalej v lište ponúk
+846| Zobraziť číslo na ikone v Docku
+847| Zobraziť číslo na ikone v oblasti oznámení
+848| Zobraziť súbor pripomienok vo Finderi
+849| Zobraziť súbor pripomienok v správcovi súborov
+850| Vaša pracovná plocha nezobrazuje ikony v oblasti oznámení, takže zatvorenie okna aplikáciu ukončí. Aby alarmy chodili aj so zatvoreným oknom, pridajte rozšírenie pre oblasť oznámení (v GNOME „AppIndicator and KStatusNotifierItem Support“).
+851| Predvolený je Líška, svetlý alebo tmavý podľa systému. Položky s hviezdičkou majú v každom motíve vlastnú farbu. Vysoký kontrast používa čiernu, bielu, žltú a azúrovú s väčším písmom a hrubšími čiarami.
+852| Ako v systéme ({s})
+853| Vaše pripomienky, úlohy a alarmy ako aplikácia pre Mac — pocta pôvodnému doplnku ReminderFox.
+854| Vaše pripomienky, úlohy a alarmy ako aplikácia pre Linux — pocta pôvodnému doplnku ReminderFox.

@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+if [ "$1" = remove ] || [ "$1" = purge ]; then
+  if [ -f /etc/apparmor.d/reminderfoxagain ]; then
+    command -v apparmor_parser >/dev/null 2>&1 && apparmor_parser -R /etc/apparmor.d/reminderfoxagain 2>/dev/null || true
+    rm -f /etc/apparmor.d/reminderfoxagain
+  fi
+  command -v update-desktop-database >/dev/null 2>&1 && update-desktop-database -q /usr/share/applications || true
+fi
+exit 0

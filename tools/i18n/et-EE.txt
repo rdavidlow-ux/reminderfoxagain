@@ -832,3 +832,24 @@
 831| Teema „{s}“ lisati
 832| Kas kustutada teema?
 833| Teema „{s}“ kustutatakse. Rakendus läheb tagasi vaiketeemale.
+834| Fail
+835| Redigeeri
+836| Aken
+837| Seaded…
+838| Teave: {app}
+839| Peida {app}
+840| Sulge aken
+841| Meeldetuletused, ülesanded ja alarmid
+842| Käivita ReminderFoxAgain sisselogimisel
+843| Nagu süsteemis
+844| Vaikimisi (järgib süsteemi)
+845| Jätka menüüribal, kui aken suletakse
+846| Näita arvu Docki ikoonil
+847| Näita arvu teavitusala ikoonil
+848| Näita meeldetuletuste faili Finderis
+849| Näita meeldetuletuste faili failihalduris
+850| Sinu töölaud ei näita teavitusala ikoone, seega akna sulgemine lõpetab rakenduse. Et alarmid tuleksid ka suletud aknaga, lisa teavitusala laiendus (GNOME'is „AppIndicator and KStatusNotifierItem Support“).
+851| Vaikimisi on Rebane, hele või tume vastavalt süsteemile. Tärniga kirjetel on igas teemas oma värv. Suur kontrast kasutab musta, valget, kollast ja tsüaani ning suuremat teksti ja paksemaid jooni.
+852| Nagu süsteemis ({s})
+853| Sinu meeldetuletused, ülesanded ja alarmid Maci rakendusena — austusavaldus algsele ReminderFoxi lisale.
+854| Sinu meeldetuletused, ülesanded ja alarmid Linuxi rakendusena — austusavaldus algsele ReminderFoxi lisale.

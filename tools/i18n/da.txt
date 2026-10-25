@@ -832,3 +832,24 @@
 831| Temaet »{s}« tilføjet
 832| Slet temaet?
 833| Temaet »{s}« bliver slettet. Appen går tilbage til standardtemaet.
+834| Arkiv
+835| Rediger
+836| Vindue
+837| Indstillinger…
+838| Om {app}
+839| Skjul {app}
+840| Luk vindue
+841| Påmindelser, opgaver og alarmer
+842| Start ReminderFoxAgain, når du logger ind
+843| Som i systemet
+844| Standard (følger systemet)
+845| Fortsæt i menulinjen, når vinduet lukkes
+846| Vis et tal på Dock-ikonet
+847| Vis et tal på ikonet i meddelelsesområdet
+848| Vis påmindelsesfilen i Finder
+849| Vis påmindelsesfilen i filhåndteringen
+850| Dit skrivebord viser ingen ikoner i meddelelsesområdet, så når vinduet lukkes, afsluttes appen. For at få alarmer med lukket vindue skal du tilføje en udvidelse til meddelelsesområdet (i GNOME: “AppIndicator and KStatusNotifierItem Support”).
+851| Standard er Ræv, lyst eller mørkt efter systemet. Stjernemarkerede punkter har deres egen farve i hvert tema. Høj kontrast bruger sort, hvid, gul og cyan med større tekst og kraftigere linjer.
+852| Som i systemet ({s})
+853| Dine påmindelser, opgaver og alarmer som en Mac-app — en hyldest til den oprindelige ReminderFox-tilføjelse.
+854| Dine påmindelser, opgaver og alarmer som en Linux-app — en hyldest til den oprindelige ReminderFox-tilføjelse.

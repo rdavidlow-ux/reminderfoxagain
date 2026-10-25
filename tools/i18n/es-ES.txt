@@ -832,3 +832,24 @@
 831| Tema «{s}» añadido
 832| ¿Eliminar el tema?
 833| Se eliminará el tema «{s}». La aplicación vuelve al tema predeterminado.
+834| Archivo
+835| Edición
+836| Ventana
+837| Ajustes…
+838| Acerca de {app}
+839| Ocultar {app}
+840| Cerrar ventana
+841| Recordatorios, tareas y alarmas
+842| Iniciar ReminderFoxAgain al iniciar sesión
+843| Como en el sistema
+844| Predeterminado (como el sistema)
+845| Seguir en la barra de menús al cerrar la ventana
+846| Mostrar un número en el icono del Dock
+847| Mostrar un número en el icono de la bandeja
+848| Mostrar el archivo de recordatorios en el Finder
+849| Mostrar el archivo de recordatorios en el gestor de archivos
+850| Su escritorio no muestra iconos en la bandeja, así que cerrar la ventana cierra la aplicación. Para seguir recibiendo alarmas con la ventana cerrada, añada una extensión de bandeja (en GNOME, «AppIndicator and KStatusNotifierItem Support»).
+851| El predeterminado es Zorro, claro u oscuro según el sistema. Los elementos destacados tienen su propio color en cada tema. Alto contraste usa negro, blanco, amarillo y cian con texto más grande y líneas más gruesas.
+852| Como en el sistema ({s})
+853| Sus recordatorios, tareas y alarmas como aplicación de Mac: un homenaje al complemento ReminderFox original.
+854| Sus recordatorios, tareas y alarmas como aplicación de Linux: un homenaje al complemento ReminderFox original.

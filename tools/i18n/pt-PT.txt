@@ -832,3 +832,24 @@
 831| Tema “{s}” adicionado
 832| Eliminar o tema?
 833| O tema “{s}” será eliminado. A aplicação volta ao tema predefinido.
+834| Ficheiro
+835| Editar
+836| Janela
+837| Definições…
+838| Acerca do {app}
+839| Ocultar {app}
+840| Fechar janela
+841| Lembretes, tarefas e alarmes
+842| Iniciar o ReminderFoxAgain ao iniciar sessão
+843| Como no sistema
+844| Padrão (segue o sistema)
+845| Continuar em execução na barra de menus quando a janela for fechada
+846| Mostrar um número no ícone da Dock
+847| Mostrar um número no ícone da área de notificação
+848| Mostrar o ficheiro de lembretes no Finder
+849| Mostrar o ficheiro de lembretes no gestor de ficheiros
+850| O seu ambiente de trabalho não mostra ícones na área de notificação, pelo que fechar a janela termina a aplicação. Para continuar a receber alarmes com a janela fechada, adicione uma extensão de área de notificação (no GNOME, «AppIndicator and KStatusNotifierItem Support»).
+851| O padrão é Raposa, claro ou escuro conforme o sistema. Itens com estrela têm cor própria em todos os temas. Alto contraste usa preto, branco, amarelo e ciano com texto maior e linhas mais grossas.
+852| Como no sistema ({s})
+853| Os seus lembretes, tarefas e alarmes como aplicação do Mac — uma homenagem à extensão ReminderFox original.
+854| Os seus lembretes, tarefas e alarmes como aplicação do Linux — uma homenagem à extensão ReminderFox original.

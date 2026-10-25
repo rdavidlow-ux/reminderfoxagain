@@ -832,3 +832,24 @@
 831| Tema «{s}» aggiunto
 832| Eliminare il tema?
 833| Il tema «{s}» verrà eliminato. L'app torna al tema predefinito.
+834| File
+835| Modifica
+836| Finestra
+837| Impostazioni…
+838| Informazioni su {app}
+839| Nascondi {app}
+840| Chiudi finestra
+841| Promemoria, attività e allarmi
+842| Avvia ReminderFoxAgain all'accesso
+843| Come nel sistema
+844| Predefinito (come il sistema)
+845| Resta nella barra dei menu quando la finestra è chiusa
+846| Mostra un numero sull'icona del Dock
+847| Mostra un numero sull'icona dell'area di notifica
+848| Mostra il file dei promemoria nel Finder
+849| Mostra il file dei promemoria nel file manager
+850| Il tuo desktop non mostra icone nell'area di notifica, quindi chiudere la finestra chiude l'app. Per continuare a ricevere gli allarmi a finestra chiusa, aggiungi un'estensione per l'area di notifica (su GNOME, «AppIndicator and KStatusNotifierItem Support»).
+851| Il predefinito è Volpe, chiaro o scuro come il sistema. Gli elementi con la stella hanno un colore proprio in ogni tema. Il contrasto elevato usa nero, bianco, giallo e ciano con testo più grande e linee più spesse.
+852| Come nel sistema ({s})
+853| I tuoi promemoria, attività e allarmi come app di Mac — un omaggio all'originale estensione ReminderFox.
+854| I tuoi promemoria, attività e allarmi come app di Linux — un omaggio all'originale estensione ReminderFox.

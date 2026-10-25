@@ -1550,6 +1550,7 @@
     const s = S.settings;
     $('stStart').checked = !!s.startWithWindows;
     $('stTray').checked = !!s.closeToTray;
+    $('stTrayNote').hidden = !(S.meta && S.meta.trayMissing);
     $('stSound').checked = s.alarmSound !== false;
     $('stWeek').value = String(Number(s.weekStart) || 0);
     $('stAlarm').innerHTML = TIMED_ALARMS.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('');
@@ -1587,7 +1588,7 @@
   }
   function renderSwatches() {
     const cur = $('stTheme').value;
-    $('stThemeSw').innerHTML = RF.themeList(S.settings.customThemes).map((t) => `<button type="button" data-theme-id="${esc(t.id)}" aria-pressed="${t.id === cur}" title="${esc(t.custom ? t.label : T(t.label))}" aria-label="${esc(t.custom ? t.label : T(t.label))}"${t.custom ? ' translate="no"' : ''}>` +
+    $('stThemeSw').innerHTML = RF.themeList(S.settings.customThemes).map((t) => `<button type="button" data-theme-id="${esc(t.id)}" aria-pressed="${t.id === cur}" title="${esc(t.custom ? t.label : T(RF.platformText(t.label)))}" aria-label="${esc(t.custom ? t.label : T(RF.platformText(t.label)))}"${t.custom ? ' translate="no"' : ''}>` +
       t.sw.map((c) => `<span style="background:${c}"></span>`).join('') + '</button>').join('');
     const own = cur.startsWith('custom:');
     $('stThemeEdit').disabled = !own; $('stThemeDel').disabled = !own;
@@ -1756,6 +1757,13 @@
     refresh();
   });
   window.rf.on('ui:quick', () => { if (!anyDialogOpen()) FX('openQuick'); });
+  // the macOS application menu (0.9.0)
+  window.rf.on('ui:import', () => { if (!anyDialogOpen()) doImport(); });
+  window.rf.on('ui:export', () => { if (!anyDialogOpen()) doExport(); });
+  window.rf.on('ui:settings', (p) => { if (anyDialogOpen()) return; openSettings(); if (p && p.panel) FX('showPanel', p.panel); });
+  window.rf.on('ui:goto', () => { if (!anyDialogOpen()) FX('openGoTo'); });
+  window.rf.on('ui:side', () => toggleSide());
+  window.rf.on('ui:find', () => { if (!anyDialogOpen()) { $('search').focus(); $('search').select(); } });
   window.rf.on('ui:suspend', () => { if (!anyDialogOpen()) FX('openSuspend'); });
   window.rf.on('ui:new', (p) => { if (ed.open) ed.close(); openEditor({ kind: (p && p.kind) || 'event' }); });
   window.rf.on('ui:edit', (p) => { if (ed.open) ed.close(); if (p && p.uid) openEditor({ uid: p.uid, start: p.start }); });

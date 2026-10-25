@@ -832,3 +832,24 @@
 831| Tema ‘{s}’ tafoege
 832| Tema fuortsmite?
 833| It tema ‘{s}’ wurdt fuortsmiten. De app giet werom nei it standerttema.
+834| Triem
+835| Bewurkje
+836| Finster
+837| Ynstellingen…
+838| Oer {app}
+839| {app} ferstopje
+840| Finster slute
+841| Oantinkers, taken en alarms
+842| ReminderFoxAgain starte by it oanmelden
+843| Lykas yn it systeem
+844| Standert (folget it systeem)
+845| Yn de menubalke trochrinne as it finster sluten wurdt
+846| In getal op it Dock-ikoan sjen litte
+847| In getal op it ikoan yn it systeemfak sjen litte
+848| It oantinkersbestân yn de Finder sjen litte
+849| It oantinkersbestân yn de triembehearder sjen litte
+850| Jo buroblêd lit gjin ikoanen yn it systeemfak sjen, dus it finster slute einiget de app. Om alarms te krijen mei it finster ticht, foegje in systeemfak-útwreiding ta (yn GNOME: ‘AppIndicator and KStatusNotifierItem Support’).
+851| Standert is Foks, ljocht of tsjuster neffens it systeem. Items mei in stjer hawwe yn elk tema in eigen kleur. Heech kontrast brûkt swart, wyt, giel en syaan mei gruttere tekst en dikkere linen.
+852| Lykas yn it systeem ({s})
+853| Jo oantinkers, taken en alarms as Mac-app — in earbetoan oan de oarspronklike ReminderFox-add-on.
+854| Jo oantinkers, taken en alarms as Linux-app — in earbetoan oan de oarspronklike ReminderFox-add-on.

@@ -832,3 +832,24 @@
 831| Thema ‘{s}’ toegevoegd
 832| Thema verwijderen?
 833| Het thema ‘{s}’ wordt verwijderd. De app gaat terug naar het standaardthema.
+834| Archief
+835| Wijzig
+836| Venster
+837| Instellingen…
+838| Over {app}
+839| Verberg {app}
+840| Venster sluiten
+841| Herinneringen, taken en alarmen
+842| ReminderFoxAgain starten bij het inloggen
+843| Zoals in het systeem
+844| Standaard (volgt het systeem)
+845| In de menubalk blijven draaien als het venster wordt gesloten
+846| Een getal op het Dock-pictogram tonen
+847| Een getal op het pictogram in het systeemvak tonen
+848| Het herinneringenbestand tonen in de Finder
+849| Het herinneringenbestand tonen in de bestandsbeheerder
+850| Uw bureaublad toont geen pictogrammen in het systeemvak, dus sluiten van het venster beëindigt de app. Wilt u alarmen blijven krijgen met het venster dicht, voeg dan een systeemvak-extensie toe (in GNOME: ‘AppIndicator and KStatusNotifierItem Support’).
+851| Standaard is Vos, licht of donker passend bij het systeem. Items met een ster hebben in elk thema hun eigen kleur. Hoog contrast gebruikt zwart, wit, geel en cyaan met grotere tekst en dikkere lijnen.
+852| Zoals in het systeem ({s})
+853| Uw herinneringen, taken en alarmen als Mac-app — een eerbetoon aan de oorspronkelijke ReminderFox-add-on.
+854| Uw herinneringen, taken en alarmen als Linux-app — een eerbetoon aan de oorspronkelijke ReminderFox-add-on.

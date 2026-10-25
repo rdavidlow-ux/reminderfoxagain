@@ -7,7 +7,9 @@ async function call(ch, ...args) {
   if (!r || !r.ok) throw new Error((r && r.error) || 'Unknown error');
   return r.value;
 }
-const CHANNELS = ['data:changed', 'settings:changed', 'alarms:update', 'alarms:ring', 'ui:new', 'ui:edit', 'ui:quick', 'ui:suspend', 'slider:update'];
+const CHANNELS = ['data:changed', 'settings:changed', 'alarms:update', 'alarms:ring', 'ui:new', 'ui:edit', 'ui:quick', 'ui:suspend', 'slider:update',
+  // the macOS application menu (0.9.0)
+  'ui:import', 'ui:export', 'ui:settings', 'ui:goto', 'ui:side', 'ui:find'];
 
 // the language data, fetched once and synchronously, so a page is translated before it is first shown
 let i18n = { lang: 'en', dict: {}, dateLocale: '', collect: false };

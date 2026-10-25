@@ -1,0 +1,46 @@
+#!/usr/bin/env python3
+# A small stand-in for Apple's lipo, enough for @electron/universal on Linux:
+#   lipo A B -create -output C    joins thin 64-bit Mach-O files into one universal ("fat") file
+#   lipo -archs F                 prints the architectures of F
+import struct, sys
+CPU = {0x01000007: 'x86_64', 0x0100000c: 'arm64'}
+ALIGN = {0x01000007: 12, 0x0100000c: 14}
+
+def thin(data, name):
+    if struct.unpack_from('<I', data)[0] != 0xfeedfacf:
+        sys.exit(f'lipo: {name} is not a thin 64-bit Mach-O file')
+    cpu, sub = struct.unpack_from('<iI', data, 4)
+    return cpu & 0xffffffff, sub
+
+def archs(data):
+    magic = struct.unpack_from('>I', data)[0]
+    if magic == 0xcafebabe:
+        n = struct.unpack_from('>I', data, 4)[0]
+        return [CPU.get(struct.unpack_from('>I', data, 8 + 20 * i)[0], '?') for i in range(n)]
+    return [CPU.get(thin(data, '')[0], '?')]
+
+a = sys.argv[1:]
+if a[:1] == ['-archs'] or a[:1] == ['-info']:
+    print(' '.join(archs(open(a[1], 'rb').read()))); sys.exit(0)
+if '-create' not in a or '-output' not in a: sys.exit('lipo: only -create -output and -archs are supported')
+out = a[a.index('-output') + 1]
+ins = [x for i, x in enumerate(a) if not x.startswith('-') and a[i - 1] != '-output']
+parts = []
+for f in ins:
+    d = open(f, 'rb').read()
+    if struct.unpack_from('>I', d)[0] == 0xcafebabe: sys.exit(f'lipo: {f} is already universal')
+    cpu, sub = thin(d, f)
+    parts.append((cpu, sub, d))
+parts.sort(key=lambda p: p[0] & 0xff)   # x86_64 (7) before arm64 (12), as Apple's lipo does
+if len({p[0] for p in parts}) != len(parts): sys.exit('lipo: two files have the same architecture')
+head = struct.pack('>II', 0xcafebabe, len(parts))
+off = 8 + 20 * len(parts)
+body = []; entries = b''
+for cpu, sub, d in parts:
+    al = ALIGN.get(cpu, 14)
+    off = (off + (1 << al) - 1) & ~((1 << al) - 1)
+    entries += struct.pack('>IIIII', cpu, sub, off, len(d), al)
+    body.append((off, d)); off += len(d)
+buf = bytearray(off); buf[:8 + len(entries)] = head + entries
+for o, d in body: buf[o:o + len(d)] = d
+open(out, 'wb').write(buf)

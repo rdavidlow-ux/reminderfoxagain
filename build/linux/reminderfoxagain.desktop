@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=ReminderFoxAgain
+GenericName=Reminders
+Comment=Reminders, to-dos and pop-up alarms
+Exec=reminderfoxagain
+Icon=reminderfoxagain
+Terminal=false
+Categories=Office;Calendar;Utility;
+Keywords=reminder;todo;to-do;alarm;calendar;ics;ReminderFox;
+StartupWMClass=ReminderFoxAgain
+StartupNotify=true
