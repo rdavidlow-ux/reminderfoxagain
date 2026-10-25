@@ -1,0 +1,834 @@
+# Norsk bokmål — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Påminnelse
+2| ＋ Listepunkt
+3| ⚙ Innstillinger
+4| Innstillinger
+5| Søk
+6| Søk (Ctrl+F)
+7| Søk i påminnelser og oppgaver
+8| Ny påminnelse (Ctrl+N)
+9| Nytt punkt i listen som vises (Ctrl+T)
+10| Hurtigalarm: én enkelt alarm om noen minutter (Ctrl+Q)
+11| ⏰ Hurtigalarm
+12| Påminnelser
+13| Måned
+14| Liste
+15| Lister
+16| Liste: {s}
+17| Alle lister
+18| Velg hvilken liste som vises
+19| Liste som vises
+20| Oppgaver
+21| Avsluttet eller satt på pause
+22| Vis eller skjul kalenderpanelet
+23| Vis eller skjul kalenderpanelet (Ctrl+B)
+24| Alarmer på
+25| Alarmer satt på pause
+26| Alarmer satt på pause til {time}
+27| Gjenoppta
+28| Klikk for å slå på alarmene igjen
+29| Sett alarmene på pause eller gjenoppta dem
+30| one={n} punkt | other={n} punkter
+31| one={n} påminnelse | other={n} påminnelser
+32| one={n} oppgave | other={n} oppgaver
+33| one={n} listepunkt | other={n} listepunkter
+34| one={n} nytt punkt | other={n} nye punkter
+35| one={n} arkivert punkt | other={n} arkiverte punkter
+36| one={n} liste | other={n} lister
+37| one={n} fil | other={n} filer
+38| one={n} minutt | other={n} minutter
+39| one={n} time | other={n} timer
+40| one={n} dag | other={n} dager
+41| one={n} duplikat | other={n} duplikater
+42| Vis
+43| I dag
+44| I morgen
+45| I går
+46| Neste {n} dager
+47| Kommende
+48| Alle påminnelser
+49| Viktige
+50| Tidligere
+51| Valgt dag
+52| Valgt måned
+53| Visninger
+54| Visning «{s}»
+55| Søker i alle påminnelser
+56| Dato
+57| Dag
+58| Tid
+59| Beskrivelse
+60| Gjentakelse
+61| Kategori
+62| Alarm
+63| Fullført
+64| Fullført {date}
+65| (ingen beskrivelse)
+66| Ingen påminnelser her
+67| Klikk på ＋ Påminnelse for å legge til en, eller velg en annen visning.
+68| Klikk på ＋ Listepunkt for å legge til et i denne listen.
+69| Forfalt siden {date}
+70| forfalt siden {date}
+71| Snart: {s}
+72| Rediger…
+73| Slett…
+74| Slett
+75| Dupliser
+76| Kopier
+77| Flytt
+78| Åpne
+79| Åpne lenke
+80| Vis på et kart
+81| Vis i listen
+82| Merk som fullført
+83| Påminn meg…
+84| Gjør til oppgave…
+85| Gjør til oppgave
+86| Gjør til påminnelse
+87| Planlegg som påminnelse…
+88| Planlegg som påminnelse
+89| Kopier til en liste…
+90| Kopier til en liste
+91| Kopier til liste…
+92| Kopier til liste
+93| Flytt til liste…
+94| Flytt til liste
+95| Flytt til…
+96| Kopier til…
+97| Flytt den til en annen liste
+98| Legg en kopi på en annen liste
+99| En nøyaktig kopi i denne listen (Ctrl+D)
+100| Slett (Del)
+101| Valgt punkt
+102| Valgt punkt:
+103| Flytt opp
+104| Flytt ned
+105| -
+106| -
+107| -
+108| «{s}» duplisert
+109| {s} (kopi)
+110| Kopiert til «{s}»
+111| Flyttet til «{s}»
+112| Flytt til «{s}»
+113| Nå en oppgave i «{s}»
+114| Nå en påminnelse {date}
+115| er i «{s}»
+116| «{s}» er tom
+117| Slettet
+118| Forekomst slettet
+119| Slett gjentakende påminnelse
+120| Denne gjentas — endringer gjelder hver forekomst.
+121| Bare denne
+122| Alle forekomster
+123| Slett denne forekomsten
+124| Slett alle forekomster…
+125| «{s}» gjentas ({rule}).
+126| Slette bare den {date}, eller alle forekomster?
+127| Slette alle forekomster?
+128| Slett alle
+129| Slette påminnelsen?
+130| Slette oppgaven?
+131| «{s}» blir slettet.
+132| «{s}» og alle gjentakelser blir slettet.
+133| Noe gikk galt
+134| Skriv inn et sted først.
+135| Forrige måned
+136| Neste måned
+137| Gå til i dag
+138| Gå til en dato (Ctrl+G)
+139| Gå til dato
+140| Gå til…
+141| Gå
+142| Legg til en påminnelse denne dagen
+143| Dobbeltklikk på en dag for å legge til en påminnelse
+144| Ingenting denne dagen.
+145| +{n} til
+146| Ikke gjort ennå
+147| Hele dagen
+148| Hele dagen {s}
+149| Oppgave
+150| Oppgave {s}
+151| Oppgave
+152| Sø
+153| Ma
+154| Ti
+155| On
+156| To
+157| Fr
+158| Lø
+159| søn
+160| man
+161| tir
+162| ons
+163| tor
+164| fre
+165| lør
+166| søndag
+167| mandag
+168| tirsdag
+169| onsdag
+170| torsdag
+171| fredag
+172| lørdag
+173| Listepunkt
+174| Frist
+175| Rekkefølge
+176| Min rekkefølge
+177| Etter dato
+178| Manuelt: dra radene, eller trykk Alt+↑ / Alt+↓
+179| Vis fullførte
+180| Vis oppgaver
+181| Ta med daterte oppgaver
+182| Ingen dato
+183| · ingen frist
+184| · frist {date}
+185| · forfalt
+186| · hele dagen
+187| · satt til {time}
+188| · om {n} min
+189| · startet for {n} min siden ·
+190| Vis denne oppgaven i verktøytipset for ikonet i systemstatusfeltet
+191| Vis i verktøytipset i systemstatusfeltet
+192| ✓ Vis i verktøytipset i systemstatusfeltet
+193| Vises i verktøytipset i systemstatusfeltet
+194| Fjernet fra verktøytipset i systemstatusfeltet
+195| Påminn daglig til fullført
+196| Påminn meg hver dag til det er gjort
+197| Påminner hver dag til det er gjort
+198| Til gjort
+199| Påminner ikke lenger daglig
+200| Påminner deg hver dag til du krysser av for Ferdig
+201| Gikk glipp av {date}; påminner deg hver dag til du krysser av
+202| Hvis du går glipp av den, flyttes den til i dag og varsler hver dag til du krysser av
+203| Ferdig — flyttet til neste dato
+204| daglig
+205| ukentlig
+206| månedlig
+207| hver {n}. dag
+208| hver {n}. uke
+209| {n} d før
+210| samme dag
+211| {every} fra {from}
+212| én gang
+213| hver dag
+214| hver uke
+215| hver måned
+216| one={n} dag før fristen | other={n} dager før fristen
+217| på fristen
+218| Påminner deg {every}, fra {from}, kl. {time}
+219| Påminner deg {every}, fra {from}, kl. {time}, til det er gjort
+220| Påminner deg {every}, fra {from}, kl. {time}, til det er gjort (også etter fristen)
+221| Ny påminnelse
+222| Rediger påminnelse
+223| Ny oppgave
+224| Rediger oppgave
+225| Hva vil du bli påminnet om?
+226| Hva må gjøres?
+227| Type
+228| Påminnelse
+229| På dato
+230| Når som helst
+231| Slutter
+232| Sted
+233| Lenke
+234| -
+235| Notater
+236| Kategorier
+237| Velg kategorier
+238| f.eks. Bursdag, Jobb
+239| Legg til
+240| Lagre
+241| Avbryt
+242| Lukk
+243| OK
+244| Ja
+245| Nei
+246| Ingen
+247| Gjentas ikke
+248| Daglig
+249| Ukentlig
+250| Månedlig
+251| Årlig
+252| Egendefinert…
+253| Egendefinert
+254| Egendefinert (importert)
+255| Behold importert: {s}
+256| Hver ukedag
+257| Hver
+258| hver
+259| dag
+260| dager
+261| uke
+262| uker
+263| måned
+264| måneder
+265| år
+266| år
+267| ganger
+268| {date}
+269| Dag {day}
+270| Den {nth} {weekday}
+271| Den {nth} {weekday} i {month}
+272| Siste {weekday}
+273| Siste {weekday} i {month}
+274| Hver dag
+275| Hver {n}. dag
+276| Hver uke
+277| Hver {n}. uke
+278| Hver måned
+279| Hver uke på {days}
+280| Hver {n}. uke på {days}
+281| ukedager
+282| Hver måned den {day}.
+283| Hver {n}. måned den {day}.
+284| Hver måned den {nth} {weekday}
+285| Hver {n}. måned den {nth} {weekday}
+286| Hvert år {date}
+287| Hvert {n}. år {date}
+288| Hvert år den {nth} {weekday} i {month}
+289| Hvert {n}. år den {nth} {weekday} i {month}
+290| siste
+291| {n}.
+292| Hvor ofte
+293| På
+294| Etter
+295| Deretter
+296| -
+297| kl.
+298| før
+299| Aldri
+300| Til
+301| til…
+302| på en dato…
+303| fra og med…
+304| ikke flere (bare én gang)
+305| Påminn meg
+306| Ikke påminn meg
+307| Når påminnelsene skal starte
+308| Dato for første påminnelse
+309| Tidspunkt for påminnelse
+310| Fortsett å påminne når fristen er passert og det ikke er gjort
+311| også etter fristen
+312| til det er gjort
+313| til det er gjort eller forfaller ({due})
+314| til det er gjort, også etter fristen ({due})
+315| Én påminnelse, {date} kl. {time}.
+316| Én påminnelse, {date} kl. {time}. Det tidspunktet er passert — velg et senere, eller påminn gjentatte ganger.
+317| {every} kl. {time}, fra {date}, {end}.
+318| Ingen påminnelser.
+319| Ingen påminnelser. Oppgaven vises i rødt når fristen er passert.
+320| Velg datoen for den første påminnelsen.
+321| Alarmtekst
+322| På tidspunktet
+323| one={n} minutt før | other={n} minutter før
+324| one={n} time før | other={n} timer før
+325| one={n} dag før | other={n} dager før
+326| one={n} uke før | other={n} uker før
+327| Samme dag, kl. {time}
+328| Dagen før, kl. {time}
+329| Vises som: {s}. <year> teller årene siden da; <year#> viser bare tallet.
+330| Importert i tidssonen {zone} — vises i din lokale tid. Ved lagring lagres den i lokal tid.
+331| Skriv inn en beskrivelse.
+332| Velg fristen, eller kryss av for «Ingen dato».
+333| Velg en dato.
+334| Velg datoen.
+335| Velg datoen.
+336| Skriv inn tidspunktet for fristen, eller kryss av for «Når som helst».
+337| Skriv inn et tidspunkt, eller kryss av for «Hele dagen».
+338| Sluttdatoen er før startdatoen.
+339| Sluttidspunktet er før starttidspunktet.
+340| Påminnelse lagt til
+341| Oppgave lagt til
+342| Lagret
+343| Rediger kopien
+344| Datoen er kjent: gjør denne oppgaven til en påminnelse på en bestemt dato
+345| Fristen er {date}.
+346| Fristen er {date}, {time}.
+347| Når du vet den nøyaktige datoen, blir oppgaven en påminnelse på den datoen: den forlater oppgavelisten og vises i Påminnelser, månedsvisningen og kalenderen. Notater, kategori, sted og lenke beholdes.
+348| En påminnelse {date}, hele dagen.
+349| En påminnelse {date}, kl. {time}.
+350| Påminnelsen blir en oppgave på samme dato, med gjentakelse, alarm og notater.
+351| Påminnelsen blir værende; en kopi som oppgave på samme dato, med gjentakelse, alarm og notater, havner på listen.
+352| En nøyaktig kopi havner på listen du velger; denne blir der den er.
+353| Listen
+354| {s} (denne listen)
+355| hovedliste
+356| ReminderFoxAgain-alarm
+357| Slumre
+358| Slumre alle
+359| Slumre alle {s}
+360| Slumre alle påminnelser her med standard slumretid (endres i Innstillinger)
+361| Slumre hvor lenge, eller til hvilket tidspunkt
+362| Slumreenhet
+363| Slumre til
+364| Avvis
+365| Avvis alle
+366| Ferdig
+367| Ferdig med denne hurtigalarmen
+368| Skjul inntil videre (alarmen er fortsatt aktiv og kommer tilbake med den neste)
+369| Et tidspunkt som 15:30 eller 3:30 pm (tidligere enn nå betyr i morgen)
+370| Et heltall fra {n} til {n2}
+371| Skriv inn et heltall fra {n} til {n2}.
+372| Skriv inn et heltall fra 1 til 999, eller en dato og et tidspunkt.
+373| sekunder
+374| minutter
+375| timer
+376| Hurtigalarm
+377| Hurtigalarmer
+378| ⏰ Hurtigalarmer…
+379| Én enkelt alarm som ikke lagres som påminnelse — som Hurtigalarm i tillegget.
+380| Om
+381| Kl.
+382| I
+383| Still alarm
+384| Avbryt denne alarmen
+385| Ingen hurtigalarmer.
+386| Venter på å ringe
+387| Hurtigalarm satt til {time}
+388| Hurtigalarm avbrutt
+389| Velg et tidspunkt.
+390| Det tidspunktet er passert — velg et senere.
+391| Det tidspunktet er passert.
+392| Ringer {when} ({until}).
+393| i dag kl. {time}
+394| om mindre enn ett minutt
+395| om {time}
+396| om {hours} {minutes}
+397| Sett alarmer på pause
+398| Sett alarmer på pause…
+399| Sett alarmene på pause en stund
+400| Pause
+401| Hvor lenge
+402| Til jeg slår dem på igjen
+403| Alarmene er av til du gjenopptar dem (statuslinjen, menyen i systemstatusfeltet eller her).
+404| Under pausen åpnes ingen alarmvinduer, og påminnelsesvinduet vises ikke. Alarmer som forfaller i mellomtiden, vises når du gjenopptar.
+405| Alarmene er satt på pause til du slår dem på igjen.
+406| Alarmene kommer tilbake {when}.
+407| Alarmene er på igjen
+408| Gjenoppta alarmene nå
+409| Velg et tidspunkt i fremtiden.
+410| ReminderFoxAgain — i dag
+411| Kommende
+412| Ingenting i dag.
+413| Ingenting kommende.
+414| Generelt
+415| Alarmer
+416| Visning
+417| Data
+418| Om
+419| Start ReminderFoxAgain når Windows starter
+420| Fortsett i systemstatusfeltet når vinduet lukkes
+421| Uken starter på
+422| Tema
+423| Temaer
+424| Standard (følger Windows)
+425| Rev
+426| Lyst
+427| Mørkt
+428| Hav
+429| Høy kontrast
+430| Standard er Rev, lyst eller mørkt etter Windows. Stjernemerkede punkter har egen farge i hvert tema. Høy kontrast bruker svart, hvitt, gult og cyan med større tekst og kraftigere linjer.
+431| -
+432| ReminderFoxAgain er en hyllest til det opprinnelige
+433| -
+434| tillegget for Firefox og Thunderbird, laget av Tom Mutdosch og Daniel Lee med Guenter Wahl. Filformatet, gjentakelsesreglene, visningene, hurtigalarmene og varselvinduet er deres; takk.
+435| Spill av en lyd ved alarmer
+436| Lyd
+437| Innebygd klokke
+438| Din lyd
+439| Velg…
+440| Velg
+441| Bruk den innebygde klokken
+442| Klokke
+443| Spill av
+444| ▶ Test
+445| Alarmlyd: {s}
+446| Bruker den innebygde klokken
+447| Velg en lydfil (.mp3, .wav, .ogg, .m4a, .aac, .flac eller .webm).
+448| Lydfilen er større enn 10 MB. Velg en kortere.
+449| Gjenta lyden
+450| Nei, spill av én gang
+451| Hvert minutt
+452| Hvert {n}. minutt
+453| Standardalarm for nye påminnelser
+454| Standard slumretid
+455| Enhet for standard slumretid
+456| Standard slumretid, hvor mange
+457| Påminnelsesvindu (varselvinduet i tillegget)
+458| Vis et vindu med dagens og kommende påminnelser
+459| Når
+460| Bare ved oppstart
+461| Ved oppstart og hvert {n}. minutt
+462| … hvert {n}. minutt
+463| … hver time
+464| … hver {n}. time
+465| Hold det åpent
+466| {n} sekunder
+467| Til jeg lukker det
+468| Hjørne
+469| nede til høyre
+470| nede til venstre
+471| oppe til høyre
+472| oppe til venstre
+473| Spill av lyden
+474| Vis nå
+475| «Kommende» betyr de neste
+476| Tall på ikonet
+477| Vis et tall på ikonene i systemstatusfeltet og på oppgavelinjen
+478| Dagens åpne påminnelser og oppgaver
+479| Dagens og kommende
+480| Bare dagens
+481| Bare kommende
+482| Språk
+483| Systemspråk ({s})
+484| Språket i menyer, knapper og meldinger. Påminnelsene dine endres ikke.
+485| Oversettelsene er skrevet for ReminderFoxAgain og er ennå ikke gjennomgått av morsmålsbrukere.
+486| Tekststørrelse
+487| Liten ({n} %)
+488| Normal
+489| Stor ({n} %)
+490| Større ({n} %)
+491| Størst ({n} %)
+492| Datoer
+493| Som i Windows ({s})
+494| Tider
+495| Som i Windows
+496| {n}-timers ({s})
+497| Vis kalenderpanelet ved siden av listene
+498| Måneder i kalenderpanelet
+499| Kart
+500| -
+501| -
+502| -
+503| Verktøytips for ikonet i systemstatusfeltet
+504| Verktøytips
+505| Dagens påminnelser
+506| Kommende påminnelser
+507| Variabler: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — de samme som i tillegget.
+508| Tilbakestill
+509| Tekstene i verktøytipset er tilbakestilt
+510| Behandle lister…
+511| Behandle kategorier…
+512| Behandle visninger…
+513| Gjentakende påminnelser i fanen Påminnelser
+514| Fremtidige datoer som vises
+515| Kommende, Alle påminnelser, Viktige, søk og visninger uten datoer
+516| Hver dato de neste
+517| Bare de neste
+518| one={n} måned | other={n} måneder
+519| one={n} år | other={n} år
+520| one={n} dato | other={n} datoer
+521| Brukes av Kommende, Alle påminnelser, Viktige, søk og visninger uten datoområde. I dag, Neste {n} dager, Valgt dag eller måned, fanen Måned og kalenderen viser alltid hver dato.
+522| I Alle og Tidligere vises tidligere fra
+523| starten av hver serie
+524| de siste {n} årene
+525| det siste året
+526| de siste {n} månedene
+527| Skjul gjentakende påminnelser
+528| Skjul fullførte påminnelser
+529| Import og eksport
+530| Importer en .ics-fil…
+531| Legg til punktene fra en .ics-fil (Ctrl+I)
+532| Importer fra ReminderFox…
+533| Finn reminderfox.ics som ReminderFox-tillegget lagret i Firefox- eller Thunderbird-profilen din
+534| Eksporter til .ics…
+535| Eksporter til .ics
+536| Eksporter…
+537| Lagre en .ics-fil (Ctrl+E)
+538| Import legges til det du har; punkter som finnes fra før, oppdateres bare hvis kopien i filen er nyere. Eksport kan åpnes i Outlook, Google Kalender, Thunderbird, Apple Kalender og det opprinnelige ReminderFox-tillegget.
+539| Sikkerhetskopier
+540| Sikkerhetskopier nå
+541| Lagre en sikkerhetskopi…
+542| Gjenopprett fra en sikkerhetskopi…
+543| Gjenopprett fra en sikkerhetskopi
+544| Åpne mappen med sikkerhetskopier
+545| Åpne datamappen
+546| Datafil
+547| Vis påminnelsesfilen i Filutforsker
+548| Påminnelsene dine lagres i {path} (daglige sikkerhetskopier ligger i mappen «backups» ved siden av).
+549| ＋ Ny liste…
+550| Ny liste…
+551| Ny liste
+552| Navn på den nye listen
+553| Navn på den nye listen (for eksempel Innkjøp, Filmer å se, Gaveideer):
+554| Legg til liste
+555| Gi listen nytt navn
+556| Gi nytt navn…
+557| Fjern…
+558| Fjerne listen?
+559| «Oppgaver» er hovedlisten og kan ikke få nytt navn eller fjernes (som i tillegget). Når du fjerner en liste, velger du om oppgavene flyttes til «Oppgaver» eller slettes.
+560| Listen «{list}» har {n} oppgave. Flytte den til «{main}», eller slette den sammen med listen?
+561| Listen «{list}» har {n} oppgaver. Flytte dem til «{main}», eller slette dem sammen med listen?
+562| Slett liste og oppgaver
+563| one=Liste og {n} oppgave slettet | other=Liste og {n} oppgaver slettet
+564| Liste fjernet
+565| Listen «{s}» lagt til
+566| «{s}» finnes allerede
+567| Den listen finnes allerede.
+568| Et listenavn kan ikke være tomt eller inneholde komma eller kolon.
+569| Et listenavn kan ikke inneholde komma eller kolon.
+570| Slå sammen listene?
+571| Slå sammen
+572| Slått sammen med «{s}»
+573| Nytt navn: «{s}»
+574| Nytt navn på «{name}»:
+575| Nytt navn på «{name}» (på {items}):
+576| Ny kategori
+577| En annen kategori
+578| Legg til vanlige
+579| Kategorien «{s}» lagt til
+580| {n} kategorier lagt til
+581| Ingenting nytt å legge til.
+582| Gi kategorien nytt navn
+583| Slette kategorien?
+584| Kategori slettet
+585| Slå sammen kategoriene?
+586| En kategori kan ikke være tom eller inneholde komma.
+587| ikke brukt ennå
+588| Nytt navn endrer hver påminnelse og oppgave med kategorien; et navn som finnes fra før, slår dem sammen. Sletting fjerner den fra punktene (punktene blir værende).
+589| Kategorien «{name}» blir slettet.
+590| Kategorien «{name}» blir slettet og fjernet fra {items}. Selve punktene blir værende.
+591| Merkedag
+592| Avtale
+593| Bursdag
+594| Forretning
+595| Samtale
+596| Helligdag
+597| Møte
+598| Personlig
+599| Innkjøp
+600| Reise
+601| Merkedag, Avtale, Bursdag, Forretning, Samtale…
+602| Ny visning
+603| ＋ Ny visning…
+604| Rediger visning
+605| Slette visningen?
+606| Visningen «{s}» blir slettet. Påminnelsene dine endres ikke.
+607| Vis den i fanen Påminnelser
+608| Visning lagret
+609| Visningen «{s}» lagt til
+610| Gi visningen et navn.
+611| Det finnes allerede en visning med det navnet.
+612| En visning er et lagret filter for fanen Påminnelser: velg den i listen Vis. Betingelser for ulike felter må alle stemme; komma i én betingelse betyr «en av disse».
+613| Ingen visninger ennå. Klikk på «Ny visning…» for å lage en — for eksempel hver påminnelse med kategorien «Bursdag» i det kommende året.
+614| Navn
+615| f.eks. Bursdager
+616| Vis påminnelser der
+617| ＋ Legg til en betingelse
+618| Fjern denne betingelsen
+619| Hva som helst
+620| Kategorien
+621| Visningen
+622| Type
+623| er
+624| inneholder
+625| ord, skilt med komma
+626| Bare datoer fra
+627| til
+628| fra i dag
+629| i dag
+630| Negative tall går tilbake i tid: −{n} måned til {n2} dager betyr «den siste måneden».
+631| Alle
+632| Alt
+633| Bare påminnelser
+634| Bare oppgaver
+635| Enhet
+636| Hvor mange
+637| Hva som helst inneholder «{s}»
+638| Kategori er «{s}»
+639| Kategori er «{s}» eller «{s2}»
+640| datoer fra i dag til {n} dager frem
+641| one=+{n} uke | other=+{n} uker
+642| one=+{n} måned | other=+{n} måneder
+643| one=+{n} år | other=+{n} år
+644| Importer
+645| Importer en iCalendar-fil
+646| Importer fra ReminderFox
+647| Fra ReminderFox
+648| Fant {files} fra ReminderFox-tillegget:
+649| Importer den nyeste
+650| Importer dem likevel
+651| {reminders} og {items}
+652| {n} finnes allerede (den nyeste kopien beholdes)
+653| {n} ser ut som et duplikat (samme tittel og dato som et punkt du har)
+654| {n} ser ut som duplikater (samme tittel og dato som et punkt du har)
+655| Hvordan
+656| Legg til det jeg har
+657| Erstatt alt
+658| Erstatt alt ({items} sikkerhetskopieres først)
+659| Erstatte alt?
+660| Dine {items} erstattes av de {newItems} i filen.
+661| Det du har nå, lagres først som sikkerhetskopien «Lagret før en import som erstattet alt», så du kan hente det tilbake via Innstillinger → Data → Gjenopprett fra en sikkerhetskopi….
+662| Duplikater
+663| Hopp over punkter med samme tittel og dato som et jeg har
+664| Valgfritt: legges til hvert importert punkt, for eksempel «Helligdager» for en liste med helligdager, så du kan filtrere på den.
+665| valgfritt
+666| Import fullført
+667| {items} importert
+668| {items} og {lists} importert
+669| {n} oppdatert
+670| {n} allerede oppdatert
+671| one={n} duplikat hoppet over | other={n} duplikater hoppet over
+672| erstatter {items} (lagret som {file})
+673| {lists} lagt til ({names})
+674| one={n} arkivert punkt flyttet til listen «{list}» | other={n} arkiverte punkter flyttet til listen «{list}»
+675| Denne filen inneholder ingen iCalendar-data (ingen BEGIN:VCALENDAR).
+676| Påminnelsesfilen kunne ikke leses
+677| Eksportert til {path}
+678| Eksporter
+679| Alt (påminnelser og oppgaver)
+680| Filen virker med Outlook, Google Kalender, Thunderbird, Apple Kalender og det opprinnelige ReminderFox-tillegget.
+681| ReminderFoxAgain tar en sikkerhetskopi hver dag, én før hver gjenoppretting, og dem du tar med «Sikkerhetskopier nå». Gjenoppretting erstatter dine nåværende påminnelser og oppgaver med sikkerhetskopien; det du har nå, lagres først, så du kan alltid gå tilbake.
+682| Laget
+683| Innhold
+684| Gjenopprett
+685| Gjenopprett…
+686| Velg en annen fil…
+687| {n} arkivert
+688| Kan ikke leses: {s}
+689| {s} kunne ikke leses: {s2}
+690| Den filen kan ikke gjenopprettes
+691| Ingen sikkerhetskopier ennå. De tas hver dag appen kjører; du kan også klikke på «Sikkerhetskopier nå».
+692| Daglig sikkerhetskopi
+693| Sikkerhetskopi tatt av deg
+694| Lagret før en gjenoppretting
+695| Lagret før en import som erstattet alt
+696| Arkivet, før det ble en liste
+697| Daglig sikkerhetskopi av arkivet (tidligere versjon)
+698| Sikkerhetskopi
+699| Gjenopprette denne sikkerhetskopien?
+700| Dette erstatter det du har nå ({now}) med sikkerhetskopien fra {when}: {items}.
+701| Dette erstatter det du har nå ({now}) med sikkerhetskopien fra {when}: {items}, pluss {n} arkiverte, som havner i listen «{list}».
+702| Dette er en kopi av arkivet fra en tidligere versjon. Dets {all} havner i listen «{list}» (punkter du allerede har, blir som de er). Ingenting annet endres.
+703| De nåværende dataene dine lagres først som sikkerhetskopien «Lagret før en gjenoppretting», så du kan angre dette fra samme liste.
+704| Sikkerhetskopi gjenopprettet
+705| {items} gjenopprettet.
+706| {items} gjenopprettet, hvorav {n} arkiverte, nå i listen «{list}».
+707| Det du hadde før, ble lagret som {file}.
+708| Sikkerhetskopi lagret i {path}
+709| Sikkerhetskopiert: {s}
+710| {n} byte
+711| {n} kB
+712| {n} MB
+713| Det punktet finnes ikke lenger.
+714| Arkivfilen kunne ikke leses, så den endres ikke. Den ble beholdt som archive.ics.unreadable.
+715| Arkivfilen kunne ikke leses, så den kan ikke erstattes.
+716| Velkommen til ReminderFoxAgain
+717| Påminnelsene, oppgavene og alarmene dine som en Windows-app — en hyllest til det opprinnelige ReminderFox-tillegget.
+718| Importer fra ReminderFox-tillegget ditt
+719| {path} — sist endret {date}
+720| Importer en reminderfox.ics eller en annen kalenderfil…
+721| Fra ReminderFox-tillegget (i mappen «reminderfox» i Firefox-/Thunderbird-profilen din), Outlook, Google Kalender…
+722| Start med en tom liste
+723| Du kan importere senere via Innstillinger → Data.
+724| nå
+725| om {n} min
+726| one=om {n} time | other=om {n} timer
+727| one=om {n} dag | other=om {n} dager
+728| for {n} min siden
+729| one=for {n} time siden | other=for {n} timer siden
+730| one=for {n} dag siden | other=for {n} dager siden
+731| Åpne {app}
+732| Legg til påminnelse…
+733| Legg til listepunkt…
+734| Hurtigalarm…
+735| Gjenoppta alarmene
+736| Vis dagens påminnelser
+737| Avslutt {app}
+738| {app} — alarmer av
+739| {app} — alarmer av til {time}
+740| {app} — ingenting i dag
+741| kommende
+742| {app} kjører fortsatt
+743| Alarmene fortsetter å dukke opp. Høyreklikk på reven i systemstatusfeltet for å avslutte.
+744| {app}-alarm
+745| {app} — i dag
+746| {n} t {n2} min
+747| iCalendar-filer
+748| Alle filer
+749| Lydfiler
+750| Importer iCalendar-fil
+751| Eksporter til iCalendar-fil
+752| Velg reminderfox.ics-filen din
+753| Velg en alarmlyd
+754| Lagre en sikkerhetskopi
+755| Velg en sikkerhetskopi å gjenopprette
+756| Hver uke på {days}
+757| Hver måned den {nth} {weekday}
+758| Hver måned den {day}.
+759| Hver måned samme dag
+760| Hver {n}. måned samme dag
+761| Hvert år den {nth} {weekday} i {month}
+762| Hvert år {date}
+763| Hvert år samme dato
+764| Hvert {n}. år samme dato
+765| Gjentas
+766| Egendefinert ({rule})
+767| {rule}, én gang
+768| {rule}, {n} ganger
+769| {rule}, til {date}
+770| Vis påminnelser du har krysset av som fullførte
+771| Vis påminnelser og listepunkter du har krysset av som fullførte
+772| Min rekkefølge: dra radene, eller trykk Alt+↑ / Alt+↓
+773| Visning
+774| Alarmlyd
+775| Egen fil…
+776| Bruk en egen lydfil (.mp3, .wav, .ogg, .m4a, .aac, .flac eller .webm)
+777| Uavbrutt til den håndteres
+778| Uavbrutt til den håndteres: lyden spilles om og om igjen til du slumrer, åpner, merker som ferdig eller avviser alarmen, eller skjuler alarmvinduet. Neste alarm starter den igjen.
+779| Kolonner
+780| Kolonner i fanen Påminnelser
+781| Kolonner i listene
+782| Fjern merket for en kolonne for å skjule den. Beskrivelsen vises alltid.
+783| Lagrede filtre for fanen Påminnelser
+784| Behandle påminnelser…
+785| Kommende, Alle påminnelser, Viktige, søk og lagrede filtre uten datoer
+786| Brukes av Kommende, Alle påminnelser, Viktige, søk og lagrede filtre uten datoområde. I dag, Neste {n} dager, Valgt dag eller måned, fanen Måned og kalenderen viser alltid hver dato.
+787| Lagrede filtre
+788| Lagret filter «{s}» · {c}
+789| Behandle påminnelser
+790| Et lagret filter viser bare påminnelsene du vil se, i fanen Påminnelser: velg det i listen Vis. Betingelser for ulike felter må alle stemme; komma i én betingelse betyr «en av disse».
+791| ＋ Nytt lagret filter…
+792| Ingen lagrede filtre ennå. Klikk på «Nytt lagret filter…» for å lage et — for eksempel hver påminnelse med kategorien «Bursdag» i det kommende året.
+793| Slette det lagrede filteret?
+794| Det lagrede filteret «{s}» blir slettet. Påminnelsene dine endres ikke.
+795| Rediger lagret filter
+796| Nytt lagret filter
+797| Gi det lagrede filteret et navn.
+798| Det finnes allerede et lagret filter med det navnet.
+799| Lagret filter endret
+800| Lagret filter «{s}» lagt til
+801| Kirkeklokke
+802| Marimba
+803| Digitale pip
+804| Vekkerklokke
+805| Din fil: {s}
+806| Lag ditt eget tema av fem farger
+807| ＋ Nytt tema…
+808| Endre fargene i temaet ditt
+809| ＋ Nytt tema… lager ditt eget av fem farger.
+810| Dine temaer
+811| Bakgrunn
+812| Bak alt
+813| Lister og paneler
+814| Listene, kalenderpanelet, dialogbokser
+815| Tekst
+816| Aksent
+817| Knapper, i dag, utvalg
+818| Stjernemerkede punkter
+819| Viktige påminnelser og oppgaver
+820| Teksten er vanskelig å lese på bakgrunnen (kontrast {n}:1; 4,5:1 eller mer er lett å lese).
+821| Aksenten er vanskelig å se på listene (kontrast {n}:1; 3:1 eller mer er bedre).
+822| Stjernemerkede punkter er vanskelige å se på listene (kontrast {n}:1; 3:1 eller mer er bedre).
+823| Rediger tema
+824| Nytt tema
+825| Ta utgangspunkt i
+826| f.eks. Skog
+827| Hele vinduet viser temaet mens du velger. Avbryt setter det gamle tilbake.
+828| Gi temaet et navn.
+829| Det finnes allerede et tema med det navnet.
+830| Temaet «{s}» lagret
+831| Temaet «{s}» lagt til
+832| Slette temaet?
+833| Temaet «{s}» blir slettet. Appen går tilbake til standardtemaet.

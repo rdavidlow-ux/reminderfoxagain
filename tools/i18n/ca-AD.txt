@@ -1,0 +1,834 @@
+# Català — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Recordatori
+2| ＋ Element de llista
+3| ⚙ Configuració
+4| Configuració
+5| Cerca
+6| Cerca (Ctrl+F)
+7| Cerca als recordatoris i les tasques
+8| Recordatori nou (Ctrl+N)
+9| Element nou a la llista que es mostra (Ctrl+T)
+10| Alarma ràpida: una alarma única d'aquí a uns minuts (Ctrl+Q)
+11| ⏰ Alarma ràpida
+12| Recordatoris
+13| Mes
+14| Llista
+15| Llistes
+16| Llista: {s}
+17| Totes les llistes
+18| Tria quina llista es mostra
+19| Llista que es mostra
+20| Tasques
+21| Acabat o suspès
+22| Mostra o amaga el plafó del calendari
+23| Mostra o amaga el plafó del calendari (Ctrl+B)
+24| Alarmes actives
+25| Alarmes suspeses
+26| Alarmes suspeses fins a les {time}
+27| Reprèn
+28| Feu clic per tornar a activar les alarmes
+29| Suspèn o reprèn les alarmes
+30| one={n} element | other={n} elements
+31| one={n} recordatori | other={n} recordatoris
+32| one={n} tasca | other={n} tasques
+33| one={n} element de llista | other={n} elements de llista
+34| one={n} element nou | other={n} elements nous
+35| one={n} element arxivat | other={n} elements arxivats
+36| one={n} llista | other={n} llistes
+37| one={n} fitxer | other={n} fitxers
+38| one={n} minut | other={n} minuts
+39| one={n} hora | other={n} hores
+40| one={n} dia | other={n} dies
+41| one={n} duplicat | other={n} duplicats
+42| Mostra
+43| Avui
+44| Demà
+45| Ahir
+46| Propers {n} dies
+47| Propers
+48| Tots els recordatoris
+49| Importants
+50| Passats
+51| Dia seleccionat
+52| Mes seleccionat
+53| Vistes
+54| Vista «{s}»
+55| Cercant a tots els recordatoris
+56| Data
+57| Dia
+58| Hora
+59| Descripció
+60| Repetició
+61| Categoria
+62| Alarma
+63| Completat
+64| Completat el {date}
+65| (sense descripció)
+66| No hi ha recordatoris aquí
+67| Feu clic a ＋ Recordatori per afegir-ne un, o trieu una altra vista.
+68| Feu clic a ＋ Element de llista per afegir-ne un a aquesta llista.
+69| Endarrerit des del {date}
+70| endarrerit des del {date}
+71| Aviat: {s}
+72| Edita…
+73| Suprimeix…
+74| Suprimeix
+75| Duplica
+76| Copia
+77| Mou
+78| Obre
+79| Obre l'enllaç
+80| Mostra en un mapa
+81| Mostra a la llista
+82| Marca com a completat
+83| Recorda-m'ho…
+84| Converteix en tasca…
+85| Converteix en tasca
+86| Converteix en recordatori
+87| Programa com a recordatori…
+88| Programa com a recordatori
+89| Copia a una llista…
+90| Copia a una llista
+91| Copia a la llista…
+92| Copia a la llista
+93| Mou a la llista…
+94| Mou a la llista
+95| Mou a…
+96| Copia a…
+97| Mou-lo a una altra llista
+98| Posa'n una còpia a una altra llista
+99| Una còpia exacta en aquesta llista (Ctrl+D)
+100| Suprimeix (Supr)
+101| Element seleccionat
+102| Element seleccionat:
+103| Mou amunt
+104| Mou avall
+105| -
+106| -
+107| -
+108| «{s}» duplicat
+109| {s} (còpia)
+110| Copiat a «{s}»
+111| Mogut a «{s}»
+112| Mou a «{s}»
+113| Ara és una tasca a «{s}»
+114| Ara és un recordatori el {date}
+115| és a «{s}»
+116| «{s}» és buida
+117| Suprimit
+118| Repetició suprimida
+119| Suprimeix el recordatori periòdic
+120| Es repeteix: els canvis s'apliquen a totes les repeticions.
+121| Només aquesta
+122| Totes les repeticions
+123| Suprimeix aquesta repetició
+124| Suprimeix totes les repeticions…
+125| «{s}» es repeteix ({rule}).
+126| Voleu suprimir només la del {date} o totes les repeticions?
+127| Voleu suprimir totes les repeticions?
+128| Suprimeix-ho tot
+129| Voleu suprimir el recordatori?
+130| Voleu suprimir la tasca?
+131| Se suprimirà «{s}».
+132| Se suprimiran «{s}» i totes les seves repeticions.
+133| Alguna cosa ha anat malament
+134| Escriviu primer una ubicació.
+135| Mes anterior
+136| Mes següent
+137| Vés a avui
+138| Vés a una data (Ctrl+G)
+139| Vés a la data
+140| Vés a…
+141| Vés
+142| Afegeix un recordatori aquest dia
+143| Feu doble clic en un dia per afegir un recordatori
+144| Res aquest dia.
+145| +{n} més
+146| Encara no fet
+147| Tot el dia
+148| Tot el dia {s}
+149| Tasca
+150| Tasca {s}
+151| Tasca
+152| Dg
+153| Dl
+154| Dt
+155| Dc
+156| Dj
+157| Dv
+158| Ds
+159| dg.
+160| dl.
+161| dt.
+162| dc.
+163| dj.
+164| dv.
+165| ds.
+166| diumenge
+167| dilluns
+168| dimarts
+169| dimecres
+170| dijous
+171| divendres
+172| dissabte
+173| Element de llista
+174| Venciment
+175| Ordre
+176| El meu ordre
+177| Per data
+178| Manual: arrossegueu les files o premeu Alt+↑ / Alt+↓
+179| Mostra les completades
+180| Mostra les tasques
+181| Inclou les tasques amb data
+182| Sense data
+183| · sense venciment
+184| · venç el {date}
+185| · endarrerida
+186| · tot el dia
+187| · per a les {time}
+188| · d'aquí a {n} min
+189| · va començar fa {n} min ·
+190| Mostra aquesta tasca a l'indicador de la icona de la safata
+191| Mostra a l'indicador de la safata
+192| ✓ Mostra a l'indicador de la safata
+193| Es mostra a l'indicador de la safata
+194| Tret de l'indicador de la safata
+195| Recorda cada dia fins que es completi
+196| Recorda-m'ho cada dia fins que estigui fet
+197| Recorda cada dia fins que estigui fet
+198| Fins que estigui fet
+199| Ja no recorda cada dia
+200| Us ho recorda cada dia fins que marqueu Fet
+201| Perdut el {date}; us ho recorda cada dia fins que el marqueu
+202| Si se us passa, es mou a avui i sona cada dia fins que el marqueu
+203| Fet: mogut a la data següent
+204| cada dia
+205| cada setmana
+206| cada mes
+207| cada {n} dies
+208| cada {n} setmanes
+209| {n} d abans
+210| el mateix dia
+211| {every} des del {from}
+212| una vegada
+213| cada dia
+214| cada setmana
+215| cada mes
+216| one={n} dia abans del venciment | other={n} dies abans del venciment
+217| el dia del venciment
+218| Us ho recorda {every}, des del {from}, a les {time}
+219| Us ho recorda {every}, des del {from}, a les {time}, fins que estigui fet
+220| Us ho recorda {every}, des del {from}, a les {time}, fins que estigui fet (també després del venciment)
+221| Recordatori nou
+222| Edita el recordatori
+223| Tasca nova
+224| Edita la tasca
+225| De què voleu que us avisi?
+226| Què cal fer?
+227| Tipus
+228| Recordatori
+229| En una data
+230| Qualsevol hora
+231| Acaba
+232| Ubicació
+233| Enllaç
+234| -
+235| Notes
+236| Categories
+237| Tria categories
+238| p. ex. Aniversari, Feina
+239| Afegeix
+240| Desa
+241| Cancel·la
+242| Tanca
+243| D'acord
+244| Sí
+245| No
+246| Cap
+247| No es repeteix
+248| Diari
+249| Setmanal
+250| Mensual
+251| Anual
+252| Personalitzat…
+253| Personalitzat
+254| Personalitzat (importat)
+255| Conserva l'importat: {s}
+256| Cada dia feiner
+257| Cada
+258| cada
+259| dia
+260| dies
+261| setmana
+262| setmanes
+263| mes
+264| mesos
+265| any
+266| anys
+267| vegades
+268| El {date}
+269| El dia {day}
+270| El {nth} {weekday}
+271| El {nth} {weekday} de {month}
+272| L'últim {weekday}
+273| L'últim {weekday} de {month}
+274| Cada dia
+275| Cada {n} dies
+276| Cada setmana
+277| Cada {n} setmanes
+278| Cada mes
+279| Cada setmana el {days}
+280| Cada {n} setmanes el {days}
+281| dies feiners
+282| Cada mes el dia {day}
+283| Cada {n} mesos el dia {day}
+284| Cada mes el {nth} {weekday}
+285| Cada {n} mesos el {nth} {weekday}
+286| Cada any el {date}
+287| Cada {n} anys el {date}
+288| Cada any el {nth} {weekday} de {month}
+289| Cada {n} anys el {nth} {weekday} de {month}
+290| últim
+291| one={n}r | two={n}n | few={n}t | other={n}è
+292| Freqüència
+293| El
+294| Després de
+295| Després
+296| -
+297| a les
+298| abans
+299| Mai
+300| Fins al
+301| fins al…
+302| en una data…
+303| a partir del…
+304| res més (només una vegada)
+305| Recorda-m'ho
+306| No m'ho recordis
+307| Quan començar a recordar
+308| Data del primer recordatori
+309| Hora del recordatori
+310| Continua recordant si ha passat el venciment i no està fet
+311| també després del venciment
+312| fins que estigui fet
+313| fins que estigui fet o venci ({due})
+314| fins que estigui fet, també després del venciment ({due})
+315| Un recordatori, el {date} a les {time}.
+316| Un recordatori, el {date} a les {time}. Aquesta hora ja ha passat: trieu-ne una de posterior o recordeu-ho repetidament.
+317| {every} a les {time}, des del {date}, {end}.
+318| Sense recordatoris.
+319| Sense recordatoris. La tasca es mostra en vermell quan passa el venciment.
+320| Trieu la data del primer recordatori.
+321| Text de l'alarma
+322| A l'hora
+323| one={n} minut abans | other={n} minuts abans
+324| one={n} hora abans | other={n} hores abans
+325| one={n} dia abans | other={n} dies abans
+326| one={n} setmana abans | other={n} setmanes abans
+327| El mateix dia, a les {time}
+328| El dia abans, a les {time}
+329| Es mostra així: {s}. <year> compta els anys des d'aleshores; <year#> només mostra el número.
+330| Importat a la zona horària {zone}: es mostra a la vostra hora local. En desar-lo es guardarà en hora local.
+331| Escriviu una descripció.
+332| Trieu el venciment o marqueu «Sense data».
+333| Trieu una data.
+334| Trieu la data.
+335| Trieu la data.
+336| Escriviu l'hora de venciment o marqueu «Qualsevol hora».
+337| Escriviu una hora o marqueu «Tot el dia».
+338| La data de final és anterior a la d'inici.
+339| L'hora de final és anterior a la d'inici.
+340| Recordatori afegit
+341| Tasca afegida
+342| Desat
+343| Edita la còpia
+344| Ja se sap la data: converteix aquesta tasca en un recordatori en una data exacta
+345| Venç el {date}.
+346| Venç el {date}, {time}.
+347| Quan sapigueu la data exacta, la tasca es converteix en un recordatori en aquella data: surt de la llista de tasques i apareix a Recordatoris, a la vista Mes i al calendari. Es conserven les notes, la categoria, la ubicació i l'enllaç.
+348| Un recordatori el {date}, tot el dia.
+349| Un recordatori el {date}, a les {time}.
+350| El recordatori es converteix en una tasca a la mateixa data, amb la repetició, l'alarma i les notes.
+351| El recordatori es queda; una còpia com a tasca a la mateixa data, amb repetició, alarma i notes, va a la llista.
+352| Una còpia exacta va a la llista que trieu; aquest es queda on és.
+353| La llista
+354| {s} (aquesta llista)
+355| llista principal
+356| Alarma de ReminderFoxAgain
+357| Posposa
+358| Posposa-ho tot
+359| Posposa-ho tot {s}
+360| Posposa tots els recordatoris d'aquí el temps predeterminat (es canvia a Configuració)
+361| Posposa quant de temps, o fins a quina hora
+362| Unitat d'ajornament
+363| Posposa fins a
+364| Descarta
+365| Descarta-ho tot
+366| Fet
+367| He acabat amb aquesta alarma ràpida
+368| Amaga per ara (l'alarma continua activa i torna amb la següent)
+369| Una hora com 15:30 o 3:30 pm (abans d'ara vol dir demà)
+370| Un nombre enter de {n} a {n2}
+371| Escriviu un nombre enter de {n} a {n2}.
+372| Escriviu un nombre enter d'1 a 999, o una data i hora.
+373| segons
+374| minuts
+375| hores
+376| Alarma ràpida
+377| Alarmes ràpides
+378| ⏰ Alarmes ràpides…
+379| Una alarma única que no es desa com a recordatori, com l'Alarma ràpida del complement.
+380| D'aquí a
+381| A les
+382| Durant
+383| Posa l'alarma
+384| Cancel·la aquesta alarma
+385| No hi ha alarmes ràpides.
+386| Esperant per sonar
+387| Alarma ràpida per a les {time}
+388| Alarma ràpida cancel·lada
+389| Trieu una hora.
+390| Aquesta hora ja ha passat: trieu-ne una de posterior.
+391| Aquesta hora ja ha passat.
+392| Sona {when} ({until}).
+393| avui a les {time}
+394| d'aquí a menys d'un minut
+395| d'aquí a {time}
+396| d'aquí a {hours} {minutes}
+397| Suspèn les alarmes
+398| Suspèn les alarmes…
+399| Suspèn les alarmes una estona
+400| Suspèn
+401| Quant de temps
+402| Fins que les torni a activar
+403| Les alarmes queden desactivades fins que les reprengueu (barra d'estat, menú de la safata o aquí).
+404| Mentre estan suspeses no s'obren finestres d'alarma i la finestra de recordatoris no apareix. Les alarmes que vencin mentrestant es mostren en reprendre.
+405| Les alarmes estan suspeses fins que les torneu a activar.
+406| Les alarmes tornen {when}.
+407| Les alarmes tornen a estar actives
+408| Reprèn les alarmes ara
+409| Trieu una hora en el futur.
+410| ReminderFoxAgain — avui
+411| Properament
+412| Res avui.
+413| Res properament.
+414| General
+415| Alarmes
+416| Visualització
+417| Dades
+418| Quant a
+419| Inicia ReminderFoxAgain quan s'iniciï el Windows
+420| Continua a la safata del sistema quan es tanqui la finestra
+421| La setmana comença el
+422| Tema
+423| Temes
+424| Predeterminat (com el Windows)
+425| Guineu
+426| Clar
+427| Fosc
+428| Oceà
+429| Contrast alt
+430| El predeterminat és Guineu, clar o fosc segons el Windows. Els elements destacats tenen el seu color en cada tema. El contrast alt fa servir negre, blanc, groc i cian amb text més gran i línies més gruixudes.
+431| -
+432| ReminderFoxAgain és un homenatge al complement original
+433| -
+434| per a Firefox i Thunderbird, creat per Tom Mutdosch i Daniel Lee amb Guenter Wahl. El format de fitxer, les regles de repetició, les vistes, les alarmes ràpides i la finestra d'avís són seus; gràcies.
+435| Reprodueix un so amb les alarmes
+436| So
+437| Campaneta integrada
+438| El vostre so
+439| Tria…
+440| Tria
+441| Fes servir la campaneta integrada
+442| Campaneta
+443| Reprodueix-lo
+444| ▶ Prova
+445| So de l'alarma: {s}
+446| S'utilitza la campaneta integrada
+447| Trieu un fitxer de so (.mp3, .wav, .ogg, .m4a, .aac, .flac o .webm).
+448| Aquest fitxer de so supera els 10 MB. Trieu-ne un de més curt.
+449| Repeteix el so
+450| No, només una vegada
+451| Cada minut
+452| Cada {n} minuts
+453| Alarma predeterminada per als recordatoris nous
+454| Ajornament predeterminat
+455| Unitat de l'ajornament predeterminat
+456| Ajornament predeterminat, quants
+457| Finestra de recordatoris (la finestra d'avís del complement)
+458| Mostra una finestra amb els recordatoris d'avui i propers
+459| Quan
+460| Només en iniciar
+461| En iniciar i cada {n} minuts
+462| … cada {n} minuts
+463| … cada hora
+464| … cada {n} hores
+465| Mantén-la oberta
+466| {n} segons
+467| Fins que la tanqui
+468| Cantonada
+469| a baix a la dreta
+470| a baix a l'esquerra
+471| a dalt a la dreta
+472| a dalt a l'esquerra
+473| Reprodueix el so
+474| Mostra-la ara
+475| «Propers» vol dir els propers
+476| Nombre a la icona
+477| Mostra un nombre a les icones de la safata i de la barra de tasques
+478| Recordatoris i tasques pendents d'avui
+479| D'avui i propers
+480| Només els d'avui
+481| Només els propers
+482| Llengua
+483| Llengua del sistema ({s})
+484| La llengua dels menús, botons i missatges. Els vostres recordatoris no canvien.
+485| Les traduccions es van escriure per a ReminderFoxAgain i encara no les han revisat parlants nadius.
+486| Mida del text
+487| Petita ({n}%)
+488| Normal
+489| Gran ({n}%)
+490| Més gran ({n}%)
+491| La més gran ({n}%)
+492| Dates
+493| Com al Windows ({s})
+494| Hores
+495| Com al Windows
+496| {n} hores ({s})
+497| Mostra el plafó del calendari al costat de les llistes
+498| Mesos al plafó del calendari
+499| Mapes
+500| -
+501| -
+502| -
+503| Indicador de la icona de la safata
+504| Indicador
+505| Recordatoris d'avui
+506| Propers recordatoris
+507| Variables: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — les mateixes que al complement.
+508| Restableix
+509| Textos de l'indicador restablerts
+510| Gestiona les llistes…
+511| Gestiona les categories…
+512| Gestiona les vistes…
+513| Recordatoris periòdics a la pestanya Recordatoris
+514| Dates futures que es mostren
+515| Propers, Tots els recordatoris, Importants, la cerca i les vistes sense dates
+516| Cada data dels propers
+517| Només les properes
+518| one={n} mes | other={n} mesos
+519| one={n} any | other={n} anys
+520| one={n} data | other={n} dates
+521| Ho fan servir Propers, Tots els recordatoris, Importants, la cerca i les vistes sense interval de dates. Avui, Propers {n} dies, Dia o mes seleccionat, la pestanya Mes i el calendari sempre mostren totes les dates.
+522| A Tots i Passats, mostra els passats des de
+523| l'inici de cada sèrie
+524| els darrers {n} anys
+525| el darrer any
+526| els darrers {n} mesos
+527| Amaga els recordatoris periòdics
+528| Amaga els recordatoris completats
+529| Importa i exporta
+530| Importa un fitxer .ics…
+531| Afegeix els elements d'un fitxer .ics (Ctrl+I)
+532| Importa de ReminderFox…
+533| Troba el reminderfox.ics que el complement ReminderFox guardava al vostre perfil de Firefox o Thunderbird
+534| Exporta a .ics…
+535| Exporta a .ics
+536| Exporta…
+537| Desa un fitxer .ics (Ctrl+E)
+538| Les importacions s'afegeixen al que teniu; els elements que ja hi són només s'actualitzen si la còpia del fitxer és més nova. Les exportacions s'obren a l'Outlook, Google Calendar, Thunderbird, Calendari d'Apple i el complement ReminderFox original.
+539| Còpies de seguretat
+540| Fes una còpia ara
+541| Desa una còpia de seguretat…
+542| Restaura una còpia de seguretat…
+543| Restaura una còpia de seguretat
+544| Obre la carpeta de còpies
+545| Obre la carpeta de dades
+546| Fitxer de dades
+547| Mostra el fitxer de recordatoris a l'Explorador
+548| Els vostres recordatoris es desen a {path} (les còpies diàries són a la carpeta «backups» del costat).
+549| ＋ Llista nova…
+550| Llista nova…
+551| Llista nova
+552| Nom de la llista nova
+553| Nom de la llista nova (per exemple Compra, Pel·lícules per veure, Idees de regal):
+554| Afegeix la llista
+555| Canvia el nom de la llista
+556| Canvia el nom…
+557| Treu…
+558| Voleu treure la llista?
+559| «Tasques» és la llista principal i no es pot reanomenar ni treure (com al complement). Quan traieu una llista, trieu si les seves tasques van a «Tasques» o se suprimeixen.
+560| La llista «{list}» té {n} tasca. La voleu moure a «{main}» o suprimir-la amb la llista?
+561| La llista «{list}» té {n} tasques. Les voleu moure a «{main}» o suprimir-les amb la llista?
+562| Suprimeix la llista i les tasques
+563| one=Llista i {n} tasca suprimides | other=Llista i {n} tasques suprimides
+564| Llista treta
+565| Llista «{s}» afegida
+566| «{s}» ja existeix
+567| Aquesta llista ja existeix.
+568| El nom d'una llista no pot estar buit ni contenir comes o dos punts.
+569| El nom d'una llista no pot contenir comes ni dos punts.
+570| Voleu combinar les llistes?
+571| Combina
+572| Combinada amb «{s}»
+573| S'ha canviat el nom a «{s}»
+574| Nom nou per a «{name}»:
+575| Nom nou per a «{name}» (a {items}):
+576| Categoria nova
+577| Una altra categoria
+578| Afegeix les habituals
+579| Categoria «{s}» afegida
+580| {n} categories afegides
+581| No hi ha res de nou per afegir.
+582| Canvia el nom de la categoria
+583| Voleu suprimir la categoria?
+584| Categoria suprimida
+585| Voleu combinar les categories?
+586| Una categoria no pot estar buida ni contenir comes.
+587| encara no s'ha fet servir
+588| Canviar el nom modifica cada recordatori i tasca que tingui la categoria; canviar-lo pel d'una existent les combina. Suprimir-la la treu dels seus elements (els elements es queden).
+589| Se suprimirà la categoria «{name}».
+590| Se suprimirà la categoria «{name}» i es traurà de {items}. Els elements mateixos es queden.
+591| Aniversari de casament
+592| Cita
+593| Aniversari
+594| Negocis
+595| Trucada
+596| Festiu
+597| Reunió
+598| Personal
+599| Compres
+600| Viatge
+601| Aniversari de casament, Cita, Aniversari, Negocis, Trucada…
+602| Vista nova
+603| ＋ Vista nova…
+604| Edita la vista
+605| Voleu suprimir la vista?
+606| Se suprimirà la vista «{s}». Els vostres recordatoris no canvien.
+607| Mostra-la a la pestanya Recordatoris
+608| Vista desada
+609| Vista «{s}» afegida
+610| Poseu un nom a la vista.
+611| Ja hi ha una vista amb aquest nom.
+612| Una vista és un filtre desat per a la pestanya Recordatoris: trieu-la a la llista Mostra. Les condicions sobre camps diferents s'han de complir totes; les comes dins d'una condició volen dir «qualsevol d'aquests».
+613| Encara no hi ha vistes. Feu clic a «Vista nova…» per crear-ne una; per exemple, cada recordatori amb la categoria «Aniversari» l'any vinent.
+614| Nom
+615| p. ex. Aniversaris
+616| Mostra els recordatoris on
+617| ＋ Afegeix una condició
+618| Treu aquesta condició
+619| Qualsevol camp
+620| La categoria
+621| La vista
+622| Tipus
+623| és
+624| conté
+625| paraules, separades per comes
+626| Només dates de
+627| a
+628| des d'avui
+629| avui
+630| Els nombres negatius van enrere en el temps: −{n} mes a {n2} dies vol dir «el darrer mes».
+631| Tots
+632| Tot
+633| Només recordatoris
+634| Només tasques
+635| Unitat
+636| Quants
+637| Qualsevol camp conté «{s}»
+638| La categoria és «{s}»
+639| La categoria és «{s}» o «{s2}»
+640| dates d'avui fins d'aquí a {n} dies
+641| one=+{n} setmana | other=+{n} setmanes
+642| one=+{n} mes | other=+{n} mesos
+643| one=+{n} any | other=+{n} anys
+644| Importa
+645| Importa un fitxer iCalendar
+646| Importa de ReminderFox
+647| De ReminderFox
+648| S'han trobat {files} del complement ReminderFox:
+649| Importa el més recent
+650| Importa'ls igualment
+651| {reminders} i {items}
+652| {n} ja hi són (es conserva la còpia més nova)
+653| {n} sembla un duplicat (mateix títol i data que un element que ja teniu)
+654| {n} semblen duplicats (mateix títol i data que un element que ja teniu)
+655| Com
+656| Afegeix-ho al que tinc
+657| Substitueix-ho tot
+658| Substitueix-ho tot (abans es fa una còpia dels vostres {items})
+659| Voleu substituir-ho tot?
+660| Els vostres {items} se substituiran pels {newItems} del fitxer.
+661| El que teniu ara es desa abans com a còpia «Desat abans d'una importació que ho va substituir tot», perquè ho pugueu recuperar a Configuració → Dades → Restaura una còpia de seguretat….
+662| Duplicats
+663| Omet els elements amb el mateix títol i data que un que ja tinc
+664| Opcional: s'afegeix a cada element importat, per exemple «Festius» per a una llista de festius, perquè hi pugueu filtrar.
+665| opcional
+666| Importació completada
+667| {items} importats
+668| {items} i {lists} importats
+669| {n} actualitzats
+670| {n} ja al dia
+671| one={n} duplicat omès | other={n} duplicats omesos
+672| se substitueixen {items} (desats com a {file})
+673| {lists} afegides ({names})
+674| one={n} element arxivat mogut a la llista «{list}» | other={n} elements arxivats moguts a la llista «{list}»
+675| Aquest fitxer no conté dades iCalendar (no hi ha BEGIN:VCALENDAR).
+676| No s'ha pogut llegir el fitxer de recordatoris
+677| Exportat a {path}
+678| Exporta
+679| Tot (recordatoris i tasques)
+680| El fitxer funciona amb l'Outlook, Google Calendar, Thunderbird, Calendari d'Apple i el complement ReminderFox original.
+681| ReminderFoxAgain fa una còpia cada dia, una abans de cada restauració, i les que feu amb «Fes una còpia ara». Restaurar substitueix els recordatoris i les tasques actuals per la còpia; el que teniu ara es desa abans, així que sempre podeu tornar enrere.
+682| Creada
+683| Contingut
+684| Restaura
+685| Restaura…
+686| Tria un altre fitxer…
+687| {n} arxivats
+688| No es pot llegir: {s}
+689| No s'ha pogut llegir {s}: {s2}
+690| No es pot restaurar aquest fitxer
+691| Encara no hi ha còpies. Es fan cada dia que funciona l'aplicació; també podeu fer clic a «Fes una còpia ara».
+692| Còpia diària
+693| Còpia feta per vós
+694| Desat abans d'una restauració
+695| Desat abans d'una importació que ho va substituir tot
+696| L'arxiu, abans de convertir-se en una llista
+697| Còpia diària de l'arxiu (versió anterior)
+698| Còpia de seguretat
+699| Voleu restaurar aquesta còpia?
+700| Això substitueix el que teniu ara ({now}) per la còpia del {when}: {items}.
+701| Això substitueix el que teniu ara ({now}) per la còpia del {when}: {items}, més {n} arxivats, que van a la llista «{list}».
+702| Això és una còpia de l'arxiu d'una versió anterior. Els seus {all} van a la llista «{list}» (els elements que ja teniu es queden com estan). No canvia res més.
+703| Les vostres dades actuals es desen abans com a còpia «Desat abans d'una restauració», així que ho podeu desfer des d'aquesta mateixa llista.
+704| Còpia restaurada
+705| {items} restaurats.
+706| {items} restaurats, {n} d'ells arxivats, ara a la llista «{list}».
+707| El que teníeu abans s'ha desat com a {file}.
+708| Còpia desada a {path}
+709| Còpia feta: {s}
+710| {n} bytes
+711| {n} kB
+712| {n} MB
+713| Aquest element ja no existeix.
+714| No s'ha pogut llegir el fitxer d'arxiu, així que no es modifica. S'ha conservat com a archive.ics.unreadable.
+715| No s'ha pogut llegir el fitxer d'arxiu, així que no es pot substituir.
+716| Benvingut a ReminderFoxAgain
+717| Els vostres recordatoris, tasques i alarmes com a aplicació de Windows: un homenatge al complement ReminderFox original.
+718| Importa del vostre complement ReminderFox
+719| {path} — modificat el {date}
+720| Importa un reminderfox.ics o un altre fitxer de calendari…
+721| Del complement ReminderFox (a la carpeta «reminderfox» del vostre perfil de Firefox/Thunderbird), Outlook, Google Calendar…
+722| Comença amb una llista buida
+723| Podeu importar més tard des de Configuració → Dades.
+724| ara
+725| d'aquí a {n} min
+726| one=d'aquí a {n} hora | other=d'aquí a {n} hores
+727| one=d'aquí a {n} dia | other=d'aquí a {n} dies
+728| fa {n} min
+729| one=fa {n} hora | other=fa {n} hores
+730| one=fa {n} dia | other=fa {n} dies
+731| Obre {app}
+732| Afegeix un recordatori…
+733| Afegeix un element de llista…
+734| Alarma ràpida…
+735| Reprèn les alarmes
+736| Mostra els recordatoris d'avui
+737| Surt de {app}
+738| {app} — alarmes desactivades
+739| {app} — alarmes desactivades fins a les {time}
+740| {app} — res avui
+741| properament
+742| {app} encara s'està executant
+743| Les alarmes continuaran apareixent. Feu clic amb el botó dret a la guineu de la safata del sistema per sortir.
+744| Alarma de {app}
+745| {app} — avui
+746| {n} h {n2} min
+747| Fitxers iCalendar
+748| Tots els fitxers
+749| Fitxers de so
+750| Importa un fitxer iCalendar
+751| Exporta a un fitxer iCalendar
+752| Trieu el vostre reminderfox.ics
+753| Trieu un so d'alarma
+754| Desa una còpia de seguretat
+755| Trieu una còpia per restaurar
+756| Cada setmana el {days}
+757| Cada mes el {nth} {weekday}
+758| Cada mes el dia {day}
+759| Cada mes el mateix dia
+760| Cada {n} mesos el mateix dia
+761| Cada any el {nth} {weekday} de {month}
+762| Cada any el {date}
+763| Cada any la mateixa data
+764| Cada {n} anys la mateixa data
+765| Es repeteix
+766| Personalitzat ({rule})
+767| {rule}, una vegada
+768| {rule}, {n} vegades
+769| {rule}, fins al {date}
+770| Mostra els recordatoris que heu marcat com a completats
+771| Mostra els recordatoris i elements de llista que heu marcat com a completats
+772| El meu ordre: arrossegueu les files o premeu Alt+↑ / Alt+↓
+773| Vista
+774| So de l'alarma
+775| Fitxer propi…
+776| Fes servir un fitxer de so propi (.mp3, .wav, .ogg, .m4a, .aac, .flac o .webm)
+777| Sense parar fins que l'atengueu
+778| Sense parar fins que l'atengueu: el so es repeteix fins que posposeu, obriu, marqueu com a fet o descarteu l'alarma, o amagueu la finestra d'alarma. La següent alarma el torna a engegar.
+779| Columnes
+780| Columnes de la pestanya Recordatoris
+781| Columnes de les llistes
+782| Desmarqueu una columna per amagar-la. La descripció sempre es mostra.
+783| Filtres desats per a la pestanya Recordatoris
+784| Gestiona els recordatoris…
+785| Propers, Tots els recordatoris, Importants, la cerca i els filtres desats sense dates
+786| Ho fan servir Propers, Tots els recordatoris, Importants, la cerca i els filtres desats sense interval de dates. Avui, Propers {n} dies, Dia o mes seleccionat, la pestanya Mes i el calendari sempre mostren totes les dates.
+787| Filtres desats
+788| Filtre desat «{s}» · {c}
+789| Gestiona els recordatoris
+790| Un filtre desat mostra a la pestanya Recordatoris només els recordatoris que voleu: trieu-lo a la llista Mostra. Les condicions sobre camps diferents s'han de complir totes; les comes dins d'una condició volen dir «qualsevol d'aquests».
+791| ＋ Filtre desat nou…
+792| Encara no hi ha filtres desats. Feu clic a «Filtre desat nou…» per crear-ne un; per exemple, cada recordatori amb la categoria «Aniversari» l'any vinent.
+793| Voleu suprimir el filtre desat?
+794| Se suprimirà el filtre desat «{s}». Els vostres recordatoris no canvien.
+795| Edita el filtre desat
+796| Filtre desat nou
+797| Doneu un nom al filtre desat.
+798| Ja hi ha un filtre desat amb aquest nom.
+799| Filtre desat modificat
+800| S'ha afegit el filtre desat «{s}»
+801| Campana
+802| Marimba
+803| Xiulets digitals
+804| Despertador
+805| El vostre fitxer: {s}
+806| Crea un tema propi amb cinc colors
+807| ＋ Tema nou…
+808| Canvia els colors del vostre tema
+809| ＋ Tema nou… en crea un de propi amb cinc colors.
+810| Els vostres temes
+811| Fons
+812| Darrere de tot
+813| Llistes i plafons
+814| Les llistes, el plafó del calendari, els diàlegs
+815| Text
+816| Accent
+817| Botons, avui, selecció
+818| Elements destacats
+819| Recordatoris i tasques importants
+820| El text es llegeix malament sobre el fons (contrast {n}:1; a partir de 4,5:1 es llegeix bé).
+821| L'accent es veu malament sobre les llistes (contrast {n}:1; 3:1 o més és millor).
+822| Els elements destacats es veuen malament sobre les llistes (contrast {n}:1; 3:1 o més és millor).
+823| Edita el tema
+824| Tema nou
+825| Parteix de
+826| p. ex. Bosc
+827| Tota la finestra mostra el tema mentre trieu. Cancel·la torna a posar l'anterior.
+828| Doneu un nom al tema.
+829| Ja hi ha un tema amb aquest nom.
+830| S'ha desat el tema «{s}»
+831| S'ha afegit el tema «{s}»
+832| Voleu suprimir el tema?
+833| Se suprimirà el tema «{s}». L'aplicació torna al tema per defecte.

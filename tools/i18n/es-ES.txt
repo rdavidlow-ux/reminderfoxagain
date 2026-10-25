@@ -1,0 +1,834 @@
+# Español (España) — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Recordatorio
+2| ＋ Elemento de lista
+3| ⚙ Ajustes
+4| Ajustes
+5| Buscar
+6| Buscar (Ctrl+F)
+7| Buscar en recordatorios y tareas
+8| Nuevo recordatorio (Ctrl+N)
+9| Nuevo elemento en la lista mostrada (Ctrl+T)
+10| Alarma rápida: una alarma única dentro de unos minutos (Ctrl+Q)
+11| ⏰ Alarma rápida
+12| Recordatorios
+13| Mes
+14| Lista
+15| Listas
+16| Lista: {s}
+17| Todas las listas
+18| Elegir qué lista mostrar
+19| Lista que se muestra
+20| Tareas
+21| Terminado o suspendido
+22| Mostrar u ocultar el panel del calendario
+23| Mostrar u ocultar el panel del calendario (Ctrl+B)
+24| Alarmas activadas
+25| Alarmas suspendidas
+26| Alarmas suspendidas hasta las {time}
+27| Reanudar
+28| Haga clic para volver a activar las alarmas
+29| Suspender o reanudar las alarmas
+30| one={n} elemento | other={n} elementos
+31| one={n} recordatorio | other={n} recordatorios
+32| one={n} tarea | other={n} tareas
+33| one={n} elemento de lista | other={n} elementos de lista
+34| one={n} elemento nuevo | other={n} elementos nuevos
+35| one={n} elemento archivado | other={n} elementos archivados
+36| one={n} lista | other={n} listas
+37| one={n} archivo | other={n} archivos
+38| one={n} minuto | other={n} minutos
+39| one={n} hora | other={n} horas
+40| one={n} día | other={n} días
+41| one={n} duplicado | other={n} duplicados
+42| Mostrar
+43| Hoy
+44| Mañana
+45| Ayer
+46| Próximos {n} días
+47| Próximos
+48| Todos los recordatorios
+49| Importantes
+50| Pasados
+51| Día seleccionado
+52| Mes seleccionado
+53| Vistas
+54| Vista «{s}»
+55| Buscando en todos los recordatorios
+56| Fecha
+57| Día
+58| Hora
+59| Descripción
+60| Repetición
+61| Categoría
+62| Alarma
+63| Completado
+64| Completado el {date}
+65| (sin descripción)
+66| No hay recordatorios aquí
+67| Haga clic en ＋ Recordatorio para añadir uno, o elija otra vista.
+68| Haga clic en ＋ Elemento de lista para añadir uno a esta lista.
+69| Vencido desde el {date}
+70| vencido desde el {date}
+71| Pronto: {s}
+72| Editar…
+73| Eliminar…
+74| Eliminar
+75| Duplicar
+76| Copiar
+77| Mover
+78| Abrir
+79| Abrir enlace
+80| Mostrar en un mapa
+81| Ver en la lista
+82| Marcar como completado
+83| Recordarme…
+84| Convertir en tarea…
+85| Convertir en tarea
+86| Convertir en recordatorio
+87| Programar como recordatorio…
+88| Programar como recordatorio
+89| Copiar a una lista…
+90| Copiar a una lista
+91| Copiar a la lista…
+92| Copiar a la lista
+93| Mover a la lista…
+94| Mover a la lista
+95| Mover a…
+96| Copiar a…
+97| Moverlo a otra lista
+98| Poner una copia en otra lista
+99| Una copia exacta en esta lista (Ctrl+D)
+100| Eliminar (Supr)
+101| Elemento seleccionado
+102| Elemento seleccionado:
+103| Subir
+104| Bajar
+105| -
+106| -
+107| -
+108| «{s}» duplicado
+109| {s} (copia)
+110| Copiado a «{s}»
+111| Movido a «{s}»
+112| Mover a «{s}»
+113| Ahora es una tarea en «{s}»
+114| Ahora es un recordatorio el {date}
+115| está en «{s}»
+116| «{s}» está vacía
+117| Eliminado
+118| Repetición eliminada
+119| Eliminar recordatorio periódico
+120| Se repite: los cambios se aplican a todas las repeticiones.
+121| Solo esta
+122| Todas las repeticiones
+123| Eliminar esta repetición
+124| Eliminar todas las repeticiones…
+125| «{s}» se repite ({rule}).
+126| ¿Eliminar solo la del {date} o todas las repeticiones?
+127| ¿Eliminar todas las repeticiones?
+128| Eliminar todo
+129| ¿Eliminar el recordatorio?
+130| ¿Eliminar la tarea?
+131| Se eliminará «{s}».
+132| Se eliminarán «{s}» y todas sus repeticiones.
+133| Algo ha fallado
+134| Escriba primero una ubicación.
+135| Mes anterior
+136| Mes siguiente
+137| Ir a hoy
+138| Ir a una fecha (Ctrl+G)
+139| Ir a la fecha
+140| Ir a…
+141| Ir
+142| Añadir un recordatorio este día
+143| Haga doble clic en un día para añadir un recordatorio
+144| Nada este día.
+145| +{n} más
+146| Aún no hecho
+147| Todo el día
+148| Todo el día {s}
+149| Tarea
+150| Tarea {s}
+151| Tarea
+152| Do
+153| Lu
+154| Ma
+155| Mi
+156| Ju
+157| Vi
+158| Sá
+159| dom
+160| lun
+161| mar
+162| mié
+163| jue
+164| vie
+165| sáb
+166| domingo
+167| lunes
+168| martes
+169| miércoles
+170| jueves
+171| viernes
+172| sábado
+173| Elemento de lista
+174| Vence
+175| Orden
+176| Mi orden
+177| Por fecha
+178| Manual: arrastre las filas o pulse Alt+↑ / Alt+↓
+179| Mostrar completadas
+180| Mostrar tareas
+181| Incluir tareas con fecha
+182| Sin fecha
+183| · sin fecha de vencimiento
+184| · vence el {date}
+185| · vencida
+186| · todo el día
+187| · para las {time}
+188| · en {n} min
+189| · empezó hace {n} min ·
+190| Mostrar esta tarea en la información sobre herramientas del icono de la bandeja
+191| Mostrar en la información de la bandeja
+192| ✓ Mostrar en la información de la bandeja
+193| Se muestra en la información de la bandeja
+194| Quitada de la información de la bandeja
+195| Recordar a diario hasta completar
+196| Recordármelo a diario hasta que esté hecho
+197| Recuerda a diario hasta que esté hecho
+198| Hasta hecho
+199| Ya no recuerda a diario
+200| Se lo recuerda cada día hasta que marque Hecho
+201| Perdido el {date}; se lo recuerda cada día hasta que lo marque
+202| Si se le pasa, se mueve a hoy y avisa cada día hasta que lo marque
+203| Hecho: movido a la siguiente fecha
+204| a diario
+205| cada semana
+206| cada mes
+207| cada {n} días
+208| cada {n} semanas
+209| {n} d antes
+210| el mismo día
+211| {every} desde {from}
+212| una vez
+213| cada día
+214| cada semana
+215| cada mes
+216| one={n} día antes del vencimiento | other={n} días antes del vencimiento
+217| el día del vencimiento
+218| Se lo recuerda {every}, desde {from}, a las {time}
+219| Se lo recuerda {every}, desde {from}, a las {time}, hasta que esté hecho
+220| Se lo recuerda {every}, desde {from}, a las {time}, hasta que esté hecho (también después del vencimiento)
+221| Nuevo recordatorio
+222| Editar recordatorio
+223| Nueva tarea
+224| Editar tarea
+225| ¿Qué quiere que le recuerde?
+226| ¿Qué hay que hacer?
+227| Tipo
+228| Recordatorio
+229| En una fecha
+230| A cualquier hora
+231| Termina
+232| Ubicación
+233| Enlace
+234| -
+235| Notas
+236| Categorías
+237| Elegir categorías
+238| p. ej. Cumpleaños, Trabajo
+239| Añadir
+240| Guardar
+241| Cancelar
+242| Cerrar
+243| Aceptar
+244| Sí
+245| No
+246| Ninguna
+247| No se repite
+248| Diario
+249| Semanal
+250| Mensual
+251| Anual
+252| Personalizado…
+253| Personalizado
+254| Personalizado (importado)
+255| Mantener la importada: {s}
+256| Cada día laborable
+257| Cada
+258| cada
+259| día
+260| días
+261| semana
+262| semanas
+263| mes
+264| meses
+265| año
+266| años
+267| veces
+268| El {date}
+269| El día {day}
+270| El {nth} {weekday}
+271| El {nth} {weekday} de {month}
+272| El último {weekday}
+273| El último {weekday} de {month}
+274| Cada día
+275| Cada {n} días
+276| Cada semana
+277| Cada {n} semanas
+278| Cada mes
+279| Cada semana el {days}
+280| Cada {n} semanas el {days}
+281| días laborables
+282| Cada mes el día {day}
+283| Cada {n} meses el día {day}
+284| Cada mes el {nth} {weekday}
+285| Cada {n} meses el {nth} {weekday}
+286| Cada año el {date}
+287| Cada {n} años el {date}
+288| Cada año el {nth} {weekday} de {month}
+289| Cada {n} años el {nth} {weekday} de {month}
+290| último
+291| {n}.º
+292| Frecuencia
+293| El
+294| Después de
+295| Luego
+296| -
+297| a las
+298| antes
+299| Nunca
+300| Hasta
+301| hasta…
+302| en una fecha…
+303| a partir del…
+304| nada más (solo una vez)
+305| Recordarme
+306| No recordarme
+307| Cuándo empezar a recordar
+308| Fecha del primer recordatorio
+309| Hora del recordatorio
+310| Seguir recordando si ha pasado el vencimiento y no está hecho
+311| también después del vencimiento
+312| hasta que esté hecho
+313| hasta que esté hecho o venza ({due})
+314| hasta que esté hecho, también después del vencimiento ({due})
+315| Un recordatorio, el {date} a las {time}.
+316| Un recordatorio, el {date} a las {time}. Esa hora ya ha pasado: elija una posterior o recuerde repetidamente.
+317| {every} a las {time}, desde el {date}, {end}.
+318| Sin recordatorios.
+319| Sin recordatorios. La tarea se muestra en rojo cuando pasa su fecha de vencimiento.
+320| Elija la fecha del primer recordatorio.
+321| Texto de la alarma
+322| A la hora
+323| one={n} minuto antes | other={n} minutos antes
+324| one={n} hora antes | other={n} horas antes
+325| one={n} día antes | other={n} días antes
+326| one={n} semana antes | other={n} semanas antes
+327| El mismo día, a las {time}
+328| El día anterior, a las {time}
+329| Se muestra como: {s}. <year> cuenta los años desde entonces; <year#> muestra solo el número.
+330| Importado en la zona horaria {zone}: se muestra en su hora local. Al guardar se almacenará en hora local.
+331| Escriba una descripción.
+332| Elija la fecha de vencimiento o marque «Sin fecha».
+333| Elija una fecha.
+334| Elija la fecha.
+335| Elija la fecha.
+336| Escriba la hora de vencimiento o marque «A cualquier hora».
+337| Escriba una hora o marque «Todo el día».
+338| La fecha de fin es anterior a la de inicio.
+339| La hora de fin es anterior a la de inicio.
+340| Recordatorio añadido
+341| Tarea añadida
+342| Guardado
+343| Editar la copia
+344| Ya se sabe la fecha: convertir esta tarea en un recordatorio en una fecha exacta
+345| Vence el {date}.
+346| Vence el {date}, {time}.
+347| Cuando sepa la fecha exacta, la tarea se convierte en un recordatorio en esa fecha: sale de la lista de tareas y aparece en Recordatorios, la vista Mes y el calendario. Se conservan las notas, la categoría, la ubicación y el enlace.
+348| Un recordatorio el {date}, todo el día.
+349| Un recordatorio el {date}, a las {time}.
+350| El recordatorio se convierte en una tarea en la misma fecha, con su repetición, alarma y notas.
+351| El recordatorio se queda; una copia como tarea en la misma fecha, con su repetición, alarma y notas, va a la lista.
+352| Una copia exacta va a la lista que elija; este se queda donde está.
+353| La lista
+354| {s} (esta lista)
+355| lista principal
+356| Alarma de ReminderFoxAgain
+357| Posponer
+358| Posponer todo
+359| Posponer todo {s}
+360| Posponer todos los recordatorios de aquí el tiempo predeterminado (se cambia en Ajustes)
+361| Posponer cuánto, o hasta qué hora
+362| Unidad de aplazamiento
+363| Posponer hasta
+364| Descartar
+365| Descartar todo
+366| Hecho
+367| Terminado con esta alarma rápida
+368| Ocultar por ahora (la alarma sigue activa y vuelve con la siguiente)
+369| Una hora como 15:30 o 3:30 pm (antes de ahora significa mañana)
+370| Un número entero de {n} a {n2}
+371| Escriba un número entero de {n} a {n2}.
+372| Escriba un número entero de 1 a 999, o una fecha y hora.
+373| segundos
+374| minutos
+375| horas
+376| Alarma rápida
+377| Alarmas rápidas
+378| ⏰ Alarmas rápidas…
+379| Una alarma única que no se guarda como recordatorio, como la Alarma rápida del complemento.
+380| En
+381| A las
+382| Durante
+383| Poner alarma
+384| Cancelar esta alarma
+385| No hay alarmas rápidas.
+386| Esperando para sonar
+387| Alarma rápida para las {time}
+388| Alarma rápida cancelada
+389| Elija una hora.
+390| Esa hora ya ha pasado: elija una posterior.
+391| Esa hora ya ha pasado.
+392| Suena {when} ({until}).
+393| hoy a las {time}
+394| en menos de un minuto
+395| en {time}
+396| en {hours} {minutes}
+397| Suspender alarmas
+398| Suspender alarmas…
+399| Suspender las alarmas un tiempo
+400| Suspender
+401| Cuánto tiempo
+402| Hasta que las vuelva a activar
+403| Las alarmas siguen desactivadas hasta que las reanude (barra de estado, menú de la bandeja o aquí).
+404| Mientras están suspendidas no se abren ventanas de alarma y la ventana de recordatorios no aparece. Las alarmas que venzan entretanto se muestran al reanudar.
+405| Las alarmas están suspendidas hasta que las vuelva a activar.
+406| Las alarmas vuelven {when}.
+407| Las alarmas vuelven a estar activas
+408| Reanudar alarmas ahora
+409| Elija una hora en el futuro.
+410| ReminderFoxAgain — hoy
+411| Próximamente
+412| Nada hoy.
+413| Nada próximamente.
+414| General
+415| Alarmas
+416| Pantalla
+417| Datos
+418| Acerca de
+419| Iniciar ReminderFoxAgain al iniciar Windows
+420| Seguir en la bandeja del sistema al cerrar la ventana
+421| La semana empieza el
+422| Tema
+423| Temas
+424| Predeterminado (como Windows)
+425| Zorro
+426| Claro
+427| Oscuro
+428| Océano
+429| Alto contraste
+430| El predeterminado es Zorro, claro u oscuro según Windows. Los elementos destacados tienen su propio color en cada tema. Alto contraste usa negro, blanco, amarillo y cian con texto más grande y líneas más gruesas.
+431| -
+432| ReminderFoxAgain es un homenaje al complemento original
+433| -
+434| para Firefox y Thunderbird, creado por Tom Mutdosch y Daniel Lee con Guenter Wahl. El formato de archivo, las reglas de repetición, las vistas, las alarmas rápidas y la ventana de avisos son suyos; gracias.
+435| Reproducir un sonido con las alarmas
+436| Sonido
+437| Campanilla integrada
+438| Su sonido
+439| Elegir…
+440| Elegir
+441| Usar la campanilla integrada
+442| Campanilla
+443| Reproducirlo
+444| ▶ Probar
+445| Sonido de alarma: {s}
+446| Usando la campanilla integrada
+447| Elija un archivo de sonido (.mp3, .wav, .ogg, .m4a, .aac, .flac o .webm).
+448| Ese archivo de sonido supera los 10 MB. Elija uno más corto.
+449| Repetir el sonido
+450| No, una sola vez
+451| Cada minuto
+452| Cada {n} minutos
+453| Alarma predeterminada para recordatorios nuevos
+454| Aplazamiento predeterminado
+455| Unidad del aplazamiento predeterminado
+456| Aplazamiento predeterminado, cuántos
+457| Ventana de recordatorios (la ventana de avisos del complemento)
+458| Mostrar una ventana con los recordatorios de hoy y próximos
+459| Cuándo
+460| Solo al iniciar
+461| Al iniciar y cada {n} minutos
+462| … cada {n} minutos
+463| … cada hora
+464| … cada {n} horas
+465| Mantenerla abierta
+466| {n} segundos
+467| Hasta que la cierre
+468| Esquina
+469| abajo a la derecha
+470| abajo a la izquierda
+471| arriba a la derecha
+472| arriba a la izquierda
+473| Reproducir el sonido
+474| Mostrarla ahora
+475| «Próximos» significa los próximos
+476| Número en el icono
+477| Mostrar un número en los iconos de la bandeja y la barra de tareas
+478| Recordatorios y tareas pendientes de hoy
+479| De hoy y próximos
+480| Solo los de hoy
+481| Solo los próximos
+482| Idioma
+483| Idioma del sistema ({s})
+484| El idioma de los menús, botones y mensajes. Sus recordatorios no cambian.
+485| Las traducciones se escribieron para ReminderFoxAgain y aún no las han revisado hablantes nativos.
+486| Tamaño del texto
+487| Pequeño ({n} %)
+488| Normal
+489| Grande ({n} %)
+490| Más grande ({n} %)
+491| El más grande ({n} %)
+492| Fechas
+493| Como en Windows ({s})
+494| Horas
+495| Como en Windows
+496| {n} horas ({s})
+497| Mostrar el panel del calendario junto a las listas
+498| Meses en el panel del calendario
+499| Mapas
+500| -
+501| -
+502| -
+503| Información del icono de la bandeja
+504| Información
+505| Recordatorios de hoy
+506| Próximos recordatorios
+507| Variables: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — las mismas que en el complemento.
+508| Restablecer
+509| Textos de la información restablecidos
+510| Gestionar listas…
+511| Gestionar categorías…
+512| Gestionar vistas…
+513| Recordatorios periódicos en la pestaña Recordatorios
+514| Fechas futuras que mostrar
+515| Próximos, Todos los recordatorios, Importantes, la búsqueda y las vistas sin fechas
+516| Cada fecha en los próximos
+517| Solo las próximas
+518| one={n} mes | other={n} meses
+519| one={n} año | other={n} años
+520| one={n} fecha | other={n} fechas
+521| Lo usan Próximos, Todos los recordatorios, Importantes, la búsqueda y las vistas sin intervalo de fechas. Hoy, Próximos {n} días, Día o mes seleccionado, la pestaña Mes y el calendario siempre muestran todas las fechas.
+522| En Todos y Pasados, mostrar los pasados desde
+523| el inicio de cada serie
+524| los últimos {n} años
+525| el último año
+526| los últimos {n} meses
+527| Ocultar recordatorios periódicos
+528| Ocultar recordatorios completados
+529| Importar y exportar
+530| Importar un archivo .ics…
+531| Añadir los elementos de un archivo .ics (Ctrl+I)
+532| Importar de ReminderFox…
+533| Buscar el reminderfox.ics que el complemento ReminderFox guardaba en su perfil de Firefox o Thunderbird
+534| Exportar a .ics…
+535| Exportar a .ics
+536| Exportar…
+537| Guardar un archivo .ics (Ctrl+E)
+538| Las importaciones se añaden a lo que tiene; los elementos que ya están solo se actualizan si la copia del archivo es más reciente. Las exportaciones se abren en Outlook, Google Calendar, Thunderbird, Calendario de Apple y el complemento ReminderFox original.
+539| Copias de seguridad
+540| Hacer copia ahora
+541| Guardar una copia de seguridad…
+542| Restaurar una copia de seguridad…
+543| Restaurar una copia de seguridad
+544| Abrir carpeta de copias
+545| Abrir carpeta de datos
+546| Archivo de datos
+547| Mostrar el archivo de recordatorios en el Explorador
+548| Sus recordatorios se guardan en {path} (las copias diarias se guardan en la carpeta «backups» que hay al lado).
+549| ＋ Nueva lista…
+550| Nueva lista…
+551| Nueva lista
+552| Nombre de la nueva lista
+553| Nombre de la nueva lista (por ejemplo Compra, Películas por ver, Ideas de regalo):
+554| Añadir lista
+555| Cambiar nombre de la lista
+556| Cambiar nombre…
+557| Quitar…
+558| ¿Quitar la lista?
+559| «Tareas» es la lista principal y no se puede renombrar ni quitar (como en el complemento). Al quitar una lista, usted elige si sus tareas pasan a «Tareas» o se eliminan.
+560| La lista «{list}» tiene {n} tarea. ¿Moverla a «{main}» o eliminarla con la lista?
+561| La lista «{list}» tiene {n} tareas. ¿Moverlas a «{main}» o eliminarlas con la lista?
+562| Eliminar la lista y las tareas
+563| one=Lista y {n} tarea eliminadas | other=Lista y {n} tareas eliminadas
+564| Lista quitada
+565| Lista «{s}» añadida
+566| «{s}» ya existe
+567| Esa lista ya existe.
+568| El nombre de una lista no puede estar vacío ni contener comas o dos puntos.
+569| El nombre de una lista no puede contener comas ni dos puntos.
+570| ¿Combinar las listas?
+571| Combinar
+572| Combinada con «{s}»
+573| Renombrado a «{s}»
+574| Nuevo nombre para «{name}»:
+575| Nuevo nombre para «{name}» (en {items}):
+576| Nueva categoría
+577| Otra categoría
+578| Añadir las habituales
+579| Categoría «{s}» añadida
+580| {n} categorías añadidas
+581| Nada nuevo que añadir.
+582| Cambiar nombre de la categoría
+583| ¿Eliminar la categoría?
+584| Categoría eliminada
+585| ¿Combinar las categorías?
+586| Una categoría no puede estar vacía ni contener comas.
+587| aún sin usar
+588| Renombrar cambia cada recordatorio y tarea que tenga la categoría; renombrar a una existente las combina. Eliminar la quita de sus elementos (los elementos se quedan).
+589| Se eliminará la categoría «{name}».
+590| Se eliminará la categoría «{name}» y se quitará de {items}. Los elementos en sí se quedan.
+591| Aniversario
+592| Cita
+593| Cumpleaños
+594| Negocios
+595| Llamada
+596| Vacaciones
+597| Reunión
+598| Personal
+599| Compras
+600| Viaje
+601| Aniversario, Cita, Cumpleaños, Negocios, Llamada…
+602| Nueva vista
+603| ＋ Nueva vista…
+604| Editar vista
+605| ¿Eliminar la vista?
+606| Se eliminará la vista «{s}». Sus recordatorios no cambian.
+607| Mostrarla en la pestaña Recordatorios
+608| Vista guardada
+609| Vista «{s}» añadida
+610| Ponga un nombre a la vista.
+611| Ya hay una vista con ese nombre.
+612| Una vista es un filtro guardado para la pestaña Recordatorios: elíjala en la lista Mostrar. Las condiciones sobre campos distintos deben cumplirse todas; las comas dentro de una condición significan «cualquiera de estos».
+613| Aún no hay vistas. Haga clic en «Nueva vista…» para crear una; por ejemplo, cada recordatorio con la categoría «Cumpleaños» en el próximo año.
+614| Nombre
+615| p. ej. Cumpleaños
+616| Mostrar recordatorios donde
+617| ＋ Añadir una condición
+618| Quitar esta condición
+619| Cualquier campo
+620| La categoría
+621| La vista
+622| Tipo
+623| es
+624| contiene
+625| palabras, separadas por comas
+626| Solo fechas de
+627| a
+628| desde hoy
+629| hoy
+630| Los números negativos van hacia atrás: −{n} mes a {n2} días significa «el último mes».
+631| Todos
+632| Todo
+633| Solo recordatorios
+634| Solo tareas
+635| Unidad
+636| Cuántos
+637| Cualquier campo contiene «{s}»
+638| La categoría es «{s}»
+639| La categoría es «{s}» o «{s2}»
+640| fechas de hoy a {n} días vista
+641| one=+{n} semana | other=+{n} semanas
+642| one=+{n} mes | other=+{n} meses
+643| one=+{n} año | other=+{n} años
+644| Importar
+645| Importar un archivo iCalendar
+646| Importar de ReminderFox
+647| De ReminderFox
+648| Encontrado(s) {files} del complemento ReminderFox:
+649| Importar el más reciente
+650| Importarlos igualmente
+651| {reminders} y {items}
+652| {n} ya están aquí (se conserva la copia más reciente)
+653| {n} parece un duplicado (mismo título y fecha que un elemento que ya tiene)
+654| {n} parecen duplicados (mismo título y fecha que un elemento que ya tiene)
+655| Cómo
+656| Añadir a lo que tengo
+657| Reemplazar todo
+658| Reemplazar todo (antes se hace copia de sus {items})
+659| ¿Reemplazar todo?
+660| Sus {items} se reemplazarán por los {newItems} del archivo.
+661| Lo que tiene ahora se guarda antes como copia «Guardado antes de una importación que lo reemplazó todo», para que pueda recuperarlo en Ajustes → Datos → Restaurar una copia de seguridad….
+662| Duplicados
+663| Omitir elementos con el mismo título y fecha que uno que ya tengo
+664| Opcional: se añade a cada elemento importado, por ejemplo «Festivos» para una lista de festivos, para poder filtrar por ella.
+665| opcional
+666| Importación completada
+667| {items} importado(s)
+668| {items} y {lists} importados
+669| {n} actualizados
+670| {n} ya al día
+671| one={n} duplicado omitido | other={n} duplicados omitidos
+672| reemplazando {items} (guardados como {file})
+673| {lists} añadida(s) ({names})
+674| one={n} elemento archivado movido a la lista «{list}» | other={n} elementos archivados movidos a la lista «{list}»
+675| Este archivo no contiene datos iCalendar (no hay BEGIN:VCALENDAR).
+676| No se pudo leer su archivo de recordatorios
+677| Exportado a {path}
+678| Exportar
+679| Todo (recordatorios y tareas)
+680| El archivo funciona con Outlook, Google Calendar, Thunderbird, Calendario de Apple y el complemento ReminderFox original.
+681| ReminderFoxAgain guarda una copia cada día, una antes de cada restauración y las que usted hace con «Hacer copia ahora». Restaurar reemplaza sus recordatorios y tareas actuales por la copia; lo que tiene ahora se guarda antes, así que siempre puede volver atrás.
+682| Creada
+683| Contenido
+684| Restaurar
+685| Restaurar…
+686| Elegir otro archivo…
+687| {n} archivados
+688| No se puede leer: {s}
+689| No se pudo leer {s}: {s2}
+690| No se puede restaurar ese archivo
+691| Aún no hay copias. Se hacen cada día que se usa la aplicación; también puede hacer clic en «Hacer copia ahora».
+692| Copia diaria
+693| Copia hecha por usted
+694| Guardado antes de una restauración
+695| Guardado antes de una importación que lo reemplazó todo
+696| El archivo histórico, antes de convertirse en una lista
+697| Copia diaria del archivo histórico (versión anterior)
+698| Copia de seguridad
+699| ¿Restaurar esta copia?
+700| Esto reemplaza lo que tiene ahora ({now}) por la copia del {when}: {items}.
+701| Esto reemplaza lo que tiene ahora ({now}) por la copia del {when}: {items}, más {n} archivados, que van a la lista «{list}».
+702| Esta es una copia del archivo histórico de una versión anterior. Sus {all} van a la lista «{list}» (los elementos que ya tiene se quedan como están). No cambia nada más.
+703| Sus datos actuales se guardan antes como copia «Guardado antes de una restauración», así que puede deshacerlo desde esta misma lista.
+704| Copia restaurada
+705| {items} restaurado(s).
+706| {items} restaurado(s), {n} de ellos archivados, ahora en la lista «{list}».
+707| Lo que tenía antes se guardó como {file}.
+708| Copia guardada en {path}
+709| Copia hecha: {s}
+710| {n} bytes
+711| {n} KB
+712| {n} MB
+713| Ese elemento ya no existe.
+714| No se pudo leer el archivo histórico, así que no se modifica. Se ha conservado como archive.ics.unreadable.
+715| No se pudo leer el archivo histórico, así que no se puede reemplazar.
+716| Bienvenido a ReminderFoxAgain
+717| Sus recordatorios, tareas y alarmas como aplicación de Windows: un homenaje al complemento ReminderFox original.
+718| Importar de su complemento ReminderFox
+719| {path} — modificado el {date}
+720| Importar un reminderfox.ics u otro archivo de calendario…
+721| Del complemento ReminderFox (en la carpeta «reminderfox» de su perfil de Firefox/Thunderbird), Outlook, Google Calendar…
+722| Empezar con una lista vacía
+723| Puede importar más tarde desde Ajustes → Datos.
+724| ahora
+725| en {n} min
+726| one=en {n} hora | other=en {n} horas
+727| one=en {n} día | other=en {n} días
+728| hace {n} min
+729| one=hace {n} hora | other=hace {n} horas
+730| one=hace {n} día | other=hace {n} días
+731| Abrir {app}
+732| Añadir recordatorio…
+733| Añadir elemento de lista…
+734| Alarma rápida…
+735| Reanudar alarmas
+736| Mostrar los recordatorios de hoy
+737| Salir de {app}
+738| {app} — alarmas desactivadas
+739| {app} — alarmas desactivadas hasta las {time}
+740| {app} — nada hoy
+741| próximos
+742| {app} sigue en marcha
+743| Las alarmas seguirán apareciendo. Haga clic derecho en el zorro de la bandeja del sistema para salir.
+744| Alarma de {app}
+745| {app} — hoy
+746| {n} h {n2} min
+747| Archivos iCalendar
+748| Todos los archivos
+749| Archivos de sonido
+750| Importar archivo iCalendar
+751| Exportar a archivo iCalendar
+752| Elija su reminderfox.ics
+753| Elija un sonido de alarma
+754| Guardar una copia de seguridad
+755| Elija una copia para restaurar
+756| Cada semana el {days}
+757| Cada mes el {nth} {weekday}
+758| Cada mes el día {day}
+759| Cada mes el mismo día
+760| Cada {n} meses el mismo día
+761| Cada año el {nth} {weekday} de {month}
+762| Cada año el {date}
+763| Cada año en la misma fecha
+764| Cada {n} años en la misma fecha
+765| Se repite
+766| Personalizado ({rule})
+767| {rule}, una vez
+768| {rule}, {n} veces
+769| {rule}, hasta el {date}
+770| Mostrar los recordatorios que ha marcado como completados
+771| Mostrar los recordatorios y elementos de lista que ha marcado como completados
+772| Mi orden: arrastre las filas o pulse Alt+↑ / Alt+↓
+773| Vista
+774| Sonido de alarma
+775| Su propio archivo…
+776| Usar un archivo de sonido propio (.mp3, .wav, .ogg, .m4a, .aac, .flac o .webm)
+777| Sin parar hasta atenderla
+778| Sin parar hasta atenderla: el sonido se repite una y otra vez hasta que posponga, abra, marque como hecha o descarte la alarma, o hasta que oculte la ventana de alarma. La siguiente alarma vuelve a iniciarlo.
+779| Columnas
+780| Columnas de la pestaña Recordatorios
+781| Columnas de las listas
+782| Desmarque una columna para ocultarla. La descripción se muestra siempre.
+783| Filtros guardados para la pestaña Recordatorios
+784| Gestionar recordatorios…
+785| Próximos, Todos los recordatorios, Importantes, la búsqueda y los filtros guardados sin fechas
+786| Lo usan Próximos, Todos los recordatorios, Importantes, la búsqueda y los filtros guardados sin intervalo de fechas. Hoy, Próximos {n} días, Día o mes seleccionado, la pestaña Mes y el calendario siempre muestran todas las fechas.
+787| Filtros guardados
+788| Filtro guardado «{s}» · {c}
+789| Gestionar recordatorios
+790| Un filtro guardado muestra en la pestaña Recordatorios solo los recordatorios que quiere ver: elíjalo en la lista Mostrar. Las condiciones sobre campos distintos deben cumplirse todas; las comas dentro de una condición significan «cualquiera de estos».
+791| ＋ Nuevo filtro guardado…
+792| Aún no hay filtros guardados. Haga clic en «Nuevo filtro guardado…» para crear uno; por ejemplo, cada recordatorio con la categoría «Cumpleaños» en el próximo año.
+793| ¿Eliminar el filtro guardado?
+794| Se eliminará el filtro guardado «{s}». Sus recordatorios no cambian.
+795| Editar filtro guardado
+796| Nuevo filtro guardado
+797| Ponga un nombre al filtro guardado.
+798| Ya hay un filtro guardado con ese nombre.
+799| Filtro guardado modificado
+800| Filtro guardado «{s}» añadido
+801| Campana
+802| Marimba
+803| Pitidos digitales
+804| Despertador
+805| Su archivo: {s}
+806| Crear un tema propio con cinco colores
+807| ＋ Nuevo tema…
+808| Cambiar los colores de su tema
+809| ＋ Nuevo tema… crea uno propio con cinco colores.
+810| Sus temas
+811| Fondo
+812| Detrás de todo
+813| Listas y paneles
+814| Las listas, el panel del calendario, los diálogos
+815| Texto
+816| Acento
+817| Botones, hoy, selección
+818| Elementos destacados
+819| Recordatorios y tareas importantes
+820| El texto se lee mal sobre el fondo (contraste {n}:1; 4,5:1 o más se lee bien).
+821| El acento se ve mal sobre las listas (contraste {n}:1; 3:1 o más es mejor).
+822| Los elementos destacados se ven mal sobre las listas (contraste {n}:1; 3:1 o más es mejor).
+823| Editar tema
+824| Nuevo tema
+825| Partir de
+826| p. ej., Bosque
+827| Toda la ventana muestra el tema mientras elige. Cancelar vuelve a poner el anterior.
+828| Ponga un nombre al tema.
+829| Ya hay un tema con ese nombre.
+830| Tema «{s}» guardado
+831| Tema «{s}» añadido
+832| ¿Eliminar el tema?
+833| Se eliminará el tema «{s}». La aplicación vuelve al tema predeterminado.

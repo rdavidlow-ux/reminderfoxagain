@@ -1,0 +1,834 @@
+# Deutsch — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Erinnerung
+2| ＋ Listeneintrag
+3| ⚙ Einstellungen
+4| Einstellungen
+5| Suchen
+6| Suchen (Strg+F)
+7| Erinnerungen und Aufgaben durchsuchen
+8| Neue Erinnerung (Strg+N)
+9| Neuer Eintrag in der angezeigten Liste (Strg+T)
+10| Schnellalarm: ein einmaliger Alarm in ein paar Minuten (Strg+Q)
+11| ⏰ Schnellalarm
+12| Erinnerungen
+13| Monat
+14| Liste
+15| Listen
+16| Liste: {s}
+17| Alle Listen
+18| Angezeigte Liste wählen
+19| Angezeigte Liste
+20| Aufgaben
+21| Beendet oder ausgesetzt
+22| Kalenderleiste ein- oder ausblenden
+23| Kalenderleiste ein- oder ausblenden (Strg+B)
+24| Alarme an
+25| Alarme ausgesetzt
+26| Alarme ausgesetzt bis {time}
+27| Fortsetzen
+28| Klicken, um die Alarme wieder einzuschalten
+29| Alarme aussetzen oder fortsetzen
+30| one={n} Eintrag | other={n} Einträge
+31| one={n} Erinnerung | other={n} Erinnerungen
+32| one={n} Aufgabe | other={n} Aufgaben
+33| one={n} Listeneintrag | other={n} Listeneinträge
+34| one={n} neuer Eintrag | other={n} neue Einträge
+35| one={n} archivierter Eintrag | other={n} archivierte Einträge
+36| one={n} Liste | other={n} Listen
+37| one={n} Datei | other={n} Dateien
+38| one={n} Minute | other={n} Minuten
+39| one={n} Stunde | other={n} Stunden
+40| one={n} Tag | other={n} Tage
+41| one={n} Duplikat | other={n} Duplikate
+42| Anzeigen
+43| Heute
+44| Morgen
+45| Gestern
+46| Nächste {n} Tage
+47| Demnächst
+48| Alle Erinnerungen
+49| Wichtig
+50| Vergangen
+51| Gewählter Tag
+52| Gewählter Monat
+53| Ansichten
+54| Ansicht „{s}“
+55| Suche in allen Erinnerungen
+56| Datum
+57| Tag
+58| Zeit
+59| Beschreibung
+60| Wiederholung
+61| Kategorie
+62| Alarm
+63| Erledigt
+64| Erledigt {date}
+65| (keine Beschreibung)
+66| Hier gibt es keine Erinnerungen
+67| Klicken Sie auf ＋ Erinnerung, um eine hinzuzufügen, oder wählen Sie eine andere Ansicht.
+68| Klicken Sie auf ＋ Listeneintrag, um dieser Liste etwas hinzuzufügen.
+69| Überfällig seit {date}
+70| überfällig seit {date}
+71| Bald: {s}
+72| Bearbeiten…
+73| Löschen…
+74| Löschen
+75| Duplizieren
+76| Kopieren
+77| Verschieben
+78| Öffnen
+79| Link öffnen
+80| Auf einer Karte zeigen
+81| In Liste zeigen
+82| Als erledigt markieren
+83| Erinnern…
+84| Zur Aufgabe machen…
+85| Zur Aufgabe machen
+86| Zur Erinnerung machen
+87| Als Erinnerung planen…
+88| Als Erinnerung planen
+89| In eine Liste kopieren…
+90| In eine Liste kopieren
+91| In Liste kopieren…
+92| In Liste kopieren
+93| In Liste verschieben…
+94| In Liste verschieben
+95| Verschieben nach…
+96| Kopieren nach…
+97| In eine andere Liste verschieben
+98| Eine Kopie in eine andere Liste legen
+99| Eine genaue Kopie in dieser Liste (Strg+D)
+100| Löschen (Entf)
+101| Gewählter Eintrag
+102| Gewählter Eintrag:
+103| Nach oben
+104| Nach unten
+105| -
+106| -
+107| Strg+D
+108| „{s}“ dupliziert
+109| {s} (Kopie)
+110| Nach „{s}“ kopiert
+111| Nach „{s}“ verschoben
+112| Nach „{s}“ verschieben
+113| Jetzt eine Aufgabe in „{s}“
+114| Jetzt eine Erinnerung am {date}
+115| ist in „{s}“
+116| „{s}“ ist leer
+117| Gelöscht
+118| Termin gelöscht
+119| Wiederkehrende Erinnerung löschen
+120| Diese Erinnerung wiederholt sich — Änderungen gelten für jeden Termin.
+121| Nur diesen
+122| Alle Termine
+123| Diesen Termin löschen
+124| Alle Termine löschen…
+125| „{s}“ wiederholt sich ({rule}).
+126| Nur den Termin am {date} löschen oder alle Termine?
+127| Alle Termine löschen?
+128| Alle löschen
+129| Erinnerung löschen?
+130| Aufgabe löschen?
+131| „{s}“ wird gelöscht.
+132| „{s}“ und alle Wiederholungen werden gelöscht.
+133| Etwas ist schiefgegangen
+134| Bitte zuerst einen Ort eingeben.
+135| Vorheriger Monat
+136| Nächster Monat
+137| Zu heute
+138| Zu einem Datum gehen (Strg+G)
+139| Zum Datum gehen
+140| Gehe zu…
+141| Los
+142| Erinnerung an diesem Tag hinzufügen
+143| Doppelklick auf einen Tag fügt eine Erinnerung hinzu
+144| An diesem Tag ist nichts.
+145| +{n} weitere
+146| Noch nicht erledigt
+147| Ganztägig
+148| Ganztägig {s}
+149| Aufgabe
+150| Aufgabe {s}
+151| Aufgabe
+152| So
+153| Mo
+154| Di
+155| Mi
+156| Do
+157| Fr
+158| Sa
+159| So
+160| Mo
+161| Di
+162| Mi
+163| Do
+164| Fr
+165| Sa
+166| Sonntag
+167| Montag
+168| Dienstag
+169| Mittwoch
+170| Donnerstag
+171| Freitag
+172| Samstag
+173| Listeneintrag
+174| Fällig bis
+175| Reihenfolge
+176| Meine Reihenfolge
+177| Nach Datum
+178| Manuell: Zeilen ziehen oder Alt+↑ / Alt+↓ drücken
+179| Erledigte zeigen
+180| Aufgaben zeigen
+181| Aufgaben mit Datum einbeziehen
+182| Kein Datum
+183| · kein Fälligkeitsdatum
+184| · fällig bis {date}
+185| · überfällig
+186| · ganztägig
+187| · gestellt auf {time}
+188| · in {n} Min.
+189| · vor {n} Min. begonnen ·
+190| Diese Aufgabe im Tooltip des Tray-Symbols zeigen
+191| Im Tray-Tooltip zeigen
+192| ✓ Im Tray-Tooltip zeigen
+193| Wird im Tray-Tooltip gezeigt
+194| Aus dem Tray-Tooltip entfernt
+195| Täglich erinnern bis erledigt
+196| Mich täglich erinnern, bis es erledigt ist
+197| Erinnert täglich, bis es erledigt ist
+198| Bis erledigt
+199| Erinnert nicht mehr täglich
+200| Erinnert Sie jeden Tag, bis Sie „Erledigt“ ankreuzen
+201| Am {date} verpasst; erinnert Sie jeden Tag, bis Sie es abhaken
+202| Wenn Sie es verpassen, rückt es auf heute und alarmiert jeden Tag, bis Sie es abhaken
+203| Erledigt — auf den nächsten Termin verschoben
+204| täglich
+205| wöchentlich
+206| monatlich
+207| alle {n} Tage
+208| alle {n} Wochen
+209| {n} T. vorher
+210| am Tag selbst
+211| {every} ab {from}
+212| einmal
+213| jeden Tag
+214| jede Woche
+215| jeden Monat
+216| one={n} Tag vor dem Fälligkeitsdatum | other={n} Tage vor dem Fälligkeitsdatum
+217| am Fälligkeitsdatum
+218| Erinnert Sie {every}, ab {from}, um {time}
+219| Erinnert Sie {every}, ab {from}, um {time}, bis es erledigt ist
+220| Erinnert Sie {every}, ab {from}, um {time}, bis es erledigt ist (auch nach dem Fälligkeitsdatum)
+221| Neue Erinnerung
+222| Erinnerung bearbeiten
+223| Neue Aufgabe
+224| Aufgabe bearbeiten
+225| Woran möchten Sie erinnert werden?
+226| Was ist zu tun?
+227| Art
+228| Erinnerung
+229| Am Datum
+230| Jederzeit
+231| Endet
+232| Ort
+233| Link
+234| -
+235| Notizen
+236| Kategorien
+237| Kategorien wählen
+238| z. B. Geburtstag, Arbeit
+239| Hinzufügen
+240| Speichern
+241| Abbrechen
+242| Schließen
+243| OK
+244| Ja
+245| Nein
+246| Keine
+247| Keine Wiederholung
+248| Täglich
+249| Wöchentlich
+250| Monatlich
+251| Jährlich
+252| Benutzerdefiniert…
+253| Benutzerdefiniert
+254| Benutzerdefiniert (importiert)
+255| Importierte beibehalten: {s}
+256| Jeden Werktag
+257| Alle
+258| alle
+259| Tag
+260| Tage
+261| Woche
+262| Wochen
+263| Monat
+264| Monate
+265| Jahr
+266| Jahre
+267| Mal
+268| Am {date}
+269| Am {day}. des Monats
+270| Am {nth} {weekday}
+271| Am {nth} {weekday} im {month}
+272| Am letzten {weekday}
+273| Am letzten {weekday} im {month}
+274| Jeden Tag
+275| Alle {n} Tage
+276| Jede Woche
+277| Alle {n} Wochen
+278| Jeden Monat
+279| Jede Woche am {days}
+280| Alle {n} Wochen am {days}
+281| Werktags
+282| Jeden Monat am {day}.
+283| Alle {n} Monate am {day}.
+284| Jeden Monat am {nth} {weekday}
+285| Alle {n} Monate am {nth} {weekday}
+286| Jedes Jahr am {date}
+287| Alle {n} Jahre am {date}
+288| Jedes Jahr am {nth} {weekday} im {month}
+289| Alle {n} Jahre am {nth} {weekday} im {month}
+290| letzten
+291| {n}.
+292| Wie oft
+293| Am
+294| Nach
+295| Dann
+296| Erneut
+297| um
+298| vorher
+299| Nie
+300| Bis
+301| bis…
+302| an einem Datum…
+303| beginnend am…
+304| nicht mehr (nur einmal)
+305| Erinnern
+306| Nicht erinnern
+307| Wann die Erinnerungen beginnen
+308| Datum der ersten Erinnerung
+309| Uhrzeit der Erinnerung
+310| Weiter erinnern, wenn das Fälligkeitsdatum vorbei und es nicht erledigt ist
+311| auch nach dem Fälligkeitsdatum
+312| bis es erledigt ist
+313| bis es erledigt oder fällig ist ({due})
+314| bis es erledigt ist, auch nach der Fälligkeit ({due})
+315| Eine Erinnerung, am {date} um {time}.
+316| Eine Erinnerung, am {date} um {time}. Dieser Zeitpunkt ist vorbei — wählen Sie einen späteren oder erinnern Sie wiederholt.
+317| {every} um {time}, ab {date}, {end}.
+318| Keine Erinnerungen.
+319| Keine Erinnerungen. Die Aufgabe wird rot angezeigt, sobald ihr Fälligkeitsdatum vorbei ist.
+320| Wählen Sie das Datum der ersten Erinnerung.
+321| Alarmtext
+322| Zur Uhrzeit
+323| one={n} Minute vorher | other={n} Minuten vorher
+324| one={n} Stunde vorher | other={n} Stunden vorher
+325| one={n} Tag vorher | other={n} Tage vorher
+326| one={n} Woche vorher | other={n} Wochen vorher
+327| Am Tag selbst, um {time}
+328| Am Vortag, um {time}
+329| Wird angezeigt als: {s}. <year> zählt die Jahre seitdem; <year#> zeigt nur die Zahl.
+330| In der Zeitzone {zone} importiert — wird in Ihrer Ortszeit angezeigt. Beim Speichern wird die Ortszeit gespeichert.
+331| Bitte eine Beschreibung eingeben.
+332| Bitte das Fälligkeitsdatum wählen oder „Kein Datum“ ankreuzen.
+333| Bitte ein Datum wählen.
+334| Bitte das Datum wählen.
+335| Datum wählen.
+336| Bitte die Uhrzeit eingeben, bis wann es fällig ist, oder „Jederzeit“ ankreuzen.
+337| Bitte eine Uhrzeit eingeben oder „Ganztägig“ ankreuzen.
+338| Das Enddatum liegt vor dem Startdatum.
+339| Die Endzeit liegt vor der Startzeit.
+340| Erinnerung hinzugefügt
+341| Aufgabe hinzugefügt
+342| Gespeichert
+343| Kopie bearbeiten
+344| Das Datum steht fest: diese Aufgabe zu einer Erinnerung an einem genauen Datum machen
+345| Sie ist fällig bis {date}.
+346| Sie ist fällig bis {date}, {time}.
+347| Sobald Sie das genaue Datum kennen, wird die Aufgabe zu einer Erinnerung an diesem Datum: Sie verlässt die Aufgabenliste und erscheint in Erinnerungen, in der Monatsansicht und im Kalender. Notizen, Kategorie, Ort und Link bleiben erhalten.
+348| Eine Erinnerung am {date}, ganztägig.
+349| Eine Erinnerung am {date}, um {time}.
+350| Die Erinnerung wird zu einer Aufgabe am selben Datum, mit Wiederholung, Alarm und Notizen.
+351| Die Erinnerung bleibt; eine Aufgaben-Kopie am selben Datum, mit Wiederholung, Alarm und Notizen, kommt auf die Liste.
+352| Eine genaue Kopie kommt auf die gewählte Liste; dieser Eintrag bleibt, wo er ist.
+353| Die Liste
+354| {s} (diese Liste)
+355| Hauptliste
+356| ReminderFoxAgain-Alarm
+357| Später erinnern
+358| Alle später
+359| Alle später: {s}
+360| Alle Erinnerungen hier um Ihre Standard-Schlummerzeit verschieben (in den Einstellungen änderbar)
+361| Für wie lange oder bis wann schlummern
+362| Schlummer-Einheit
+363| Schlummern bis
+364| Verwerfen
+365| Alle verwerfen
+366| Erledigt
+367| Fertig mit diesem Schnellalarm
+368| Vorerst ausblenden (der Alarm bleibt aktiv und kommt mit dem nächsten wieder)
+369| Eine Uhrzeit wie 15:30 oder 3:30 pm (früher als jetzt bedeutet morgen)
+370| Eine ganze Zahl von {n} bis {n2}
+371| Geben Sie eine ganze Zahl von {n} bis {n2} ein.
+372| Geben Sie eine ganze Zahl von 1 bis 999 oder ein Datum und eine Uhrzeit ein.
+373| Sekunden
+374| Minuten
+375| Stunden
+376| Schnellalarm
+377| Schnellalarme
+378| ⏰ Schnellalarme…
+379| Ein einmaliger Alarm, der nicht als Erinnerung gespeichert wird — wie der Schnellalarm des Add-ons.
+380| In
+381| Um
+382| Für
+383| Alarm stellen
+384| Diesen Alarm abbrechen
+385| Keine Schnellalarme.
+386| Wartet auf den Alarm
+387| Schnellalarm gestellt auf {time}
+388| Schnellalarm abgebrochen
+389| Wählen Sie eine Uhrzeit.
+390| Dieser Zeitpunkt ist vorbei — wählen Sie einen späteren.
+391| Dieser Zeitpunkt ist vorbei.
+392| Alarm {when} ({until}).
+393| heute um {time}
+394| in weniger als einer Minute
+395| in {time}
+396| in {hours} {minutes}
+397| Alarme aussetzen
+398| Alarme aussetzen…
+399| Alarme eine Weile aussetzen
+400| Aussetzen
+401| Wie lange
+402| Bis ich sie wieder einschalte
+403| Die Alarme bleiben aus, bis Sie sie fortsetzen (Statusleiste, Tray-Menü oder hier).
+404| Während der Pause öffnen sich keine Alarmfenster und das Erinnerungs-Pop-up bleibt weg. Alarme, die in der Zwischenzeit fällig werden, erscheinen beim Fortsetzen.
+405| Die Alarme sind ausgesetzt, bis Sie sie wieder einschalten.
+406| Die Alarme kommen {when} wieder.
+407| Die Alarme sind wieder an
+408| Alarme jetzt fortsetzen
+409| Bitte eine Uhrzeit in der Zukunft wählen.
+410| ReminderFoxAgain — heute
+411| Demnächst
+412| Heute nichts.
+413| Demnächst nichts.
+414| Allgemein
+415| Alarme
+416| Anzeige
+417| Daten
+418| Über
+419| ReminderFoxAgain beim Start von Windows starten
+420| Im Infobereich weiterlaufen, wenn das Fenster geschlossen wird
+421| Woche beginnt am
+422| Design
+423| Designs
+424| Standard (wie Windows)
+425| Fuchs
+426| Hell
+427| Dunkel
+428| Ozean
+429| Hoher Kontrast
+430| Standard ist Fuchs, hell oder dunkel passend zu Windows. Markierte Einträge haben in jedem Design ihre eigene Farbe. Hoher Kontrast nutzt Schwarz, Weiß, Gelb und Cyan mit größerer Schrift und kräftigeren Linien.
+431| -
+432| ReminderFoxAgain ist eine Hommage an das ursprüngliche
+433| -
+434| Add-on für Firefox und Thunderbird, geschaffen von Tom Mutdosch und Daniel Lee mit Guenter Wahl. Dateiformat, Wiederholungsregeln, Ansichten, Schnellalarme und Hinweisfenster stammen von ihnen; vielen Dank.
+435| Bei Alarmen einen Ton abspielen
+436| Ton
+437| Eingebauter Gong
+438| Ihr Ton
+439| Wählen…
+440| Wählen
+441| Den eingebauten Gong verwenden
+442| Gong
+443| Abspielen
+444| ▶ Test
+445| Alarmton: {s}
+446| Der eingebaute Gong wird verwendet
+447| Bitte eine Tondatei wählen (.mp3, .wav, .ogg, .m4a, .aac, .flac oder .webm).
+448| Diese Tondatei ist größer als 10 MB. Bitte eine kürzere wählen.
+449| Ton wiederholen
+450| Nein, einmal abspielen
+451| Jede Minute
+452| Alle {n} Minuten
+453| Standardalarm für neue Erinnerungen
+454| Standard-Schlummerzeit
+455| Einheit der Schlummerzeit
+456| Standard-Schlummerzeit, wie viele
+457| Erinnerungs-Pop-up (das Hinweisfenster des Add-ons)
+458| Ein Pop-up mit heutigen und kommenden Erinnerungen zeigen
+459| Wann
+460| Nur beim Start
+461| Beim Start und alle {n} Minuten
+462| … alle {n} Minuten
+463| … jede Stunde
+464| … alle {n} Stunden
+465| Offen lassen
+466| {n} Sekunden
+467| Bis ich es schließe
+468| Ecke
+469| unten rechts
+470| unten links
+471| oben rechts
+472| oben links
+473| Ton abspielen
+474| Jetzt zeigen
+475| „Demnächst“ heißt die nächsten
+476| Zahl am Symbol
+477| Eine Zahl an Tray- und Taskleistensymbol zeigen
+478| Offene Erinnerungen und Aufgaben von heute
+479| Heute und demnächst
+480| Nur heute
+481| Nur demnächst
+482| Sprache
+483| Systemsprache ({s})
+484| Die Sprache der Menüs, Schaltflächen und Meldungen. Ihre Erinnerungen werden nicht geändert.
+485| Die Übersetzungen wurden für ReminderFoxAgain geschrieben und noch nicht von Muttersprachlern geprüft.
+486| Schriftgröße
+487| Klein ({n} %)
+488| Normal
+489| Groß ({n} %)
+490| Größer ({n} %)
+491| Am größten ({n} %)
+492| Datumsangaben
+493| Wie in Windows ({s})
+494| Uhrzeiten
+495| Wie in Windows
+496| {n}-Stunden ({s})
+497| Kalenderleiste neben den Listen zeigen
+498| Monate in der Kalenderleiste
+499| Karten
+500| -
+501| -
+502| -
+503| Tooltip des Tray-Symbols
+504| Tooltip
+505| Heutige Erinnerungen
+506| Kommende Erinnerungen
+507| Variablen: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — dieselben wie im Add-on.
+508| Zurücksetzen
+509| Tooltip-Texte zurückgesetzt
+510| Listen verwalten…
+511| Kategorien verwalten…
+512| Ansichten verwalten…
+513| Wiederkehrende Erinnerungen im Reiter Erinnerungen
+514| Zu zeigende künftige Termine
+515| Demnächst, Alle Erinnerungen, Wichtig, Suche und Ansichten ohne Datum
+516| Jeder Termin in den nächsten
+517| Nur die nächsten
+518| one={n} Monat | other={n} Monate
+519| one={n} Jahr | other={n} Jahre
+520| one={n} Termin | other={n} Termine
+521| Gilt für Demnächst, Alle Erinnerungen, Wichtig, Suche und Ansichten ohne Zeitraum. Heute, Nächste {n} Tage, Gewählter Tag oder Monat, der Reiter Monat und der Kalender zeigen immer jeden Termin.
+522| In Alle und Vergangen vergangene zeigen ab
+523| dem Beginn jeder Serie
+524| den letzten {n} Jahren
+525| dem letzten Jahr
+526| den letzten {n} Monaten
+527| Wiederkehrende Erinnerungen ausblenden
+528| Erledigte Erinnerungen ausblenden
+529| Import und Export
+530| Eine .ics-Datei importieren…
+531| Die Einträge aus einer .ics-Datei hinzufügen (Strg+I)
+532| Aus ReminderFox importieren…
+533| Die reminderfox.ics finden, die das ReminderFox-Add-on in Ihrem Firefox- oder Thunderbird-Profil abgelegt hat
+534| Als .ics exportieren…
+535| Als .ics exportieren
+536| Exportieren…
+537| Eine .ics-Datei speichern (Strg+E)
+538| Importe ergänzen Ihre Daten; vorhandene Einträge werden nur aktualisiert, wenn die Kopie in der Datei neuer ist. Exporte lassen sich in Outlook, Google Kalender, Thunderbird, Apple Kalender und dem ursprünglichen ReminderFox-Add-on öffnen.
+539| Sicherungen
+540| Jetzt sichern
+541| Eine Sicherungskopie speichern…
+542| Aus einer Sicherung wiederherstellen…
+543| Aus einer Sicherung wiederherstellen
+544| Sicherungsordner öffnen
+545| Datenordner öffnen
+546| Datendatei
+547| Die Erinnerungsdatei im Explorer zeigen
+548| Ihre Erinnerungen werden in {path} gespeichert (tägliche Sicherungen liegen im Ordner „backups“ daneben).
+549| ＋ Neue Liste…
+550| Neue Liste…
+551| Neue Liste
+552| Name der neuen Liste
+553| Name der neuen Liste (zum Beispiel Einkäufe, Filme, Geschenkideen):
+554| Liste hinzufügen
+555| Liste umbenennen
+556| Umbenennen…
+557| Entfernen…
+558| Liste entfernen?
+559| „Aufgaben“ ist die Hauptliste und kann nicht umbenannt oder entfernt werden (wie im Add-on). Beim Entfernen einer Liste wählen Sie, ob ihre Aufgaben nach „Aufgaben“ verschoben oder gelöscht werden.
+560| Die Liste „{list}“ hat {n} Aufgabe. Nach „{main}“ verschieben oder mit der Liste löschen?
+561| Die Liste „{list}“ hat {n} Aufgaben. Nach „{main}“ verschieben oder mit der Liste löschen?
+562| Liste und Aufgaben löschen
+563| one=Liste und {n} Aufgabe gelöscht | other=Liste und {n} Aufgaben gelöscht
+564| Liste entfernt
+565| Liste „{s}“ hinzugefügt
+566| „{s}“ gibt es schon
+567| Diese Liste gibt es schon.
+568| Ein Listenname darf nicht leer sein und kein Komma oder Doppelpunkt enthalten.
+569| Ein Listenname darf kein Komma oder Doppelpunkt enthalten.
+570| Listen zusammenführen?
+571| Zusammenführen
+572| Mit „{s}“ zusammengeführt
+573| Umbenannt in „{s}“
+574| Neuer Name für „{name}“:
+575| Neuer Name für „{name}“ (bei {items}):
+576| Neue Kategorie
+577| Weitere Kategorie
+578| Übliche hinzufügen
+579| Kategorie „{s}“ hinzugefügt
+580| {n} Kategorien hinzugefügt
+581| Nichts Neues hinzuzufügen.
+582| Kategorie umbenennen
+583| Kategorie löschen?
+584| Kategorie gelöscht
+585| Kategorien zusammenführen?
+586| Eine Kategorie darf nicht leer sein und kein Komma enthalten.
+587| noch nicht verwendet
+588| Umbenennen ändert jede Erinnerung und Aufgabe mit dieser Kategorie; Umbenennen in eine vorhandene führt sie zusammen. Löschen entfernt sie von ihren Einträgen (die Einträge bleiben).
+589| Die Kategorie „{name}“ wird gelöscht.
+590| Die Kategorie „{name}“ wird gelöscht und von {items} entfernt. Die Einträge selbst bleiben.
+591| Jahrestag
+592| Termin
+593| Geburtstag
+594| Geschäftlich
+595| Anruf
+596| Feiertag
+597| Besprechung
+598| Persönlich
+599| Einkaufen
+600| Reise
+601| Jahrestag, Termin, Geburtstag, Geschäftlich, Anruf…
+602| Neue Ansicht
+603| ＋ Neue Ansicht…
+604| Ansicht bearbeiten
+605| Ansicht löschen?
+606| Die Ansicht „{s}“ wird gelöscht. Ihre Erinnerungen werden nicht geändert.
+607| Im Reiter Erinnerungen zeigen
+608| Ansicht gespeichert
+609| Ansicht „{s}“ hinzugefügt
+610| Bitte geben Sie der Ansicht einen Namen.
+611| Es gibt schon eine Ansicht mit diesem Namen.
+612| Eine Ansicht ist ein gespeicherter Filter für den Reiter Erinnerungen: Wählen Sie sie in der Liste „Anzeigen“. Bedingungen für verschiedene Felder müssen alle zutreffen; Kommas innerhalb einer Bedingung bedeuten „eines davon“.
+613| Noch keine Ansichten. Klicken Sie auf „Neue Ansicht…“, um eine anzulegen — zum Beispiel jede Erinnerung mit der Kategorie „Geburtstag“ im kommenden Jahr.
+614| Name
+615| z. B. Geburtstage
+616| Erinnerungen zeigen, bei denen
+617| ＋ Bedingung hinzufügen
+618| Diese Bedingung entfernen
+619| Irgendein Feld
+620| Die Kategorie
+621| Die Ansicht
+622| Typ
+623| ist
+624| enthält
+625| Wörter, durch Kommas getrennt
+626| Nur Termine von
+627| bis
+628| ab heute
+629| heute
+630| Negative Zahlen gehen in die Vergangenheit: −{n} Monat bis {n2} Tage bedeutet „der letzte Monat“.
+631| Alle
+632| Alles
+633| Nur Erinnerungen
+634| Nur Aufgaben
+635| Einheit
+636| Wie viele
+637| Irgendein Feld enthält „{s}“
+638| Kategorie ist „{s}“
+639| Kategorie ist „{s}“ oder „{s2}“
+640| Termine von heute bis in {n} Tagen
+641| one=+{n} Woche | other=+{n} Wochen
+642| one=+{n} Monat | other=+{n} Monate
+643| one=+{n} Jahr | other=+{n} Jahre
+644| Importieren
+645| Eine iCalendar-Datei importieren
+646| Aus ReminderFox importieren
+647| Aus ReminderFox
+648| {files} aus dem ReminderFox-Add-on gefunden:
+649| Die neueste importieren
+650| Trotzdem importieren
+651| {reminders} und {items}
+652| {n} schon vorhanden (die neuere Kopie wird behalten)
+653| {n} scheint ein Duplikat zu sein (gleicher Titel und gleiches Datum wie ein vorhandener Eintrag)
+654| {n} scheinen Duplikate zu sein (gleicher Titel und gleiches Datum wie ein vorhandener Eintrag)
+655| Wie
+656| Zu meinen Daten hinzufügen
+657| Alles ersetzen
+658| Alles ersetzen ({items} werden vorher gesichert)
+659| Alles ersetzen?
+660| Ihre {items} werden durch die {newItems} in der Datei ersetzt.
+661| Ihr jetziger Stand wird vorher als Sicherung „Vor einem Import gespeichert, der alles ersetzt hat“ gesichert, sodass Sie ihn unter Einstellungen → Daten → Aus einer Sicherung wiederherstellen… zurückholen können.
+662| Duplikate
+663| Einträge mit gleichem Titel und Datum wie ein vorhandener überspringen
+664| Optional: wird jedem importierten Eintrag hinzugefügt, zum Beispiel „Feiertage“ für eine Liste von Feiertagen, damit Sie danach filtern können.
+665| optional
+666| Import abgeschlossen
+667| {items} importiert
+668| {items} und {lists} importiert
+669| {n} aktualisiert
+670| {n} schon aktuell
+671| one={n} Duplikat übersprungen | other={n} Duplikate übersprungen
+672| {items} werden ersetzt (gesichert als {file})
+673| {lists} hinzugefügt ({names})
+674| one={n} archivierter Eintrag in die Liste „{list}“ verschoben | other={n} archivierte Einträge in die Liste „{list}“ verschoben
+675| Diese Datei enthält keine iCalendar-Daten (kein BEGIN:VCALENDAR).
+676| Ihre Erinnerungsdatei konnte nicht gelesen werden
+677| Exportiert nach {path}
+678| Exportieren
+679| Alles (Erinnerungen und Aufgaben)
+680| Die Datei funktioniert mit Outlook, Google Kalender, Thunderbird, Apple Kalender und dem ursprünglichen ReminderFox-Add-on.
+681| ReminderFoxAgain legt jeden Tag eine Sicherung an, eine vor jeder Wiederherstellung, und die, die Sie mit „Jetzt sichern“ machen. Eine Wiederherstellung ersetzt Ihre jetzigen Erinnerungen und Aufgaben durch die Sicherung; Ihr jetziger Stand wird vorher gesichert, Sie können also immer zurück.
+682| Erstellt
+683| Inhalt
+684| Wiederherstellen
+685| Wiederherstellen…
+686| Andere Datei wählen…
+687| {n} archiviert
+688| Nicht lesbar: {s}
+689| {s} konnte nicht gelesen werden: {s2}
+690| Diese Datei kann nicht wiederhergestellt werden
+691| Noch keine Sicherungen. Sie entstehen an jedem Tag, an dem die App läuft; Sie können auch auf „Jetzt sichern“ klicken.
+692| Tägliche Sicherung
+693| Von Ihnen erstellte Sicherung
+694| Vor einer Wiederherstellung gespeichert
+695| Vor einem Import gespeichert, der alles ersetzt hat
+696| Das Archiv, bevor es eine Liste wurde
+697| Tägliche Sicherung des Archivs (frühere Version)
+698| Sicherung
+699| Diese Sicherung wiederherstellen?
+700| Dies ersetzt Ihren jetzigen Stand ({now}) durch die Sicherung vom {when}: {items}.
+701| Dies ersetzt Ihren jetzigen Stand ({now}) durch die Sicherung vom {when}: {items}, dazu {n} archivierte, die in die Liste „{list}“ kommen.
+702| Dies ist eine Kopie des Archivs aus einer früheren Version. Ihre {all} kommen in die Liste „{list}“ (vorhandene Einträge bleiben, wie sie sind). Sonst ändert sich nichts.
+703| Ihre jetzigen Daten werden vorher als Sicherung „Vor einer Wiederherstellung gespeichert“ gesichert, Sie können das also in derselben Liste rückgängig machen.
+704| Sicherung wiederhergestellt
+705| {items} wiederhergestellt.
+706| {items} wiederhergestellt, davon {n} archivierte, jetzt in der Liste „{list}“.
+707| Ihr vorheriger Stand wurde als {file} gespeichert.
+708| Sicherung gespeichert unter {path}
+709| Gesichert: {s}
+710| {n} Byte
+711| {n} KB
+712| {n} MB
+713| Diesen Eintrag gibt es nicht mehr.
+714| Die Archivdatei konnte nicht gelesen werden und bleibt daher unverändert. Sie wurde als archive.ics.unreadable aufbewahrt.
+715| Die Archivdatei konnte nicht gelesen werden und kann daher nicht ersetzt werden.
+716| Willkommen bei ReminderFoxAgain
+717| Ihre Erinnerungen, Aufgaben und Alarme als Windows-App — eine Hommage an das ursprüngliche ReminderFox-Add-on.
+718| Aus Ihrem ReminderFox-Add-on importieren
+719| {path} — zuletzt geändert {date}
+720| Eine reminderfox.ics oder andere Kalenderdatei importieren…
+721| Aus dem ReminderFox-Add-on (im Ordner „reminderfox“ Ihres Firefox-/Thunderbird-Profils), Outlook, Google Kalender…
+722| Mit einer leeren Liste beginnen
+723| Sie können später unter Einstellungen → Daten importieren.
+724| jetzt
+725| in {n} Min.
+726| one=in {n} Stunde | other=in {n} Stunden
+727| one=in {n} Tag | other=in {n} Tagen
+728| vor {n} Min.
+729| one=vor {n} Stunde | other=vor {n} Stunden
+730| one=vor {n} Tag | other=vor {n} Tagen
+731| {app} öffnen
+732| Erinnerung hinzufügen…
+733| Listeneintrag hinzufügen…
+734| Schnellalarm…
+735| Alarme fortsetzen
+736| Heutige Erinnerungen zeigen
+737| {app} beenden
+738| {app} — Alarme aus
+739| {app} — Alarme aus bis {time}
+740| {app} — heute nichts
+741| demnächst
+742| {app} läuft noch
+743| Alarme erscheinen weiterhin. Zum Beenden mit der rechten Maustaste auf den Fuchs im Infobereich klicken.
+744| {app}-Alarm
+745| {app} — heute
+746| {n} Std. {n2} Min.
+747| iCalendar-Dateien
+748| Alle Dateien
+749| Tondateien
+750| iCalendar-Datei importieren
+751| In eine iCalendar-Datei exportieren
+752| Ihre reminderfox.ics wählen
+753| Einen Alarmton wählen
+754| Eine Sicherungskopie speichern
+755| Eine Sicherung zum Wiederherstellen wählen
+756| Wöchentlich am {days}
+757| Monatlich am {nth} {weekday}
+758| Monatlich am {day}.
+759| Monatlich am selben Tag
+760| Alle {n} Monate am selben Tag
+761| Jährlich am {nth} {weekday} im {month}
+762| Jährlich am {date}
+763| Jährlich am selben Datum
+764| Alle {n} Jahre am selben Datum
+765| Wiederholt sich
+766| Benutzerdefiniert ({rule})
+767| {rule}, einmal
+768| {rule}, {n}-mal
+769| {rule}, bis {date}
+770| Erinnerungen zeigen, die Sie als erledigt abgehakt haben
+771| Erinnerungen und Listeneinträge zeigen, die Sie als erledigt abgehakt haben
+772| Meine Reihenfolge: Zeilen ziehen oder Alt+↑ / Alt+↓ drücken
+773| Ansicht
+774| Alarmton
+775| Eigene Datei…
+776| Eine eigene Tondatei verwenden (.mp3, .wav, .ogg, .m4a, .aac, .flac oder .webm)
+777| Ununterbrochen, bis erledigt
+778| Ununterbrochen, bis erledigt: Der Ton spielt immer wieder, bis Sie den Alarm zurückstellen, öffnen, als erledigt markieren oder verwerfen oder das Alarmfenster ausblenden. Der nächste Alarm startet ihn erneut.
+779| Spalten
+780| Spalten im Reiter Erinnerungen
+781| Spalten in den Listen
+782| Entfernen Sie das Häkchen, um eine Spalte auszublenden. Die Beschreibung wird immer gezeigt.
+783| Gespeicherte Filter für den Reiter Erinnerungen
+784| Erinnerungen verwalten…
+785| Demnächst, Alle Erinnerungen, Wichtig, Suche und gespeicherte Filter ohne Datum
+786| Gilt für Demnächst, Alle Erinnerungen, Wichtig, Suche und gespeicherte Filter ohne Zeitraum. Heute, Nächste {n} Tage, Gewählter Tag oder Monat, der Reiter Monat und der Kalender zeigen immer jeden Termin.
+787| Gespeicherte Filter
+788| Gespeicherter Filter „{s}“ · {c}
+789| Erinnerungen verwalten
+790| Ein gespeicherter Filter zeigt im Reiter Erinnerungen genau die Erinnerungen, die Sie sehen möchten: Wählen Sie ihn in der Liste „Anzeigen“. Bedingungen für verschiedene Felder müssen alle zutreffen; Kommas innerhalb einer Bedingung bedeuten „eines davon“.
+791| ＋ Neuer gespeicherter Filter…
+792| Noch keine gespeicherten Filter. Klicken Sie auf „Neuer gespeicherter Filter…“, um einen anzulegen — zum Beispiel jede Erinnerung mit der Kategorie „Geburtstag“ im kommenden Jahr.
+793| Gespeicherten Filter löschen?
+794| Der gespeicherte Filter „{s}“ wird gelöscht. Ihre Erinnerungen werden nicht geändert.
+795| Gespeicherten Filter bearbeiten
+796| Neuer gespeicherter Filter
+797| Bitte geben Sie dem gespeicherten Filter einen Namen.
+798| Es gibt bereits einen gespeicherten Filter mit diesem Namen.
+799| Gespeicherter Filter geändert
+800| Gespeicherter Filter „{s}“ hinzugefügt
+801| Glocke
+802| Marimba
+803| Digitale Pieptöne
+804| Wecker
+805| Ihre Datei: {s}
+806| Ein eigenes Design aus fünf Farben erstellen
+807| ＋ Neues Design…
+808| Die Farben Ihres Designs ändern
+809| ＋ Neues Design… erstellt ein eigenes aus fünf Farben.
+810| Ihre Designs
+811| Hintergrund
+812| Hinter allem
+813| Listen und Bereiche
+814| Die Listen, der Kalenderbereich, Dialoge
+815| Text
+816| Akzent
+817| Schaltflächen, heute, Auswahl
+818| Markierte Einträge
+819| Wichtige Erinnerungen und Aufgaben
+820| Der Text ist auf dem Hintergrund schwer zu lesen (Kontrast {n}:1; ab 4,5:1 gut lesbar).
+821| Der Akzent ist auf den Listen schwer zu sehen (Kontrast {n}:1; 3:1 oder mehr ist besser).
+822| Markierte Einträge sind auf den Listen schwer zu sehen (Kontrast {n}:1; 3:1 oder mehr ist besser).
+823| Design bearbeiten
+824| Neues Design
+825| Ausgehend von
+826| z. B. Wald
+827| Das ganze Fenster zeigt das Design, während Sie wählen. „Abbrechen“ stellt das alte wieder her.
+828| Bitte geben Sie dem Design einen Namen.
+829| Es gibt bereits ein Design mit diesem Namen.
+830| Design „{s}“ gespeichert
+831| Design „{s}“ hinzugefügt
+832| Design löschen?
+833| Das Design „{s}“ wird gelöscht. Die App kehrt zum Standard-Design zurück.

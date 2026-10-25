@@ -1,0 +1,834 @@
+# Tiếng Việt — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Lời nhắc
+2| ＋ Mục danh sách
+3| ⚙ Cài đặt
+4| Cài đặt
+5| Tìm kiếm
+6| Tìm kiếm (Ctrl+F)
+7| Tìm trong lời nhắc và việc cần làm
+8| Lời nhắc mới (Ctrl+N)
+9| Mục mới trong danh sách đang hiển thị (Ctrl+T)
+10| Báo thức nhanh: một báo thức dùng một lần sau vài phút (Ctrl+Q)
+11| ⏰ Báo thức nhanh
+12| Lời nhắc
+13| Tháng
+14| Danh sách
+15| Danh sách
+16| Danh sách: {s}
+17| Mọi danh sách
+18| Chọn danh sách để hiển thị
+19| Danh sách hiển thị
+20| Việc cần làm
+21| Đã kết thúc hoặc tạm dừng
+22| Hiện hoặc ẩn bảng lịch
+23| Hiện hoặc ẩn bảng lịch (Ctrl+B)
+24| Báo thức đang bật
+25| Báo thức tạm dừng
+26| Báo thức tạm dừng đến {time}
+27| Tiếp tục
+28| Nhấp để bật lại báo thức
+29| Tạm dừng hoặc tiếp tục báo thức
+30| {n} mục
+31| {n} lời nhắc
+32| {n} việc cần làm
+33| {n} mục danh sách
+34| {n} mục mới
+35| {n} mục đã lưu trữ
+36| {n} danh sách
+37| {n} tệp
+38| {n} phút
+39| {n} giờ
+40| {n} ngày
+41| {n} bản trùng
+42| Hiển thị
+43| Hôm nay
+44| Ngày mai
+45| Hôm qua
+46| {n} ngày tới
+47| Sắp tới
+48| Mọi lời nhắc
+49| Quan trọng
+50| Đã qua
+51| Ngày đã chọn
+52| Tháng đã chọn
+53| Chế độ xem
+54| Chế độ xem “{s}”
+55| Đang tìm trong mọi lời nhắc
+56| Ngày
+57| Thứ
+58| Giờ
+59| Mô tả
+60| Lặp lại
+61| Thể loại
+62| Báo thức
+63| Đã xong
+64| Đã xong {date}
+65| (không có mô tả)
+66| Không có lời nhắc nào ở đây
+67| Nhấp ＋ Lời nhắc để thêm, hoặc chọn chế độ xem khác.
+68| Nhấp ＋ Mục danh sách để thêm vào danh sách này.
+69| Quá hạn từ {date}
+70| quá hạn từ {date}
+71| Sắp đến: {s}
+72| Sửa…
+73| Xóa…
+74| Xóa
+75| Nhân bản
+76| Sao chép
+77| Di chuyển
+78| Mở
+79| Mở liên kết
+80| Hiện trên bản đồ
+81| Hiện trong danh sách
+82| Đánh dấu đã xong
+83| Nhắc tôi…
+84| Chuyển thành việc cần làm…
+85| Chuyển thành việc cần làm
+86| Chuyển thành lời nhắc
+87| Lên lịch thành lời nhắc…
+88| Lên lịch thành lời nhắc
+89| Sao chép vào một danh sách…
+90| Sao chép vào một danh sách
+91| Sao chép vào danh sách…
+92| Sao chép vào danh sách
+93| Chuyển sang danh sách…
+94| Chuyển sang danh sách
+95| Chuyển sang…
+96| Sao chép sang…
+97| Chuyển sang danh sách khác
+98| Đặt một bản sao vào danh sách khác
+99| Một bản sao y hệt trong danh sách này (Ctrl+D)
+100| Xóa (Del)
+101| Mục đã chọn
+102| Mục đã chọn:
+103| Lên trên
+104| Xuống dưới
+105| -
+106| -
+107| -
+108| Đã nhân bản “{s}”
+109| {s} (bản sao)
+110| Đã sao chép vào “{s}”
+111| Đã chuyển sang “{s}”
+112| Chuyển sang “{s}”
+113| Giờ là việc cần làm trong “{s}”
+114| Giờ là lời nhắc vào {date}
+115| nằm trong “{s}”
+116| “{s}” trống
+117| Đã xóa
+118| Đã xóa lần lặp
+119| Xóa lời nhắc lặp lại
+120| Mục này lặp lại — thay đổi áp dụng cho mọi lần.
+121| Chỉ lần này
+122| Mọi lần
+123| Xóa lần này
+124| Xóa mọi lần…
+125| “{s}” lặp lại ({rule}).
+126| Chỉ xóa lần vào {date} hay mọi lần?
+127| Xóa mọi lần?
+128| Xóa tất cả
+129| Xóa lời nhắc?
+130| Xóa việc cần làm?
+131| “{s}” sẽ bị xóa.
+132| “{s}” và mọi lần lặp của nó sẽ bị xóa.
+133| Đã xảy ra lỗi
+134| Hãy nhập địa điểm trước.
+135| Tháng trước
+136| Tháng sau
+137| Về hôm nay
+138| Đi đến một ngày (Ctrl+G)
+139| Đi đến ngày
+140| Đi đến…
+141| Đi
+142| Thêm lời nhắc vào ngày này
+143| Nhấp đúp vào một ngày để thêm lời nhắc
+144| Không có gì vào ngày này.
+145| +{n} mục nữa
+146| Chưa xong
+147| Cả ngày
+148| Cả ngày {s}
+149| Việc cần làm
+150| Việc cần làm {s}
+151| Việc cần làm
+152| CN
+153| T2
+154| T3
+155| T4
+156| T5
+157| T6
+158| T7
+159| CN
+160| Th 2
+161| Th 3
+162| Th 4
+163| Th 5
+164| Th 6
+165| Th 7
+166| Chủ Nhật
+167| Thứ Hai
+168| Thứ Ba
+169| Thứ Tư
+170| Thứ Năm
+171| Thứ Sáu
+172| Thứ Bảy
+173| Mục danh sách
+174| Hạn
+175| Thứ tự
+176| Thứ tự của tôi
+177| Theo ngày
+178| Thủ công: kéo các hàng hoặc nhấn Alt+↑ / Alt+↓
+179| Hiện mục đã xong
+180| Hiện việc cần làm
+181| Bao gồm việc cần làm có ngày
+182| Không có ngày
+183| · không có hạn
+184| · hạn {date}
+185| · quá hạn
+186| · cả ngày
+187| · đặt lúc {time}
+188| · sau {n} phút
+189| · đã bắt đầu {n} phút trước ·
+190| Hiện việc này trong chú thích của biểu tượng ở khay hệ thống
+191| Hiện trong chú thích ở khay
+192| ✓ Hiện trong chú thích ở khay
+193| Đang hiện trong chú thích ở khay
+194| Đã bỏ khỏi chú thích ở khay
+195| Nhắc hằng ngày đến khi xong
+196| Nhắc tôi mỗi ngày đến khi xong
+197| Nhắc mỗi ngày đến khi xong
+198| Đến khi xong
+199| Không còn nhắc hằng ngày
+200| Nhắc bạn mỗi ngày đến khi bạn đánh dấu Xong
+201| Bị lỡ vào {date}; nhắc bạn mỗi ngày đến khi bạn đánh dấu
+202| Nếu bạn bỏ lỡ, nó chuyển sang hôm nay và báo mỗi ngày đến khi bạn đánh dấu
+203| Xong — đã chuyển sang ngày tiếp theo
+204| hằng ngày
+205| hằng tuần
+206| hằng tháng
+207| {n} ngày một lần
+208| {n} tuần một lần
+209| trước {n} ngày
+210| ngay trong ngày
+211| {every} từ {from}
+212| một lần
+213| mỗi ngày
+214| mỗi tuần
+215| mỗi tháng
+216| {n} ngày trước hạn
+217| vào ngày hạn
+218| Nhắc bạn {every}, từ {from}, lúc {time}
+219| Nhắc bạn {every}, từ {from}, lúc {time}, đến khi xong
+220| Nhắc bạn {every}, từ {from}, lúc {time}, đến khi xong (cả sau hạn)
+221| Lời nhắc mới
+222| Sửa lời nhắc
+223| Việc cần làm mới
+224| Sửa việc cần làm
+225| Bạn muốn được nhắc điều gì?
+226| Cần làm gì?
+227| Loại
+228| Lời nhắc
+229| Vào ngày
+230| Bất kỳ lúc nào
+231| Kết thúc
+232| Địa điểm
+233| Liên kết
+234| -
+235| Ghi chú
+236| Thể loại
+237| Chọn thể loại
+238| vd. Sinh nhật, Công việc
+239| Thêm
+240| Lưu
+241| Hủy
+242| Đóng
+243| OK
+244| Có
+245| Không
+246| Không có
+247| Không lặp lại
+248| Hằng ngày
+249| Hằng tuần
+250| Hằng tháng
+251| Hằng năm
+252| Tùy chỉnh…
+253| Tùy chỉnh
+254| Tùy chỉnh (đã nhập)
+255| Giữ quy tắc đã nhập: {s}
+256| Mỗi ngày trong tuần
+257| Mỗi
+258| mỗi
+259| ngày
+260| ngày
+261| tuần
+262| tuần
+263| tháng
+264| tháng
+265| năm
+266| năm
+267| lần
+268| Vào {date}
+269| Vào ngày {day}
+270| Vào {weekday} {nth}
+271| Vào {weekday} {nth} của {month}
+272| Vào {weekday} cuối cùng
+273| Vào {weekday} cuối cùng của {month}
+274| Mỗi ngày
+275| Mỗi {n} ngày
+276| Mỗi tuần
+277| Mỗi {n} tuần
+278| Mỗi tháng
+279| Mỗi tuần vào {days}
+280| Mỗi {n} tuần vào {days}
+281| các ngày trong tuần
+282| Mỗi tháng vào ngày {day}
+283| Mỗi {n} tháng vào ngày {day}
+284| Mỗi tháng vào {weekday} {nth}
+285| Mỗi {n} tháng vào {weekday} {nth}
+286| Mỗi năm vào {date}
+287| Mỗi {n} năm vào {date}
+288| Mỗi năm vào {weekday} {nth} của {month}
+289| Mỗi {n} năm vào {weekday} {nth} của {month}
+290| cuối cùng
+291| thứ {n}
+292| Bao lâu một lần
+293| Vào
+294| Sau
+295| Sau đó
+296| -
+297| lúc
+298| trước
+299| Không bao giờ
+300| Đến
+301| đến…
+302| vào một ngày…
+303| bắt đầu từ…
+304| không nữa (chỉ một lần)
+305| Nhắc tôi
+306| Đừng nhắc tôi
+307| Khi nào bắt đầu nhắc
+308| Ngày nhắc đầu tiên
+309| Giờ nhắc
+310| Tiếp tục nhắc khi đã quá hạn mà chưa xong
+311| cả sau hạn
+312| đến khi xong
+313| đến khi xong hoặc đến hạn ({due})
+314| đến khi xong, cả sau hạn ({due})
+315| Một lời nhắc, vào {date} lúc {time}.
+316| Một lời nhắc, vào {date} lúc {time}. Thời điểm đó đã qua — hãy chọn muộn hơn hoặc nhắc lặp lại.
+317| {every} lúc {time}, từ {date}, {end}.
+318| Không có lời nhắc.
+319| Không có lời nhắc. Việc cần làm sẽ hiện màu đỏ khi đã quá hạn.
+320| Chọn ngày của lời nhắc đầu tiên.
+321| Nội dung báo thức
+322| Đúng giờ
+323| {n} phút trước
+324| {n} giờ trước
+325| {n} ngày trước
+326| {n} tuần trước
+327| Ngay trong ngày, lúc {time}
+328| Ngày hôm trước, lúc {time}
+329| Hiển thị là: {s}. <year> đếm số năm từ đó; <year#> chỉ hiện con số.
+330| Đã nhập theo múi giờ {zone} — hiển thị theo giờ địa phương của bạn. Khi lưu sẽ ghi theo giờ địa phương.
+331| Hãy nhập mô tả.
+332| Hãy chọn hạn hoặc đánh dấu “Không có ngày”.
+333| Hãy chọn một ngày.
+334| Hãy chọn ngày.
+335| Chọn ngày.
+336| Hãy nhập giờ hạn hoặc đánh dấu “Bất kỳ lúc nào”.
+337| Hãy nhập giờ hoặc đánh dấu “Cả ngày”.
+338| Ngày kết thúc trước ngày bắt đầu.
+339| Giờ kết thúc trước giờ bắt đầu.
+340| Đã thêm lời nhắc
+341| Đã thêm việc cần làm
+342| Đã lưu
+343| Sửa bản sao
+344| Đã biết ngày: chuyển việc này thành lời nhắc vào một ngày cụ thể
+345| Hạn là {date}.
+346| Hạn là {date}, {time}.
+347| Khi bạn biết ngày chính xác, việc cần làm sẽ thành lời nhắc vào ngày đó: nó rời danh sách việc cần làm và hiện trong Lời nhắc, chế độ xem Tháng và lịch. Ghi chú, thể loại, địa điểm và liên kết được giữ nguyên.
+348| Một lời nhắc vào {date}, cả ngày.
+349| Một lời nhắc vào {date}, lúc {time}.
+350| Lời nhắc trở thành việc cần làm vào cùng ngày, giữ lặp lại, báo thức và ghi chú.
+351| Lời nhắc vẫn giữ; một bản sao dạng việc cần làm vào cùng ngày, có lặp lại, báo thức và ghi chú, được thêm vào danh sách.
+352| Một bản sao y hệt vào danh sách bạn chọn; mục này vẫn ở chỗ cũ.
+353| Danh sách
+354| {s} (danh sách này)
+355| danh sách chính
+356| Báo thức ReminderFoxAgain
+357| Báo lại
+358| Báo lại tất cả
+359| Báo lại tất cả sau {s}
+360| Báo lại mọi lời nhắc ở đây theo thời gian mặc định (đổi trong Cài đặt)
+361| Báo lại sau bao lâu hoặc đến mấy giờ
+362| Đơn vị báo lại
+363| Báo lại lúc
+364| Bỏ qua
+365| Bỏ qua tất cả
+366| Xong
+367| Xong với báo thức nhanh này
+368| Ẩn tạm (báo thức vẫn hoạt động và quay lại cùng báo thức tiếp theo)
+369| Một giờ như 15:30 hoặc 3:30 pm (sớm hơn bây giờ nghĩa là ngày mai)
+370| Một số nguyên từ {n} đến {n2}
+371| Hãy nhập một số nguyên từ {n} đến {n2}.
+372| Hãy nhập một số nguyên từ 1 đến 999, hoặc một ngày và giờ.
+373| giây
+374| phút
+375| giờ
+376| Báo thức nhanh
+377| Báo thức nhanh
+378| ⏰ Báo thức nhanh…
+379| Một báo thức dùng một lần, không lưu thành lời nhắc — như Báo thức nhanh của tiện ích.
+380| Sau
+381| Lúc
+382| Trong
+383| Đặt báo thức
+384| Hủy báo thức này
+385| Không có báo thức nhanh.
+386| Đang chờ đổ chuông
+387| Đã đặt báo thức nhanh lúc {time}
+388| Đã hủy báo thức nhanh
+389| Hãy chọn giờ.
+390| Thời điểm đó đã qua — hãy chọn muộn hơn.
+391| Thời điểm đó đã qua.
+392| Đổ chuông {when} ({until}).
+393| hôm nay lúc {time}
+394| trong chưa đầy một phút
+395| sau {time}
+396| sau {hours} {minutes}
+397| Tạm dừng báo thức
+398| Tạm dừng báo thức…
+399| Tạm dừng báo thức một lúc
+400| Tạm dừng
+401| Bao lâu
+402| Đến khi tôi bật lại
+403| Báo thức tắt đến khi bạn tiếp tục (thanh trạng thái, menu khay hoặc tại đây).
+404| Trong khi tạm dừng, không có cửa sổ báo thức nào mở và cửa sổ lời nhắc không xuất hiện. Báo thức đến hạn trong lúc đó sẽ hiện khi bạn tiếp tục.
+405| Báo thức đang tạm dừng đến khi bạn bật lại.
+406| Báo thức sẽ trở lại {when}.
+407| Báo thức đã bật lại
+408| Tiếp tục báo thức ngay
+409| Hãy chọn một giờ trong tương lai.
+410| ReminderFoxAgain — hôm nay
+411| Sắp tới
+412| Hôm nay không có gì.
+413| Không có gì sắp tới.
+414| Chung
+415| Báo thức
+416| Hiển thị
+417| Dữ liệu
+418| Giới thiệu
+419| Khởi động ReminderFoxAgain khi Windows khởi động
+420| Tiếp tục chạy trong khay hệ thống khi đóng cửa sổ
+421| Tuần bắt đầu vào
+422| Chủ đề
+423| Chủ đề
+424| Mặc định (theo Windows)
+425| Cáo
+426| Sáng
+427| Tối
+428| Đại dương
+429| Tương phản cao
+430| Mặc định là Cáo, sáng hoặc tối theo Windows. Mục gắn sao có màu riêng trong mỗi chủ đề. Tương phản cao dùng đen, trắng, vàng và lục lam với chữ lớn hơn và nét đậm hơn.
+431| -
+432| ReminderFoxAgain là lời tri ân tiện ích gốc
+433| -
+434| cho Firefox và Thunderbird, do Tom Mutdosch và Daniel Lee cùng Guenter Wahl tạo ra. Định dạng tệp, quy tắc lặp, chế độ xem, báo thức nhanh và cửa sổ thông báo là của họ; xin cảm ơn.
+435| Phát âm thanh khi báo thức
+436| Âm thanh
+437| Chuông có sẵn
+438| Âm thanh của bạn
+439| Chọn…
+440| Chọn
+441| Dùng chuông có sẵn
+442| Chuông
+443| Phát
+444| ▶ Thử
+445| Âm báo thức: {s}
+446| Đang dùng chuông có sẵn
+447| Hãy chọn một tệp âm thanh (.mp3, .wav, .ogg, .m4a, .aac, .flac hoặc .webm).
+448| Tệp âm thanh này lớn hơn 10 MB. Hãy chọn tệp ngắn hơn.
+449| Lặp lại âm thanh
+450| Không, phát một lần
+451| Mỗi phút
+452| Mỗi {n} phút
+453| Báo thức mặc định cho lời nhắc mới
+454| Báo lại mặc định
+455| Đơn vị báo lại mặc định
+456| Báo lại mặc định, bao nhiêu
+457| Cửa sổ lời nhắc (cửa sổ thông báo của tiện ích)
+458| Hiện cửa sổ có lời nhắc hôm nay và sắp tới
+459| Khi nào
+460| Chỉ khi khởi động
+461| Khi khởi động và mỗi {n} phút
+462| … mỗi {n} phút
+463| … mỗi giờ
+464| … mỗi {n} giờ
+465| Giữ mở
+466| {n} giây
+467| Đến khi tôi đóng
+468| Góc
+469| dưới bên phải
+470| dưới bên trái
+471| trên bên phải
+472| trên bên trái
+473| Phát âm thanh
+474| Hiện ngay
+475| “Sắp tới” nghĩa là trong vòng
+476| Số trên biểu tượng
+477| Hiện một con số trên biểu tượng ở khay và thanh tác vụ
+478| Lời nhắc và việc cần làm còn mở hôm nay
+479| Hôm nay và sắp tới
+480| Chỉ hôm nay
+481| Chỉ sắp tới
+482| Ngôn ngữ
+483| Ngôn ngữ hệ thống ({s})
+484| Ngôn ngữ của menu, nút và thông báo. Lời nhắc của bạn không thay đổi.
+485| Các bản dịch được viết cho ReminderFoxAgain và chưa được người bản ngữ kiểm tra.
+486| Cỡ chữ
+487| Nhỏ ({n}%)
+488| Bình thường
+489| Lớn ({n}%)
+490| Lớn hơn ({n}%)
+491| Lớn nhất ({n}%)
+492| Ngày
+493| Như trong Windows ({s})
+494| Giờ
+495| Như trong Windows
+496| {n} giờ ({s})
+497| Hiện bảng lịch bên cạnh danh sách
+498| Số tháng trong bảng lịch
+499| Bản đồ
+500| -
+501| -
+502| -
+503| Chú thích biểu tượng khay
+504| Chú thích
+505| Lời nhắc hôm nay
+506| Lời nhắc sắp tới
+507| Biến: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — giống như trong tiện ích.
+508| Đặt lại
+509| Đã đặt lại nội dung chú thích
+510| Quản lý danh sách…
+511| Quản lý thể loại…
+512| Quản lý chế độ xem…
+513| Lời nhắc lặp lại trong thẻ Lời nhắc
+514| Các ngày tương lai hiển thị
+515| Sắp tới, Mọi lời nhắc, Quan trọng, tìm kiếm và chế độ xem không có ngày
+516| Mọi ngày trong vòng
+517| Chỉ những lần tiếp theo
+518| {n} tháng
+519| {n} năm
+520| {n} lần
+521| Dùng cho Sắp tới, Mọi lời nhắc, Quan trọng, tìm kiếm và chế độ xem không có khoảng ngày. Hôm nay, {n} ngày tới, Ngày hoặc tháng đã chọn, thẻ Tháng và lịch luôn hiện mọi ngày.
+522| Trong Tất cả và Đã qua, hiện các mục đã qua từ
+523| đầu mỗi chuỗi
+524| {n} năm qua
+525| năm qua
+526| {n} tháng qua
+527| Ẩn lời nhắc lặp lại
+528| Ẩn lời nhắc đã xong
+529| Nhập và xuất
+530| Nhập tệp .ics…
+531| Thêm các mục từ một tệp .ics (Ctrl+I)
+532| Nhập từ ReminderFox…
+533| Tìm tệp reminderfox.ics mà tiện ích ReminderFox lưu trong hồ sơ Firefox hoặc Thunderbird của bạn
+534| Xuất ra .ics…
+535| Xuất ra .ics
+536| Xuất…
+537| Lưu một tệp .ics (Ctrl+E)
+538| Khi nhập, dữ liệu được thêm vào những gì bạn có; các mục đã có chỉ được cập nhật nếu bản trong tệp mới hơn. Tệp xuất mở được trong Outlook, Google Lịch, Thunderbird, Lịch Apple và tiện ích ReminderFox gốc.
+539| Bản sao lưu
+540| Sao lưu ngay
+541| Lưu một bản sao lưu…
+542| Khôi phục từ bản sao lưu…
+543| Khôi phục từ bản sao lưu
+544| Mở thư mục sao lưu
+545| Mở thư mục dữ liệu
+546| Tệp dữ liệu
+547| Hiện tệp lời nhắc trong File Explorer
+548| Lời nhắc của bạn được lưu trong {path} (bản sao lưu hằng ngày nằm cạnh đó, trong thư mục “backups”).
+549| ＋ Danh sách mới…
+550| Danh sách mới…
+551| Danh sách mới
+552| Tên danh sách mới
+553| Tên danh sách mới (ví dụ Đi chợ, Phim cần xem, Ý tưởng quà tặng):
+554| Thêm danh sách
+555| Đổi tên danh sách
+556| Đổi tên…
+557| Gỡ…
+558| Gỡ danh sách?
+559| “Việc cần làm” là danh sách chính và không thể đổi tên hay gỡ (như trong tiện ích). Khi gỡ một danh sách, bạn chọn chuyển các việc của nó sang “Việc cần làm” hay xóa chúng.
+560| Danh sách “{list}” có {n} việc. Chuyển sang “{main}” hay xóa cùng danh sách?
+561| Danh sách “{list}” có {n} việc. Chuyển chúng sang “{main}” hay xóa cùng danh sách?
+562| Xóa danh sách và các việc
+563| Đã xóa danh sách và {n} việc
+564| Đã gỡ danh sách
+565| Đã thêm danh sách “{s}”
+566| “{s}” đã tồn tại
+567| Danh sách đó đã tồn tại.
+568| Tên danh sách không được để trống hoặc chứa dấu phẩy hay dấu hai chấm.
+569| Tên danh sách không được chứa dấu phẩy hay dấu hai chấm.
+570| Gộp các danh sách?
+571| Gộp
+572| Đã gộp vào “{s}”
+573| Đã đổi tên thành “{s}”
+574| Tên mới cho “{name}”:
+575| Tên mới cho “{name}” ({items}):
+576| Thể loại mới
+577| Thể loại khác
+578| Thêm các thể loại thông dụng
+579| Đã thêm thể loại “{s}”
+580| Đã thêm {n} thể loại
+581| Không có gì mới để thêm.
+582| Đổi tên thể loại
+583| Xóa thể loại?
+584| Đã xóa thể loại
+585| Gộp các thể loại?
+586| Thể loại không được để trống hoặc chứa dấu phẩy.
+587| chưa được dùng
+588| Đổi tên sẽ thay đổi mọi lời nhắc và việc cần làm có thể loại này; đổi sang tên đã có sẽ gộp chúng. Xóa sẽ bỏ nó khỏi các mục (các mục vẫn còn).
+589| Thể loại “{name}” sẽ bị xóa.
+590| Thể loại “{name}” sẽ bị xóa và bỏ khỏi {items}. Bản thân các mục vẫn còn.
+591| Kỷ niệm
+592| Cuộc hẹn
+593| Sinh nhật
+594| Kinh doanh
+595| Cuộc gọi
+596| Ngày lễ
+597| Cuộc họp
+598| Cá nhân
+599| Mua sắm
+600| Du lịch
+601| Kỷ niệm, Cuộc hẹn, Sinh nhật, Kinh doanh, Cuộc gọi…
+602| Chế độ xem mới
+603| ＋ Chế độ xem mới…
+604| Sửa chế độ xem
+605| Xóa chế độ xem?
+606| Chế độ xem “{s}” sẽ bị xóa. Lời nhắc của bạn không thay đổi.
+607| Hiện trong thẻ Lời nhắc
+608| Đã lưu chế độ xem
+609| Đã thêm chế độ xem “{s}”
+610| Hãy đặt tên cho chế độ xem.
+611| Đã có một chế độ xem với tên đó.
+612| Chế độ xem là bộ lọc đã lưu cho thẻ Lời nhắc: chọn nó trong danh sách Hiển thị. Các điều kiện trên những trường khác nhau đều phải thỏa; dấu phẩy trong một điều kiện nghĩa là “bất kỳ cái nào trong số này”.
+613| Chưa có chế độ xem nào. Nhấp “Chế độ xem mới…” để tạo — ví dụ mọi lời nhắc có thể loại “Sinh nhật” trong năm tới.
+614| Tên
+615| vd. Sinh nhật
+616| Hiện lời nhắc khi
+617| ＋ Thêm điều kiện
+618| Bỏ điều kiện này
+619| Bất kỳ
+620| Thể loại
+621| Chế độ xem
+622| Kiểu
+623| là
+624| chứa
+625| các từ, cách nhau bằng dấu phẩy
+626| Chỉ các ngày từ
+627| đến
+628| từ hôm nay
+629| hôm nay
+630| Số âm là lùi về quá khứ: −{n} tháng đến {n2} ngày nghĩa là “tháng vừa qua”.
+631| Tất cả
+632| Mọi thứ
+633| Chỉ lời nhắc
+634| Chỉ việc cần làm
+635| Đơn vị
+636| Bao nhiêu
+637| Bất kỳ trường nào chứa “{s}”
+638| Thể loại là “{s}”
+639| Thể loại là “{s}” hoặc “{s2}”
+640| các ngày từ hôm nay đến {n} ngày tới
+641| +{n} tuần
+642| +{n} tháng
+643| +{n} năm
+644| Nhập
+645| Nhập tệp iCalendar
+646| Nhập từ ReminderFox
+647| Từ ReminderFox
+648| Đã tìm thấy {files} từ tiện ích ReminderFox:
+649| Nhập bản mới nhất
+650| Vẫn nhập
+651| {reminders} và {items}
+652| {n} mục đã có (giữ bản mới hơn)
+653| {n} mục có vẻ trùng (cùng tiêu đề và ngày với một mục bạn có)
+654| {n} mục có vẻ trùng (cùng tiêu đề và ngày với một mục bạn có)
+655| Cách thức
+656| Thêm vào những gì tôi có
+657| Thay thế tất cả
+658| Thay thế tất cả ({items} của bạn được sao lưu trước)
+659| Thay thế tất cả?
+660| {items} của bạn sẽ được thay bằng {newItems} trong tệp.
+661| Những gì bạn có hiện giờ được lưu trước thành bản sao lưu “Đã lưu trước một lần nhập thay thế tất cả”, để bạn có thể lấy lại từ Cài đặt → Dữ liệu → Khôi phục từ bản sao lưu….
+662| Bản trùng
+663| Bỏ qua các mục cùng tiêu đề và ngày với mục tôi đã có
+664| Tùy chọn: được thêm vào mọi mục được nhập, ví dụ “Ngày lễ” cho một danh sách ngày lễ, để bạn lọc theo nó.
+665| tùy chọn
+666| Đã nhập xong
+667| Đã nhập {items}
+668| Đã nhập {items} và {lists}
+669| {n} đã cập nhật
+670| {n} đã mới nhất
+671| Đã bỏ qua {n} bản trùng
+672| đang thay thế {items} (đã lưu thành {file})
+673| Đã thêm {lists} ({names})
+674| {n} mục lưu trữ đã chuyển sang danh sách “{list}”
+675| Tệp này không chứa dữ liệu iCalendar (không có BEGIN:VCALENDAR).
+676| Không đọc được tệp lời nhắc của bạn
+677| Đã xuất ra {path}
+678| Xuất
+679| Mọi thứ (lời nhắc và việc cần làm)
+680| Tệp dùng được với Outlook, Google Lịch, Thunderbird, Lịch Apple và tiện ích ReminderFox gốc.
+681| ReminderFoxAgain sao lưu mỗi ngày, một bản trước mỗi lần khôi phục, và các bản bạn tạo bằng “Sao lưu ngay”. Khôi phục sẽ thay lời nhắc và việc cần làm hiện tại bằng bản sao lưu; những gì bạn có hiện giờ được lưu trước, nên bạn luôn có thể quay lại.
+682| Tạo lúc
+683| Nội dung
+684| Khôi phục
+685| Khôi phục…
+686| Chọn tệp khác…
+687| {n} đã lưu trữ
+688| Không đọc được: {s}
+689| Không đọc được {s}: {s2}
+690| Không thể khôi phục tệp đó
+691| Chưa có bản sao lưu nào. Chúng được tạo mỗi ngày ứng dụng chạy; bạn cũng có thể nhấp “Sao lưu ngay”.
+692| Sao lưu hằng ngày
+693| Bản sao lưu do bạn tạo
+694| Đã lưu trước một lần khôi phục
+695| Đã lưu trước một lần nhập thay thế tất cả
+696| Kho lưu trữ, trước khi thành danh sách
+697| Sao lưu hằng ngày của kho lưu trữ (phiên bản trước)
+698| Bản sao lưu
+699| Khôi phục bản sao lưu này?
+700| Thao tác này thay những gì bạn có hiện giờ ({now}) bằng bản sao lưu từ {when}: {items}.
+701| Thao tác này thay những gì bạn có hiện giờ ({now}) bằng bản sao lưu từ {when}: {items}, thêm {n} mục lưu trữ, sẽ vào danh sách “{list}”.
+702| Đây là bản sao kho lưu trữ từ phiên bản trước. {all} của nó sẽ vào danh sách “{list}” (các mục bạn đã có giữ nguyên). Không có gì khác thay đổi.
+703| Dữ liệu hiện tại của bạn được lưu trước thành bản sao lưu “Đã lưu trước một lần khôi phục”, nên bạn có thể hoàn tác từ chính danh sách này.
+704| Đã khôi phục bản sao lưu
+705| Đã khôi phục {items}.
+706| Đã khôi phục {items}, trong đó {n} mục lưu trữ nay nằm trong danh sách “{list}”.
+707| Những gì bạn có trước đó đã được lưu thành {file}.
+708| Đã lưu bản sao lưu vào {path}
+709| Đã sao lưu: {s}
+710| {n} byte
+711| {n} KB
+712| {n} MB
+713| Mục đó không còn nữa.
+714| Không đọc được tệp lưu trữ, nên nó không bị thay đổi. Tệp được giữ thành archive.ics.unreadable.
+715| Không đọc được tệp lưu trữ, nên không thể thay thế.
+716| Chào mừng đến với ReminderFoxAgain
+717| Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Windows — lời tri ân tiện ích ReminderFox gốc.
+718| Nhập từ tiện ích ReminderFox của bạn
+719| {path} — sửa lần cuối {date}
+720| Nhập một tệp reminderfox.ics hoặc tệp lịch khác…
+721| Từ tiện ích ReminderFox (trong thư mục “reminderfox” của hồ sơ Firefox/Thunderbird), Outlook, Google Lịch…
+722| Bắt đầu với danh sách trống
+723| Bạn có thể nhập sau trong Cài đặt → Dữ liệu.
+724| bây giờ
+725| sau {n} phút
+726| sau {n} giờ
+727| sau {n} ngày
+728| {n} phút trước
+729| {n} giờ trước
+730| {n} ngày trước
+731| Mở {app}
+732| Thêm lời nhắc…
+733| Thêm mục danh sách…
+734| Báo thức nhanh…
+735| Tiếp tục báo thức
+736| Hiện lời nhắc hôm nay
+737| Thoát {app}
+738| {app} — đã tắt báo thức
+739| {app} — đã tắt báo thức đến {time}
+740| {app} — hôm nay không có gì
+741| sắp tới
+742| {app} vẫn đang chạy
+743| Báo thức vẫn sẽ hiện lên. Nhấp chuột phải vào chú cáo trong khay hệ thống để thoát.
+744| Báo thức {app}
+745| {app} — hôm nay
+746| {n} giờ {n2} phút
+747| Tệp iCalendar
+748| Mọi tệp
+749| Tệp âm thanh
+750| Nhập tệp iCalendar
+751| Xuất ra tệp iCalendar
+752| Chọn tệp reminderfox.ics của bạn
+753| Chọn âm báo thức
+754| Lưu một bản sao lưu
+755| Chọn bản sao lưu để khôi phục
+756| Hằng tuần vào {days}
+757| Hằng tháng vào {weekday} {nth}
+758| Hằng tháng vào ngày {day}
+759| Hằng tháng vào cùng ngày
+760| Mỗi {n} tháng vào cùng ngày
+761| Hằng năm vào {weekday} {nth} của {month}
+762| Hằng năm vào {date}
+763| Hằng năm vào cùng ngày
+764| Mỗi {n} năm vào cùng ngày
+765| Lặp lại
+766| Tùy chỉnh ({rule})
+767| {rule}, một lần
+768| {rule}, {n} lần
+769| {rule}, đến {date}
+770| Hiện các lời nhắc bạn đã đánh dấu là xong
+771| Hiện các lời nhắc và mục danh sách bạn đã đánh dấu là xong
+772| Thứ tự của tôi: kéo các hàng, hoặc nhấn Alt+↑ / Alt+↓
+773| Chế độ xem
+774| Âm báo
+775| Tệp của bạn…
+776| Dùng tệp âm thanh của riêng bạn (.mp3, .wav, .ogg, .m4a, .aac, .flac hoặc .webm)
+777| Liên tục cho đến khi xử lý
+778| Liên tục cho đến khi xử lý: âm thanh phát đi phát lại cho đến khi bạn báo lại, mở, đánh dấu xong hoặc bỏ qua báo thức, hoặc ẩn cửa sổ báo thức. Báo thức tiếp theo sẽ bắt đầu lại.
+779| Cột
+780| Các cột trong thẻ Lời nhắc
+781| Các cột trong danh sách
+782| Bỏ chọn một cột để ẩn nó. Mô tả luôn được hiển thị.
+783| Bộ lọc đã lưu cho thẻ Lời nhắc
+784| Quản lý lời nhắc…
+785| Sắp tới, Mọi lời nhắc, Quan trọng, tìm kiếm và bộ lọc đã lưu không có ngày
+786| Dùng cho Sắp tới, Mọi lời nhắc, Quan trọng, tìm kiếm và bộ lọc đã lưu không có khoảng ngày. Hôm nay, {n} ngày tới, Ngày hoặc tháng đã chọn, thẻ Tháng và lịch luôn hiện mọi ngày.
+787| Bộ lọc đã lưu
+788| Bộ lọc đã lưu “{s}” · {c}
+789| Quản lý lời nhắc
+790| Bộ lọc đã lưu chỉ hiện những lời nhắc bạn muốn trong thẻ Lời nhắc: chọn nó trong danh sách Hiển thị. Các điều kiện trên những trường khác nhau đều phải thỏa; dấu phẩy trong một điều kiện nghĩa là “bất kỳ cái nào trong số này”.
+791| ＋ Bộ lọc đã lưu mới…
+792| Chưa có bộ lọc đã lưu nào. Nhấp “Bộ lọc đã lưu mới…” để tạo — ví dụ mọi lời nhắc có thể loại “Sinh nhật” trong năm tới.
+793| Xóa bộ lọc đã lưu?
+794| Bộ lọc đã lưu “{s}” sẽ bị xóa. Lời nhắc của bạn không thay đổi.
+795| Sửa bộ lọc đã lưu
+796| Bộ lọc đã lưu mới
+797| Hãy đặt tên cho bộ lọc đã lưu.
+798| Đã có bộ lọc đã lưu với tên đó.
+799| Đã thay đổi bộ lọc đã lưu
+800| Đã thêm bộ lọc đã lưu “{s}”
+801| Chuông nhà thờ
+802| Đàn marimba
+803| Tiếng bíp kỹ thuật số
+804| Đồng hồ báo thức
+805| Tệp của bạn: {s}
+806| Tạo chủ đề riêng từ năm màu
+807| ＋ Chủ đề mới…
+808| Đổi màu của chủ đề của bạn
+809| ＋ Chủ đề mới… tạo một chủ đề riêng từ năm màu.
+810| Chủ đề của bạn
+811| Nền
+812| Phía sau mọi thứ
+813| Danh sách và bảng
+814| Các danh sách, bảng lịch, hộp thoại
+815| Chữ
+816| Màu nhấn
+817| Nút, hôm nay, vùng chọn
+818| Mục gắn sao
+819| Lời nhắc và việc cần làm quan trọng
+820| Chữ khó đọc trên nền (độ tương phản {n}:1; từ 4,5:1 trở lên dễ đọc).
+821| Màu nhấn khó thấy trên danh sách (độ tương phản {n}:1; từ 3:1 trở lên tốt hơn).
+822| Mục gắn sao khó thấy trên danh sách (độ tương phản {n}:1; từ 3:1 trở lên tốt hơn).
+823| Sửa chủ đề
+824| Chủ đề mới
+825| Bắt đầu từ
+826| ví dụ: Rừng
+827| Cả cửa sổ hiện chủ đề trong khi bạn chọn. Hủy sẽ trả lại chủ đề cũ.
+828| Hãy đặt tên cho chủ đề.
+829| Đã có chủ đề với tên đó.
+830| Đã lưu chủ đề “{s}”
+831| Đã thêm chủ đề “{s}”
+832| Xóa chủ đề?
+833| Chủ đề “{s}” sẽ bị xóa. Ứng dụng trở về chủ đề mặc định.

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; media-src 'self' data:">
+<title>ReminderFoxAgain alarm</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  html, body { height: 100%; }
+  body { margin: 0; display: flex; flex-direction: column; background: var(--bg); border: 1px solid var(--line-strong); box-sizing: border-box; }
+  .bar { -webkit-app-region: drag; display: flex; align-items: center; gap: 10px; padding: 10px 12px 10px 14px; background: var(--fox); color: #fff; }
+  .bar img { width: 22px; height: 22px; }
+  .bar h1 { font-size: 14px; font-weight: 650; margin: 0; flex: 1; letter-spacing: .01em; }
+  .bar button { -webkit-app-region: no-drag; }
+  .bar .icon-btn { color: #fff; background: transparent; border: 0; width: 28px; height: 28px; border-radius: 6px; font-size: 16px; cursor: pointer; }
+  .bar .icon-btn:hover { background: rgba(255,255,255,.18); }
+  #list { flex: 1; overflow: auto; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; box-shadow: 0 1px 2px rgba(60,30,10,.06); }
+  .card h2 { margin: 0 0 4px; font-size: 15px; line-height: 1.3; font-weight: 650; display: flex; gap: 6px; align-items: baseline; }
+  .card h2 .star { color: var(--fox); }
+  .when { font-size: 13px; color: var(--ink-2); }
+  .when b { color: var(--fox-ink); font-weight: 600; }
+  .when.late b { color: var(--danger); }
+  .meta { font-size: 12.5px; color: var(--ink-3); margin-top: 4px; white-space: pre-wrap; max-height: 4.2em; overflow: hidden; }
+  .actions { display: flex; gap: 5px; margin-top: 10px; align-items: center; flex-wrap: wrap; }
+  .actions select { height: 30px; }
+  .actions .btn { padding: 0 8px; }
+  .actions .spacer { flex: 1; }
+  .snooze { display: inline-flex; gap: 6px; align-items: center; }
+  .snooze .amount { width: 44px; height: 30px; text-align: right; padding: 0 6px; }
+  .snooze .amount.bad { border-color: var(--danger); }
+  .snooze .amount.at { width: 58px; text-align: left; padding: 0 5px; }
+  .snooze select { width: 90px; padding-left: 6px; padding-right: 2px; }
+  .foot { display: flex; gap: 8px; padding: 10px; border-top: 1px solid var(--line); background: var(--surface-2); }
+  .foot .spacer { flex: 1; }
+</style>
+<link rel="stylesheet" href="themes.css">
+</head>
+<body>
+  <div class="bar">
+    <img src="../../assets/icon.png" alt="">
+    <h1 id="title">Reminder</h1>
+    <button class="icon-btn" id="hide" title="Hide for now (the alarm stays active and comes back with the next one)">–</button>
+  </div>
+  <div id="list"></div>
+  <div class="foot">
+    <button class="btn" id="snoozeAll">Snooze all</button>
+    <span class="spacer"></span>
+    <button class="btn" id="dismissAll">Dismiss all</button>
+  </div>
+<script src="i18n.js"></script>
+<script src="i18n-dom.js"></script>
+<script src="common.js"></script>
+<script src="alarm.js"></script>
+</body>
+</html>

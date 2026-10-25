@@ -1,0 +1,127 @@
+// E2E (0.3.0): quick alarms, suspending alarms, settings sections, reminder pop-up data, badge, backup and restore.
+const sleep = (t) => new Promise((r) => setTimeout(r, t));
+const check = (name, got, want) => console.log(`E2E ${name}: ${got} (expected ${want})${String(got) === String(want) ? '' : '  WRONG'}`);
+const $ = (id) => document.getElementById(id);
+const X = window.__rfx; const R = window.__rf;
+const until = async (fn, ms = 20000) => { const t = Date.now(); while (Date.now() - t < ms) { if (await fn()) return true; await sleep(500); } return false; };
+try {
+  // ---------- settings sections
+  $('settingsBtn').click(); await sleep(400);
+  check('settings opens on General', $('settingsDlg').querySelector('[data-st-panel=general]').hidden, false);
+  $('stTabs').querySelector('[data-st=data]').click(); await sleep(150);
+  check('Data section shown', `${$('settingsDlg').querySelector('[data-st-panel=data]').hidden} ${$('settingsDlg').querySelector('[data-st-panel=general]').hidden}`, 'false true');
+  $('stTabs').querySelector('[data-st=alarms]').click(); await sleep(150);
+  check('pop-up options off until enabled', $('stSliderEvery').disabled, true);
+  $('stSlider').click(); await sleep(500);
+  check('pop-up enabled', `${(await window.rf.meta()).settings.sliderEnabled} ${$('stSliderEvery').disabled}`, 'true false');
+  check('built-in sound chosen', `${$('stTone').value} ${$('stTone').options.length}`, 'chime 5');
+  $('stResound').value = '2'; $('stResound').dispatchEvent(new Event('change')); await sleep(300);
+  check('repeat the sound saved', (await window.rf.meta()).settings.resoundMinutes, 2);
+  $('stTabs').querySelector('[data-st=display]').click(); await sleep(150);
+  check('date formats listed', $('stDateFormat').options.length, 6);
+  $('stTextSize').value = '110'; $('stTextSize').dispatchEvent(new Event('change')); await sleep(300);
+  check('text size saved', (await window.rf.meta()).settings.textSize, 110);
+  $('stTodayLabel').value = '[time] — [reminderDesc]'; $('stTodayLabel').dispatchEvent(new Event('change')); await sleep(300);
+  check('tooltip label saved', (await window.rf.meta()).settings.todayLabel, '[time] — [reminderDesc]');
+  $('stLabelsReset').click(); await sleep(400);
+  check('labels reset', $('stTodayLabel').value, '[time]  [reminderDesc]');
+  $('stTabs').querySelector('[data-st=lists]').click(); await sleep(150);
+  $('stRepeatAhead').value = 'n3'; $('stRepeatAhead').dispatchEvent(new Event('change')); await sleep(700);
+  $('settingsDlg').close();
+  $('remFilter').value = 'upcoming'; $('remFilter').dispatchEvent(new Event('change')); await sleep(500);
+  const standups = [...document.querySelectorAll('#listView tbody tr .t')].filter((t) => t.textContent === 'Team stand-up').length;
+  check('three occurrences of a repeating reminder', standups, 3);
+  await R.setSetting({ repeatAhead: 'm12', textSize: 100 });
+  // ---------- reminder pop-up data, badge
+  const sl = await window.rf.sliderState();
+  check('pop-up lists today', sl.today.some((r) => r.summary === 'Call the pharmacy'), true);
+  check('pop-up lists upcoming', sl.upcoming.some((r) => r.summary === 'Dentist — Dr. Patel'), true);
+  await R.updateBadge();
+  const t0 = RF.startOfDay(new Date()).getTime();
+  const todayOpen = new Set((await window.rf.range(t0, t0 + 864e5, { includeTodos: true })).filter((r) => !r.completed).map((r) => `${r.uid}|${r.occStart != null ? r.occStart : r.start}`)).size;
+  check('badge count', R.S.badge, todayOpen);
+  // ---------- quick alarm
+  $('quickBtn').click(); await sleep(400);
+  check('quick alarm dialog', $('quickDlg').open, true);
+  check('nothing waiting', $('qaList').textContent, 'No quick alarms.');
+  $('qaText').value = 'Tea is ready';
+  $('qaN').value = '0'; $('qaN').dispatchEvent(new Event('input')); await sleep(100);
+  check('rejects 0', $('qaWhen').classList.contains('warn'), true);
+  $('qaN').value = '25'; $('qaN').dispatchEvent(new Event('input')); await sleep(100);
+  check('preview', $('qaWhen').textContent.endsWith('(in 25 minutes).') || $('qaWhen').textContent.endsWith('(in 24 minutes).'), true);
+  $('qaSet').click(); await sleep(700);
+  const ql = await window.rf.quickList();
+  check('quick alarm saved', ql.length === 1 && ql[0].text, 'Tea is ready');
+  check('due in 25 minutes', Math.round((ql[0].at - Date.now()) / 60000), 25);
+  check('toast', document.querySelector('.toast').textContent.startsWith('Quick alarm set for'), true);
+  // one due right away rings like any alarm
+  await window.rf.quickAdd({ text: 'Pasta timer', at: Date.now() + 1500 });
+  const rang = await until(async () => (await window.rf.alarmState()).alarms.some((a) => a.summary === 'Pasta timer'));
+  check('quick alarm goes off', rang, true);
+  const key = (await window.rf.alarmState()).alarms.find((a) => a.summary === 'Pasta timer').key;
+  await window.rf.dismiss(key); await sleep(400);
+  check('dismissed quick alarm is gone', (await window.rf.quickList()).map((q) => q.text).join('|'), 'Tea is ready');
+  X.openQuick(); await sleep(400);
+  check('waiting list', $('qaList').querySelectorAll('[data-cancel]').length, 1);
+  $('qaList').querySelector('[data-cancel]').click(); await sleep(600);
+  check('cancelled', (await window.rf.quickList()).length, 0);
+  $('quickDlg').close();
+  // at a time
+  X.openQuick(); await sleep(300);
+  const at = new Date(Date.now() + 3 * 3600000);
+  $('qaTime').value = `${RF.pad(at.getHours())}:${RF.pad(at.getMinutes())}`; $('qaDate').value = RF.dayKey(at);
+  document.querySelector('input[name=qaMode][value=at]').checked = true; $('qaTime').dispatchEvent(new Event('change'));
+  $('qaSet').click(); await sleep(600);
+  const atMin = ((await window.rf.quickList())[0].at - Date.now()) / 60000;
+  check('quick alarm at a time (to the minute)', atMin > 178.9 && atMin <= 180, true);
+  await window.rf.quickRemove((await window.rf.quickList())[0].id);
+  // ---------- suspend
+  check('status: alarms on', $('alarmState').textContent, '🔔 Alarms on');
+  $('alarmState').click(); await sleep(400);
+  check('suspend dialog', $('suspendDlg').open, true);
+  document.querySelector('input[name=spMode][value=for]').checked = true;
+  $('spN').value = '2'; $('spUnit').value = 'hours'; $('spN').dispatchEvent(new Event('input')); await sleep(100);
+  $('spGo').click(); await sleep(700);
+  const sp = await window.rf.suspended();
+  check('suspended for 2 hours', sp && Math.round((sp.until - Date.now()) / 60000), 120);
+  check('status shows it', $('alarmState').textContent.startsWith('🔕 Alarms suspended until'), true);
+  check('no alarms while suspended', (await window.rf.alarmState()).alarms.length, 0);
+  $('alarmState').click(); await sleep(600);
+  check('resumed from the status bar', `${await window.rf.suspended()} ${$('alarmState').textContent}`, 'null 🔔 Alarms on');
+  X.openSuspend(); await sleep(300);
+  $('spGo').click(); await sleep(600);
+  check('until resumed', JSON.stringify((await window.rf.suspended()).until), 'null');
+  check('status', $('alarmState').textContent, '🔕 Alarms suspended · Resume');
+  X.openSuspend(); await sleep(300);
+  check('dialog offers resume', !!$('spResume'), true);
+  $('spResume').click(); await sleep(600);
+  check('resumed', await window.rf.suspended(), null);
+  // ---------- backup now, restore
+  const count0 = (await window.rf.meta()).count;
+  const file = await window.rf.backupNow(false);
+  check('backup made', /manual-.*\.ics$/.test(file), true);
+  await window.rf.save({ kind: 'event', summary: 'Added after the backup', date: RF.dayKey(new Date()), allDay: true, categories: [] });
+  const carUid = (await window.rf.all()).find((d) => d.summary === 'Car service').uid;
+  await window.rf.remove(carUid); await sleep(500);
+  check('changed since', (await window.rf.meta()).count, count0);
+  X.openRestore(); await sleep(600);
+  const rows = [...$('rsList').querySelectorAll('tr[data-i]')];
+  check('backups listed', rows.length >= 1, true);
+  const mine = rows.find((tr) => tr.textContent.includes('Backup made by you'));
+  check('manual backup described', mine && mine.textContent.includes(`${count0} items`), true);
+  check('restore needs a choice', $('rsGo').disabled, true);
+  mine.click(); await sleep(200);
+  $('rsGo').click(); await sleep(400);
+  check('confirm explains', $('cfBody').textContent.includes('saved first'), true);
+  $('cfFoot').querySelector('.btn.danger').click(); await sleep(1500);
+  check('restored', (await window.rf.meta()).count, count0);
+  check('restored items', (await window.rf.all()).some((d) => d.summary === 'Added after the backup'), false);
+  check('deleted Car service is back', (await window.rf.all()).some((d) => d.summary === 'Car service'), true);
+  check('result message', $('cfTitle').textContent, 'Backup restored');
+  $('cfFoot').querySelector('.btn').click(); await sleep(300);
+  // undo the restore with the safety copy
+  const safety = (await window.rf.backupList()).find((b) => b.kind === 'Saved before a restore');
+  check('safety copy listed', safety && `${safety.items} ${safety.archived}`, `${count0} 0`);
+  await window.rf.backupRestore(safety.path); await sleep(800);
+  check('restore undone', `${(await window.rf.meta()).count} ${(await window.rf.all()).some((d) => d.summary === 'Car service')}`, `${count0} false`);
+} catch (e) { console.log(`E2E ERROR ${e && e.stack}`); }

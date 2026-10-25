@@ -1,0 +1,834 @@
+# Slovenčina — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Pripomienka
+2| ＋ Položka zoznamu
+3| ⚙ Nastavenia
+4| Nastavenia
+5| Hľadať
+6| Hľadať (Ctrl+F)
+7| Hľadať v pripomienkach a úlohách
+8| Nová pripomienka (Ctrl+N)
+9| Nová položka v zobrazenom zozname (Ctrl+T)
+10| Rýchly budík: jednorazový alarm o pár minút (Ctrl+Q)
+11| ⏰ Rýchly budík
+12| Pripomienky
+13| Mesiac
+14| Zoznam
+15| Zoznamy
+16| Zoznam: {s}
+17| Všetky zoznamy
+18| Vyberte, ktorý zoznam zobraziť
+19| Zobrazený zoznam
+20| Úlohy
+21| Ukončené alebo pozastavené
+22| Zobraziť alebo skryť panel kalendára
+23| Zobraziť alebo skryť panel kalendára (Ctrl+B)
+24| Alarmy zapnuté
+25| Alarmy pozastavené
+26| Alarmy pozastavené do {time}
+27| Obnoviť
+28| Kliknutím alarmy znova zapnete
+29| Pozastaviť alebo obnoviť alarmy
+30| one={n} položka | few={n} položky | many={n} položky | other={n} položiek
+31| one={n} pripomienka | few={n} pripomienky | many={n} pripomienky | other={n} pripomienok
+32| one={n} úloha | few={n} úlohy | many={n} úlohy | other={n} úloh
+33| one={n} položka zoznamu | few={n} položky zoznamu | many={n} položky zoznamu | other={n} položiek zoznamu
+34| one={n} nová položka | few={n} nové položky | many={n} novej položky | other={n} nových položiek
+35| one={n} archivovaná položka | few={n} archivované položky | many={n} archivovanej položky | other={n} archivovaných položiek
+36| one={n} zoznam | few={n} zoznamy | many={n} zoznamu | other={n} zoznamov
+37| one={n} súbor | few={n} súbory | many={n} súboru | other={n} súborov
+38| one={n} minúta | few={n} minúty | many={n} minúty | other={n} minút
+39| one={n} hodina | few={n} hodiny | many={n} hodiny | other={n} hodín
+40| one={n} deň | few={n} dni | many={n} dňa | other={n} dní
+41| one={n} duplikát | few={n} duplikáty | many={n} duplikátu | other={n} duplikátov
+42| Zobraziť
+43| Dnes
+44| Zajtra
+45| Včera
+46| Ďalších {n} dní
+47| Nadchádzajúce
+48| Všetky pripomienky
+49| Dôležité
+50| Minulé
+51| Vybraný deň
+52| Vybraný mesiac
+53| Pohľady
+54| Pohľad „{s}“
+55| Hľadanie vo všetkých pripomienkach
+56| Dátum
+57| Deň
+58| Čas
+59| Popis
+60| Opakovanie
+61| Kategória
+62| Alarm
+63| Hotové
+64| Hotové {date}
+65| (bez popisu)
+66| Žiadne pripomienky
+67| Kliknutím na ＋ Pripomienka ju pridáte alebo vyberte iný pohľad.
+68| Kliknutím na ＋ Položka zoznamu pridáte položku do tohto zoznamu.
+69| Po termíne od {date}
+70| po termíne od {date}
+71| Čoskoro: {s}
+72| Upraviť…
+73| Odstrániť…
+74| Odstrániť
+75| Duplikovať
+76| Kopírovať
+77| Presunúť
+78| Otvoriť
+79| Otvoriť odkaz
+80| Zobraziť na mape
+81| Zobraziť v zozname
+82| Označiť ako hotové
+83| Pripomenúť…
+84| Urobiť z toho úlohu…
+85| Urobiť z toho úlohu
+86| Urobiť z toho pripomienku
+87| Naplánovať ako pripomienku…
+88| Naplánovať ako pripomienku
+89| Kopírovať do zoznamu…
+90| Kopírovať do zoznamu
+91| Kopírovať do zoznamu…
+92| Kopírovať do zoznamu
+93| Presunúť do zoznamu…
+94| Presunúť do zoznamu
+95| Presunúť do…
+96| Kopírovať do…
+97| Presunúť do iného zoznamu
+98| Dať kópiu do iného zoznamu
+99| Presná kópia v tomto zozname (Ctrl+D)
+100| Odstrániť (Del)
+101| Vybraná položka
+102| Vybraná položka:
+103| Posunúť nahor
+104| Posunúť nadol
+105| -
+106| -
+107| -
+108| „{s}“ duplikované
+109| {s} (kópia)
+110| Skopírované do „{s}“
+111| Presunuté do „{s}“
+112| Presunúť do „{s}“
+113| Teraz úloha v „{s}“
+114| Teraz pripomienka na {date}
+115| je v „{s}“
+116| „{s}“ je prázdny
+117| Odstránené
+118| Výskyt odstránený
+119| Odstrániť opakovanú pripomienku
+120| Toto sa opakuje — zmeny platia pre každý výskyt.
+121| Len tento
+122| Všetky výskyty
+123| Odstrániť tento výskyt
+124| Odstrániť všetky výskyty…
+125| „{s}“ sa opakuje ({rule}).
+126| Odstrániť len výskyt {date}, alebo všetky výskyty?
+127| Odstrániť všetky výskyty?
+128| Odstrániť všetko
+129| Odstrániť pripomienku?
+130| Odstrániť úlohu?
+131| „{s}“ bude odstránené.
+132| „{s}“ a všetky jeho opakovania budú odstránené.
+133| Niečo sa pokazilo
+134| Najprv zadajte miesto.
+135| Predchádzajúci mesiac
+136| Nasledujúci mesiac
+137| Prejsť na dnešok
+138| Prejsť na dátum (Ctrl+G)
+139| Prejsť na dátum
+140| Prejsť…
+141| Prejsť
+142| Pridať pripomienku na tento deň
+143| Dvojitým kliknutím na deň pridáte pripomienku
+144| V tento deň nič nie je.
+145| +{n} ďalšie
+146| Zatiaľ nehotové
+147| Celý deň
+148| Celý deň {s}
+149| Úloha
+150| Úloha {s}
+151| Úloha
+152| Ne
+153| Po
+154| Ut
+155| St
+156| Št
+157| Pi
+158| So
+159| ne
+160| po
+161| ut
+162| st
+163| št
+164| pi
+165| so
+166| nedeľa
+167| pondelok
+168| utorok
+169| streda
+170| štvrtok
+171| piatok
+172| sobota
+173| Položka zoznamu
+174| Termín
+175| Poradie
+176| Moje poradie
+177| Podľa dátumu
+178| Ručne: presúvajte riadky alebo stlačte Alt+↑ / Alt+↓
+179| Zobraziť hotové
+180| Zobraziť úlohy
+181| Zahrnúť úlohy s dátumom
+182| Bez dátumu
+183| · bez termínu
+184| · termín {date}
+185| · po termíne
+186| · celý deň
+187| · nastavené na {time}
+188| · o {n} min
+189| · začal pred {n} min ·
+190| Zobrazovať túto úlohu v popise ikony v oblasti oznámení
+191| Zobrazovať v popise oblasti oznámení
+192| ✓ Zobrazovať v popise oblasti oznámení
+193| Zobrazené v popise oblasti oznámení
+194| Odstránené z popisu oblasti oznámení
+195| Pripomínať denne do dokončenia
+196| Pripomínať mi každý deň, kým to nebude hotové
+197| Pripomína každý deň, kým to nebude hotové
+198| Do hotova
+199| Už nepripomína denne
+200| Pripomína vám to každý deň, kým nezaškrtnete Hotovo
+201| Zmeškané {date}; pripomína každý deň, kým to nezaškrtnete
+202| Ak to zmeškáte, presunie sa to na dnešok a zvoní každý deň, kým to nezaškrtnete
+203| Hotovo — presunuté na ďalší dátum
+204| denne
+205| týždenne
+206| mesačne
+207| každé {n} dni
+208| každé {n} týždne
+209| {n} d vopred
+210| v ten istý deň
+211| {every} od {from}
+212| raz
+213| každý deň
+214| každý týždeň
+215| každý mesiac
+216| one={n} deň pred termínom | few={n} dni pred termínom | many={n} dňa pred termínom | other={n} dní pred termínom
+217| v deň termínu
+218| Pripomína vám to {every}, od {from}, o {time}
+219| Pripomína vám to {every}, od {from}, o {time}, kým to nebude hotové
+220| Pripomína vám to {every}, od {from}, o {time}, kým to nebude hotové (aj po termíne)
+221| Nová pripomienka
+222| Upraviť pripomienku
+223| Nová úloha
+224| Upraviť úlohu
+225| Na čo vám to má pripomenúť?
+226| Čo treba urobiť?
+227| Druh
+228| Pripomienka
+229| V dátum
+230| Kedykoľvek
+231| Koniec
+232| Miesto
+233| Odkaz
+234| -
+235| Poznámky
+236| Kategórie
+237| Vybrať kategórie
+238| napr. Narodeniny, Práca
+239| Pridať
+240| Uložiť
+241| Zrušiť
+242| Zavrieť
+243| OK
+244| Áno
+245| Nie
+246| Žiadny
+247| Neopakuje sa
+248| Denne
+249| Týždenne
+250| Mesačne
+251| Ročne
+252| Vlastné…
+253| Vlastné
+254| Vlastné (importované)
+255| Ponechať importované: {s}
+256| Každý pracovný deň
+257| Každé
+258| každé
+259| deň
+260| dni
+261| týždeň
+262| týždne
+263| mesiac
+264| mesiace
+265| rok
+266| roky
+267| krát
+268| {date}
+269| {day}. deň v mesiaci
+270| {nth} {weekday}
+271| {nth} {weekday} v mesiaci {month}
+272| Posledný {weekday}
+273| Posledný {weekday} v mesiaci {month}
+274| Každý deň
+275| Každé {n} dni
+276| Každý týždeň
+277| Každé {n} týždne
+278| Každý mesiac
+279| Každý týždeň: {days}
+280| Každé {n} týždne: {days}
+281| pracovné dni
+282| Každý mesiac {day}. deň
+283| Každé {n} mesiace {day}. deň
+284| Každý mesiac: {nth} {weekday}
+285| Každé {n} mesiace: {nth} {weekday}
+286| Každý rok {date}
+287| Každé {n} roky {date}
+288| Každý rok: {nth} {weekday} v mesiaci {month}
+289| Každé {n} roky: {nth} {weekday} v mesiaci {month}
+290| posledný
+291| {n}.
+292| Ako často
+293| V dni
+294| Po
+295| Potom
+296| -
+297| o
+298| vopred
+299| Nikdy
+300| Do
+301| do…
+302| v dátum…
+303| od…
+304| už nie (len raz)
+305| Pripomenúť
+306| Nepripomínať
+307| Kedy začať pripomínať
+308| Dátum prvej pripomienky
+309| Čas pripomienky
+310| Pripomínať ďalej, keď termín uplynul a nie je hotovo
+311| aj po termíne
+312| kým to nebude hotové
+313| kým to nebude hotové alebo nenastane termín ({due})
+314| kým to nebude hotové, aj po termíne ({due})
+315| Jedna pripomienka: {date} o {time}.
+316| Jedna pripomienka: {date} o {time}. Ten čas už uplynul — vyberte neskorší alebo pripomínajte opakovane.
+317| {every} o {time}, od {date}, {end}.
+318| Bez pripomienok.
+319| Bez pripomienok. Po termíne sa úloha zobrazí červenou.
+320| Vyberte dátum prvej pripomienky.
+321| Text alarmu
+322| Načas
+323| one={n} minútu vopred | few={n} minúty vopred | many={n} minúty vopred | other={n} minút vopred
+324| one={n} hodinu vopred | few={n} hodiny vopred | many={n} hodiny vopred | other={n} hodín vopred
+325| one={n} deň vopred | few={n} dni vopred | many={n} dňa vopred | other={n} dní vopred
+326| one={n} týždeň vopred | few={n} týždne vopred | many={n} týždňa vopred | other={n} týždňov vopred
+327| V ten istý deň o {time}
+328| Deň vopred o {time}
+329| Zobrazí sa ako: {s}. <year> počíta roky odvtedy; <year#> zobrazí len číslo.
+330| Importované v časovom pásme {zone} — zobrazené v miestnom čase. Uložením sa uloží v miestnom čase.
+331| Zadajte popis.
+332| Vyberte termín alebo zaškrtnite „Bez dátumu“.
+333| Vyberte dátum.
+334| Vyberte dátum.
+335| Vyberte dátum.
+336| Zadajte čas termínu alebo zaškrtnite „Kedykoľvek“.
+337| Zadajte čas alebo zaškrtnite „Celý deň“.
+338| Dátum konca je pred dátumom začiatku.
+339| Čas konca je pred časom začiatku.
+340| Pripomienka pridaná
+341| Úloha pridaná
+342| Uložené
+343| Upraviť kópiu
+344| Dátum je známy: urobiť z tejto úlohy pripomienku na presný dátum
+345| Termín: {date}.
+346| Termín: {date}, {time}.
+347| Keď budete poznať presný dátum, úloha sa stane pripomienkou na tento dátum: zmizne zo zoznamu úloh a objaví sa v Pripomienkach, v pohľade Mesiac a v kalendári. Poznámky, kategória, miesto a odkaz zostanú zachované.
+348| Pripomienka {date}, celý deň.
+349| Pripomienka {date} o {time}.
+350| Pripomienka sa stane úlohou v rovnaký dátum, s opakovaním, alarmom a poznámkami.
+351| Pripomienka zostane; kópia ako úloha v rovnaký dátum, s opakovaním, alarmom a poznámkami, sa pridá do zoznamu.
+352| Presná kópia pôjde do vybraného zoznamu; táto položka zostane, kde je.
+353| Zoznam
+354| {s} (tento zoznam)
+355| hlavný zoznam
+356| Alarm ReminderFoxAgain
+357| Odložiť
+358| Odložiť všetko
+359| Odložiť všetko o {s}
+360| Odložiť všetky pripomienky tu o predvolený čas (zmeníte v Nastaveniach)
+361| O koľko odložiť alebo do koľkej
+362| Jednotka odloženia
+363| Odložiť do
+364| Zavrieť
+365| Zavrieť všetko
+366| Hotovo
+367| Hotovo s týmto rýchlym budíkom
+368| Zatiaľ skryť (alarm zostane aktívny a vráti sa s ďalším)
+369| Čas ako 15:30 alebo 3:30 pm (skorší ako teraz znamená zajtra)
+370| Celé číslo od {n} do {n2}
+371| Zadajte celé číslo od {n} do {n2}.
+372| Zadajte celé číslo od 1 do 999 alebo dátum a čas.
+373| sekundy
+374| minúty
+375| hodiny
+376| Rýchly budík
+377| Rýchle budíky
+378| ⏰ Rýchle budíky…
+379| Jednorazový alarm, ktorý sa neukladá ako pripomienka — ako Rýchly budík v doplnku.
+380| O
+381| O
+382| Na
+383| Nastaviť alarm
+384| Zrušiť tento alarm
+385| Žiadne rýchle budíky.
+386| Čaká na zazvonenie
+387| Rýchly budík nastavený na {time}
+388| Rýchly budík zrušený
+389| Vyberte čas.
+390| Ten čas už uplynul — vyberte neskorší.
+391| Ten čas už uplynul.
+392| Zazvoní {when} ({until}).
+393| dnes o {time}
+394| o menej ako minútu
+395| o {time}
+396| o {hours} {minutes}
+397| Pozastaviť alarmy
+398| Pozastaviť alarmy…
+399| Pozastaviť alarmy na chvíľu
+400| Pozastaviť
+401| Ako dlho
+402| Kým ich znova nezapnem
+403| Alarmy zostanú vypnuté, kým ich neobnovíte (stavový riadok, ponuka v oblasti oznámení alebo tu).
+404| Počas pozastavenia sa neotvárajú okná alarmov a okno pripomienok sa nezobrazí. Alarmy, ktoré medzitým nastanú, sa zobrazia po obnovení.
+405| Alarmy sú pozastavené, kým ich znova nezapnete.
+406| Alarmy sa vrátia {when}.
+407| Alarmy sú znova zapnuté
+408| Obnoviť alarmy hneď
+409| Vyberte čas v budúcnosti.
+410| ReminderFoxAgain — dnes
+411| Nadchádzajúce
+412| Dnes nič.
+413| Nič nadchádzajúce.
+414| Všeobecné
+415| Alarmy
+416| Zobrazenie
+417| Údaje
+418| O aplikácii
+419| Spúšťať ReminderFoxAgain pri štarte Windows
+420| Pri zatvorení okna bežať ďalej v oblasti oznámení
+421| Týždeň začína v
+422| Motív
+423| Motívy
+424| Predvolený (podľa Windows)
+425| Líška
+426| Svetlý
+427| Tmavý
+428| Oceán
+429| Vysoký kontrast
+430| Predvolený je Líška, svetlý alebo tmavý podľa Windows. Položky s hviezdičkou majú v každom motíve vlastnú farbu. Vysoký kontrast používa čiernu, bielu, žltú a azúrovú s väčším písmom a hrubšími čiarami.
+431| -
+432| ReminderFoxAgain je poctou pôvodnému doplnku
+433| -
+434| pre Firefox a Thunderbird, ktorý vytvorili Tom Mutdosch a Daniel Lee s Guenterom Wahlom. Formát súborov, pravidlá opakovania, pohľady, rýchle budíky a okno upozornení sú ich dielom; ďakujeme.
+435| Pri alarmoch prehrať zvuk
+436| Zvuk
+437| Vstavaný zvonček
+438| Váš zvuk
+439| Vybrať…
+440| Vybrať
+441| Použiť vstavaný zvonček
+442| Zvonček
+443| Prehrať
+444| ▶ Vyskúšať
+445| Zvuk alarmu: {s}
+446| Používa sa vstavaný zvonček
+447| Vyberte zvukový súbor (.mp3, .wav, .ogg, .m4a, .aac, .flac alebo .webm).
+448| Zvukový súbor je väčší ako 10 MB. Vyberte kratší.
+449| Opakovať zvuk
+450| Nie, prehrať raz
+451| Každú minútu
+452| Každých {n} minút
+453| Predvolený alarm nových pripomienok
+454| Predvolené odloženie
+455| Jednotka predvoleného odloženia
+456| Predvolené odloženie, koľko
+457| Okno pripomienok (okno upozornení doplnku)
+458| Zobraziť okno s dnešnými a nadchádzajúcimi pripomienkami
+459| Kedy
+460| Len pri spustení
+461| Pri spustení a každých {n} minút
+462| … každých {n} minút
+463| … každú hodinu
+464| … každé {n} hodiny
+465| Nechať otvorené
+466| {n} sekúnd
+467| Kým ho nezavriem
+468| Roh
+469| vpravo dole
+470| vľavo dole
+471| vpravo hore
+472| vľavo hore
+473| Prehrať zvuk
+474| Zobraziť teraz
+475| „Nadchádzajúce“ znamená nasledujúcich
+476| Číslo na ikone
+477| Zobrazovať číslo na ikonách v oblasti oznámení a na paneli úloh
+478| Dnešné otvorené pripomienky a úlohy
+479| Dnešné a nadchádzajúce
+480| Len dnešné
+481| Len nadchádzajúce
+482| Jazyk
+483| Jazyk systému ({s})
+484| Jazyk ponúk, tlačidiel a správ. Vaše pripomienky sa nemenia.
+485| Preklady boli napísané pre ReminderFoxAgain a zatiaľ ich neskontrolovali rodení hovoriaci.
+486| Veľkosť textu
+487| Malý ({n} %)
+488| Normálny
+489| Veľký ({n} %)
+490| Väčší ({n} %)
+491| Najväčší ({n} %)
+492| Dátumy
+493| Ako vo Windows ({s})
+494| Časy
+495| Ako vo Windows
+496| {n}-hodinový ({s})
+497| Zobraziť panel kalendára vedľa zoznamov
+498| Mesiace v paneli kalendára
+499| Mapy
+500| -
+501| -
+502| -
+503| Popis ikony v oblasti oznámení
+504| Popis
+505| Dnešné pripomienky
+506| Nadchádzajúce pripomienky
+507| Premenné: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — rovnaké ako v doplnku.
+508| Obnoviť predvolené
+509| Texty popisu obnovené
+510| Spravovať zoznamy…
+511| Spravovať kategórie…
+512| Spravovať pohľady…
+513| Opakované pripomienky na karte Pripomienky
+514| Zobrazované budúce dátumy
+515| Nadchádzajúce, Všetky pripomienky, Dôležité, hľadanie a pohľady bez dátumov
+516| Každý dátum v nasledujúcich
+517| Len nasledujúce
+518| one={n} mesiac | few={n} mesiace | many={n} mesiaca | other={n} mesiacov
+519| one={n} rok | few={n} roky | many={n} roka | other={n} rokov
+520| one={n} dátum | few={n} dátumy | many={n} dátumu | other={n} dátumov
+521| Používa Nadchádzajúce, Všetky pripomienky, Dôležité, hľadanie a pohľady bez rozsahu dátumov. Dnes, Ďalších {n} dní, Vybraný deň či mesiac, karta Mesiac a kalendár vždy zobrazujú každý dátum.
+522| V pohľadoch Všetko a Minulé zobraziť minulé od
+523| začiatku každej série
+524| posledných {n} rokov
+525| posledného roka
+526| posledných {n} mesiacov
+527| Skryť opakované pripomienky
+528| Skryť hotové pripomienky
+529| Import a export
+530| Importovať súbor .ics…
+531| Pridať položky zo súboru .ics (Ctrl+I)
+532| Importovať z ReminderFoxu…
+533| Nájsť reminderfox.ics, ktorý doplnok ReminderFox ukladal vo vašom profile Firefoxu alebo Thunderbirdu
+534| Exportovať do .ics…
+535| Exportovať do .ics
+536| Exportovať…
+537| Uložiť súbor .ics (Ctrl+E)
+538| Import sa pridá k tomu, čo máte; existujúce položky sa aktualizujú len vtedy, keď je kópia v súbore novšia. Exporty možno otvoriť v Outlooku, Kalendári Google, Thunderbirde, Kalendári Apple a pôvodnom doplnku ReminderFox.
+539| Zálohy
+540| Zálohovať hneď
+541| Uložiť záložnú kópiu…
+542| Obnoviť zo zálohy…
+543| Obnoviť zo zálohy
+544| Otvoriť priečinok záloh
+545| Otvoriť priečinok údajov
+546| Dátový súbor
+547| Zobraziť súbor pripomienok v Prieskumníkovi
+548| Vaše pripomienky sa ukladajú do {path} (denné zálohy sú vedľa v priečinku „backups“).
+549| ＋ Nový zoznam…
+550| Nový zoznam…
+551| Nový zoznam
+552| Názov nového zoznamu
+553| Názov nového zoznamu (napríklad Nákup, Filmy na pozretie, Nápady na darčeky):
+554| Pridať zoznam
+555| Premenovať zoznam
+556| Premenovať…
+557| Odobrať…
+558| Odobrať zoznam?
+559| „Úlohy“ je hlavný zoznam a nemožno ho premenovať ani odobrať (ako v doplnku). Pri odobraní zoznamu zvolíte, či sa jeho úlohy presunú do „Úlohy“, alebo sa odstránia.
+560| Zoznam „{list}“ má {n} úlohu. Presunúť ju do „{main}“, alebo ju odstrániť so zoznamom?
+561| Zoznam „{list}“ má úloh: {n}. Presunúť ich do „{main}“, alebo ich odstrániť so zoznamom?
+562| Odstrániť zoznam a úlohy
+563| one=Zoznam a {n} úloha odstránené | few=Zoznam a {n} úlohy odstránené | many=Zoznam a {n} úlohy odstránené | other=Zoznam a {n} úloh odstránené
+564| Zoznam odobratý
+565| Zoznam „{s}“ pridaný
+566| „{s}“ už existuje
+567| Tento zoznam už existuje.
+568| Názov zoznamu nesmie byť prázdny ani obsahovať čiarku či dvojbodku.
+569| Názov zoznamu nesmie obsahovať čiarku ani dvojbodku.
+570| Zlúčiť zoznamy?
+571| Zlúčiť
+572| Zlúčené s „{s}“
+573| Premenované na „{s}“
+574| Nový názov pre „{name}“:
+575| Nový názov pre „{name}“ ({items}):
+576| Nová kategória
+577| Iná kategória
+578| Pridať bežné
+579| Kategória „{s}“ pridaná
+580| Pridané kategórie: {n}
+581| Nie je čo pridať.
+582| Premenovať kategóriu
+583| Odstrániť kategóriu?
+584| Kategória odstránená
+585| Zlúčiť kategórie?
+586| Kategória nesmie byť prázdna ani obsahovať čiarku.
+587| zatiaľ nepoužité
+588| Premenovanie zmení každú pripomienku a úlohu s touto kategóriou; premenovanie na existujúcu ich zlúči. Odstránenie ju odoberie z položiek (položky zostanú).
+589| Kategória „{name}“ bude odstránená.
+590| Kategória „{name}“ bude odstránená a odobratá z položiek ({items}). Samotné položky zostanú.
+591| Výročie
+592| Schôdzka
+593| Narodeniny
+594| Obchod
+595| Hovor
+596| Sviatok
+597| Porada
+598| Osobné
+599| Nákupy
+600| Cesta
+601| Výročie, Schôdzka, Narodeniny, Obchod, Hovor…
+602| Nový pohľad
+603| ＋ Nový pohľad…
+604| Upraviť pohľad
+605| Odstrániť pohľad?
+606| Pohľad „{s}“ bude odstránený. Vaše pripomienky sa nemenia.
+607| Zobraziť na karte Pripomienky
+608| Pohľad uložený
+609| Pohľad „{s}“ pridaný
+610| Pomenujte pohľad.
+611| Pohľad s týmto názvom už existuje.
+612| Pohľad je uložený filter pre kartu Pripomienky: vyberte ho v zozname Zobraziť. Podmienky pre rôzne polia musia platiť všetky; čiarky v jednej podmienke znamenajú „ktorákoľvek z týchto“.
+613| Zatiaľ žiadne pohľady. Kliknutím na „Nový pohľad…“ ho vytvoríte — napríklad každá pripomienka s kategóriou „Narodeniny“ v nasledujúcom roku.
+614| Názov
+615| napr. Narodeniny
+616| Zobraziť pripomienky, kde
+617| ＋ Pridať podmienku
+618| Odobrať túto podmienku
+619| Čokoľvek
+620| Kategória
+621| Pohľad
+622| Typ
+623| je
+624| obsahuje
+625| slová oddelené čiarkami
+626| Len dátumy od
+627| do
+628| od dneška
+629| dnes
+630| Záporné čísla idú v čase späť: −{n} mesiac až {n2} dní znamená „posledný mesiac“.
+631| Všetko
+632| Všetko
+633| Len pripomienky
+634| Len úlohy
+635| Jednotka
+636| Koľko
+637| Čokoľvek obsahuje „{s}“
+638| Kategória je „{s}“
+639| Kategória je „{s}“ alebo „{s2}“
+640| dátumy od dneška na {n} dní dopredu
+641| one=+{n} týždeň | few=+{n} týždne | many=+{n} týždňa | other=+{n} týždňov
+642| one=+{n} mesiac | few=+{n} mesiace | many=+{n} mesiaca | other=+{n} mesiacov
+643| one=+{n} rok | few=+{n} roky | many=+{n} roka | other=+{n} rokov
+644| Importovať
+645| Importovať súbor iCalendar
+646| Importovať z ReminderFoxu
+647| Z ReminderFoxu
+648| Nájdené v doplnku ReminderFox: {files}
+649| Importovať najnovší
+650| Aj tak importovať
+651| {reminders} a {items}
+652| Už tu: {n} (ponechá sa novšia kópia)
+653| {n} vyzerá ako duplikát (rovnaký názov a dátum ako vaša položka)
+654| {n} vyzerajú ako duplikáty (rovnaký názov a dátum ako vaša položka)
+655| Ako
+656| Pridať k tomu, čo mám
+657| Nahradiť všetko
+658| Nahradiť všetko (najprv sa zálohuje: {items})
+659| Nahradiť všetko?
+660| Vaše {items} budú nahradené položkami zo súboru ({newItems}).
+661| Súčasný stav sa najprv uloží ako záloha „Uložené pred importom, ktorý všetko nahradil“, takže ho môžete vrátiť v Nastavenia → Údaje → Obnoviť zo zálohy….
+662| Duplikáty
+663| Preskočiť položky s rovnakým názvom a dátumom ako moje
+664| Voliteľné: pridá sa ku každej importovanej položke, napr. „Sviatky“ pre zoznam sviatkov, aby ste podľa nej mohli filtrovať.
+665| voliteľné
+666| Import dokončený
+667| Importované: {items}
+668| Importované: {items} a {lists}
+669| Aktualizované: {n}
+670| Už aktuálne: {n}
+671| one={n} duplikát preskočený | few={n} duplikáty preskočené | many={n} duplikátu preskočeného | other={n} duplikátov preskočených
+672| nahrádza sa: {items} (uložené ako {file})
+673| Pridané: {lists} ({names})
+674| one={n} archivovaná položka presunutá do zoznamu „{list}“ | few={n} archivované položky presunuté do zoznamu „{list}“ | many={n} archivovanej položky presunutej do zoznamu „{list}“ | other={n} archivovaných položiek presunutých do zoznamu „{list}“
+675| Tento súbor neobsahuje údaje iCalendar (chýba BEGIN:VCALENDAR).
+676| Súbor pripomienok sa nedá prečítať
+677| Exportované do {path}
+678| Exportovať
+679| Všetko (pripomienky a úlohy)
+680| Súbor funguje s Outlookom, Kalendárom Google, Thunderbirdom, Kalendárom Apple a pôvodným doplnkom ReminderFox.
+681| ReminderFoxAgain robí zálohu každý deň, jednu pred každým obnovením a tie, ktoré vytvoríte tlačidlom „Zálohovať hneď“. Obnovenie nahradí súčasné pripomienky a úlohy zálohou; súčasný stav sa najprv uloží, takže sa môžete vždy vrátiť.
+682| Vytvorené
+683| Obsah
+684| Obnoviť
+685| Obnoviť…
+686| Vybrať iný súbor…
+687| archivované: {n}
+688| Nedá sa prečítať: {s}
+689| {s} sa nedá prečítať: {s2}
+690| Tento súbor sa nedá obnoviť
+691| Zatiaľ žiadne zálohy. Vytvárajú sa každý deň, keď aplikácia beží; môžete aj kliknúť na „Zálohovať hneď“.
+692| Denná záloha
+693| Záloha vytvorená vami
+694| Uložené pred obnovením
+695| Uložené pred importom, ktorý všetko nahradil
+696| Archív predtým, než sa stal zoznamom
+697| Denná záloha archívu (staršia verzia)
+698| Záloha
+699| Obnoviť túto zálohu?
+700| Týmto sa súčasný stav ({now}) nahradí zálohou z {when}: {items}.
+701| Týmto sa súčasný stav ({now}) nahradí zálohou z {when}: {items} a navyše archivované ({n}), ktoré pôjdu do zoznamu „{list}“.
+702| Toto je kópia archívu zo staršej verzie. Jej položky ({all}) pôjdu do zoznamu „{list}“ (položky, ktoré už máte, zostanú bez zmeny). Nič ďalšie sa nemení.
+703| Vaše súčasné údaje sa najprv uložia ako záloha „Uložené pred obnovením“, takže to môžete vrátiť z toho istého zoznamu.
+704| Záloha obnovená
+705| Obnovené: {items}.
+706| Obnovené: {items}, z toho archivované ({n}) sú teraz v zozname „{list}“.
+707| Predchádzajúci stav bol uložený ako {file}.
+708| Záloha uložená do {path}
+709| Zálohované: {s}
+710| {n} B
+711| {n} kB
+712| {n} MB
+713| Táto položka už neexistuje.
+714| Súbor archívu sa nedá prečítať, preto sa nemení. Bol ponechaný ako archive.ics.unreadable.
+715| Súbor archívu sa nedá prečítať, preto ho nemožno nahradiť.
+716| Vitajte v ReminderFoxAgain
+717| Vaše pripomienky, úlohy a alarmy ako aplikácia pre Windows — pocta pôvodnému doplnku ReminderFox.
+718| Importovať z vášho doplnku ReminderFox
+719| {path} — naposledy zmenené {date}
+720| Importovať reminderfox.ics alebo iný súbor kalendára…
+721| Z doplnku ReminderFox (z priečinka „reminderfox“ vo vašom profile Firefoxu/Thunderbirdu), z Outlooku, Kalendára Google…
+722| Začať s prázdnym zoznamom
+723| Importovať môžete neskôr v Nastavenia → Údaje.
+724| teraz
+725| o {n} min
+726| one=o {n} hodinu | few=o {n} hodiny | many=o {n} hodiny | other=o {n} hodín
+727| one=o {n} deň | few=o {n} dni | many=o {n} dňa | other=o {n} dní
+728| pred {n} min
+729| one=pred {n} hodinou | few=pred {n} hodinami | many=pred {n} hodiny | other=pred {n} hodinami
+730| one=pred {n} dňom | few=pred {n} dňami | many=pred {n} dňa | other=pred {n} dňami
+731| Otvoriť {app}
+732| Pridať pripomienku…
+733| Pridať položku zoznamu…
+734| Rýchly budík…
+735| Obnoviť alarmy
+736| Zobraziť dnešné pripomienky
+737| Ukončiť {app}
+738| {app} — alarmy vypnuté
+739| {app} — alarmy vypnuté do {time}
+740| {app} — dnes nič
+741| nadchádzajúce
+742| {app} stále beží
+743| Alarmy sa budú ďalej zobrazovať. Aplikáciu ukončíte kliknutím pravým tlačidlom na líšku v oblasti oznámení.
+744| Alarm {app}
+745| {app} — dnes
+746| {n} h {n2} min
+747| Súbory iCalendar
+748| Všetky súbory
+749| Zvukové súbory
+750| Importovať súbor iCalendar
+751| Exportovať do súboru iCalendar
+752| Vyberte svoj reminderfox.ics
+753| Vyberte zvuk alarmu
+754| Uložiť záložnú kópiu
+755| Vyberte zálohu na obnovenie
+756| Každý týždeň: {days}
+757| Každý mesiac: {nth} {weekday}
+758| Každý mesiac {day}. deň
+759| Každý mesiac v ten istý deň
+760| Každé {n} mesiace v ten istý deň
+761| Každý rok: {nth} {weekday} v mesiaci {month}
+762| Každý rok {date}
+763| Každý rok v ten istý dátum
+764| Každé {n} roky v ten istý dátum
+765| Opakuje sa
+766| Vlastné ({rule})
+767| {rule}, raz
+768| {rule}, {n}-krát
+769| {rule}, do {date}
+770| Zobraziť pripomienky, ktoré ste označili ako hotové
+771| Zobraziť pripomienky a položky zoznamov, ktoré ste označili ako hotové
+772| Moje poradie: potiahnite riadky alebo stlačte Alt+↑ / Alt+↓
+773| Zobrazenie
+774| Zvuk alarmu
+775| Vlastný súbor…
+776| Použiť vlastný zvukový súbor (.mp3, .wav, .ogg, .m4a, .aac, .flac alebo .webm)
+777| Nepretržite, kým nevybavíte
+778| Nepretržite, kým nevybavíte: zvuk hrá stále dokola, kým alarm neodložíte, neotvoríte, neoznačíte ako hotový alebo nezavriete, prípadne neskryjete okno alarmu. Ďalší alarm ho spustí znova.
+779| Stĺpce
+780| Stĺpce na karte Pripomienky
+781| Stĺpce v zoznamoch
+782| Zrušením začiarknutia stĺpec skryjete. Popis je viditeľný vždy.
+783| Uložené filtre pre kartu Pripomienky
+784| Spravovať pripomienky…
+785| Nadchádzajúce, Všetky pripomienky, Dôležité, hľadanie a uložené filtre bez dátumov
+786| Používa Nadchádzajúce, Všetky pripomienky, Dôležité, hľadanie a uložené filtre bez rozsahu dátumov. Dnes, Ďalších {n} dní, Vybraný deň či mesiac, karta Mesiac a kalendár vždy zobrazujú každý dátum.
+787| Uložené filtre
+788| Uložený filter „{s}“ · {c}
+789| Spravovať pripomienky
+790| Uložený filter zobrazí na karte Pripomienky len pripomienky, ktoré chcete: vyberte ho v zozname Zobraziť. Podmienky pre rôzne polia musia platiť všetky; čiarky v jednej podmienke znamenajú „ktorákoľvek z týchto“.
+791| ＋ Nový uložený filter…
+792| Zatiaľ žiadne uložené filtre. Kliknutím na „Nový uložený filter…“ ho vytvoríte — napríklad každá pripomienka s kategóriou „Narodeniny“ v nasledujúcom roku.
+793| Odstrániť uložený filter?
+794| Uložený filter „{s}“ bude odstránený. Vaše pripomienky sa nemenia.
+795| Upraviť uložený filter
+796| Nový uložený filter
+797| Zadajte názov uloženého filtra.
+798| Uložený filter s týmto názvom už existuje.
+799| Uložený filter zmenený
+800| Uložený filter „{s}“ pridaný
+801| Zvon
+802| Marimba
+803| Digitálne pípanie
+804| Budík
+805| Váš súbor: {s}
+806| Vytvoriť vlastný motív z piatich farieb
+807| ＋ Nový motív…
+808| Zmeniť farby vášho motívu
+809| ＋ Nový motív… vytvorí vlastný z piatich farieb.
+810| Vaše motívy
+811| Pozadie
+812| Za všetkým
+813| Zoznamy a panely
+814| Zoznamy, panel kalendára, dialógy
+815| Text
+816| Zvýraznenie
+817| Tlačidlá, dnes, výber
+818| Položky s hviezdičkou
+819| Dôležité pripomienky a úlohy
+820| Text sa na pozadí zle číta (kontrast {n}:1; od 4,5:1 sa číta dobre).
+821| Zvýraznenie je na zoznamoch zle vidieť (kontrast {n}:1; lepšie je 3:1 a viac).
+822| Položky s hviezdičkou je na zoznamoch zle vidieť (kontrast {n}:1; lepšie je 3:1 a viac).
+823| Upraviť motív
+824| Nový motív
+825| Vychádzať z
+826| napr. Les
+827| Celé okno ukazuje motív, kým vyberáte. Zrušiť vráti predchádzajúci.
+828| Zadajte názov motívu.
+829| Motív s týmto názvom už existuje.
+830| Motív „{s}“ uložený
+831| Motív „{s}“ pridaný
+832| Odstrániť motív?
+833| Motív „{s}“ bude odstránený. Aplikácia sa vráti k predvolenému motívu.

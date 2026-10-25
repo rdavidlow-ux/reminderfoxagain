@@ -1,0 +1,259 @@
+/* ReminderFoxAgain themes. Loaded after styles.css.
+   data-theme on <html>:  (none) Default = Fox, following Windows light/dark
+                          fox      the classic orange look, always light
+                          light    clean neutral light with a blue accent
+                          dark     the fox dark look, always dark
+                          ocean    calm teal and sand
+                          contrast high contrast for low vision: black, white and yellow, larger text, heavier lines
+   Every theme also sets --imp / --imp-ink / --imp-soft, the colour of starred (important) items. */
+
+:root {
+  --imp: #8b3fc9; --imp-ink: #6d28a8; --imp-soft: #f3e8fc; --on-accent: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) { --imp: #c39bff; --imp-ink: #d6bcff; --imp-soft: #3a2a4f; }
+}
+
+/* ---------- Fox (always light) */
+:root[data-theme="fox"] {
+  --bg: #fbf8f4; --surface: #ffffff; --surface-2: #f6f0e8; --surface-3: #efe6da;
+  --line: #ece2d6; --line-strong: #dccbb7;
+  --ink: #2a1c11; --ink-2: #5b4838; --ink-3: #8c7865;
+  --fox: #e26e26; --fox-hover: #cf5f1a; --fox-ink: #b04f17; --fox-soft: #fdebdc; --fox-softer: #fff5ec; --sel: #fde3cc;
+  --danger: #c0392b; --done: #a99886;
+  --focus: 0 0 0 3px rgba(226, 110, 38, .28);
+  --shadow: 0 10px 30px rgba(60, 30, 10, .18), 0 2px 6px rgba(60, 30, 10, .08);
+  --imp: #8b3fc9; --imp-ink: #6d28a8; --imp-soft: #f3e8fc;
+  color-scheme: light;
+}
+
+/* ---------- Light (neutral, blue accent) */
+:root[data-theme="light"] {
+  --bg: #f6f7f9; --surface: #ffffff; --surface-2: #eff1f5; --surface-3: #e4e8ee;
+  --line: #e1e5eb; --line-strong: #c9d0da;
+  --ink: #161b22; --ink-2: #444d59; --ink-3: #6b7480;
+  --fox: #2563eb; --fox-hover: #1d4fd8; --fox-ink: #1d4ed8; --fox-soft: #e2ebfd; --fox-softer: #f3f7fe; --sel: #d3e2fd;
+  --danger: #c62828; --done: #97a0ab;
+  --focus: 0 0 0 3px rgba(37, 99, 235, .28);
+  --shadow: 0 10px 30px rgba(15, 25, 45, .16), 0 2px 6px rgba(15, 25, 45, .08);
+  --imp: #c026d3; --imp-ink: #a21caf; --imp-soft: #fbe7fd;
+  color-scheme: light;
+}
+
+/* ---------- Dark (fox dark) */
+:root[data-theme="dark"] {
+  --imp: #c39bff; --imp-ink: #d6bcff; --imp-soft: #3a2a4f;
+}
+
+/* ---------- Ocean (teal and sand) */
+:root[data-theme="ocean"] {
+  --bg: #f4f8f8; --surface: #ffffff; --surface-2: #e9f2f2; --surface-3: #dbe9ea;
+  --line: #d9e7e8; --line-strong: #b9d1d3;
+  --ink: #0f2a2e; --ink-2: #355459; --ink-3: #5f7d82;
+  --fox: #0f7c8c; --fox-hover: #0c6977; --fox-ink: #0b6270; --fox-soft: #d7eff1; --fox-softer: #eef8f8; --sel: #c6e7ea;
+  --danger: #c2362b; --done: #8ea6a9;
+  --focus: 0 0 0 3px rgba(15, 124, 140, .28);
+  --shadow: 0 10px 30px rgba(10, 40, 45, .16), 0 2px 6px rgba(10, 40, 45, .08);
+  --imp: #b35400; --imp-ink: #9a4a00; --imp-soft: #fdeedc;
+  color-scheme: light;
+}
+
+/* ---------- High contrast (low vision) */
+:root[data-theme="contrast"] {
+  --bg: #000000; --surface: #000000; --surface-2: #141414; --surface-3: #262626;
+  --line: #9a9a9a; --line-strong: #ffffff;
+  --ink: #ffffff; --ink-2: #ffffff; --ink-3: #e0e0e0;
+  --fox: #ffd400; --fox-hover: #ffe45c; --fox-ink: #ffd400; --fox-soft: #2e2600; --fox-softer: #1a1600; --sel: #3d3300;
+  --danger: #ff8a80; --done: #c8c8c8;
+  --focus: 0 0 0 3px #00e5ff;
+  --shadow: 0 0 0 2px #ffffff;
+  --imp: #00e5ff; --imp-ink: #00e5ff; --imp-soft: #002b30; --on-accent: #000;
+  color-scheme: dark;
+}
+:root[data-theme="contrast"] body { font-size: 15.5px; line-height: 1.45; -webkit-font-smoothing: auto; }
+:root[data-theme="contrast"] .btn,
+:root[data-theme="contrast"] .sel,
+:root[data-theme="contrast"] .inp,
+:root[data-theme="contrast"] .seg,
+:root[data-theme="contrast"] .daypick button,
+:root[data-theme="contrast"] .star-btn { border-width: 2px; border-color: #ffffff; }
+:root[data-theme="contrast"] .btn.ghost { border-color: transparent; text-decoration: underline; text-underline-offset: 3px; }
+:root[data-theme="contrast"] .btn.primary { border-color: var(--fox); }
+:root[data-theme="contrast"] :focus-visible { outline: 3px solid #00e5ff; outline-offset: 2px; box-shadow: none; }
+:root[data-theme="contrast"] .list th { color: #ffffff; border-bottom: 2px solid #ffffff; }
+:root[data-theme="contrast"] .list td { border-bottom-color: #6a6a6a; }
+:root[data-theme="contrast"] table.list,
+:root[data-theme="contrast"] .mcal,
+:root[data-theme="contrast"] .agenda .item,
+:root[data-theme="contrast"] .welcome .opt,
+:root[data-theme="contrast"] .ctx { border: 2px solid #ffffff; }
+:root[data-theme="contrast"] .list tr.past td { color: #d0d0d0; }
+:root[data-theme="contrast"] .list tr.today td { box-shadow: inset 0 2px 0 var(--fox), inset 0 -2px 0 var(--fox); }
+:root[data-theme="contrast"] .list tr.selected td { outline: 2px solid #00e5ff; outline-offset: -2px; }
+:root[data-theme="contrast"] .mday.out,
+:root[data-theme="contrast"] .ev.done { opacity: 1; }
+:root[data-theme="contrast"] .mday.out { color: #9a9a9a; }
+:root[data-theme="contrast"] .month-grid { background: #ffffff; border: 2px solid #ffffff; }
+:root[data-theme="contrast"] .ev { border: 1px solid #ffffff; }
+:root[data-theme="contrast"] .tab[aria-selected="true"]::after { height: 4px; }
+:root[data-theme="contrast"] .chip { border: 1px solid #ffffff; color: #ffffff; }
+:root[data-theme="contrast"] footer.status a { color: #ffffff; text-decoration: underline; }
+:root[data-theme="contrast"] dialog { border: 2px solid #ffffff; }
+:root[data-theme="contrast"] dialog::backdrop { background: rgba(0, 0, 0, .75); }
+:root[data-theme="contrast"] .toast { background: #ffffff; color: #000000; border: 2px solid #000; }
+
+/* text drawn on the accent colour (white, or black on the yellow of the high-contrast theme) */
+.btn.primary, .btn.primary:hover, .ev.allday, .mday.picked, .cell.today .num,
+.seg button[aria-pressed="true"], .daypick button[aria-pressed="true"], .bar, .bar .icon-btn { color: var(--on-accent); }
+.mday.picked::after { background: var(--on-accent); }
+
+/* ---------- starred (important) items in their own colour */
+span.imp, .star-btn[aria-pressed="true"] { color: var(--imp); }
+.star-btn[aria-pressed="true"] { border-color: var(--imp); background: var(--imp-soft); }
+.list tr.important td.c-chk { box-shadow: inset 4px 0 0 var(--imp); }
+.list tr.important td.c-desc .t { color: var(--imp-ink); font-weight: 650; }
+.list tr.important.done td.c-desc .t { color: var(--done); }
+.list tr.important.past td.c-desc .t { color: var(--imp-ink); opacity: .8; }
+.ev.important { background: var(--imp-soft); color: var(--imp-ink); font-weight: 600; }
+.ev.important.allday { background: var(--imp); color: #fff; }
+.ev.important.todo { background: var(--imp-soft); color: var(--imp-ink); }
+.mday.has.imp::after { background: var(--imp); }
+.mday.picked.has.imp::after { background: var(--on-accent); }
+.agenda .item.important { border-left: 4px solid var(--imp); padding-left: 7px; }
+.agenda .item.important .tx b { color: var(--imp-ink); }
+.agenda .item.important.done .tx b { color: var(--done); }
+.card.important { border-left: 4px solid var(--imp); }
+.card.important h2, .card h2 .star { color: var(--imp-ink); }
+:root[data-theme="contrast"] .ev.important.allday { color: #000; }
+:root[data-theme="contrast"] .ev.allday:not(.important) { color: #000; }
+:root[data-theme="contrast"] .list tr.important td.c-desc .t { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+:root[data-theme="contrast"] .list tr.important.done td.c-desc .t { text-decoration: line-through; }
+
+/* theme picker swatches in Settings */
+.theme-swatches { display: flex; gap: 6px; flex-wrap: wrap; }
+.theme-swatches button {
+  width: 30px; height: 30px; border-radius: 8px; cursor: pointer; padding: 0;
+  border: 2px solid var(--line-strong); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+}
+.theme-swatches button[aria-pressed="true"] { border-color: var(--ink); box-shadow: var(--focus); }
+.theme-swatches span { display: block; }
+
+/* high contrast: larger text everywhere, but keep the alarm card's controls on one row */
+:root[data-theme="contrast"] .card .actions { font-size: 14px; gap: 4px; }
+:root[data-theme="contrast"] .card .snooze { gap: 4px; }
+:root[data-theme="contrast"] .card .actions .btn { padding: 0 6px; }
+:root[data-theme="contrast"] .card .snooze select { width: 92px; padding: 0 4px; }
+
+/* ---------- add-on flags (0.2.5): "remind daily until completed", "show in tooltip" */
+.c-desc .flag { display: inline-block; margin-left: 6px; padding: 0 6px; border-radius: 999px; font-size: 11px; line-height: 17px;
+  border: 1px solid var(--line-strong); color: var(--ink-2); vertical-align: 1px; white-space: nowrap; }
+.c-desc .flag.overdue { border-color: var(--danger); color: var(--danger); font-weight: 600; }
+.list tr.carried td.c-date { color: var(--danger); font-weight: 700; }
+.ev.carried { box-shadow: inset 3px 0 0 var(--danger); }
+.agenda .item.carried small { color: var(--danger); }
+
+/* ---------- toasts with an action */
+.toast-act { margin-left: 14px; background: transparent; border: 1px solid currentColor; color: inherit; border-radius: 6px; padding: 2px 10px; cursor: pointer; font-weight: 600; }
+.toast-act:hover { background: rgba(127, 127, 127, .25); }
+
+/* ---------- 0.3.0: settings sections, lists, views, quick alarms, backups */
+.dlg.settings { width: 640px; }
+.dlg.settings .dlg-head { flex-wrap: wrap; }
+.dlg.settings .dlg-body { height: min(470px, calc(100vh - 190px)); }
+.dlg.wide { width: 700px; }
+.st-panel { display: flex; flex-direction: column; gap: 11px; }
+.st-panel[hidden] { display: none; }
+.st-l { width: 190px; flex: none; }
+.st-h { margin: 8px 0 0; font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: 12px; }
+.st-value { font-weight: 600; min-width: 110px; max-width: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sel:disabled, .inp:disabled, .btn:disabled { opacity: .5; cursor: default; }
+.summary-line { font-size: 12.5px; color: var(--fox-ink); font-weight: 600; min-height: 18px; }
+.summary-line.warn { color: var(--danger); }
+.bad-text { color: var(--danger); }
+.mini-list { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; max-height: 260px; overflow: auto; background: var(--surface); }
+.mini-list.tall { max-height: 320px; }
+.mini-list > .note { padding: 10px 12px; }
+.mini-row { display: flex; align-items: center; gap: 6px; padding: 6px 8px 6px 12px; border-bottom: 1px solid var(--line); }
+.mini-row:last-child { border-bottom: 0; }
+.mini-row .grow { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.mini-row .btn { padding-left: 8px; padding-right: 8px; }
+.nav:disabled { opacity: .3; cursor: default; background: transparent; }
+.crit { display: flex; flex-direction: column; gap: 6px; }
+.pick-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px 12px; max-height: 260px; overflow: auto; }
+.restore-wrap { max-height: 340px; overflow: auto; border: 1px solid var(--line); border-radius: 10px; }
+.restore-wrap table.list { border: 0; border-radius: 0; }
+.list.restore tbody tr { cursor: pointer; }
+.list.restore td { vertical-align: top; }
+.list.restore .nw { white-space: nowrap; }
+.ctx .kbd { float: right; color: var(--ink-3); font-size: 11.5px; margin-left: 16px; }
+
+/* calendar panel: hide it, several months, overdue days */
+body.no-side .body { grid-template-columns: 1fr; }
+body.no-side aside.side { display: none; }
+.side-toggle { align-self: center; margin-bottom: 4px; }
+body.no-side .side-toggle { color: var(--fox-ink); }
+.mcal-month.more-month { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); }
+.nav-sp { display: inline-block; width: 28px; }
+.mday.overdue { box-shadow: inset 0 -2px 0 var(--danger); }
+.mday.overdue.has::after { background: var(--danger); }
+.mday.picked.overdue { box-shadow: inset 0 -2px 0 var(--on-accent); }
+.mcal-foot { gap: 2px; }
+.mcal-foot .btn { padding-left: 7px; padding-right: 7px; }
+
+/* to-do lists as tabs; manual order */
+.list tr.drag td.c-chk { cursor: grab; }
+.list tr.dragging td { opacity: .45; }
+.list tr.drop-before td { box-shadow: inset 0 2px 0 var(--fox); }
+.list tr.drop-after td { box-shadow: inset 0 -2px 0 var(--fox); }
+
+/* status bar: alarms suspended */
+footer.status #alarmState.off { color: var(--danger); font-weight: 600; text-decoration: none; }
+:root[data-theme="contrast"] footer.status #alarmState.off { color: #ff8a80; text-decoration: underline; }
+:root[data-theme="contrast"] .mday.overdue { box-shadow: inset 0 -3px 0 #ff8a80; }
+:root[data-theme="contrast"] .mini-list, :root[data-theme="contrast"] .restore-wrap { border: 2px solid #ffffff; }
+.mini-list:focus { outline: none; }
+.mcal.multi .mday.out { visibility: hidden; }
+
+/* ---------- 0.3.2: month counts in list headings; import and export in Settings */
+.list tr.sep td .sep-count { float: right; font-weight: 500; color: var(--ink-3); }
+.st-h.st-first { margin-top: 0; border-top: 0; padding-top: 0; }
+
+/* ---------- 0.5.0: the Lists tab's actions for the selected item */
+.toolbar.sub { padding-top: 0; margin-top: -4px; }
+.sel-acts { display: inline-flex; gap: 2px; align-items: center; flex-wrap: wrap; }
+.sel-acts .lbl-sel { color: var(--ink-3); font-size: 12.5px; margin-right: 4px; }
+.btn.sm:disabled { opacity: .45; cursor: default; background: transparent; }
+.btn.sm { padding: 4px 9px; font-size: 12.5px; min-height: 0; }
+.btn.ghost.danger { color: var(--danger); }
+
+/* ---------- 0.6.0: the List dropdown is the Lists tab */
+.tab.tab-list { padding: 3px 6px 3px; display: flex; align-items: center; }
+.tab.tab-list:hover { background: transparent; }
+/* its own box, so it stands out from the tab bar; orange edge when its list is the one shown */
+.tab-select { font: inherit; font-weight: 600; color: var(--ink-2); background-color: var(--surface); border: 1px solid var(--line-strong); border-radius: 8px;
+  padding: 3px 8px; cursor: pointer; max-width: 300px; text-overflow: ellipsis; box-shadow: 0 1px 2px rgba(0, 0, 0, .06); }
+.tab-select:hover { border-color: var(--ink-3); color: var(--ink); }
+.tab-list[aria-selected="true"] .tab-select { color: var(--fox-ink); border-color: var(--fox); }
+.tab-select:focus-visible { outline: 2px solid var(--fox); outline-offset: 2px; }
+.tab-select option, .tab-select optgroup { color: var(--ink); background: var(--surface); font-weight: 500; }
+
+/* columns hidden in Settings → Display → Columns (0.8.0) */
+.listwrap.hide-chk .c-chk, .listwrap.hide-imp .c-imp, .listwrap.hide-date .c-date, .listwrap.hide-day .c-day,
+.listwrap.hide-time .c-time, .listwrap.hide-repeat .c-repeat, .listwrap.hide-cat .c-cat, .listwrap.hide-alarm .c-alarm { display: none; }
+.col-picks { display: flex; flex-wrap: wrap; gap: 4px 14px; flex: 1; min-width: 0; }
+.col-picks .inline-chk { margin: 0; }
+.cols-row { align-items: flex-start; }
+.cols-row .st-l { padding-top: 2px; }
+
+/* your own themes (0.8.1): the editor */
+.th-color { width: 44px; height: 30px; padding: 0 2px; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--surface); cursor: pointer; }
+.th-hex { width: 88px; font-family: ui-monospace, Consolas, monospace; }
+.th-hex.bad { border-color: var(--danger); }
+.th-preview { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 10px; background: var(--bg); border: 1px solid var(--line-strong); margin-top: 4px; }
+.th-card { flex: 1; display: flex; flex-direction: column; gap: 2px; padding: 8px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; color: var(--ink); }
+.th-star { color: var(--imp-ink); font-weight: 650; }
+.th-text { font-weight: 550; }
+.th-mute { color: var(--ink-3); font-size: 12px; }
+.th-btn { background: var(--fox); color: var(--on-accent); border-radius: 8px; padding: 6px 12px; font-weight: 600; }
+.th-today { background: var(--fox); color: var(--on-accent); border-radius: 50%; width: 30px; height: 30px; display: grid; place-items: center; font-weight: 700; }
+.note.warn { color: var(--danger); }

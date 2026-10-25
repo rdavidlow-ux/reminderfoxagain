@@ -1,0 +1,834 @@
+# Svenska — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Påminnelse
+2| ＋ Listpost
+3| ⚙ Inställningar
+4| Inställningar
+5| Sök
+6| Sök (Ctrl+F)
+7| Sök bland påminnelser och uppgifter
+8| Ny påminnelse (Ctrl+N)
+9| Ny post i listan som visas (Ctrl+T)
+10| Snabblarm: ett engångslarm om några minuter (Ctrl+Q)
+11| ⏰ Snabblarm
+12| Påminnelser
+13| Månad
+14| Lista
+15| Listor
+16| Lista: {s}
+17| Alla listor
+18| Välj vilken lista som visas
+19| Lista som visas
+20| Uppgifter
+21| Avslutade eller pausade
+22| Visa eller dölj kalenderpanelen
+23| Visa eller dölj kalenderpanelen (Ctrl+B)
+24| Larm på
+25| Larm pausade
+26| Larm pausade till {time}
+27| Återuppta
+28| Klicka för att slå på larmen igen
+29| Pausa eller återuppta larmen
+30| one={n} post | other={n} poster
+31| one={n} påminnelse | other={n} påminnelser
+32| one={n} uppgift | other={n} uppgifter
+33| one={n} listpost | other={n} listposter
+34| one={n} ny post | other={n} nya poster
+35| one={n} arkiverad post | other={n} arkiverade poster
+36| one={n} lista | other={n} listor
+37| one={n} fil | other={n} filer
+38| one={n} minut | other={n} minuter
+39| one={n} timme | other={n} timmar
+40| one={n} dag | other={n} dagar
+41| one={n} dubblett | other={n} dubbletter
+42| Visa
+43| Idag
+44| Imorgon
+45| Igår
+46| Nästa {n} dagar
+47| Kommande
+48| Alla påminnelser
+49| Viktiga
+50| Tidigare
+51| Vald dag
+52| Vald månad
+53| Vyer
+54| Vy ”{s}”
+55| Söker i alla påminnelser
+56| Datum
+57| Dag
+58| Tid
+59| Beskrivning
+60| Upprepning
+61| Kategori
+62| Larm
+63| Klar
+64| Klar {date}
+65| (ingen beskrivning)
+66| Inga påminnelser här
+67| Klicka på ＋ Påminnelse för att lägga till en, eller välj en annan vy.
+68| Klicka på ＋ Listpost för att lägga till en i den här listan.
+69| Försenad sedan {date}
+70| försenad sedan {date}
+71| Snart: {s}
+72| Redigera…
+73| Ta bort…
+74| Ta bort
+75| Duplicera
+76| Kopiera
+77| Flytta
+78| Öppna
+79| Öppna länk
+80| Visa på en karta
+81| Visa i listan
+82| Markera som klar
+83| Påminn mig…
+84| Gör till uppgift…
+85| Gör till uppgift
+86| Gör till påminnelse
+87| Schemalägg som påminnelse…
+88| Schemalägg som påminnelse
+89| Kopiera till en lista…
+90| Kopiera till en lista
+91| Kopiera till lista…
+92| Kopiera till lista
+93| Flytta till lista…
+94| Flytta till lista
+95| Flytta till…
+96| Kopiera till…
+97| Flytta den till en annan lista
+98| Lägg en kopia i en annan lista
+99| En exakt kopia i den här listan (Ctrl+D)
+100| Ta bort (Del)
+101| Vald post
+102| Vald post:
+103| Flytta upp
+104| Flytta ned
+105| -
+106| -
+107| -
+108| ”{s}” duplicerad
+109| {s} (kopia)
+110| Kopierad till ”{s}”
+111| Flyttad till ”{s}”
+112| Flytta till ”{s}”
+113| Nu en uppgift i ”{s}”
+114| Nu en påminnelse den {date}
+115| finns i ”{s}”
+116| ”{s}” är tom
+117| Borttagen
+118| Tillfälle borttaget
+119| Ta bort återkommande påminnelse
+120| Den här upprepas — ändringar gäller varje tillfälle.
+121| Bara den här
+122| Alla tillfällen
+123| Ta bort det här tillfället
+124| Ta bort alla tillfällen…
+125| ”{s}” upprepas ({rule}).
+126| Ta bort bara den {date}, eller alla tillfällen?
+127| Ta bort alla tillfällen?
+128| Ta bort alla
+129| Ta bort påminnelsen?
+130| Ta bort uppgiften?
+131| ”{s}” tas bort.
+132| ”{s}” och alla dess upprepningar tas bort.
+133| Något gick fel
+134| Ange en plats först.
+135| Föregående månad
+136| Nästa månad
+137| Gå till idag
+138| Gå till ett datum (Ctrl+G)
+139| Gå till datum
+140| Gå till…
+141| Gå
+142| Lägg till en påminnelse den här dagen
+143| Dubbelklicka på en dag för att lägga till en påminnelse
+144| Inget den här dagen.
+145| +{n} till
+146| Inte gjort än
+147| Heldag
+148| Heldag {s}
+149| Uppgift
+150| Uppgift {s}
+151| Uppgift
+152| Sö
+153| Må
+154| Ti
+155| On
+156| To
+157| Fr
+158| Lö
+159| sön
+160| mån
+161| tis
+162| ons
+163| tors
+164| fre
+165| lör
+166| söndag
+167| måndag
+168| tisdag
+169| onsdag
+170| torsdag
+171| fredag
+172| lördag
+173| Listpost
+174| Senast
+175| Ordning
+176| Min ordning
+177| Efter datum
+178| Manuell: dra rader eller tryck Alt+↑ / Alt+↓
+179| Visa klara
+180| Visa uppgifter
+181| Ta med daterade uppgifter
+182| Inget datum
+183| · inget slutdatum
+184| · senast {date}
+185| · försenad
+186| · heldag
+187| · inställd på {time}
+188| · om {n} min
+189| · började för {n} min sedan ·
+190| Visa den här uppgiften i verktygstipset för ikonen i meddelandefältet
+191| Visa i meddelandefältets verktygstips
+192| ✓ Visa i meddelandefältets verktygstips
+193| Visas i meddelandefältets verktygstips
+194| Borttagen från meddelandefältets verktygstips
+195| Påminn dagligen tills klar
+196| Påminn mig varje dag tills det är klart
+197| Påminner varje dag tills det är klart
+198| Tills klar
+199| Påminner inte längre varje dag
+200| Påminner dig varje dag tills du kryssar i Klar
+201| Missad {date}; påminner dig varje dag tills du kryssar i den
+202| Om du missar den flyttas den till idag och larmar varje dag tills du kryssar i den
+203| Klar — flyttad till nästa datum
+204| dagligen
+205| varje vecka
+206| varje månad
+207| var {n}:e dag
+208| var {n}:e vecka
+209| {n} d före
+210| samma dag
+211| {every} från {from}
+212| en gång
+213| varje dag
+214| varje vecka
+215| varje månad
+216| one={n} dag före slutdatum | other={n} dagar före slutdatum
+217| på slutdatum
+218| Påminner dig {every}, från {from}, kl. {time}
+219| Påminner dig {every}, från {from}, kl. {time}, tills det är klart
+220| Påminner dig {every}, från {from}, kl. {time}, tills det är klart (även efter slutdatum)
+221| Ny påminnelse
+222| Redigera påminnelse
+223| Ny uppgift
+224| Redigera uppgift
+225| Vad vill du bli påmind om?
+226| Vad behöver göras?
+227| Typ
+228| Påminnelse
+229| På datum
+230| När som helst
+231| Slutar
+232| Plats
+233| Länk
+234| -
+235| Anteckningar
+236| Kategorier
+237| Välj kategorier
+238| t.ex. Födelsedag, Jobb
+239| Lägg till
+240| Spara
+241| Avbryt
+242| Stäng
+243| OK
+244| Ja
+245| Nej
+246| Inget
+247| Upprepas inte
+248| Dagligen
+249| Varje vecka
+250| Varje månad
+251| Varje år
+252| Anpassad…
+253| Anpassad
+254| Anpassad (importerad)
+255| Behåll importerad: {s}
+256| Varje vardag
+257| Var
+258| var
+259| dag
+260| dagar
+261| vecka
+262| veckor
+263| månad
+264| månader
+265| år
+266| år
+267| gånger
+268| Den {date}
+269| Dag {day}
+270| Den {nth} {weekday}
+271| Den {nth} {weekday} i {month}
+272| Sista {weekday}
+273| Sista {weekday} i {month}
+274| Varje dag
+275| Var {n}:e dag
+276| Varje vecka
+277| Var {n}:e vecka
+278| Varje månad
+279| Varje vecka på {days}
+280| Var {n}:e vecka på {days}
+281| vardagar
+282| Varje månad den {day}
+283| Var {n}:e månad den {day}
+284| Varje månad den {nth} {weekday}
+285| Var {n}:e månad den {nth} {weekday}
+286| Varje år den {date}
+287| Vart {n}:e år den {date}
+288| Varje år den {nth} {weekday} i {month}
+289| Vart {n}:e år den {nth} {weekday} i {month}
+290| sista
+291| one={n}:a | two={n}:a | other={n}:e
+292| Hur ofta
+293| På
+294| Efter
+295| Sedan
+296| -
+297| kl.
+298| före
+299| Aldrig
+300| Till
+301| till…
+302| på ett datum…
+303| med start…
+304| inga fler (bara en gång)
+305| Påminn mig
+306| Påminn mig inte
+307| När påminnelserna ska börja
+308| Datum för första påminnelsen
+309| Tid för påminnelsen
+310| Fortsätt påminna när slutdatum passerat och det inte är klart
+311| även efter slutdatum
+312| tills det är klart
+313| tills det är klart eller förfallet ({due})
+314| tills det är klart, även efter förfallodagen ({due})
+315| En påminnelse, den {date} kl. {time}.
+316| En påminnelse, den {date} kl. {time}. Den tiden har passerat — välj en senare eller påminn upprepat.
+317| {every} kl. {time}, från {date}, {end}.
+318| Inga påminnelser.
+319| Inga påminnelser. Uppgiften visas i rött när slutdatum har passerat.
+320| Välj datum för första påminnelsen.
+321| Larmtext
+322| På tiden
+323| one={n} minut före | other={n} minuter före
+324| one={n} timme före | other={n} timmar före
+325| one={n} dag före | other={n} dagar före
+326| one={n} vecka före | other={n} veckor före
+327| Samma dag, kl. {time}
+328| Dagen före, kl. {time}
+329| Visas som: {s}. <year> räknar åren sedan dess; <year#> visar bara talet.
+330| Importerad i tidszonen {zone} — visas i din lokala tid. Vid sparande lagras den i lokal tid.
+331| Ange en beskrivning.
+332| Välj slutdatum eller kryssa i ”Inget datum”.
+333| Välj ett datum.
+334| Välj datumet.
+335| Välj datumet.
+336| Ange tiden då det senast ska vara klart, eller kryssa i ”När som helst”.
+337| Ange en tid eller kryssa i ”Heldag”.
+338| Slutdatumet är före startdatumet.
+339| Sluttiden är före starttiden.
+340| Påminnelse tillagd
+341| Uppgift tillagd
+342| Sparad
+343| Redigera kopian
+344| Datumet är känt: gör den här uppgiften till en påminnelse på ett exakt datum
+345| Ska vara klar senast {date}.
+346| Ska vara klar senast {date}, {time}.
+347| När du vet det exakta datumet blir uppgiften en påminnelse det datumet: den lämnar uppgiftslistan och visas i Påminnelser, månadsvyn och kalendern. Anteckningar, kategori, plats och länk behålls.
+348| En påminnelse den {date}, heldag.
+349| En påminnelse den {date}, kl. {time}.
+350| Påminnelsen blir en uppgift på samma datum, med upprepning, larm och anteckningar.
+351| Påminnelsen finns kvar; en kopia som uppgift på samma datum, med upprepning, larm och anteckningar, läggs i listan.
+352| En exakt kopia hamnar i listan du väljer; den här stannar där den är.
+353| Listan
+354| {s} (den här listan)
+355| huvudlista
+356| ReminderFoxAgain-larm
+357| Snooza
+358| Snooza alla
+359| Snooza alla {s}
+360| Snooza alla påminnelser här med din standardtid (ändras i Inställningar)
+361| Snooza hur länge, eller till vilken tid
+362| Snoozeenhet
+363| Snooza till
+364| Avfärda
+365| Avfärda alla
+366| Klar
+367| Klar med det här snabblarmet
+368| Dölj tills vidare (larmet är kvar och kommer tillbaka med nästa)
+369| En tid som 15:30 eller 3:30 pm (tidigare än nu betyder imorgon)
+370| Ett heltal från {n} till {n2}
+371| Ange ett heltal från {n} till {n2}.
+372| Ange ett heltal från 1 till 999, eller ett datum och en tid.
+373| sekunder
+374| minuter
+375| timmar
+376| Snabblarm
+377| Snabblarm
+378| ⏰ Snabblarm…
+379| Ett engångslarm som inte sparas som påminnelse — som tilläggets Snabblarm.
+380| Om
+381| Kl.
+382| I
+383| Ställ larm
+384| Avbryt det här larmet
+385| Inga snabblarm.
+386| Väntar på att ringa
+387| Snabblarm inställt på {time}
+388| Snabblarm avbrutet
+389| Välj en tid.
+390| Den tiden har passerat — välj en senare.
+391| Den tiden har passerat.
+392| Ringer {when} ({until}).
+393| idag kl. {time}
+394| om mindre än en minut
+395| om {time}
+396| om {hours} {minutes}
+397| Pausa larm
+398| Pausa larm…
+399| Pausa larmen en stund
+400| Pausa
+401| Hur länge
+402| Tills jag slår på dem igen
+403| Larmen är avstängda tills du återupptar dem (statusfältet, menyn i meddelandefältet eller här).
+404| Under pausen öppnas inga larmfönster och påminnelsefönstret visas inte. Larm som infaller under tiden visas när du återupptar.
+405| Larmen är pausade tills du slår på dem igen.
+406| Larmen kommer tillbaka {when}.
+407| Larmen är på igen
+408| Återuppta larmen nu
+409| Välj en tid i framtiden.
+410| ReminderFoxAgain — idag
+411| Kommande
+412| Inget idag.
+413| Inget kommande.
+414| Allmänt
+415| Larm
+416| Visning
+417| Data
+418| Om
+419| Starta ReminderFoxAgain när Windows startar
+420| Fortsätt köra i meddelandefältet när fönstret stängs
+421| Veckan börjar på
+422| Tema
+423| Teman
+424| Standard (följer Windows)
+425| Räv
+426| Ljust
+427| Mörkt
+428| Hav
+429| Hög kontrast
+430| Standard är Räv, ljust eller mörkt efter Windows. Stjärnmärkta poster har en egen färg i varje tema. Hög kontrast använder svart, vitt, gult och cyan med större text och kraftigare linjer.
+431| -
+432| ReminderFoxAgain är en hyllning till det ursprungliga
+433| -
+434| tillägget för Firefox och Thunderbird, skapat av Tom Mutdosch och Daniel Lee med Guenter Wahl. Filformatet, upprepningsreglerna, vyerna, snabblarmen och aviseringsfönstret är deras; tack.
+435| Spela ett ljud vid larm
+436| Ljud
+437| Inbyggd klocka
+438| Ditt ljud
+439| Välj…
+440| Välj
+441| Använd den inbyggda klockan
+442| Klocka
+443| Spela upp
+444| ▶ Testa
+445| Larmljud: {s}
+446| Använder den inbyggda klockan
+447| Välj en ljudfil (.mp3, .wav, .ogg, .m4a, .aac, .flac eller .webm).
+448| Ljudfilen är större än 10 MB. Välj en kortare.
+449| Upprepa ljudet
+450| Nej, spela en gång
+451| Varje minut
+452| Var {n}:e minut
+453| Standardlarm för nya påminnelser
+454| Standardsnooze
+455| Enhet för standardsnooze
+456| Standardsnooze, hur många
+457| Påminnelsefönster (tilläggets aviseringsfönster)
+458| Visa ett fönster med dagens och kommande påminnelser
+459| När
+460| Bara vid start
+461| Vid start och var {n}:e minut
+462| … var {n}:e minut
+463| … varje timme
+464| … var {n}:e timme
+465| Håll det öppet
+466| {n} sekunder
+467| Tills jag stänger det
+468| Hörn
+469| nere till höger
+470| nere till vänster
+471| uppe till höger
+472| uppe till vänster
+473| Spela ljudet
+474| Visa nu
+475| ”Kommande” betyder de nästa
+476| Antal på ikonen
+477| Visa ett antal på ikonerna i meddelandefältet och aktivitetsfältet
+478| Dagens öppna påminnelser och uppgifter
+479| Dagens och kommande
+480| Bara dagens
+481| Bara kommande
+482| Språk
+483| Systemspråk ({s})
+484| Språket i menyer, knappar och meddelanden. Dina påminnelser ändras inte.
+485| Översättningarna skrevs för ReminderFoxAgain och har ännu inte granskats av modersmålstalare.
+486| Textstorlek
+487| Liten ({n} %)
+488| Normal
+489| Stor ({n} %)
+490| Större ({n} %)
+491| Störst ({n} %)
+492| Datum
+493| Som i Windows ({s})
+494| Tider
+495| Som i Windows
+496| {n}-timmars ({s})
+497| Visa kalenderpanelen bredvid listorna
+498| Månader i kalenderpanelen
+499| Kartor
+500| -
+501| -
+502| -
+503| Verktygstips för ikonen i meddelandefältet
+504| Verktygstips
+505| Dagens påminnelser
+506| Kommande påminnelser
+507| Variabler: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — samma som i tillägget.
+508| Återställ
+509| Verktygstipsens texter återställda
+510| Hantera listor…
+511| Hantera kategorier…
+512| Hantera vyer…
+513| Återkommande påminnelser på fliken Påminnelser
+514| Framtida datum att visa
+515| Kommande, Alla påminnelser, Viktiga, sök och vyer utan datum
+516| Varje datum de nästa
+517| Bara de nästa
+518| one={n} månad | other={n} månader
+519| one={n} år | other={n} år
+520| one={n} datum | other={n} datum
+521| Används av Kommande, Alla påminnelser, Viktiga, sök och vyer utan datumintervall. Idag, Nästa {n} dagar, Vald dag eller månad, fliken Månad och kalendern visar alltid varje datum.
+522| I Alla och Tidigare visas tidigare från
+523| början av varje serie
+524| de senaste {n} åren
+525| det senaste året
+526| de senaste {n} månaderna
+527| Dölj återkommande påminnelser
+528| Dölj klara påminnelser
+529| Import och export
+530| Importera en .ics-fil…
+531| Lägg till posterna från en .ics-fil (Ctrl+I)
+532| Importera från ReminderFox…
+533| Hitta reminderfox.ics som ReminderFox-tillägget sparade i din Firefox- eller Thunderbird-profil
+534| Exportera till .ics…
+535| Exportera till .ics
+536| Exportera…
+537| Spara en .ics-fil (Ctrl+E)
+538| Import läggs till det du har; poster som redan finns uppdateras bara om kopian i filen är nyare. Exporter öppnas i Outlook, Google Kalender, Thunderbird, Apple Kalender och det ursprungliga ReminderFox-tillägget.
+539| Säkerhetskopior
+540| Säkerhetskopiera nu
+541| Spara en säkerhetskopia…
+542| Återställ från en säkerhetskopia…
+543| Återställ från en säkerhetskopia
+544| Öppna mappen för säkerhetskopior
+545| Öppna datamappen
+546| Datafil
+547| Visa påminnelsefilen i Utforskaren
+548| Dina påminnelser sparas i {path} (dagliga säkerhetskopior finns i mappen ”backups” bredvid).
+549| ＋ Ny lista…
+550| Ny lista…
+551| Ny lista
+552| Namn på den nya listan
+553| Namn på den nya listan (till exempel Inköp, Filmer att se, Presentidéer):
+554| Lägg till lista
+555| Byt namn på lista
+556| Byt namn…
+557| Ta bort…
+558| Ta bort listan?
+559| ”Uppgifter” är huvudlistan och kan inte byta namn eller tas bort (som i tillägget). När du tar bort en lista väljer du om dess uppgifter flyttas till ”Uppgifter” eller tas bort.
+560| Listan ”{list}” har {n} uppgift. Flytta den till ”{main}”, eller ta bort den med listan?
+561| Listan ”{list}” har {n} uppgifter. Flytta dem till ”{main}”, eller ta bort dem med listan?
+562| Ta bort lista och uppgifter
+563| one=Listan och {n} uppgift borttagna | other=Listan och {n} uppgifter borttagna
+564| Listan borttagen
+565| Listan ”{s}” tillagd
+566| ”{s}” finns redan
+567| Den listan finns redan.
+568| Ett listnamn får inte vara tomt eller innehålla kommatecken eller kolon.
+569| Ett listnamn får inte innehålla kommatecken eller kolon.
+570| Slå ihop listorna?
+571| Slå ihop
+572| Sammanslagen med ”{s}”
+573| Bytt namn till ”{s}”
+574| Nytt namn för ”{name}”:
+575| Nytt namn för ”{name}” (på {items}):
+576| Ny kategori
+577| En annan kategori
+578| Lägg till vanliga
+579| Kategorin ”{s}” tillagd
+580| {n} kategorier tillagda
+581| Inget nytt att lägga till.
+582| Byt namn på kategori
+583| Ta bort kategorin?
+584| Kategorin borttagen
+585| Slå ihop kategorierna?
+586| En kategori får inte vara tom eller innehålla kommatecken.
+587| inte använd än
+588| Att byta namn ändrar varje påminnelse och uppgift som har kategorin; att byta till ett befintligt namn slår ihop dem. Att ta bort den tar bort den från dess poster (posterna finns kvar).
+589| Kategorin ”{name}” tas bort.
+590| Kategorin ”{name}” tas bort och tas bort från {items}. Posterna själva finns kvar.
+591| Årsdag
+592| Möte
+593| Födelsedag
+594| Affärer
+595| Samtal
+596| Helgdag
+597| Sammanträde
+598| Personligt
+599| Shopping
+600| Resa
+601| Årsdag, Möte, Födelsedag, Affärer, Samtal…
+602| Ny vy
+603| ＋ Ny vy…
+604| Redigera vy
+605| Ta bort vyn?
+606| Vyn ”{s}” tas bort. Dina påminnelser ändras inte.
+607| Visa den på fliken Påminnelser
+608| Vyn sparad
+609| Vyn ”{s}” tillagd
+610| Ge vyn ett namn.
+611| Det finns redan en vy med det namnet.
+612| En vy är ett sparat filter för fliken Påminnelser: välj den i listan Visa. Villkor för olika fält måste alla stämma; kommatecken inom ett villkor betyder ”någon av dessa”.
+613| Inga vyer än. Klicka på ”Ny vy…” för att skapa en — till exempel varje påminnelse med kategorin ”Födelsedag” under det kommande året.
+614| Namn
+615| t.ex. Födelsedagar
+616| Visa påminnelser där
+617| ＋ Lägg till ett villkor
+618| Ta bort det här villkoret
+619| Vad som helst
+620| Kategorin
+621| Vyn
+622| Typ
+623| är
+624| innehåller
+625| ord, åtskilda med kommatecken
+626| Bara datum från
+627| till
+628| från idag
+629| idag
+630| Negativa tal går bakåt i tiden: −{n} månad till {n2} dagar betyder ”den senaste månaden”.
+631| Alla
+632| Allt
+633| Bara påminnelser
+634| Bara uppgifter
+635| Enhet
+636| Hur många
+637| Vad som helst innehåller ”{s}”
+638| Kategorin är ”{s}”
+639| Kategorin är ”{s}” eller ”{s2}”
+640| datum från idag till {n} dagar framåt
+641| one=+{n} vecka | other=+{n} veckor
+642| one=+{n} månad | other=+{n} månader
+643| one=+{n} år | other=+{n} år
+644| Importera
+645| Importera en iCalendar-fil
+646| Importera från ReminderFox
+647| Från ReminderFox
+648| Hittade {files} från ReminderFox-tillägget:
+649| Importera den senaste
+650| Importera dem ändå
+651| {reminders} och {items}
+652| {n} finns redan (den nyare kopian behålls)
+653| {n} ser ut som en dubblett (samma titel och datum som en post du har)
+654| {n} ser ut som dubbletter (samma titel och datum som en post du har)
+655| Hur
+656| Lägg till det jag har
+657| Ersätt allt
+658| Ersätt allt (dina {items} säkerhetskopieras först)
+659| Ersätta allt?
+660| Dina {items} ersätts av de {newItems} i filen.
+661| Det du har nu sparas först som säkerhetskopian ”Sparad före en import som ersatte allt”, så att du kan få tillbaka det via Inställningar → Data → Återställ från en säkerhetskopia….
+662| Dubbletter
+663| Hoppa över poster med samma titel och datum som en jag har
+664| Valfritt: läggs till varje importerad post, till exempel ”Helgdagar” för en lista med helgdagar, så att du kan filtrera på den.
+665| valfritt
+666| Importen klar
+667| {items} importerade
+668| {items} och {lists} importerade
+669| {n} uppdaterade
+670| {n} redan aktuella
+671| one={n} dubblett överhoppad | other={n} dubbletter överhoppade
+672| ersätter {items} (sparade som {file})
+673| {lists} tillagda ({names})
+674| one={n} arkiverad post flyttad till listan ”{list}” | other={n} arkiverade poster flyttade till listan ”{list}”
+675| Den här filen innehåller inga iCalendar-data (ingen BEGIN:VCALENDAR).
+676| Det gick inte att läsa din påminnelsefil
+677| Exporterad till {path}
+678| Exportera
+679| Allt (påminnelser och uppgifter)
+680| Filen fungerar med Outlook, Google Kalender, Thunderbird, Apple Kalender och det ursprungliga ReminderFox-tillägget.
+681| ReminderFoxAgain sparar en säkerhetskopia varje dag, en före varje återställning, och de du gör med ”Säkerhetskopiera nu”. Återställning ersätter dina nuvarande påminnelser och uppgifter med säkerhetskopian; det du har nu sparas först, så du kan alltid gå tillbaka.
+682| Skapad
+683| Innehåll
+684| Återställ
+685| Återställ…
+686| Välj en annan fil…
+687| {n} arkiverade
+688| Kan inte läsas: {s}
+689| {s} kunde inte läsas: {s2}
+690| Det går inte att återställa den filen
+691| Inga säkerhetskopior än. De görs varje dag appen körs; du kan också klicka på ”Säkerhetskopiera nu”.
+692| Daglig säkerhetskopia
+693| Säkerhetskopia gjord av dig
+694| Sparad före en återställning
+695| Sparad före en import som ersatte allt
+696| Arkivet, innan det blev en lista
+697| Daglig säkerhetskopia av arkivet (tidigare version)
+698| Säkerhetskopia
+699| Återställa den här säkerhetskopian?
+700| Detta ersätter det du har nu ({now}) med säkerhetskopian från {when}: {items}.
+701| Detta ersätter det du har nu ({now}) med säkerhetskopian från {when}: {items}, plus {n} arkiverade, som hamnar i listan ”{list}”.
+702| Det här är en kopia av arkivet från en tidigare version. Dess {all} hamnar i listan ”{list}” (poster du redan har lämnas som de är). Inget annat ändras.
+703| Dina nuvarande data sparas först som säkerhetskopian ”Sparad före en återställning”, så du kan ångra detta i samma lista.
+704| Säkerhetskopian återställd
+705| {items} återställda.
+706| {items} återställda, varav {n} arkiverade, nu i listan ”{list}”.
+707| Det du hade innan sparades som {file}.
+708| Säkerhetskopian sparad i {path}
+709| Säkerhetskopierat: {s}
+710| {n} byte
+711| {n} kB
+712| {n} MB
+713| Den posten finns inte längre.
+714| Arkivfilen kunde inte läsas, så den ändras inte. Den sparades som archive.ics.unreadable.
+715| Arkivfilen kunde inte läsas, så den kan inte ersättas.
+716| Välkommen till ReminderFoxAgain
+717| Dina påminnelser, uppgifter och larm som en Windows-app — en hyllning till det ursprungliga ReminderFox-tillägget.
+718| Importera från ditt ReminderFox-tillägg
+719| {path} — senast ändrad {date}
+720| Importera en reminderfox.ics eller annan kalenderfil…
+721| Från ReminderFox-tillägget (i mappen ”reminderfox” i din Firefox-/Thunderbird-profil), Outlook, Google Kalender…
+722| Börja med en tom lista
+723| Du kan importera senare via Inställningar → Data.
+724| nu
+725| om {n} min
+726| one=om {n} timme | other=om {n} timmar
+727| one=om {n} dag | other=om {n} dagar
+728| för {n} min sedan
+729| one=för {n} timme sedan | other=för {n} timmar sedan
+730| one=för {n} dag sedan | other=för {n} dagar sedan
+731| Öppna {app}
+732| Lägg till påminnelse…
+733| Lägg till listpost…
+734| Snabblarm…
+735| Återuppta larmen
+736| Visa dagens påminnelser
+737| Avsluta {app}
+738| {app} — larm av
+739| {app} — larm av till {time}
+740| {app} — inget idag
+741| kommande
+742| {app} körs fortfarande
+743| Larmen fortsätter att visas. Högerklicka på räven i meddelandefältet för att avsluta.
+744| {app}-larm
+745| {app} — idag
+746| {n} h {n2} min
+747| iCalendar-filer
+748| Alla filer
+749| Ljudfiler
+750| Importera iCalendar-fil
+751| Exportera till iCalendar-fil
+752| Välj din reminderfox.ics
+753| Välj ett larmljud
+754| Spara en säkerhetskopia
+755| Välj en säkerhetskopia att återställa
+756| Varje vecka på {days}
+757| Varje månad den {nth} {weekday}
+758| Varje månad den {day}
+759| Varje månad samma dag
+760| Var {n}:e månad samma dag
+761| Varje år den {nth} {weekday} i {month}
+762| Varje år den {date}
+763| Varje år samma datum
+764| Vart {n}:e år samma datum
+765| Upprepas
+766| Anpassad ({rule})
+767| {rule}, en gång
+768| {rule}, {n} gånger
+769| {rule}, till {date}
+770| Visa påminnelser som du har bockat av som klara
+771| Visa påminnelser och listposter som du har bockat av som klara
+772| Min ordning: dra raderna eller tryck Alt+↑ / Alt+↓
+773| Vy
+774| Larmljud
+775| Egen fil…
+776| Använd en egen ljudfil (.mp3, .wav, .ogg, .m4a, .aac, .flac eller .webm)
+777| Oavbrutet tills det hanteras
+778| Oavbrutet tills det hanteras: ljudet spelas om och om igen tills du snoozar, öppnar, markerar som klar eller avfärdar larmet, eller döljer larmfönstret. Nästa larm startar det igen.
+779| Kolumner
+780| Kolumner på fliken Påminnelser
+781| Kolumner i listorna
+782| Avmarkera en kolumn för att dölja den. Beskrivningen visas alltid.
+783| Sparade filter för fliken Påminnelser
+784| Hantera påminnelser…
+785| Kommande, Alla påminnelser, Viktiga, sök och sparade filter utan datum
+786| Används av Kommande, Alla påminnelser, Viktiga, sök och sparade filter utan datumintervall. Idag, Nästa {n} dagar, Vald dag eller månad, fliken Månad och kalendern visar alltid varje datum.
+787| Sparade filter
+788| Sparat filter ”{s}” · {c}
+789| Hantera påminnelser
+790| Ett sparat filter visar bara de påminnelser du vill se på fliken Påminnelser: välj det i listan Visa. Villkor för olika fält måste alla stämma; kommatecken inom ett villkor betyder ”någon av dessa”.
+791| ＋ Nytt sparat filter…
+792| Inga sparade filter än. Klicka på ”Nytt sparat filter…” för att skapa ett — till exempel varje påminnelse med kategorin ”Födelsedag” under det kommande året.
+793| Ta bort det sparade filtret?
+794| Det sparade filtret ”{s}” tas bort. Dina påminnelser ändras inte.
+795| Redigera sparat filter
+796| Nytt sparat filter
+797| Ge det sparade filtret ett namn.
+798| Det finns redan ett sparat filter med det namnet.
+799| Sparat filter ändrat
+800| Sparat filter ”{s}” tillagt
+801| Kyrkklocka
+802| Marimba
+803| Digitala pip
+804| Väckarklocka
+805| Din fil: {s}
+806| Skapa ett eget tema av fem färger
+807| ＋ Nytt tema…
+808| Ändra färgerna i ditt tema
+809| ＋ Nytt tema… skapar ett eget av fem färger.
+810| Dina teman
+811| Bakgrund
+812| Bakom allt
+813| Listor och paneler
+814| Listorna, kalenderpanelen, dialogrutor
+815| Text
+816| Accent
+817| Knappar, idag, markering
+818| Stjärnmärkta poster
+819| Viktiga påminnelser och uppgifter
+820| Texten är svårläst mot bakgrunden (kontrast {n}:1; 4,5:1 eller mer är lättläst).
+821| Accenten syns dåligt mot listorna (kontrast {n}:1; 3:1 eller mer är bättre).
+822| Stjärnmärkta poster syns dåligt mot listorna (kontrast {n}:1; 3:1 eller mer är bättre).
+823| Redigera tema
+824| Nytt tema
+825| Utgå från
+826| t.ex. Skog
+827| Hela fönstret visar temat medan du väljer. Avbryt sätter tillbaka det gamla.
+828| Ge temat ett namn.
+829| Det finns redan ett tema med det namnet.
+830| Temat ”{s}” sparat
+831| Temat ”{s}” tillagt
+832| Ta bort temat?
+833| Temat ”{s}” tas bort. Appen går tillbaka till standardtemat.

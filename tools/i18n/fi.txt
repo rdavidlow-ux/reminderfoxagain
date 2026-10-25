@@ -1,0 +1,834 @@
+# Suomi — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Muistutus
+2| ＋ Listan kohta
+3| ⚙ Asetukset
+4| Asetukset
+5| Hae
+6| Hae (Ctrl+F)
+7| Hae muistutuksista ja tehtävistä
+8| Uusi muistutus (Ctrl+N)
+9| Uusi kohta näytettävään listaan (Ctrl+T)
+10| Pikahälytys: kertahälytys muutaman minuutin päästä (Ctrl+Q)
+11| ⏰ Pikahälytys
+12| Muistutukset
+13| Kuukausi
+14| Lista
+15| Listat
+16| Lista: {s}
+17| Kaikki listat
+18| Valitse näytettävä lista
+19| Näytettävä lista
+20| Tehtävät
+21| Päättyneet tai keskeytetyt
+22| Näytä tai piilota kalenteripaneeli
+23| Näytä tai piilota kalenteripaneeli (Ctrl+B)
+24| Hälytykset päällä
+25| Hälytykset tauolla
+26| Hälytykset tauolla klo {time} asti
+27| Jatka
+28| Ota hälytykset taas käyttöön napsauttamalla
+29| Keskeytä tai jatka hälytyksiä
+30| one={n} kohta | other={n} kohtaa
+31| one={n} muistutus | other={n} muistutusta
+32| one={n} tehtävä | other={n} tehtävää
+33| one={n} listan kohta | other={n} listan kohtaa
+34| one={n} uusi kohta | other={n} uutta kohtaa
+35| one={n} arkistoitu kohta | other={n} arkistoitua kohtaa
+36| one={n} lista | other={n} listaa
+37| one={n} tiedosto | other={n} tiedostoa
+38| one={n} minuutti | other={n} minuuttia
+39| one={n} tunti | other={n} tuntia
+40| one={n} päivä | other={n} päivää
+41| one={n} kaksoiskappale | other={n} kaksoiskappaletta
+42| Näytä
+43| Tänään
+44| Huomenna
+45| Eilen
+46| Seuraavat {n} päivää
+47| Tulevat
+48| Kaikki muistutukset
+49| Tärkeät
+50| Menneet
+51| Valittu päivä
+52| Valittu kuukausi
+53| Näkymät
+54| Näkymä ”{s}”
+55| Haetaan kaikista muistutuksista
+56| Päivämäärä
+57| Päivä
+58| Aika
+59| Kuvaus
+60| Toisto
+61| Luokka
+62| Hälytys
+63| Valmis
+64| Valmis {date}
+65| (ei kuvausta)
+66| Täällä ei ole muistutuksia
+67| Lisää muistutus napsauttamalla ＋ Muistutus tai valitse toinen näkymä.
+68| Lisää kohta tähän listaan napsauttamalla ＋ Listan kohta.
+69| Myöhässä {date} lähtien
+70| myöhässä {date} lähtien
+71| Pian: {s}
+72| Muokkaa…
+73| Poista…
+74| Poista
+75| Monista
+76| Kopioi
+77| Siirrä
+78| Avaa
+79| Avaa linkki
+80| Näytä kartalla
+81| Näytä listassa
+82| Merkitse valmiiksi
+83| Muistuta minua…
+84| Muuta tehtäväksi…
+85| Muuta tehtäväksi
+86| Muuta muistutukseksi
+87| Ajoita muistutukseksi…
+88| Ajoita muistutukseksi
+89| Kopioi listaan…
+90| Kopioi listaan
+91| Kopioi listaan…
+92| Kopioi listaan
+93| Siirrä listaan…
+94| Siirrä listaan
+95| Siirrä…
+96| Kopioi…
+97| Siirrä toiseen listaan
+98| Laita kopio toiseen listaan
+99| Tarkka kopio tähän listaan (Ctrl+D)
+100| Poista (Del)
+101| Valittu kohta
+102| Valittu kohta:
+103| Siirrä ylös
+104| Siirrä alas
+105| -
+106| -
+107| -
+108| ”{s}” monistettu
+109| {s} (kopio)
+110| Kopioitu listaan ”{s}”
+111| Siirretty listaan ”{s}”
+112| Siirrä listaan ”{s}”
+113| Nyt tehtävä listassa ”{s}”
+114| Nyt muistutus {date}
+115| on listassa ”{s}”
+116| ”{s}” on tyhjä
+117| Poistettu
+118| Kerta poistettu
+119| Poista toistuva muistutus
+120| Tämä toistuu — muutokset koskevat jokaista kertaa.
+121| Vain tämä
+122| Kaikki kerrat
+123| Poista tämä kerta
+124| Poista kaikki kerrat…
+125| ”{s}” toistuu ({rule}).
+126| Poistetaanko vain {date}, vai kaikki kerrat?
+127| Poistetaanko kaikki kerrat?
+128| Poista kaikki
+129| Poistetaanko muistutus?
+130| Poistetaanko tehtävä?
+131| ”{s}” poistetaan.
+132| ”{s}” ja kaikki sen toistot poistetaan.
+133| Jokin meni vikaan
+134| Anna ensin paikka.
+135| Edellinen kuukausi
+136| Seuraava kuukausi
+137| Siirry tähän päivään
+138| Siirry päivämäärään (Ctrl+G)
+139| Siirry päivämäärään
+140| Siirry…
+141| Siirry
+142| Lisää muistutus tälle päivälle
+143| Lisää muistutus kaksoisnapsauttamalla päivää
+144| Ei mitään tänä päivänä.
+145| +{n} lisää
+146| Ei vielä tehty
+147| Koko päivän
+148| Koko päivän {s}
+149| Tehtävä
+150| Tehtävä {s}
+151| Tehtävä
+152| Su
+153| Ma
+154| Ti
+155| Ke
+156| To
+157| Pe
+158| La
+159| su
+160| ma
+161| ti
+162| ke
+163| to
+164| pe
+165| la
+166| sunnuntai
+167| maanantai
+168| tiistai
+169| keskiviikko
+170| torstai
+171| perjantai
+172| lauantai
+173| Listan kohta
+174| Määräaika
+175| Järjestys
+176| Oma järjestys
+177| Päivämäärän mukaan
+178| Käsin: vedä rivejä tai paina Alt+↑ / Alt+↓
+179| Näytä valmiit
+180| Näytä tehtävät
+181| Ota mukaan päivätyt tehtävät
+182| Ei päivämäärää
+183| · ei määräaikaa
+184| · määräaika {date}
+185| · myöhässä
+186| · koko päivän
+187| · asetettu klo {time}
+188| · {n} min päästä
+189| · alkoi {n} min sitten ·
+190| Näytä tämä tehtävä ilmaisinalueen kuvakkeen työkaluvihjeessä
+191| Näytä ilmaisinalueen työkaluvihjeessä
+192| ✓ Näytä ilmaisinalueen työkaluvihjeessä
+193| Näkyy ilmaisinalueen työkaluvihjeessä
+194| Poistettu ilmaisinalueen työkaluvihjeestä
+195| Muistuta päivittäin, kunnes valmis
+196| Muistuta minua joka päivä, kunnes se on tehty
+197| Muistuttaa joka päivä, kunnes se on tehty
+198| Kunnes tehty
+199| Ei enää muistuta päivittäin
+200| Muistuttaa sinua joka päivä, kunnes merkitset sen tehdyksi
+201| Jäi väliin {date}; muistuttaa sinua joka päivä, kunnes merkitset sen
+202| Jos se jää väliin, se siirtyy tähän päivään ja hälyttää joka päivä, kunnes merkitset sen
+203| Tehty — siirretty seuraavaan päivään
+204| päivittäin
+205| viikoittain
+206| kuukausittain
+207| {n} päivän välein
+208| {n} viikon välein
+209| {n} pv ennen
+210| samana päivänä
+211| {every} alkaen {from}
+212| kerran
+213| joka päivä
+214| joka viikko
+215| joka kuukausi
+216| one={n} päivä ennen määräaikaa | other={n} päivää ennen määräaikaa
+217| määräpäivänä
+218| Muistuttaa sinua {every}, alkaen {from}, klo {time}
+219| Muistuttaa sinua {every}, alkaen {from}, klo {time}, kunnes se on tehty
+220| Muistuttaa sinua {every}, alkaen {from}, klo {time}, kunnes se on tehty (myös määräajan jälkeen)
+221| Uusi muistutus
+222| Muokkaa muistutusta
+223| Uusi tehtävä
+224| Muokkaa tehtävää
+225| Mistä haluat muistutuksen?
+226| Mitä pitää tehdä?
+227| Laji
+228| Muistutus
+229| Päivänä
+230| Milloin tahansa
+231| Päättyy
+232| Paikka
+233| Linkki
+234| -
+235| Muistiinpanot
+236| Luokat
+237| Valitse luokat
+238| esim. Syntymäpäivä, Työ
+239| Lisää
+240| Tallenna
+241| Peruuta
+242| Sulje
+243| OK
+244| Kyllä
+245| Ei
+246| Ei mitään
+247| Ei toistu
+248| Päivittäin
+249| Viikoittain
+250| Kuukausittain
+251| Vuosittain
+252| Mukautettu…
+253| Mukautettu
+254| Mukautettu (tuotu)
+255| Säilytä tuotu: {s}
+256| Joka arkipäivä
+257| Joka
+258| joka
+259| päivä
+260| päivää
+261| viikko
+262| viikkoa
+263| kuukausi
+264| kuukautta
+265| vuosi
+266| vuotta
+267| kertaa
+268| {date}
+269| Kuukauden {day}. päivä
+270| {nth} {weekday}
+271| {month} {nth} {weekday}
+272| Viimeinen {weekday}
+273| {month} viimeinen {weekday}
+274| Joka päivä
+275| {n} päivän välein
+276| Joka viikko
+277| {n} viikon välein
+278| Joka kuukausi
+279| Joka viikko: {days}
+280| {n} viikon välein: {days}
+281| arkipäivät
+282| Joka kuukauden {day}. päivä
+283| {n} kuukauden välein, {day}. päivä
+284| Joka kuukauden {nth} {weekday}
+285| {n} kuukauden välein, {nth} {weekday}
+286| Joka vuosi {date}
+287| {n} vuoden välein {date}
+288| Joka vuosi: {month} {nth} {weekday}
+289| {n} vuoden välein: {month} {nth} {weekday}
+290| viimeinen
+291| {n}.
+292| Kuinka usein
+293| Päivinä
+294| Jälkeen
+295| Sitten
+296| -
+297| klo
+298| ennen
+299| Ei koskaan
+300| Asti
+301| asti…
+302| päivänä…
+303| alkaen…
+304| ei enempää (vain kerran)
+305| Muistuta minua
+306| Älä muistuta
+307| Milloin muistutukset alkavat
+308| Ensimmäisen muistutuksen päivä
+309| Muistutuksen aika
+310| Jatka muistuttamista, kun määräaika on mennyt eikä tehtävä ole valmis
+311| myös määräajan jälkeen
+312| kunnes se on tehty
+313| kunnes se on tehty tai erääntyy ({due})
+314| kunnes se on tehty, myös määräajan jälkeen ({due})
+315| Yksi muistutus, {date} klo {time}.
+316| Yksi muistutus, {date} klo {time}. Se aika on jo mennyt — valitse myöhäisempi tai muistuta toistuvasti.
+317| {every} klo {time}, alkaen {date}, {end}.
+318| Ei muistutuksia.
+319| Ei muistutuksia. Tehtävä näkyy punaisena, kun sen määräaika on mennyt.
+320| Valitse ensimmäisen muistutuksen päivä.
+321| Hälytyksen teksti
+322| Ajallaan
+323| one={n} minuutti ennen | other={n} minuuttia ennen
+324| one={n} tunti ennen | other={n} tuntia ennen
+325| one={n} päivä ennen | other={n} päivää ennen
+326| one={n} viikko ennen | other={n} viikkoa ennen
+327| Samana päivänä klo {time}
+328| Edellisenä päivänä klo {time}
+329| Näkyy näin: {s}. <year> laskee vuodet siitä lähtien; <year#> näyttää vain luvun.
+330| Tuotu aikavyöhykkeellä {zone} — näytetään paikallisessa ajassa. Tallennettaessa se tallennetaan paikallisena aikana.
+331| Anna kuvaus.
+332| Valitse määräpäivä tai valitse ”Ei päivämäärää”.
+333| Valitse päivämäärä.
+334| Valitse päivämäärä.
+335| Valitse päivämäärä.
+336| Anna määräajan kellonaika tai valitse ”Milloin tahansa”.
+337| Anna kellonaika tai valitse ”Koko päivän”.
+338| Päättymispäivä on ennen alkamispäivää.
+339| Päättymisaika on ennen alkamisaikaa.
+340| Muistutus lisätty
+341| Tehtävä lisätty
+342| Tallennettu
+343| Muokkaa kopiota
+344| Päivämäärä on tiedossa: muuta tämä tehtävä tietyn päivän muistutukseksi
+345| Määräaika on {date}.
+346| Määräaika on {date}, {time}.
+347| Kun tiedät tarkan päivän, tehtävästä tulee muistutus sille päivälle: se poistuu tehtävälistasta ja näkyy Muistutuksissa, kuukausinäkymässä ja kalenterissa. Muistiinpanot, luokka, paikka ja linkki säilyvät.
+348| Muistutus {date}, koko päivän.
+349| Muistutus {date} klo {time}.
+350| Muistutuksesta tulee tehtävä samalle päivälle; toisto, hälytys ja muistiinpanot säilyvät.
+351| Muistutus säilyy; tehtäväkopio samalle päivälle toistoineen, hälytyksineen ja muistiinpanoineen menee listaan.
+352| Tarkka kopio menee valitsemaasi listaan; tämä jää paikalleen.
+353| Lista
+354| {s} (tämä lista)
+355| päälista
+356| ReminderFoxAgain-hälytys
+357| Torkku
+358| Torkuta kaikki
+359| Torkuta kaikki {s}
+360| Torkuta kaikkia tämän ikkunan muistutuksia oletusajalla (muutetaan Asetuksissa)
+361| Kuinka kauan torkutaan tai mihin kellonaikaan
+362| Torkkuyksikkö
+363| Torkuta asti
+364| Hylkää
+365| Hylkää kaikki
+366| Valmis
+367| Valmis tämän pikahälytyksen kanssa
+368| Piilota toistaiseksi (hälytys pysyy voimassa ja palaa seuraavan kanssa)
+369| Kellonaika, kuten 15:30 tai 3:30 pm (nykyhetkeä aiempi tarkoittaa huomista)
+370| Kokonaisluku {n}–{n2}
+371| Anna kokonaisluku {n}–{n2}.
+372| Anna kokonaisluku 1–999 tai päivämäärä ja kellonaika.
+373| sekuntia
+374| minuuttia
+375| tuntia
+376| Pikahälytys
+377| Pikahälytykset
+378| ⏰ Pikahälytykset…
+379| Kertahälytys, jota ei tallenneta muistutukseksi — kuten lisäosan Pikahälytys.
+380| Päästä
+381| Klo
+382| Ajaksi
+383| Aseta hälytys
+384| Peruuta tämä hälytys
+385| Ei pikahälytyksiä.
+386| Odottaa hälytystä
+387| Pikahälytys asetettu klo {time}
+388| Pikahälytys peruttu
+389| Valitse kellonaika.
+390| Se aika on jo mennyt — valitse myöhäisempi.
+391| Se aika on jo mennyt.
+392| Hälyttää {when} ({until}).
+393| tänään klo {time}
+394| alle minuutin päästä
+395| {time} päästä
+396| {hours} {minutes} päästä
+397| Keskeytä hälytykset
+398| Keskeytä hälytykset…
+399| Keskeytä hälytykset hetkeksi
+400| Keskeytä
+401| Kuinka kauan
+402| Kunnes otan ne taas käyttöön
+403| Hälytykset ovat pois päältä, kunnes jatkat niitä (tilarivi, ilmaisinalueen valikko tai tässä).
+404| Tauon aikana hälytysikkunoita ei avata eikä muistutusikkunaa näytetä. Sillä välin erääntyneet hälytykset näkyvät, kun jatkat.
+405| Hälytykset ovat tauolla, kunnes otat ne taas käyttöön.
+406| Hälytykset palaavat {when}.
+407| Hälytykset ovat taas päällä
+408| Jatka hälytyksiä nyt
+409| Valitse tuleva kellonaika.
+410| ReminderFoxAgain — tänään
+411| Tulossa
+412| Ei mitään tänään.
+413| Ei mitään tulossa.
+414| Yleiset
+415| Hälytykset
+416| Näyttö
+417| Tiedot
+418| Tietoja
+419| Käynnistä ReminderFoxAgain, kun Windows käynnistyy
+420| Jatka ilmaisinalueella, kun ikkuna suljetaan
+421| Viikko alkaa
+422| Teema
+423| Teemat
+424| Oletus (Windowsin mukaan)
+425| Kettu
+426| Vaalea
+427| Tumma
+428| Meri
+429| Suuri kontrasti
+430| Oletus on Kettu, vaalea tai tumma Windowsin mukaan. Tähdellä merkityillä kohdilla on oma värinsä joka teemassa. Suuri kontrasti käyttää mustaa, valkoista, keltaista ja syaania sekä isompaa tekstiä ja paksumpia viivoja.
+431| -
+432| ReminderFoxAgain on kunnianosoitus alkuperäiselle
+433| -
+434| lisäosalle Firefoxiin ja Thunderbirdiin, jonka loivat Tom Mutdosch ja Daniel Lee yhdessä Guenter Wahlin kanssa. Tiedostomuoto, toistosäännöt, näkymät, pikahälytykset ja ilmoitusikkuna ovat heidän; kiitos.
+435| Toista ääni hälytysten yhteydessä
+436| Ääni
+437| Sisäänrakennettu kello
+438| Oma ääni
+439| Valitse…
+440| Valitse
+441| Käytä sisäänrakennettua kelloa
+442| Kello
+443| Toista
+444| ▶ Testaa
+445| Hälytysääni: {s}
+446| Käytetään sisäänrakennettua kelloa
+447| Valitse äänitiedosto (.mp3, .wav, .ogg, .m4a, .aac, .flac tai .webm).
+448| Äänitiedosto on yli 10 Mt. Valitse lyhyempi.
+449| Toista ääni uudelleen
+450| Ei, toista kerran
+451| Joka minuutti
+452| {n} minuutin välein
+453| Uusien muistutusten oletushälytys
+454| Oletustorkku
+455| Oletustorkun yksikkö
+456| Oletustorkku, kuinka monta
+457| Muistutusikkuna (lisäosan ilmoitusikkuna)
+458| Näytä ikkuna, jossa on tämän päivän ja tulevat muistutukset
+459| Milloin
+460| Vain käynnistyksessä
+461| Käynnistyksessä ja {n} minuutin välein
+462| … {n} minuutin välein
+463| … tunnin välein
+464| … {n} tunnin välein
+465| Pidä auki
+466| {n} sekuntia
+467| Kunnes suljen sen
+468| Kulma
+469| alhaalla oikealla
+470| alhaalla vasemmalla
+471| ylhäällä oikealla
+472| ylhäällä vasemmalla
+473| Toista ääni
+474| Näytä nyt
+475| ”Tulevat” tarkoittaa seuraavia
+476| Luku kuvakkeessa
+477| Näytä luku ilmaisinalueen ja tehtäväpalkin kuvakkeissa
+478| Tämän päivän avoimet muistutukset ja tehtävät
+479| Tämän päivän ja tulevat
+480| Vain tämän päivän
+481| Vain tulevat
+482| Kieli
+483| Järjestelmän kieli ({s})
+484| Valikkojen, painikkeiden ja viestien kieli. Muistutuksiasi ei muuteta.
+485| Käännökset on kirjoitettu ReminderFoxAgainia varten, eivätkä äidinkieliset puhujat ole vielä tarkistaneet niitä.
+486| Tekstin koko
+487| Pieni ({n} %)
+488| Normaali
+489| Suuri ({n} %)
+490| Suurempi ({n} %)
+491| Suurin ({n} %)
+492| Päivämäärät
+493| Kuten Windowsissa ({s})
+494| Kellonajat
+495| Kuten Windowsissa
+496| {n} tunnin ({s})
+497| Näytä kalenteripaneeli listojen vieressä
+498| Kuukausia kalenteripaneelissa
+499| Kartat
+500| -
+501| -
+502| -
+503| Ilmaisinalueen kuvakkeen työkaluvihje
+504| Työkaluvihje
+505| Tämän päivän muistutukset
+506| Tulevat muistutukset
+507| Muuttujat: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — samat kuin lisäosassa.
+508| Palauta
+509| Työkaluvihjeen tekstit palautettu
+510| Hallitse listoja…
+511| Hallitse luokkia…
+512| Hallitse näkymiä…
+513| Toistuvat muistutukset Muistutukset-välilehdellä
+514| Näytettävät tulevat päivät
+515| Tulevat, Kaikki muistutukset, Tärkeät, haku ja näkymät ilman päivämääriä
+516| Joka päivä seuraavan
+517| Vain seuraavat
+518| one={n} kuukausi | other={n} kuukautta
+519| one={n} vuosi | other={n} vuotta
+520| one={n} päivä | other={n} päivää
+521| Käytössä: Tulevat, Kaikki muistutukset, Tärkeät, haku ja näkymät ilman aikaväliä. Tänään, Seuraavat {n} päivää, Valittu päivä tai kuukausi, Kuukausi-välilehti ja kalenteri näyttävät aina jokaisen päivän.
+522| Kaikki- ja Menneet-näkymissä menneet näytetään alkaen
+523| jokaisen sarjan alusta
+524| viimeiset {n} vuotta
+525| viimeinen vuosi
+526| viimeiset {n} kuukautta
+527| Piilota toistuvat muistutukset
+528| Piilota valmiit muistutukset
+529| Tuonti ja vienti
+530| Tuo .ics-tiedosto…
+531| Lisää kohdat .ics-tiedostosta (Ctrl+I)
+532| Tuo ReminderFoxista…
+533| Etsi reminderfox.ics, jonka ReminderFox-lisäosa säilytti Firefox- tai Thunderbird-profiilissasi
+534| Vie .ics-muotoon…
+535| Vie .ics-muotoon
+536| Vie…
+537| Tallenna .ics-tiedosto (Ctrl+E)
+538| Tuonti lisää olemassa oleviin; jo olemassa olevat kohdat päivitetään vain, jos tiedoston kopio on uudempi. Viedyt tiedostot avautuvat Outlookissa, Google Kalenterissa, Thunderbirdissä, Applen Kalenterissa ja alkuperäisessä ReminderFox-lisäosassa.
+539| Varmuuskopiot
+540| Varmuuskopioi nyt
+541| Tallenna varmuuskopio…
+542| Palauta varmuuskopiosta…
+543| Palauta varmuuskopiosta
+544| Avaa varmuuskopiokansio
+545| Avaa tietokansio
+546| Tietotiedosto
+547| Näytä muistutustiedosto Resurssienhallinnassa
+548| Muistutuksesi tallennetaan tiedostoon {path} (päivittäiset varmuuskopiot ovat sen vieressä kansiossa ”backups”).
+549| ＋ Uusi lista…
+550| Uusi lista…
+551| Uusi lista
+552| Uuden listan nimi
+553| Uuden listan nimi (esimerkiksi Ostokset, Katsottavat elokuvat, Lahjaideat):
+554| Lisää lista
+555| Nimeä lista uudelleen
+556| Nimeä uudelleen…
+557| Poista…
+558| Poistetaanko lista?
+559| ”Tehtävät” on päälista, eikä sitä voi nimetä uudelleen tai poistaa (kuten lisäosassa). Kun poistat listan, valitset, siirretäänkö sen tehtävät listaan ”Tehtävät” vai poistetaanko ne.
+560| Listassa ”{list}” on {n} tehtävä. Siirretäänkö se listaan ”{main}” vai poistetaanko se listan mukana?
+561| Listassa ”{list}” on {n} tehtävää. Siirretäänkö ne listaan ”{main}” vai poistetaanko ne listan mukana?
+562| Poista lista ja tehtävät
+563| one=Lista ja {n} tehtävä poistettu | other=Lista ja {n} tehtävää poistettu
+564| Lista poistettu
+565| Lista ”{s}” lisätty
+566| ”{s}” on jo olemassa
+567| Se lista on jo olemassa.
+568| Listan nimi ei voi olla tyhjä eikä sisältää pilkkua tai kaksoispistettä.
+569| Listan nimi ei voi sisältää pilkkua tai kaksoispistettä.
+570| Yhdistetäänkö listat?
+571| Yhdistä
+572| Yhdistetty listaan ”{s}”
+573| Nimetty uudelleen: ”{s}”
+574| Uusi nimi kohteelle ”{name}”:
+575| Uusi nimi kohteelle ”{name}” ({items}):
+576| Uusi luokka
+577| Toinen luokka
+578| Lisää yleiset
+579| Luokka ”{s}” lisätty
+580| {n} luokkaa lisätty
+581| Ei mitään uutta lisättävää.
+582| Nimeä luokka uudelleen
+583| Poistetaanko luokka?
+584| Luokka poistettu
+585| Yhdistetäänkö luokat?
+586| Luokka ei voi olla tyhjä eikä sisältää pilkkua.
+587| ei vielä käytössä
+588| Uudelleennimeäminen muuttaa jokaisen muistutuksen ja tehtävän, jolla luokka on; olemassa olevaksi nimeäminen yhdistää ne. Poistaminen poistaa sen kohdistaan (kohdat säilyvät).
+589| Luokka ”{name}” poistetaan.
+590| Luokka ”{name}” poistetaan ja poistetaan kohteista ({items}). Itse kohdat säilyvät.
+591| Vuosipäivä
+592| Tapaaminen
+593| Syntymäpäivä
+594| Liiketoiminta
+595| Puhelu
+596| Juhlapäivä
+597| Kokous
+598| Henkilökohtainen
+599| Ostokset
+600| Matka
+601| Vuosipäivä, Tapaaminen, Syntymäpäivä, Liiketoiminta, Puhelu…
+602| Uusi näkymä
+603| ＋ Uusi näkymä…
+604| Muokkaa näkymää
+605| Poistetaanko näkymä?
+606| Näkymä ”{s}” poistetaan. Muistutuksiasi ei muuteta.
+607| Näytä se Muistutukset-välilehdellä
+608| Näkymä tallennettu
+609| Näkymä ”{s}” lisätty
+610| Anna näkymälle nimi.
+611| Samanniminen näkymä on jo olemassa.
+612| Näkymä on tallennettu suodatin Muistutukset-välilehdelle: valitse se Näytä-listasta. Eri kenttien ehtojen on kaikkien täytyttävä; pilkut yhden ehdon sisällä tarkoittavat ”mikä tahansa näistä”.
+613| Ei vielä näkymiä. Luo sellainen napsauttamalla ”Uusi näkymä…” — esimerkiksi jokainen muistutus, jonka luokka on ”Syntymäpäivä” tulevan vuoden aikana.
+614| Nimi
+615| esim. Syntymäpäivät
+616| Näytä muistutukset, joissa
+617| ＋ Lisää ehto
+618| Poista tämä ehto
+619| Mikä tahansa
+620| Luokka
+621| Näkymä
+622| Tyyppi
+623| on
+624| sisältää
+625| sanoja pilkuin erotettuina
+626| Vain päivät alkaen
+627| –
+628| tästä päivästä
+629| tänään
+630| Negatiiviset luvut menevät ajassa taaksepäin: −{n} kuukausi – {n2} päivää tarkoittaa ”kulunut kuukausi”.
+631| Kaikki
+632| Kaikki
+633| Vain muistutukset
+634| Vain tehtävät
+635| Yksikkö
+636| Kuinka monta
+637| Mikä tahansa sisältää ”{s}”
+638| Luokka on ”{s}”
+639| Luokka on ”{s}” tai ”{s2}”
+640| päivät tästä päivästä {n} päivää eteenpäin
+641| one=+{n} viikko | other=+{n} viikkoa
+642| one=+{n} kuukausi | other=+{n} kuukautta
+643| one=+{n} vuosi | other=+{n} vuotta
+644| Tuo
+645| Tuo iCalendar-tiedosto
+646| Tuo ReminderFoxista
+647| ReminderFoxista
+648| ReminderFox-lisäosasta löytyi {files}:
+649| Tuo uusin
+650| Tuo silti
+651| {reminders} ja {items}
+652| {n} on jo täällä (uudempi kopio säilytetään)
+653| {n} näyttää kaksoiskappaleelta (sama otsikko ja päivä kuin jollakin kohdallasi)
+654| {n} näyttävät kaksoiskappaleilta (sama otsikko ja päivä kuin jollakin kohdallasi)
+655| Miten
+656| Lisää olemassa oleviin
+657| Korvaa kaikki
+658| Korvaa kaikki ({items} varmuuskopioidaan ensin)
+659| Korvataanko kaikki?
+660| Nykyiset {items} korvataan tiedoston {newItems} kohdalla.
+661| Nykyinen sisältö tallennetaan ensin varmuuskopioksi ”Tallennettu ennen tuontia, joka korvasi kaiken”, joten voit palauttaa sen kohdasta Asetukset → Tiedot → Palauta varmuuskopiosta….
+662| Kaksoiskappaleet
+663| Ohita kohdat, joilla on sama otsikko ja päivä kuin jollakin omallani
+664| Valinnainen: lisätään jokaiseen tuotuun kohtaan, esimerkiksi ”Juhlapyhät” juhlapyhien listalle, jotta voit suodattaa sen mukaan.
+665| valinnainen
+666| Tuonti valmis
+667| {items} tuotu
+668| {items} ja {lists} tuotu
+669| {n} päivitetty
+670| {n} jo ajan tasalla
+671| one={n} kaksoiskappale ohitettu | other={n} kaksoiskappaletta ohitettu
+672| korvataan {items} (tallennettu nimellä {file})
+673| {lists} lisätty ({names})
+674| one={n} arkistoitu kohta siirretty listaan ”{list}” | other={n} arkistoitua kohtaa siirretty listaan ”{list}”
+675| Tiedostossa ei ole iCalendar-tietoja (ei BEGIN:VCALENDAR).
+676| Muistutustiedostoa ei voitu lukea
+677| Viety tiedostoon {path}
+678| Vie
+679| Kaikki (muistutukset ja tehtävät)
+680| Tiedosto toimii Outlookissa, Google Kalenterissa, Thunderbirdissä, Applen Kalenterissa ja alkuperäisessä ReminderFox-lisäosassa.
+681| ReminderFoxAgain tekee varmuuskopion joka päivä, yhden ennen jokaista palautusta ja ne, jotka teet ”Varmuuskopioi nyt” -painikkeella. Palautus korvaa nykyiset muistutuksesi ja tehtäväsi varmuuskopiolla; nykyinen tilanne tallennetaan ensin, joten voit aina palata.
+682| Tehty
+683| Sisältö
+684| Palauta
+685| Palauta…
+686| Valitse toinen tiedosto…
+687| {n} arkistoitua
+688| Ei voi lukea: {s}
+689| Tiedostoa {s} ei voitu lukea: {s2}
+690| Tiedostoa ei voi palauttaa
+691| Ei vielä varmuuskopioita. Niitä tehdään joka päivä, kun sovellus on käynnissä; voit myös napsauttaa ”Varmuuskopioi nyt”.
+692| Päivittäinen varmuuskopio
+693| Itse tehty varmuuskopio
+694| Tallennettu ennen palautusta
+695| Tallennettu ennen tuontia, joka korvasi kaiken
+696| Arkisto ennen kuin siitä tuli lista
+697| Arkiston päivittäinen varmuuskopio (aiempi versio)
+698| Varmuuskopio
+699| Palautetaanko tämä varmuuskopio?
+700| Tämä korvaa nykyisen sisällön ({now}) varmuuskopiolla ajalta {when}: {items}.
+701| Tämä korvaa nykyisen sisällön ({now}) varmuuskopiolla ajalta {when}: {items} sekä {n} arkistoitua, jotka menevät listaan ”{list}”.
+702| Tämä on kopio aiemman version arkistosta. Sen {all} menevät listaan ”{list}” (jo olemassa olevat kohdat jäävät ennalleen). Muuta ei muutu.
+703| Nykyiset tietosi tallennetaan ensin varmuuskopioksi ”Tallennettu ennen palautusta”, joten voit perua tämän samasta listasta.
+704| Varmuuskopio palautettu
+705| {items} palautettu.
+706| {items} palautettu, joista {n} arkistoitua on nyt listassa ”{list}”.
+707| Aiempi sisältö tallennettiin nimellä {file}.
+708| Varmuuskopio tallennettu: {path}
+709| Varmuuskopioitu: {s}
+710| {n} tavua
+711| {n} kt
+712| {n} Mt
+713| Kohtaa ei ole enää.
+714| Arkistotiedostoa ei voitu lukea, joten sitä ei muuteta. Se säilytettiin nimellä archive.ics.unreadable.
+715| Arkistotiedostoa ei voitu lukea, joten sitä ei voi korvata.
+716| Tervetuloa ReminderFoxAgainiin
+717| Muistutuksesi, tehtäväsi ja hälytyksesi Windows-sovelluksena — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle.
+718| Tuo ReminderFox-lisäosastasi
+719| {path} — muutettu viimeksi {date}
+720| Tuo reminderfox.ics tai muu kalenteritiedosto…
+721| ReminderFox-lisäosasta (Firefox- tai Thunderbird-profiilisi kansiosta ”reminderfox”), Outlookista, Google Kalenterista…
+722| Aloita tyhjällä listalla
+723| Voit tuoda myöhemmin kohdasta Asetukset → Tiedot.
+724| nyt
+725| {n} min päästä
+726| one={n} tunnin päästä | other={n} tunnin päästä
+727| one={n} päivän päästä | other={n} päivän päästä
+728| {n} min sitten
+729| one={n} tunti sitten | other={n} tuntia sitten
+730| one={n} päivä sitten | other={n} päivää sitten
+731| Avaa {app}
+732| Lisää muistutus…
+733| Lisää listan kohta…
+734| Pikahälytys…
+735| Jatka hälytyksiä
+736| Näytä tämän päivän muistutukset
+737| Lopeta {app}
+738| {app} — hälytykset pois
+739| {app} — hälytykset pois klo {time} asti
+740| {app} — ei mitään tänään
+741| tulossa
+742| {app} on yhä käynnissä
+743| Hälytykset näkyvät edelleen. Lopeta napsauttamalla kettua ilmaisinalueella hiiren kakkospainikkeella.
+744| {app}-hälytys
+745| {app} — tänään
+746| {n} t {n2} min
+747| iCalendar-tiedostot
+748| Kaikki tiedostot
+749| Äänitiedostot
+750| Tuo iCalendar-tiedosto
+751| Vie iCalendar-tiedostoon
+752| Valitse reminderfox.ics
+753| Valitse hälytysääni
+754| Tallenna varmuuskopio
+755| Valitse palautettava varmuuskopio
+756| Joka viikko: {days}
+757| Joka kuukauden {nth} {weekday}
+758| Joka kuukauden {day}. päivä
+759| Joka kuukausi samana päivänä
+760| {n} kuukauden välein samana päivänä
+761| Joka vuosi: {month} {nth} {weekday}
+762| Joka vuosi {date}
+763| Joka vuosi samana päivänä
+764| {n} vuoden välein samana päivänä
+765| Toistuu
+766| Mukautettu ({rule})
+767| {rule}, kerran
+768| {rule}, {n} kertaa
+769| {rule}, {date} asti
+770| Näytä muistutukset, jotka olet merkinnyt valmiiksi
+771| Näytä muistutukset ja listan kohteet, jotka olet merkinnyt valmiiksi
+772| Oma järjestys: vedä rivejä tai paina Alt+↑ / Alt+↓
+773| Näkymä
+774| Hälytysääni
+775| Oma tiedosto…
+776| Käytä omaa äänitiedostoa (.mp3, .wav, .ogg, .m4a, .aac, .flac tai .webm)
+777| Jatkuvasti, kunnes kuitattu
+778| Jatkuvasti, kunnes kuitattu: ääni soi yhä uudelleen, kunnes torkutat, avaat, merkitset valmiiksi tai hylkäät hälytyksen tai piilotat hälytysikkunan. Seuraava hälytys käynnistää sen taas.
+779| Sarakkeet
+780| Muistutukset-välilehden sarakkeet
+781| Listojen sarakkeet
+782| Poista sarakkeen valinta piilottaaksesi sen. Kuvaus näkyy aina.
+783| Tallennetut suodattimet Muistutukset-välilehdelle
+784| Hallitse muistutuksia…
+785| Tulevat, Kaikki muistutukset, Tärkeät, haku ja tallennetut suodattimet ilman päivämääriä
+786| Käytössä: Tulevat, Kaikki muistutukset, Tärkeät, haku ja tallennetut suodattimet ilman aikaväliä. Tänään, Seuraavat {n} päivää, Valittu päivä tai kuukausi, Kuukausi-välilehti ja kalenteri näyttävät aina jokaisen päivän.
+787| Tallennetut suodattimet
+788| Tallennettu suodatin ”{s}” · {c}
+789| Hallitse muistutuksia
+790| Tallennettu suodatin näyttää Muistutukset-välilehdellä vain haluamasi muistutukset: valitse se Näytä-listasta. Eri kenttien ehtojen on kaikkien täytyttävä; pilkut yhden ehdon sisällä tarkoittavat ”mikä tahansa näistä”.
+791| ＋ Uusi tallennettu suodatin…
+792| Ei vielä tallennettuja suodattimia. Luo sellainen napsauttamalla ”Uusi tallennettu suodatin…” — esimerkiksi jokainen muistutus, jonka luokka on ”Syntymäpäivä” tulevan vuoden aikana.
+793| Poistetaanko tallennettu suodatin?
+794| Tallennettu suodatin ”{s}” poistetaan. Muistutuksiasi ei muuteta.
+795| Muokkaa tallennettua suodatinta
+796| Uusi tallennettu suodatin
+797| Anna tallennetulle suodattimelle nimi.
+798| Samanniminen tallennettu suodatin on jo olemassa.
+799| Tallennettu suodatin muutettu
+800| Tallennettu suodatin ”{s}” lisätty
+801| Kirkonkello
+802| Marimba
+803| Digitaaliset piippaukset
+804| Herätyskello
+805| Oma tiedosto: {s}
+806| Tee oma teema viidestä väristä
+807| ＋ Uusi teema…
+808| Muuta teemasi värejä
+809| ＋ Uusi teema… tekee oman teeman viidestä väristä.
+810| Omat teemat
+811| Tausta
+812| Kaiken takana
+813| Listat ja paneelit
+814| Listat, kalenteripaneeli, valintaikkunat
+815| Teksti
+816| Korostus
+817| Painikkeet, tänään, valinta
+818| Tähdellä merkityt
+819| Tärkeät muistutukset ja tehtävät
+820| Tekstiä on vaikea lukea taustalla (kontrasti {n}:1; 4,5:1 tai enemmän on helppolukuinen).
+821| Korostusväriä on vaikea nähdä listoilla (kontrasti {n}:1; 3:1 tai enemmän on parempi).
+822| Tähdellä merkittyjä on vaikea nähdä listoilla (kontrasti {n}:1; 3:1 tai enemmän on parempi).
+823| Muokkaa teemaa
+824| Uusi teema
+825| Lähtökohta
+826| esim. Metsä
+827| Koko ikkuna näyttää teeman valitessasi. Peruuta palauttaa vanhan.
+828| Anna teemalle nimi.
+829| Samanniminen teema on jo olemassa.
+830| Teema ”{s}” tallennettu
+831| Teema ”{s}” lisätty
+832| Poistetaanko teema?
+833| Teema ”{s}” poistetaan. Sovellus palaa oletusteemaan.

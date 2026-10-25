@@ -1,0 +1,834 @@
+# Türkçe — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Hatırlatıcı
+2| ＋ Liste öğesi
+3| ⚙ Ayarlar
+4| Ayarlar
+5| Ara
+6| Ara (Ctrl+F)
+7| Hatırlatıcılarda ve görevlerde ara
+8| Yeni hatırlatıcı (Ctrl+N)
+9| Gösterilen listeye yeni öğe (Ctrl+T)
+10| Hızlı alarm: birkaç dakika sonra çalan tek seferlik alarm (Ctrl+Q)
+11| ⏰ Hızlı alarm
+12| Hatırlatıcılar
+13| Ay
+14| Liste
+15| Listeler
+16| Liste: {s}
+17| Tüm listeler
+18| Gösterilecek listeyi seçin
+19| Gösterilen liste
+20| Görevler
+21| Sona erdi veya askıya alındı
+22| Takvim panelini göster veya gizle
+23| Takvim panelini göster veya gizle (Ctrl+B)
+24| Alarmlar açık
+25| Alarmlar askıda
+26| Alarmlar {time} saatine kadar askıda
+27| Sürdür
+28| Alarmları yeniden açmak için tıklayın
+29| Alarmları askıya al veya sürdür
+30| {n} öğe
+31| {n} hatırlatıcı
+32| {n} görev
+33| {n} liste öğesi
+34| {n} yeni öğe
+35| {n} arşivlenmiş öğe
+36| {n} liste
+37| {n} dosya
+38| {n} dakika
+39| {n} saat
+40| {n} gün
+41| {n} yinelenen
+42| Göster
+43| Bugün
+44| Yarın
+45| Dün
+46| Sonraki {n} gün
+47| Yaklaşan
+48| Tüm hatırlatıcılar
+49| Önemli
+50| Geçmiş
+51| Seçili gün
+52| Seçili ay
+53| Görünümler
+54| “{s}” görünümü
+55| Tüm hatırlatıcılarda aranıyor
+56| Tarih
+57| Gün
+58| Saat
+59| Açıklama
+60| Tekrar
+61| Kategori
+62| Alarm
+63| Tamamlandı
+64| Tamamlandı: {date}
+65| (açıklama yok)
+66| Burada hatırlatıcı yok
+67| Eklemek için ＋ Hatırlatıcı'ya tıklayın veya başka bir görünüm seçin.
+68| Bu listeye eklemek için ＋ Liste öğesi'ne tıklayın.
+69| {date} tarihinden beri gecikmiş
+70| {date} tarihinden beri gecikmiş
+71| Yakında: {s}
+72| Düzenle…
+73| Sil…
+74| Sil
+75| Çoğalt
+76| Kopyala
+77| Taşı
+78| Aç
+79| Bağlantıyı aç
+80| Haritada göster
+81| Listede göster
+82| Tamamlandı olarak işaretle
+83| Bana hatırlat…
+84| Göreve dönüştür…
+85| Göreve dönüştür
+86| Hatırlatıcıya dönüştür
+87| Hatırlatıcı olarak planla…
+88| Hatırlatıcı olarak planla
+89| Bir listeye kopyala…
+90| Bir listeye kopyala
+91| Listeye kopyala…
+92| Listeye kopyala
+93| Listeye taşı…
+94| Listeye taşı
+95| Şuraya taşı…
+96| Şuraya kopyala…
+97| Başka bir listeye taşı
+98| Başka bir listeye kopyasını koy
+99| Bu listede tam bir kopya (Ctrl+D)
+100| Sil (Del)
+101| Seçili öğe
+102| Seçili öğe:
+103| Yukarı taşı
+104| Aşağı taşı
+105| -
+106| -
+107| -
+108| “{s}” çoğaltıldı
+109| {s} (kopya)
+110| “{s}” listesine kopyalandı
+111| “{s}” listesine taşındı
+112| “{s}” listesine taşı
+113| Artık “{s}” listesinde bir görev
+114| Artık {date} tarihinde bir hatırlatıcı
+115| “{s}” listesinde
+116| “{s}” boş
+117| Silindi
+118| Tekrar silindi
+119| Tekrarlanan hatırlatıcıyı sil
+120| Bu tekrarlanıyor — değişiklikler her tekrara uygulanır.
+121| Yalnızca bu
+122| Tüm tekrarlar
+123| Bu tekrarı sil
+124| Tüm tekrarları sil…
+125| “{s}” tekrarlanıyor ({rule}).
+126| Yalnızca {date} tarihindekini mi, yoksa tüm tekrarları mı silmek istiyorsunuz?
+127| Tüm tekrarlar silinsin mi?
+128| Tümünü sil
+129| Hatırlatıcı silinsin mi?
+130| Görev silinsin mi?
+131| “{s}” silinecek.
+132| “{s}” ve tüm tekrarları silinecek.
+133| Bir şeyler ters gitti
+134| Önce bir konum girin.
+135| Önceki ay
+136| Sonraki ay
+137| Bugüne git
+138| Bir tarihe git (Ctrl+G)
+139| Tarihe git
+140| Git…
+141| Git
+142| Bu güne hatırlatıcı ekle
+143| Hatırlatıcı eklemek için bir güne çift tıklayın
+144| Bu günde bir şey yok.
+145| +{n} daha
+146| Henüz yapılmadı
+147| Tüm gün
+148| Tüm gün {s}
+149| Görev
+150| Görev {s}
+151| Görev
+152| Pz
+153| Pt
+154| Sa
+155| Ça
+156| Pe
+157| Cu
+158| Ct
+159| Paz
+160| Pzt
+161| Sal
+162| Çar
+163| Per
+164| Cum
+165| Cmt
+166| Pazar
+167| Pazartesi
+168| Salı
+169| Çarşamba
+170| Perşembe
+171| Cuma
+172| Cumartesi
+173| Liste öğesi
+174| Son tarih
+175| Sıra
+176| Benim sıram
+177| Tarihe göre
+178| Elle: satırları sürükleyin veya Alt+↑ / Alt+↓ tuşlarına basın
+179| Tamamlananları göster
+180| Görevleri göster
+181| Tarihli görevleri dahil et
+182| Tarih yok
+183| · son tarih yok
+184| · son tarih {date}
+185| · gecikmiş
+186| · tüm gün
+187| · {time} için kuruldu
+188| · {n} dk sonra
+189| · {n} dk önce başladı ·
+190| Bu görevi sistem tepsisi simgesinin ipucunda göster
+191| Tepsi ipucunda göster
+192| ✓ Tepsi ipucunda göster
+193| Tepsi ipucunda gösteriliyor
+194| Tepsi ipucundan kaldırıldı
+195| Tamamlanana kadar her gün hatırlat
+196| Bitene kadar bana her gün hatırlat
+197| Bitene kadar her gün hatırlatır
+198| Bitene kadar
+199| Artık her gün hatırlatmıyor
+200| Bitti'yi işaretleyene kadar size her gün hatırlatır
+201| {date} tarihinde kaçırıldı; işaretleyene kadar size her gün hatırlatır
+202| Kaçırırsanız bugüne taşınır ve işaretleyene kadar her gün alarm verir
+203| Bitti — sonraki tarihe taşındı
+204| her gün
+205| her hafta
+206| her ay
+207| her {n} günde bir
+208| her {n} haftada bir
+209| {n} gün önce
+210| aynı gün
+211| {from} tarihinden itibaren {every}
+212| bir kez
+213| her gün
+214| her hafta
+215| her ay
+216| son tarihten {n} gün önce
+217| son tarihte
+218| {from} tarihinden itibaren {every}, saat {time}'da hatırlatır
+219| {from} tarihinden itibaren {every}, saat {time}'da, bitene kadar hatırlatır
+220| {from} tarihinden itibaren {every}, saat {time}'da, bitene kadar hatırlatır (son tarihten sonra da)
+221| Yeni hatırlatıcı
+222| Hatırlatıcıyı düzenle
+223| Yeni görev
+224| Görevi düzenle
+225| Size neyi hatırlatalım?
+226| Ne yapılması gerekiyor?
+227| Tür
+228| Hatırlatıcı
+229| Tarihte
+230| Herhangi bir saat
+231| Bitiş
+232| Konum
+233| Bağlantı
+234| -
+235| Notlar
+236| Kategoriler
+237| Kategorileri seç
+238| örn. Doğum günü, İş
+239| Ekle
+240| Kaydet
+241| İptal
+242| Kapat
+243| Tamam
+244| Evet
+245| Hayır
+246| Yok
+247| Tekrarlanmaz
+248| Günlük
+249| Haftalık
+250| Aylık
+251| Yıllık
+252| Özel…
+253| Özel
+254| Özel (içe aktarılmış)
+255| İçe aktarılanı koru: {s}
+256| Her hafta içi günü
+257| Her
+258| her
+259| gün
+260| gün
+261| hafta
+262| hafta
+263| ay
+264| ay
+265| yıl
+266| yıl
+267| kez
+268| {date}
+269| Ayın {day}. günü
+270| {nth} {weekday}
+271| {month} ayının {nth} {weekday} günü
+272| Son {weekday}
+273| {month} ayının son {weekday} günü
+274| Her gün
+275| Her {n} günde bir
+276| Her hafta
+277| Her {n} haftada bir
+278| Her ay
+279| Her hafta: {days}
+280| Her {n} haftada bir: {days}
+281| hafta içi günleri
+282| Her ayın {day}. günü
+283| Her {n} ayda bir, ayın {day}. günü
+284| Her ayın {nth} {weekday} günü
+285| Her {n} ayda bir, {nth} {weekday}
+286| Her yıl {date}
+287| Her {n} yılda bir {date}
+288| Her yıl {month} ayının {nth} {weekday} günü
+289| Her {n} yılda bir, {month} ayının {nth} {weekday} günü
+290| son
+291| {n}.
+292| Ne sıklıkla
+293| Günler
+294| Sonra
+295| Ardından
+296| -
+297| saat
+298| önce
+299| Hiçbir zaman
+300| Kadar
+301| şu tarihe kadar…
+302| bir tarihte…
+303| şu tarihten itibaren…
+304| başka yok (yalnızca bir kez)
+305| Bana hatırlat
+306| Hatırlatma
+307| Hatırlatmaya ne zaman başlansın
+308| İlk hatırlatma tarihi
+309| Hatırlatma saati
+310| Son tarih geçtiğinde ve bitmediyse hatırlatmaya devam et
+311| son tarihten sonra da
+312| bitene kadar
+313| bitene veya son tarihe kadar ({due})
+314| bitene kadar, son tarihten sonra da ({due})
+315| Bir hatırlatma: {date}, saat {time}.
+316| Bir hatırlatma: {date}, saat {time}. Bu saat geçti — daha sonrasını seçin veya tekrar tekrar hatırlatın.
+317| {date} tarihinden itibaren {every}, saat {time}, {end}.
+318| Hatırlatma yok.
+319| Hatırlatma yok. Görev, son tarihi geçince kırmızı gösterilir.
+320| İlk hatırlatmanın tarihini seçin.
+321| Alarm metni
+322| Zamanında
+323| {n} dakika önce
+324| {n} saat önce
+325| {n} gün önce
+326| {n} hafta önce
+327| Aynı gün, saat {time}
+328| Bir gün önce, saat {time}
+329| Şöyle görünür: {s}. <year> o zamandan beri geçen yılları sayar; <year#> yalnızca sayıyı gösterir.
+330| {zone} saat diliminde içe aktarıldı — yerel saatinizle gösteriliyor. Kaydedince yerel saatle saklanır.
+331| Lütfen bir açıklama girin.
+332| Lütfen son tarihi seçin veya “Tarih yok”u işaretleyin.
+333| Lütfen bir tarih seçin.
+334| Lütfen tarihi seçin.
+335| Tarihi seçin.
+336| Lütfen son saati girin veya “Herhangi bir saat”i işaretleyin.
+337| Lütfen bir saat girin veya “Tüm gün”ü işaretleyin.
+338| Bitiş tarihi başlangıç tarihinden önce.
+339| Bitiş saati başlangıç saatinden önce.
+340| Hatırlatıcı eklendi
+341| Görev eklendi
+342| Kaydedildi
+343| Kopyayı düzenle
+344| Tarih belli: bu görevi kesin bir tarihte hatırlatıcıya dönüştür
+345| Son tarih {date}.
+346| Son tarih {date}, {time}.
+347| Kesin tarihi öğrendiğinizde görev o tarihte bir hatırlatıcıya dönüşür: görev listesinden çıkar ve Hatırlatıcılar'da, Ay görünümünde ve takvimde görünür. Notlar, kategori, konum ve bağlantı korunur.
+348| {date} tarihinde bir hatırlatıcı, tüm gün.
+349| {date} tarihinde, saat {time}'da bir hatırlatıcı.
+350| Hatırlatıcı, tekrarı, alarmı ve notlarıyla aynı tarihte bir göreve dönüşür.
+351| Hatırlatıcı kalır; aynı tarihte, tekrarı, alarmı ve notlarıyla bir görev kopyası listeye eklenir.
+352| Tam bir kopya seçtiğiniz listeye gider; bu olduğu yerde kalır.
+353| Liste
+354| {s} (bu liste)
+355| ana liste
+356| ReminderFoxAgain alarmı
+357| Ertele
+358| Tümünü ertele
+359| Tümünü ertele: {s}
+360| Buradaki tüm hatırlatıcıları varsayılan erteleme süresi kadar ertele (Ayarlar'dan değiştirilir)
+361| Ne kadar ya da hangi saate kadar ertelensin
+362| Erteleme birimi
+363| Şu saate kadar ertele
+364| Kapat
+365| Tümünü kapat
+366| Bitti
+367| Bu hızlı alarmla işim bitti
+368| Şimdilik gizle (alarm etkin kalır ve bir sonrakiyle geri gelir)
+369| 15:30 veya 3:30 pm gibi bir saat (şimdiden önceyse yarın demektir)
+370| {n} ile {n2} arasında bir tam sayı
+371| {n} ile {n2} arasında bir tam sayı girin.
+372| 1 ile 999 arasında bir tam sayı veya bir tarih ve saat girin.
+373| saniye
+374| dakika
+375| saat
+376| Hızlı alarm
+377| Hızlı alarmlar
+378| ⏰ Hızlı alarmlar…
+379| Hatırlatıcı olarak kaydedilmeyen tek seferlik alarm — eklentinin Hızlı Alarm'ı gibi.
+380| Sonra
+381| Saat
+382| Süre
+383| Alarmı kur
+384| Bu alarmı iptal et
+385| Hızlı alarm yok.
+386| Çalmayı bekliyor
+387| Hızlı alarm {time} için kuruldu
+388| Hızlı alarm iptal edildi
+389| Bir saat seçin.
+390| Bu saat geçti — daha sonrasını seçin.
+391| Bu saat geçti.
+392| Çalacak: {when} ({until}).
+393| bugün saat {time}
+394| bir dakikadan kısa sürede
+395| {time} sonra
+396| {hours} {minutes} sonra
+397| Alarmları askıya al
+398| Alarmları askıya al…
+399| Alarmları bir süre askıya al
+400| Askıya al
+401| Ne kadar süre
+402| Ben yeniden açana kadar
+403| Alarmlar siz sürdürene kadar kapalı kalır (durum çubuğu, tepsi menüsü veya buradan).
+404| Askıdayken alarm pencereleri açılmaz ve hatırlatma penceresi görünmez. Bu arada zamanı gelen alarmlar sürdürdüğünüzde gösterilir.
+405| Alarmlar siz yeniden açana kadar askıda.
+406| Alarmlar geri geliyor: {when}.
+407| Alarmlar yeniden açık
+408| Alarmları şimdi sürdür
+409| Lütfen gelecekte bir saat seçin.
+410| ReminderFoxAgain — bugün
+411| Yaklaşan
+412| Bugün bir şey yok.
+413| Yaklaşan bir şey yok.
+414| Genel
+415| Alarmlar
+416| Görünüm
+417| Veriler
+418| Hakkında
+419| Windows başladığında ReminderFoxAgain'i başlat
+420| Pencere kapatılınca sistem tepsisinde çalışmaya devam et
+421| Hafta başlangıcı
+422| Tema
+423| Temalar
+424| Varsayılan (Windows'u izler)
+425| Tilki
+426| Açık
+427| Koyu
+428| Okyanus
+429| Yüksek karşıtlık
+430| Varsayılan, Windows'a göre Tilki, açık veya koyu temadır. Yıldızlı öğelerin her temada kendi rengi vardır. Yüksek karşıtlık; siyah, beyaz, sarı ve camgöbeği ile daha büyük yazı ve daha kalın çizgiler kullanır.
+431| -
+432| ReminderFoxAgain, özgün
+433| -
+434| eklentisine (Firefox ve Thunderbird için; Tom Mutdosch ve Daniel Lee, Guenter Wahl ile birlikte yaptı) bir saygı duruşudur. Dosya biçimi, tekrar kuralları, görünümler, hızlı alarmlar ve uyarı penceresi onlarındır; teşekkürler.
+435| Alarmlarda ses çal
+436| Ses
+437| Yerleşik zil
+438| Sizin sesiniz
+439| Seç…
+440| Seç
+441| Yerleşik zili kullan
+442| Zil
+443| Çal
+444| ▶ Dene
+445| Alarm sesi: {s}
+446| Yerleşik zil kullanılıyor
+447| Lütfen bir ses dosyası seçin (.mp3, .wav, .ogg, .m4a, .aac, .flac veya .webm).
+448| Bu ses dosyası 10 MB'tan büyük. Lütfen daha kısa birini seçin.
+449| Sesi tekrarla
+450| Hayır, bir kez çal
+451| Her dakika
+452| Her {n} dakikada bir
+453| Yeni hatırlatıcılar için varsayılan alarm
+454| Varsayılan erteleme
+455| Varsayılan erteleme birimi
+456| Varsayılan erteleme, kaç
+457| Hatırlatma penceresi (eklentinin uyarı penceresi)
+458| Bugünkü ve yaklaşan hatırlatıcıları gösteren bir pencere aç
+459| Ne zaman
+460| Yalnızca başlangıçta
+461| Başlangıçta ve her {n} dakikada bir
+462| … her {n} dakikada bir
+463| … her saat
+464| … her {n} saatte bir
+465| Açık tut
+466| {n} saniye
+467| Ben kapatana kadar
+468| Köşe
+469| sağ alt
+470| sol alt
+471| sağ üst
+472| sol üst
+473| Sesi çal
+474| Şimdi göster
+475| “Yaklaşan” şu anlama gelir: sonraki
+476| Simgedeki sayı
+477| Tepsi ve görev çubuğu simgelerinde bir sayı göster
+478| Bugünün açık hatırlatıcıları ve görevleri
+479| Bugünkü ve yaklaşan
+480| Yalnızca bugünkü
+481| Yalnızca yaklaşan
+482| Dil
+483| Sistem dili ({s})
+484| Menülerin, düğmelerin ve iletilerin dili. Hatırlatıcılarınız değişmez.
+485| Çeviriler ReminderFoxAgain için yazıldı ve henüz anadili konuşanlarca gözden geçirilmedi.
+486| Yazı boyutu
+487| Küçük (%{n})
+488| Normal
+489| Büyük (%{n})
+490| Daha büyük (%{n})
+491| En büyük (%{n})
+492| Tarihler
+493| Windows'taki gibi ({s})
+494| Saatler
+495| Windows'taki gibi
+496| {n} saatlik ({s})
+497| Takvim panelini listelerin yanında göster
+498| Takvim panelindeki ay sayısı
+499| Haritalar
+500| -
+501| -
+502| -
+503| Tepsi simgesi ipucu
+504| İpucu
+505| Bugünün hatırlatıcıları
+506| Yaklaşan hatırlatıcılar
+507| Değişkenler: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — eklentidekilerle aynı.
+508| Sıfırla
+509| İpucu metinleri sıfırlandı
+510| Listeleri yönet…
+511| Kategorileri yönet…
+512| Görünümleri yönet…
+513| Hatırlatıcılar sekmesinde tekrarlanan hatırlatıcılar
+514| Gösterilecek gelecek tarihler
+515| Yaklaşan, Tüm hatırlatıcılar, Önemli, arama ve tarihsiz görünümler
+516| Sonraki şu süredeki her tarih:
+517| Yalnızca sonraki
+518| {n} ay
+519| {n} yıl
+520| {n} tarih
+521| Yaklaşan, Tüm hatırlatıcılar, Önemli, arama ve tarih aralığı olmayan görünümler kullanır. Bugün, Sonraki {n} gün, Seçili gün veya ay, Ay sekmesi ve takvim her zaman her tarihi gösterir.
+522| Tümü ve Geçmiş'te geçmiştekileri şuradan itibaren göster:
+523| her serinin başı
+524| son {n} yıl
+525| son yıl
+526| son {n} ay
+527| Tekrarlanan hatırlatıcıları gizle
+528| Tamamlanan hatırlatıcıları gizle
+529| İçe ve dışa aktarma
+530| Bir .ics dosyası içe aktar…
+531| Bir .ics dosyasındaki öğeleri ekle (Ctrl+I)
+532| ReminderFox'tan içe aktar…
+533| ReminderFox eklentisinin Firefox veya Thunderbird profilinizde tuttuğu reminderfox.ics dosyasını bul
+534| .ics olarak dışa aktar…
+535| .ics olarak dışa aktar
+536| Dışa aktar…
+537| Bir .ics dosyası kaydet (Ctrl+E)
+538| İçe aktarmalar mevcut olanlara eklenir; zaten var olan öğeler yalnızca dosyadaki kopya daha yeniyse güncellenir. Dışa aktarılan dosyalar Outlook, Google Takvim, Thunderbird, Apple Takvim ve özgün ReminderFox eklentisinde açılır.
+539| Yedekler
+540| Şimdi yedekle
+541| Bir yedek kopya kaydet…
+542| Bir yedekten geri yükle…
+543| Bir yedekten geri yükle
+544| Yedekler klasörünü aç
+545| Veri klasörünü aç
+546| Veri dosyası
+547| Hatırlatıcı dosyasını Dosya Gezgini'nde göster
+548| Hatırlatıcılarınız {path} konumunda saklanır (günlük yedekler yanındaki “backups” klasöründedir).
+549| ＋ Yeni liste…
+550| Yeni liste…
+551| Yeni liste
+552| Yeni listenin adı
+553| Yeni listenin adı (örneğin Alışveriş, İzlenecek filmler, Hediye fikirleri):
+554| Liste ekle
+555| Listeyi yeniden adlandır
+556| Yeniden adlandır…
+557| Kaldır…
+558| Liste kaldırılsın mı?
+559| “Görevler” ana listedir; yeniden adlandırılamaz veya kaldırılamaz (eklentide olduğu gibi). Bir listeyi kaldırırken görevlerinin “Görevler”e taşınacağını mı yoksa silineceğini mi seçersiniz.
+560| “{list}” listesinde {n} görev var. “{main}” listesine taşınsın mı, yoksa listeyle birlikte silinsin mi?
+561| “{list}” listesinde {n} görev var. “{main}” listesine taşınsınlar mı, yoksa listeyle birlikte silinsinler mi?
+562| Listeyi ve görevleri sil
+563| Liste ve {n} görev silindi
+564| Liste kaldırıldı
+565| “{s}” listesi eklendi
+566| “{s}” zaten var
+567| Bu liste zaten var.
+568| Liste adı boş olamaz, virgül veya iki nokta içeremez.
+569| Liste adı virgül veya iki nokta içeremez.
+570| Listeler birleştirilsin mi?
+571| Birleştir
+572| “{s}” ile birleştirildi
+573| “{s}” olarak yeniden adlandırıldı
+574| “{name}” için yeni ad:
+575| “{name}” için yeni ad ({items}):
+576| Yeni kategori
+577| Başka bir kategori
+578| Yaygın olanları ekle
+579| “{s}” kategorisi eklendi
+580| {n} kategori eklendi
+581| Eklenecek yeni bir şey yok.
+582| Kategoriyi yeniden adlandır
+583| Kategori silinsin mi?
+584| Kategori silindi
+585| Kategoriler birleştirilsin mi?
+586| Kategori boş olamaz veya virgül içeremez.
+587| henüz kullanılmadı
+588| Yeniden adlandırma, bu kategoriye sahip her hatırlatıcıyı ve görevi değiştirir; var olan bir ada yeniden adlandırmak onları birleştirir. Silmek kategoriyi öğelerinden kaldırır (öğeler kalır).
+589| “{name}” kategorisi silinecek.
+590| “{name}” kategorisi silinecek ve öğelerden ({items}) kaldırılacak. Öğelerin kendisi kalır.
+591| Yıldönümü
+592| Randevu
+593| Doğum günü
+594| İş
+595| Arama
+596| Tatil
+597| Toplantı
+598| Kişisel
+599| Alışveriş
+600| Seyahat
+601| Yıldönümü, Randevu, Doğum günü, İş, Arama…
+602| Yeni görünüm
+603| ＋ Yeni görünüm…
+604| Görünümü düzenle
+605| Görünüm silinsin mi?
+606| “{s}” görünümü silinecek. Hatırlatıcılarınız değişmez.
+607| Hatırlatıcılar sekmesinde göster
+608| Görünüm kaydedildi
+609| “{s}” görünümü eklendi
+610| Lütfen görünüme bir ad verin.
+611| Bu adda bir görünüm zaten var.
+612| Görünüm, Hatırlatıcılar sekmesi için kaydedilmiş bir filtredir: Göster listesinden seçin. Farklı alanlardaki koşulların tümü sağlanmalıdır; bir koşul içindeki virgüller “bunlardan herhangi biri” anlamına gelir.
+613| Henüz görünüm yok. Oluşturmak için “Yeni görünüm…”e tıklayın — örneğin önümüzdeki yıl içinde “Doğum günü” kategorisine sahip her hatırlatıcı.
+614| Ad
+615| örn. Doğum günleri
+616| Şu koşuldaki hatırlatıcıları göster
+617| ＋ Koşul ekle
+618| Bu koşulu kaldır
+619| Herhangi bir şey
+620| Kategori
+621| Görünüm
+622| Tür
+623| eşittir
+624| içerir
+625| virgülle ayrılmış sözcükler
+626| Yalnızca şu tarihten
+627| şu tarihe
+628| bugünden
+629| bugün
+630| Negatif sayılar geriye gider: −{n} aydan {n2} güne “geçen ay” anlamına gelir.
+631| Tümü
+632| Her şey
+633| Yalnızca hatırlatıcılar
+634| Yalnızca görevler
+635| Birim
+636| Kaç
+637| Herhangi bir şey “{s}” içeriyor
+638| Kategori “{s}”
+639| Kategori “{s}” veya “{s2}”
+640| bugünden {n} gün sonrasına kadar tarihler
+641| +{n} hafta
+642| +{n} ay
+643| +{n} yıl
+644| İçe aktar
+645| Bir iCalendar dosyası içe aktar
+646| ReminderFox'tan içe aktar
+647| ReminderFox'tan
+648| ReminderFox eklentisinde bulundu: {files}
+649| En yenisini içe aktar
+650| Yine de içe aktar
+651| {reminders} ve {items}
+652| {n} tanesi zaten var (daha yeni kopya korunur)
+653| {n} tanesi yinelenen gibi görünüyor (sahip olduğunuz bir öğeyle aynı başlık ve tarih)
+654| {n} tanesi yinelenen gibi görünüyor (sahip olduğunuz bir öğeyle aynı başlık ve tarih)
+655| Nasıl
+656| Mevcut olanlara ekle
+657| Her şeyi değiştir
+658| Her şeyi değiştir (önce {items} yedeklenir)
+659| Her şey değiştirilsin mi?
+660| Mevcut {items}, dosyadaki {newItems} ile değiştirilecek.
+661| Şu anki durumunuz önce “Her şeyi değiştiren bir içe aktarmadan önce kaydedildi” yedeği olarak saklanır; Ayarlar → Veriler → Bir yedekten geri yükle… ile geri getirebilirsiniz.
+662| Yinelenenler
+663| Bende olanla aynı başlık ve tarihe sahip öğeleri atla
+664| İsteğe bağlı: içe aktarılan her öğeye eklenir, örneğin bir tatil listesi için “Tatiller”, böylece ona göre filtreleyebilirsiniz.
+665| isteğe bağlı
+666| İçe aktarma tamamlandı
+667| İçe aktarıldı: {items}
+668| İçe aktarıldı: {items} ve {lists}
+669| {n} güncellendi
+670| {n} zaten güncel
+671| {n} yinelenen atlandı
+672| {items} değiştiriliyor ({file} olarak kaydedildi)
+673| {lists} eklendi ({names})
+674| {n} arşivlenmiş öğe “{list}” listesine taşındı
+675| Bu dosya iCalendar verisi içermiyor (BEGIN:VCALENDAR yok).
+676| Hatırlatıcı dosyanız okunamadı
+677| {path} konumuna dışa aktarıldı
+678| Dışa aktar
+679| Her şey (hatırlatıcılar ve görevler)
+680| Dosya Outlook, Google Takvim, Thunderbird, Apple Takvim ve özgün ReminderFox eklentisiyle çalışır.
+681| ReminderFoxAgain her gün bir yedek alır, her geri yüklemeden önce bir tane alır ve “Şimdi yedekle” ile aldıklarınızı saklar. Geri yükleme, mevcut hatırlatıcılarınızı ve görevlerinizi yedekle değiştirir; şu anki durumunuz önce kaydedilir, böylece her zaman geri dönebilirsiniz.
+682| Oluşturuldu
+683| İçerik
+684| Geri yükle
+685| Geri yükle…
+686| Başka dosya seç…
+687| {n} arşivlenmiş
+688| Okunamıyor: {s}
+689| {s} okunamadı: {s2}
+690| Bu dosya geri yüklenemiyor
+691| Henüz yedek yok. Uygulamanın çalıştığı her gün alınır; “Şimdi yedekle”ye de tıklayabilirsiniz.
+692| Günlük yedek
+693| Sizin aldığınız yedek
+694| Bir geri yüklemeden önce kaydedildi
+695| Her şeyi değiştiren bir içe aktarmadan önce kaydedildi
+696| Liste olmadan önceki arşiv
+697| Arşivin günlük yedeği (önceki sürüm)
+698| Yedek
+699| Bu yedek geri yüklensin mi?
+700| Bu, şu anki durumunuzu ({now}) {when} tarihli yedekle değiştirir: {items}.
+701| Bu, şu anki durumunuzu ({now}) {when} tarihli yedekle değiştirir: {items} ve “{list}” listesine gidecek {n} arşivlenmiş öğe.
+702| Bu, önceki bir sürümün arşivinin kopyasıdır. Öğeleri ({all}) “{list}” listesine gider (zaten sahip olduğunuz öğeler olduğu gibi kalır). Başka hiçbir şey değişmez.
+703| Mevcut verileriniz önce “Bir geri yüklemeden önce kaydedildi” yedeği olarak saklanır; böylece bunu aynı listeden geri alabilirsiniz.
+704| Yedek geri yüklendi
+705| Geri yüklendi: {items}.
+706| Geri yüklendi: {items}; bunların {n} arşivlenmiş olanı artık “{list}” listesinde.
+707| Önceki durumunuz {file} olarak kaydedildi.
+708| Yedek {path} konumuna kaydedildi
+709| Yedeklendi: {s}
+710| {n} bayt
+711| {n} KB
+712| {n} MB
+713| Bu öğe artık yok.
+714| Arşiv dosyası okunamadı, bu yüzden değiştirilmedi. archive.ics.unreadable olarak saklandı.
+715| Arşiv dosyası okunamadı, bu yüzden değiştirilemez.
+716| ReminderFoxAgain'e hoş geldiniz
+717| Hatırlatıcılarınız, görevleriniz ve alarmlarınız bir Windows uygulamasında — özgün ReminderFox eklentisine bir saygı duruşu.
+718| ReminderFox eklentinizden içe aktar
+719| {path} — son değişiklik {date}
+720| Bir reminderfox.ics veya başka bir takvim dosyası içe aktar…
+721| ReminderFox eklentisinden (Firefox/Thunderbird profilinizdeki “reminderfox” klasörü), Outlook'tan, Google Takvim'den…
+722| Boş bir listeyle başla
+723| Daha sonra Ayarlar → Veriler'den içe aktarabilirsiniz.
+724| şimdi
+725| {n} dk sonra
+726| {n} saat sonra
+727| {n} gün sonra
+728| {n} dk önce
+729| {n} saat önce
+730| {n} gün önce
+731| {app} uygulamasını aç
+732| Hatırlatıcı ekle…
+733| Liste öğesi ekle…
+734| Hızlı alarm…
+735| Alarmları sürdür
+736| Bugünün hatırlatıcılarını göster
+737| {app} uygulamasından çık
+738| {app} — alarmlar kapalı
+739| {app} — alarmlar {time} saatine kadar kapalı
+740| {app} — bugün bir şey yok
+741| yaklaşan
+742| {app} hâlâ çalışıyor
+743| Alarmlar görünmeye devam edecek. Çıkmak için sistem tepsisindeki tilkiye sağ tıklayın.
+744| {app} alarmı
+745| {app} — bugün
+746| {n} sa {n2} dk
+747| iCalendar dosyaları
+748| Tüm dosyalar
+749| Ses dosyaları
+750| iCalendar dosyası içe aktar
+751| iCalendar dosyasına dışa aktar
+752| reminderfox.ics dosyanızı seçin
+753| Bir alarm sesi seçin
+754| Bir yedek kopya kaydet
+755| Geri yüklenecek bir yedek seçin
+756| Her hafta: {days}
+757| Her ayın {nth} {weekday} günü
+758| Her ayın {day}. günü
+759| Her ay aynı gün
+760| Her {n} ayda bir aynı gün
+761| Her yıl {month} ayının {nth} {weekday} günü
+762| Her yıl {date}
+763| Her yıl aynı tarihte
+764| Her {n} yılda bir aynı tarihte
+765| Tekrarlanır
+766| Özel ({rule})
+767| {rule}, bir kez
+768| {rule}, {n} kez
+769| {rule}, {date} tarihine kadar
+770| Tamamlandı olarak işaretlediğiniz hatırlatıcıları göster
+771| Tamamlandı olarak işaretlediğiniz hatırlatıcıları ve liste öğelerini göster
+772| Benim sıram: satırları sürükleyin veya Alt+↑ / Alt+↓ tuşlarına basın
+773| Görünüm
+774| Alarm sesi
+775| Kendi dosyanız…
+776| Kendi ses dosyanızı kullanın (.mp3, .wav, .ogg, .m4a, .aac, .flac veya .webm)
+777| Siz ilgilenene kadar sürekli
+778| Siz ilgilenene kadar sürekli: alarmı erteleyene, açana, bitti olarak işaretleyene veya kapatana ya da alarm penceresini gizleyene kadar ses tekrar tekrar çalar. Sonraki alarm onu yeniden başlatır.
+779| Sütunlar
+780| Hatırlatıcılar sekmesindeki sütunlar
+781| Listelerdeki sütunlar
+782| Bir sütunu gizlemek için işaretini kaldırın. Açıklama her zaman gösterilir.
+783| Hatırlatıcılar sekmesi için kayıtlı filtreler
+784| Hatırlatıcıları yönet…
+785| Yaklaşan, Tüm hatırlatıcılar, Önemli, arama ve tarihsiz kayıtlı filtreler
+786| Yaklaşan, Tüm hatırlatıcılar, Önemli, arama ve tarih aralığı olmayan kayıtlı filtreler kullanır. Bugün, Sonraki {n} gün, Seçili gün veya ay, Ay sekmesi ve takvim her zaman her tarihi gösterir.
+787| Kayıtlı filtreler
+788| Kayıtlı filtre “{s}” · {c}
+789| Hatırlatıcıları yönet
+790| Kayıtlı filtre, Hatırlatıcılar sekmesinde yalnızca görmek istediğiniz hatırlatıcıları gösterir: Göster listesinden seçin. Farklı alanlardaki koşulların tümü sağlanmalıdır; bir koşul içindeki virgüller “bunlardan herhangi biri” anlamına gelir.
+791| ＋ Yeni kayıtlı filtre…
+792| Henüz kayıtlı filtre yok. Oluşturmak için “Yeni kayıtlı filtre…”ye tıklayın — örneğin önümüzdeki yıl içinde “Doğum günü” kategorisine sahip her hatırlatıcı.
+793| Kayıtlı filtre silinsin mi?
+794| “{s}” kayıtlı filtresi silinecek. Hatırlatıcılarınız değişmez.
+795| Kayıtlı filtreyi düzenle
+796| Yeni kayıtlı filtre
+797| Lütfen kayıtlı filtreye bir ad verin.
+798| Bu adda bir kayıtlı filtre zaten var.
+799| Kayıtlı filtre değiştirildi
+800| “{s}” kayıtlı filtresi eklendi
+801| Çan
+802| Marimba
+803| Dijital bip sesleri
+804| Çalar saat
+805| Dosyanız: {s}
+806| Beş renkten kendi temanızı oluşturun
+807| ＋ Yeni tema…
+808| Temanızın renklerini değiştirin
+809| ＋ Yeni tema… beş renkten kendi temanızı oluşturur.
+810| Temalarınız
+811| Arka plan
+812| Her şeyin arkasında
+813| Listeler ve paneller
+814| Listeler, takvim paneli, iletişim kutuları
+815| Metin
+816| Vurgu
+817| Düğmeler, bugün, seçim
+818| Yıldızlı öğeler
+819| Önemli hatırlatıcılar ve yapılacaklar
+820| Metin arka planda zor okunuyor (karşıtlık {n}:1; 4,5:1 ve üzeri kolay okunur).
+821| Vurgu listelerde zor görünüyor (karşıtlık {n}:1; 3:1 veya üzeri daha iyi).
+822| Yıldızlı öğeler listelerde zor görünüyor (karşıtlık {n}:1; 3:1 veya üzeri daha iyi).
+823| Temayı düzenle
+824| Yeni tema
+825| Başlangıç
+826| örn. Orman
+827| Siz seçerken tüm pencere temayı gösterir. İptal eskisini geri getirir.
+828| Lütfen temaya bir ad verin.
+829| Bu adda bir tema zaten var.
+830| “{s}” teması kaydedildi
+831| “{s}” teması eklendi
+832| Tema silinsin mi?
+833| “{s}” teması silinecek. Uygulama varsayılan temaya döner.

@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; media-src 'self' data:">
+<title>ReminderFoxAgain</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="themes.css">
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand" translate="no"><img src="../../assets/icon.png" alt=""><div>ReminderFox<span>Again</span></div></div>
+    <button class="btn primary" id="addReminder" title="New reminder (Ctrl+N)"><span class="k">＋</span> Reminder</button>
+    <button class="btn primary" id="addTodo" title="New item in the list being shown (Ctrl+T)"><span class="k">＋</span> List Item</button>
+    <button class="btn ghost" id="quickBtn" title="Quick alarm: a one-off alarm in a few minutes (Ctrl+Q)">⏰ Quick alarm</button>
+    <span class="spacer"></span>
+    <div class="search"><input class="inp" id="search" type="search" placeholder="Search reminders and to-dos" aria-label="Search" title="Search (Ctrl+F)"></div>
+    <button class="btn ghost" id="settingsBtn" title="Settings">⚙ Settings</button>
+  </header>
+
+  <div class="body">
+    <main>
+      <div class="tabs" role="tablist">
+        <button class="tab" role="tab" data-tab="reminders" aria-selected="true">Reminders<span class="count" id="cntRem"></span></button>
+        <div class="tab tab-list" role="tab" data-tab="todos" aria-selected="false"><select id="todoList" class="tab-select" aria-label="List to show"></select></div>
+        <button class="tab" role="tab" data-tab="month" aria-selected="false">Month</button>
+        <span class="spacer" style="flex:1"></span>
+        <button class="nav side-toggle" id="sideToggle" title="Show or hide the calendar panel (Ctrl+B)" aria-label="Show or hide the calendar panel">◧</button>
+      </div>
+
+      <!-- reminders toolbar -->
+      <div class="toolbar" id="tbReminders">
+        <label for="remFilter">Show</label>
+        <select class="sel" id="remFilter">
+          <option value="upcoming">Upcoming</option>
+          <option value="today">Today</option>
+          <option value="week">Next 7 days</option>
+          <option value="day">Selected day</option>
+          <option value="month">Selected month</option>
+          <option value="all">All reminders</option>
+          <option value="past">Past</option>
+          <option value="important">Important</option>
+        </select>
+        <label for="remCat">Category</label>
+        <select class="sel" id="remCat"></select>
+        <label class="inline-chk" title="Show reminders you have ticked as completed"><input type="checkbox" class="chk" id="remDone" checked> Show completed</label>
+        <span class="spacer"></span>
+        <span class="hint" id="remHint"></span>
+      </div>
+
+      <!-- to-do toolbar -->
+      <div class="toolbar hidden" id="tbTodos">
+        <label for="todoCat">Category</label>
+        <select class="sel" id="todoCat"></select>
+        <label for="todoSort">Order</label>
+        <select class="sel" id="todoSort" title="My order: drag rows, or press Alt+↑ / Alt+↓"><option value="manual">My order</option><option value="date">Due by</option><option value="time">Time</option><option value="summary">Description</option><option value="important">Important</option><option value="completed">Completed</option><option value="repeat">Repeat</option><option value="category">Category</option><option value="alarm">Alarm</option></select>
+        <label class="inline-chk"><input type="checkbox" class="chk" id="showDone"> Show completed</label>
+      </div>
+      <div class="toolbar sub hidden" id="tbTodoActs">
+        <span class="sel-acts" id="todoActs" role="group" aria-label="Selected item">
+          <span class="lbl-sel">Selected item:</span>
+          <button type="button" class="btn ghost sm" data-ta="dup" title="An exact copy in this list (Ctrl+D)" disabled>Duplicate</button>
+          <button type="button" class="btn ghost sm" data-ta="move" title="Move it to another list" disabled>Move to…</button>
+          <button type="button" class="btn ghost sm" data-ta="copy" title="Put a copy on another list" disabled>Copy to…</button>
+          <button type="button" class="btn ghost sm danger" data-ta="del" title="Delete (Del)" disabled>Delete</button>
+        </span>
+        <span class="spacer"></span>
+        <span class="hint" id="todoHint"></span>
+      </div>
+
+      <!-- month toolbar -->
+      <div class="toolbar hidden" id="tbMonth">
+        <button class="nav" id="mPrev" title="Previous month">‹</button>
+        <strong id="mTitle" style="min-width:150px;text-align:center"></strong>
+        <button class="nav" id="mNext" title="Next month">›</button>
+        <button class="btn" id="mToday">Today</button>
+        <label class="inline-chk"><input type="checkbox" class="chk" id="mTodos" checked> Show to-dos</label>
+        <label class="inline-chk" title="Show reminders and list items you have ticked as completed"><input type="checkbox" class="chk" id="mDone"> Show completed</label>
+        <span class="spacer"></span>
+        <span class="hint">Double-click a day to add a reminder</span>
+      </div>
+
+      <div class="listwrap" id="listView"></div>
+      <div class="month hidden" id="monthView">
+        <div class="month-head" id="monthHead"></div>
+        <div class="month-grid" id="monthGrid"></div>
+      </div>
+    </main>
+
+    <aside class="side">
+      <div class="mcal" id="mcal"></div>
+      <div class="agenda" id="agenda"></div>
+    </aside>
+  </div>
+
+  <footer class="status">
+    <span id="statusCount"></span><span id="statusVersion"></span>
+    <span class="spacer"></span>
+    <a id="alarmState" title="Suspend or resume alarms">🔔 Alarms on</a>
+    <a id="openFolder" title="Show the reminders file in File Explorer">Data file</a>
+  </footer>
+</div>
+
+<!-- ======================= editor dialog -->
+<dialog id="editor">
+  <form class="dlg" method="dialog" id="edForm" autocomplete="off">
+    <div class="dlg-head">
+      <h2 id="edTitle">New reminder</h2>
+      <div class="seg" role="group" aria-label="Type">
+        <button type="button" data-kind="event" aria-pressed="true">Reminder</button>
+        <button type="button" data-kind="todo" aria-pressed="false">To-Do</button>
+      </div>
+    </div>
+    <div class="dlg-body">
+      <div class="row">
+        <input class="inp title-inp grow" id="edSummary" placeholder="What do you want to be reminded of?" required aria-label="Description">
+        <button type="button" class="star-btn" id="edImportant" aria-pressed="false" title="Important">★</button>
+      </div>
+      <div class="note hidden" id="edAgeNote"></div>
+
+      <div class="row">
+        <div class="field"><label for="edDate" id="edDateLbl">Date</label><input class="inp" type="date" id="edDate"></div>
+        <div class="field" id="edTimeWrap"><label for="edTime">Time</label><input class="inp" type="time" id="edTime"></div>
+        <div class="field" style="justify-content:flex-end;padding-bottom:7px"><label class="inline-chk"><input type="checkbox" class="chk" id="edAllDay"> <span id="edAllDayTxt">All day</span></label></div>
+        <div class="field hidden" id="edNoDateWrap" style="justify-content:flex-end;padding-bottom:7px"><label class="inline-chk"><input type="checkbox" class="chk" id="edNoDate"> No date</label></div>
+      </div>
+      <div class="row" id="edEndRow">
+        <div class="field"><label for="edEndDate">Ends</label><input class="inp" type="date" id="edEndDate"></div>
+        <div class="field" id="edEndTimeWrap"><label for="edEndTime">&nbsp;</label><input class="inp" type="time" id="edEndTime"></div>
+        <span class="note" style="align-self:flex-end;padding-bottom:8px">optional</span>
+      </div>
+      <div class="note hidden" id="edTz"></div>
+
+      <!-- repeat -->
+      <div class="box" id="edRepeatBox">
+        <div class="row">
+          <span class="lbl" style="width:60px">Repeat</span>
+          <select class="sel" id="edFreq">
+            <option value="">Does not repeat</option>
+            <option value="DAILY">Daily</option>
+            <option value="WEEKLY">Weekly</option>
+            <option value="MONTHLY">Monthly</option>
+            <option value="YEARLY">Yearly</option>
+            <option value="CUSTOM" hidden>Custom (imported)</option>
+          </select>
+          <span id="edEveryWrap" class="row" style="gap:6px">every <input class="inp" id="edInterval" type="number" min="1" max="999" value="1" style="width:64px"> <span id="edUnit">days</span></span>
+        </div>
+        <div class="row hidden" id="edWeekRow"><span class="lbl" style="width:60px">On</span><div class="daypick" id="edDays"></div></div>
+        <div class="row hidden" id="edMonthRow"><span class="lbl" style="width:60px">On</span><select class="sel" id="edMode"></select></div>
+        <div class="row hidden" id="edEndsRow">
+          <span class="lbl" style="width:60px">Ends</span>
+          <select class="sel" id="edEnds"><option value="never">Never</option><option value="until">On date</option><option value="count">After</option></select>
+          <input class="inp hidden" type="date" id="edUntil">
+          <span class="row hidden" id="edCountWrap" style="gap:6px"><input class="inp" type="number" id="edCount" min="1" max="9999" value="10" style="width:72px"> times</span>
+        </div>
+        <div class="summary" id="edRepeatSummary"></div>
+      </div>
+
+      <!-- a to-do's reminders: from a start, then every … until it's done -->
+      <div class="box hidden" id="edRemindBox">
+        <div class="row">
+          <span class="lbl" style="width:84px">Remind me</span>
+          <select class="sel" id="edRmStart" aria-label="When to start reminding"></select>
+          <input class="inp hidden" type="date" id="edRmDate" aria-label="First reminder date">
+          <span class="row" id="edRmAtWrap" style="gap:6px">at <input class="inp" type="time" id="edRmAt" value="09:00" aria-label="Reminder time"></span>
+        </div>
+        <div class="row" id="edRmEveryRow">
+          <span class="lbl" style="width:84px">Then</span>
+          <select class="sel" id="edRmEvery" aria-label="How often"><option value="once">no more (just once)</option><option value="day">every day</option><option value="2days">every 2 days</option><option value="week">every week</option><option value="2weeks">every 2 weeks</option><option value="month">every month</option></select>
+          <span id="edRmUntil" class="note">until it's done</span>
+          <label class="inline-chk" id="edRmAfterWrap" title="Keep reminding when the due date has passed and it isn't done"><input type="checkbox" class="chk" id="edRmAfter" checked> also after the due date</label>
+        </div>
+        <div class="summary" id="edRmSummary"></div>
+      </div>
+
+      <!-- alarm -->
+      <div class="row" id="edAlarmRow">
+        <span class="lbl" style="width:60px">Alarm</span>
+        <select class="sel" id="edAlarm"></select>
+        <span class="row hidden" id="edAlarmCustom" style="gap:6px">
+          <input class="inp" type="number" id="edAlarmN" min="0" max="9999" value="15" style="width:72px">
+          <select class="sel" id="edAlarmUnit"><option value="1">minutes</option><option value="60">hours</option><option value="1440">days</option><option value="10080">weeks</option></select>
+          before
+        </span>
+        <span class="row hidden" id="edAlarmAllDay" style="gap:6px">
+          <select class="sel" id="edAlarmDay"><option value="0">on the day</option><option value="1">1 day before</option><option value="2">2 days before</option><option value="3">3 days before</option><option value="7">1 week before</option><option value="14">2 weeks before</option></select>
+          at <input class="inp" type="time" id="edAlarmAt" value="09:00">
+        </span>
+      </div>
+
+      <div class="row" id="edFlagsRow">
+        <span class="lbl" style="width:60px"></span>
+        <label class="inline-chk" id="edRucWrap" title="If you miss it, it moves to today and alarms every day until you tick it"><input type="checkbox" class="chk" id="edRuc"> Remind me daily until completed</label>
+        <label class="inline-chk hidden" id="edTipWrap" title="List this to-do in the tray icon's tooltip"><input type="checkbox" class="chk" id="edTip"> Show in the tray tooltip</label>
+      </div>
+      <div class="row">
+        <div class="field grow"><label for="edCats">Category</label><div class="row" style="gap:4px;flex-wrap:nowrap"><input class="inp grow" id="edCats" list="catList" placeholder="e.g. Birthday, Work"><button type="button" class="btn ghost" id="edCatPick" title="Choose categories">▾</button></div></div>
+        <div class="field grow hidden" id="edListWrap"><label for="edList">List</label><input class="inp" id="edList" list="listList"></div>
+      </div>
+      <div class="row">
+        <div class="field grow"><label for="edLocation">Location</label><div class="row" style="gap:4px;flex-wrap:nowrap"><input class="inp grow" id="edLocation"><button type="button" class="btn ghost" id="edMap" title="Show on a map">🗺</button></div></div>
+        <div class="field grow"><label for="edUrl">Link</label><div class="row" style="gap:4px;flex-wrap:nowrap"><input class="inp grow" id="edUrl" placeholder="https://"><button type="button" class="btn ghost" id="edOpenUrl" title="Open link">↗</button></div></div>
+      </div>
+      <div class="field"><label for="edNotes">Notes</label><textarea class="inp" id="edNotes" rows="3"></textarea></div>
+      <div class="note hidden" id="edSeriesNote">This repeats — changes apply to every occurrence.</div>
+    </div>
+    <div class="dlg-foot">
+      <button type="button" class="btn danger hidden" id="edDelete">Delete…</button>
+      <button type="button" class="btn ghost hidden" id="edSchedule" title="The date is known: make this to-do a reminder on an exact date">Schedule as a reminder…</button>
+      <label class="inline-chk hidden" id="edDoneWrap"><input type="checkbox" class="chk" id="edDone"> Completed</label>
+      <span class="spacer"></span>
+      <button type="button" class="btn" id="edCancel">Cancel</button>
+      <button type="submit" class="btn primary" id="edSave">Save</button>
+    </div>
+  </form>
+</dialog>
+<datalist id="catList"></datalist>
+<datalist id="listList"></datalist>
+
+<!-- ======================= confirm dialog -->
+<dialog id="confirm">
+  <div class="dlg small">
+    <div class="dlg-head"><h2 id="cfTitle"></h2></div>
+    <div class="dlg-body" id="cfBody"></div>
+    <div class="dlg-foot" id="cfFoot"></div>
+  </div>
+</dialog>
+
+<!-- ======================= export dialog -->
+<dialog id="exportDlg">
+  <div class="dlg small">
+    <div class="dlg-head"><h2>Export to .ics</h2></div>
+    <div class="dlg-body">
+      <label class="inline-chk"><input type="radio" name="exp" value="all" checked> Everything (reminders and to-dos)</label>
+      <label class="inline-chk"><input type="radio" name="exp" value="event"> Reminders only</label>
+      <label class="inline-chk"><input type="radio" name="exp" value="todo"> To-dos only</label>
+      <div class="note">The file works with Outlook, Google Calendar, Thunderbird, Apple Calendar and the original ReminderFox add-on.</div>
+    </div>
+    <div class="dlg-foot"><span class="spacer"></span><button class="btn" data-close>Cancel</button><button class="btn primary" id="expGo">Export…</button></div>
+  </div>
+</dialog>
+
+<!-- ======================= settings dialog -->
+<dialog id="settingsDlg">
+  <div class="dlg settings">
+    <div class="dlg-head"><h2>Settings</h2>
+      <div class="seg" role="tablist" id="stTabs">
+        <button type="button" data-st="general" aria-pressed="true">General</button>
+        <button type="button" data-st="alarms" aria-pressed="false">Alarms</button>
+        <button type="button" data-st="display" aria-pressed="false">Display</button>
+        <button type="button" data-st="lists" aria-pressed="false">View</button>
+        <button type="button" data-st="data" aria-pressed="false">Data</button>
+      </div>
+    </div>
+    <div class="dlg-body">
+      <section class="st-panel" data-st-panel="general">
+        <label class="inline-chk"><input type="checkbox" class="chk" id="stStart"> Start ReminderFoxAgain when Windows starts</label>
+        <label class="inline-chk"><input type="checkbox" class="chk" id="stTray"> Keep running in the system tray when the window is closed</label>
+        <div class="row"><span class="lbl st-l">Week starts on</span><select class="sel" id="stWeek"><option value="0">Sunday</option><option value="1">Monday</option></select></div>
+        <div class="row"><span class="lbl st-l">Theme</span><select class="sel" id="stTheme"></select></div>
+        <div class="row"><span class="lbl st-l"></span><div class="theme-swatches" id="stThemeSw" role="group" aria-label="Themes"></div></div>
+        <div class="row"><span class="lbl st-l"></span><button class="btn" id="stThemeNew" title="Make a theme of your own from five colours">＋ New theme…</button><button class="btn ghost" id="stThemeEdit" title="Change the colours of your theme">Edit…</button><button class="btn ghost danger" id="stThemeDel">Delete…</button></div>
+        <div class="note">Default is Fox, light or dark to match Windows. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines. <span>＋ New theme… makes one of your own from five colours.</span></div>
+        <h3 class="st-h">About</h3>
+        <div class="note" id="stAbout">ReminderFoxAgain is a tribute to the original <a href="#" id="stRfLink">ReminderFox</a> add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl. Its file format, repeat rules, views, quick alarms and alert slider are theirs; thank you.</div>
+      </section>
+      <section class="st-panel" data-st-panel="alarms" hidden>
+        <label class="inline-chk"><input type="checkbox" class="chk" id="stSound"> Play a sound with alarms</label>
+        <div class="row"><span class="lbl st-l">Sound</span><select class="sel" id="stTone" aria-label="Alarm sound"></select><button class="btn" id="stSoundPick" title="Use a sound file of your own (.mp3, .wav, .ogg, .m4a, .aac, .flac or .webm)">Your own file…</button><button class="btn ghost" id="stSoundTest" title="Play it">▶ Test</button></div>
+        <div class="row"><span class="lbl st-l">Repeat the sound</span><select class="sel" id="stResound"><option value="0">No, play it once</option><option value="-1">Continuously until cleared</option><option value="1">Every minute</option><option value="2">Every 2 minutes</option><option value="5">Every 5 minutes</option><option value="10">Every 10 minutes</option><option value="15">Every 15 minutes</option></select></div>
+        <div class="note">Continuously until cleared: the sound plays again and again until you snooze, open, tick Done or dismiss the alarm, or hide the alarm window. The next alarm starts it again.</div>
+        <div class="row"><span class="lbl st-l">Default alarm for new reminders</span><select class="sel" id="stAlarm"></select></div>
+        <div class="row"><span class="lbl st-l">Default snooze</span><input class="inp" id="stSnoozeAmount" type="text" inputmode="numeric" maxlength="3" style="width:56px;text-align:right" aria-label="Default snooze, how many" title="A whole number from 1 to 999"><select class="sel" id="stSnoozeUnit" aria-label="Default snooze unit"><option value="seconds">seconds</option><option value="minutes">minutes</option><option value="hours">hours</option></select></div>
+        <div class="row"><button class="btn" id="stSuspend">Suspend alarms…</button><button class="btn" id="stQuick">⏰ Quick alarms…</button></div>
+        <h3 class="st-h">Reminder pop-up (the add-on's alert slider)</h3>
+        <label class="inline-chk"><input type="checkbox" class="chk" id="stSlider"> Show a pop-up with today's and upcoming reminders</label>
+        <div class="row"><span class="lbl st-l">Show</span><select class="sel" id="stSliderShow"><option value="both">Today's and upcoming</option><option value="today">Only today's</option><option value="upcoming">Only upcoming</option></select></div>
+        <div class="row"><span class="lbl st-l">When</span><select class="sel" id="stSliderEvery"><option value="0">At start-up only</option><option value="15">At start-up and every 15 minutes</option><option value="30">… every 30 minutes</option><option value="60">… every hour</option><option value="120">… every 2 hours</option><option value="240">… every 4 hours</option></select></div>
+        <div class="row"><span class="lbl st-l">Keep it open</span><select class="sel" id="stSliderKeep"><option value="5">5 seconds</option><option value="10">10 seconds</option><option value="15">15 seconds</option><option value="30">30 seconds</option><option value="60">1 minute</option><option value="0">Until I close it</option></select><select class="sel" id="stSliderCorner" aria-label="Corner"><option value="br">bottom right</option><option value="bl">bottom left</option><option value="tr">top right</option><option value="tl">top left</option></select></div>
+        <div class="row"><label class="inline-chk"><input type="checkbox" class="chk" id="stSliderSound"> Play the sound</label><span class="spacer" style="flex:1"></span><button class="btn ghost" id="stSliderNow">Show it now</button></div>
+        <div class="row"><span class="lbl st-l">"Upcoming" means the next</span><input class="inp" id="stUpcomingDays" type="number" min="1" max="60" style="width:64px"> days</div>
+        <h3 class="st-h">Count on the icon</h3>
+        <div class="row"><span class="lbl st-l">Show a number on the tray and taskbar icons</span><select class="sel" id="stBadge"><option value="off">No</option><option value="today">Today's open reminders and to-dos</option><option value="upcoming">Today's and upcoming</option></select></div>
+      </section>
+      <section class="st-panel" data-st-panel="display" hidden>
+        <div class="row"><span class="lbl st-l">Language</span><select class="sel" id="stLanguage" title="The language of menus, buttons and messages. Your reminders are not changed."></select></div>
+        <div class="note" id="stLangNote">The translations were written for ReminderFoxAgain and have not yet been checked by native speakers.</div>
+        <div class="row"><span class="lbl st-l">Text size</span><select class="sel" id="stTextSize"><option value="90">Small (90%)</option><option value="100">Normal</option><option value="110">Large (110%)</option><option value="125">Larger (125%)</option><option value="150">Largest (150%)</option></select></div>
+        <div class="row"><span class="lbl st-l">Dates</span><select class="sel" id="stDateFormat"></select></div>
+        <div class="row"><span class="lbl st-l">Times</span><select class="sel" id="stTimeFormat"><option value="">As in Windows</option><option value="12">12-hour (5:30 PM)</option><option value="24">24-hour (17:30)</option></select></div>
+        <label class="inline-chk"><input type="checkbox" class="chk" id="stSide"> Show the calendar panel next to the lists</label>
+        <div class="row"><span class="lbl st-l">Months in the calendar panel</span><select class="sel" id="stMonths"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+        <div class="row"><span class="lbl st-l">Maps</span><select class="sel" id="stMap"><option value="google">Google Maps</option><option value="osm">OpenStreetMap</option><option value="bing">Bing Maps</option></select></div>
+        <h3 class="st-h">Columns</h3>
+        <div class="row cols-row"><span class="lbl st-l">Reminders</span><div class="col-picks" id="stColsRem" role="group" aria-label="Columns in the Reminders tab"></div></div>
+        <div class="row cols-row"><span class="lbl st-l">Lists</span><div class="col-picks" id="stColsTodo" role="group" aria-label="Columns in the lists"></div></div>
+        <div class="note">Untick a column to hide it. The description is always shown.</div>
+        <h3 class="st-h">Tray icon tooltip</h3>
+        <div class="row"><span class="lbl st-l">Today's reminders</span><input class="inp grow" id="stTodayLabel" spellcheck="false"></div>
+        <div class="row"><label class="inline-chk st-l"><input type="checkbox" class="chk" id="stTipUpcoming"> Upcoming reminders</label><input class="inp grow" id="stUpcomingLabel" spellcheck="false"></div>
+        <div class="note">Variables: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — the same as the add-on. <a href="#" id="stLabelsReset">Reset</a></div>
+      </section>
+      <section class="st-panel" data-st-panel="lists" hidden>
+        <div class="row"><button class="btn" id="stViews" title="Saved filters for the Reminders tab">Manage reminders…</button><button class="btn" id="stLists">Manage lists…</button><button class="btn" id="stCats">Manage categories…</button></div>
+        <h3 class="st-h">Repeating reminders in the Reminders tab</h3>
+        <div class="row"><span class="lbl st-l">Future dates to show</span><select class="sel" id="stRepeatAhead" title="Upcoming, All reminders, Important, search and saved filters without dates"><optgroup label="Every date in the next"><option value="m1">1 month</option><option value="m3">3 months</option><option value="m6">6 months</option><option value="m12">12 months</option><option value="m24">2 years</option></optgroup><optgroup label="Only the next"><option value="n1">1 date</option><option value="n2">2 dates</option><option value="n3">3 dates</option><option value="n5">5 dates</option><option value="n10">10 dates</option></optgroup></select></div>
+        <div class="note">Used by Upcoming, All reminders, Important, search and saved filters without a date range. Today, Next 7 days, Selected day or month, the Month tab and the calendar always show every date.</div>
+        <div class="row"><span class="lbl st-l">In All and Past, show past ones from</span><select class="sel" id="stPastRepeat"><option value="all">the start of each series</option><option value="730">the last 2 years</option><option value="365">the last year</option><option value="90">the last 3 months</option></select></div>
+        <label class="inline-chk"><input type="checkbox" class="chk" id="stHideRepeat"> Hide repeating reminders</label>
+      </section>
+      <section class="st-panel" data-st-panel="data" hidden>
+        <h3 class="st-h st-first">Import and export</h3>
+        <div class="row"><button class="btn" id="stImport" title="Add the items from an .ics file (Ctrl+I)">Import an .ics file…</button><button class="btn" id="stOldRf" title="Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile">Import from ReminderFox…</button><button class="btn" id="stExport" title="Save an .ics file (Ctrl+E)">Export to .ics…</button></div>
+        <div class="note">Imports add to what you have; items already here are updated only if the file's copy is newer. Exports open in Outlook, Google Calendar, Thunderbird, Apple Calendar and the original ReminderFox add-on.</div>
+        <h3 class="st-h">Backups</h3>
+        <div class="row"><button class="btn" id="stBackup">Back up now</button><button class="btn" id="stBackupCopy">Save a backup copy…</button><button class="btn" id="stRestore">Restore from a backup…</button></div>
+        <div class="row"><button class="btn ghost" id="stBackups">Open backups folder</button><button class="btn ghost" id="stFolder">Open data folder</button></div>
+        <div class="note" id="stPath"></div>
+      </section>
+    </div>
+    <div class="dlg-foot"><span class="spacer"></span><button class="btn primary" data-close>Done</button></div>
+  </div>
+</dialog>
+
+<div class="ctx hidden" id="ctx"></div>
+
+<script src="i18n.js"></script>
+<script src="i18n-dom.js"></script>
+<script src="common.js"></script>
+<script src="app.js"></script>
+<script src="features.js"></script>
+</body>
+</html>

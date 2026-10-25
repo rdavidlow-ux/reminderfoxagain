@@ -1,0 +1,834 @@
+# Nederlands — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Herinnering
+2| ＋ Lijstitem
+3| ⚙ Instellingen
+4| Instellingen
+5| Zoeken
+6| Zoeken (Ctrl+F)
+7| Herinneringen en taken doorzoeken
+8| Nieuwe herinnering (Ctrl+N)
+9| Nieuw item in de getoonde lijst (Ctrl+T)
+10| Snel alarm: een eenmalig alarm over een paar minuten (Ctrl+Q)
+11| ⏰ Snel alarm
+12| Herinneringen
+13| Maand
+14| Lijst
+15| Lijsten
+16| Lijst: {s}
+17| Alle lijsten
+18| Kiezen welke lijst wordt getoond
+19| Getoonde lijst
+20| Taken
+21| Beëindigd of opgeschort
+22| Kalenderpaneel tonen of verbergen
+23| Kalenderpaneel tonen of verbergen (Ctrl+B)
+24| Alarmen aan
+25| Alarmen opgeschort
+26| Alarmen opgeschort tot {time}
+27| Hervatten
+28| Klik om de alarmen weer aan te zetten
+29| Alarmen opschorten of hervatten
+30| one={n} item | other={n} items
+31| one={n} herinnering | other={n} herinneringen
+32| one={n} taak | other={n} taken
+33| one={n} lijstitem | other={n} lijstitems
+34| one={n} nieuw item | other={n} nieuwe items
+35| one={n} gearchiveerd item | other={n} gearchiveerde items
+36| one={n} lijst | other={n} lijsten
+37| one={n} bestand | other={n} bestanden
+38| one={n} minuut | other={n} minuten
+39| one={n} uur | other={n} uur
+40| one={n} dag | other={n} dagen
+41| one={n} duplicaat | other={n} duplicaten
+42| Tonen
+43| Vandaag
+44| Morgen
+45| Gisteren
+46| Komende {n} dagen
+47| Binnenkort
+48| Alle herinneringen
+49| Belangrijk
+50| Voorbij
+51| Gekozen dag
+52| Gekozen maand
+53| Weergaven
+54| Weergave ‘{s}’
+55| Zoeken in alle herinneringen
+56| Datum
+57| Dag
+58| Tijd
+59| Omschrijving
+60| Herhaling
+61| Categorie
+62| Alarm
+63| Voltooid
+64| Voltooid {date}
+65| (geen omschrijving)
+66| Hier zijn geen herinneringen
+67| Klik op ＋ Herinnering om er een toe te voegen, of kies een andere weergave.
+68| Klik op ＋ Lijstitem om iets aan deze lijst toe te voegen.
+69| Achterstallig sinds {date}
+70| achterstallig sinds {date}
+71| Binnenkort: {s}
+72| Bewerken…
+73| Verwijderen…
+74| Verwijderen
+75| Dupliceren
+76| Kopiëren
+77| Verplaatsen
+78| Openen
+79| Koppeling openen
+80| Op een kaart tonen
+81| In de lijst tonen
+82| Als voltooid markeren
+83| Herinner me…
+84| Er een taak van maken…
+85| Er een taak van maken
+86| Er een herinnering van maken
+87| Plannen als herinnering…
+88| Plannen als herinnering
+89| Naar een lijst kopiëren…
+90| Naar een lijst kopiëren
+91| Naar lijst kopiëren…
+92| Naar lijst kopiëren
+93| Naar lijst verplaatsen…
+94| Naar lijst verplaatsen
+95| Verplaatsen naar…
+96| Kopiëren naar…
+97| Naar een andere lijst verplaatsen
+98| Een kopie op een andere lijst zetten
+99| Een exacte kopie in deze lijst (Ctrl+D)
+100| Verwijderen (Del)
+101| Gekozen item
+102| Gekozen item:
+103| Omhoog
+104| Omlaag
+105| -
+106| -
+107| -
+108| ‘{s}’ gedupliceerd
+109| {s} (kopie)
+110| Gekopieerd naar ‘{s}’
+111| Verplaatst naar ‘{s}’
+112| Verplaatsen naar ‘{s}’
+113| Nu een taak in ‘{s}’
+114| Nu een herinnering op {date}
+115| staat in ‘{s}’
+116| ‘{s}’ is leeg
+117| Verwijderd
+118| Keer verwijderd
+119| Terugkerende herinnering verwijderen
+120| Dit herhaalt zich — wijzigingen gelden voor elke keer.
+121| Alleen deze
+122| Alle keren
+123| Deze keer verwijderen
+124| Alle keren verwijderen…
+125| ‘{s}’ herhaalt zich ({rule}).
+126| Alleen die op {date} verwijderen, of alle keren?
+127| Alle keren verwijderen?
+128| Alles verwijderen
+129| Herinnering verwijderen?
+130| Taak verwijderen?
+131| ‘{s}’ wordt verwijderd.
+132| ‘{s}’ en alle herhalingen worden verwijderd.
+133| Er ging iets mis
+134| Vul eerst een locatie in.
+135| Vorige maand
+136| Volgende maand
+137| Naar vandaag
+138| Naar een datum gaan (Ctrl+G)
+139| Naar datum gaan
+140| Ga naar…
+141| Ga
+142| Een herinnering op deze dag toevoegen
+143| Dubbelklik op een dag om een herinnering toe te voegen
+144| Niets op deze dag.
+145| +{n} meer
+146| Nog niet gedaan
+147| Hele dag
+148| Hele dag {s}
+149| Taak
+150| Taak {s}
+151| Taak
+152| zo
+153| ma
+154| di
+155| wo
+156| do
+157| vr
+158| za
+159| zo
+160| ma
+161| di
+162| wo
+163| do
+164| vr
+165| za
+166| zondag
+167| maandag
+168| dinsdag
+169| woensdag
+170| donderdag
+171| vrijdag
+172| zaterdag
+173| Lijstitem
+174| Uiterlijk
+175| Volgorde
+176| Mijn volgorde
+177| Op datum
+178| Handmatig: sleep rijen of druk op Alt+↑ / Alt+↓
+179| Voltooide tonen
+180| Taken tonen
+181| Taken met datum meenemen
+182| Geen datum
+183| · geen einddatum
+184| · uiterlijk {date}
+185| · achterstallig
+186| · hele dag
+187| · ingesteld op {time}
+188| · over {n} min
+189| · {n} min geleden begonnen ·
+190| Deze taak in de knopinfo van het systeemvakpictogram tonen
+191| In de knopinfo van het systeemvak tonen
+192| ✓ In de knopinfo van het systeemvak tonen
+193| Wordt getoond in de knopinfo van het systeemvak
+194| Uit de knopinfo van het systeemvak gehaald
+195| Dagelijks herinneren tot voltooid
+196| Herinner me dagelijks tot het klaar is
+197| Herinnert dagelijks tot het klaar is
+198| Tot klaar
+199| Herinnert niet meer dagelijks
+200| Herinnert u elke dag tot u Klaar aanvinkt
+201| Gemist op {date}; herinnert u elke dag tot u het aanvinkt
+202| Als u het mist, schuift het naar vandaag en geeft het elke dag alarm tot u het aanvinkt
+203| Klaar — verschoven naar de volgende datum
+204| dagelijks
+205| wekelijks
+206| maandelijks
+207| elke {n} dagen
+208| elke {n} weken
+209| {n} d vooraf
+210| op de dag zelf
+211| {every} vanaf {from}
+212| eenmaal
+213| elke dag
+214| elke week
+215| elke maand
+216| one={n} dag voor de einddatum | other={n} dagen voor de einddatum
+217| op de einddatum
+218| Herinnert u {every}, vanaf {from}, om {time}
+219| Herinnert u {every}, vanaf {from}, om {time}, tot het klaar is
+220| Herinnert u {every}, vanaf {from}, om {time}, tot het klaar is (ook na de einddatum)
+221| Nieuwe herinnering
+222| Herinnering bewerken
+223| Nieuwe taak
+224| Taak bewerken
+225| Waaraan wilt u herinnerd worden?
+226| Wat moet er gebeuren?
+227| Soort
+228| Herinnering
+229| Op datum
+230| Elk moment
+231| Eindigt
+232| Locatie
+233| Koppeling
+234| -
+235| Notities
+236| Categorieën
+237| Categorieën kiezen
+238| bijv. Verjaardag, Werk
+239| Toevoegen
+240| Opslaan
+241| Annuleren
+242| Sluiten
+243| OK
+244| Ja
+245| Nee
+246| Geen
+247| Herhaalt niet
+248| Dagelijks
+249| Wekelijks
+250| Maandelijks
+251| Jaarlijks
+252| Aangepast…
+253| Aangepast
+254| Aangepast (geïmporteerd)
+255| Geïmporteerde behouden: {s}
+256| Elke werkdag
+257| Elke
+258| elke
+259| dag
+260| dagen
+261| week
+262| weken
+263| maand
+264| maanden
+265| jaar
+266| jaar
+267| keer
+268| Op {date}
+269| Op dag {day}
+270| Op de {nth} {weekday}
+271| Op de {nth} {weekday} van {month}
+272| Op de laatste {weekday}
+273| Op de laatste {weekday} van {month}
+274| Elke dag
+275| Elke {n} dagen
+276| Elke week
+277| Elke {n} weken
+278| Elke maand
+279| Elke week op {days}
+280| Elke {n} weken op {days}
+281| werkdagen
+282| Elke maand op dag {day}
+283| Elke {n} maanden op dag {day}
+284| Elke maand op de {nth} {weekday}
+285| Elke {n} maanden op de {nth} {weekday}
+286| Elk jaar op {date}
+287| Elke {n} jaar op {date}
+288| Elk jaar op de {nth} {weekday} van {month}
+289| Elke {n} jaar op de {nth} {weekday} van {month}
+290| laatste
+291| {n}e
+292| Hoe vaak
+293| Op
+294| Na
+295| Daarna
+296| -
+297| om
+298| vooraf
+299| Nooit
+300| Tot
+301| tot…
+302| op een datum…
+303| vanaf…
+304| niet meer (maar één keer)
+305| Herinner me
+306| Herinner me niet
+307| Wanneer beginnen met herinneren
+308| Datum van de eerste herinnering
+309| Tijd van de herinnering
+310| Blijven herinneren als de einddatum voorbij is en het niet klaar is
+311| ook na de einddatum
+312| tot het klaar is
+313| tot het klaar of verlopen is ({due})
+314| tot het klaar is, ook na de einddatum ({due})
+315| Eén herinnering, op {date} om {time}.
+316| Eén herinnering, op {date} om {time}. Dat tijdstip is voorbij — kies een later tijdstip of herinner herhaaldelijk.
+317| {every} om {time}, vanaf {date}, {end}.
+318| Geen herinneringen.
+319| Geen herinneringen. De taak wordt rood zodra de einddatum voorbij is.
+320| Kies de datum van de eerste herinnering.
+321| Alarmtekst
+322| Op het tijdstip
+323| one={n} minuut vooraf | other={n} minuten vooraf
+324| one={n} uur vooraf | other={n} uur vooraf
+325| one={n} dag vooraf | other={n} dagen vooraf
+326| one={n} week vooraf | other={n} weken vooraf
+327| Op de dag zelf, om {time}
+328| De dag ervoor, om {time}
+329| Wordt getoond als: {s}. <year> telt de jaren sindsdien; <year#> toont alleen het getal.
+330| Geïmporteerd in de tijdzone {zone} — getoond in uw lokale tijd. Bij opslaan wordt de lokale tijd bewaard.
+331| Vul een omschrijving in.
+332| Kies de einddatum of vink ‘Geen datum’ aan.
+333| Kies een datum.
+334| Kies de datum.
+335| Kies de datum.
+336| Vul de tijd in waarop het klaar moet zijn, of vink ‘Elk moment’ aan.
+337| Vul een tijd in of vink ‘Hele dag’ aan.
+338| De einddatum ligt vóór de begindatum.
+339| De eindtijd ligt vóór de begintijd.
+340| Herinnering toegevoegd
+341| Taak toegevoegd
+342| Opgeslagen
+343| De kopie bewerken
+344| De datum is bekend: maak van deze taak een herinnering op een vaste datum
+345| Uiterlijk {date}.
+346| Uiterlijk {date}, {time}.
+347| Zodra u de exacte datum weet, wordt de taak een herinnering op die datum: ze verdwijnt uit de takenlijst en verschijnt in Herinneringen, de maandweergave en de kalender. Notities, categorie, locatie en koppeling blijven behouden.
+348| Een herinnering op {date}, de hele dag.
+349| Een herinnering op {date}, om {time}.
+350| De herinnering wordt een taak op dezelfde datum, met herhaling, alarm en notities.
+351| De herinnering blijft; een kopie als taak op dezelfde datum, met herhaling, alarm en notities, komt op de lijst.
+352| Een exacte kopie gaat naar de gekozen lijst; dit item blijft waar het is.
+353| De lijst
+354| {s} (deze lijst)
+355| hoofdlijst
+356| ReminderFoxAgain-alarm
+357| Sluimeren
+358| Alles sluimeren
+359| Alles sluimeren {s}
+360| Alle herinneringen hier sluimeren voor uw standaard sluimertijd (te wijzigen in Instellingen)
+361| Hoe lang sluimeren, of tot welke tijd
+362| Sluimereenheid
+363| Sluimeren tot
+364| Negeren
+365| Alles negeren
+366| Klaar
+367| Klaar met dit snelle alarm
+368| Voorlopig verbergen (het alarm blijft actief en komt terug met het volgende)
+369| Een tijd zoals 15:30 of 3:30 pm (vroeger dan nu betekent morgen)
+370| Een geheel getal van {n} tot {n2}
+371| Vul een geheel getal van {n} tot {n2} in.
+372| Vul een geheel getal van 1 tot 999 in, of een datum en tijd.
+373| seconden
+374| minuten
+375| uur
+376| Snel alarm
+377| Snelle alarmen
+378| ⏰ Snelle alarmen…
+379| Een eenmalig alarm dat niet als herinnering wordt bewaard — zoals het Snelle alarm van de add-on.
+380| Over
+381| Om
+382| Voor
+383| Alarm zetten
+384| Dit alarm annuleren
+385| Geen snelle alarmen.
+386| Wacht op het alarm
+387| Snel alarm gezet op {time}
+388| Snel alarm geannuleerd
+389| Kies een tijd.
+390| Dat tijdstip is voorbij — kies een later tijdstip.
+391| Dat tijdstip is voorbij.
+392| Gaat af {when} ({until}).
+393| vandaag om {time}
+394| over minder dan een minuut
+395| over {time}
+396| over {hours} {minutes}
+397| Alarmen opschorten
+398| Alarmen opschorten…
+399| Alarmen een tijdje opschorten
+400| Opschorten
+401| Hoe lang
+402| Tot ik ze weer aanzet
+403| De alarmen blijven uit tot u ze hervat (statusbalk, systeemvakmenu of hier).
+404| Tijdens het opschorten openen er geen alarmvensters en blijft het herinneringsvenster weg. Alarmen die intussen vallen, verschijnen bij het hervatten.
+405| De alarmen zijn opgeschort tot u ze weer aanzet.
+406| De alarmen komen terug {when}.
+407| De alarmen staan weer aan
+408| Alarmen nu hervatten
+409| Kies een tijd in de toekomst.
+410| ReminderFoxAgain — vandaag
+411| Binnenkort
+412| Niets vandaag.
+413| Niets binnenkort.
+414| Algemeen
+415| Alarmen
+416| Weergave
+417| Gegevens
+418| Over
+419| ReminderFoxAgain starten wanneer Windows start
+420| In het systeemvak blijven draaien als het venster wordt gesloten
+421| Week begint op
+422| Thema
+423| Thema's
+424| Standaard (volgt Windows)
+425| Vos
+426| Licht
+427| Donker
+428| Oceaan
+429| Hoog contrast
+430| Standaard is Vos, licht of donker passend bij Windows. Items met een ster hebben in elk thema hun eigen kleur. Hoog contrast gebruikt zwart, wit, geel en cyaan met grotere tekst en dikkere lijnen.
+431| -
+432| ReminderFoxAgain is een eerbetoon aan de oorspronkelijke
+433| -
+434| add-on voor Firefox en Thunderbird, gemaakt door Tom Mutdosch en Daniel Lee met Guenter Wahl. Het bestandsformaat, de herhaalregels, weergaven, snelle alarmen en het meldingsvenster zijn van hen; dank u.
+435| Een geluid afspelen bij alarmen
+436| Geluid
+437| Ingebouwde gong
+438| Uw geluid
+439| Kiezen…
+440| Kiezen
+441| De ingebouwde gong gebruiken
+442| Gong
+443| Afspelen
+444| ▶ Test
+445| Alarmgeluid: {s}
+446| De ingebouwde gong wordt gebruikt
+447| Kies een geluidsbestand (.mp3, .wav, .ogg, .m4a, .aac, .flac of .webm).
+448| Dat geluidsbestand is groter dan 10 MB. Kies een korter bestand.
+449| Het geluid herhalen
+450| Nee, één keer afspelen
+451| Elke minuut
+452| Elke {n} minuten
+453| Standaardalarm voor nieuwe herinneringen
+454| Standaard sluimertijd
+455| Eenheid van de standaard sluimertijd
+456| Standaard sluimertijd, hoeveel
+457| Herinneringsvenster (het meldingsvenster van de add-on)
+458| Een venster tonen met herinneringen van vandaag en binnenkort
+459| Wanneer
+460| Alleen bij het opstarten
+461| Bij het opstarten en elke {n} minuten
+462| … elke {n} minuten
+463| … elk uur
+464| … elke {n} uur
+465| Openhouden
+466| {n} seconden
+467| Tot ik het sluit
+468| Hoek
+469| rechtsonder
+470| linksonder
+471| rechtsboven
+472| linksboven
+473| Het geluid afspelen
+474| Nu tonen
+475| ‘Binnenkort’ betekent de komende
+476| Getal op het pictogram
+477| Een getal tonen op de systeemvak- en taakbalkpictogrammen
+478| Open herinneringen en taken van vandaag
+479| Vandaag en binnenkort
+480| Alleen vandaag
+481| Alleen binnenkort
+482| Taal
+483| Systeemtaal ({s})
+484| De taal van menu's, knoppen en berichten. Uw herinneringen worden niet gewijzigd.
+485| De vertalingen zijn voor ReminderFoxAgain geschreven en nog niet door moedertaalsprekers nagekeken.
+486| Tekstgrootte
+487| Klein ({n}%)
+488| Normaal
+489| Groot ({n}%)
+490| Groter ({n}%)
+491| Grootst ({n}%)
+492| Datums
+493| Zoals in Windows ({s})
+494| Tijden
+495| Zoals in Windows
+496| {n}-uurs ({s})
+497| Het kalenderpaneel naast de lijsten tonen
+498| Maanden in het kalenderpaneel
+499| Kaarten
+500| -
+501| -
+502| -
+503| Knopinfo van het systeemvakpictogram
+504| Knopinfo
+505| Herinneringen van vandaag
+506| Komende herinneringen
+507| Variabelen: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — dezelfde als in de add-on.
+508| Herstellen
+509| Knopinfoteksten hersteld
+510| Lijsten beheren…
+511| Categorieën beheren…
+512| Weergaven beheren…
+513| Terugkerende herinneringen op het tabblad Herinneringen
+514| Te tonen toekomstige datums
+515| Binnenkort, Alle herinneringen, Belangrijk, zoeken en weergaven zonder datums
+516| Elke datum in de komende
+517| Alleen de volgende
+518| one={n} maand | other={n} maanden
+519| one={n} jaar | other={n} jaar
+520| one={n} datum | other={n} datums
+521| Gebruikt door Binnenkort, Alle herinneringen, Belangrijk, zoeken en weergaven zonder datumbereik. Vandaag, Komende {n} dagen, Gekozen dag of maand, het tabblad Maand en de kalender tonen altijd elke datum.
+522| In Alle en Voorbij, voorbije tonen vanaf
+523| het begin van elke reeks
+524| de laatste {n} jaar
+525| het laatste jaar
+526| de laatste {n} maanden
+527| Terugkerende herinneringen verbergen
+528| Voltooide herinneringen verbergen
+529| Importeren en exporteren
+530| Een .ics-bestand importeren…
+531| De items uit een .ics-bestand toevoegen (Ctrl+I)
+532| Importeren uit ReminderFox…
+533| De reminderfox.ics zoeken die de ReminderFox-add-on in uw Firefox- of Thunderbird-profiel bewaarde
+534| Exporteren naar .ics…
+535| Exporteren naar .ics
+536| Exporteren…
+537| Een .ics-bestand opslaan (Ctrl+E)
+538| Importeren voegt toe aan wat u hebt; bestaande items worden alleen bijgewerkt als de kopie in het bestand nieuwer is. Exports openen in Outlook, Google Agenda, Thunderbird, Apple Agenda en de oorspronkelijke ReminderFox-add-on.
+539| Back-ups
+540| Nu back-up maken
+541| Een back-upkopie opslaan…
+542| Herstellen uit een back-up…
+543| Herstellen uit een back-up
+544| Back-upmap openen
+545| Gegevensmap openen
+546| Gegevensbestand
+547| Het herinneringenbestand tonen in Verkenner
+548| Uw herinneringen worden bewaard in {path} (dagelijkse back-ups staan in de map ‘backups’ ernaast).
+549| ＋ Nieuwe lijst…
+550| Nieuwe lijst…
+551| Nieuwe lijst
+552| Naam van de nieuwe lijst
+553| Naam van de nieuwe lijst (bijvoorbeeld Boodschappen, Films om te zien, Cadeau-ideeën):
+554| Lijst toevoegen
+555| Lijst hernoemen
+556| Hernoemen…
+557| Verwijderen…
+558| Lijst verwijderen?
+559| ‘Taken’ is de hoofdlijst en kan niet worden hernoemd of verwijderd (zoals in de add-on). Als u een lijst verwijdert, kiest u of de taken naar ‘Taken’ gaan of worden verwijderd.
+560| De lijst ‘{list}’ heeft {n} taak. Naar ‘{main}’ verplaatsen, of samen met de lijst verwijderen?
+561| De lijst ‘{list}’ heeft {n} taken. Naar ‘{main}’ verplaatsen, of samen met de lijst verwijderen?
+562| Lijst en taken verwijderen
+563| one=Lijst en {n} taak verwijderd | other=Lijst en {n} taken verwijderd
+564| Lijst verwijderd
+565| Lijst ‘{s}’ toegevoegd
+566| ‘{s}’ bestaat al
+567| Die lijst bestaat al.
+568| Een lijstnaam mag niet leeg zijn en geen komma of dubbele punt bevatten.
+569| Een lijstnaam mag geen komma of dubbele punt bevatten.
+570| Lijsten samenvoegen?
+571| Samenvoegen
+572| Samengevoegd met ‘{s}’
+573| Hernoemd tot ‘{s}’
+574| Nieuwe naam voor ‘{name}’:
+575| Nieuwe naam voor ‘{name}’ (bij {items}):
+576| Nieuwe categorie
+577| Andere categorie
+578| Gangbare toevoegen
+579| Categorie ‘{s}’ toegevoegd
+580| {n} categorieën toegevoegd
+581| Niets nieuws om toe te voegen.
+582| Categorie hernoemen
+583| Categorie verwijderen?
+584| Categorie verwijderd
+585| Categorieën samenvoegen?
+586| Een categorie mag niet leeg zijn en geen komma bevatten.
+587| nog niet gebruikt
+588| Hernoemen wijzigt elke herinnering en taak met die categorie; hernoemen naar een bestaande voegt ze samen. Verwijderen haalt hem van zijn items (de items blijven).
+589| De categorie ‘{name}’ wordt verwijderd.
+590| De categorie ‘{name}’ wordt verwijderd en van {items} gehaald. De items zelf blijven.
+591| Jubileum
+592| Afspraak
+593| Verjaardag
+594| Zakelijk
+595| Telefoontje
+596| Feestdag
+597| Vergadering
+598| Persoonlijk
+599| Winkelen
+600| Reis
+601| Jubileum, Afspraak, Verjaardag, Zakelijk, Telefoontje…
+602| Nieuwe weergave
+603| ＋ Nieuwe weergave…
+604| Weergave bewerken
+605| Weergave verwijderen?
+606| De weergave ‘{s}’ wordt verwijderd. Uw herinneringen worden niet gewijzigd.
+607| Op het tabblad Herinneringen tonen
+608| Weergave opgeslagen
+609| Weergave ‘{s}’ toegevoegd
+610| Geef de weergave een naam.
+611| Er is al een weergave met die naam.
+612| Een weergave is een opgeslagen filter voor het tabblad Herinneringen: kies hem in de lijst Tonen. Voorwaarden op verschillende velden moeten allemaal kloppen; komma's binnen één voorwaarde betekenen ‘een van deze’.
+613| Nog geen weergaven. Klik op ‘Nieuwe weergave…’ om er een te maken — bijvoorbeeld elke herinnering met de categorie ‘Verjaardag’ in het komende jaar.
+614| Naam
+615| bijv. Verjaardagen
+616| Herinneringen tonen waarbij
+617| ＋ Voorwaarde toevoegen
+618| Deze voorwaarde verwijderen
+619| Iets
+620| De categorie
+621| De weergave
+622| Type
+623| is
+624| bevat
+625| woorden, gescheiden door komma's
+626| Alleen datums van
+627| tot
+628| vanaf vandaag
+629| vandaag
+630| Negatieve getallen gaan terug in de tijd: −{n} maand tot {n2} dagen betekent ‘de afgelopen maand’.
+631| Alle
+632| Alles
+633| Alleen herinneringen
+634| Alleen taken
+635| Eenheid
+636| Hoeveel
+637| Iets bevat ‘{s}’
+638| Categorie is ‘{s}’
+639| Categorie is ‘{s}’ of ‘{s2}’
+640| datums van vandaag tot {n} dagen vooruit
+641| one=+{n} week | other=+{n} weken
+642| one=+{n} maand | other=+{n} maanden
+643| one=+{n} jaar | other=+{n} jaar
+644| Importeren
+645| Een iCalendar-bestand importeren
+646| Importeren uit ReminderFox
+647| Uit ReminderFox
+648| {files} van de ReminderFox-add-on gevonden:
+649| De nieuwste importeren
+650| Toch importeren
+651| {reminders} en {items}
+652| {n} al aanwezig (de nieuwere kopie wordt behouden)
+653| {n} lijkt een duplicaat (zelfde titel en datum als een item dat u hebt)
+654| {n} lijken duplicaten (zelfde titel en datum als een item dat u hebt)
+655| Hoe
+656| Toevoegen aan wat ik heb
+657| Alles vervangen
+658| Alles vervangen (uw {items} worden eerst als back-up bewaard)
+659| Alles vervangen?
+660| Uw {items} worden vervangen door de {newItems} in het bestand.
+661| Wat u nu hebt, wordt eerst bewaard als back-up ‘Bewaard vóór een import die alles verving’, zodat u het terug kunt halen via Instellingen → Gegevens → Herstellen uit een back-up….
+662| Duplicaten
+663| Items overslaan met dezelfde titel en datum als een item dat ik heb
+664| Optioneel: wordt aan elk geïmporteerd item toegevoegd, bijvoorbeeld ‘Feestdagen’ voor een lijst met feestdagen, zodat u erop kunt filteren.
+665| optioneel
+666| Importeren voltooid
+667| {items} geïmporteerd
+668| {items} en {lists} geïmporteerd
+669| {n} bijgewerkt
+670| {n} al actueel
+671| one={n} duplicaat overgeslagen | other={n} duplicaten overgeslagen
+672| {items} worden vervangen (bewaard als {file})
+673| {lists} toegevoegd ({names})
+674| one={n} gearchiveerd item verplaatst naar de lijst ‘{list}’ | other={n} gearchiveerde items verplaatst naar de lijst ‘{list}’
+675| Dit bestand bevat geen iCalendar-gegevens (geen BEGIN:VCALENDAR).
+676| Uw herinneringenbestand kon niet worden gelezen
+677| Geëxporteerd naar {path}
+678| Exporteren
+679| Alles (herinneringen en taken)
+680| Het bestand werkt met Outlook, Google Agenda, Thunderbird, Apple Agenda en de oorspronkelijke ReminderFox-add-on.
+681| ReminderFoxAgain maakt elke dag een back-up, een vóór elk herstel, en de back-ups die u met ‘Nu back-up maken’ maakt. Herstellen vervangt uw huidige herinneringen en taken door de back-up; wat u nu hebt, wordt eerst bewaard, dus u kunt altijd terug.
+682| Gemaakt
+683| Inhoud
+684| Herstellen
+685| Herstellen…
+686| Ander bestand kiezen…
+687| {n} gearchiveerd
+688| Onleesbaar: {s}
+689| {s} kon niet worden gelezen: {s2}
+690| Dat bestand kan niet worden hersteld
+691| Nog geen back-ups. Ze worden gemaakt op elke dag dat de app draait; u kunt ook op ‘Nu back-up maken’ klikken.
+692| Dagelijkse back-up
+693| Back-up door u gemaakt
+694| Bewaard vóór een herstel
+695| Bewaard vóór een import die alles verving
+696| Het archief, voordat het een lijst werd
+697| Dagelijkse back-up van het archief (eerdere versie)
+698| Back-up
+699| Deze back-up herstellen?
+700| Dit vervangt wat u nu hebt ({now}) door de back-up van {when}: {items}.
+701| Dit vervangt wat u nu hebt ({now}) door de back-up van {when}: {items}, plus {n} gearchiveerd, die naar de lijst ‘{list}’ gaan.
+702| Dit is een kopie van het archief uit een eerdere versie. De {all} gaan naar de lijst ‘{list}’ (items die u al hebt blijven zoals ze zijn). Verder verandert er niets.
+703| Uw huidige gegevens worden eerst bewaard als back-up ‘Bewaard vóór een herstel’, zodat u dit in dezelfde lijst ongedaan kunt maken.
+704| Back-up hersteld
+705| {items} hersteld.
+706| {items} hersteld, waarvan {n} gearchiveerd, nu in de lijst ‘{list}’.
+707| Wat u eerst had, is bewaard als {file}.
+708| Back-up opgeslagen in {path}
+709| Back-up gemaakt: {s}
+710| {n} bytes
+711| {n} kB
+712| {n} MB
+713| Dat item bestaat niet meer.
+714| Het archiefbestand kon niet worden gelezen en blijft daarom ongewijzigd. Het is bewaard als archive.ics.unreadable.
+715| Het archiefbestand kon niet worden gelezen en kan daarom niet worden vervangen.
+716| Welkom bij ReminderFoxAgain
+717| Uw herinneringen, taken en alarmen als Windows-app — een eerbetoon aan de oorspronkelijke ReminderFox-add-on.
+718| Importeren uit uw ReminderFox-add-on
+719| {path} — laatst gewijzigd {date}
+720| Een reminderfox.ics of ander agendabestand importeren…
+721| Uit de ReminderFox-add-on (in de map ‘reminderfox’ van uw Firefox-/Thunderbird-profiel), Outlook, Google Agenda…
+722| Beginnen met een lege lijst
+723| U kunt later importeren via Instellingen → Gegevens.
+724| nu
+725| over {n} min
+726| one=over {n} uur | other=over {n} uur
+727| one=over {n} dag | other=over {n} dagen
+728| {n} min geleden
+729| one={n} uur geleden | other={n} uur geleden
+730| one={n} dag geleden | other={n} dagen geleden
+731| {app} openen
+732| Herinnering toevoegen…
+733| Lijstitem toevoegen…
+734| Snel alarm…
+735| Alarmen hervatten
+736| Herinneringen van vandaag tonen
+737| {app} afsluiten
+738| {app} — alarmen uit
+739| {app} — alarmen uit tot {time}
+740| {app} — niets vandaag
+741| binnenkort
+742| {app} draait nog
+743| Alarmen blijven verschijnen. Klik met de rechtermuisknop op de vos in het systeemvak om af te sluiten.
+744| {app}-alarm
+745| {app} — vandaag
+746| {n} u {n2} min
+747| iCalendar-bestanden
+748| Alle bestanden
+749| Geluidsbestanden
+750| iCalendar-bestand importeren
+751| Exporteren naar iCalendar-bestand
+752| Kies uw reminderfox.ics
+753| Kies een alarmgeluid
+754| Een back-upkopie opslaan
+755| Kies een back-up om te herstellen
+756| Wekelijks op {days}
+757| Maandelijks op de {nth} {weekday}
+758| Maandelijks op dag {day}
+759| Maandelijks op dezelfde dag
+760| Elke {n} maanden op dezelfde dag
+761| Jaarlijks op de {nth} {weekday} van {month}
+762| Jaarlijks op {date}
+763| Jaarlijks op dezelfde datum
+764| Elke {n} jaar op dezelfde datum
+765| Herhaalt
+766| Aangepast ({rule})
+767| {rule}, eenmaal
+768| {rule}, {n} keer
+769| {rule}, tot {date}
+770| Herinneringen tonen die u als voltooid hebt aangevinkt
+771| Herinneringen en lijstitems tonen die u als voltooid hebt aangevinkt
+772| Mijn volgorde: sleep rijen of druk op Alt+↑ / Alt+↓
+773| Weergave
+774| Alarmgeluid
+775| Eigen bestand…
+776| Een eigen geluidsbestand gebruiken (.mp3, .wav, .ogg, .m4a, .aac, .flac of .webm)
+777| Doorlopend tot afgehandeld
+778| Doorlopend tot afgehandeld: het geluid speelt steeds opnieuw tot u het alarm laat sluimeren, opent, als klaar markeert of negeert, of het alarmvenster verbergt. Het volgende alarm start het opnieuw.
+779| Kolommen
+780| Kolommen in het tabblad Herinneringen
+781| Kolommen in de lijsten
+782| Vink een kolom uit om hem te verbergen. De omschrijving wordt altijd getoond.
+783| Opgeslagen filters voor het tabblad Herinneringen
+784| Herinneringen beheren…
+785| Binnenkort, Alle herinneringen, Belangrijk, zoeken en opgeslagen filters zonder datums
+786| Gebruikt door Binnenkort, Alle herinneringen, Belangrijk, zoeken en opgeslagen filters zonder datumbereik. Vandaag, Komende {n} dagen, Gekozen dag of maand, het tabblad Maand en de kalender tonen altijd elke datum.
+787| Opgeslagen filters
+788| Opgeslagen filter ‘{s}’ · {c}
+789| Herinneringen beheren
+790| Een opgeslagen filter toont in het tabblad Herinneringen alleen de herinneringen die u wilt zien: kies het in de lijst Tonen. Voorwaarden op verschillende velden moeten allemaal kloppen; komma's binnen één voorwaarde betekenen ‘een van deze’.
+791| ＋ Nieuw opgeslagen filter…
+792| Nog geen opgeslagen filters. Klik op ‘Nieuw opgeslagen filter…’ om er een te maken — bijvoorbeeld elke herinnering met de categorie ‘Verjaardag’ in het komende jaar.
+793| Opgeslagen filter verwijderen?
+794| Het opgeslagen filter ‘{s}’ wordt verwijderd. Uw herinneringen worden niet gewijzigd.
+795| Opgeslagen filter bewerken
+796| Nieuw opgeslagen filter
+797| Geef het opgeslagen filter een naam.
+798| Er is al een opgeslagen filter met die naam.
+799| Opgeslagen filter gewijzigd
+800| Opgeslagen filter ‘{s}’ toegevoegd
+801| Bel
+802| Marimba
+803| Digitale piepjes
+804| Wekker
+805| Uw bestand: {s}
+806| Een eigen thema maken van vijf kleuren
+807| ＋ Nieuw thema…
+808| De kleuren van uw thema wijzigen
+809| ＋ Nieuw thema… maakt er een van vijf kleuren.
+810| Uw thema's
+811| Achtergrond
+812| Achter alles
+813| Lijsten en panelen
+814| De lijsten, het kalenderpaneel, dialoogvensters
+815| Tekst
+816| Accent
+817| Knoppen, vandaag, selectie
+818| Items met ster
+819| Belangrijke herinneringen en taken
+820| De tekst is slecht leesbaar op de achtergrond (contrast {n}:1; vanaf 4,5:1 goed leesbaar).
+821| Het accent is slecht zichtbaar op de lijsten (contrast {n}:1; 3:1 of meer is beter).
+822| Items met ster zijn slecht zichtbaar op de lijsten (contrast {n}:1; 3:1 of meer is beter).
+823| Thema bewerken
+824| Nieuw thema
+825| Uitgaan van
+826| bijv. Bos
+827| Het hele venster toont het thema terwijl u kiest. Annuleren zet het oude terug.
+828| Geef het thema een naam.
+829| Er is al een thema met die naam.
+830| Thema ‘{s}’ opgeslagen
+831| Thema ‘{s}’ toegevoegd
+832| Thema verwijderen?
+833| Het thema ‘{s}’ wordt verwijderd. De app gaat terug naar het standaardthema.

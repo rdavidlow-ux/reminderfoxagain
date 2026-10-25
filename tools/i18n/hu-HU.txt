@@ -1,0 +1,834 @@
+# Magyar — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Emlékeztető
+2| ＋ Listaelem
+3| ⚙ Beállítások
+4| Beállítások
+5| Keresés
+6| Keresés (Ctrl+F)
+7| Keresés az emlékeztetők és teendők között
+8| Új emlékeztető (Ctrl+N)
+9| Új elem a megjelenített listában (Ctrl+T)
+10| Gyors riasztás: egyszeri riasztás néhány perc múlva (Ctrl+Q)
+11| ⏰ Gyors riasztás
+12| Emlékeztetők
+13| Hónap
+14| Lista
+15| Listák
+16| Lista: {s}
+17| Minden lista
+18| A megjelenítendő lista kiválasztása
+19| Megjelenített lista
+20| Teendők
+21| Lezárt vagy felfüggesztett
+22| A naptárpanel megjelenítése vagy elrejtése
+23| A naptárpanel megjelenítése vagy elrejtése (Ctrl+B)
+24| Riasztások bekapcsolva
+25| Riasztások felfüggesztve
+26| Riasztások felfüggesztve eddig: {time}
+27| Folytatás
+28| Kattintson a riasztások visszakapcsolásához
+29| Riasztások felfüggesztése vagy folytatása
+30| {n} elem
+31| {n} emlékeztető
+32| {n} teendő
+33| {n} listaelem
+34| {n} új elem
+35| {n} archivált elem
+36| {n} lista
+37| {n} fájl
+38| {n} perc
+39| {n} óra
+40| {n} nap
+41| {n} ismétlődés
+42| Megjelenítés
+43| Ma
+44| Holnap
+45| Tegnap
+46| Következő {n} nap
+47| Közelgő
+48| Minden emlékeztető
+49| Fontos
+50| Múltbeli
+51| Kijelölt nap
+52| Kijelölt hónap
+53| Nézetek
+54| „{s}” nézet
+55| Keresés az összes emlékeztetőben
+56| Dátum
+57| Nap
+58| Idő
+59| Leírás
+60| Ismétlés
+61| Kategória
+62| Riasztás
+63| Kész
+64| Kész: {date}
+65| (nincs leírás)
+66| Itt nincsenek emlékeztetők
+67| Kattintson az ＋ Emlékeztető gombra egy új hozzáadásához, vagy válasszon másik nézetet.
+68| Kattintson az ＋ Listaelem gombra, hogy elemet adjon ehhez a listához.
+69| Lejárt ekkor óta: {date}
+70| lejárt ekkor óta: {date}
+71| Hamarosan: {s}
+72| Szerkesztés…
+73| Törlés…
+74| Törlés
+75| Duplikálás
+76| Másolás
+77| Áthelyezés
+78| Megnyitás
+79| Hivatkozás megnyitása
+80| Megjelenítés térképen
+81| Megjelenítés a listában
+82| Megjelölés készként
+83| Emlékeztess…
+84| Teendővé alakítás…
+85| Teendővé alakítás
+86| Emlékeztetővé alakítás
+87| Ütemezés emlékeztetőként…
+88| Ütemezés emlékeztetőként
+89| Másolás egy listába…
+90| Másolás egy listába
+91| Másolás listába…
+92| Másolás listába
+93| Áthelyezés listába…
+94| Áthelyezés listába
+95| Áthelyezés ide…
+96| Másolás ide…
+97| Áthelyezés másik listába
+98| Másolat egy másik listába
+99| Pontos másolat ebben a listában (Ctrl+D)
+100| Törlés (Del)
+101| Kijelölt elem
+102| Kijelölt elem:
+103| Feljebb
+104| Lejjebb
+105| -
+106| -
+107| -
+108| „{s}” duplikálva
+109| {s} (másolat)
+110| Másolva ide: „{s}”
+111| Áthelyezve ide: „{s}”
+112| Áthelyezés ide: „{s}”
+113| Most teendő itt: „{s}”
+114| Most emlékeztető ekkor: {date}
+115| itt van: „{s}”
+116| „{s}” üres
+117| Törölve
+118| Alkalom törölve
+119| Ismétlődő emlékeztető törlése
+120| Ez ismétlődik — a változások minden alkalomra vonatkoznak.
+121| Csak ez
+122| Minden alkalom
+123| Ennek az alkalomnak a törlése
+124| Minden alkalom törlése…
+125| „{s}” ismétlődik ({rule}).
+126| Csak a(z) {date} alkalmat törli, vagy mindet?
+127| Törli az összes alkalmat?
+128| Összes törlése
+129| Törli az emlékeztetőt?
+130| Törli a teendőt?
+131| „{s}” törlődik.
+132| „{s}” és minden ismétlése törlődik.
+133| Valami hiba történt
+134| Előbb adjon meg egy helyet.
+135| Előző hónap
+136| Következő hónap
+137| Ugrás a mai napra
+138| Ugrás dátumra (Ctrl+G)
+139| Ugrás dátumra
+140| Ugrás…
+141| Ugrás
+142| Emlékeztető hozzáadása erre a napra
+143| Kattintson duplán egy napra emlékeztető hozzáadásához
+144| Ezen a napon nincs semmi.
+145| +{n} további
+146| Még nincs kész
+147| Egész nap
+148| Egész nap {s}
+149| Teendő
+150| Teendő {s}
+151| Teendő
+152| V
+153| H
+154| K
+155| Sze
+156| Cs
+157| P
+158| Szo
+159| V
+160| H
+161| K
+162| Sze
+163| Cs
+164| P
+165| Szo
+166| vasárnap
+167| hétfő
+168| kedd
+169| szerda
+170| csütörtök
+171| péntek
+172| szombat
+173| Listaelem
+174| Határidő
+175| Sorrend
+176| Saját sorrend
+177| Dátum szerint
+178| Kézi: húzza a sorokat, vagy nyomja meg az Alt+↑ / Alt+↓ billentyűt
+179| Kész elemek mutatása
+180| Teendők mutatása
+181| Dátummal rendelkező teendőkkel együtt
+182| Nincs dátum
+183| · nincs határidő
+184| · határidő: {date}
+185| · lejárt
+186| · egész nap
+187| · beállítva: {time}
+188| · {n} perc múlva
+189| · {n} perce kezdődött ·
+190| A teendő megjelenítése a tálcaikon elemleírásában
+191| Megjelenítés a tálca elemleírásában
+192| ✓ Megjelenítés a tálca elemleírásában
+193| Látható a tálca elemleírásában
+194| Eltávolítva a tálca elemleírásából
+195| Napi emlékeztetés a befejezésig
+196| Emlékeztess minden nap, amíg kész nem lesz
+197| Minden nap emlékeztet, amíg kész nem lesz
+198| Amíg kész
+199| Már nem emlékeztet naponta
+200| Minden nap emlékezteti, amíg be nem jelöli: Kész
+201| Kimaradt: {date}; minden nap emlékezteti, amíg be nem jelöli
+202| Ha kimarad, átkerül a mai napra, és minden nap riaszt, amíg be nem jelöli
+203| Kész — áthelyezve a következő dátumra
+204| naponta
+205| hetente
+206| havonta
+207| {n} naponta
+208| {n} hetente
+209| {n} nappal előtte
+210| aznap
+211| {every}, kezdés: {from}
+212| egyszer
+213| minden nap
+214| minden héten
+215| minden hónapban
+216| {n} nappal a határidő előtt
+217| a határidő napján
+218| Emlékezteti {every}, kezdés: {from}, {time}-kor
+219| Emlékezteti {every}, kezdés: {from}, {time}-kor, amíg kész nem lesz
+220| Emlékezteti {every}, kezdés: {from}, {time}-kor, amíg kész nem lesz (a határidő után is)
+221| Új emlékeztető
+222| Emlékeztető szerkesztése
+223| Új teendő
+224| Teendő szerkesztése
+225| Mire emlékeztessem?
+226| Mit kell tenni?
+227| Típus
+228| Emlékeztető
+229| Dátumon
+230| Bármikor
+231| Vége
+232| Hely
+233| Hivatkozás
+234| -
+235| Jegyzetek
+236| Kategóriák
+237| Kategóriák kiválasztása
+238| pl. Születésnap, Munka
+239| Hozzáadás
+240| Mentés
+241| Mégse
+242| Bezárás
+243| OK
+244| Igen
+245| Nem
+246| Nincs
+247| Nem ismétlődik
+248| Naponta
+249| Hetente
+250| Havonta
+251| Évente
+252| Egyéni…
+253| Egyéni
+254| Egyéni (importált)
+255| Az importált megtartása: {s}
+256| Minden munkanapon
+257| Minden
+258| minden
+259| nap
+260| nap
+261| hét
+262| hét
+263| hónap
+264| hónap
+265| év
+266| év
+267| alkalommal
+268| {date}
+269| A hónap {day}. napján
+270| {nth} {weekday}
+271| {month} {nth} {weekday}
+272| Utolsó {weekday}
+273| {month} utolsó {weekday}
+274| Minden nap
+275| {n} naponta
+276| Minden héten
+277| {n} hetente
+278| Minden hónapban
+279| Minden héten: {days}
+280| {n} hetente: {days}
+281| munkanapokon
+282| Minden hónap {day}. napján
+283| {n} havonta, {day}. napon
+284| Minden hónap {nth} {weekday}
+285| {n} havonta, {nth} {weekday}
+286| Minden évben: {date}
+287| {n} évente: {date}
+288| Minden évben: {month} {nth} {weekday}
+289| {n} évente: {month} {nth} {weekday}
+290| utolsó
+291| {n}.
+292| Milyen gyakran
+293| Napok
+294| Utána
+295| Aztán
+296| -
+297| ekkor:
+298| előtte
+299| Soha
+300| Eddig
+301| eddig…
+302| egy dátumon…
+303| kezdés…
+304| többet nem (csak egyszer)
+305| Emlékeztess
+306| Ne emlékeztess
+307| Mikor kezdődjön az emlékeztetés
+308| Az első emlékeztető dátuma
+309| Az emlékeztető ideje
+310| Emlékeztetés folytatása, ha lejárt a határidő és nincs kész
+311| a határidő után is
+312| amíg kész nem lesz
+313| amíg kész nem lesz vagy le nem jár ({due})
+314| amíg kész nem lesz, a határidő után is ({due})
+315| Egy emlékeztető: {date}, {time}.
+316| Egy emlékeztető: {date}, {time}. Ez az időpont már elmúlt — válasszon későbbit, vagy emlékeztessen ismételten.
+317| {every} {time}-kor, kezdés: {date}, {end}.
+318| Nincs emlékeztető.
+319| Nincs emlékeztető. A teendő pirossal jelenik meg, ha lejárt a határideje.
+320| Válassza ki az első emlékeztető dátumát.
+321| Riasztás szövege
+322| Az időpontban
+323| {n} perccel előtte
+324| {n} órával előtte
+325| {n} nappal előtte
+326| {n} héttel előtte
+327| Aznap, {time}-kor
+328| Előző nap, {time}-kor
+329| Így jelenik meg: {s}. A <year> az azóta eltelt éveket számolja; a <year#> csak a számot mutatja.
+330| Importálva a(z) {zone} időzónában — helyi időben jelenik meg. Mentéskor helyi időben tárolódik.
+331| Adjon meg egy leírást.
+332| Válassza ki a határidőt, vagy jelölje be: „Nincs dátum”.
+333| Válasszon dátumot.
+334| Válassza ki a dátumot.
+335| Válassza ki a dátumot.
+336| Adja meg a határidő időpontját, vagy jelölje be: „Bármikor”.
+337| Adjon meg egy időpontot, vagy jelölje be: „Egész nap”.
+338| A záró dátum a kezdő dátum előtt van.
+339| A záró időpont a kezdő időpont előtt van.
+340| Emlékeztető hozzáadva
+341| Teendő hozzáadva
+342| Mentve
+343| A másolat szerkesztése
+344| A dátum ismert: alakítsa ezt a teendőt pontos dátumú emlékeztetővé
+345| Határidő: {date}.
+346| Határidő: {date}, {time}.
+347| Ha tudja a pontos dátumot, a teendő emlékeztetővé válik azon a napon: kikerül a teendőlistából, és megjelenik az Emlékeztetők között, a Hónap nézetben és a naptárban. A jegyzetek, a kategória, a hely és a hivatkozás megmarad.
+348| Emlékeztető: {date}, egész nap.
+349| Emlékeztető: {date}, {time}.
+350| Az emlékeztető ugyanarra a napra szóló teendővé válik, az ismétlésével, riasztásával és jegyzeteivel együtt.
+351| Az emlékeztető megmarad; egy teendő-másolat ugyanarra a napra, ismétléssel, riasztással és jegyzetekkel, a listára kerül.
+352| Egy pontos másolat a választott listára kerül; ez ott marad, ahol van.
+353| A lista
+354| {s} (ez a lista)
+355| fő lista
+356| ReminderFoxAgain riasztás
+357| Szundi
+358| Mind szundi
+359| Mind szundi: {s}
+360| Az itt lévő összes emlékeztető elhalasztása az alapértelmezett szundiidővel (a Beállításokban módosítható)
+361| Mennyi időre vagy hány óráig szundizzon
+362| Szundi egysége
+363| Szundi eddig
+364| Elvetés
+365| Mind elvetése
+366| Kész
+367| Kész ezzel a gyors riasztással
+368| Elrejtés egyelőre (a riasztás aktív marad, és a következővel visszatér)
+369| Időpont, például 15:30 vagy 3:30 pm (a mostaninál korábbi holnapot jelent)
+370| Egész szám {n} és {n2} között
+371| Adjon meg egy egész számot {n} és {n2} között.
+372| Adjon meg egy egész számot 1 és 999 között, vagy egy dátumot és időpontot.
+373| másodperc
+374| perc
+375| óra
+376| Gyors riasztás
+377| Gyors riasztások
+378| ⏰ Gyors riasztások…
+379| Egyszeri riasztás, amely nem mentődik emlékeztetőként — mint a bővítmény Gyors riasztása.
+380| Múlva
+381| Ekkor
+382| Időtartam
+383| Riasztás beállítása
+384| A riasztás törlése
+385| Nincs gyors riasztás.
+386| Várakozik
+387| Gyors riasztás beállítva: {time}
+388| Gyors riasztás törölve
+389| Válasszon időpontot.
+390| Ez az időpont már elmúlt — válasszon későbbit.
+391| Ez az időpont már elmúlt.
+392| Megszólal: {when} ({until}).
+393| ma {time}-kor
+394| kevesebb mint egy perc múlva
+395| {time} múlva
+396| {hours} {minutes} múlva
+397| Riasztások felfüggesztése
+398| Riasztások felfüggesztése…
+399| Riasztások felfüggesztése egy időre
+400| Felfüggesztés
+401| Meddig
+402| Amíg vissza nem kapcsolom
+403| A riasztások kikapcsolva maradnak, amíg folytatja őket (állapotsor, tálcamenü vagy itt).
+404| A felfüggesztés alatt nem nyílnak riasztási ablakok, és az emlékeztető-ablak sem jelenik meg. Az időközben esedékes riasztások a folytatáskor jelennek meg.
+405| A riasztások fel vannak függesztve, amíg vissza nem kapcsolja őket.
+406| A riasztások visszatérnek: {when}.
+407| A riasztások újra be vannak kapcsolva
+408| Riasztások folytatása most
+409| Válasszon jövőbeli időpontot.
+410| ReminderFoxAgain — ma
+411| Közelgő
+412| Ma nincs semmi.
+413| Nincs közelgő.
+414| Általános
+415| Riasztások
+416| Megjelenés
+417| Adatok
+418| Névjegy
+419| A ReminderFoxAgain indítása a Windows indulásakor
+420| Futás a tálcán az ablak bezárása után is
+421| A hét kezdőnapja
+422| Téma
+423| Témák
+424| Alapértelmezett (a Windowst követi)
+425| Róka
+426| Világos
+427| Sötét
+428| Óceán
+429| Nagy kontraszt
+430| Az alapértelmezett a Róka, világos vagy sötét a Windowsnak megfelelően. A csillagozott elemeknek minden témában saját színük van. A nagy kontraszt fekete, fehér, sárga és cián színt használ nagyobb szöveggel és vastagabb vonalakkal.
+431| -
+432| A ReminderFoxAgain tisztelgés az eredeti
+433| -
+434| bővítmény előtt Firefoxhoz és Thunderbirdhöz, amelyet Tom Mutdosch és Daniel Lee hozott létre Guenter Wahllal. A fájlformátum, az ismétlési szabályok, a nézetek, a gyors riasztások és az értesítőablak az ő munkájuk; köszönjük.
+435| Hang lejátszása riasztáskor
+436| Hang
+437| Beépített csengő
+438| Saját hang
+439| Kiválasztás…
+440| Kiválasztás
+441| A beépített csengő használata
+442| Csengő
+443| Lejátszás
+444| ▶ Próba
+445| Riasztási hang: {s}
+446| A beépített csengő van használatban
+447| Válasszon hangfájlt (.mp3, .wav, .ogg, .m4a, .aac, .flac vagy .webm).
+448| A hangfájl nagyobb 10 MB-nál. Válasszon rövidebbet.
+449| A hang ismétlése
+450| Nem, egyszer szóljon
+451| Percenként
+452| {n} percenként
+453| Alapértelmezett riasztás új emlékeztetőkhöz
+454| Alapértelmezett szundi
+455| Az alapértelmezett szundi egysége
+456| Alapértelmezett szundi, mennyi
+457| Emlékeztető-ablak (a bővítmény értesítőablaka)
+458| Ablak mutatása a mai és a közelgő emlékeztetőkkel
+459| Mikor
+460| Csak indításkor
+461| Indításkor és {n} percenként
+462| … {n} percenként
+463| … óránként
+464| … {n} óránként
+465| Nyitva tartás
+466| {n} másodperc
+467| Amíg be nem zárom
+468| Sarok
+469| jobbra lent
+470| balra lent
+471| jobbra fent
+472| balra fent
+473| A hang lejátszása
+474| Mutasd most
+475| „Közelgő” jelentése: a következő
+476| Szám az ikonon
+477| Szám megjelenítése a tálca és a tálcaterület ikonjain
+478| Mai nyitott emlékeztetők és teendők
+479| Mai és közelgő
+480| Csak a maiak
+481| Csak a közelgők
+482| Nyelv
+483| Rendszer nyelve ({s})
+484| A menük, gombok és üzenetek nyelve. Az emlékeztetői nem változnak.
+485| A fordítások a ReminderFoxAgainhez készültek, és anyanyelvi beszélők még nem nézték át őket.
+486| Szövegméret
+487| Kicsi ({n}%)
+488| Normál
+489| Nagy ({n}%)
+490| Nagyobb ({n}%)
+491| Legnagyobb ({n}%)
+492| Dátumok
+493| Mint a Windowsban ({s})
+494| Időpontok
+495| Mint a Windowsban
+496| {n} órás ({s})
+497| A naptárpanel megjelenítése a listák mellett
+498| Hónapok a naptárpanelen
+499| Térképek
+500| -
+501| -
+502| -
+503| Tálcaikon elemleírása
+504| Elemleírás
+505| Mai emlékeztetők
+506| Közelgő emlékeztetők
+507| Változók: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — ugyanazok, mint a bővítményben.
+508| Visszaállítás
+509| Az elemleírás szövegei visszaállítva
+510| Listák kezelése…
+511| Kategóriák kezelése…
+512| Nézetek kezelése…
+513| Ismétlődő emlékeztetők az Emlékeztetők lapon
+514| Megjelenítendő jövőbeli dátumok
+515| Közelgő, Minden emlékeztető, Fontos, a keresés és a dátum nélküli nézetek
+516| Minden dátum a következő
+517| Csak a következő
+518| {n} hónap
+519| {n} év
+520| {n} dátum
+521| A Közelgő, a Minden emlékeztető, a Fontos, a keresés és a dátumtartomány nélküli nézetek használják. A Ma, a Következő {n} nap, a Kijelölt nap vagy hónap, a Hónap lap és a naptár mindig minden dátumot mutat.
+522| A Mind és a Múltbeli nézetben a múltbeliek ettől:
+523| minden sorozat kezdete
+524| az utolsó {n} év
+525| az utolsó év
+526| az utolsó {n} hónap
+527| Ismétlődő emlékeztetők elrejtése
+528| Kész emlékeztetők elrejtése
+529| Importálás és exportálás
+530| .ics fájl importálása…
+531| Elemek hozzáadása egy .ics fájlból (Ctrl+I)
+532| Importálás a ReminderFoxból…
+533| A reminderfox.ics megkeresése, amelyet a ReminderFox bővítmény a Firefox- vagy Thunderbird-profiljában tárolt
+534| Exportálás .ics-be…
+535| Exportálás .ics-be
+536| Exportálás…
+537| .ics fájl mentése (Ctrl+E)
+538| Az importálás hozzáad a meglévőkhöz; a már meglévő elemek csak akkor frissülnek, ha a fájlban lévő másolat újabb. Az exportált fájlok megnyithatók az Outlookban, a Google Naptárban, a Thunderbirdben, az Apple Naptárban és az eredeti ReminderFox bővítményben.
+539| Biztonsági mentések
+540| Mentés most
+541| Biztonsági másolat mentése…
+542| Visszaállítás biztonsági mentésből…
+543| Visszaállítás biztonsági mentésből
+544| A mentések mappájának megnyitása
+545| Az adatmappa megnyitása
+546| Adatfájl
+547| Az emlékeztetőfájl megjelenítése a Fájlkezelőben
+548| Az emlékeztetői ide mentődnek: {path} (a napi mentések mellette, a „backups” mappában vannak).
+549| ＋ Új lista…
+550| Új lista…
+551| Új lista
+552| Az új lista neve
+553| Az új lista neve (például Bevásárlás, Megnézendő filmek, Ajándékötletek):
+554| Lista hozzáadása
+555| Lista átnevezése
+556| Átnevezés…
+557| Eltávolítás…
+558| Eltávolítja a listát?
+559| A „Teendők” a fő lista, nem nevezhető át és nem távolítható el (mint a bővítményben). Lista eltávolításakor eldöntheti, hogy a teendői a „Teendők” listába kerüljenek vagy törlődjenek.
+560| A(z) „{list}” listában {n} teendő van. Áthelyezi ide: „{main}”, vagy törli a listával együtt?
+561| A(z) „{list}” listában {n} teendő van. Áthelyezi őket ide: „{main}”, vagy törli a listával együtt?
+562| Lista és teendők törlése
+563| A lista és {n} teendő törölve
+564| Lista eltávolítva
+565| „{s}” lista hozzáadva
+566| „{s}” már létezik
+567| Ez a lista már létezik.
+568| A lista neve nem lehet üres, és nem tartalmazhat vesszőt vagy kettőspontot.
+569| A lista neve nem tartalmazhat vesszőt vagy kettőspontot.
+570| Összevonja a listákat?
+571| Összevonás
+572| Összevonva ezzel: „{s}”
+573| Átnevezve erre: „{s}”
+574| Új név ehhez: „{name}”:
+575| Új név ehhez: „{name}” ({items}):
+576| Új kategória
+577| Másik kategória
+578| Gyakoriak hozzáadása
+579| „{s}” kategória hozzáadva
+580| {n} kategória hozzáadva
+581| Nincs új hozzáadnivaló.
+582| Kategória átnevezése
+583| Törli a kategóriát?
+584| Kategória törölve
+585| Összevonja a kategóriákat?
+586| A kategória nem lehet üres, és nem tartalmazhat vesszőt.
+587| még nincs használatban
+588| Az átnevezés minden olyan emlékeztetőt és teendőt módosít, amelynek ez a kategóriája; meglévő névre átnevezve összevonja őket. A törlés eltávolítja az elemeiről (az elemek megmaradnak).
+589| A(z) „{name}” kategória törlődik.
+590| A(z) „{name}” kategória törlődik, és lekerül innen: {items}. Maguk az elemek megmaradnak.
+591| Évforduló
+592| Találkozó
+593| Születésnap
+594| Üzleti
+595| Hívás
+596| Ünnep
+597| Megbeszélés
+598| Személyes
+599| Vásárlás
+600| Utazás
+601| Évforduló, Találkozó, Születésnap, Üzleti, Hívás…
+602| Új nézet
+603| ＋ Új nézet…
+604| Nézet szerkesztése
+605| Törli a nézetet?
+606| A(z) „{s}” nézet törlődik. Az emlékeztetői nem változnak.
+607| Megjelenítés az Emlékeztetők lapon
+608| Nézet mentve
+609| „{s}” nézet hozzáadva
+610| Adjon nevet a nézetnek.
+611| Már van ilyen nevű nézet.
+612| A nézet egy mentett szűrő az Emlékeztetők laphoz: válassza ki a Megjelenítés listában. A különböző mezőkre vonatkozó feltételeknek mind teljesülniük kell; egy feltételen belül a vesszők jelentése „ezek bármelyike”.
+613| Még nincsenek nézetek. Kattintson az „Új nézet…” gombra egy létrehozásához — például minden „Születésnap” kategóriájú emlékeztető a következő évben.
+614| Név
+615| pl. Születésnapok
+616| Emlékeztetők mutatása, ahol
+617| ＋ Feltétel hozzáadása
+618| A feltétel eltávolítása
+619| Bármi
+620| A kategória
+621| A nézet
+622| Típus
+623| az
+624| tartalmazza
+625| szavak, vesszővel elválasztva
+626| Csak ettől a dátumtól
+627| eddig
+628| mától
+629| ma
+630| A negatív számok visszafelé mennek az időben: −{n} hónaptól {n2} napig jelentése „az elmúlt hónap”.
+631| Mind
+632| Minden
+633| Csak emlékeztetők
+634| Csak teendők
+635| Egység
+636| Mennyi
+637| Bármi tartalmazza: „{s}”
+638| A kategória „{s}”
+639| A kategória „{s}” vagy „{s2}”
+640| dátumok mától {n} napra előre
+641| +{n} hét
+642| +{n} hónap
+643| +{n} év
+644| Importálás
+645| iCalendar fájl importálása
+646| Importálás a ReminderFoxból
+647| A ReminderFoxból
+648| {files} található a ReminderFox bővítményből:
+649| A legújabb importálása
+650| Importálás mindenképp
+651| {reminders} és {items}
+652| {n} már itt van (az újabb másolat marad meg)
+653| {n} ismétlődésnek tűnik (ugyanaz a cím és dátum, mint egy meglévő elemnél)
+654| {n} ismétlődésnek tűnik (ugyanaz a cím és dátum, mint egy meglévő elemnél)
+655| Hogyan
+656| Hozzáadás a meglévőkhöz
+657| Minden lecserélése
+658| Minden lecserélése (előbb biztonsági mentés készül erről: {items})
+659| Mindent lecserél?
+660| A mostani {items} helyére a fájlban lévő {newItems} kerül.
+661| A jelenlegi állapot előbb „Mentve egy mindent lecserélő importálás előtt” néven mentődik, így visszahozhatja a Beállítások → Adatok → Visszaállítás biztonsági mentésből… menüben.
+662| Ismétlődések
+663| A meglévővel azonos című és dátumú elemek kihagyása
+664| Nem kötelező: minden importált elemhez hozzáadódik, például „Ünnepek” egy ünnepnaplistához, hogy szűrni lehessen rá.
+665| nem kötelező
+666| Az importálás kész
+667| Importálva: {items}
+668| Importálva: {items} és {lists}
+669| {n} frissítve
+670| {n} már naprakész
+671| {n} ismétlődés kihagyva
+672| lecserélve: {items} (mentve mint {file})
+673| {lists} hozzáadva ({names})
+674| {n} archivált elem áthelyezve a(z) „{list}” listába
+675| Ez a fájl nem tartalmaz iCalendar-adatot (nincs BEGIN:VCALENDAR).
+676| Az emlékeztetőfájl nem olvasható
+677| Exportálva ide: {path}
+678| Exportálás
+679| Minden (emlékeztetők és teendők)
+680| A fájl működik az Outlookkal, a Google Naptárral, a Thunderbirddel, az Apple Naptárral és az eredeti ReminderFox bővítménnyel.
+681| A ReminderFoxAgain minden nap készít egy biztonsági mentést, egyet minden visszaállítás előtt, valamint azokat, amelyeket a „Mentés most” gombbal készít. A visszaállítás a jelenlegi emlékeztetőket és teendőket a mentésre cseréli; a jelenlegi állapot előbb elmentődik, így mindig visszaléphet.
+682| Készült
+683| Tartalom
+684| Visszaállítás
+685| Visszaállítás…
+686| Másik fájl választása…
+687| {n} archivált
+688| Nem olvasható: {s}
+689| {s} nem olvasható: {s2}
+690| Ez a fájl nem állítható vissza
+691| Még nincsenek mentések. Minden nap készülnek, amikor az alkalmazás fut; a „Mentés most” gombra is kattinthat.
+692| Napi mentés
+693| Ön által készített mentés
+694| Mentve egy visszaállítás előtt
+695| Mentve egy mindent lecserélő importálás előtt
+696| Az archívum, mielőtt lista lett
+697| Az archívum napi mentése (korábbi verzió)
+698| Biztonsági mentés
+699| Visszaállítja ezt a mentést?
+700| Ez lecseréli a jelenlegi állapotot ({now}) erre a mentésre ({when}): {items}.
+701| Ez lecseréli a jelenlegi állapotot ({now}) erre a mentésre ({when}): {items}, plusz {n} archivált, amelyek a(z) „{list}” listába kerülnek.
+702| Ez egy korábbi verzió archívumának másolata. Az elemei ({all}) a(z) „{list}” listába kerülnek (a már meglévő elemek változatlanok maradnak). Más nem változik.
+703| A jelenlegi adatai előbb „Mentve egy visszaállítás előtt” néven mentődnek, így ugyanebben a listában visszavonhatja.
+704| Mentés visszaállítva
+705| Visszaállítva: {items}.
+706| Visszaállítva: {items}, ebből {n} archivált most a(z) „{list}” listában.
+707| A korábbi állapot ezen a néven mentődött: {file}.
+708| Mentés helye: {path}
+709| Mentve: {s}
+710| {n} bájt
+711| {n} KB
+712| {n} MB
+713| Ez az elem már nem létezik.
+714| Az archívumfájl nem olvasható, ezért nem változik. Megőrizve archive.ics.unreadable néven.
+715| Az archívumfájl nem olvasható, ezért nem cserélhető le.
+716| Üdvözli a ReminderFoxAgain
+717| Emlékeztetők, teendők és riasztások Windows-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.
+718| Importálás a ReminderFox bővítményből
+719| {path} — utoljára módosítva: {date}
+720| reminderfox.ics vagy más naptárfájl importálása…
+721| A ReminderFox bővítményből (a Firefox-/Thunderbird-profil „reminderfox” mappájából), Outlookból, Google Naptárból…
+722| Kezdés üres listával
+723| Később is importálhat a Beállítások → Adatok menüben.
+724| most
+725| {n} perc múlva
+726| {n} óra múlva
+727| {n} nap múlva
+728| {n} perce
+729| {n} órája
+730| {n} napja
+731| {app} megnyitása
+732| Emlékeztető hozzáadása…
+733| Listaelem hozzáadása…
+734| Gyors riasztás…
+735| Riasztások folytatása
+736| A mai emlékeztetők mutatása
+737| Kilépés: {app}
+738| {app} — riasztások kikapcsolva
+739| {app} — riasztások kikapcsolva eddig: {time}
+740| {app} — ma nincs semmi
+741| közelgő
+742| A(z) {app} továbbra is fut
+743| A riasztások továbbra is megjelennek. A kilépéshez kattintson jobb gombbal a rókára a tálcán.
+744| {app} riasztás
+745| {app} — ma
+746| {n} ó {n2} p
+747| iCalendar fájlok
+748| Minden fájl
+749| Hangfájlok
+750| iCalendar fájl importálása
+751| Exportálás iCalendar fájlba
+752| Válassza ki a reminderfox.ics fájlt
+753| Válasszon riasztási hangot
+754| Biztonsági másolat mentése
+755| Válassza ki a visszaállítandó mentést
+756| Minden héten: {days}
+757| Minden hónap {nth} {weekday}
+758| Minden hónap {day}. napján
+759| Minden hónapban ugyanazon a napon
+760| {n} havonta ugyanazon a napon
+761| Minden évben: {month} {nth} {weekday}
+762| Minden évben: {date}
+763| Minden évben ugyanazon a napon
+764| {n} évente ugyanazon a napon
+765| Ismétlődik
+766| Egyéni ({rule})
+767| {rule}, egyszer
+768| {rule}, {n} alkalommal
+769| {rule}, eddig: {date}
+770| A késznek jelölt emlékeztetők mutatása
+771| A késznek jelölt emlékeztetők és listaelemek mutatása
+772| Saját sorrend: húzza a sorokat, vagy nyomja meg az Alt+↑ / Alt+↓ billentyűt
+773| Nézet
+774| Riasztási hang
+775| Saját fájl…
+776| Saját hangfájl használata (.mp3, .wav, .ogg, .m4a, .aac, .flac vagy .webm)
+777| Folyamatosan, amíg nem kezeli
+778| Folyamatosan, amíg nem kezeli: a hang újra és újra megszólal, amíg nem szundiztatja, nyitja meg, jelöli késznek vagy veti el a riasztást, illetve el nem rejti a riasztási ablakot. A következő riasztás újraindítja.
+779| Oszlopok
+780| Az Emlékeztetők lap oszlopai
+781| A listák oszlopai
+782| Egy oszlop elrejtéséhez vegye ki a pipát. A leírás mindig látszik.
+783| Mentett szűrők az Emlékeztetők laphoz
+784| Emlékeztetők kezelése…
+785| Közelgő, Minden emlékeztető, Fontos, a keresés és a dátum nélküli mentett szűrők
+786| A Közelgő, a Minden emlékeztető, a Fontos, a keresés és a dátumtartomány nélküli mentett szűrők használják. A Ma, a Következő {n} nap, a Kijelölt nap vagy hónap, a Hónap lap és a naptár mindig minden dátumot mutat.
+787| Mentett szűrők
+788| Mentett szűrő: „{s}” · {c}
+789| Emlékeztetők kezelése
+790| A mentett szűrő az Emlékeztetők lapon csak a kívánt emlékeztetőket mutatja: válassza ki a Megjelenítés listában. A különböző mezőkre vonatkozó feltételeknek mind teljesülniük kell; egy feltételen belül a vesszők jelentése „ezek bármelyike”.
+791| ＋ Új mentett szűrő…
+792| Még nincsenek mentett szűrők. Kattintson az „Új mentett szűrő…” gombra egy létrehozásához — például minden „Születésnap” kategóriájú emlékeztető a következő évben.
+793| Törli a mentett szűrőt?
+794| A(z) „{s}” mentett szűrő törlődik. Az emlékeztetői nem változnak.
+795| Mentett szűrő szerkesztése
+796| Új mentett szűrő
+797| Adjon nevet a mentett szűrőnek.
+798| Már van ilyen nevű mentett szűrő.
+799| Mentett szűrő módosítva
+800| „{s}” mentett szűrő hozzáadva
+801| Harang
+802| Marimba
+803| Digitális sípolás
+804| Ébresztőóra
+805| Saját fájl: {s}
+806| Saját téma készítése öt színből
+807| ＋ Új téma…
+808| A saját téma színeinek módosítása
+809| ＋ Új téma… öt színből készít egy sajátot.
+810| Saját témák
+811| Háttér
+812| Minden mögött
+813| Listák és panelek
+814| A listák, a naptárpanel, a párbeszédablakok
+815| Szöveg
+816| Kiemelőszín
+817| Gombok, ma, kijelölés
+818| Csillagos elemek
+819| Fontos emlékeztetők és teendők
+820| A szöveg nehezen olvasható a háttéren (kontraszt {n}:1; 4,5:1-től jól olvasható).
+821| A kiemelőszín nehezen látszik a listákon (kontraszt {n}:1; 3:1 vagy több jobb).
+822| A csillagos elemek nehezen látszanak a listákon (kontraszt {n}:1; 3:1 vagy több jobb).
+823| Téma szerkesztése
+824| Új téma
+825| Kiindulás
+826| pl. Erdő
+827| Az egész ablak mutatja a témát, amíg választ. A Mégse visszaállítja a régit.
+828| Adjon nevet a témának.
+829| Már van ilyen nevű téma.
+830| „{s}” téma mentve
+831| „{s}” téma hozzáadva
+832| Törli a témát?
+833| A(z) „{s}” téma törlődik. Az alkalmazás visszatér az alapértelmezett témához.

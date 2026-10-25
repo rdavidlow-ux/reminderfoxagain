@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- ReminderFoxAgain glyph: fox ears over a calendar with a check mark (256-unit grid, same as the app icon) -->
+  <path d="M58 76 L68 30 L108 76 Z" fill="#963e12"/>
+  <path d="M148 76 L187 30 L198 76 Z" fill="#963e12"/>
+  <path d="M46 92 a20 20 0 0 1 20 -20 h125 a20 20 0 0 1 20 20 v16 h-165 z" fill="#462e1e"/>
+  <path d="M46 108 h165 v92 a20 20 0 0 1 -20 20 h-125 a20 20 0 0 1 -20 -20 z" fill="#fffaf4"/>
+  <path d="M83 157 L117 191 L175 126" fill="none" stroke="#e26e26" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

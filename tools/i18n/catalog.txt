@@ -1,0 +1,868 @@
+# ReminderFoxAgain — the English strings to translate (the keys of src/ui/locales/<code>.json).
+# One key per line; "a || b" gives two keys the same translation. {n}, {n2}… are numbers; other {names} are carried over
+# as they are (a date, a time, a name, or text that is translated on its own). A translation may give plural forms:
+#   one=… | few=… | many=… | other=…   (the categories of Intl.PluralRules for the language)
+# tools/i18n/build.js turns tools/i18n/<code>.txt (one translation per line, in this order) into src/ui/locales/<code>.json.
+
+# ---- top bar, tabs, status bar
+＋ Reminder
+＋ List Item
+⚙ Settings
+Settings
+Search
+Search (Ctrl+F)
+Search reminders and to-dos
+New reminder (Ctrl+N)
+New item in the list being shown (Ctrl+T)
+Quick alarm: a one-off alarm in a few minutes (Ctrl+Q)
+⏰ Quick alarm
+Reminders
+Month
+List
+Lists
+List: {s}
+All lists
+Choose which list to show
+List to show
+To-Do's
+Terminated or Suspended
+Show or hide the calendar panel
+Show or hide the calendar panel (Ctrl+B)
+Alarms on
+Alarms suspended
+Alarms suspended until {time}
+Resume
+Click to turn alarms back on
+Suspend or resume alarms
+{n} item || {n} items
+{n} reminder || {n} reminders
+{n} to-do || {n} to-dos
+{n} list item || {n} list items
+{n} new item || {n} new items
+{n} archived item || {n} archived items
+{n} list || {n} lists
+{n} file || {n} files
+{n} minute || {n} minutes
+{n} hour || {n} hours
+{n} day || {n} days
+{n} duplicate || {n} duplicates
+
+# ---- the Reminders tab
+Show
+Today
+Tomorrow
+Yesterday
+Next {n} days
+Upcoming
+All reminders
+Important
+Past
+Selected day
+Selected month
+Views
+View “{s}”
+Searching all reminders
+Date
+Day
+Time
+Description
+Repeat
+Category
+Alarm
+Completed
+Completed {date}
+(no description)
+No reminders here
+Click ＋ Reminder to add one, or choose a different view.
+Click ＋ List Item to add one to this list.
+Overdue since {date}
+overdue since {date}
+Soon: {s}
+Edit…
+Delete…
+Delete
+Duplicate
+Copy
+Move
+Open
+Open link
+Show on a map
+Show day in list
+Mark completed
+Remind me…
+Make it a to-do…
+Make it a to-do
+Make it a reminder
+Schedule as a reminder…
+Schedule as a reminder
+Copy to a list…
+Copy to a list
+Copy to list…
+Copy to list
+Move to list…
+Move to list
+Move to…
+Copy to…
+Move it to another list
+Put a copy on another list
+An exact copy in this list (Ctrl+D)
+Delete (Del)
+Selected item
+Selected item:
+Move up
+Move down
+Alt+↑
+Alt+↓
+Ctrl+D
+Duplicated “{s}”
+{s} (copy)
+Copied to “{s}”
+Moved to “{s}”
+Move to “{s}”
+Now a to-do in “{s}”
+Now a reminder on {date}
+is in “{s}”
+“{s}” is empty
+Deleted
+Occurrence deleted
+Delete repeating reminder
+This repeats — changes apply to every occurrence.
+Only this one
+All occurrences
+Delete this occurrence
+Delete all occurrences…
+“{s}” repeats ({rule}).
+Delete just the one on {date}, or every occurrence?
+Delete all occurrences?
+Delete all
+Delete reminder?
+Delete to-do?
+“{s}” will be deleted.
+“{s}” and all its repeats will be deleted.
+Something went wrong
+Enter a location first.
+
+# ---- Month tab and calendar panel
+Previous month
+Next month
+Go to today
+Go to a date (Ctrl+G)
+Go to date
+Go to…
+Go
+Add a reminder on this day
+Double-click a day to add a reminder
+Nothing on this day.
++{n} more
+Not done yet
+All day
+All day {s}
+To-do
+To-do {s}
+To-Do
+Su
+Mo
+Tu
+We
+Th
+Fr
+Sa
+Sun
+Mon
+Tue
+Wed
+Thu
+Fri
+Sat
+Sunday
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+
+# ---- the list tabs (to-dos and custom lists)
+List Item
+Due by
+Order
+My order
+By date
+Manual: drag rows, or press Alt+↑ / Alt+↓
+Show completed
+Show to-dos
+Include dated to-dos
+No date
+· no due date
+· due by {date}
+· overdue
+· all day
+· set for {time}
+· in {n} min
+· started {n} min ago ·
+List this to-do in the tray icon's tooltip
+Show in the tray tooltip
+✓ Show in the tray tooltip
+Shown in the tray tooltip
+Removed from the tray tooltip
+Remind daily until completed
+Remind me daily until completed
+Reminds daily until completed
+Until done
+No longer reminds daily
+Reminds you every day until you tick Done
+Missed on {date}; it reminds you every day until you tick it
+If you miss it, it moves to today and alarms every day until you tick it
+Done — moved to the next date
+daily
+weekly
+monthly
+every {n} days
+every {n} weeks
+{n} d before
+on the day
+{every} from {from}
+once
+every day
+every week
+every month
+{n} day before the due date || {n} days before the due date
+on the due date
+Reminds you {every}, from {from}, at {time}
+Reminds you {every}, from {from}, at {time}, until it's done
+Reminds you {every}, from {from}, at {time}, until it's done (also after the due date)
+
+# ---- the editor
+New reminder
+Edit reminder
+New to-do
+Edit to-do
+What do you want to be reminded of?
+What needs doing?
+Kind
+Reminder
+On date
+Any time
+Ends
+Location
+Link
+https://
+Notes
+Categories
+Choose categories
+e.g. Birthday, Work
+Add
+Save
+Cancel
+Close
+OK
+Yes
+No
+None
+Does not repeat
+Daily
+Weekly
+Monthly
+Yearly
+Custom…
+Custom
+Custom (imported)
+Keep imported: {s}
+Every weekday
+Every
+every
+day
+days
+week
+weeks
+month
+months
+year
+years
+times
+On {date}
+On day {day}
+On the {nth} {weekday}
+On the {nth} {weekday} of {month}
+On the last {weekday}
+On the last {weekday} of {month}
+Every day
+Every {n} days
+Every week
+Every {n} weeks
+Every month
+Every week on {days}
+Every {n} weeks on {days}
+weekdays
+Every month on day {day}
+Every {n} months on day {day}
+Every month on the {nth} {weekday}
+Every {n} months on the {nth} {weekday}
+Every year on {date}
+Every {n} years on {date}
+Every year on the {nth} {weekday} of {month}
+Every {n} years on the {nth} {weekday} of {month}
+last
+{n}th
+How often
+On
+After
+Then
+Again
+at
+before
+Never
+Until
+until…
+on a date…
+starting on…
+no more (just once)
+Remind me
+Don't remind me
+When to start reminding
+First reminder date
+Reminder time
+Keep reminding when the due date has passed and it isn't done
+also after the due date
+until it's done
+until it's done or due ({due})
+until it's done, also after it's due ({due})
+One reminder, on {date} at {time}.
+One reminder, on {date} at {time}. That time has passed — choose a later one, or remind repeatedly.
+{every} at {time}, from {date}, {end}.
+No reminders.
+No reminders. The to-do shows in red once its due date has passed.
+Choose the date of the first reminder.
+Alarm text
+At the time
+{n} minute before || {n} minutes before
+{n} hour before || {n} hours before
+{n} day before || {n} days before
+{n} week before || {n} weeks before
+On the day, at {time}
+The day before, at {time}
+Shows as: {s}. <year> counts the years since then; <year#> shows just the number.
+Imported in the {zone} time zone — shown in your local time. Saving will store it in local time.
+Please enter a description.
+Please choose the due date, or tick "No date".
+Please choose a date.
+Please choose the date.
+Choose the date.
+Please enter the time it's due by, or tick "Any time".
+Please enter a time, or tick "All day".
+The end date is before the start date.
+The end time is before the start time.
+Reminder added
+To-do added
+Saved
+Edit the copy
+The date is known: make this to-do a reminder on an exact date
+It's due by {date}.
+It's due by {date}, {time}.
+Once you know the exact date, the to-do becomes a reminder on that date: it leaves the to-do list and shows in Reminders, the Month view and the calendar. Notes, category, location and link are kept.
+A reminder on {date}, all day.
+A reminder on {date}, at {time}.
+The reminder becomes a to-do on the same date, keeping its repeat, alarm and notes.
+The reminder stays; a to-do copy on the same date, keeping its repeat, alarm and notes, goes on the list.
+An exact copy goes on the list you choose; this one stays where it is.
+The list
+{s} (this list)
+main list
+
+# ---- alarms, snooze, quick alarms, suspend
+ReminderFoxAgain alarm
+Snooze
+Snooze all
+Snooze all {s}
+Snooze every reminder here for your default snooze time (change it in Settings)
+Snooze for how many, or until what time
+Snooze unit
+Snooze until
+Dismiss
+Dismiss all
+Done
+Finished with this quick alarm
+Hide for now (the alarm stays active and comes back with the next one)
+A time such as 15:30 or 3:30 pm (earlier than now means tomorrow)
+A whole number from {n} to {n2}
+Enter a whole number from {n} to {n2}.
+Enter a whole number from 1 to 999, or a date and time.
+seconds
+minutes
+hours
+Quick alarm
+Quick alarms
+⏰ Quick alarms…
+A one-off alarm that isn't saved as a reminder — like the add-on's Quick Alarm.
+In
+At
+For
+Set alarm
+Cancel this alarm
+No quick alarms.
+Waiting to go off
+Quick alarm set for {time}
+Quick alarm cancelled
+Choose a time.
+That time has passed — choose a later one.
+That time has passed.
+Goes off {when} ({until}).
+today at {time}
+in less than a minute
+in {time}
+in {hours} {minutes}
+Suspend alarms
+Suspend alarms…
+Suspend alarms for a while
+Suspend
+How long
+Until I turn them back on
+Alarms stay off until you resume them (status bar, tray menu or here).
+While suspended, no alarm windows open and the reminder pop-up stays away. Alarms that fall due meanwhile show when you resume.
+Alarms are suspended until you turn them back on.
+Alarms come back on {when}.
+Alarms are on again
+Resume alarms now
+Please choose a time in the future.
+
+# ---- the reminder pop-up (the add-on's alert slider)
+ReminderFoxAgain — today
+Coming up
+Nothing today.
+Nothing coming up.
+
+# ---- Settings
+General
+Alarms
+Display
+Data
+About
+Start ReminderFoxAgain when Windows starts
+Keep running in the system tray when the window is closed
+Week starts on
+Theme
+Themes
+Default (follows Windows)
+Fox
+Light
+Dark
+Ocean
+High contrast
+Default is Fox, light or dark to match Windows. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.
+ReminderFoxAgain {s}
+ReminderFoxAgain is a tribute to the original
+ReminderFox
+add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl. Its file format, repeat rules, views, quick alarms and alert slider are theirs; thank you.
+Play a sound with alarms
+Sound
+Built-in chime
+Your sound
+Choose…
+Choose
+Use the built-in chime
+Chime
+Play it
+▶ Test
+Alarm sound: {s}
+Using the built-in chime
+Please choose a sound file (.mp3, .wav, .ogg, .m4a, .aac, .flac or .webm).
+That sound file is larger than 10 MB. Please choose a shorter one.
+Repeat the sound
+No, play it once
+Every minute
+Every {n} minutes
+Default alarm for new reminders
+Default snooze
+Default snooze unit
+Default snooze, how many
+Reminder pop-up (the add-on's alert slider)
+Show a pop-up with today's and upcoming reminders
+When
+At start-up only
+At start-up and every {n} minutes
+… every {n} minutes
+… every hour
+… every {n} hours
+Keep it open
+{n} seconds
+Until I close it
+Corner
+bottom right
+bottom left
+top right
+top left
+Play the sound
+Show it now
+"Upcoming" means the next
+Count on the icon
+Show a number on the tray and taskbar icons
+Today's open reminders and to-dos
+Today's and upcoming
+Only today's
+Only upcoming
+Language
+System language ({s})
+The language of menus, buttons and messages. Your reminders are not changed.
+The translations were written for ReminderFoxAgain and have not yet been checked by native speakers.
+Text size
+Small ({n}%)
+Normal
+Large ({n}%)
+Larger ({n}%)
+Largest ({n}%)
+Dates
+As in Windows ({s})
+Times
+As in Windows
+{n}-hour ({s})
+Show the calendar panel next to the lists
+Months in the calendar panel
+Maps
+Google Maps
+OpenStreetMap
+Bing Maps
+Tray icon tooltip
+Tooltip
+Today's reminders
+Upcoming reminders
+Variables: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — the same as the add-on.
+Reset
+Tooltip labels reset
+Manage lists…
+Manage categories…
+Manage views…
+Repeating reminders in the Reminders tab
+Future dates to show
+Upcoming, All reminders, Important, search and views without dates
+Every date in the next
+Only the next
+{n} month || {n} months
+{n} year || {n} years
+{n} date || {n} dates
+Used by Upcoming, All reminders, Important, search and views without a date range. Today, Next {n} days, Selected day or month, the Month tab and the calendar always show every date.
+In All and Past, show past ones from
+the start of each series
+the last {n} years
+the last year
+the last {n} months
+Hide repeating reminders
+Hide completed reminders
+Import and export
+Import an .ics file…
+Add the items from an .ics file (Ctrl+I)
+Import from ReminderFox…
+Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile
+Export to .ics…
+Export to .ics
+Export…
+Save an .ics file (Ctrl+E)
+Imports add to what you have; items already here are updated only if the file's copy is newer. Exports open in Outlook, Google Calendar, Thunderbird, Apple Calendar and the original ReminderFox add-on.
+Backups
+Back up now
+Save a backup copy…
+Restore from a backup…
+Restore from a backup
+Open backups folder
+Open data folder
+Data file
+Show the reminders file in File Explorer
+Your reminders are saved in {path} (daily backups are kept in the "backups" folder next to it).
+
+# ---- lists, categories, views
+＋ New list…
+New list…
+New list
+New list name
+Name of the new list (for example Groceries, Movies to see, Gift ideas):
+Add list
+Rename list
+Rename…
+Remove…
+Remove list?
+“To-Do's” is the main list and can't be renamed or removed (as in the add-on). When you remove a list you choose whether its to-dos move to “To-Do's” or are deleted.
+The list “{list}” has {n} to-do. Move it to “{main}”, or delete it with the list?
+The list “{list}” has {n} to-dos. Move them to “{main}”, or delete them with the list?
+Delete list and to-dos
+List and {n} to-do deleted || List and {n} to-dos deleted
+List removed
+List “{s}” added
+“{s}” already exists
+That list already exists.
+A list name can't be empty or contain a comma or a colon.
+A list name can't contain a comma or a colon.
+Merge lists?
+Merge
+Merged into “{s}”
+Renamed to “{s}”
+New name for “{name}”:
+New name for “{name}” (on {items}):
+New category
+Another category
+Add common ones
+Category “{s}” added
+{n} categories added
+Nothing new to add.
+Rename category
+Delete category?
+Category deleted
+Merge categories?
+A category can't be empty or contain a comma.
+not used yet
+Renaming changes every reminder and to-do that has the category; renaming to an existing one merges them. Deleting removes it from its items (the items stay).
+The category “{name}” will be deleted.
+The category “{name}” will be deleted and removed from {items}. The items themselves stay.
+Anniversary
+Appointment
+Birthday
+Business
+Call
+Holiday
+Meeting
+Personal
+Shopping
+Travel
+Anniversary, Appointment, Birthday, Business, Call…
+New view
+＋ New view…
+Edit view
+Delete view?
+The view “{s}” will be deleted. Your reminders are not changed.
+Show it in the Reminders tab
+View saved
+View “{s}” added
+Please give the view a name.
+There is already a view with that name.
+A view is a saved filter for the Reminders tab: pick it from the Show list. Conditions on different fields must all match; commas inside one condition mean “any of these”.
+No views yet. Click “New view…” to make one — for example every reminder with the category “Birthday” in the coming year.
+Name
+e.g. Birthdays
+Show reminders where
+＋ Add a condition
+Remove this condition
+Anything
+The category
+The view
+Type
+is
+contains
+words, separated by commas
+Only dates from
+to
+from today
+today
+Negative numbers go back in time: −{n} month to {n2} days means “the past month”.
+All
+Everything
+Reminders only
+To-dos only
+Unit
+How many
+Anything contains “{s}”
+Category is “{s}”
+Category is “{s}” or “{s2}”
+dates from today to {n} days ahead
++{n} week || +{n} weeks
++{n} month || +{n} months
++{n} year || +{n} years
+
+# ---- import, export, backups, restore
+Import
+Import an iCalendar file
+Import from ReminderFox
+From ReminderFox
+Found {files} from the ReminderFox add-on:
+Import newest
+Import them anyway
+{reminders} and {items}
+{n} already here (the newer copy is kept)
+{n} looks like a duplicate (same title and date as an item you have)
+{n} look like duplicates (same title and date as an item you have)
+How
+Add to what I have
+Replace everything
+Replace everything (your {items} are saved as a backup first)
+Replace everything?
+Your {items} will be replaced by the {newItems} in the file.
+What you have now is saved first as a “Saved before an import replaced everything” backup, so you can bring it back from Settings → Data → Restore from a backup….
+Duplicates
+Skip items with the same title and date as one I have
+Optional: added to every imported item, for example “Holidays” for a list of holidays, so you can filter by it.
+optional
+Import complete
+Imported {items}
+Imported {items} and {lists}
+{n} updated
+{n} already up to date
+{n} duplicate skipped || {n} duplicates skipped
+replacing {items} (saved as {file})
+{lists} added ({names})
+{n} archived item moved to the “{list}” list || {n} archived items moved to the “{list}” list
+This file does not contain any iCalendar data (no BEGIN:VCALENDAR).
+Could not read your reminders file
+Exported to {path}
+Export
+Everything (reminders and to-dos)
+The file works with Outlook, Google Calendar, Thunderbird, Apple Calendar and the original ReminderFox add-on.
+ReminderFoxAgain keeps a backup every day, one before each restore, and the ones you make with “Back up now”. Restoring replaces your current reminders and to-dos with the backup; what you have now is saved first, so you can always go back.
+Made
+Contents
+Restore
+Restore…
+Choose another file…
+{n} archived
+Can't be read: {s}
+{s} couldn't be read: {s2}
+Can't restore that file
+No backups yet. They are made every day the app runs; you can also click “Back up now”.
+Daily backup
+Backup made by you
+Saved before a restore
+Saved before an import replaced everything
+The archive, before it became a list
+Daily backup of the archive (earlier version)
+Backup
+Restore this backup?
+This replaces what you have now ({now}) with the backup from {when}: {items}.
+This replaces what you have now ({now}) with the backup from {when}: {items}, plus {n} archived, which go into the “{list}” list.
+This is a copy of the archive from an earlier version. Its {all} go into the “{list}” list (items you already have are left as they are). Nothing else changes.
+Your current data is saved first as a “Saved before a restore” backup, so you can undo this from this same list.
+Backup restored
+Restored {items}.
+Restored {items}, {n} of them archived ones now in the “{list}” list.
+What you had before was saved as {file}.
+Backup saved to {path}
+Backed up: {s}
+{n} bytes
+{n} KB
+{n} MB
+That item no longer exists.
+The archive file could not be read, so it is not changed. It was kept as archive.ics.unreadable.
+The archive file could not be read, so it cannot be replaced.
+
+# ---- welcome
+Welcome to ReminderFoxAgain
+Your reminders, to-dos and alarms as a Windows app — a tribute to the original ReminderFox add-on.
+Import from your ReminderFox add-on
+{path} — last changed {date}
+Import a reminderfox.ics or other calendar file…
+From the ReminderFox add-on (in your Firefox/Thunderbird profile's "reminderfox" folder), Outlook, Google Calendar…
+Start with an empty list
+You can import later from Settings → Data.
+
+# ---- relative times
+now
+in {n} min
+in {n} hour || in {n} hours
+in {n} day || in {n} days
+{n} min ago
+{n} hour ago || {n} hours ago
+{n} day ago || {n} days ago
+
+# ---- tray, windows and file dialogs (main process)
+Open {app}
+Add reminder…
+Add list item…
+Quick alarm…
+Resume alarms
+Show today's reminders
+Quit {app}
+{app} — alarms off
+{app} — alarms off until {time}
+{app} — nothing today
+coming up
+{app} is still running
+Alarms will keep popping up. Right-click the fox in the system tray to quit.
+{app} alarm
+{app} — today
+{n} h {n2} min
+iCalendar files
+All files
+Sound files
+Import iCalendar file
+Export to iCalendar file
+Choose your reminderfox.ics
+Choose an alarm sound
+Save a backup copy
+Choose a backup to restore
+
+# ---- repeat descriptions (the list's Repeat column; made in the main process)
+Weekly on {days}
+Monthly on the {nth} {weekday}
+Monthly on day {day}
+Monthly on the same day
+Every {n} months on the same day
+Yearly on the {nth} {weekday} of {month}
+Yearly on {date}
+Yearly on the same date
+Every {n} years on the same date
+Repeats
+Custom ({rule})
+{rule}, once
+{rule}, {n} times
+{rule}, until {date}
+# 0.8.0: Show completed, columns, the View section and saved filters, alarm sounds
+Show reminders you have ticked as completed
+Show reminders and list items you have ticked as completed
+My order: drag rows, or press Alt+↑ / Alt+↓
+View
+Alarm sound
+Your own file…
+Use a sound file of your own (.mp3, .wav, .ogg, .m4a, .aac, .flac or .webm)
+Continuously until cleared
+Continuously until cleared: the sound plays again and again until you snooze, open, tick Done or dismiss the alarm, or hide the alarm window. The next alarm starts it again.
+Columns
+Columns in the Reminders tab
+Columns in the lists
+Untick a column to hide it. The description is always shown.
+Saved filters for the Reminders tab
+Manage reminders…
+Upcoming, All reminders, Important, search and saved filters without dates
+Used by Upcoming, All reminders, Important, search and saved filters without a date range. Today, Next {n} days, Selected day or month, the Month tab and the calendar always show every date.
+Saved filters
+Saved filter “{s}” · {c}
+Manage reminders
+A saved filter shows just the reminders you want in the Reminders tab: pick it from the Show list. Conditions on different fields must all match; commas inside one condition mean “any of these”.
+＋ New saved filter…
+No saved filters yet. Click “New saved filter…” to make one — for example every reminder with the category “Birthday” in the coming year.
+Delete saved filter?
+The saved filter “{s}” will be deleted. Your reminders are not changed.
+Edit saved filter
+New saved filter
+Please give the saved filter a name.
+There is already a saved filter with that name.
+Saved filter changed
+Saved filter “{s}” added
+Bell
+Marimba
+Digital beeps
+Alarm clock
+Your file: {s}
+# 0.8.1: your own themes
+Make a theme of your own from five colours
+＋ New theme…
+Change the colours of your theme
+＋ New theme… makes one of your own from five colours.
+Your themes
+Background
+Behind everything
+Lists and panels
+The lists, the calendar panel, dialogs
+Text
+Accent
+Buttons, today, selection
+Starred items
+Important reminders and to-dos
+The text is hard to read on the background (contrast {n}:1; 4.5:1 or more is easy to read).
+The accent is hard to see on the lists (contrast {n}:1; 3:1 or more is better).
+Starred items are hard to see on the lists (contrast {n}:1; 3:1 or more is better).
+Edit theme
+New theme
+Start from
+e.g. Forest
+The whole window shows the theme while you choose. Cancel puts the old one back.
+Please give the theme a name.
+There is already a theme with that name.
+Theme “{s}” saved
+Theme “{s}” added
+Delete theme?
+The theme “{s}” will be deleted. The app goes back to the Default theme.

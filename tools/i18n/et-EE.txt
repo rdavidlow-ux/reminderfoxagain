@@ -1,0 +1,834 @@
+# Eesti — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Meeldetuletus
+2| ＋ Loendi kirje
+3| ⚙ Sätted
+4| Sätted
+5| Otsi
+6| Otsi (Ctrl+F)
+7| Otsi meeldetuletustest ja ülesannetest
+8| Uus meeldetuletus (Ctrl+N)
+9| Uus kirje kuvatavasse loendisse (Ctrl+T)
+10| Kiiralarm: ühekordne alarm mõne minuti pärast (Ctrl+Q)
+11| ⏰ Kiiralarm
+12| Meeldetuletused
+13| Kuu
+14| Loend
+15| Loendid
+16| Loend: {s}
+17| Kõik loendid
+18| Vali kuvatav loend
+19| Kuvatav loend
+20| Ülesanded
+21| Lõpetatud või peatatud
+22| Näita või peida kalendripaan
+23| Näita või peida kalendripaan (Ctrl+B)
+24| Alarmid sees
+25| Alarmid peatatud
+26| Alarmid peatatud kuni {time}
+27| Jätka
+28| Klõpsa, et alarmid uuesti sisse lülitada
+29| Peata või jätka alarme
+30| one={n} kirje | other={n} kirjet
+31| one={n} meeldetuletus | other={n} meeldetuletust
+32| one={n} ülesanne | other={n} ülesannet
+33| one={n} loendi kirje | other={n} loendi kirjet
+34| one={n} uus kirje | other={n} uut kirjet
+35| one={n} arhiveeritud kirje | other={n} arhiveeritud kirjet
+36| one={n} loend | other={n} loendit
+37| one={n} fail | other={n} faili
+38| one={n} minut | other={n} minutit
+39| one={n} tund | other={n} tundi
+40| one={n} päev | other={n} päeva
+41| one={n} duplikaat | other={n} duplikaati
+42| Näita
+43| Täna
+44| Homme
+45| Eile
+46| Järgmised {n} päeva
+47| Tulevad
+48| Kõik meeldetuletused
+49| Olulised
+50| Möödunud
+51| Valitud päev
+52| Valitud kuu
+53| Vaated
+54| Vaade „{s}“
+55| Otsitakse kõigist meeldetuletustest
+56| Kuupäev
+57| Päev
+58| Aeg
+59| Kirjeldus
+60| Kordus
+61| Kategooria
+62| Alarm
+63| Tehtud
+64| Tehtud {date}
+65| (kirjelduseta)
+66| Siin pole meeldetuletusi
+67| Klõpsa ＋ Meeldetuletus, et lisada, või vali mõni muu vaade.
+68| Klõpsa ＋ Loendi kirje, et sellesse loendisse lisada.
+69| Hilinenud alates {date}
+70| hilinenud alates {date}
+71| Varsti: {s}
+72| Muuda…
+73| Kustuta…
+74| Kustuta
+75| Tee koopia
+76| Kopeeri
+77| Teisalda
+78| Ava
+79| Ava link
+80| Näita kaardil
+81| Näita loendis
+82| Märgi tehtuks
+83| Tuleta meelde…
+84| Tee ülesandeks…
+85| Tee ülesandeks
+86| Tee meeldetuletuseks
+87| Ajasta meeldetuletuseks…
+88| Ajasta meeldetuletuseks
+89| Kopeeri loendisse…
+90| Kopeeri loendisse
+91| Kopeeri loendisse…
+92| Kopeeri loendisse
+93| Teisalda loendisse…
+94| Teisalda loendisse
+95| Teisalda…
+96| Kopeeri…
+97| Teisalda teise loendisse
+98| Pane koopia teise loendisse
+99| Täpne koopia selles loendis (Ctrl+D)
+100| Kustuta (Del)
+101| Valitud kirje
+102| Valitud kirje:
+103| Liiguta üles
+104| Liiguta alla
+105| -
+106| -
+107| -
+108| „{s}“ kopeeritud
+109| {s} (koopia)
+110| Kopeeritud loendisse „{s}“
+111| Teisaldatud loendisse „{s}“
+112| Teisalda loendisse „{s}“
+113| Nüüd ülesanne loendis „{s}“
+114| Nüüd meeldetuletus {date}
+115| on loendis „{s}“
+116| „{s}“ on tühi
+117| Kustutatud
+118| Kordumine kustutatud
+119| Kustuta korduv meeldetuletus
+120| See kordub — muudatused kehtivad igale korrale.
+121| Ainult see
+122| Kõik korrad
+123| Kustuta see kord
+124| Kustuta kõik korrad…
+125| „{s}“ kordub ({rule}).
+126| Kas kustutada ainult {date} või kõik korrad?
+127| Kas kustutada kõik korrad?
+128| Kustuta kõik
+129| Kas kustutada meeldetuletus?
+130| Kas kustutada ülesanne?
+131| „{s}“ kustutatakse.
+132| „{s}“ ja kõik selle kordused kustutatakse.
+133| Midagi läks valesti
+134| Sisesta esmalt asukoht.
+135| Eelmine kuu
+136| Järgmine kuu
+137| Mine tänasele
+138| Mine kuupäevale (Ctrl+G)
+139| Mine kuupäevale
+140| Mine…
+141| Mine
+142| Lisa sellele päevale meeldetuletus
+143| Topeltklõpsa päeval, et lisada meeldetuletus
+144| Sel päeval pole midagi.
+145| +{n} veel
+146| Veel tegemata
+147| Terve päev
+148| Terve päev {s}
+149| Ülesanne
+150| Ülesanne {s}
+151| Ülesanne
+152| P
+153| E
+154| T
+155| K
+156| N
+157| R
+158| L
+159| P
+160| E
+161| T
+162| K
+163| N
+164| R
+165| L
+166| pühapäev
+167| esmaspäev
+168| teisipäev
+169| kolmapäev
+170| neljapäev
+171| reede
+172| laupäev
+173| Loendi kirje
+174| Tähtaeg
+175| Järjestus
+176| Minu järjestus
+177| Kuupäeva järgi
+178| Käsitsi: lohista ridu või vajuta Alt+↑ / Alt+↓
+179| Näita tehtuid
+180| Näita ülesandeid
+181| Kaasa kuupäevaga ülesanded
+182| Kuupäev puudub
+183| · tähtajata
+184| · tähtaeg {date}
+185| · hilinenud
+186| · terve päev
+187| · seatud kellaajale {time}
+188| · {n} min pärast
+189| · algas {n} min tagasi ·
+190| Näita seda ülesannet teavitusala ikooni kohtspikris
+191| Näita teavitusala kohtspikris
+192| ✓ Näita teavitusala kohtspikris
+193| Kuvatakse teavitusala kohtspikris
+194| Eemaldatud teavitusala kohtspikrist
+195| Tuleta iga päev meelde, kuni tehtud
+196| Tuleta mulle iga päev meelde, kuni see on tehtud
+197| Tuletab iga päev meelde, kuni see on tehtud
+198| Kuni tehtud
+199| Ei tuleta enam iga päev meelde
+200| Tuletab sulle iga päev meelde, kuni märgid Tehtud
+201| Jäi vahele {date}; tuletab sulle iga päev meelde, kuni selle märgid
+202| Kui see jääb vahele, nihkub see tänasele ja annab iga päev alarmi, kuni selle märgid
+203| Tehtud — nihutatud järgmisele kuupäevale
+204| iga päev
+205| iga nädal
+206| iga kuu
+207| iga {n} päeva järel
+208| iga {n} nädala järel
+209| {n} p enne
+210| samal päeval
+211| {every} alates {from}
+212| üks kord
+213| iga päev
+214| iga nädal
+215| iga kuu
+216| one={n} päev enne tähtaega | other={n} päeva enne tähtaega
+217| tähtpäeval
+218| Tuletab meelde {every}, alates {from}, kell {time}
+219| Tuletab meelde {every}, alates {from}, kell {time}, kuni see on tehtud
+220| Tuletab meelde {every}, alates {from}, kell {time}, kuni see on tehtud (ka pärast tähtaega)
+221| Uus meeldetuletus
+222| Muuda meeldetuletust
+223| Uus ülesanne
+224| Muuda ülesannet
+225| Mida sulle meelde tuletada?
+226| Mida on vaja teha?
+227| Liik
+228| Meeldetuletus
+229| Kuupäeval
+230| Ükskõik millal
+231| Lõpeb
+232| Asukoht
+233| Link
+234| -
+235| Märkmed
+236| Kategooriad
+237| Vali kategooriad
+238| nt Sünnipäev, Töö
+239| Lisa
+240| Salvesta
+241| Loobu
+242| Sulge
+243| OK
+244| Jah
+245| Ei
+246| Puudub
+247| Ei kordu
+248| Iga päev
+249| Iga nädal
+250| Iga kuu
+251| Iga aasta
+252| Kohandatud…
+253| Kohandatud
+254| Kohandatud (imporditud)
+255| Säilita imporditud: {s}
+256| Igal tööpäeval
+257| Iga
+258| iga
+259| päev
+260| päeva
+261| nädal
+262| nädalat
+263| kuu
+264| kuud
+265| aasta
+266| aastat
+267| korda
+268| {date}
+269| Kuu {day}. päeval
+270| {nth} {weekday}
+271| {month} {nth} {weekday}
+272| Viimane {weekday}
+273| {month} viimane {weekday}
+274| Iga päev
+275| Iga {n} päeva järel
+276| Iga nädal
+277| Iga {n} nädala järel
+278| Iga kuu
+279| Iga nädal: {days}
+280| Iga {n} nädala järel: {days}
+281| tööpäevadel
+282| Iga kuu {day}. päeval
+283| Iga {n} kuu järel {day}. päeval
+284| Iga kuu {nth} {weekday}
+285| Iga {n} kuu järel, {nth} {weekday}
+286| Igal aastal {date}
+287| Iga {n} aasta järel {date}
+288| Igal aastal: {month} {nth} {weekday}
+289| Iga {n} aasta järel: {month} {nth} {weekday}
+290| viimane
+291| {n}.
+292| Kui sageli
+293| Päevadel
+294| Pärast
+295| Siis
+296| -
+297| kell
+298| enne
+299| Mitte kunagi
+300| Kuni
+301| kuni…
+302| kuupäeval…
+303| alates…
+304| rohkem mitte (ainult üks kord)
+305| Tuleta meelde
+306| Ära tuleta meelde
+307| Millal meeldetuletustega alustada
+308| Esimese meeldetuletuse kuupäev
+309| Meeldetuletuse kellaaeg
+310| Jätka meeldetuletamist, kui tähtaeg on möödas ja see pole tehtud
+311| ka pärast tähtaega
+312| kuni see on tehtud
+313| kuni see on tehtud või tähtaeg saabub ({due})
+314| kuni see on tehtud, ka pärast tähtaega ({due})
+315| Üks meeldetuletus, {date} kell {time}.
+316| Üks meeldetuletus, {date} kell {time}. See aeg on möödas — vali hilisem või tuleta korduvalt meelde.
+317| {every} kell {time}, alates {date}, {end}.
+318| Meeldetuletusi pole.
+319| Meeldetuletusi pole. Ülesanne muutub punaseks, kui tähtaeg on möödas.
+320| Vali esimese meeldetuletuse kuupäev.
+321| Alarmi tekst
+322| Õigel ajal
+323| one={n} minut enne | other={n} minutit enne
+324| one={n} tund enne | other={n} tundi enne
+325| one={n} päev enne | other={n} päeva enne
+326| one={n} nädal enne | other={n} nädalat enne
+327| Samal päeval kell {time}
+328| Eelmisel päeval kell {time}
+329| Kuvatakse nii: {s}. <year> loeb aastaid sellest ajast; <year#> näitab ainult arvu.
+330| Imporditud ajavööndis {zone} — kuvatakse sinu kohaliku aja järgi. Salvestamisel talletatakse kohalikus ajas.
+331| Sisesta kirjeldus.
+332| Vali tähtaeg või märgi „Kuupäev puudub“.
+333| Vali kuupäev.
+334| Vali kuupäev.
+335| Vali kuupäev.
+336| Sisesta tähtaja kellaaeg või märgi „Ükskõik millal“.
+337| Sisesta kellaaeg või märgi „Terve päev“.
+338| Lõppkuupäev on enne alguskuupäeva.
+339| Lõpuaeg on enne algusaega.
+340| Meeldetuletus lisatud
+341| Ülesanne lisatud
+342| Salvestatud
+343| Muuda koopiat
+344| Kuupäev on teada: tee sellest ülesandest kindla kuupäeva meeldetuletus
+345| Tähtaeg on {date}.
+346| Tähtaeg on {date}, {time}.
+347| Kui tead täpset kuupäeva, saab ülesandest selle kuupäeva meeldetuletus: see lahkub ülesannete loendist ja ilmub Meeldetuletustesse, kuuvaatesse ja kalendrisse. Märkmed, kategooria, asukoht ja link säilivad.
+348| Meeldetuletus {date}, terve päev.
+349| Meeldetuletus {date} kell {time}.
+350| Meeldetuletusest saab samal kuupäeval ülesanne koos korduse, alarmi ja märkmetega.
+351| Meeldetuletus jääb alles; ülesande koopia samal kuupäeval koos korduse, alarmi ja märkmetega läheb loendisse.
+352| Täpne koopia läheb valitud loendisse; see jääb oma kohale.
+353| Loend
+354| {s} (see loend)
+355| põhiloend
+356| ReminderFoxAgaini alarm
+357| Edasi lükata
+358| Lükka kõik edasi
+359| Lükka kõik edasi {s}
+360| Lükka kõik siinsed meeldetuletused vaikimisi aja võrra edasi (muudetav sätetes)
+361| Kui kauaks või mis kellaajani edasi lükata
+362| Edasilükkamise ühik
+363| Lükka edasi kuni
+364| Loobu
+365| Loobu kõigist
+366| Tehtud
+367| Selle kiiralarmiga on lõpetatud
+368| Peida praeguseks (alarm jääb aktiivseks ja tuleb järgmisega tagasi)
+369| Kellaaeg nagu 15:30 või 3:30 pm (praegusest varasem tähendab homset)
+370| Täisarv {n} kuni {n2}
+371| Sisesta täisarv {n} kuni {n2}.
+372| Sisesta täisarv 1 kuni 999 või kuupäev ja kellaaeg.
+373| sekundit
+374| minutit
+375| tundi
+376| Kiiralarm
+377| Kiiralarmid
+378| ⏰ Kiiralarmid…
+379| Ühekordne alarm, mida ei salvestata meeldetuletusena — nagu lisa Kiiralarm.
+380| Pärast
+381| Kell
+382| Kestus
+383| Sea alarm
+384| Tühista see alarm
+385| Kiiralarme pole.
+386| Ootab helisemist
+387| Kiiralarm seatud kellaajale {time}
+388| Kiiralarm tühistatud
+389| Vali kellaaeg.
+390| See aeg on möödas — vali hilisem.
+391| See aeg on möödas.
+392| Heliseb {when} ({until}).
+393| täna kell {time}
+394| vähem kui minuti pärast
+395| {time} pärast
+396| {hours} {minutes} pärast
+397| Peata alarmid
+398| Peata alarmid…
+399| Peata alarmid mõneks ajaks
+400| Peata
+401| Kui kauaks
+402| Kuni lülitan need uuesti sisse
+403| Alarmid on väljas, kuni neid jätkad (olekuriba, teavitusala menüü või siin).
+404| Pausi ajal alarmiaknaid ei avata ja meeldetuletuste aken ei ilmu. Vahepeal saabunud alarmid kuvatakse jätkamisel.
+405| Alarmid on peatatud, kuni lülitad need uuesti sisse.
+406| Alarmid tulevad tagasi {when}.
+407| Alarmid on jälle sees
+408| Jätka alarme kohe
+409| Vali kellaaeg tulevikus.
+410| ReminderFoxAgain — täna
+411| Tulekul
+412| Täna pole midagi.
+413| Tulekul pole midagi.
+414| Üldine
+415| Alarmid
+416| Kuva
+417| Andmed
+418| Teave
+419| Käivita ReminderFoxAgain Windowsi käivitumisel
+420| Jätka teavitusalas, kui aken suletakse
+421| Nädal algab
+422| Teema
+423| Teemad
+424| Vaikimisi (järgib Windowsi)
+425| Rebane
+426| Hele
+427| Tume
+428| Ookean
+429| Suur kontrast
+430| Vaikimisi on Rebane, hele või tume vastavalt Windowsile. Tärniga kirjetel on igas teemas oma värv. Suur kontrast kasutab musta, valget, kollast ja tsüaani ning suuremat teksti ja paksemaid jooni.
+431| -
+432| ReminderFoxAgain on austusavaldus algsele
+433| -
+434| lisale Firefoxile ja Thunderbirdile, mille lõid Tom Mutdosch ja Daniel Lee koos Guenter Wahliga. Failivorming, kordusreeglid, vaated, kiiralarmid ja teavitusaken on nende looming; aitäh.
+435| Mängi alarmidega heli
+436| Heli
+437| Sisseehitatud kell
+438| Sinu heli
+439| Vali…
+440| Vali
+441| Kasuta sisseehitatud kella
+442| Kell
+443| Mängi
+444| ▶ Proovi
+445| Alarmi heli: {s}
+446| Kasutatakse sisseehitatud kella
+447| Vali helifail (.mp3, .wav, .ogg, .m4a, .aac, .flac või .webm).
+448| See helifail on suurem kui 10 MB. Vali lühem.
+449| Korda heli
+450| Ei, mängi üks kord
+451| Iga minuti järel
+452| Iga {n} minuti järel
+453| Uute meeldetuletuste vaikealarm
+454| Vaikimisi edasilükkamine
+455| Vaikimisi edasilükkamise ühik
+456| Vaikimisi edasilükkamine, mitu
+457| Meeldetuletuste aken (lisa teavitusaken)
+458| Näita akent tänaste ja tulevate meeldetuletustega
+459| Millal
+460| Ainult käivitamisel
+461| Käivitamisel ja iga {n} minuti järel
+462| … iga {n} minuti järel
+463| … iga tunni järel
+464| … iga {n} tunni järel
+465| Hoia avatuna
+466| {n} sekundit
+467| Kuni selle sulgen
+468| Nurk
+469| all paremal
+470| all vasakul
+471| üleval paremal
+472| üleval vasakul
+473| Mängi heli
+474| Näita kohe
+475| „Tulevad“ tähendab järgmist
+476| Arv ikoonil
+477| Näita arvu teavitusala ja tegumiriba ikoonidel
+478| Tänased avatud meeldetuletused ja ülesanded
+479| Tänased ja tulevad
+480| Ainult tänased
+481| Ainult tulevad
+482| Keel
+483| Süsteemi keel ({s})
+484| Menüüde, nuppude ja teadete keel. Sinu meeldetuletusi ei muudeta.
+485| Tõlked on kirjutatud ReminderFoxAgaini jaoks ja emakeelekõnelejad pole neid veel üle vaadanud.
+486| Teksti suurus
+487| Väike ({n}%)
+488| Tavaline
+489| Suur ({n}%)
+490| Suurem ({n}%)
+491| Suurim ({n}%)
+492| Kuupäevad
+493| Nagu Windowsis ({s})
+494| Kellaajad
+495| Nagu Windowsis
+496| {n} tunni ({s})
+497| Näita kalendripaani loendite kõrval
+498| Kuid kalendripaanis
+499| Kaardid
+500| -
+501| -
+502| -
+503| Teavitusala ikooni kohtspikker
+504| Kohtspikker
+505| Tänased meeldetuletused
+506| Tulevad meeldetuletused
+507| Muutujad: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — samad mis lisas.
+508| Lähtesta
+509| Kohtspikri tekstid lähtestatud
+510| Halda loendeid…
+511| Halda kategooriaid…
+512| Halda vaateid…
+513| Korduvad meeldetuletused vahekaardil Meeldetuletused
+514| Kuvatavad tulevased kuupäevad
+515| Tulevad, Kõik meeldetuletused, Olulised, otsing ja kuupäevadeta vaated
+516| Iga kuupäev järgmise
+517| Ainult järgmised
+518| one={n} kuu | other={n} kuud
+519| one={n} aasta | other={n} aastat
+520| one={n} kuupäev | other={n} kuupäeva
+521| Kasutavad Tulevad, Kõik meeldetuletused, Olulised, otsing ja kuupäevavahemikuta vaated. Täna, Järgmised {n} päeva, Valitud päev või kuu, vahekaart Kuu ja kalender näitavad alati iga kuupäeva.
+522| Vaadetes Kõik ja Möödunud näita möödunuid alates
+523| iga sarja algusest
+524| viimased {n} aastat
+525| viimane aasta
+526| viimased {n} kuud
+527| Peida korduvad meeldetuletused
+528| Peida tehtud meeldetuletused
+529| Import ja eksport
+530| Impordi .ics-fail…
+531| Lisa kirjed .ics-failist (Ctrl+I)
+532| Impordi ReminderFoxist…
+533| Leia reminderfox.ics, mida ReminderFoxi lisa hoidis sinu Firefoxi või Thunderbirdi profiilis
+534| Ekspordi .ics-failiks…
+535| Ekspordi .ics-failiks
+536| Ekspordi…
+537| Salvesta .ics-fail (Ctrl+E)
+538| Import lisab olemasolevale; juba olemas olevaid kirjeid uuendatakse ainult siis, kui faili koopia on uuem. Eksporditud failid avanevad Outlookis, Google'i kalendris, Thunderbirdis, Apple'i kalendris ja algses ReminderFoxi lisas.
+539| Varukoopiad
+540| Tee varukoopia kohe
+541| Salvesta varukoopia…
+542| Taasta varukoopiast…
+543| Taasta varukoopiast
+544| Ava varukoopiate kaust
+545| Ava andmekaust
+546| Andmefail
+547| Näita meeldetuletuste faili Exploreris
+548| Sinu meeldetuletused salvestatakse faili {path} (igapäevased varukoopiad on selle kõrval kaustas „backups“).
+549| ＋ Uus loend…
+550| Uus loend…
+551| Uus loend
+552| Uue loendi nimi
+553| Uue loendi nimi (näiteks Ostud, Vaadata filmid, Kingiideed):
+554| Lisa loend
+555| Nimeta loend ümber
+556| Nimeta ümber…
+557| Eemalda…
+558| Kas eemaldada loend?
+559| „Ülesanded“ on põhiloend ja seda ei saa ümber nimetada ega eemaldada (nagu lisas). Loendi eemaldamisel valid, kas selle ülesanded viiakse loendisse „Ülesanded“ või kustutatakse.
+560| Loendis „{list}“ on {n} ülesanne. Kas viia see loendisse „{main}“ või kustutada koos loendiga?
+561| Loendis „{list}“ on {n} ülesannet. Kas viia need loendisse „{main}“ või kustutada koos loendiga?
+562| Kustuta loend ja ülesanded
+563| one=Loend ja {n} ülesanne kustutatud | other=Loend ja {n} ülesannet kustutatud
+564| Loend eemaldatud
+565| Loend „{s}“ lisatud
+566| „{s}“ on juba olemas
+567| See loend on juba olemas.
+568| Loendi nimi ei tohi olla tühi ega sisaldada koma või koolonit.
+569| Loendi nimi ei tohi sisaldada koma ega koolonit.
+570| Kas liita loendid?
+571| Liida
+572| Liidetud loendiga „{s}“
+573| Ümber nimetatud: „{s}“
+574| Uus nimi kirjele „{name}“:
+575| Uus nimi kirjele „{name}“ ({items}):
+576| Uus kategooria
+577| Muu kategooria
+578| Lisa levinud
+579| Kategooria „{s}“ lisatud
+580| {n} kategooriat lisatud
+581| Pole midagi uut lisada.
+582| Nimeta kategooria ümber
+583| Kas kustutada kategooria?
+584| Kategooria kustutatud
+585| Kas liita kategooriad?
+586| Kategooria ei tohi olla tühi ega sisaldada koma.
+587| pole veel kasutatud
+588| Ümbernimetamine muudab iga selle kategooriaga meeldetuletuse ja ülesande; olemasolevaks nimetamine liidab need. Kustutamine eemaldab selle kirjetelt (kirjed jäävad alles).
+589| Kategooria „{name}“ kustutatakse.
+590| Kategooria „{name}“ kustutatakse ja eemaldatakse kirjetelt ({items}). Kirjed ise jäävad alles.
+591| Aastapäev
+592| Kohtumine
+593| Sünnipäev
+594| Äri
+595| Kõne
+596| Püha
+597| Koosolek
+598| Isiklik
+599| Ostlemine
+600| Reis
+601| Aastapäev, Kohtumine, Sünnipäev, Äri, Kõne…
+602| Uus vaade
+603| ＋ Uus vaade…
+604| Muuda vaadet
+605| Kas kustutada vaade?
+606| Vaade „{s}“ kustutatakse. Sinu meeldetuletusi ei muudeta.
+607| Näita seda vahekaardil Meeldetuletused
+608| Vaade salvestatud
+609| Vaade „{s}“ lisatud
+610| Anna vaatele nimi.
+611| Selle nimega vaade on juba olemas.
+612| Vaade on salvestatud filter vahekaardile Meeldetuletused: vali see loendist Näita. Eri väljade tingimused peavad kõik kehtima; komad ühe tingimuse sees tähendavad „ükskõik milline neist“.
+613| Vaateid veel pole. Klõpsa „Uus vaade…“, et see luua — näiteks iga meeldetuletus kategooriaga „Sünnipäev“ eelseisval aastal.
+614| Nimi
+615| nt Sünnipäevad
+616| Näita meeldetuletusi, kus
+617| ＋ Lisa tingimus
+618| Eemalda see tingimus
+619| Ükskõik mis
+620| Kategooria
+621| Vaade
+622| Tüüp
+623| on
+624| sisaldab
+625| sõnad, komadega eraldatud
+626| Ainult kuupäevad alates
+627| kuni
+628| tänasest
+629| täna
+630| Negatiivsed arvud lähevad ajas tagasi: −{n} kuu kuni {n2} päeva tähendab „viimane kuu“.
+631| Kõik
+632| Kõik
+633| Ainult meeldetuletused
+634| Ainult ülesanded
+635| Ühik
+636| Mitu
+637| Ükskõik mis sisaldab „{s}“
+638| Kategooria on „{s}“
+639| Kategooria on „{s}“ või „{s2}“
+640| kuupäevad tänasest {n} päeva ette
+641| one=+{n} nädal | other=+{n} nädalat
+642| one=+{n} kuu | other=+{n} kuud
+643| one=+{n} aasta | other=+{n} aastat
+644| Impordi
+645| Impordi iCalendar-fail
+646| Impordi ReminderFoxist
+647| ReminderFoxist
+648| ReminderFoxi lisast leiti {files}:
+649| Impordi uusim
+650| Impordi ikkagi
+651| {reminders} ja {items}
+652| {n} on juba olemas (uuem koopia säilitatakse)
+653| {n} näib olevat duplikaat (sama pealkiri ja kuupäev nagu sinu kirjel)
+654| {n} näivad olevat duplikaadid (sama pealkiri ja kuupäev nagu sinu kirjel)
+655| Kuidas
+656| Lisa olemasolevale
+657| Asenda kõik
+658| Asenda kõik (praegustest kirjetest, {items}, tehakse esmalt varukoopia)
+659| Kas asendada kõik?
+660| Sinu {items} asendatakse failis olevatega ({newItems}).
+661| Praegune seis salvestatakse esmalt varukoopiana „Salvestatud enne importi, mis asendas kõik“, nii et saad selle tagasi menüüst Sätted → Andmed → Taasta varukoopiast….
+662| Duplikaadid
+663| Jäta vahele kirjed, millel on sama pealkiri ja kuupäev nagu minu omal
+664| Valikuline: lisatakse igale imporditud kirjele, näiteks „Pühad“ pühade loendi jaoks, et saaksid selle järgi filtreerida.
+665| valikuline
+666| Import lõpetatud
+667| Imporditud: {items}
+668| Imporditud: {items} ja {lists}
+669| {n} uuendatud
+670| {n} juba ajakohased
+671| one={n} duplikaat vahele jäetud | other={n} duplikaati vahele jäetud
+672| asendatakse {items} (salvestatud kui {file})
+673| {lists} lisatud ({names})
+674| one={n} arhiveeritud kirje viidi loendisse „{list}“ | other={n} arhiveeritud kirjet viidi loendisse „{list}“
+675| See fail ei sisalda iCalendari andmeid (BEGIN:VCALENDAR puudub).
+676| Meeldetuletuste faili ei õnnestunud lugeda
+677| Eksporditud: {path}
+678| Ekspordi
+679| Kõik (meeldetuletused ja ülesanded)
+680| Fail töötab Outlooki, Google'i kalendri, Thunderbirdi, Apple'i kalendri ja algse ReminderFoxi lisaga.
+681| ReminderFoxAgain teeb iga päev varukoopia, ühe enne iga taastamist ja need, mis teed nupuga „Tee varukoopia kohe“. Taastamine asendab praegused meeldetuletused ja ülesanded varukoopiaga; praegune seis salvestatakse esmalt, nii et saad alati tagasi minna.
+682| Tehtud
+683| Sisu
+684| Taasta
+685| Taasta…
+686| Vali muu fail…
+687| {n} arhiveeritud
+688| Ei saa lugeda: {s}
+689| Faili {s} ei õnnestunud lugeda: {s2}
+690| Seda faili ei saa taastada
+691| Varukoopiaid veel pole. Need tehakse igal päeval, kui rakendus töötab; võid ka klõpsata „Tee varukoopia kohe“.
+692| Igapäevane varukoopia
+693| Sinu tehtud varukoopia
+694| Salvestatud enne taastamist
+695| Salvestatud enne importi, mis asendas kõik
+696| Arhiiv, enne kui sellest sai loend
+697| Arhiivi igapäevane varukoopia (varasem versioon)
+698| Varukoopia
+699| Kas taastada see varukoopia?
+700| See asendab praeguse seisu ({now}) varukoopiaga ajast {when}: {items}.
+701| See asendab praeguse seisu ({now}) varukoopiaga ajast {when}: {items}, lisaks {n} arhiveeritud, mis lähevad loendisse „{list}“.
+702| See on varasema versiooni arhiivi koopia. Selle kirjed ({all}) lähevad loendisse „{list}“ (juba olemasolevad kirjed jäävad, nagu on). Muud ei muutu.
+703| Sinu praegused andmed salvestatakse esmalt varukoopiana „Salvestatud enne taastamist“, nii et saad selle samas loendis tagasi võtta.
+704| Varukoopia taastatud
+705| Taastatud: {items}.
+706| Taastatud: {items}, neist {n} arhiveeritud on nüüd loendis „{list}“.
+707| Varasem seis salvestati nimega {file}.
+708| Varukoopia salvestatud: {path}
+709| Varundatud: {s}
+710| {n} baiti
+711| {n} kB
+712| {n} MB
+713| Seda kirjet pole enam olemas.
+714| Arhiivifaili ei õnnestunud lugeda, seega seda ei muudeta. See säilitati nimega archive.ics.unreadable.
+715| Arhiivifaili ei õnnestunud lugeda, seega seda ei saa asendada.
+716| Tere tulemast ReminderFoxAgaini
+717| Sinu meeldetuletused, ülesanded ja alarmid Windowsi rakendusena — austusavaldus algsele ReminderFoxi lisale.
+718| Impordi oma ReminderFoxi lisast
+719| {path} — viimati muudetud {date}
+720| Impordi reminderfox.ics või muu kalendrifail…
+721| ReminderFoxi lisast (sinu Firefoxi/Thunderbirdi profiili kaustast „reminderfox“), Outlookist, Google'i kalendrist…
+722| Alusta tühja loendiga
+723| Saad importida hiljem menüüst Sätted → Andmed.
+724| nüüd
+725| {n} min pärast
+726| one={n} tunni pärast | other={n} tunni pärast
+727| one={n} päeva pärast | other={n} päeva pärast
+728| {n} min tagasi
+729| one={n} tund tagasi | other={n} tundi tagasi
+730| one={n} päev tagasi | other={n} päeva tagasi
+731| Ava {app}
+732| Lisa meeldetuletus…
+733| Lisa loendi kirje…
+734| Kiiralarm…
+735| Jätka alarme
+736| Näita tänaseid meeldetuletusi
+737| Sulge {app}
+738| {app} — alarmid väljas
+739| {app} — alarmid väljas kuni {time}
+740| {app} — täna pole midagi
+741| tulekul
+742| {app} töötab endiselt
+743| Alarmid ilmuvad edasi. Väljumiseks paremklõpsa teavitusalas rebasel.
+744| {app} alarm
+745| {app} — täna
+746| {n} h {n2} min
+747| iCalendari failid
+748| Kõik failid
+749| Helifailid
+750| Impordi iCalendari fail
+751| Ekspordi iCalendari faili
+752| Vali oma reminderfox.ics
+753| Vali alarmi heli
+754| Salvesta varukoopia
+755| Vali taastatav varukoopia
+756| Iga nädal: {days}
+757| Iga kuu {nth} {weekday}
+758| Iga kuu {day}. päeval
+759| Iga kuu samal päeval
+760| Iga {n} kuu järel samal päeval
+761| Igal aastal: {month} {nth} {weekday}
+762| Igal aastal {date}
+763| Igal aastal samal kuupäeval
+764| Iga {n} aasta järel samal kuupäeval
+765| Kordub
+766| Kohandatud ({rule})
+767| {rule}, üks kord
+768| {rule}, {n} korda
+769| {rule}, kuni {date}
+770| Näita meeldetuletusi, mille oled tehtuks märkinud
+771| Näita meeldetuletusi ja loendi kirjeid, mille oled tehtuks märkinud
+772| Minu järjestus: lohista ridu või vajuta Alt+↑ / Alt+↓
+773| Vaade
+774| Äratusheli
+775| Oma fail…
+776| Kasuta oma helifaili (.mp3, .wav, .ogg, .m4a, .aac, .flac või .webm)
+777| Pidevalt, kuni käsitletud
+778| Pidevalt, kuni käsitletud: heli kordub ikka ja jälle, kuni lükkad äratuse edasi, avad selle, märgid tehtuks või loobud sellest või peidad äratuse akna. Järgmine äratus alustab seda uuesti.
+779| Veerud
+780| Vahekaardi Meeldetuletused veerud
+781| Loendite veerud
+782| Veeru peitmiseks eemalda linnuke. Kirjeldust näidatakse alati.
+783| Salvestatud filtrid vahekaardile Meeldetuletused
+784| Halda meeldetuletusi…
+785| Tulevad, Kõik meeldetuletused, Olulised, otsing ja kuupäevadeta salvestatud filtrid
+786| Kasutavad Tulevad, Kõik meeldetuletused, Olulised, otsing ja kuupäevavahemikuta salvestatud filtrid. Täna, Järgmised {n} päeva, Valitud päev või kuu, vahekaart Kuu ja kalender näitavad alati iga kuupäeva.
+787| Salvestatud filtrid
+788| Salvestatud filter „{s}“ · {c}
+789| Halda meeldetuletusi
+790| Salvestatud filter näitab vahekaardil Meeldetuletused ainult soovitud meeldetuletusi: vali see loendist Näita. Eri väljade tingimused peavad kõik kehtima; komad ühe tingimuse sees tähendavad „ükskõik milline neist“.
+791| ＋ Uus salvestatud filter…
+792| Salvestatud filtreid veel pole. Klõpsa „Uus salvestatud filter…“, et see luua — näiteks iga meeldetuletus kategooriaga „Sünnipäev“ eelseisval aastal.
+793| Kas kustutada salvestatud filter?
+794| Salvestatud filter „{s}“ kustutatakse. Sinu meeldetuletusi ei muudeta.
+795| Muuda salvestatud filtrit
+796| Uus salvestatud filter
+797| Anna salvestatud filtrile nimi.
+798| Selle nimega salvestatud filter on juba olemas.
+799| Salvestatud filtrit muudeti
+800| Salvestatud filter „{s}“ lisati
+801| Kirikukell
+802| Marimba
+803| Digitaalsed piiksud
+804| Äratuskell
+805| Sinu fail: {s}
+806| Loo viiest värvist oma teema
+807| ＋ Uus teema…
+808| Muuda oma teema värve
+809| ＋ Uus teema… loob viiest värvist oma teema.
+810| Sinu teemad
+811| Taust
+812| Kõige taga
+813| Loendid ja paneelid
+814| Loendid, kalendripaneel, dialoogid
+815| Tekst
+816| Rõhuvärv
+817| Nupud, täna, valik
+818| Tärniga kirjed
+819| Olulised meeldetuletused ja ülesanded
+820| Teksti on taustal raske lugeda (kontrast {n}:1; alates 4,5:1 on hästi loetav).
+821| Rõhuvärvi on loenditel raske näha (kontrast {n}:1; 3:1 või rohkem on parem).
+822| Tärniga kirjeid on loenditel raske näha (kontrast {n}:1; 3:1 või rohkem on parem).
+823| Muuda teemat
+824| Uus teema
+825| Alusta teemast
+826| nt Mets
+827| Kogu aken näitab teemat valimise ajal. Loobu paneb vana tagasi.
+828| Anna teemale nimi.
+829| Selle nimega teema on juba olemas.
+830| Teema „{s}“ salvestati
+831| Teema „{s}“ lisati
+832| Kas kustutada teema?
+833| Teema „{s}“ kustutatakse. Rakendus läheb tagasi vaiketeemale.

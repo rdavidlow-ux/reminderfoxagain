@@ -1,0 +1,834 @@
+# Frysk — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Oantinker
+2| ＋ Listitem
+3| ⚙ Ynstellingen
+4| Ynstellingen
+5| Sykje
+6| Sykje (Ctrl+F)
+7| Sykje yn oantinkers en taken
+8| Nije oantinker (Ctrl+N)
+9| Nij item yn de toande list (Ctrl+T)
+10| Fluch alarm: in ienmalich alarm oer in pear minuten (Ctrl+Q)
+11| ⏰ Fluch alarm
+12| Oantinkers
+13| Moanne
+14| List
+15| Listen
+16| List: {s}
+17| Alle listen
+18| Kies hokker list toand wurdt
+19| Toande list
+20| Taken
+21| Beëinige of skorst
+22| Kalinderpaniel sjen litte of ferbergje
+23| Kalinderpaniel sjen litte of ferbergje (Ctrl+B)
+24| Alarms oan
+25| Alarms skorst
+26| Alarms skorst oant {time}
+27| Ferfetsje
+28| Klik om de alarms wer oan te setten
+29| Alarms skorse of ferfetsje
+30| one={n} item | other={n} items
+31| one={n} oantinker | other={n} oantinkers
+32| one={n} taak | other={n} taken
+33| one={n} listitem | other={n} listitems
+34| one={n} nij item | other={n} nije items
+35| one={n} argivearre item | other={n} argivearre items
+36| one={n} list | other={n} listen
+37| one={n} bestân | other={n} bestannen
+38| one={n} minút | other={n} minuten
+39| one={n} oere | other={n} oeren
+40| one={n} dei | other={n} dagen
+41| one={n} duplikaat | other={n} duplikaten
+42| Toane
+43| Hjoed
+44| Moarn
+45| Juster
+46| Kommende {n} dagen
+47| Ynkoarten
+48| Alle oantinkers
+49| Wichtich
+50| Foarby
+51| Keazen dei
+52| Keazen moanne
+53| Werjeften
+54| Werjefte ‘{s}’
+55| Sykje yn alle oantinkers
+56| Datum
+57| Dei
+58| Tiid
+59| Beskriuwing
+60| Werhelling
+61| Kategory
+62| Alarm
+63| Foltôge
+64| Foltôge {date}
+65| (gjin beskriuwing)
+66| Hjir binne gjin oantinkers
+67| Klik op ＋ Oantinker om ien ta te foegjen, of kies in oare werjefte.
+68| Klik op ＋ Listitem om wat oan dizze list ta te foegjen.
+69| Te let sûnt {date}
+70| te let sûnt {date}
+71| Ynkoarten: {s}
+72| Bewurkje…
+73| Fuortsmite…
+74| Fuortsmite
+75| Duplisearje
+76| Kopiearje
+77| Ferpleatse
+78| Iepenje
+79| Keppeling iepenje
+80| Op in kaart sjen litte
+81| Yn de list sjen litte
+82| As foltôge markearje
+83| Herinnerje my…
+84| Der in taak fan meitsje…
+85| Der in taak fan meitsje
+86| Der in oantinker fan meitsje
+87| As oantinker planne…
+88| As oantinker planne
+89| Nei in list kopiearje…
+90| Nei in list kopiearje
+91| Nei list kopiearje…
+92| Nei list kopiearje
+93| Nei list ferpleatse…
+94| Nei list ferpleatse
+95| Ferpleatse nei…
+96| Kopiearje nei…
+97| Nei in oare list ferpleatse
+98| In kopy op in oare list sette
+99| In krekte kopy yn dizze list (Ctrl+D)
+100| Fuortsmite (Del)
+101| Keazen item
+102| Keazen item:
+103| Omheech
+104| Omleech
+105| -
+106| -
+107| -
+108| ‘{s}’ duplisearre
+109| {s} (kopy)
+110| Kopiearre nei ‘{s}’
+111| Ferpleatst nei ‘{s}’
+112| Ferpleatse nei ‘{s}’
+113| No in taak yn ‘{s}’
+114| No in oantinker op {date}
+115| stiet yn ‘{s}’
+116| ‘{s}’ is leech
+117| Fuortsmiten
+118| Kear fuortsmiten
+119| Weromkommende oantinker fuortsmite
+120| Dit wurdt werhelle — wizigingen jilde foar elke kear.
+121| Allinnich dizze
+122| Alle kearen
+123| Dizze kear fuortsmite
+124| Alle kearen fuortsmite…
+125| ‘{s}’ wurdt werhelle ({rule}).
+126| Allinnich dy op {date} fuortsmite, of alle kearen?
+127| Alle kearen fuortsmite?
+128| Alles fuortsmite
+129| Oantinker fuortsmite?
+130| Taak fuortsmite?
+131| ‘{s}’ wurdt fuortsmiten.
+132| ‘{s}’ en alle werhellingen wurde fuortsmiten.
+133| Der gie wat mis
+134| Folje earst in lokaasje yn.
+135| Foarige moanne
+136| Folgjende moanne
+137| Nei hjoed
+138| Nei in datum gean (Ctrl+G)
+139| Nei datum gean
+140| Gean nei…
+141| Gean
+142| In oantinker op dizze dei tafoegje
+143| Dûbelklik op in dei om in oantinker ta te foegjen
+144| Neat op dizze dei.
+145| +{n} mear
+146| Noch net dien
+147| Hiele dei
+148| Hiele dei {s}
+149| Taak
+150| Taak {s}
+151| Taak
+152| si
+153| mo
+154| ti
+155| wo
+156| to
+157| fr
+158| so
+159| si
+160| mo
+161| ti
+162| wo
+163| to
+164| fr
+165| so
+166| snein
+167| moandei
+168| tiisdei
+169| woansdei
+170| tongersdei
+171| freed
+172| sneon
+173| Listitem
+174| Uterlik
+175| Folchoarder
+176| Myn folchoarder
+177| Op datum
+178| Mei de hân: rigels slepe of Alt+↑ / Alt+↓ yndrukke
+179| Foltôge sjen litte
+180| Taken sjen litte
+181| Taken mei datum meinimme
+182| Gjin datum
+183| · gjin eindatum
+184| · uterlik {date}
+185| · te let
+186| · hiele dei
+187| · ynsteld op {time}
+188| · oer {n} min
+189| · {n} min lyn begûn ·
+190| Dizze taak yn de arktip fan it systeemfakpiktogram sjen litte
+191| Yn de arktip fan it systeemfak sjen litte
+192| ✓ Yn de arktip fan it systeemfak sjen litte
+193| Wurdt toand yn de arktip fan it systeemfak
+194| Fuorthelle út de arktip fan it systeemfak
+195| Alle dagen herinnerje oant foltôge
+196| Herinnerje my alle dagen oant it dien is
+197| Herinnert alle dagen oant it dien is
+198| Oant dien
+199| Herinnert net mear alle dagen
+200| Herinnert jo alle dagen oant jo Dien oanfinkje
+201| Mist op {date}; herinnert jo alle dagen oant jo it oanfinkje
+202| As jo it misse, giet it nei hjoed en jout it alle dagen alarm oant jo it oanfinkje
+203| Dien — ferpleatst nei de folgjende datum
+204| deistich
+205| wykliks
+206| moanliks
+207| elke {n} dagen
+208| elke {n} wiken
+209| {n} d foarôf
+210| op de dei sels
+211| {every} fan {from} ôf
+212| ien kear
+213| elke dei
+214| elke wike
+215| elke moanne
+216| one={n} dei foar de eindatum | other={n} dagen foar de eindatum
+217| op de eindatum
+218| Herinnert jo {every}, fan {from} ôf, om {time}
+219| Herinnert jo {every}, fan {from} ôf, om {time}, oant it dien is
+220| Herinnert jo {every}, fan {from} ôf, om {time}, oant it dien is (ek nei de eindatum)
+221| Nije oantinker
+222| Oantinker bewurkje
+223| Nije taak
+224| Taak bewurkje
+225| Wêr wolle jo oan herinnere wurde?
+226| Wat moat der dien wurde?
+227| Soarte
+228| Oantinker
+229| Op datum
+230| Elk momint
+231| Einiget
+232| Lokaasje
+233| Keppeling
+234| -
+235| Notysjes
+236| Kategoryen
+237| Kategoryen kieze
+238| bgl. Jierdei, Wurk
+239| Tafoegje
+240| Bewarje
+241| Annulearje
+242| Slute
+243| OK
+244| Ja
+245| Nee
+246| Gjin
+247| Wurdt net werhelle
+248| Deistich
+249| Wykliks
+250| Moanliks
+251| Jierliks
+252| Oanpast…
+253| Oanpast
+254| Oanpast (ymportearre)
+255| Ymportearre hâlde: {s}
+256| Elke wurkdei
+257| Elke
+258| elke
+259| dei
+260| dagen
+261| wike
+262| wiken
+263| moanne
+264| moannen
+265| jier
+266| jier
+267| kear
+268| Op {date}
+269| Op dei {day}
+270| Op de {nth} {weekday}
+271| Op de {nth} {weekday} fan {month}
+272| Op de lêste {weekday}
+273| Op de lêste {weekday} fan {month}
+274| Elke dei
+275| Elke {n} dagen
+276| Elke wike
+277| Elke {n} wiken
+278| Elke moanne
+279| Elke wike op {days}
+280| Elke {n} wiken op {days}
+281| wurkdagen
+282| Elke moanne op dei {day}
+283| Elke {n} moannen op dei {day}
+284| Elke moanne op de {nth} {weekday}
+285| Elke {n} moannen op de {nth} {weekday}
+286| Elk jier op {date}
+287| Elke {n} jier op {date}
+288| Elk jier op de {nth} {weekday} fan {month}
+289| Elke {n} jier op de {nth} {weekday} fan {month}
+290| lêste
+291| {n}e
+292| Hoe faak
+293| Op
+294| Nei
+295| Dêrnei
+296| -
+297| om
+298| foarôf
+299| Nea
+300| Oant
+301| oant…
+302| op in datum…
+303| fan … ôf
+304| net mear (mar ien kear)
+305| Herinnerje my
+306| Herinnerje my net
+307| Wannear begjinne mei herinnerjen
+308| Datum fan de earste herinnering
+309| Tiid fan de herinnering
+310| Trochgean mei herinnerjen as de eindatum foarby is en it net dien is
+311| ek nei de eindatum
+312| oant it dien is
+313| oant it dien of ferrûn is ({due})
+314| oant it dien is, ek nei de eindatum ({due})
+315| Ien herinnering, op {date} om {time}.
+316| Ien herinnering, op {date} om {time}. Dat tiidstip is foarby — kies in letter of herinnerje mear kearen.
+317| {every} om {time}, fan {date} ôf, {end}.
+318| Gjin herinneringen.
+319| Gjin herinneringen. De taak wurdt read sa gau as de eindatum foarby is.
+320| Kies de datum fan de earste herinnering.
+321| Alarmtekst
+322| Op it tiidstip
+323| one={n} minút foarôf | other={n} minuten foarôf
+324| one={n} oere foarôf | other={n} oeren foarôf
+325| one={n} dei foarôf | other={n} dagen foarôf
+326| one={n} wike foarôf | other={n} wiken foarôf
+327| Op de dei sels, om {time}
+328| De dei derfoar, om {time}
+329| Wurdt toand as: {s}. <year> telt de jierren sûnt dan; <year#> lit allinnich it getal sjen.
+330| Ymportearre yn de tiidsône {zone} — toand yn jo lokale tiid. By bewarjen wurdt de lokale tiid bewarre.
+331| Folje in beskriuwing yn.
+332| Kies de eindatum of finkje ‘Gjin datum’ oan.
+333| Kies in datum.
+334| Kies de datum.
+335| Kies de datum.
+336| Folje de tiid yn wêrop it klear wêze moat, of finkje ‘Elk momint’ oan.
+337| Folje in tiid yn of finkje ‘Hiele dei’ oan.
+338| De eindatum leit foar de begjindatum.
+339| De eintiid leit foar de begjintiid.
+340| Oantinker tafoege
+341| Taak tafoege
+342| Bewarre
+343| De kopy bewurkje
+344| De datum is bekend: meitsje fan dizze taak in oantinker op in fêste datum
+345| Uterlik {date}.
+346| Uterlik {date}, {time}.
+347| Sa gau as jo de krekte datum witte, wurdt de taak in oantinker op dy datum: hy ferdwynt út de takenlist en ferskynt yn Oantinkers, de moannewerjefte en de kalinder. Notysjes, kategory, lokaasje en keppeling bliuwe bewarre.
+348| In oantinker op {date}, de hiele dei.
+349| In oantinker op {date}, om {time}.
+350| De oantinker wurdt in taak op deselde datum, mei werhelling, alarm en notysjes.
+351| De oantinker bliuwt; in kopy as taak op deselde datum, mei werhelling, alarm en notysjes, komt op de list.
+352| In krekte kopy giet nei de keazen list; dit item bliuwt wêr't it is.
+353| De list
+354| {s} (dizze list)
+355| haadlist
+356| ReminderFoxAgain-alarm
+357| Slûgje
+358| Alles slûgje
+359| Alles slûgje {s}
+360| Alle oantinkers hjir slûgje foar jo standert slûgtiid (te wizigjen yn Ynstellingen)
+361| Hoe lang slûgje, of oant hokker tiid
+362| Slûgienheid
+363| Slûgje oant
+364| Negearje
+365| Alles negearje
+366| Dien
+367| Klear mei dit fluch alarm
+368| Foarearst ferbergje (it alarm bliuwt aktyf en komt werom mei it folgjende)
+369| In tiid lykas 15:30 of 3:30 pm (earder as no betsjut moarn)
+370| In hiel getal fan {n} oant {n2}
+371| Folje in hiel getal fan {n} oant {n2} yn.
+372| Folje in hiel getal fan 1 oant 999 yn, of in datum en tiid.
+373| sekonden
+374| minuten
+375| oeren
+376| Fluch alarm
+377| Flugge alarms
+378| ⏰ Flugge alarms…
+379| In ienmalich alarm dat net as oantinker bewarre wurdt — lykas it Flugge alarm fan de add-on.
+380| Oer
+381| Om
+382| Foar
+383| Alarm ynstelle
+384| Dit alarm annulearje
+385| Gjin flugge alarms.
+386| Wachtet op it alarm
+387| Fluch alarm ynsteld op {time}
+388| Fluch alarm annulearre
+389| Kies in tiid.
+390| Dat tiidstip is foarby — kies in letter.
+391| Dat tiidstip is foarby.
+392| Giet ôf {when} ({until}).
+393| hjoed om {time}
+394| oer minder as in minút
+395| oer {time}
+396| oer {hours} {minutes}
+397| Alarms skorse
+398| Alarms skorse…
+399| Alarms efkes skorse
+400| Skorse
+401| Hoe lang
+402| Oant ik se wer oansetten
+403| De alarms bliuwe út oant jo se ferfetsje (statusbalke, systeemfakmenu of hjir).
+404| Wylst se skorst binne, iepenje gjin alarmfinsters en bliuwt it oantinkerfinster fuort. Alarms dy't yn de tuskentiid ôfgean, ferskine by it ferfetsjen.
+405| De alarms binne skorst oant jo se wer oansette.
+406| De alarms komme werom {when}.
+407| De alarms steane wer oan
+408| Alarms no ferfetsje
+409| Kies in tiid yn de takomst.
+410| ReminderFoxAgain — hjoed
+411| Ynkoarten
+412| Neat hjoed.
+413| Neat ynkoarten.
+414| Algemien
+415| Alarms
+416| Werjefte
+417| Gegevens
+418| Oer
+419| ReminderFoxAgain starte as Windows start
+420| Yn it systeemfak trochrinne as it finster sluten wurdt
+421| De wike begjint op
+422| Tema
+423| Tema’s
+424| Standert (folget Windows)
+425| Foks
+426| Ljocht
+427| Tsjuster
+428| Oseaan
+429| Heech kontrast
+430| Standert is Foks, ljocht of tsjuster neffens Windows. Items mei in stjer hawwe yn elk tema in eigen kleur. Heech kontrast brûkt swart, wyt, giel en syaan mei gruttere tekst en dikkere linen.
+431| -
+432| ReminderFoxAgain is in earbetoan oan de oarspronklike
+433| -
+434| add-on foar Firefox en Thunderbird, makke troch Tom Mutdosch en Daniel Lee mei Guenter Wahl. It bestânsformaat, de werhellingsregels, werjeften, flugge alarms en it meldingsfinster binne fan harren; tank.
+435| In lûd ôfspylje by alarms
+436| Lûd
+437| Ynboude gong
+438| Jo lûd
+439| Kieze…
+440| Kieze
+441| De ynboude gong brûke
+442| Gong
+443| Ofspylje
+444| ▶ Test
+445| Alarmlûd: {s}
+446| De ynboude gong wurdt brûkt
+447| Kies in lûdbestân (.mp3, .wav, .ogg, .m4a, .aac, .flac of .webm).
+448| Dat lûdbestân is grutter as 10 MB. Kies in koarter.
+449| It lûd werhelje
+450| Nee, ien kear ôfspylje
+451| Elke minút
+452| Elke {n} minuten
+453| Standertalarm foar nije oantinkers
+454| Standert slûgtiid
+455| Ienheid fan de standert slûgtiid
+456| Standert slûgtiid, hoefolle
+457| Oantinkerfinster (it meldingsfinster fan de add-on)
+458| In finster sjen litte mei oantinkers fan hjoed en ynkoarten
+459| Wannear
+460| Allinnich by it opstarten
+461| By it opstarten en elke {n} minuten
+462| … elke {n} minuten
+463| … elk oere
+464| … elke {n} oeren
+465| Iepen hâlde
+466| {n} sekonden
+467| Oant ik it slút
+468| Hoeke
+469| rjochtsûnder
+470| lofts ûnder
+471| rjochtsboppe
+472| lofts boppe
+473| It lûd ôfspylje
+474| No sjen litte
+475| ‘Ynkoarten’ betsjut de kommende
+476| Getal op it piktogram
+477| In getal sjen litte op de piktogrammen yn it systeemfak en de taakbalke
+478| Iepen oantinkers en taken fan hjoed
+479| Hjoed en ynkoarten
+480| Allinnich hjoed
+481| Allinnich ynkoarten
+482| Taal
+483| Systeemtaal ({s})
+484| De taal fan menu’s, knoppen en berjochten. Jo oantinkers wurde net wizige.
+485| De oersettingen binne skreaun foar ReminderFoxAgain en binne noch net neisjoen troch memmetaalsprekkers.
+486| Tekstgrutte
+487| Lyts ({n}%)
+488| Normaal
+489| Grut ({n}%)
+490| Grutter ({n}%)
+491| Grutst ({n}%)
+492| Datums
+493| Lykas yn Windows ({s})
+494| Tiden
+495| Lykas yn Windows
+496| {n}-oeres ({s})
+497| It kalinderpaniel neist de listen sjen litte
+498| Moannen yn it kalinderpaniel
+499| Kaarten
+500| -
+501| -
+502| -
+503| Arktip fan it systeemfakpiktogram
+504| Arktip
+505| Oantinkers fan hjoed
+506| Kommende oantinkers
+507| Fariabelen: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — deselde as yn de add-on.
+508| Opnij ynstelle
+509| Arktipteksten opnij ynsteld
+510| Listen beheare…
+511| Kategoryen beheare…
+512| Werjeften beheare…
+513| Weromkommende oantinkers op it ljepblêd Oantinkers
+514| Takomstige datums om sjen te litten
+515| Ynkoarten, Alle oantinkers, Wichtich, sykjen en werjeften sûnder datums
+516| Elke datum yn de kommende
+517| Allinnich de folgjende
+518| one={n} moanne | other={n} moannen
+519| one={n} jier | other={n} jier
+520| one={n} datum | other={n} datums
+521| Brûkt troch Ynkoarten, Alle oantinkers, Wichtich, sykjen en werjeften sûnder datumberik. Hjoed, Kommende {n} dagen, Keazen dei of moanne, it ljepblêd Moanne en de kalinder litte altyd elke datum sjen.
+522| Yn Alle en Foarby foarbye sjen litte fan
+523| it begjin fan elke rige
+524| de lêste {n} jier
+525| it lêste jier
+526| de lêste {n} moannen
+527| Weromkommende oantinkers ferbergje
+528| Foltôge oantinkers ferbergje
+529| Ymportearje en eksportearje
+530| In .ics-bestân ymportearje…
+531| De items út in .ics-bestân tafoegje (Ctrl+I)
+532| Ymportearje út ReminderFox…
+533| De reminderfox.ics fine dy't de ReminderFox-add-on yn jo Firefox- of Thunderbird-profyl bewarre
+534| Eksportearje nei .ics…
+535| Eksportearje nei .ics
+536| Eksportearje…
+537| In .ics-bestân bewarje (Ctrl+E)
+538| Ymportearjen foeget ta oan wat jo hawwe; besteande items wurde allinnich bywurke as de kopy yn it bestân nijer is. Eksports iepenje yn Outlook, Google Agenda, Thunderbird, Apple Agenda en de oarspronklike ReminderFox-add-on.
+539| Reservekopyen
+540| No reservekopy meitsje
+541| In reservekopy bewarje…
+542| Weromsette út in reservekopy…
+543| Weromsette út in reservekopy
+544| Map mei reservekopyen iepenje
+545| Gegevensmap iepenje
+546| Gegevensbestân
+547| It oantinkerbestân sjen litte yn Ferkenner
+548| Jo oantinkers wurde bewarre yn {path} (deistige reservekopyen steane yn de map ‘backups’ dêrneist).
+549| ＋ Nije list…
+550| Nije list…
+551| Nije list
+552| Namme fan de nije list
+553| Namme fan de nije list (bygelyks Boadskippen, Films om te sjen, Kado-ideeën):
+554| List tafoegje
+555| List omneame
+556| Omneame…
+557| Fuorthelje…
+558| List fuorthelje?
+559| ‘Taken’ is de haadlist en kin net omneamd of fuorthelle wurde (lykas yn de add-on). As jo in list fuorthelje, kieze jo oft de taken nei ‘Taken’ geane of fuortsmiten wurde.
+560| De list ‘{list}’ hat {n} taak. Nei ‘{main}’ ferpleatse, of mei de list fuortsmite?
+561| De list ‘{list}’ hat {n} taken. Nei ‘{main}’ ferpleatse, of mei de list fuortsmite?
+562| List en taken fuortsmite
+563| one=List en {n} taak fuortsmiten | other=List en {n} taken fuortsmiten
+564| List fuorthelle
+565| List ‘{s}’ tafoege
+566| ‘{s}’ bestiet al
+567| Dy list bestiet al.
+568| In listnamme mei net leech wêze en gjin komma of dûbele punt befetsje.
+569| In listnamme mei gjin komma of dûbele punt befetsje.
+570| Listen gearfoegje?
+571| Gearfoegje
+572| Gearfoege mei ‘{s}’
+573| Omneamd ta ‘{s}’
+574| Nije namme foar ‘{name}’:
+575| Nije namme foar ‘{name}’ (by {items}):
+576| Nije kategory
+577| Oare kategory
+578| Gongbere tafoegje
+579| Kategory ‘{s}’ tafoege
+580| {n} kategoryen tafoege
+581| Neat nijs om ta te foegjen.
+582| Kategory omneame
+583| Kategory fuortsmite?
+584| Kategory fuortsmiten
+585| Kategoryen gearfoegje?
+586| In kategory mei net leech wêze en gjin komma befetsje.
+587| noch net brûkt
+588| Omneamen wizigt elke oantinker en taak mei dy kategory; omneamen nei in besteande foeget se gear. Fuortsmiten hellet him fan de items (de items bliuwe).
+589| De kategory ‘{name}’ wurdt fuortsmiten.
+590| De kategory ‘{name}’ wurdt fuortsmiten en fan {items} helle. De items sels bliuwe.
+591| Jubileum
+592| Ofspraak
+593| Jierdei
+594| Saaklik
+595| Telefoantsje
+596| Feestdei
+597| Gearkomste
+598| Persoanlik
+599| Winkelje
+600| Reis
+601| Jubileum, Ofspraak, Jierdei, Saaklik, Telefoantsje…
+602| Nije werjefte
+603| ＋ Nije werjefte…
+604| Werjefte bewurkje
+605| Werjefte fuortsmite?
+606| De werjefte ‘{s}’ wurdt fuortsmiten. Jo oantinkers wurde net wizige.
+607| Op it ljepblêd Oantinkers sjen litte
+608| Werjefte bewarre
+609| Werjefte ‘{s}’ tafoege
+610| Jou de werjefte in namme.
+611| Der is al in werjefte mei dy namme.
+612| In werjefte is in bewarre filter foar it ljepblêd Oantinkers: kies him yn de list Toane. Betingsten op ferskillende fjilden moatte allegear kloppe; komma’s yn ien betingst betsjutte ‘ien fan dizze’.
+613| Noch gjin werjeften. Klik op ‘Nije werjefte…’ om der ien te meitsjen — bygelyks elke oantinker mei de kategory ‘Jierdei’ yn it kommende jier.
+614| Namme
+615| bgl. Jierdagen
+616| Oantinkers sjen litte wêrby
+617| ＋ Betingst tafoegje
+618| Dizze betingst fuorthelje
+619| Wat dan ek
+620| De kategory
+621| De werjefte
+622| Type
+623| is
+624| befettet
+625| wurden, skieden troch komma’s
+626| Allinnich datums fan
+627| oant
+628| fan hjoed ôf
+629| hjoed
+630| Negative getallen geane werom yn de tiid: −{n} moanne oant {n2} dagen betsjut ‘de ôfrûne moanne’.
+631| Alle
+632| Alles
+633| Allinnich oantinkers
+634| Allinnich taken
+635| Ienheid
+636| Hoefolle
+637| Wat dan ek befettet ‘{s}’
+638| Kategory is ‘{s}’
+639| Kategory is ‘{s}’ of ‘{s2}’
+640| datums fan hjoed oant {n} dagen foarút
+641| one=+{n} wike | other=+{n} wiken
+642| one=+{n} moanne | other=+{n} moannen
+643| one=+{n} jier | other=+{n} jier
+644| Ymportearje
+645| In iCalendar-bestân ymportearje
+646| Ymportearje út ReminderFox
+647| Ut ReminderFox
+648| {files} fûn fan de ReminderFox-add-on:
+649| De nijste ymportearje
+650| Dochs ymportearje
+651| {reminders} en {items}
+652| {n} al oanwêzich (de nijere kopy wurdt hâlden)
+653| {n} liket in duplikaat (deselde titel en datum as in item dat jo hawwe)
+654| {n} lykje duplikaten (deselde titel en datum as in item dat jo hawwe)
+655| Hoe
+656| Tafoegje oan wat ik haw
+657| Alles ferfange
+658| Alles ferfange (jo {items} wurde earst bewarre as reservekopy)
+659| Alles ferfange?
+660| Jo {items} wurde ferfongen troch de {newItems} yn it bestân.
+661| Wat jo no hawwe wurdt earst bewarre as reservekopy ‘Bewarre foar in ymport dy't alles ferfong’, sadat jo it weromhelje kinne fia Ynstellingen → Gegevens → Weromsette út in reservekopy….
+662| Duplikaten
+663| Items oerslaan mei deselde titel en datum as ien dy't ik haw
+664| Opsjoneel: wurdt oan elk ymportearre item tafoege, bygelyks ‘Feestdagen’ foar in list mei feestdagen, sadat jo dêrop filterje kinne.
+665| opsjoneel
+666| Ymportearjen klear
+667| {items} ymportearre
+668| {items} en {lists} ymportearre
+669| {n} bywurke
+670| {n} al aktueel
+671| one={n} duplikaat oerslein | other={n} duplikaten oerslein
+672| {items} wurde ferfongen (bewarre as {file})
+673| {lists} tafoege ({names})
+674| one={n} argivearre item ferpleatst nei de list ‘{list}’ | other={n} argivearre items ferpleatst nei de list ‘{list}’
+675| Dit bestân befettet gjin iCalendar-gegevens (gjin BEGIN:VCALENDAR).
+676| Jo oantinkerbestân koe net lêzen wurde
+677| Eksportearre nei {path}
+678| Eksportearje
+679| Alles (oantinkers en taken)
+680| It bestân wurket mei Outlook, Google Agenda, Thunderbird, Apple Agenda en de oarspronklike ReminderFox-add-on.
+681| ReminderFoxAgain makket elke dei in reservekopy, ien foar elke weromset, en de reservekopyen dy't jo meitsje mei ‘No reservekopy meitsje’. Weromsetten ferfangt jo hjoeddeistige oantinkers en taken troch de reservekopy; wat jo no hawwe wurdt earst bewarre, dus jo kinne altyd werom.
+682| Makke
+683| Ynhâld
+684| Weromsette
+685| Weromsette…
+686| In oar bestân kieze…
+687| {n} argivearre
+688| Net lêsber: {s}
+689| {s} koe net lêzen wurde: {s2}
+690| Dat bestân kin net weromset wurde
+691| Noch gjin reservekopyen. Se wurde makke op elke dei dat de app rint; jo kinne ek op ‘No reservekopy meitsje’ klikke.
+692| Deistige reservekopy
+693| Reservekopy makke troch jo
+694| Bewarre foar in weromset
+695| Bewarre foar in ymport dy't alles ferfong
+696| It argyf, foar't it in list waard
+697| Deistige reservekopy fan it argyf (eardere ferzje)
+698| Reservekopy
+699| Dizze reservekopy weromsette?
+700| Dit ferfangt wat jo no hawwe ({now}) troch de reservekopy fan {when}: {items}.
+701| Dit ferfangt wat jo no hawwe ({now}) troch de reservekopy fan {when}: {items}, plus {n} argivearre, dy't nei de list ‘{list}’ geane.
+702| Dit is in kopy fan it argyf út in eardere ferzje. De {all} geane nei de list ‘{list}’ (items dy't jo al hawwe bliuwe sa't se binne). Fierder feroaret der neat.
+703| Jo hjoeddeistige gegevens wurde earst bewarre as reservekopy ‘Bewarre foar in weromset’, sadat jo dit yn deselde list ûngedien meitsje kinne.
+704| Reservekopy weromset
+705| {items} weromset.
+706| {items} weromset, wêrfan {n} argivearre, no yn de list ‘{list}’.
+707| Wat jo earst hiene is bewarre as {file}.
+708| Reservekopy bewarre yn {path}
+709| Reservekopy makke: {s}
+710| {n} bytes
+711| {n} kB
+712| {n} MB
+713| Dat item bestiet net mear.
+714| It argyfbestân koe net lêzen wurde en bliuwt dêrom sa't it is. It is bewarre as archive.ics.unreadable.
+715| It argyfbestân koe net lêzen wurde en kin dêrom net ferfongen wurde.
+716| Wolkom by ReminderFoxAgain
+717| Jo oantinkers, taken en alarms as Windows-app — in earbetoan oan de oarspronklike ReminderFox-add-on.
+718| Ymportearje út jo ReminderFox-add-on
+719| {path} — lêst wizige {date}
+720| In reminderfox.ics of oar agindabestân ymportearje…
+721| Ut de ReminderFox-add-on (yn de map ‘reminderfox’ fan jo Firefox-/Thunderbird-profyl), Outlook, Google Agenda…
+722| Begjinne mei in lege list
+723| Jo kinne letter ymportearje fia Ynstellingen → Gegevens.
+724| no
+725| oer {n} min
+726| one=oer {n} oere | other=oer {n} oeren
+727| one=oer {n} dei | other=oer {n} dagen
+728| {n} min lyn
+729| one={n} oere lyn | other={n} oeren lyn
+730| one={n} dei lyn | other={n} dagen lyn
+731| {app} iepenje
+732| Oantinker tafoegje…
+733| Listitem tafoegje…
+734| Fluch alarm…
+735| Alarms ferfetsje
+736| Oantinkers fan hjoed sjen litte
+737| {app} ôfslute
+738| {app} — alarms út
+739| {app} — alarms út oant {time}
+740| {app} — neat hjoed
+741| ynkoarten
+742| {app} rint noch
+743| Alarms bliuwe ferskinen. Klik mei de rjochtermûsknop op de foks yn it systeemfak om ôf te sluten.
+744| {app}-alarm
+745| {app} — hjoed
+746| {n} o {n2} min
+747| iCalendar-bestannen
+748| Alle bestannen
+749| Lûdbestannen
+750| iCalendar-bestân ymportearje
+751| Eksportearje nei iCalendar-bestân
+752| Kies jo reminderfox.ics
+753| Kies in alarmlûd
+754| In reservekopy bewarje
+755| Kies in reservekopy om werom te setten
+756| Wykliks op {days}
+757| Moanliks op de {nth} {weekday}
+758| Moanliks op dei {day}
+759| Moanliks op deselde dei
+760| Elke {n} moannen op deselde dei
+761| Jierliks op de {nth} {weekday} fan {month}
+762| Jierliks op {date}
+763| Jierliks op deselde datum
+764| Elke {n} jier op deselde datum
+765| Wurdt werhelle
+766| Oanpast ({rule})
+767| {rule}, ien kear
+768| {rule}, {n} kear
+769| {rule}, oant {date}
+770| Oantinkers sjen litte dy't jo as foltôge ôfvinke hawwe
+771| Oantinkers en listitems sjen litte dy't jo as foltôge ôfvinke hawwe
+772| Myn folchoarder: sleep rigen of druk op Alt+↑ / Alt+↓
+773| Werjefte
+774| Alarmlûd
+775| Eigen bestân…
+776| In eigen lûdsbestân brûke (.mp3, .wav, .ogg, .m4a, .aac, .flac of .webm)
+777| Trochrinnend oant ôfhannele
+778| Trochrinnend oant ôfhannele: it lûd spilet hieltyd wer oant jo it alarm slûgje litte, iepenje, as dien markearje of negearje, of it alarmfinster ferbergje. It folgjende alarm begjint it opnij.
+779| Kolommen
+780| Kolommen yn it ljepblêd Oantinkers
+781| Kolommen yn de listen
+782| Fink in kolom út om him te ferbergjen. De beskriuwing wurdt altyd toand.
+783| Bewarre filters foar it ljepblêd Oantinkers
+784| Oantinkers beheare…
+785| Ynkoarten, Alle oantinkers, Wichtich, sykjen en bewarre filters sûnder datums
+786| Brûkt troch Ynkoarten, Alle oantinkers, Wichtich, sykjen en bewarre filters sûnder datumberik. Hjoed, Kommende {n} dagen, Keazen dei of moanne, it ljepblêd Moanne en de kalinder litte altyd elke datum sjen.
+787| Bewarre filters
+788| Bewarre filter ‘{s}’ · {c}
+789| Oantinkers beheare
+790| In bewarre filter lit yn it ljepblêd Oantinkers allinnich de oantinkers sjen dy't jo sjen wolle: kies it yn de list Toane. Betingsten op ferskillende fjilden moatte allegear kloppe; komma’s yn ien betingst betsjutte ‘ien fan dizze’.
+791| ＋ Nij bewarre filter…
+792| Noch gjin bewarre filters. Klik op ‘Nij bewarre filter…’ om der ien te meitsjen — bygelyks elke oantinker mei de kategory ‘Jierdei’ yn it kommende jier.
+793| Bewarre filter fuortsmite?
+794| It bewarre filter ‘{s}’ wurdt fuortsmiten. Jo oantinkers wurde net wizige.
+795| Bewarre filter bewurkje
+796| Nij bewarre filter
+797| Jou it bewarre filter in namme.
+798| Der is al in bewarre filter mei dy namme.
+799| Bewarre filter wizige
+800| Bewarre filter ‘{s}’ tafoege
+801| Klok
+802| Marimba
+803| Digitale piepkes
+804| Wekker
+805| Jo bestân: {s}
+806| In eigen tema meitsje fan fiif kleuren
+807| ＋ Nij tema…
+808| De kleuren fan jo tema wizigje
+809| ＋ Nij tema… makket der ien fan fiif kleuren.
+810| Jo tema's
+811| Eftergrûn
+812| Efter alles
+813| Listen en panielen
+814| De listen, it kalinderpaniel, dialoochfinsters
+815| Tekst
+816| Aksint
+817| Knoppen, hjoed, seleksje
+818| Items mei stjer
+819| Wichtige oantinkers en taken
+820| De tekst is min te lêzen op de eftergrûn (kontrast {n}:1; fan 4,5:1 ôf goed te lêzen).
+821| It aksint is min te sjen op de listen (kontrast {n}:1; 3:1 of mear is better).
+822| Items mei stjer binne min te sjen op de listen (kontrast {n}:1; 3:1 of mear is better).
+823| Tema bewurkje
+824| Nij tema
+825| Útgean fan
+826| bgl. Bosk
+827| It hiele finster lit it tema sjen wylst jo kieze. Annulearje set it âlde werom.
+828| Jou it tema in namme.
+829| Der is al in tema mei dy namme.
+830| Tema ‘{s}’ bewarre
+831| Tema ‘{s}’ tafoege
+832| Tema fuortsmite?
+833| It tema ‘{s}’ wurdt fuortsmiten. De app giet werom nei it standerttema.

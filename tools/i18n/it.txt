@@ -1,0 +1,834 @@
+# Italiano — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Promemoria
+2| ＋ Elemento di elenco
+3| ⚙ Impostazioni
+4| Impostazioni
+5| Cerca
+6| Cerca (Ctrl+F)
+7| Cerca nei promemoria e nelle attività
+8| Nuovo promemoria (Ctrl+N)
+9| Nuovo elemento nell'elenco mostrato (Ctrl+T)
+10| Allarme rapido: un allarme singolo tra pochi minuti (Ctrl+Q)
+11| ⏰ Allarme rapido
+12| Promemoria
+13| Mese
+14| Elenco
+15| Elenchi
+16| Elenco: {s}
+17| Tutti gli elenchi
+18| Scegli quale elenco mostrare
+19| Elenco da mostrare
+20| Attività
+21| Terminati o sospesi
+22| Mostra o nascondi il pannello calendario
+23| Mostra o nascondi il pannello calendario (Ctrl+B)
+24| Allarmi attivi
+25| Allarmi sospesi
+26| Allarmi sospesi fino alle {time}
+27| Riprendi
+28| Fai clic per riattivare gli allarmi
+29| Sospendi o riprendi gli allarmi
+30| one={n} elemento | other={n} elementi
+31| one={n} promemoria | other={n} promemoria
+32| one={n} attività | other={n} attività
+33| one={n} elemento di elenco | other={n} elementi di elenco
+34| one={n} nuovo elemento | other={n} nuovi elementi
+35| one={n} elemento archiviato | other={n} elementi archiviati
+36| one={n} elenco | other={n} elenchi
+37| one={n} file | other={n} file
+38| one={n} minuto | other={n} minuti
+39| one={n} ora | other={n} ore
+40| one={n} giorno | other={n} giorni
+41| one={n} duplicato | other={n} duplicati
+42| Mostra
+43| Oggi
+44| Domani
+45| Ieri
+46| Prossimi {n} giorni
+47| In arrivo
+48| Tutti i promemoria
+49| Importanti
+50| Passati
+51| Giorno selezionato
+52| Mese selezionato
+53| Viste
+54| Vista «{s}»
+55| Ricerca in tutti i promemoria
+56| Data
+57| Giorno
+58| Ora
+59| Descrizione
+60| Ripetizione
+61| Categoria
+62| Allarme
+63| Completato
+64| Completato il {date}
+65| (nessuna descrizione)
+66| Nessun promemoria qui
+67| Fai clic su ＋ Promemoria per aggiungerne uno, o scegli un'altra vista.
+68| Fai clic su ＋ Elemento di elenco per aggiungerne uno a questo elenco.
+69| Scaduto dal {date}
+70| scaduto dal {date}
+71| Presto: {s}
+72| Modifica…
+73| Elimina…
+74| Elimina
+75| Duplica
+76| Copia
+77| Sposta
+78| Apri
+79| Apri collegamento
+80| Mostra su una mappa
+81| Vedi nell'elenco
+82| Segna come completato
+83| Ricordamelo…
+84| Rendilo un'attività…
+85| Rendilo un'attività
+86| Rendilo un promemoria
+87| Pianifica come promemoria…
+88| Pianifica come promemoria
+89| Copia in un elenco…
+90| Copia in un elenco
+91| Copia nell'elenco…
+92| Copia nell'elenco
+93| Sposta nell'elenco…
+94| Sposta nell'elenco
+95| Sposta in…
+96| Copia in…
+97| Spostalo in un altro elenco
+98| Metti una copia in un altro elenco
+99| Una copia esatta in questo elenco (Ctrl+D)
+100| Elimina (Canc)
+101| Elemento selezionato
+102| Elemento selezionato:
+103| Sposta su
+104| Sposta giù
+105| -
+106| -
+107| -
+108| «{s}» duplicato
+109| {s} (copia)
+110| Copiato in «{s}»
+111| Spostato in «{s}»
+112| Sposta in «{s}»
+113| Ora è un'attività in «{s}»
+114| Ora è un promemoria il {date}
+115| è in «{s}»
+116| «{s}» è vuoto
+117| Eliminato
+118| Occorrenza eliminata
+119| Elimina promemoria ricorrente
+120| Si ripete: le modifiche valgono per ogni occorrenza.
+121| Solo questa
+122| Tutte le occorrenze
+123| Elimina questa occorrenza
+124| Elimina tutte le occorrenze…
+125| «{s}» si ripete ({rule}).
+126| Eliminare solo quella del {date} o tutte le occorrenze?
+127| Eliminare tutte le occorrenze?
+128| Elimina tutto
+129| Eliminare il promemoria?
+130| Eliminare l'attività?
+131| «{s}» verrà eliminato.
+132| «{s}» e tutte le sue ripetizioni verranno eliminati.
+133| Qualcosa è andato storto
+134| Inserisci prima un luogo.
+135| Mese precedente
+136| Mese successivo
+137| Vai a oggi
+138| Vai a una data (Ctrl+G)
+139| Vai alla data
+140| Vai a…
+141| Vai
+142| Aggiungi un promemoria in questo giorno
+143| Fai doppio clic su un giorno per aggiungere un promemoria
+144| Niente in questo giorno.
+145| +{n} altri
+146| Non ancora fatto
+147| Tutto il giorno
+148| Tutto il giorno {s}
+149| Attività
+150| Attività {s}
+151| Attività
+152| Do
+153| Lu
+154| Ma
+155| Me
+156| Gi
+157| Ve
+158| Sa
+159| dom
+160| lun
+161| mar
+162| mer
+163| gio
+164| ven
+165| sab
+166| domenica
+167| lunedì
+168| martedì
+169| mercoledì
+170| giovedì
+171| venerdì
+172| sabato
+173| Elemento di elenco
+174| Scadenza
+175| Ordine
+176| Il mio ordine
+177| Per data
+178| Manuale: trascina le righe o premi Alt+↑ / Alt+↓
+179| Mostra completate
+180| Mostra attività
+181| Includi attività con data
+182| Nessuna data
+183| · senza scadenza
+184| · scade il {date}
+185| · scaduta
+186| · tutto il giorno
+187| · impostato per le {time}
+188| · tra {n} min
+189| · iniziato {n} min fa ·
+190| Mostra questa attività nel suggerimento dell'icona nell'area di notifica
+191| Mostra nel suggerimento dell'area di notifica
+192| ✓ Mostra nel suggerimento dell'area di notifica
+193| Mostrata nel suggerimento dell'area di notifica
+194| Tolta dal suggerimento dell'area di notifica
+195| Ricorda ogni giorno fino al completamento
+196| Ricordamelo ogni giorno finché non è fatto
+197| Ricorda ogni giorno finché non è fatto
+198| Fino a fatto
+199| Non ricorda più ogni giorno
+200| Te lo ricorda ogni giorno finché non spunti Fatto
+201| Mancato il {date}; te lo ricorda ogni giorno finché non lo spunti
+202| Se lo perdi, passa a oggi e suona ogni giorno finché non lo spunti
+203| Fatto — spostato alla data successiva
+204| ogni giorno
+205| ogni settimana
+206| ogni mese
+207| ogni {n} giorni
+208| ogni {n} settimane
+209| {n} g prima
+210| il giorno stesso
+211| {every} dal {from}
+212| una volta
+213| ogni giorno
+214| ogni settimana
+215| ogni mese
+216| one={n} giorno prima della scadenza | other={n} giorni prima della scadenza
+217| il giorno della scadenza
+218| Te lo ricorda {every}, dal {from}, alle {time}
+219| Te lo ricorda {every}, dal {from}, alle {time}, finché non è fatto
+220| Te lo ricorda {every}, dal {from}, alle {time}, finché non è fatto (anche dopo la scadenza)
+221| Nuovo promemoria
+222| Modifica promemoria
+223| Nuova attività
+224| Modifica attività
+225| Che cosa vuoi che ti ricordi?
+226| Che cosa c'è da fare?
+227| Tipo
+228| Promemoria
+229| In una data
+230| Qualsiasi ora
+231| Fine
+232| Luogo
+233| Collegamento
+234| -
+235| Note
+236| Categorie
+237| Scegli categorie
+238| es. Compleanno, Lavoro
+239| Aggiungi
+240| Salva
+241| Annulla
+242| Chiudi
+243| OK
+244| Sì
+245| No
+246| Nessuno
+247| Non si ripete
+248| Ogni giorno
+249| Ogni settimana
+250| Ogni mese
+251| Ogni anno
+252| Personalizzata…
+253| Personalizzata
+254| Personalizzata (importata)
+255| Mantieni quella importata: {s}
+256| Ogni giorno feriale
+257| Ogni
+258| ogni
+259| giorno
+260| giorni
+261| settimana
+262| settimane
+263| mese
+264| mesi
+265| anno
+266| anni
+267| volte
+268| Il {date}
+269| Il giorno {day}
+270| Il {nth} {weekday}
+271| Il {nth} {weekday} di {month}
+272| L'ultimo {weekday}
+273| L'ultimo {weekday} di {month}
+274| Ogni giorno
+275| Ogni {n} giorni
+276| Ogni settimana
+277| Ogni {n} settimane
+278| Ogni mese
+279| Ogni settimana il {days}
+280| Ogni {n} settimane il {days}
+281| giorni feriali
+282| Ogni mese il giorno {day}
+283| Ogni {n} mesi il giorno {day}
+284| Ogni mese il {nth} {weekday}
+285| Ogni {n} mesi il {nth} {weekday}
+286| Ogni anno il {date}
+287| Ogni {n} anni il {date}
+288| Ogni anno il {nth} {weekday} di {month}
+289| Ogni {n} anni il {nth} {weekday} di {month}
+290| ultimo
+291| {n}º
+292| Frequenza
+293| Il
+294| Dopo
+295| Poi
+296| -
+297| alle
+298| prima
+299| Mai
+300| Fino al
+301| fino al…
+302| in una data…
+303| a partire dal…
+304| nient'altro (solo una volta)
+305| Ricordamelo
+306| Non ricordarmelo
+307| Quando iniziare a ricordare
+308| Data del primo promemoria
+309| Ora del promemoria
+310| Continua a ricordare se la scadenza è passata e non è fatto
+311| anche dopo la scadenza
+312| finché non è fatto
+313| finché non è fatto o scaduto ({due})
+314| finché non è fatto, anche dopo la scadenza ({due})
+315| Un promemoria, il {date} alle {time}.
+316| Un promemoria, il {date} alle {time}. Quell'ora è passata — scegline una più tardi o ricorda ripetutamente.
+317| {every} alle {time}, dal {date}, {end}.
+318| Nessun promemoria.
+319| Nessun promemoria. L'attività appare in rosso quando la sua scadenza è passata.
+320| Scegli la data del primo promemoria.
+321| Testo dell'allarme
+322| All'ora stabilita
+323| one={n} minuto prima | other={n} minuti prima
+324| one={n} ora prima | other={n} ore prima
+325| one={n} giorno prima | other={n} giorni prima
+326| one={n} settimana prima | other={n} settimane prima
+327| Il giorno stesso, alle {time}
+328| Il giorno prima, alle {time}
+329| Appare come: {s}. <year> conta gli anni da allora; <year#> mostra solo il numero.
+330| Importato nel fuso orario {zone} — mostrato nella tua ora locale. Salvando verrà memorizzato in ora locale.
+331| Inserisci una descrizione.
+332| Scegli la scadenza o spunta «Nessuna data».
+333| Scegli una data.
+334| Scegli la data.
+335| Scegli la data.
+336| Inserisci l'ora di scadenza o spunta «Qualsiasi ora».
+337| Inserisci un'ora o spunta «Tutto il giorno».
+338| La data di fine è precedente a quella di inizio.
+339| L'ora di fine è precedente a quella di inizio.
+340| Promemoria aggiunto
+341| Attività aggiunta
+342| Salvato
+343| Modifica la copia
+344| La data è nota: rendi questa attività un promemoria in una data precisa
+345| Scade il {date}.
+346| Scade il {date}, {time}.
+347| Quando conosci la data esatta, l'attività diventa un promemoria in quella data: lascia l'elenco delle attività e appare in Promemoria, nella vista Mese e nel calendario. Note, categoria, luogo e collegamento restano.
+348| Un promemoria il {date}, tutto il giorno.
+349| Un promemoria il {date}, alle {time}.
+350| Il promemoria diventa un'attività nella stessa data, con la sua ripetizione, l'allarme e le note.
+351| Il promemoria resta; una copia come attività nella stessa data, con ripetizione, allarme e note, va nell'elenco.
+352| Una copia esatta va nell'elenco scelto; questo resta dov'è.
+353| L'elenco
+354| {s} (questo elenco)
+355| elenco principale
+356| Allarme di ReminderFoxAgain
+357| Posticipa
+358| Posticipa tutti
+359| Posticipa tutti {s}
+360| Posticipa tutti i promemoria qui del tempo predefinito (si cambia nelle Impostazioni)
+361| Posticipa di quanto, o fino a che ora
+362| Unità di posticipo
+363| Posticipa fino a
+364| Ignora
+365| Ignora tutti
+366| Fatto
+367| Ho finito con questo allarme rapido
+368| Nascondi per ora (l'allarme resta attivo e torna con il prossimo)
+369| Un'ora come 15:30 o 3:30 pm (prima di adesso significa domani)
+370| Un numero intero da {n} a {n2}
+371| Inserisci un numero intero da {n} a {n2}.
+372| Inserisci un numero intero da 1 a 999, o una data e un'ora.
+373| secondi
+374| minuti
+375| ore
+376| Allarme rapido
+377| Allarmi rapidi
+378| ⏰ Allarmi rapidi…
+379| Un allarme singolo che non viene salvato come promemoria — come l'Allarme rapido dell'estensione.
+380| Tra
+381| Alle
+382| Per
+383| Imposta allarme
+384| Annulla questo allarme
+385| Nessun allarme rapido.
+386| In attesa di suonare
+387| Allarme rapido impostato per le {time}
+388| Allarme rapido annullato
+389| Scegli un'ora.
+390| Quell'ora è passata — scegline una più tardi.
+391| Quell'ora è passata.
+392| Suona {when} ({until}).
+393| oggi alle {time}
+394| tra meno di un minuto
+395| tra {time}
+396| tra {hours} {minutes}
+397| Sospendi allarmi
+398| Sospendi allarmi…
+399| Sospendi gli allarmi per un po'
+400| Sospendi
+401| Per quanto
+402| Finché non li riattivo
+403| Gli allarmi restano spenti finché non li riprendi (barra di stato, menu dell'area di notifica o qui).
+404| Durante la sospensione non si aprono finestre di allarme e la finestra dei promemoria non compare. Gli allarmi scaduti nel frattempo appaiono alla ripresa.
+405| Gli allarmi sono sospesi finché non li riattivi.
+406| Gli allarmi tornano {when}.
+407| Gli allarmi sono di nuovo attivi
+408| Riprendi gli allarmi ora
+409| Scegli un'ora nel futuro.
+410| ReminderFoxAgain — oggi
+411| In arrivo
+412| Niente oggi.
+413| Niente in arrivo.
+414| Generale
+415| Allarmi
+416| Aspetto
+417| Dati
+418| Informazioni
+419| Avvia ReminderFoxAgain all'avvio di Windows
+420| Resta nell'area di notifica quando la finestra è chiusa
+421| La settimana inizia il
+422| Tema
+423| Temi
+424| Predefinito (come Windows)
+425| Volpe
+426| Chiaro
+427| Scuro
+428| Oceano
+429| Contrasto elevato
+430| Il predefinito è Volpe, chiaro o scuro come Windows. Gli elementi con la stella hanno un colore proprio in ogni tema. Il contrasto elevato usa nero, bianco, giallo e ciano con testo più grande e linee più spesse.
+431| -
+432| ReminderFoxAgain è un omaggio all'originale estensione
+433| -
+434| per Firefox e Thunderbird, creata da Tom Mutdosch e Daniel Lee con Guenter Wahl. Il formato dei file, le regole di ripetizione, le viste, gli allarmi rapidi e la finestra di avviso sono loro; grazie.
+435| Riproduci un suono con gli allarmi
+436| Suono
+437| Campanello integrato
+438| Il tuo suono
+439| Scegli…
+440| Scegli
+441| Usa il campanello integrato
+442| Campanello
+443| Riproducilo
+444| ▶ Prova
+445| Suono dell'allarme: {s}
+446| Si usa il campanello integrato
+447| Scegli un file audio (.mp3, .wav, .ogg, .m4a, .aac, .flac o .webm).
+448| Quel file audio supera i 10 MB. Scegline uno più breve.
+449| Ripeti il suono
+450| No, una volta sola
+451| Ogni minuto
+452| Ogni {n} minuti
+453| Allarme predefinito per i nuovi promemoria
+454| Posticipo predefinito
+455| Unità del posticipo predefinito
+456| Posticipo predefinito, quanti
+457| Finestra dei promemoria (la finestra di avviso dell'estensione)
+458| Mostra una finestra con i promemoria di oggi e in arrivo
+459| Quando
+460| Solo all'avvio
+461| All'avvio e ogni {n} minuti
+462| … ogni {n} minuti
+463| … ogni ora
+464| … ogni {n} ore
+465| Tienila aperta
+466| {n} secondi
+467| Finché non la chiudo
+468| Angolo
+469| in basso a destra
+470| in basso a sinistra
+471| in alto a destra
+472| in alto a sinistra
+473| Riproduci il suono
+474| Mostrala ora
+475| «In arrivo» significa i prossimi
+476| Numero sull'icona
+477| Mostra un numero sulle icone dell'area di notifica e della barra delle applicazioni
+478| Promemoria e attività aperti di oggi
+479| Di oggi e in arrivo
+480| Solo quelli di oggi
+481| Solo in arrivo
+482| Lingua
+483| Lingua di sistema ({s})
+484| La lingua di menu, pulsanti e messaggi. I tuoi promemoria non cambiano.
+485| Le traduzioni sono state scritte per ReminderFoxAgain e non sono ancora state verificate da madrelingua.
+486| Dimensione del testo
+487| Piccola ({n}%)
+488| Normale
+489| Grande ({n}%)
+490| Più grande ({n}%)
+491| Massima ({n}%)
+492| Date
+493| Come in Windows ({s})
+494| Ore
+495| Come in Windows
+496| {n} ore ({s})
+497| Mostra il pannello calendario accanto agli elenchi
+498| Mesi nel pannello calendario
+499| Mappe
+500| -
+501| -
+502| -
+503| Suggerimento dell'icona di notifica
+504| Suggerimento
+505| Promemoria di oggi
+506| Promemoria in arrivo
+507| Variabili: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — le stesse dell'estensione.
+508| Ripristina
+509| Testi del suggerimento ripristinati
+510| Gestisci elenchi…
+511| Gestisci categorie…
+512| Gestisci viste…
+513| Promemoria ricorrenti nella scheda Promemoria
+514| Date future da mostrare
+515| In arrivo, Tutti i promemoria, Importanti, la ricerca e le viste senza date
+516| Ogni data nei prossimi
+517| Solo le prossime
+518| one={n} mese | other={n} mesi
+519| one={n} anno | other={n} anni
+520| one={n} data | other={n} date
+521| Usato da In arrivo, Tutti i promemoria, Importanti, la ricerca e le viste senza intervallo di date. Oggi, Prossimi {n} giorni, Giorno o mese selezionato, la scheda Mese e il calendario mostrano sempre ogni data.
+522| In Tutti e Passati, mostra quelli passati da
+523| l'inizio di ogni serie
+524| gli ultimi {n} anni
+525| l'ultimo anno
+526| gli ultimi {n} mesi
+527| Nascondi i promemoria ricorrenti
+528| Nascondi i promemoria completati
+529| Importa ed esporta
+530| Importa un file .ics…
+531| Aggiungi gli elementi da un file .ics (Ctrl+I)
+532| Importa da ReminderFox…
+533| Trova il reminderfox.ics che l'estensione ReminderFox teneva nel tuo profilo di Firefox o Thunderbird
+534| Esporta in .ics…
+535| Esporta in .ics
+536| Esporta…
+537| Salva un file .ics (Ctrl+E)
+538| Le importazioni si aggiungono a ciò che hai; gli elementi già presenti vengono aggiornati solo se la copia nel file è più recente. Le esportazioni si aprono in Outlook, Google Calendar, Thunderbird, Calendario di Apple e nell'estensione ReminderFox originale.
+539| Backup
+540| Esegui backup ora
+541| Salva una copia di backup…
+542| Ripristina da un backup…
+543| Ripristina da un backup
+544| Apri cartella dei backup
+545| Apri cartella dei dati
+546| File dei dati
+547| Mostra il file dei promemoria in Esplora file
+548| I tuoi promemoria sono salvati in {path} (i backup giornalieri sono nella cartella «backups» accanto).
+549| ＋ Nuovo elenco…
+550| Nuovo elenco…
+551| Nuovo elenco
+552| Nome del nuovo elenco
+553| Nome del nuovo elenco (per esempio Spesa, Film da vedere, Idee regalo):
+554| Aggiungi elenco
+555| Rinomina elenco
+556| Rinomina…
+557| Rimuovi…
+558| Rimuovere l'elenco?
+559| «Attività» è l'elenco principale e non si può rinominare né rimuovere (come nell'estensione). Quando rimuovi un elenco scegli se le sue attività passano in «Attività» o vengono eliminate.
+560| L'elenco «{list}» ha {n} attività. Spostarla in «{main}» o eliminarla con l'elenco?
+561| L'elenco «{list}» ha {n} attività. Spostarle in «{main}» o eliminarle con l'elenco?
+562| Elimina elenco e attività
+563| one=Elenco e {n} attività eliminati | other=Elenco e {n} attività eliminati
+564| Elenco rimosso
+565| Elenco «{s}» aggiunto
+566| «{s}» esiste già
+567| Quell'elenco esiste già.
+568| Il nome di un elenco non può essere vuoto né contenere virgole o due punti.
+569| Il nome di un elenco non può contenere virgole né due punti.
+570| Unire gli elenchi?
+571| Unisci
+572| Unito a «{s}»
+573| Rinominato in «{s}»
+574| Nuovo nome per «{name}»:
+575| Nuovo nome per «{name}» (su {items}):
+576| Nuova categoria
+577| Altra categoria
+578| Aggiungi le più comuni
+579| Categoria «{s}» aggiunta
+580| {n} categorie aggiunte
+581| Niente di nuovo da aggiungere.
+582| Rinomina categoria
+583| Eliminare la categoria?
+584| Categoria eliminata
+585| Unire le categorie?
+586| Una categoria non può essere vuota né contenere virgole.
+587| non ancora usata
+588| Rinominare cambia ogni promemoria e attività con quella categoria; rinominare in una esistente le unisce. Eliminare la toglie dai suoi elementi (gli elementi restano).
+589| La categoria «{name}» verrà eliminata.
+590| La categoria «{name}» verrà eliminata e tolta da {items}. Gli elementi restano.
+591| Anniversario
+592| Appuntamento
+593| Compleanno
+594| Lavoro
+595| Telefonata
+596| Festività
+597| Riunione
+598| Personale
+599| Spesa
+600| Viaggio
+601| Anniversario, Appuntamento, Compleanno, Lavoro, Telefonata…
+602| Nuova vista
+603| ＋ Nuova vista…
+604| Modifica vista
+605| Eliminare la vista?
+606| La vista «{s}» verrà eliminata. I tuoi promemoria non cambiano.
+607| Mostrala nella scheda Promemoria
+608| Vista salvata
+609| Vista «{s}» aggiunta
+610| Dai un nome alla vista.
+611| Esiste già una vista con quel nome.
+612| Una vista è un filtro salvato per la scheda Promemoria: sceglila dall'elenco Mostra. Le condizioni su campi diversi devono valere tutte; le virgole in una condizione significano «uno qualsiasi di questi».
+613| Nessuna vista. Fai clic su «Nuova vista…» per crearne una — per esempio ogni promemoria con la categoria «Compleanno» nel prossimo anno.
+614| Nome
+615| es. Compleanni
+616| Mostra i promemoria in cui
+617| ＋ Aggiungi una condizione
+618| Rimuovi questa condizione
+619| Qualsiasi campo
+620| La categoria
+621| La vista
+622| Tipo
+623| è
+624| contiene
+625| parole, separate da virgole
+626| Solo le date da
+627| a
+628| da oggi
+629| oggi
+630| I numeri negativi tornano indietro nel tempo: −{n} mese a {n2} giorni significa «l'ultimo mese».
+631| Tutti
+632| Tutto
+633| Solo promemoria
+634| Solo attività
+635| Unità
+636| Quanti
+637| Qualsiasi campo contiene «{s}»
+638| La categoria è «{s}»
+639| La categoria è «{s}» o «{s2}»
+640| date da oggi a {n} giorni avanti
+641| one=+{n} settimana | other=+{n} settimane
+642| one=+{n} mese | other=+{n} mesi
+643| one=+{n} anno | other=+{n} anni
+644| Importa
+645| Importa un file iCalendar
+646| Importa da ReminderFox
+647| Da ReminderFox
+648| Trovato/i {files} dell'estensione ReminderFox:
+649| Importa il più recente
+650| Importali comunque
+651| {reminders} e {items}
+652| {n} già presenti (si tiene la copia più recente)
+653| {n} sembra un duplicato (stesso titolo e data di un elemento che hai)
+654| {n} sembrano duplicati (stesso titolo e data di un elemento che hai)
+655| Come
+656| Aggiungi a ciò che ho
+657| Sostituisci tutto
+658| Sostituisci tutto (prima si fa un backup dei tuoi {items})
+659| Sostituire tutto?
+660| I tuoi {items} saranno sostituiti dai {newItems} del file.
+661| Ciò che hai ora viene prima salvato come backup «Salvato prima di un'importazione che ha sostituito tutto», così puoi recuperarlo da Impostazioni → Dati → Ripristina da un backup….
+662| Duplicati
+663| Salta gli elementi con lo stesso titolo e data di uno che ho
+664| Facoltativa: aggiunta a ogni elemento importato, per esempio «Festività» per un elenco di festività, così puoi filtrarli.
+665| facoltativa
+666| Importazione completata
+667| {items} importati
+668| {items} e {lists} importati
+669| {n} aggiornati
+670| {n} già aggiornati
+671| one={n} duplicato saltato | other={n} duplicati saltati
+672| sostituzione di {items} (salvati come {file})
+673| {lists} aggiunti ({names})
+674| one={n} elemento archiviato spostato nell'elenco «{list}» | other={n} elementi archiviati spostati nell'elenco «{list}»
+675| Questo file non contiene dati iCalendar (manca BEGIN:VCALENDAR).
+676| Impossibile leggere il file dei promemoria
+677| Esportato in {path}
+678| Esporta
+679| Tutto (promemoria e attività)
+680| Il file funziona con Outlook, Google Calendar, Thunderbird, Calendario di Apple e l'estensione ReminderFox originale.
+681| ReminderFoxAgain fa un backup ogni giorno, uno prima di ogni ripristino e quelli che fai con «Esegui backup ora». Il ripristino sostituisce i tuoi promemoria e attività attuali con il backup; ciò che hai ora viene salvato prima, quindi puoi sempre tornare indietro.
+682| Creato
+683| Contenuto
+684| Ripristina
+685| Ripristina…
+686| Scegli un altro file…
+687| {n} archiviati
+688| Illeggibile: {s}
+689| Impossibile leggere {s}: {s2}
+690| Impossibile ripristinare quel file
+691| Ancora nessun backup. Si fanno ogni giorno in cui l'app è in esecuzione; puoi anche fare clic su «Esegui backup ora».
+692| Backup giornaliero
+693| Backup fatto da te
+694| Salvato prima di un ripristino
+695| Salvato prima di un'importazione che ha sostituito tutto
+696| L'archivio, prima di diventare un elenco
+697| Backup giornaliero dell'archivio (versione precedente)
+698| Backup
+699| Ripristinare questo backup?
+700| Questo sostituisce ciò che hai ora ({now}) con il backup del {when}: {items}.
+701| Questo sostituisce ciò che hai ora ({now}) con il backup del {when}: {items}, più {n} archiviati, che vanno nell'elenco «{list}».
+702| Questa è una copia dell'archivio di una versione precedente. I suoi {all} vanno nell'elenco «{list}» (gli elementi che hai già restano come sono). Nient'altro cambia.
+703| I tuoi dati attuali vengono prima salvati come backup «Salvato prima di un ripristino», così puoi annullare da questo stesso elenco.
+704| Backup ripristinato
+705| {items} ripristinati.
+706| {items} ripristinati, {n} dei quali archiviati, ora nell'elenco «{list}».
+707| Ciò che avevi prima è stato salvato come {file}.
+708| Backup salvato in {path}
+709| Backup eseguito: {s}
+710| {n} byte
+711| {n} KB
+712| {n} MB
+713| Quell'elemento non esiste più.
+714| Impossibile leggere il file d'archivio, quindi non viene modificato. È stato conservato come archive.ics.unreadable.
+715| Impossibile leggere il file d'archivio, quindi non può essere sostituito.
+716| Benvenuto in ReminderFoxAgain
+717| I tuoi promemoria, attività e allarmi come app di Windows — un omaggio all'originale estensione ReminderFox.
+718| Importa dalla tua estensione ReminderFox
+719| {path} — ultima modifica {date}
+720| Importa un reminderfox.ics o un altro file di calendario…
+721| Dall'estensione ReminderFox (nella cartella «reminderfox» del tuo profilo Firefox/Thunderbird), Outlook, Google Calendar…
+722| Inizia con un elenco vuoto
+723| Puoi importare più tardi da Impostazioni → Dati.
+724| adesso
+725| tra {n} min
+726| one=tra {n} ora | other=tra {n} ore
+727| one=tra {n} giorno | other=tra {n} giorni
+728| {n} min fa
+729| one={n} ora fa | other={n} ore fa
+730| one={n} giorno fa | other={n} giorni fa
+731| Apri {app}
+732| Aggiungi promemoria…
+733| Aggiungi elemento di elenco…
+734| Allarme rapido…
+735| Riprendi gli allarmi
+736| Mostra i promemoria di oggi
+737| Esci da {app}
+738| {app} — allarmi spenti
+739| {app} — allarmi spenti fino alle {time}
+740| {app} — niente oggi
+741| in arrivo
+742| {app} è ancora in esecuzione
+743| Gli allarmi continueranno ad apparire. Fai clic destro sulla volpe nell'area di notifica per uscire.
+744| Allarme di {app}
+745| {app} — oggi
+746| {n} h {n2} min
+747| File iCalendar
+748| Tutti i file
+749| File audio
+750| Importa file iCalendar
+751| Esporta in un file iCalendar
+752| Scegli il tuo reminderfox.ics
+753| Scegli un suono di allarme
+754| Salva una copia di backup
+755| Scegli un backup da ripristinare
+756| Ogni settimana il {days}
+757| Ogni mese il {nth} {weekday}
+758| Ogni mese il giorno {day}
+759| Ogni mese lo stesso giorno
+760| Ogni {n} mesi lo stesso giorno
+761| Ogni anno il {nth} {weekday} di {month}
+762| Ogni anno il {date}
+763| Ogni anno nella stessa data
+764| Ogni {n} anni nella stessa data
+765| Si ripete
+766| Personalizzata ({rule})
+767| {rule}, una volta
+768| {rule}, {n} volte
+769| {rule}, fino al {date}
+770| Mostra i promemoria che hai spuntato come completati
+771| Mostra i promemoria e le voci di elenco che hai spuntato come completati
+772| Il mio ordine: trascina le righe o premi Alt+↑ / Alt+↓
+773| Vista
+774| Suono dell'allarme
+775| File personale…
+776| Usa un tuo file audio (.mp3, .wav, .ogg, .m4a, .aac, .flac o .webm)
+777| Di continuo finché non lo gestisci
+778| Di continuo finché non lo gestisci: il suono si ripete finché non posticipi, apri, segni come fatto o ignori l'allarme, oppure nascondi la finestra dell'allarme. L'allarme successivo lo fa ripartire.
+779| Colonne
+780| Colonne della scheda Promemoria
+781| Colonne degli elenchi
+782| Togli la spunta a una colonna per nasconderla. La descrizione è sempre visibile.
+783| Filtri salvati per la scheda Promemoria
+784| Gestisci promemoria…
+785| In arrivo, Tutti i promemoria, Importanti, la ricerca e i filtri salvati senza date
+786| Usato da In arrivo, Tutti i promemoria, Importanti, la ricerca e i filtri salvati senza intervallo di date. Oggi, Prossimi {n} giorni, Giorno o mese selezionato, la scheda Mese e il calendario mostrano sempre ogni data.
+787| Filtri salvati
+788| Filtro salvato «{s}» · {c}
+789| Gestisci promemoria
+790| Un filtro salvato mostra nella scheda Promemoria solo i promemoria che vuoi: sceglilo dall'elenco Mostra. Le condizioni su campi diversi devono valere tutte; le virgole in una condizione significano «uno qualsiasi di questi».
+791| ＋ Nuovo filtro salvato…
+792| Nessun filtro salvato. Fai clic su «Nuovo filtro salvato…» per crearne uno — per esempio ogni promemoria con la categoria «Compleanno» nel prossimo anno.
+793| Eliminare il filtro salvato?
+794| Il filtro salvato «{s}» verrà eliminato. I tuoi promemoria non cambiano.
+795| Modifica filtro salvato
+796| Nuovo filtro salvato
+797| Dai un nome al filtro salvato.
+798| Esiste già un filtro salvato con questo nome.
+799| Filtro salvato modificato
+800| Filtro salvato «{s}» aggiunto
+801| Campana
+802| Marimba
+803| Bip digitali
+804| Sveglia
+805| Il tuo file: {s}
+806| Crea un tema tuo da cinque colori
+807| ＋ Nuovo tema…
+808| Cambia i colori del tuo tema
+809| ＋ Nuovo tema… ne crea uno tuo da cinque colori.
+810| I tuoi temi
+811| Sfondo
+812| Dietro a tutto
+813| Elenchi e pannelli
+814| Gli elenchi, il pannello del calendario, le finestre di dialogo
+815| Testo
+816| Accento
+817| Pulsanti, oggi, selezione
+818| Voci con stella
+819| Promemoria e attività importanti
+820| Il testo si legge male sullo sfondo (contrasto {n}:1; da 4,5:1 si legge bene).
+821| L'accento si vede male sugli elenchi (contrasto {n}:1; 3:1 o più è meglio).
+822| Le voci con stella si vedono male sugli elenchi (contrasto {n}:1; 3:1 o più è meglio).
+823| Modifica tema
+824| Nuovo tema
+825| Parti da
+826| es. Foresta
+827| Tutta la finestra mostra il tema mentre scegli. Annulla rimette quello di prima.
+828| Dai un nome al tema.
+829| Esiste già un tema con questo nome.
+830| Tema «{s}» salvato
+831| Tema «{s}» aggiunto
+832| Eliminare il tema?
+833| Il tema «{s}» verrà eliminato. L'app torna al tema predefinito.

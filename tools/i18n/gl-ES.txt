@@ -1,0 +1,834 @@
+# Galego — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Lembrete
+2| ＋ Elemento da lista
+3| ⚙ Configuración
+4| Configuración
+5| Buscar
+6| Buscar (Ctrl+F)
+7| Buscar nos lembretes e tarefas
+8| Novo lembrete (Ctrl+N)
+9| Novo elemento na lista que se mostra (Ctrl+T)
+10| Alarma rápida: unha alarma única dentro duns minutos (Ctrl+Q)
+11| ⏰ Alarma rápida
+12| Lembretes
+13| Mes
+14| Lista
+15| Listas
+16| Lista: {s}
+17| Todas as listas
+18| Escoller que lista mostrar
+19| Lista que se mostra
+20| Tarefas
+21| Rematado ou suspendido
+22| Mostrar ou agochar o panel do calendario
+23| Mostrar ou agochar o panel do calendario (Ctrl+B)
+24| Alarmas activadas
+25| Alarmas suspendidas
+26| Alarmas suspendidas ata as {time}
+27| Retomar
+28| Prema para activar de novo as alarmas
+29| Suspender ou retomar as alarmas
+30| one={n} elemento | other={n} elementos
+31| one={n} lembrete | other={n} lembretes
+32| one={n} tarefa | other={n} tarefas
+33| one={n} elemento da lista | other={n} elementos da lista
+34| one={n} elemento novo | other={n} elementos novos
+35| one={n} elemento arquivado | other={n} elementos arquivados
+36| one={n} lista | other={n} listas
+37| one={n} ficheiro | other={n} ficheiros
+38| one={n} minuto | other={n} minutos
+39| one={n} hora | other={n} horas
+40| one={n} día | other={n} días
+41| one={n} duplicado | other={n} duplicados
+42| Mostrar
+43| Hoxe
+44| Mañá
+45| Onte
+46| Próximos {n} días
+47| Próximos
+48| Todos os lembretes
+49| Importantes
+50| Pasados
+51| Día seleccionado
+52| Mes seleccionado
+53| Vistas
+54| Vista «{s}»
+55| Buscando en todos os lembretes
+56| Data
+57| Día
+58| Hora
+59| Descrición
+60| Repetición
+61| Categoría
+62| Alarma
+63| Completado
+64| Completado o {date}
+65| (sen descrición)
+66| Aquí non hai lembretes
+67| Prema en ＋ Lembrete para engadir un, ou escolla outra vista.
+68| Prema en ＋ Elemento da lista para engadir un a esta lista.
+69| Atrasado desde o {date}
+70| atrasado desde o {date}
+71| Pronto: {s}
+72| Editar…
+73| Eliminar…
+74| Eliminar
+75| Duplicar
+76| Copiar
+77| Mover
+78| Abrir
+79| Abrir ligazón
+80| Mostrar nun mapa
+81| Ver na lista
+82| Marcar como completado
+83| Lembrádemo…
+84| Converter en tarefa…
+85| Converter en tarefa
+86| Converter en lembrete
+87| Programar como lembrete…
+88| Programar como lembrete
+89| Copiar a unha lista…
+90| Copiar a unha lista
+91| Copiar á lista…
+92| Copiar á lista
+93| Mover á lista…
+94| Mover á lista
+95| Mover a…
+96| Copiar a…
+97| Movelo a outra lista
+98| Poñer unha copia noutra lista
+99| Unha copia exacta nesta lista (Ctrl+D)
+100| Eliminar (Supr)
+101| Elemento seleccionado
+102| Elemento seleccionado:
+103| Subir
+104| Baixar
+105| -
+106| -
+107| -
+108| «{s}» duplicado
+109| {s} (copia)
+110| Copiado a «{s}»
+111| Movido a «{s}»
+112| Mover a «{s}»
+113| Agora é unha tarefa en «{s}»
+114| Agora é un lembrete o {date}
+115| está en «{s}»
+116| «{s}» está baleira
+117| Eliminado
+118| Repetición eliminada
+119| Eliminar lembrete periódico
+120| Repítese: os cambios aplícanse a todas as repeticións.
+121| Só esta
+122| Todas as repeticións
+123| Eliminar esta repetición
+124| Eliminar todas as repeticións…
+125| «{s}» repítese ({rule}).
+126| Eliminar só a do {date} ou todas as repeticións?
+127| Eliminar todas as repeticións?
+128| Eliminar todo
+129| Eliminar o lembrete?
+130| Eliminar a tarefa?
+131| Eliminarase «{s}».
+132| Eliminaranse «{s}» e todas as súas repeticións.
+133| Algo saíu mal
+134| Escriba primeiro un lugar.
+135| Mes anterior
+136| Mes seguinte
+137| Ir a hoxe
+138| Ir a unha data (Ctrl+G)
+139| Ir á data
+140| Ir a…
+141| Ir
+142| Engadir un lembrete neste día
+143| Faga dobre clic nun día para engadir un lembrete
+144| Nada neste día.
+145| +{n} máis
+146| Aínda non feito
+147| Todo o día
+148| Todo o día {s}
+149| Tarefa
+150| Tarefa {s}
+151| Tarefa
+152| Do
+153| Lu
+154| Ma
+155| Mé
+156| Xo
+157| Ve
+158| Sá
+159| dom.
+160| luns
+161| mar.
+162| mér.
+163| xov.
+164| ven.
+165| sáb.
+166| domingo
+167| luns
+168| martes
+169| mércores
+170| xoves
+171| venres
+172| sábado
+173| Elemento da lista
+174| Vence
+175| Orde
+176| A miña orde
+177| Por data
+178| Manual: arrastre as filas ou prema Alt+↑ / Alt+↓
+179| Mostrar as completadas
+180| Mostrar as tarefas
+181| Incluír as tarefas con data
+182| Sen data
+183| · sen data de vencemento
+184| · vence o {date}
+185| · atrasada
+186| · todo o día
+187| · para as {time}
+188| · dentro de {n} min
+189| · comezou hai {n} min ·
+190| Mostrar esta tarefa na axuda da icona da bandexa
+191| Mostrar na axuda da bandexa
+192| ✓ Mostrar na axuda da bandexa
+193| Móstrase na axuda da bandexa
+194| Quitada da axuda da bandexa
+195| Lembrar a diario ata completar
+196| Lembrádemo a diario ata que estea feito
+197| Lembra a diario ata que estea feito
+198| Ata feito
+199| Xa non lembra a diario
+200| Lémbrallo cada día ata que marque Feito
+201| Perdido o {date}; lémbrallo cada día ata que o marque
+202| Se se lle pasa, móvese a hoxe e soa cada día ata que o marque
+203| Feito: movido á seguinte data
+204| a diario
+205| cada semana
+206| cada mes
+207| cada {n} días
+208| cada {n} semanas
+209| {n} d antes
+210| o mesmo día
+211| {every} desde o {from}
+212| unha vez
+213| cada día
+214| cada semana
+215| cada mes
+216| one={n} día antes do vencemento | other={n} días antes do vencemento
+217| o día do vencemento
+218| Lémbrallo {every}, desde o {from}, ás {time}
+219| Lémbrallo {every}, desde o {from}, ás {time}, ata que estea feito
+220| Lémbrallo {every}, desde o {from}, ás {time}, ata que estea feito (tamén despois do vencemento)
+221| Novo lembrete
+222| Editar lembrete
+223| Nova tarefa
+224| Editar tarefa
+225| De que quere que lle lembre?
+226| Que hai que facer?
+227| Tipo
+228| Lembrete
+229| Nunha data
+230| A calquera hora
+231| Remata
+232| Lugar
+233| Ligazón
+234| -
+235| Notas
+236| Categorías
+237| Escoller categorías
+238| p. ex. Aniversario, Traballo
+239| Engadir
+240| Gardar
+241| Cancelar
+242| Pechar
+243| Aceptar
+244| Si
+245| Non
+246| Ningunha
+247| Non se repite
+248| Diario
+249| Semanal
+250| Mensual
+251| Anual
+252| Personalizado…
+253| Personalizado
+254| Personalizado (importado)
+255| Manter o importado: {s}
+256| Cada día laborable
+257| Cada
+258| cada
+259| día
+260| días
+261| semana
+262| semanas
+263| mes
+264| meses
+265| ano
+266| anos
+267| veces
+268| O {date}
+269| O día {day}
+270| O {nth} {weekday}
+271| O {nth} {weekday} de {month}
+272| O último {weekday}
+273| O último {weekday} de {month}
+274| Cada día
+275| Cada {n} días
+276| Cada semana
+277| Cada {n} semanas
+278| Cada mes
+279| Cada semana o {days}
+280| Cada {n} semanas o {days}
+281| días laborables
+282| Cada mes o día {day}
+283| Cada {n} meses o día {day}
+284| Cada mes o {nth} {weekday}
+285| Cada {n} meses o {nth} {weekday}
+286| Cada ano o {date}
+287| Cada {n} anos o {date}
+288| Cada ano o {nth} {weekday} de {month}
+289| Cada {n} anos o {nth} {weekday} de {month}
+290| último
+291| {n}.º
+292| Frecuencia
+293| O
+294| Despois de
+295| Logo
+296| -
+297| ás
+298| antes
+299| Nunca
+300| Ata
+301| ata…
+302| nunha data…
+303| a partir do…
+304| nada máis (só unha vez)
+305| Lembrádemo
+306| Non mo lembredes
+307| Cando comezar a lembrar
+308| Data do primeiro lembrete
+309| Hora do lembrete
+310| Seguir lembrando se pasou o vencemento e non está feito
+311| tamén despois do vencemento
+312| ata que estea feito
+313| ata que estea feito ou venza ({due})
+314| ata que estea feito, tamén despois do vencemento ({due})
+315| Un lembrete, o {date} ás {time}.
+316| Un lembrete, o {date} ás {time}. Esa hora xa pasou: escolla unha posterior ou lembre repetidamente.
+317| {every} ás {time}, desde o {date}, {end}.
+318| Sen lembretes.
+319| Sen lembretes. A tarefa móstrase en vermello cando pasa o vencemento.
+320| Escolla a data do primeiro lembrete.
+321| Texto da alarma
+322| Á hora
+323| one={n} minuto antes | other={n} minutos antes
+324| one={n} hora antes | other={n} horas antes
+325| one={n} día antes | other={n} días antes
+326| one={n} semana antes | other={n} semanas antes
+327| O mesmo día, ás {time}
+328| O día anterior, ás {time}
+329| Móstrase así: {s}. <year> conta os anos desde entón; <year#> mostra só o número.
+330| Importado no fuso horario {zone}: móstrase na súa hora local. Ao gardar almacenarase en hora local.
+331| Escriba unha descrición.
+332| Escolla a data de vencemento ou marque «Sen data».
+333| Escolla unha data.
+334| Escolla a data.
+335| Escolla a data.
+336| Escriba a hora de vencemento ou marque «A calquera hora».
+337| Escriba unha hora ou marque «Todo o día».
+338| A data de remate é anterior á de inicio.
+339| A hora de remate é anterior á de inicio.
+340| Lembrete engadido
+341| Tarefa engadida
+342| Gardado
+343| Editar a copia
+344| A data xa se sabe: converter esta tarefa nun lembrete nunha data exacta
+345| Vence o {date}.
+346| Vence o {date}, {time}.
+347| Cando saiba a data exacta, a tarefa convértese nun lembrete nesa data: sae da lista de tarefas e aparece en Lembretes, na vista Mes e no calendario. Consérvanse as notas, a categoría, o lugar e a ligazón.
+348| Un lembrete o {date}, todo o día.
+349| Un lembrete o {date}, ás {time}.
+350| O lembrete convértese nunha tarefa na mesma data, coa súa repetición, alarma e notas.
+351| O lembrete queda; unha copia como tarefa na mesma data, con repetición, alarma e notas, vai á lista.
+352| Unha copia exacta vai á lista que escolla; este queda onde está.
+353| A lista
+354| {s} (esta lista)
+355| lista principal
+356| Alarma de ReminderFoxAgain
+357| Adiar
+358| Adiar todo
+359| Adiar todo {s}
+360| Adiar todos os lembretes de aquí o tempo predeterminado (cámbiase en Configuración)
+361| Adiar canto tempo, ou ata que hora
+362| Unidade do adiamento
+363| Adiar ata
+364| Descartar
+365| Descartar todo
+366| Feito
+367| Rematei con esta alarma rápida
+368| Agochar polo de agora (a alarma segue activa e volve coa seguinte)
+369| Unha hora como 15:30 ou 3:30 pm (antes de agora significa mañá)
+370| Un número enteiro de {n} a {n2}
+371| Escriba un número enteiro de {n} a {n2}.
+372| Escriba un número enteiro de 1 a 999, ou unha data e hora.
+373| segundos
+374| minutos
+375| horas
+376| Alarma rápida
+377| Alarmas rápidas
+378| ⏰ Alarmas rápidas…
+379| Unha alarma única que non se garda como lembrete, como a Alarma rápida do complemento.
+380| Dentro de
+381| Ás
+382| Durante
+383| Poñer alarma
+384| Cancelar esta alarma
+385| Non hai alarmas rápidas.
+386| Agardando para soar
+387| Alarma rápida para as {time}
+388| Alarma rápida cancelada
+389| Escolla unha hora.
+390| Esa hora xa pasou: escolla unha posterior.
+391| Esa hora xa pasou.
+392| Soa {when} ({until}).
+393| hoxe ás {time}
+394| en menos dun minuto
+395| dentro de {time}
+396| dentro de {hours} {minutes}
+397| Suspender alarmas
+398| Suspender alarmas…
+399| Suspender as alarmas un tempo
+400| Suspender
+401| Canto tempo
+402| Ata que as active de novo
+403| As alarmas seguen desactivadas ata que as retome (barra de estado, menú da bandexa ou aquí).
+404| Mentres están suspendidas non se abren ventás de alarma e a ventá de lembretes non aparece. As alarmas que venzan mentres tanto móstranse ao retomar.
+405| As alarmas están suspendidas ata que as active de novo.
+406| As alarmas volven {when}.
+407| As alarmas volven estar activadas
+408| Retomar as alarmas agora
+409| Escolla unha hora no futuro.
+410| ReminderFoxAgain — hoxe
+411| Proximamente
+412| Nada hoxe.
+413| Nada proximamente.
+414| Xeral
+415| Alarmas
+416| Visualización
+417| Datos
+418| Acerca de
+419| Iniciar ReminderFoxAgain ao iniciar Windows
+420| Seguir na bandexa do sistema ao pechar a ventá
+421| A semana comeza o
+422| Tema
+423| Temas
+424| Predeterminado (como Windows)
+425| Raposo
+426| Claro
+427| Escuro
+428| Océano
+429| Alto contraste
+430| O predeterminado é Raposo, claro ou escuro segundo Windows. Os elementos destacados teñen a súa cor en cada tema. O alto contraste usa negro, branco, amarelo e ciano con texto máis grande e liñas máis grosas.
+431| -
+432| ReminderFoxAgain é unha homenaxe ao complemento orixinal
+433| -
+434| para Firefox e Thunderbird, creado por Tom Mutdosch e Daniel Lee con Guenter Wahl. O formato de ficheiro, as regras de repetición, as vistas, as alarmas rápidas e a ventá de avisos son seus; grazas.
+435| Reproducir un son coas alarmas
+436| Son
+437| Campaíña integrada
+438| O seu son
+439| Escoller…
+440| Escoller
+441| Usar a campaíña integrada
+442| Campaíña
+443| Reproducilo
+444| ▶ Probar
+445| Son da alarma: {s}
+446| Úsase a campaíña integrada
+447| Escolla un ficheiro de son (.mp3, .wav, .ogg, .m4a, .aac, .flac ou .webm).
+448| Ese ficheiro de son supera os 10 MB. Escolla un máis curto.
+449| Repetir o son
+450| Non, só unha vez
+451| Cada minuto
+452| Cada {n} minutos
+453| Alarma predeterminada para lembretes novos
+454| Adiamento predeterminado
+455| Unidade do adiamento predeterminado
+456| Adiamento predeterminado, cantos
+457| Ventá de lembretes (a ventá de avisos do complemento)
+458| Mostrar unha ventá cos lembretes de hoxe e próximos
+459| Cando
+460| Só ao iniciar
+461| Ao iniciar e cada {n} minutos
+462| … cada {n} minutos
+463| … cada hora
+464| … cada {n} horas
+465| Mantela aberta
+466| {n} segundos
+467| Ata que a peche
+468| Esquina
+469| abaixo á dereita
+470| abaixo á esquerda
+471| arriba á dereita
+472| arriba á esquerda
+473| Reproducir o son
+474| Mostrala agora
+475| «Próximos» significa os próximos
+476| Número na icona
+477| Mostrar un número nas iconas da bandexa e da barra de tarefas
+478| Lembretes e tarefas pendentes de hoxe
+479| De hoxe e próximos
+480| Só os de hoxe
+481| Só os próximos
+482| Idioma
+483| Idioma do sistema ({s})
+484| O idioma dos menús, botóns e mensaxes. Os seus lembretes non cambian.
+485| As traducións escribíronse para ReminderFoxAgain e aínda non as revisaron falantes nativos.
+486| Tamaño do texto
+487| Pequeno ({n} %)
+488| Normal
+489| Grande ({n} %)
+490| Máis grande ({n} %)
+491| O máis grande ({n} %)
+492| Datas
+493| Como en Windows ({s})
+494| Horas
+495| Como en Windows
+496| {n} horas ({s})
+497| Mostrar o panel do calendario xunto ás listas
+498| Meses no panel do calendario
+499| Mapas
+500| -
+501| -
+502| -
+503| Axuda da icona da bandexa
+504| Axuda
+505| Lembretes de hoxe
+506| Próximos lembretes
+507| Variables: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — as mesmas que no complemento.
+508| Restablecer
+509| Textos da axuda restablecidos
+510| Xestionar listas…
+511| Xestionar categorías…
+512| Xestionar vistas…
+513| Lembretes periódicos na lapela Lembretes
+514| Datas futuras que mostrar
+515| Próximos, Todos os lembretes, Importantes, a busca e as vistas sen datas
+516| Cada data nos próximos
+517| Só as próximas
+518| one={n} mes | other={n} meses
+519| one={n} ano | other={n} anos
+520| one={n} data | other={n} datas
+521| Úsano Próximos, Todos os lembretes, Importantes, a busca e as vistas sen intervalo de datas. Hoxe, Próximos {n} días, Día ou mes seleccionado, a lapela Mes e o calendario mostran sempre todas as datas.
+522| En Todos e Pasados, mostrar os pasados desde
+523| o inicio de cada serie
+524| os últimos {n} anos
+525| o último ano
+526| os últimos {n} meses
+527| Agochar os lembretes periódicos
+528| Agochar os lembretes completados
+529| Importar e exportar
+530| Importar un ficheiro .ics…
+531| Engadir os elementos dun ficheiro .ics (Ctrl+I)
+532| Importar de ReminderFox…
+533| Atopar o reminderfox.ics que o complemento ReminderFox gardaba no seu perfil de Firefox ou Thunderbird
+534| Exportar a .ics…
+535| Exportar a .ics
+536| Exportar…
+537| Gardar un ficheiro .ics (Ctrl+E)
+538| As importacións engádense ao que ten; os elementos que xa están só se actualizan se a copia do ficheiro é máis recente. As exportacións ábrense en Outlook, Google Calendar, Thunderbird, Calendario de Apple e o complemento ReminderFox orixinal.
+539| Copias de seguranza
+540| Facer copia agora
+541| Gardar unha copia de seguranza…
+542| Restaurar unha copia de seguranza…
+543| Restaurar unha copia de seguranza
+544| Abrir o cartafol de copias
+545| Abrir o cartafol de datos
+546| Ficheiro de datos
+547| Mostrar o ficheiro de lembretes no Explorador
+548| Os seus lembretes gárdanse en {path} (as copias diarias están no cartafol «backups» que hai ao lado).
+549| ＋ Nova lista…
+550| Nova lista…
+551| Nova lista
+552| Nome da nova lista
+553| Nome da nova lista (por exemplo Compra, Películas para ver, Ideas de agasallo):
+554| Engadir lista
+555| Renomear a lista
+556| Renomear…
+557| Quitar…
+558| Quitar a lista?
+559| «Tarefas» é a lista principal e non se pode renomear nin quitar (como no complemento). Ao quitar unha lista, escolle se as súas tarefas pasan a «Tarefas» ou se eliminan.
+560| A lista «{list}» ten {n} tarefa. Movela a «{main}» ou eliminala coa lista?
+561| A lista «{list}» ten {n} tarefas. Movelas a «{main}» ou eliminalas coa lista?
+562| Eliminar a lista e as tarefas
+563| one=Lista e {n} tarefa eliminadas | other=Lista e {n} tarefas eliminadas
+564| Lista quitada
+565| Lista «{s}» engadida
+566| «{s}» xa existe
+567| Esa lista xa existe.
+568| O nome dunha lista non pode estar baleiro nin conter comas ou dous puntos.
+569| O nome dunha lista non pode conter comas nin dous puntos.
+570| Combinar as listas?
+571| Combinar
+572| Combinada con «{s}»
+573| Renomeado como «{s}»
+574| Novo nome para «{name}»:
+575| Novo nome para «{name}» (en {items}):
+576| Nova categoría
+577| Outra categoría
+578| Engadir as habituais
+579| Categoría «{s}» engadida
+580| {n} categorías engadidas
+581| Nada novo que engadir.
+582| Renomear a categoría
+583| Eliminar a categoría?
+584| Categoría eliminada
+585| Combinar as categorías?
+586| Unha categoría non pode estar baleira nin conter comas.
+587| aínda sen usar
+588| Renomear cambia cada lembrete e tarefa que teña a categoría; renomear a unha existente combínaas. Eliminar quítaa dos seus elementos (os elementos quedan).
+589| Eliminarase a categoría «{name}».
+590| Eliminarase a categoría «{name}» e quitarase de {items}. Os elementos en si quedan.
+591| Aniversario de voda
+592| Cita
+593| Aniversario
+594| Negocios
+595| Chamada
+596| Festivo
+597| Reunión
+598| Persoal
+599| Compras
+600| Viaxe
+601| Aniversario de voda, Cita, Aniversario, Negocios, Chamada…
+602| Nova vista
+603| ＋ Nova vista…
+604| Editar a vista
+605| Eliminar a vista?
+606| Eliminarase a vista «{s}». Os seus lembretes non cambian.
+607| Mostrala na lapela Lembretes
+608| Vista gardada
+609| Vista «{s}» engadida
+610| Poña un nome á vista.
+611| Xa hai unha vista con ese nome.
+612| Unha vista é un filtro gardado para a lapela Lembretes: escóllaa na lista Mostrar. As condicións sobre campos distintos deben cumprirse todas; as comas dentro dunha condición significan «calquera destes».
+613| Aínda non hai vistas. Prema en «Nova vista…» para crear unha; por exemplo, cada lembrete coa categoría «Aniversario» no próximo ano.
+614| Nome
+615| p. ex. Aniversarios
+616| Mostrar os lembretes onde
+617| ＋ Engadir unha condición
+618| Quitar esta condición
+619| Calquera campo
+620| A categoría
+621| A vista
+622| Tipo
+623| é
+624| contén
+625| palabras, separadas por comas
+626| Só datas de
+627| a
+628| desde hoxe
+629| hoxe
+630| Os números negativos van cara atrás no tempo: −{n} mes a {n2} días significa «o último mes».
+631| Todos
+632| Todo
+633| Só lembretes
+634| Só tarefas
+635| Unidade
+636| Cantos
+637| Calquera campo contén «{s}»
+638| A categoría é «{s}»
+639| A categoría é «{s}» ou «{s2}»
+640| datas de hoxe a {n} días vista
+641| one=+{n} semana | other=+{n} semanas
+642| one=+{n} mes | other=+{n} meses
+643| one=+{n} ano | other=+{n} anos
+644| Importar
+645| Importar un ficheiro iCalendar
+646| Importar de ReminderFox
+647| De ReminderFox
+648| Atopáronse {files} do complemento ReminderFox:
+649| Importar o máis recente
+650| Importalos igualmente
+651| {reminders} e {items}
+652| {n} xa están aquí (consérvase a copia máis recente)
+653| {n} parece un duplicado (mesmo título e data que un elemento que xa ten)
+654| {n} parecen duplicados (mesmo título e data que un elemento que xa ten)
+655| Como
+656| Engadir ao que teño
+657| Substituír todo
+658| Substituír todo (antes faise copia dos seus {items})
+659| Substituír todo?
+660| Os seus {items} substituiranse polos {newItems} do ficheiro.
+661| O que ten agora gárdase antes como copia «Gardado antes dunha importación que o substituíu todo», para que o poida recuperar en Configuración → Datos → Restaurar unha copia de seguranza….
+662| Duplicados
+663| Omitir os elementos co mesmo título e data ca un que teño
+664| Opcional: engádese a cada elemento importado, por exemplo «Festivos» para unha lista de festivos, para poder filtrar por ela.
+665| opcional
+666| Importación completada
+667| {items} importados
+668| {items} e {lists} importados
+669| {n} actualizados
+670| {n} xa ao día
+671| one={n} duplicado omitido | other={n} duplicados omitidos
+672| substituíndo {items} (gardados como {file})
+673| {lists} engadidas ({names})
+674| one={n} elemento arquivado movido á lista «{list}» | other={n} elementos arquivados movidos á lista «{list}»
+675| Este ficheiro non contén datos iCalendar (non hai BEGIN:VCALENDAR).
+676| Non se puido ler o seu ficheiro de lembretes
+677| Exportado a {path}
+678| Exportar
+679| Todo (lembretes e tarefas)
+680| O ficheiro funciona con Outlook, Google Calendar, Thunderbird, Calendario de Apple e o complemento ReminderFox orixinal.
+681| ReminderFoxAgain garda unha copia cada día, unha antes de cada restauración e as que vostede fai con «Facer copia agora». Restaurar substitúe os seus lembretes e tarefas actuais pola copia; o que ten agora gárdase antes, así que sempre pode volver atrás.
+682| Creada
+683| Contido
+684| Restaurar
+685| Restaurar…
+686| Escoller outro ficheiro…
+687| {n} arquivados
+688| Non se pode ler: {s}
+689| Non se puido ler {s}: {s2}
+690| Non se pode restaurar ese ficheiro
+691| Aínda non hai copias. Fanse cada día que funciona a aplicación; tamén pode premer en «Facer copia agora».
+692| Copia diaria
+693| Copia feita por vostede
+694| Gardado antes dunha restauración
+695| Gardado antes dunha importación que o substituíu todo
+696| O arquivo, antes de converterse nunha lista
+697| Copia diaria do arquivo (versión anterior)
+698| Copia de seguranza
+699| Restaurar esta copia?
+700| Isto substitúe o que ten agora ({now}) pola copia do {when}: {items}.
+701| Isto substitúe o que ten agora ({now}) pola copia do {when}: {items}, máis {n} arquivados, que van á lista «{list}».
+702| Esta é unha copia do arquivo dunha versión anterior. Os seus {all} van á lista «{list}» (os elementos que xa ten quedan como están). Non cambia nada máis.
+703| Os seus datos actuais gárdanse antes como copia «Gardado antes dunha restauración», así que pode desfacelo desde esta mesma lista.
+704| Copia restaurada
+705| {items} restaurados.
+706| {items} restaurados, {n} deles arquivados, agora na lista «{list}».
+707| O que tiña antes gardouse como {file}.
+708| Copia gardada en {path}
+709| Copia feita: {s}
+710| {n} bytes
+711| {n} KB
+712| {n} MB
+713| Ese elemento xa non existe.
+714| Non se puido ler o ficheiro de arquivo, así que non se modifica. Conservouse como archive.ics.unreadable.
+715| Non se puido ler o ficheiro de arquivo, así que non se pode substituír.
+716| Benvido a ReminderFoxAgain
+717| Os seus lembretes, tarefas e alarmas como aplicación de Windows: unha homenaxe ao complemento ReminderFox orixinal.
+718| Importar do seu complemento ReminderFox
+719| {path} — modificado o {date}
+720| Importar un reminderfox.ics ou outro ficheiro de calendario…
+721| Do complemento ReminderFox (no cartafol «reminderfox» do seu perfil de Firefox/Thunderbird), Outlook, Google Calendar…
+722| Comezar cunha lista baleira
+723| Pode importar máis tarde desde Configuración → Datos.
+724| agora
+725| dentro de {n} min
+726| one=dentro de {n} hora | other=dentro de {n} horas
+727| one=dentro de {n} día | other=dentro de {n} días
+728| hai {n} min
+729| one=hai {n} hora | other=hai {n} horas
+730| one=hai {n} día | other=hai {n} días
+731| Abrir {app}
+732| Engadir lembrete…
+733| Engadir elemento da lista…
+734| Alarma rápida…
+735| Retomar as alarmas
+736| Mostrar os lembretes de hoxe
+737| Saír de {app}
+738| {app} — alarmas desactivadas
+739| {app} — alarmas desactivadas ata as {time}
+740| {app} — nada hoxe
+741| proximamente
+742| {app} segue en execución
+743| As alarmas seguirán aparecendo. Prema co botón dereito no raposo da bandexa do sistema para saír.
+744| Alarma de {app}
+745| {app} — hoxe
+746| {n} h {n2} min
+747| Ficheiros iCalendar
+748| Todos os ficheiros
+749| Ficheiros de son
+750| Importar un ficheiro iCalendar
+751| Exportar a un ficheiro iCalendar
+752| Escolla o seu reminderfox.ics
+753| Escolla un son de alarma
+754| Gardar unha copia de seguranza
+755| Escolla unha copia para restaurar
+756| Cada semana o {days}
+757| Cada mes o {nth} {weekday}
+758| Cada mes o día {day}
+759| Cada mes o mesmo día
+760| Cada {n} meses o mesmo día
+761| Cada ano o {nth} {weekday} de {month}
+762| Cada ano o {date}
+763| Cada ano na mesma data
+764| Cada {n} anos na mesma data
+765| Repítese
+766| Personalizado ({rule})
+767| {rule}, unha vez
+768| {rule}, {n} veces
+769| {rule}, ata o {date}
+770| Mostrar os lembretes que marcou como completados
+771| Mostrar os lembretes e elementos de lista que marcou como completados
+772| A miña orde: arrastre as filas ou prema Alt+↑ / Alt+↓
+773| Vista
+774| Son da alarma
+775| Ficheiro propio…
+776| Usar un ficheiro de son propio (.mp3, .wav, .ogg, .m4a, .aac, .flac ou .webm)
+777| Sen parar ata atendela
+778| Sen parar ata atendela: o son repítese unha e outra vez ata que adíe, abra, marque como feita ou descarte a alarma, ou agoche a xanela de alarma. A seguinte alarma volve inicialo.
+779| Columnas
+780| Columnas da lapela Lembretes
+781| Columnas das listas
+782| Desmarque unha columna para agochala. A descrición móstrase sempre.
+783| Filtros gardados para a lapela Lembretes
+784| Xestionar lembretes…
+785| Próximos, Todos os lembretes, Importantes, a busca e os filtros gardados sen datas
+786| Úsano Próximos, Todos os lembretes, Importantes, a busca e os filtros gardados sen intervalo de datas. Hoxe, Próximos {n} días, Día ou mes seleccionado, a lapela Mes e o calendario mostran sempre todas as datas.
+787| Filtros gardados
+788| Filtro gardado «{s}» · {c}
+789| Xestionar lembretes
+790| Un filtro gardado mostra na lapela Lembretes só os lembretes que quere ver: escólleo na lista Mostrar. As condicións sobre campos distintos deben cumprirse todas; as comas dentro dunha condición significan «calquera destes».
+791| ＋ Novo filtro gardado…
+792| Aínda non hai filtros gardados. Prema en «Novo filtro gardado…» para crear un; por exemplo, cada lembrete coa categoría «Aniversario» no próximo ano.
+793| Eliminar o filtro gardado?
+794| Eliminarase o filtro gardado «{s}». Os seus lembretes non cambian.
+795| Editar o filtro gardado
+796| Novo filtro gardado
+797| Poña un nome ao filtro gardado.
+798| Xa hai un filtro gardado con ese nome.
+799| Filtro gardado modificado
+800| Engadiuse o filtro gardado «{s}»
+801| Campá
+802| Marimba
+803| Pitidos dixitais
+804| Espertador
+805| O seu ficheiro: {s}
+806| Crear un tema propio con cinco cores
+807| ＋ Novo tema…
+808| Cambiar as cores do seu tema
+809| ＋ Novo tema… crea un propio con cinco cores.
+810| Os seus temas
+811| Fondo
+812| Detrás de todo
+813| Listas e paneis
+814| As listas, o panel do calendario, os diálogos
+815| Texto
+816| Acento
+817| Botóns, hoxe, selección
+818| Elementos destacados
+819| Lembretes e tarefas importantes
+820| O texto lese mal sobre o fondo (contraste {n}:1; a partir de 4,5:1 lese ben).
+821| O acento vese mal sobre as listas (contraste {n}:1; 3:1 ou máis é mellor).
+822| Os elementos destacados vense mal sobre as listas (contraste {n}:1; 3:1 ou máis é mellor).
+823| Editar o tema
+824| Novo tema
+825| Partir de
+826| p. ex. Bosque
+827| Toda a xanela mostra o tema mentres escolle. Cancelar volve poñer o anterior.
+828| Poña un nome ao tema.
+829| Xa hai un tema con ese nome.
+830| Gardouse o tema «{s}»
+831| Engadiuse o tema «{s}»
+832| Eliminar o tema?
+833| Eliminarase o tema «{s}». A aplicación volve ao tema predeterminado.

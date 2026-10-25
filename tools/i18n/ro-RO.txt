@@ -1,0 +1,834 @@
+# Română — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Memento
+2| ＋ Element de listă
+3| ⚙ Setări
+4| Setări
+5| Caută
+6| Caută (Ctrl+F)
+7| Caută în mementouri și sarcini
+8| Memento nou (Ctrl+N)
+9| Element nou în lista afișată (Ctrl+T)
+10| Alarmă rapidă: o alarmă unică peste câteva minute (Ctrl+Q)
+11| ⏰ Alarmă rapidă
+12| Mementouri
+13| Lună
+14| Listă
+15| Liste
+16| Listă: {s}
+17| Toate listele
+18| Alege lista afișată
+19| Lista afișată
+20| Sarcini
+21| Încheiate sau suspendate
+22| Arată sau ascunde panoul calendarului
+23| Arată sau ascunde panoul calendarului (Ctrl+B)
+24| Alarme pornite
+25| Alarme suspendate
+26| Alarme suspendate până la {time}
+27| Reia
+28| Clic pentru a reporni alarmele
+29| Suspendă sau reia alarmele
+30| one={n} element | few={n} elemente | other={n} de elemente
+31| one={n} memento | few={n} mementouri | other={n} de mementouri
+32| one={n} sarcină | few={n} sarcini | other={n} de sarcini
+33| one={n} element de listă | few={n} elemente de listă | other={n} de elemente de listă
+34| one={n} element nou | few={n} elemente noi | other={n} de elemente noi
+35| one={n} element arhivat | few={n} elemente arhivate | other={n} de elemente arhivate
+36| one={n} listă | few={n} liste | other={n} de liste
+37| one={n} fișier | few={n} fișiere | other={n} de fișiere
+38| one={n} minut | few={n} minute | other={n} de minute
+39| one={n} oră | few={n} ore | other={n} de ore
+40| one={n} zi | few={n} zile | other={n} de zile
+41| one={n} duplicat | few={n} duplicate | other={n} de duplicate
+42| Arată
+43| Azi
+44| Mâine
+45| Ieri
+46| Următoarele {n} zile
+47| Următoarele
+48| Toate mementourile
+49| Importante
+50| Trecute
+51| Ziua selectată
+52| Luna selectată
+53| Vizualizări
+54| Vizualizarea „{s}”
+55| Se caută în toate mementourile
+56| Dată
+57| Zi
+58| Oră
+59| Descriere
+60| Repetare
+61| Categorie
+62| Alarmă
+63| Finalizat
+64| Finalizat {date}
+65| (fără descriere)
+66| Niciun memento aici
+67| Faceți clic pe ＋ Memento pentru a adăuga unul sau alegeți altă vizualizare.
+68| Faceți clic pe ＋ Element de listă pentru a adăuga unul în această listă.
+69| Restant din {date}
+70| restant din {date}
+71| În curând: {s}
+72| Editează…
+73| Șterge…
+74| Șterge
+75| Duplică
+76| Copiază
+77| Mută
+78| Deschide
+79| Deschide linkul
+80| Arată pe hartă
+81| Arată în listă
+82| Marchează ca finalizat
+83| Amintește-mi…
+84| Transformă în sarcină…
+85| Transformă în sarcină
+86| Transformă în memento
+87| Programează ca memento…
+88| Programează ca memento
+89| Copiază într-o listă…
+90| Copiază într-o listă
+91| Copiază în listă…
+92| Copiază în listă
+93| Mută în listă…
+94| Mută în listă
+95| Mută în…
+96| Copiază în…
+97| Mută-l în altă listă
+98| Pune o copie în altă listă
+99| O copie exactă în această listă (Ctrl+D)
+100| Șterge (Del)
+101| Element selectat
+102| Element selectat:
+103| Mută în sus
+104| Mută în jos
+105| -
+106| -
+107| -
+108| „{s}” duplicat
+109| {s} (copie)
+110| Copiat în „{s}”
+111| Mutat în „{s}”
+112| Mută în „{s}”
+113| Acum o sarcină în „{s}”
+114| Acum un memento pe {date}
+115| este în „{s}”
+116| „{s}” este goală
+117| Șters
+118| Apariție ștearsă
+119| Șterge mementoul recurent
+120| Se repetă — modificările se aplică fiecărei apariții.
+121| Doar aceasta
+122| Toate aparițiile
+123| Șterge această apariție
+124| Șterge toate aparițiile…
+125| „{s}” se repetă ({rule}).
+126| Ștergeți doar apariția din {date} sau toate aparițiile?
+127| Ștergeți toate aparițiile?
+128| Șterge tot
+129| Ștergeți mementoul?
+130| Ștergeți sarcina?
+131| „{s}” va fi șters.
+132| „{s}” și toate repetările lui vor fi șterse.
+133| Ceva n-a mers bine
+134| Introduceți mai întâi un loc.
+135| Luna anterioară
+136| Luna următoare
+137| Mergi la azi
+138| Mergi la o dată (Ctrl+G)
+139| Mergi la dată
+140| Mergi la…
+141| Mergi
+142| Adaugă un memento în această zi
+143| Faceți dublu clic pe o zi pentru a adăuga un memento
+144| Nimic în această zi.
+145| încă {n}
+146| Încă nefăcut
+147| Toată ziua
+148| Toată ziua {s}
+149| Sarcină
+150| Sarcină {s}
+151| Sarcină
+152| Du
+153| Lu
+154| Ma
+155| Mi
+156| Jo
+157| Vi
+158| Sâ
+159| dum.
+160| lun.
+161| mar.
+162| mie.
+163| joi
+164| vin.
+165| sâm.
+166| duminică
+167| luni
+168| marți
+169| miercuri
+170| joi
+171| vineri
+172| sâmbătă
+173| Element de listă
+174| Termen
+175| Ordine
+176| Ordinea mea
+177| După dată
+178| Manual: trageți rândurile sau apăsați Alt+↑ / Alt+↓
+179| Arată finalizatele
+180| Arată sarcinile
+181| Include sarcinile cu dată
+182| Fără dată
+183| · fără termen
+184| · termen {date}
+185| · restant
+186| · toată ziua
+187| · setată la {time}
+188| · peste {n} min
+189| · a început acum {n} min ·
+190| Arată această sarcină în indicația pictogramei din zona de notificare
+191| Arată în indicația zonei de notificare
+192| ✓ Arată în indicația zonei de notificare
+193| Apare în indicația zonei de notificare
+194| Scoasă din indicația zonei de notificare
+195| Amintește zilnic până la finalizare
+196| Amintește-mi zilnic până e gata
+197| Amintește zilnic până e gata
+198| Până e gata
+199| Nu mai amintește zilnic
+200| Vă amintește în fiecare zi până bifați Gata
+201| Ratat pe {date}; vă amintește în fiecare zi până îl bifați
+202| Dacă îl ratați, trece pe azi și sună în fiecare zi până îl bifați
+203| Gata — mutat la următoarea dată
+204| zilnic
+205| săptămânal
+206| lunar
+207| la fiecare {n} zile
+208| la fiecare {n} săptămâni
+209| cu {n} z înainte
+210| în aceeași zi
+211| {every} de la {from}
+212| o dată
+213| în fiecare zi
+214| în fiecare săptămână
+215| în fiecare lună
+216| one=cu {n} zi înainte de termen | few=cu {n} zile înainte de termen | other=cu {n} de zile înainte de termen
+217| la termen
+218| Vă amintește {every}, de la {from}, la {time}
+219| Vă amintește {every}, de la {from}, la {time}, până e gata
+220| Vă amintește {every}, de la {from}, la {time}, până e gata (și după termen)
+221| Memento nou
+222| Editează mementoul
+223| Sarcină nouă
+224| Editează sarcina
+225| Ce vreți să vi se amintească?
+226| Ce trebuie făcut?
+227| Tip
+228| Memento
+229| La dată
+230| Oricând
+231| Se termină
+232| Loc
+233| Link
+234| -
+235| Note
+236| Categorii
+237| Alege categorii
+238| de ex. Zi de naștere, Serviciu
+239| Adaugă
+240| Salvează
+241| Anulează
+242| Închide
+243| OK
+244| Da
+245| Nu
+246| Niciuna
+247| Nu se repetă
+248| Zilnic
+249| Săptămânal
+250| Lunar
+251| Anual
+252| Personalizat…
+253| Personalizat
+254| Personalizat (importat)
+255| Păstrează cel importat: {s}
+256| În fiecare zi lucrătoare
+257| La fiecare
+258| la fiecare
+259| zi
+260| zile
+261| săptămână
+262| săptămâni
+263| lună
+264| luni
+265| an
+266| ani
+267| ori
+268| Pe {date}
+269| În ziua {day}
+270| În {nth} {weekday}
+271| În {nth} {weekday} din {month}
+272| În ultima zi de {weekday}
+273| În ultima zi de {weekday} din {month}
+274| În fiecare zi
+275| La fiecare {n} zile
+276| În fiecare săptămână
+277| La fiecare {n} săptămâni
+278| În fiecare lună
+279| În fiecare săptămână: {days}
+280| La fiecare {n} săptămâni: {days}
+281| zilele lucrătoare
+282| În fiecare lună, în ziua {day}
+283| La fiecare {n} luni, în ziua {day}
+284| În fiecare lună, în {nth} {weekday}
+285| La fiecare {n} luni, în {nth} {weekday}
+286| În fiecare an pe {date}
+287| La fiecare {n} ani pe {date}
+288| În fiecare an, în {nth} {weekday} din {month}
+289| La fiecare {n} ani, în {nth} {weekday} din {month}
+290| ultima
+291| one=prima | other=a {n}-a
+292| Cât de des
+293| În
+294| După
+295| Apoi
+296| -
+297| la
+298| înainte
+299| Niciodată
+300| Până la
+301| până la…
+302| la o dată…
+303| începând cu…
+304| nimic în plus (doar o dată)
+305| Amintește-mi
+306| Nu-mi aminti
+307| Când să înceapă mementourile
+308| Data primului memento
+309| Ora mementoului
+310| Continuă să amintești după termen dacă nu e gata
+311| și după termen
+312| până e gata
+313| până e gata sau până la termen ({due})
+314| până e gata, și după termen ({due})
+315| Un memento, pe {date} la {time}.
+316| Un memento, pe {date} la {time}. Ora a trecut — alegeți una mai târzie sau amintiți repetat.
+317| {every} la {time}, de la {date}, {end}.
+318| Fără mementouri.
+319| Fără mementouri. Sarcina apare cu roșu după ce i-a trecut termenul.
+320| Alegeți data primului memento.
+321| Textul alarmei
+322| La timp
+323| one=cu {n} minut înainte | few=cu {n} minute înainte | other=cu {n} de minute înainte
+324| one=cu {n} oră înainte | few=cu {n} ore înainte | other=cu {n} de ore înainte
+325| one=cu {n} zi înainte | few=cu {n} zile înainte | other=cu {n} de zile înainte
+326| one=cu {n} săptămână înainte | few=cu {n} săptămâni înainte | other=cu {n} de săptămâni înainte
+327| În aceeași zi, la {time}
+328| Cu o zi înainte, la {time}
+329| Apare ca: {s}. <year> numără anii de atunci; <year#> arată doar numărul.
+330| Importat în fusul orar {zone} — afișat în ora locală. La salvare va fi stocat în ora locală.
+331| Introduceți o descriere.
+332| Alegeți termenul sau bifați „Fără dată”.
+333| Alegeți o dată.
+334| Alegeți data.
+335| Alegeți data.
+336| Introduceți ora termenului sau bifați „Oricând”.
+337| Introduceți o oră sau bifați „Toată ziua”.
+338| Data de sfârșit este înaintea datei de început.
+339| Ora de sfârșit este înaintea orei de început.
+340| Memento adăugat
+341| Sarcină adăugată
+342| Salvat
+343| Editează copia
+344| Data e cunoscută: transformă această sarcină într-un memento la o dată exactă
+345| Termen: {date}.
+346| Termen: {date}, {time}.
+347| Când știți data exactă, sarcina devine un memento la acea dată: iese din lista de sarcini și apare în Mementouri, în vizualizarea Lună și în calendar. Notele, categoria, locul și linkul se păstrează.
+348| Un memento pe {date}, toată ziua.
+349| Un memento pe {date}, la {time}.
+350| Mementoul devine o sarcină la aceeași dată, cu repetarea, alarma și notele lui.
+351| Mementoul rămâne; o copie ca sarcină la aceeași dată, cu repetare, alarmă și note, ajunge în listă.
+352| O copie exactă ajunge în lista aleasă; acesta rămâne unde este.
+353| Lista
+354| {s} (această listă)
+355| lista principală
+356| Alarmă ReminderFoxAgain
+357| Amână
+358| Amână toate
+359| Amână toate {s}
+360| Amână toate mementourile de aici cu timpul implicit (se schimbă în Setări)
+361| Cu cât să amân sau până la ce oră
+362| Unitatea de amânare
+363| Amână până la
+364| Închide
+365| Închide toate
+366| Gata
+367| Am terminat cu această alarmă rapidă
+368| Ascunde deocamdată (alarma rămâne activă și revine cu următoarea)
+369| O oră ca 15:30 sau 3:30 pm (mai devreme decât acum înseamnă mâine)
+370| Un număr întreg de la {n} la {n2}
+371| Introduceți un număr întreg de la {n} la {n2}.
+372| Introduceți un număr întreg de la 1 la 999 sau o dată și o oră.
+373| secunde
+374| minute
+375| ore
+376| Alarmă rapidă
+377| Alarme rapide
+378| ⏰ Alarme rapide…
+379| O alarmă unică ce nu se salvează ca memento — ca Alarma rapidă din supliment.
+380| Peste
+381| La
+382| Timp de
+383| Setează alarma
+384| Anulează această alarmă
+385| Nicio alarmă rapidă.
+386| Așteaptă să sune
+387| Alarmă rapidă setată la {time}
+388| Alarmă rapidă anulată
+389| Alegeți o oră.
+390| Ora a trecut — alegeți una mai târzie.
+391| Ora a trecut.
+392| Sună {when} ({until}).
+393| azi la {time}
+394| în mai puțin de un minut
+395| peste {time}
+396| peste {hours} {minutes}
+397| Suspendă alarmele
+398| Suspendă alarmele…
+399| Suspendă alarmele pentru o vreme
+400| Suspendă
+401| Cât timp
+402| Până le repornesc
+403| Alarmele rămân oprite până le reluați (bara de stare, meniul din zona de notificare sau aici).
+404| Cât timp sunt suspendate, nu se deschid ferestre de alarmă și fereastra de mementouri nu apare. Alarmele scadente între timp apar la reluare.
+405| Alarmele sunt suspendate până le reporniți.
+406| Alarmele revin {when}.
+407| Alarmele sunt din nou pornite
+408| Reia alarmele acum
+409| Alegeți o oră în viitor.
+410| ReminderFoxAgain — azi
+411| În curând
+412| Nimic azi.
+413| Nimic în curând.
+414| General
+415| Alarme
+416| Afișare
+417| Date
+418| Despre
+419| Pornește ReminderFoxAgain odată cu Windows
+420| Continuă în zona de notificare când fereastra e închisă
+421| Săptămâna începe
+422| Temă
+423| Teme
+424| Implicită (ca Windows)
+425| Vulpe
+426| Luminoasă
+427| Întunecată
+428| Ocean
+429| Contrast ridicat
+430| Implicită este Vulpe, luminoasă sau întunecată după Windows. Elementele cu stea au culoarea lor în fiecare temă. Contrastul ridicat folosește negru, alb, galben și cyan, cu text mai mare și linii mai groase.
+431| -
+432| ReminderFoxAgain este un omagiu adus suplimentului original
+433| -
+434| pentru Firefox și Thunderbird, creat de Tom Mutdosch și Daniel Lee împreună cu Guenter Wahl. Formatul de fișier, regulile de repetare, vizualizările, alarmele rapide și fereastra de alertă sunt ale lor; mulțumim.
+435| Redă un sunet la alarme
+436| Sunet
+437| Clopoțel integrat
+438| Sunetul dvs.
+439| Alege…
+440| Alege
+441| Folosește clopoțelul integrat
+442| Clopoțel
+443| Redă
+444| ▶ Testează
+445| Sunet de alarmă: {s}
+446| Se folosește clopoțelul integrat
+447| Alegeți un fișier audio (.mp3, .wav, .ogg, .m4a, .aac, .flac sau .webm).
+448| Fișierul audio are peste 10 MB. Alegeți unul mai scurt.
+449| Repetă sunetul
+450| Nu, o singură dată
+451| În fiecare minut
+452| La fiecare {n} minute
+453| Alarma implicită pentru mementouri noi
+454| Amânare implicită
+455| Unitatea amânării implicite
+456| Amânare implicită, câte
+457| Fereastra de mementouri (fereastra de alertă a suplimentului)
+458| Arată o fereastră cu mementourile de azi și următoare
+459| Când
+460| Doar la pornire
+461| La pornire și la fiecare {n} minute
+462| … la fiecare {n} minute
+463| … la fiecare oră
+464| … la fiecare {n} ore
+465| Ține-o deschisă
+466| {n} secunde
+467| Până o închid
+468| Colț
+469| dreapta jos
+470| stânga jos
+471| dreapta sus
+472| stânga sus
+473| Redă sunetul
+474| Arată acum
+475| „Următoarele” înseamnă următoarele
+476| Număr pe pictogramă
+477| Arată un număr pe pictogramele din zona de notificare și bara de activități
+478| Mementourile și sarcinile deschise de azi
+479| De azi și următoare
+480| Doar cele de azi
+481| Doar următoarele
+482| Limbă
+483| Limba sistemului ({s})
+484| Limba meniurilor, butoanelor și mesajelor. Mementourile dvs. nu se schimbă.
+485| Traducerile au fost scrise pentru ReminderFoxAgain și nu au fost încă verificate de vorbitori nativi.
+486| Mărimea textului
+487| Mic ({n}%)
+488| Normal
+489| Mare ({n}%)
+490| Mai mare ({n}%)
+491| Cel mai mare ({n}%)
+492| Date
+493| Ca în Windows ({s})
+494| Ore
+495| Ca în Windows
+496| {n} ore ({s})
+497| Arată panoul calendarului lângă liste
+498| Luni în panoul calendarului
+499| Hărți
+500| -
+501| -
+502| -
+503| Indicația pictogramei din zona de notificare
+504| Indicație
+505| Mementourile de azi
+506| Mementouri următoare
+507| Variabile: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — aceleași ca în supliment.
+508| Resetează
+509| Textele indicației resetate
+510| Gestionează listele…
+511| Gestionează categoriile…
+512| Gestionează vizualizările…
+513| Mementouri recurente în fila Mementouri
+514| Date viitoare afișate
+515| Următoarele, Toate mementourile, Importante, căutarea și vizualizările fără date
+516| Fiecare dată din următoarele
+517| Doar următoarele
+518| one={n} lună | few={n} luni | other={n} de luni
+519| one={n} an | few={n} ani | other={n} de ani
+520| one={n} dată | few={n} date | other={n} de date
+521| Folosit de Următoarele, Toate mementourile, Importante, căutare și vizualizările fără interval de date. Azi, Următoarele {n} zile, Ziua sau luna selectată, fila Lună și calendarul arată mereu fiecare dată.
+522| În Toate și Trecute, arată cele trecute de la
+523| începutul fiecărei serii
+524| ultimii {n} ani
+525| ultimul an
+526| ultimele {n} luni
+527| Ascunde mementourile recurente
+528| Ascunde mementourile finalizate
+529| Import și export
+530| Importă un fișier .ics…
+531| Adaugă elementele dintr-un fișier .ics (Ctrl+I)
+532| Importă din ReminderFox…
+533| Găsește reminderfox.ics pe care suplimentul ReminderFox îl ținea în profilul dvs. Firefox sau Thunderbird
+534| Exportă în .ics…
+535| Exportă în .ics
+536| Exportă…
+537| Salvează un fișier .ics (Ctrl+E)
+538| Importurile se adaugă la ce aveți; elementele existente se actualizează doar dacă copia din fișier e mai nouă. Exporturile se deschid în Outlook, Google Calendar, Thunderbird, Apple Calendar și suplimentul ReminderFox original.
+539| Copii de siguranță
+540| Fă o copie acum
+541| Salvează o copie de siguranță…
+542| Restaurează dintr-o copie…
+543| Restaurează dintr-o copie
+544| Deschide dosarul copiilor
+545| Deschide dosarul de date
+546| Fișier de date
+547| Arată fișierul de mementouri în Explorer
+548| Mementourile dvs. sunt salvate în {path} (copiile zilnice sunt alături, în dosarul „backups”).
+549| ＋ Listă nouă…
+550| Listă nouă…
+551| Listă nouă
+552| Numele listei noi
+553| Numele listei noi (de exemplu Cumpărături, Filme de văzut, Idei de cadouri):
+554| Adaugă lista
+555| Redenumește lista
+556| Redenumește…
+557| Elimină…
+558| Eliminați lista?
+559| „Sarcini” este lista principală și nu poate fi redenumită sau eliminată (ca în supliment). Când eliminați o listă, alegeți dacă sarcinile ei trec în „Sarcini” sau se șterg.
+560| Lista „{list}” are {n} sarcină. O mutați în „{main}” sau o ștergeți împreună cu lista?
+561| Lista „{list}” are {n} sarcini. Le mutați în „{main}” sau le ștergeți împreună cu lista?
+562| Șterge lista și sarcinile
+563| one=Lista și {n} sarcină șterse | few=Lista și {n} sarcini șterse | other=Lista și {n} de sarcini șterse
+564| Listă eliminată
+565| Lista „{s}” adăugată
+566| „{s}” există deja
+567| Lista există deja.
+568| Numele unei liste nu poate fi gol și nu poate conține virgulă sau două puncte.
+569| Numele unei liste nu poate conține virgulă sau două puncte.
+570| Combinați listele?
+571| Combină
+572| Combinată cu „{s}”
+573| Redenumit „{s}”
+574| Nume nou pentru „{name}”:
+575| Nume nou pentru „{name}” ({items}):
+576| Categorie nouă
+577| Altă categorie
+578| Adaugă pe cele uzuale
+579| Categoria „{s}” adăugată
+580| {n} categorii adăugate
+581| Nimic nou de adăugat.
+582| Redenumește categoria
+583| Ștergeți categoria?
+584| Categorie ștearsă
+585| Combinați categoriile?
+586| O categorie nu poate fi goală și nu poate conține virgulă.
+587| încă nefolosită
+588| Redenumirea schimbă fiecare memento și sarcină cu această categorie; redenumirea cu una existentă le combină. Ștergerea o scoate de pe elemente (elementele rămân).
+589| Categoria „{name}” va fi ștearsă.
+590| Categoria „{name}” va fi ștearsă și scoasă de pe elemente ({items}). Elementele în sine rămân.
+591| Aniversare
+592| Întâlnire
+593| Zi de naștere
+594| Afaceri
+595| Apel
+596| Sărbătoare
+597| Ședință
+598| Personal
+599| Cumpărături
+600| Călătorie
+601| Aniversare, Întâlnire, Zi de naștere, Afaceri, Apel…
+602| Vizualizare nouă
+603| ＋ Vizualizare nouă…
+604| Editează vizualizarea
+605| Ștergeți vizualizarea?
+606| Vizualizarea „{s}” va fi ștearsă. Mementourile dvs. nu se schimbă.
+607| Arat-o în fila Mementouri
+608| Vizualizare salvată
+609| Vizualizarea „{s}” adăugată
+610| Dați un nume vizualizării.
+611| Există deja o vizualizare cu acest nume.
+612| O vizualizare este un filtru salvat pentru fila Mementouri: alegeți-o din lista Arată. Condițiile pentru câmpuri diferite trebuie îndeplinite toate; virgulele dintr-o condiție înseamnă „oricare dintre acestea”.
+613| Încă nu există vizualizări. Faceți clic pe „Vizualizare nouă…” pentru a crea una — de exemplu fiecare memento cu categoria „Zi de naștere” din anul următor.
+614| Nume
+615| de ex. Zile de naștere
+616| Arată mementourile unde
+617| ＋ Adaugă o condiție
+618| Elimină această condiție
+619| Orice
+620| Categoria
+621| Vizualizarea
+622| Tip
+623| este
+624| conține
+625| cuvinte, separate prin virgule
+626| Doar datele de la
+627| până la
+628| de azi
+629| azi
+630| Numerele negative merg înapoi în timp: −{n} lună până la {n2} zile înseamnă „luna trecută”.
+631| Toate
+632| Tot
+633| Doar mementouri
+634| Doar sarcini
+635| Unitate
+636| Câte
+637| Orice conține „{s}”
+638| Categoria este „{s}”
+639| Categoria este „{s}” sau „{s2}”
+640| date de azi până peste {n} zile
+641| one=+{n} săptămână | few=+{n} săptămâni | other=+{n} de săptămâni
+642| one=+{n} lună | few=+{n} luni | other=+{n} de luni
+643| one=+{n} an | few=+{n} ani | other=+{n} de ani
+644| Importă
+645| Importă un fișier iCalendar
+646| Importă din ReminderFox
+647| Din ReminderFox
+648| Găsite în suplimentul ReminderFox: {files}
+649| Importă cel mai nou
+650| Importă oricum
+651| {reminders} și {items}
+652| {n} sunt deja aici (se păstrează copia mai nouă)
+653| {n} pare duplicat (același titlu și dată ca un element pe care îl aveți)
+654| {n} par duplicate (același titlu și dată ca un element pe care îl aveți)
+655| Cum
+656| Adaugă la ce am
+657| Înlocuiește tot
+658| Înlocuiește tot (întâi se face o copie a celor {items})
+659| Înlocuiți tot?
+660| Cele {items} ale dvs. vor fi înlocuite cu cele {newItems} din fișier.
+661| Ce aveți acum se salvează întâi ca o copie „Salvat înaintea unui import care a înlocuit tot”, ca să-l puteți aduce înapoi din Setări → Date → Restaurează dintr-o copie….
+662| Duplicate
+663| Sari elementele cu același titlu și dată ca unul pe care îl am
+664| Opțional: se adaugă fiecărui element importat, de exemplu „Sărbători” pentru o listă de sărbători, ca să puteți filtra după ea.
+665| opțional
+666| Import finalizat
+667| Importate: {items}
+668| Importate: {items} și {lists}
+669| {n} actualizate
+670| {n} deja la zi
+671| one={n} duplicat sărit | few={n} duplicate sărite | other={n} de duplicate sărite
+672| se înlocuiesc {items} (salvate ca {file})
+673| Adăugate: {lists} ({names})
+674| one={n} element arhivat mutat în lista „{list}” | few={n} elemente arhivate mutate în lista „{list}” | other={n} de elemente arhivate mutate în lista „{list}”
+675| Acest fișier nu conține date iCalendar (lipsește BEGIN:VCALENDAR).
+676| Fișierul de mementouri nu a putut fi citit
+677| Exportat în {path}
+678| Exportă
+679| Tot (mementouri și sarcini)
+680| Fișierul funcționează cu Outlook, Google Calendar, Thunderbird, Apple Calendar și suplimentul ReminderFox original.
+681| ReminderFoxAgain face o copie în fiecare zi, una înaintea fiecărei restaurări și pe cele pe care le faceți cu „Fă o copie acum”. Restaurarea înlocuiește mementourile și sarcinile actuale cu copia; ce aveți acum se salvează întâi, deci vă puteți întoarce oricând.
+682| Creată
+683| Conținut
+684| Restaurează
+685| Restaurează…
+686| Alege alt fișier…
+687| {n} arhivate
+688| Nu poate fi citit: {s}
+689| {s} nu a putut fi citit: {s2}
+690| Fișierul nu poate fi restaurat
+691| Încă nu există copii. Se fac în fiecare zi în care rulează aplicația; puteți face clic și pe „Fă o copie acum”.
+692| Copie zilnică
+693| Copie făcută de dvs.
+694| Salvat înaintea unei restaurări
+695| Salvat înaintea unui import care a înlocuit tot
+696| Arhiva, înainte să devină listă
+697| Copie zilnică a arhivei (versiune anterioară)
+698| Copie de siguranță
+699| Restaurați această copie?
+700| Aceasta înlocuiește ce aveți acum ({now}) cu copia din {when}: {items}.
+701| Aceasta înlocuiește ce aveți acum ({now}) cu copia din {when}: {items}, plus {n} arhivate, care ajung în lista „{list}”.
+702| Aceasta este o copie a arhivei dintr-o versiune anterioară. Cele {all} ale ei ajung în lista „{list}” (elementele pe care le aveți deja rămân neschimbate). Nimic altceva nu se schimbă.
+703| Datele actuale se salvează întâi ca o copie „Salvat înaintea unei restaurări”, așa că puteți anula din aceeași listă.
+704| Copie restaurată
+705| Restaurate: {items}.
+706| Restaurate: {items}, dintre care {n} arhivate, acum în lista „{list}”.
+707| Ce aveați înainte a fost salvat ca {file}.
+708| Copie salvată în {path}
+709| Copie făcută: {s}
+710| {n} octeți
+711| {n} KB
+712| {n} MB
+713| Elementul nu mai există.
+714| Fișierul de arhivă nu a putut fi citit, deci nu este modificat. A fost păstrat ca archive.ics.unreadable.
+715| Fișierul de arhivă nu a putut fi citit, deci nu poate fi înlocuit.
+716| Bun venit în ReminderFoxAgain
+717| Mementourile, sarcinile și alarmele dvs. ca aplicație Windows — un omagiu adus suplimentului ReminderFox original.
+718| Importă din suplimentul dvs. ReminderFox
+719| {path} — modificat ultima dată {date}
+720| Importă un reminderfox.ics sau alt fișier de calendar…
+721| Din suplimentul ReminderFox (din dosarul „reminderfox” al profilului Firefox/Thunderbird), Outlook, Google Calendar…
+722| Începe cu o listă goală
+723| Puteți importa mai târziu din Setări → Date.
+724| acum
+725| peste {n} min
+726| one=peste {n} oră | few=peste {n} ore | other=peste {n} de ore
+727| one=peste {n} zi | few=peste {n} zile | other=peste {n} de zile
+728| acum {n} min
+729| one=acum {n} oră | few=acum {n} ore | other=acum {n} de ore
+730| one=acum {n} zi | few=acum {n} zile | other=acum {n} de zile
+731| Deschide {app}
+732| Adaugă memento…
+733| Adaugă element de listă…
+734| Alarmă rapidă…
+735| Reia alarmele
+736| Arată mementourile de azi
+737| Ieși din {app}
+738| {app} — alarme oprite
+739| {app} — alarme oprite până la {time}
+740| {app} — nimic azi
+741| în curând
+742| {app} rulează în continuare
+743| Alarmele vor continua să apară. Faceți clic dreapta pe vulpea din zona de notificare pentru a ieși.
+744| Alarmă {app}
+745| {app} — azi
+746| {n} h {n2} min
+747| Fișiere iCalendar
+748| Toate fișierele
+749| Fișiere audio
+750| Importă fișier iCalendar
+751| Exportă în fișier iCalendar
+752| Alegeți reminderfox.ics
+753| Alegeți un sunet de alarmă
+754| Salvează o copie de siguranță
+755| Alegeți o copie de restaurat
+756| În fiecare săptămână: {days}
+757| În fiecare lună, în {nth} {weekday}
+758| În fiecare lună, în ziua {day}
+759| În fiecare lună în aceeași zi
+760| La fiecare {n} luni în aceeași zi
+761| În fiecare an, în {nth} {weekday} din {month}
+762| În fiecare an pe {date}
+763| În fiecare an la aceeași dată
+764| La fiecare {n} ani la aceeași dată
+765| Se repetă
+766| Personalizat ({rule})
+767| {rule}, o dată
+768| {rule}, de {n} ori
+769| {rule}, până la {date}
+770| Arată mementourile pe care le-ați bifat ca finalizate
+771| Arată mementourile și elementele de listă pe care le-ați bifat ca finalizate
+772| Ordinea mea: trageți rândurile sau apăsați Alt+↑ / Alt+↓
+773| Vizualizare
+774| Sunetul alarmei
+775| Fișier propriu…
+776| Folosește un fișier de sunet propriu (.mp3, .wav, .ogg, .m4a, .aac, .flac sau .webm)
+777| Continuu, până la rezolvare
+778| Continuu, până la rezolvare: sunetul se repetă iar și iar până amânați, deschideți, marcați ca gata sau închideți alarma ori ascundeți fereastra de alarmă. Următoarea alarmă îl pornește din nou.
+779| Coloane
+780| Coloanele din fila Mementouri
+781| Coloanele din liste
+782| Debifați o coloană ca să o ascundeți. Descrierea apare mereu.
+783| Filtre salvate pentru fila Mementouri
+784| Gestionează mementourile…
+785| Următoarele, Toate mementourile, Importante, căutarea și filtrele salvate fără date
+786| Folosit de Următoarele, Toate mementourile, Importante, căutare și filtrele salvate fără interval de date. Azi, Următoarele {n} zile, Ziua sau luna selectată, fila Lună și calendarul arată mereu fiecare dată.
+787| Filtre salvate
+788| Filtrul salvat „{s}” · {c}
+789| Gestionează mementourile
+790| Un filtru salvat arată în fila Mementouri doar mementourile pe care le doriți: alegeți-l din lista Arată. Condițiile pentru câmpuri diferite trebuie îndeplinite toate; virgulele dintr-o condiție înseamnă „oricare dintre acestea”.
+791| ＋ Filtru salvat nou…
+792| Încă nu există filtre salvate. Faceți clic pe „Filtru salvat nou…” pentru a crea unul — de exemplu fiecare memento cu categoria „Zi de naștere” din anul următor.
+793| Ștergeți filtrul salvat?
+794| Filtrul salvat „{s}” va fi șters. Mementourile dvs. nu se schimbă.
+795| Editează filtrul salvat
+796| Filtru salvat nou
+797| Dați un nume filtrului salvat.
+798| Există deja un filtru salvat cu acest nume.
+799| Filtrul salvat a fost modificat
+800| Filtrul salvat „{s}” a fost adăugat
+801| Clopot
+802| Marimba
+803| Bipuri digitale
+804| Ceas deșteptător
+805| Fișierul dvs.: {s}
+806| Creați o temă proprie din cinci culori
+807| ＋ Temă nouă…
+808| Schimbați culorile temei dvs.
+809| ＋ Temă nouă… creează una proprie din cinci culori.
+810| Temele dvs.
+811| Fundal
+812| În spatele tuturor
+813| Liste și panouri
+814| Listele, panoul calendarului, dialogurile
+815| Text
+816| Accent
+817| Butoane, azi, selecție
+818| Elemente cu stea
+819| Mementouri și sarcini importante
+820| Textul se citește greu pe fundal (contrast {n}:1; de la 4,5:1 se citește ușor).
+821| Accentul se vede greu pe liste (contrast {n}:1; 3:1 sau mai mult e mai bine).
+822| Elementele cu stea se văd greu pe liste (contrast {n}:1; 3:1 sau mai mult e mai bine).
+823| Editează tema
+824| Temă nouă
+825| Pornind de la
+826| de ex. Pădure
+827| Toată fereastra arată tema cât alegeți. Anulează pune la loc tema veche.
+828| Dați un nume temei.
+829| Există deja o temă cu acest nume.
+830| Tema „{s}” a fost salvată
+831| Tema „{s}” a fost adăugată
+832| Ștergeți tema?
+833| Tema „{s}” va fi ștearsă. Aplicația revine la tema implicită.

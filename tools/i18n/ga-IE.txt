@@ -1,0 +1,834 @@
+# Gaeilge — one line per catalog entry: "<number>| <translation>"; "-" keeps the English. See tools/i18n/catalog.txt.
+1| ＋ Meabhrúchán
+2| ＋ Mír liosta
+3| ⚙ Socruithe
+4| Socruithe
+5| Cuardaigh
+6| Cuardaigh (Ctrl+F)
+7| Cuardaigh meabhrúcháin agus tascanna
+8| Meabhrúchán nua (Ctrl+N)
+9| Mír nua sa liosta atá ar taispeáint (Ctrl+T)
+10| Aláram tapa: aláram aonuaire i gceann cúpla nóiméad (Ctrl+Q)
+11| ⏰ Aláram tapa
+12| Meabhrúcháin
+13| Mí
+14| Liosta
+15| Liostaí
+16| Liosta: {s}
+17| Gach liosta
+18| Roghnaigh an liosta le taispeáint
+19| An liosta le taispeáint
+20| Tascanna
+21| Críochnaithe nó ar fionraí
+22| Taispeáin nó folaigh painéal an fhéilire
+23| Taispeáin nó folaigh painéal an fhéilire (Ctrl+B)
+24| Aláraim ar siúl
+25| Aláraim ar fionraí
+26| Aláraim ar fionraí go dtí {time}
+27| Atosaigh
+28| Cliceáil chun na haláraim a chur ar siúl arís
+29| Cuir aláraim ar fionraí nó atosaigh iad
+30| one={n} mhír | two={n} mhír | few={n} mhír | many={n} mír | other={n} mír
+31| one={n} mheabhrúchán | two={n} mheabhrúchán | few={n} mheabhrúchán | many={n} meabhrúchán | other={n} meabhrúchán
+32| one={n} tasc | two={n} thasc | few={n} thasc | many={n} dtasc | other={n} tasc
+33| one={n} mhír liosta | two={n} mhír liosta | few={n} mhír liosta | many={n} mír liosta | other={n} mír liosta
+34| one={n} mhír nua | two={n} mhír nua | few={n} mhír nua | many={n} mír nua | other={n} mír nua
+35| one={n} mhír chartlannaithe | two={n} mhír chartlannaithe | few={n} mhír chartlannaithe | many={n} mír chartlannaithe | other={n} mír chartlannaithe
+36| one={n} liosta | two={n} liosta | few={n} liosta | many={n} liosta | other={n} liosta
+37| one={n} chomhad | two={n} chomhad | few={n} chomhad | many={n} gcomhad | other={n} comhad
+38| one={n} nóiméad | two={n} nóiméad | few={n} nóiméad | many={n} nóiméad | other={n} nóiméad
+39| one={n} uair an chloig | two={n} uair an chloig | few={n} huaire an chloig | many={n} n-uaire an chloig | other={n} uair an chloig
+40| one={n} lá | two={n} lá | few={n} lá | many={n} lá | other={n} lá
+41| one={n} dúblach | two={n} dhúblach | few={n} dhúblach | many={n} ndúblach | other={n} dúblach
+42| Taispeáin
+43| Inniu
+44| Amárach
+45| Inné
+46| Na {n} lá seo romhainn
+47| Le teacht
+48| Gach meabhrúchán
+49| Tábhachtach
+50| Caite
+51| An lá roghnaithe
+52| An mhí roghnaithe
+53| Amharcanna
+54| Amharc “{s}”
+55| Ag cuardach gach meabhrúcháin
+56| Dáta
+57| Lá
+58| Am
+59| Cur síos
+60| Athdhéanamh
+61| Catagóir
+62| Aláram
+63| Críochnaithe
+64| Críochnaithe {date}
+65| (gan chur síos)
+66| Níl aon mheabhrúchán anseo
+67| Cliceáil ＋ Meabhrúchán chun ceann a chur leis, nó roghnaigh amharc eile.
+68| Cliceáil ＋ Mír liosta chun ceann a chur leis an liosta seo.
+69| Thar téarma ó {date}
+70| thar téarma ó {date}
+71| Go luath: {s}
+72| Cuir in eagar…
+73| Scrios…
+74| Scrios
+75| Dúblaigh
+76| Cóipeáil
+77| Bog
+78| Oscail
+79| Oscail an nasc
+80| Taispeáin ar léarscáil
+81| Taispeáin sa liosta
+82| Marcáil mar chríochnaithe
+83| Cuir i gcuimhne dom…
+84| Déan tasc de…
+85| Déan tasc de
+86| Déan meabhrúchán de
+87| Sceidealaigh mar mheabhrúchán…
+88| Sceidealaigh mar mheabhrúchán
+89| Cóipeáil chuig liosta…
+90| Cóipeáil chuig liosta
+91| Cóipeáil chuig an liosta…
+92| Cóipeáil chuig an liosta
+93| Bog chuig an liosta…
+94| Bog chuig an liosta
+95| Bog chuig…
+96| Cóipeáil chuig…
+97| Bog chuig liosta eile é
+98| Cuir cóip ar liosta eile
+99| Cóip chruinn sa liosta seo (Ctrl+D)
+100| Scrios (Del)
+101| An mhír roghnaithe
+102| An mhír roghnaithe:
+103| Bog suas
+104| Bog síos
+105| -
+106| -
+107| -
+108| “{s}” dúblaithe
+109| {s} (cóip)
+110| Cóipeáilte chuig “{s}”
+111| Bogtha chuig “{s}”
+112| Bog chuig “{s}”
+113| Anois ina thasc in “{s}”
+114| Anois ina mheabhrúchán ar {date}
+115| atá in “{s}”
+116| Tá “{s}” folamh
+117| Scriosta
+118| Teagmhas scriosta
+119| Scrios meabhrúchán athfhillteach
+120| Athdhéantar é seo — baineann athruithe le gach teagmhas.
+121| An ceann seo amháin
+122| Gach teagmhas
+123| Scrios an teagmhas seo
+124| Scrios gach teagmhas…
+125| Athdhéantar “{s}” ({rule}).
+126| An ceann ar {date} amháin a scriosadh, nó gach teagmhas?
+127| Gach teagmhas a scriosadh?
+128| Scrios gach ceann
+129| An meabhrúchán a scriosadh?
+130| An tasc a scriosadh?
+131| Scriosfar “{s}”.
+132| Scriosfar “{s}” agus gach athdhéanamh air.
+133| Chuaigh rud éigin amú
+134| Cuir isteach áit ar dtús.
+135| An mhí roimhe
+136| An mhí seo chugainn
+137| Téigh go dtí inniu
+138| Téigh go dtí dáta (Ctrl+G)
+139| Téigh go dtí an dáta
+140| Téigh go dtí…
+141| Téigh
+142| Cuir meabhrúchán leis an lá seo
+143| Déchliceáil ar lá chun meabhrúchán a chur leis
+144| Faic ar an lá seo.
+145| +{n} eile
+146| Gan déanamh fós
+147| An lá ar fad
+148| An lá ar fad {s}
+149| Tasc
+150| Tasc {s}
+151| Tasc
+152| Do
+153| Lu
+154| Má
+155| Cé
+156| Dé
+157| Ao
+158| Sa
+159| Domh
+160| Luan
+161| Máirt
+162| Céad
+163| Déar
+164| Aoine
+165| Sath
+166| Dé Domhnaigh
+167| Dé Luain
+168| Dé Máirt
+169| Dé Céadaoin
+170| Déardaoin
+171| Dé hAoine
+172| Dé Sathairn
+173| Mír liosta
+174| Spriocdháta
+175| Ord
+176| M’ord féin
+177| De réir dáta
+178| De láimh: tarraing na sraitheanna, nó brúigh Alt+↑ / Alt+↓
+179| Taispeáin na cinn chríochnaithe
+180| Taispeáin tascanna
+181| Cuir tascanna dátaithe san áireamh
+182| Gan dáta
+183| · gan spriocdháta
+184| · spriocdháta {date}
+185| · thar téarma
+186| · an lá ar fad
+187| · socraithe do {time}
+188| · i gceann {n} nóim
+189| · thosaigh {n} nóim ó shin ·
+190| Taispeáin an tasc seo i leid uirlise na deilbhíne sa tráidire
+191| Taispeáin i leid uirlise an tráidire
+192| ✓ Taispeáin i leid uirlise an tráidire
+193| Á thaispeáint i leid uirlise an tráidire
+194| Bainte de leid uirlise an tráidire
+195| Meabhraigh gach lá go dtí go mbeidh sé críochnaithe
+196| Cuir i gcuimhne dom gach lá go dtí go mbeidh sé déanta
+197| Meabhraíonn sé gach lá go dtí go mbeidh sé déanta
+198| Go dtí go mbeidh sé déanta
+199| Ní mheabhraíonn sé gach lá a thuilleadh
+200| Meabhraíonn sé duit gach lá go dtí go gcuirfidh tú tic le Déanta
+201| Caillte ar {date}; meabhraíonn sé duit gach lá go dtí go gcuirfidh tú tic leis
+202| Má chailleann tú é, bogann sé go dtí inniu agus buaileann sé gach lá go dtí go gcuirfidh tú tic leis
+203| Déanta — bogtha go dtí an chéad dáta eile
+204| gach lá
+205| gach seachtain
+206| gach mí
+207| gach {n} lá
+208| gach {n} seachtain
+209| {n} lá roimh ré
+210| ar an lá féin
+211| {every} ó {from}
+212| uair amháin
+213| gach lá
+214| gach seachtain
+215| gach mí
+216| {n} lá roimh an spriocdháta
+217| ar an spriocdháta
+218| Meabhraíonn sé duit {every}, ó {from}, ag {time}
+219| Meabhraíonn sé duit {every}, ó {from}, ag {time}, go dtí go mbeidh sé déanta
+220| Meabhraíonn sé duit {every}, ó {from}, ag {time}, go dtí go mbeidh sé déanta (tar éis an spriocdháta freisin)
+221| Meabhrúchán nua
+222| Cuir an meabhrúchán in eagar
+223| Tasc nua
+224| Cuir an tasc in eagar
+225| Cad ba mhaith leat a chur i gcuimhne duit?
+226| Cad is gá a dhéanamh?
+227| Cineál
+228| Meabhrúchán
+229| Ar dháta
+230| Am ar bith
+231| Críochnaíonn
+232| Áit
+233| Nasc
+234| -
+235| Nótaí
+236| Catagóirí
+237| Roghnaigh catagóirí
+238| m.sh. Breithlá, Obair
+239| Cuir leis
+240| Sábháil
+241| Cealaigh
+242| Dún
+243| OK
+244| Tá
+245| Níl
+246| Dada
+247| Ní athdhéantar
+248| Gach lá
+249| Gach seachtain
+250| Gach mí
+251| Gach bliain
+252| Saincheaptha…
+253| Saincheaptha
+254| Saincheaptha (iompórtáilte)
+255| Coinnigh an riail iompórtáilte: {s}
+256| Gach lá oibre
+257| Gach
+258| gach
+259| lá
+260| lá
+261| seachtain
+262| seachtain
+263| mí
+264| mí
+265| bliain
+266| bliain
+267| uair
+268| Ar {date}
+269| Ar lá {day}
+270| Ar an {nth} {weekday}
+271| Ar an {nth} {weekday} de {month}
+272| Ar an {weekday} deireanach
+273| Ar an {weekday} deireanach de {month}
+274| Gach lá
+275| Gach {n} lá
+276| Gach seachtain
+277| Gach {n} seachtain
+278| Gach mí
+279| Gach seachtain ar {days}
+280| Gach {n} seachtain ar {days}
+281| laethanta oibre
+282| Gach mí ar lá {day}
+283| Gach {n} mí ar lá {day}
+284| Gach mí ar an {nth} {weekday}
+285| Gach {n} mí ar an {nth} {weekday}
+286| Gach bliain ar {date}
+287| Gach {n} bliain ar {date}
+288| Gach bliain ar an {nth} {weekday} de {month}
+289| Gach {n} bliain ar an {nth} {weekday} de {month}
+290| deireanach
+291| {n}ú
+292| Cé chomh minic
+293| Ar
+294| Tar éis
+295| Ansin
+296| -
+297| ag
+298| roimh ré
+299| Riamh
+300| Go dtí
+301| go dtí…
+302| ar dháta…
+303| ag tosú ar…
+304| gan níos mó (uair amháin)
+305| Cuir i gcuimhne dom
+306| Ná cuir i gcuimhne dom
+307| Cathain a thosófar ag meabhrú
+308| Dáta an chéad mheabhrúcháin
+309| Am an mheabhrúcháin
+310| Lean ar aghaidh ag meabhrú nuair a bheidh an spriocdháta caite agus gan é déanta
+311| tar éis an spriocdháta freisin
+312| go dtí go mbeidh sé déanta
+313| go dtí go mbeidh sé déanta nó go dtí an spriocdháta ({due})
+314| go dtí go mbeidh sé déanta, tar éis an spriocdháta freisin ({due})
+315| Meabhrúchán amháin, ar {date} ag {time}.
+316| Meabhrúchán amháin, ar {date} ag {time}. Tá an t-am sin thart — roghnaigh am níos déanaí, nó meabhraigh arís agus arís eile.
+317| {every} ag {time}, ó {date}, {end}.
+318| Gan meabhrúcháin.
+319| Gan meabhrúcháin. Taispeántar an tasc i ndearg nuair a bhíonn a spriocdháta caite.
+320| Roghnaigh dáta an chéad mheabhrúcháin.
+321| Téacs an aláraim
+322| Ag an am
+323| {n} nóiméad roimh ré
+324| {n} uair an chloig roimh ré
+325| {n} lá roimh ré
+326| {n} seachtain roimh ré
+327| Ar an lá féin, ag {time}
+328| An lá roimhe, ag {time}
+329| Taispeántar mar: {s}. Comhaireann <year> na blianta ó shin; ní thaispeánann <year#> ach an uimhir.
+330| Iompórtáilte i gcrios ama {zone} — taispeánta i d’am áitiúil. Nuair a shábhálfar é, stórálfar é in am áitiúil.
+331| Cuir isteach cur síos.
+332| Roghnaigh an spriocdháta, nó cuir tic le “Gan dáta”.
+333| Roghnaigh dáta.
+334| Roghnaigh an dáta.
+335| Roghnaigh an dáta.
+336| Cuir isteach am an spriocdháta, nó cuir tic le “Am ar bith”.
+337| Cuir isteach am, nó cuir tic le “An lá ar fad”.
+338| Tá an dáta deiridh roimh an dáta tosaigh.
+339| Tá an t-am deiridh roimh an am tosaigh.
+340| Meabhrúchán curtha leis
+341| Tasc curtha leis
+342| Sábháilte
+343| Cuir an chóip in eagar
+344| Tá an dáta ar eolas: déan meabhrúchán den tasc seo ar dháta cruinn
+345| Is é an spriocdháta {date}.
+346| Is é an spriocdháta {date}, {time}.
+347| Nuair a bheidh an dáta cruinn ar eolas agat, beidh an tasc ina mheabhrúchán ar an dáta sin: fágann sé liosta na dtascanna agus taispeántar é i Meabhrúcháin, san amharc Mí agus san fhéilire. Coinnítear nótaí, catagóir, áit agus nasc.
+348| Meabhrúchán ar {date}, an lá ar fad.
+349| Meabhrúchán ar {date}, ag {time}.
+350| Déantar tasc den mheabhrúchán ar an dáta céanna, lena athdhéanamh, a aláram agus a nótaí.
+351| Fanann an meabhrúchán; cuirtear cóip mar thasc ar an dáta céanna, le hathdhéanamh, aláram agus nótaí, ar an liosta.
+352| Téann cóip chruinn ar an liosta a roghnaíonn tú; fanann an ceann seo mar a bhfuil sé.
+353| An liosta
+354| {s} (an liosta seo)
+355| príomhliosta
+356| Aláram ReminderFoxAgain
+357| Snúzáil
+358| Snúzáil gach ceann
+359| Snúzáil gach ceann {s}
+360| Snúzáil gach meabhrúchán anseo ar feadh d’am snúzála réamhshocraithe (athraigh i Socruithe é)
+361| Snúzáil ar feadh cé mhéad, nó go dtí cén t-am
+362| Aonad snúzála
+363| Snúzáil go dtí
+364| Ruaig
+365| Ruaig gach ceann
+366| Déanta
+367| Críochnaithe leis an aláram tapa seo
+368| Folaigh anois (fanann an t-aláram gníomhach agus filleann sé leis an gcéad cheann eile)
+369| Am cosúil le 15:30 nó 3:30 pm (níos luaithe ná anois = amárach)
+370| Slánuimhir ó {n} go {n2}
+371| Cuir isteach slánuimhir ó {n} go {n2}.
+372| Cuir isteach slánuimhir ó 1 go 999, nó dáta agus am.
+373| soicind
+374| nóiméad
+375| uair an chloig
+376| Aláram tapa
+377| Aláraim thapa
+378| ⏰ Aláraim thapa…
+379| Aláram aonuaire nach sábháiltear mar mheabhrúchán — cosúil le hAláram Tapa an bhreiseáin.
+380| I gceann
+381| Ag
+382| Ar feadh
+383| Socraigh aláram
+384| Cealaigh an t-aláram seo
+385| Gan aláraim thapa.
+386| Ag fanacht le bualadh
+387| Aláram tapa socraithe do {time}
+388| Aláram tapa cealaithe
+389| Roghnaigh am.
+390| Tá an t-am sin thart — roghnaigh am níos déanaí.
+391| Tá an t-am sin thart.
+392| Buailfidh sé {when} ({until}).
+393| inniu ag {time}
+394| i gceann níos lú ná nóiméad
+395| i gceann {time}
+396| i gceann {hours} {minutes}
+397| Cuir aláraim ar fionraí
+398| Cuir aláraim ar fionraí…
+399| Cuir aláraim ar fionraí ar feadh tamaill
+400| Cuir ar fionraí
+401| Cá fhad
+402| Go dtí go gcuirfidh mé ar siúl arís iad
+403| Fanann na haláraim múchta go dtí go n-atosóidh tú iad (barra stádais, roghchlár an tráidire nó anseo).
+404| Le linn na fionraí ní osclaítear fuinneoga aláraim agus ní thaispeántar fuinneog na meabhrúchán. Taispeántar aláraim a bhí dlite idir an dá linn nuair a atosóidh tú.
+405| Tá na haláraim ar fionraí go dtí go gcuirfidh tú ar siúl arís iad.
+406| Fillfidh na haláraim {when}.
+407| Tá na haláraim ar siúl arís
+408| Atosaigh na haláraim anois
+409| Roghnaigh am sa todhchaí.
+410| ReminderFoxAgain — inniu
+411| Le teacht
+412| Faic inniu.
+413| Faic le teacht.
+414| Ginearálta
+415| Aláraim
+416| Taispeáint
+417| Sonraí
+418| Maidir leis
+419| Tosaigh ReminderFoxAgain nuair a thosaíonn Windows
+420| Coinnigh ag rith i dtráidire an chórais nuair a dhúntar an fhuinneog
+421| Tosaíonn an tseachtain ar
+422| Téama
+423| Téamaí
+424| Réamhshocrú (de réir Windows)
+425| Sionnach
+426| Geal
+427| Dorcha
+428| Aigéan
+429| Ardchodarsnacht
+430| Is é an réamhshocrú Sionnach, geal nó dorcha de réir Windows. Tá a ndath féin ag míreanna réaltaithe i ngach téama. Úsáideann ardchodarsnacht dubh, bán, buí agus cian le téacs níos mó agus línte níos troime.
+431| -
+432| Is ómós é ReminderFoxAgain don bhreiseán bunaidh
+433| -
+434| do Firefox agus Thunderbird, a chruthaigh Tom Mutdosch agus Daniel Lee le Guenter Wahl. Is leo formáid an chomhaid, rialacha athdhéanta, na hamharcanna, na haláraim thapa agus an sleamhnán foláirimh; go raibh maith agaibh.
+435| Seinn fuaim le haláraim
+436| Fuaim
+437| Cling ionsuite
+438| D’fhuaim féin
+439| Roghnaigh…
+440| Roghnaigh
+441| Úsáid an chling ionsuite
+442| Cling
+443| Seinn é
+444| ▶ Tástáil
+445| Fuaim aláraim: {s}
+446| Ag úsáid na clinge ionsuite
+447| Roghnaigh comhad fuaime (.mp3, .wav, .ogg, .m4a, .aac, .flac nó .webm).
+448| Tá an comhad fuaime sin níos mó ná 10 MB. Roghnaigh ceann níos giorra.
+449| Athsheinn an fhuaim
+450| Ní hea, seinn uair amháin
+451| Gach nóiméad
+452| Gach {n} nóiméad
+453| Aláram réamhshocraithe do mheabhrúcháin nua
+454| Snúzáil réamhshocraithe
+455| Aonad na snúzála réamhshocraithe
+456| Snúzáil réamhshocraithe, cé mhéad
+457| Fuinneog meabhrúchán (sleamhnán foláirimh an bhreiseáin)
+458| Taispeáin fuinneog le meabhrúcháin an lae inniu agus na cinn le teacht
+459| Cathain
+460| Ag an tosú amháin
+461| Ag an tosú agus gach {n} nóiméad
+462| … gach {n} nóiméad
+463| … gach uair an chloig
+464| … gach {n} uair an chloig
+465| Coinnigh oscailte í
+466| {n} soicind
+467| Go dtí go ndúnfaidh mé í
+468| Cúinne
+469| thíos ar dheis
+470| thíos ar chlé
+471| thuas ar dheis
+472| thuas ar chlé
+473| Seinn an fhuaim
+474| Taispeáin anois í
+475| Ciallaíonn “Le teacht” na
+476| Uimhir ar an deilbhín
+477| Taispeáin uimhir ar dheilbhíní an tráidire agus an tascbharra
+478| Meabhrúcháin agus tascanna oscailte an lae inniu
+479| An lae inniu agus le teacht
+480| An lae inniu amháin
+481| Le teacht amháin
+482| Teanga
+483| Teanga an chórais ({s})
+484| Teanga na roghchlár, na gcnaipí agus na dteachtaireachtaí. Ní athraítear do mheabhrúcháin.
+485| Scríobhadh na haistriúcháin do ReminderFoxAgain agus níor sheiceáil cainteoirí dúchais iad fós.
+486| Méid an téacs
+487| Beag ({n}%)
+488| Gnáth
+489| Mór ({n}%)
+490| Níos mó ({n}%)
+491| Is mó ({n}%)
+492| Dátaí
+493| Mar atá in Windows ({s})
+494| Amanna
+495| Mar atá in Windows
+496| {n} uair an chloig ({s})
+497| Taispeáin painéal an fhéilire in aice leis na liostaí
+498| Míonna i bpainéal an fhéilire
+499| Léarscáileanna
+500| -
+501| -
+502| -
+503| Leid uirlise dheilbhín an tráidire
+504| Leid uirlise
+505| Meabhrúcháin an lae inniu
+506| Meabhrúcháin le teacht
+507| Athróga: [reminderDesc] [time] [timeUntil] [daysUntil] [longDay] [shortDay] [longMonth] [shortMonth] [numMonth] [date] [longYear] [shortYear] — na cinn chéanna leis an mbreiseán.
+508| Athshocraigh
+509| Téacsanna na leide athshocraithe
+510| Bainistigh liostaí…
+511| Bainistigh catagóirí…
+512| Bainistigh amharcanna…
+513| Meabhrúcháin athfhillteacha sa chluaisín Meabhrúcháin
+514| Dátaí todhchaí le taispeáint
+515| Le teacht, Gach meabhrúchán, Tábhachtach, cuardach agus amharcanna gan dátaí
+516| Gach dáta sa tréimhse seo romhainn:
+517| Na cinn seo chugainn amháin
+518| {n} mí
+519| {n} bliain
+520| {n} dáta
+521| Úsáideann Le teacht, Gach meabhrúchán, Tábhachtach, cuardach agus amharcanna gan raon dátaí é. Taispeánann Inniu, Na {n} lá seo romhainn, An lá nó an mhí roghnaithe, an cluaisín Mí agus an féilire gach dáta i gcónaí.
+522| In Gach agus Caite, taispeáin na cinn chaite ó
+523| tús gach sraithe
+524| na {n} bliana seo caite
+525| an bhliain seo caite
+526| na {n} mhí seo caite
+527| Folaigh meabhrúcháin athfhillteacha
+528| Folaigh meabhrúcháin chríochnaithe
+529| Iompórtáil agus easpórtáil
+530| Iompórtáil comhad .ics…
+531| Cuir na míreanna ó chomhad .ics leis (Ctrl+I)
+532| Iompórtáil ó ReminderFox…
+533| Aimsigh an reminderfox.ics a choinnigh breiseán ReminderFox i do phróifíl Firefox nó Thunderbird
+534| Easpórtáil go .ics…
+535| Easpórtáil go .ics
+536| Easpórtáil…
+537| Sábháil comhad .ics (Ctrl+E)
+538| Cuirtear iompórtálacha leis an méid atá agat; ní nuashonraítear míreanna atá anseo cheana ach amháin má tá cóip an chomhaid níos nuaí. Osclaítear easpórtálacha in Outlook, Google Calendar, Thunderbird, Apple Calendar agus an breiseán ReminderFox bunaidh.
+539| Cúltacaí
+540| Déan cúltaca anois
+541| Sábháil cóip chúltaca…
+542| Athchóirigh ó chúltaca…
+543| Athchóirigh ó chúltaca
+544| Oscail fillteán na gcúltacaí
+545| Oscail fillteán na sonraí
+546| Comhad sonraí
+547| Taispeáin comhad na meabhrúchán in File Explorer
+548| Sábháiltear do mheabhrúcháin in {path} (coinnítear cúltacaí laethúla san fhillteán “backups” in aice leis).
+549| ＋ Liosta nua…
+550| Liosta nua…
+551| Liosta nua
+552| Ainm an liosta nua
+553| Ainm an liosta nua (mar shampla Siopadóireacht, Scannáin le feiceáil, Smaointe bronntanais):
+554| Cuir liosta leis
+555| Athainmnigh an liosta
+556| Athainmnigh…
+557| Bain…
+558| An liosta a bhaint?
+559| Is é “Tascanna” an príomhliosta agus ní féidir é a athainmniú ná a bhaint (mar atá sa bhreiseán). Nuair a bhaineann tú liosta, roghnaíonn tú an mbogfar a thascanna chuig “Tascanna” nó an scriosfar iad.
+560| Tá {n} tasc ar an liosta “{list}”. É a bhogadh chuig “{main}”, nó é a scriosadh leis an liosta?
+561| Tá {n} tasc ar an liosta “{list}”. Iad a bhogadh chuig “{main}”, nó iad a scriosadh leis an liosta?
+562| Scrios an liosta agus na tascanna
+563| Liosta agus {n} tasc scriosta
+564| Liosta bainte
+565| Liosta “{s}” curtha leis
+566| Tá “{s}” ann cheana
+567| Tá an liosta sin ann cheana.
+568| Ní féidir le hainm liosta a bheith folamh ná camóg nó idirstad a bheith ann.
+569| Ní féidir camóg ná idirstad a bheith in ainm liosta.
+570| Na liostaí a chumasc?
+571| Cumaisc
+572| Cumascaithe le “{s}”
+573| Athainmnithe mar “{s}”
+574| Ainm nua do “{name}”:
+575| Ainm nua do “{name}” ({items}):
+576| Catagóir nua
+577| Catagóir eile
+578| Cuir na cinn choitianta leis
+579| Catagóir “{s}” curtha leis
+580| {n} catagóir curtha leis
+581| Faic nua le cur leis.
+582| Athainmnigh an chatagóir
+583| An chatagóir a scriosadh?
+584| Catagóir scriosta
+585| Na catagóirí a chumasc?
+586| Ní féidir le catagóir a bheith folamh ná camóg a bheith inti.
+587| gan úsáid fós
+588| Athraíonn athainmniú gach meabhrúchán agus tasc a bhfuil an chatagóir acu; cumascann athainmniú go catagóir atá ann cheana iad. Baineann scriosadh í dá míreanna (fanann na míreanna).
+589| Scriosfar an chatagóir “{name}”.
+590| Scriosfar an chatagóir “{name}” agus bainfear de {items} í. Fanann na míreanna féin.
+591| Comóradh
+592| Coinne
+593| Breithlá
+594| Gnó
+595| Glao
+596| Saoire
+597| Cruinniú
+598| Pearsanta
+599| Siopadóireacht
+600| Taisteal
+601| Comóradh, Coinne, Breithlá, Gnó, Glao…
+602| Amharc nua
+603| ＋ Amharc nua…
+604| Cuir an t-amharc in eagar
+605| An t-amharc a scriosadh?
+606| Scriosfar an t-amharc “{s}”. Ní athraítear do mheabhrúcháin.
+607| Taispeáin sa chluaisín Meabhrúcháin é
+608| Amharc sábháilte
+609| Amharc “{s}” curtha leis
+610| Tabhair ainm don amharc.
+611| Tá amharc leis an ainm sin ann cheana.
+612| Is scagaire sábháilte é amharc don chluaisín Meabhrúcháin: roghnaigh é sa liosta Taispeáin. Caithfidh gach coinníoll ar réimsí éagsúla a bheith fíor; ciallaíonn camóga laistigh de choinníoll amháin “ceann ar bith díobh seo”.
+613| Gan amharcanna fós. Cliceáil “Amharc nua…” chun ceann a dhéanamh — mar shampla gach meabhrúchán leis an gcatagóir “Breithlá” sa bhliain atá romhainn.
+614| Ainm
+615| m.sh. Breithlaethanta
+616| Taispeáin meabhrúcháin ina
+617| ＋ Cuir coinníoll leis
+618| Bain an coinníoll seo
+619| Rud ar bith
+620| An chatagóir
+621| An t-amharc
+622| Cineál
+623| is
+624| ina bhfuil
+625| focail, scartha le camóga
+626| Dátaí amháin ó
+627| go
+628| ó inniu
+629| inniu
+630| Téann uimhreacha diúltacha siar in am: ciallaíonn −{n} mí go {n2} lá “an mhí seo caite”.
+631| Gach
+632| Gach rud
+633| Meabhrúcháin amháin
+634| Tascanna amháin
+635| Aonad
+636| Cé mhéad
+637| Tá “{s}” in aon réimse
+638| Is í an chatagóir “{s}”
+639| Is í an chatagóir “{s}” nó “{s2}”
+640| dátaí ó inniu go dtí {n} lá ar aghaidh
+641| +{n} seachtain
+642| +{n} mí
+643| +{n} bliain
+644| Iompórtáil
+645| Iompórtáil comhad iCalendar
+646| Iompórtáil ó ReminderFox
+647| Ó ReminderFox
+648| Aimsíodh {files} ón mbreiseán ReminderFox:
+649| Iompórtáil an ceann is nuaí
+650| Iompórtáil iad ar aon nós
+651| {reminders} agus {items}
+652| {n} anseo cheana (coinnítear an chóip is nuaí)
+653| Is cosúil gur dúblach é {n} (an teideal agus an dáta céanna le mír atá agat)
+654| Is cosúil gur dúblaigh iad {n} (an teideal agus an dáta céanna le mír atá agat)
+655| Conas
+656| Cuir leis an méid atá agam
+657| Ionadaigh gach rud
+658| Ionadaigh gach rud (sábháiltear do {items} mar chúltaca ar dtús)
+659| Gach rud a ionadú?
+660| Cuirfear na {newItems} sa chomhad in ionad do {items}.
+661| Sábháiltear a bhfuil agat anois ar dtús mar chúltaca “Sábháilte roimh iompórtáil a d’ionadaigh gach rud”, ionas gur féidir leat é a fháil ar ais ó Socruithe → Sonraí → Athchóirigh ó chúltaca….
+662| Dúblaigh
+663| Scipeáil míreanna leis an teideal agus an dáta céanna le ceann atá agam
+664| Roghnach: cuirtear le gach mír iompórtáilte í, mar shampla “Laethanta saoire” do liosta laethanta saoire, ionas gur féidir leat scagadh uirthi.
+665| roghnach
+666| Iompórtáil críochnaithe
+667| {items} iompórtáilte
+668| {items} agus {lists} iompórtáilte
+669| {n} nuashonraithe
+670| {n} cothrom le dáta cheana
+671| {n} dúblach scipeáilte
+672| ag ionadú {items} (sábháilte mar {file})
+673| {lists} curtha leis ({names})
+674| {n} mír chartlannaithe bogtha chuig an liosta “{list}”
+675| Níl aon sonraí iCalendar sa chomhad seo (níl BEGIN:VCALENDAR ann).
+676| Níorbh fhéidir comhad na meabhrúchán a léamh
+677| Easpórtáilte chuig {path}
+678| Easpórtáil
+679| Gach rud (meabhrúcháin agus tascanna)
+680| Oibríonn an comhad le Outlook, Google Calendar, Thunderbird, Apple Calendar agus an breiseán ReminderFox bunaidh.
+681| Coinníonn ReminderFoxAgain cúltaca gach lá, ceann roimh gach athchóiriú, agus na cinn a dhéanann tú le “Déan cúltaca anois”. Cuireann athchóiriú an cúltaca in ionad do mheabhrúchán agus do thascanna reatha; sábháiltear a bhfuil agat anois ar dtús, mar sin is féidir leat dul ar ais i gcónaí.
+682| Déanta
+683| Ábhar
+684| Athchóirigh
+685| Athchóirigh…
+686| Roghnaigh comhad eile…
+687| {n} cartlannaithe
+688| Ní féidir é a léamh: {s}
+689| Níorbh fhéidir {s} a léamh: {s2}
+690| Ní féidir an comhad sin a athchóiriú
+691| Gan cúltacaí fós. Déantar iad gach lá a bhíonn an aip ag rith; is féidir leat “Déan cúltaca anois” a chliceáil freisin.
+692| Cúltaca laethúil
+693| Cúltaca a rinne tú
+694| Sábháilte roimh athchóiriú
+695| Sábháilte roimh iompórtáil a d’ionadaigh gach rud
+696| An chartlann, sular tháinig liosta di
+697| Cúltaca laethúil den chartlann (leagan níos luaithe)
+698| Cúltaca
+699| An cúltaca seo a athchóiriú?
+700| Cuireann sé seo an cúltaca ó {when} in ionad a bhfuil agat anois ({now}): {items}.
+701| Cuireann sé seo an cúltaca ó {when} in ionad a bhfuil agat anois ({now}): {items}, chomh maith le {n} cartlannaithe, a théann ar an liosta “{list}”.
+702| Is cóip é seo den chartlann ó leagan níos luaithe. Téann a {all} ar an liosta “{list}” (fágtar na míreanna atá agat cheana mar atá siad). Ní athraíonn aon rud eile.
+703| Sábháiltear do shonraí reatha ar dtús mar chúltaca “Sábháilte roimh athchóiriú”, ionas gur féidir leat é seo a chealú ón liosta céanna.
+704| Cúltaca athchóirithe
+705| {items} athchóirithe.
+706| {items} athchóirithe, {n} díobh cartlannaithe agus anois ar an liosta “{list}”.
+707| Sábháladh a raibh agat roimhe mar {file}.
+708| Cúltaca sábháilte in {path}
+709| Cúltaca déanta: {s}
+710| {n} beart
+711| {n} KB
+712| {n} MB
+713| Níl an mhír sin ann a thuilleadh.
+714| Níorbh fhéidir comhad na cartlainne a léamh, mar sin níl sé athraithe. Coinníodh é mar archive.ics.unreadable.
+715| Níorbh fhéidir comhad na cartlainne a léamh, mar sin ní féidir é a ionadú.
+716| Fáilte go ReminderFoxAgain
+717| Do mheabhrúcháin, do thascanna agus d’aláraim mar aip Windows — ómós don bhreiseán ReminderFox bunaidh.
+718| Iompórtáil ó do bhreiseán ReminderFox
+719| {path} — athraithe go deireanach {date}
+720| Iompórtáil reminderfox.ics nó comhad féilire eile…
+721| Ón mbreiseán ReminderFox (san fhillteán “reminderfox” i do phróifíl Firefox/Thunderbird), Outlook, Google Calendar…
+722| Tosaigh le liosta folamh
+723| Is féidir leat iompórtáil níos déanaí ó Socruithe → Sonraí.
+724| anois
+725| i gceann {n} nóim
+726| i gceann {n} uair an chloig
+727| i gceann {n} lá
+728| {n} nóim ó shin
+729| {n} uair an chloig ó shin
+730| {n} lá ó shin
+731| Oscail {app}
+732| Cuir meabhrúchán leis…
+733| Cuir mír liosta leis…
+734| Aláram tapa…
+735| Atosaigh na haláraim
+736| Taispeáin meabhrúcháin an lae inniu
+737| Scoir de {app}
+738| {app} — aláraim múchta
+739| {app} — aláraim múchta go dtí {time}
+740| {app} — faic inniu
+741| le teacht
+742| Tá {app} ag rith fós
+743| Leanfaidh na haláraim ag teacht aníos. Deaschliceáil ar an sionnach i dtráidire an chórais chun scor.
+744| Aláram {app}
+745| {app} — inniu
+746| {n} u {n2} nóim
+747| Comhaid iCalendar
+748| Gach comhad
+749| Comhaid fuaime
+750| Iompórtáil comhad iCalendar
+751| Easpórtáil go comhad iCalendar
+752| Roghnaigh do reminderfox.ics
+753| Roghnaigh fuaim aláraim
+754| Sábháil cóip chúltaca
+755| Roghnaigh cúltaca le hathchóiriú
+756| Gach seachtain ar {days}
+757| Gach mí ar an {nth} {weekday}
+758| Gach mí ar lá {day}
+759| Gach mí ar an lá céanna
+760| Gach {n} mí ar an lá céanna
+761| Gach bliain ar an {nth} {weekday} de {month}
+762| Gach bliain ar {date}
+763| Gach bliain ar an dáta céanna
+764| Gach {n} bliain ar an dáta céanna
+765| Athdhéantar
+766| Saincheaptha ({rule})
+767| {rule}, uair amháin
+768| {rule}, {n} uair
+769| {rule}, go dtí {date}
+770| Taispeáin meabhrúcháin a mharcáil tú mar chríochnaithe
+771| Taispeáin meabhrúcháin agus míreanna liosta a mharcáil tú mar chríochnaithe
+772| M’ord féin: tarraing na sraitheanna, nó brúigh Alt+↑ / Alt+↓
+773| Amharc
+774| Fuaim an aláraim
+775| Do chomhad féin…
+776| Úsáid comhad fuaime de do chuid féin (.mp3, .wav, .ogg, .m4a, .aac, .flac nó .webm)
+777| Gan stad go dtí go bpléitear leis
+778| Gan stad go dtí go bpléitear leis: seinntear an fhuaim arís agus arís eile go dtí go ndéanann tú an t-aláram a shnúzáil, a oscailt, a mharcáil Déanta nó a ruaigeadh, nó go bhfolaíonn tú fuinneog an aláraim. Tosaíonn an chéad aláram eile arís í.
+779| Colúin
+780| Colúin sa chluaisín Meabhrúcháin
+781| Colúin sna liostaí
+782| Bain an tic de cholún chun é a fholú. Taispeántar an cur síos i gcónaí.
+783| Scagairí sábháilte don chluaisín Meabhrúcháin
+784| Bainistigh meabhrúcháin…
+785| Le teacht, Gach meabhrúchán, Tábhachtach, cuardach agus scagairí sábháilte gan dátaí
+786| Úsáideann Le teacht, Gach meabhrúchán, Tábhachtach, cuardach agus scagairí sábháilte gan raon dátaí é. Taispeánann Inniu, Na {n} lá seo romhainn, An lá nó an mhí roghnaithe, an cluaisín Mí agus an féilire gach dáta i gcónaí.
+787| Scagairí sábháilte
+788| Scagaire sábháilte “{s}” · {c}
+789| Bainistigh meabhrúcháin
+790| Taispeánann scagaire sábháilte na meabhrúcháin a theastaíonn uait amháin sa chluaisín Meabhrúcháin: roghnaigh é sa liosta Taispeáin. Caithfidh gach coinníoll ar réimsí éagsúla a bheith fíor; ciallaíonn camóga laistigh de choinníoll amháin “ceann ar bith díobh seo”.
+791| ＋ Scagaire sábháilte nua…
+792| Gan scagairí sábháilte fós. Cliceáil “Scagaire sábháilte nua…” chun ceann a dhéanamh — mar shampla gach meabhrúchán leis an gcatagóir “Breithlá” sa bhliain atá romhainn.
+793| Scrios an scagaire sábháilte?
+794| Scriosfar an scagaire sábháilte “{s}”. Ní athraítear do mheabhrúcháin.
+795| Cuir an scagaire sábháilte in eagar
+796| Scagaire sábháilte nua
+797| Tabhair ainm don scagaire sábháilte, le do thoil.
+798| Tá scagaire sábháilte leis an ainm sin ann cheana.
+799| Athraíodh an scagaire sábháilte
+800| Cuireadh an scagaire sábháilte “{s}” leis
+801| Clog eaglaise
+802| Mairimbe
+803| Bípeanna digiteacha
+804| Clog aláraim
+805| Do chomhad: {s}
+806| Déan do théama féin as cúig dhath
+807| ＋ Téama nua…
+808| Athraigh dathanna do théama
+809| ＋ Téama nua… déanann sé téama duit as cúig dhath.
+810| Do théamaí
+811| Cúlra
+812| Taobh thiar de gach rud
+813| Liostaí agus painéil
+814| Na liostaí, painéal an fhéilire, na dialóga
+815| Téacs
+816| Dath béime
+817| Cnaipí, inniu, roghnú
+818| Míreanna le réalta
+819| Meabhrúcháin agus tascanna tábhachtacha
+820| Is deacair an téacs a léamh ar an gcúlra (codarsnacht {n}:1; is furasta é a léamh ó 4.5:1 suas).
+821| Is deacair an dath béime a fheiceáil ar na liostaí (codarsnacht {n}:1; is fearr 3:1 nó níos mó).
+822| Is deacair na míreanna le réalta a fheiceáil ar na liostaí (codarsnacht {n}:1; is fearr 3:1 nó níos mó).
+823| Cuir an téama in eagar
+824| Téama nua
+825| Tosaigh ó
+826| m.sh. Foraois
+827| Taispeánann an fhuinneog ar fad an téama agus tú ag roghnú. Cuireann Cealaigh an seancheann ar ais.
+828| Tabhair ainm don téama, le do thoil.
+829| Tá téama leis an ainm sin ann cheana.
+830| Sábháladh an téama “{s}”
+831| Cuireadh an téama “{s}” leis
+832| Scrios an téama?
+833| Scriosfar an téama “{s}”. Fillfidh an aip ar an téama réamhshocraithe.
