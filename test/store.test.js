@@ -849,3 +849,23 @@ test('30. import options: duplicates by title and date, a category for imported 
   // without options it behaves as before (merge by UID, nothing skipped as a duplicate)
   const s3 = load(); assert.deepEqual(s3.import(FIXTURE), { added: 0, updated: 0, skipped: 6 });
 });
+
+test('31. dates written the way other programs do are read, not fatal (0.9.1)', () => {
+  const ics = [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//x//y//EN',
+    'BEGIN:VEVENT', 'UID:js1', 'SUMMARY:JavaScript dates', 'DTSTAMP:Tue Oct 20 2026 10:00:00 GMT-0400 (Eastern Daylight Time)',
+    'LAST-MODIFIED:Tue, 20 Oct 2026 14:00:00 GMT', 'DTSTART:Tue Nov 10 2026 09:30:00 GMT-0500', 'DTEND:Tue Nov 10 2026 10:30:00 GMT-0500',
+    'RRULE:FREQ=WEEKLY;UNTIL=Tue Dec 01 2026 14:30:00 GMT+0000;BYDAY=TU', 'EXDATE:Tue Nov 17 2026 09:30:00 GMT-0500', 'END:VEVENT',
+    'BEGIN:VEVENT', 'UID:iso1', 'SUMMARY:ISO day', 'DTSTART;VALUE=DATE:2026-12-25', 'END:VEVENT',
+    'BEGIN:VEVENT', 'UID:bad1', 'SUMMARY:Unreadable stamp', 'DTSTART;VALUE=DATE:20261224', 'CREATED:Tue someday', 'END:VEVENT',
+    'END:VCALENDAR', ''].join('\r\n');
+  const s = new Store('');
+  assert.deepEqual(s.previewImport(ics), { events: 3, todos: 0, existing: 0, duplicates: 0 });
+  assert.equal(s.import(ics).added, 3);
+  const starts = rows(s, 'js1', D(2026, 11, 1), D(2027, 1, 1)).map((r) => new Date(r.start).toISOString());
+  assert.deepEqual(starts, ['2026-11-10T14:30:00.000Z', '2026-11-24T14:30:00.000Z', '2026-12-01T14:30:00.000Z']);
+  assert.equal(s.get('iso1').allDay, true);
+  assert.equal(dayKey(new Date(rows(s, 'iso1', D(2026, 12, 1), D(2027, 1, 1))[0].start)), '2026-12-25');
+  assert.equal(rows(s, 'bad1', D(2026, 12, 1), D(2027, 1, 1)).length, 1);
+  assert.equal(new Store(s.toString()).count(), 3);   // and the saved file reads back
+});

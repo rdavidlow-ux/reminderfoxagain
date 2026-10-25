@@ -117,7 +117,7 @@ function parseCalendars(text) {
   let root = null;
   for (const block of blocks) {
     const lines = block.split('\n').filter((l) => l.trim() !== '' && (/^[ \t]/.test(l) || l.includes(':')));
-    const jcal = ICAL.parse(lines.join('\r\n') + '\r\n');
+    const jcal = ICAL.parse(repairDates(lines).join('\r\n') + '\r\n');
     const comps = (Array.isArray(jcal[0]) ? jcal : [jcal]).map((j) => new ICAL.Component(j));
     for (const c of comps) {
       if (c.name !== 'vcalendar') continue;
@@ -132,6 +132,78 @@ function parseCalendars(text) {
   if (!root) throw new Error('This file does not contain any iCalendar data (no BEGIN:VCALENDAR).');
   for (const tz of root.getAllSubcomponents('vtimezone')) registerZone(tz);
   return root;
+}
+// Dates written the way some programs do (JavaScript's "Tue Oct 21 2026 10:00:00 GMT-0400", e-mail's "Tue, 21 Oct
+// 2026 14:00:00 GMT", ISO "2026-10-21T14:00:00Z") instead of iCalendar's 20261021T140000Z: ical.js stops the whole
+// file on them ("Could not extract integer from "Tue ""). Each DATE / DATE-TIME value that isn't iCalendar is read as a
+// date and written the iCalendar way (a time → UTC); one that can't be read is left out with its line, so the rest of
+// the file still comes in. Lines are unfolded first (folding again isn't needed: ical.js reads long lines).
+const ICAL_DATE = /^\d{8}$/;
+const ICAL_DATETIME = /^\d{8}T\d{6}Z?$/;
+function splitProp(line) {
+  // name;params:value — a ':' inside a quoted parameter value doesn't end the parameters
+  let q = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (ch === '"') q = !q;
+    else if (ch === ':' && !q) return [line.slice(0, i), line.slice(i + 1)];
+  }
+  return [line, ''];
+}
+function readLooseDate(v, asDate) {
+  const t = String(v).trim();
+  if (!t) return null;
+  const iso = /^(\d{4})-(\d{2})-(\d{2})$/.exec(t);
+  if (iso) return asDate ? `${iso[1]}${iso[2]}${iso[3]}` : `${iso[1]}${iso[2]}${iso[3]}T000000`;
+  const ms = Date.parse(t);
+  if (!Number.isFinite(ms)) return null;
+  const d = new Date(ms);
+  const hasTime = /\d{1,2}:\d{2}/.test(t);
+  if (asDate || !hasTime) {
+    const local = /(GMT|UTC|Z\b|[+-]\d{2}:?\d{2}\b)/.test(t) ? null : d;   // a date alone is that day, wherever you are
+    const x = local || d;
+    const y = local ? x.getFullYear() : x.getUTCFullYear(); const m = (local ? x.getMonth() : x.getUTCMonth()) + 1; const dd = local ? x.getDate() : x.getUTCDate();
+    const day = `${y}${pad(m)}${pad(dd)}`;
+    return asDate ? day : `${day}T000000`;
+  }
+  return utcStamp(ms);
+}
+function repairDates(lines) {
+  // unfold
+  const un = [];
+  for (const l of lines) { if (/^[ \t]/.test(l) && un.length) un[un.length - 1] += l.slice(1); else un.push(l); }
+  const props = (ICAL.design && ICAL.design.defaultSet && ICAL.design.defaultSet.property) || {};
+  const out = [];
+  for (const line of un) {
+    const [head, value] = splitProp(line);
+    const parts = head.split(';');
+    const name = parts[0].trim().toLowerCase();
+    if (!name || name === 'begin' || name === 'end') { out.push(line); continue; }
+    const vparam = parts.slice(1).find((p) => /^value=/i.test(p));
+    const type = vparam ? vparam.slice(6).trim().toLowerCase() : props[name] && props[name].defaultType;
+    if (name === 'rrule' || name === 'exrule') {
+      // UNTIL=Tue Oct 21 2026… inside a repeat rule
+      out.push(line.replace(/(UNTIL=)([^;]*)/i, (all, k, u) => {
+        if (ICAL_DATE.test(u) || ICAL_DATETIME.test(u)) return all;
+        const f = readLooseDate(u, !/\d{1,2}:\d{2}/.test(u));
+        return f ? k + f : '';
+      }).replace(/;;+/g, ';').replace(/:;/, ':').replace(/;$/, ''));
+      continue;
+    }
+    if (type !== 'date' && type !== 'date-time') { out.push(line); continue; }
+    const v = value.trim();
+    const okRe = type === 'date' ? ICAL_DATE : ICAL_DATETIME;
+    const vals = v.split(',').map((x) => x.trim());
+    if (vals.every((x) => okRe.test(x))) { out.push(line); continue; }
+    // a whole value like "Tue, 21 Oct 2026 14:00:00 GMT" has a comma of its own: try it whole first
+    let fixed = [readLooseDate(v, type === 'date')];
+    if (!fixed[0]) fixed = vals.map((x) => (okRe.test(x) ? x : readLooseDate(x, type === 'date')));
+    if (fixed.some((x) => !x)) continue;   // unreadable: leave the line out
+    // a time written in UTC no longer belongs to the TZID it named
+    const keep = parts.filter((p, i) => i === 0 || !(/^tzid=/i.test(p) && fixed.some((x) => x.endsWith('Z'))));
+    out.push(`${keep.join(';')}:${fixed.join(',')}`);
+  }
+  return out;
 }
 function registerZone(tzComp) {
   try {

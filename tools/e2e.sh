@@ -47,8 +47,10 @@ RF_FAKE_PLATFORM=win32 run platform-windows basic platform.js
 RF_FAKE_PLATFORM=darwin run platform-macos basic platform.js
 RF_FAKE_PLATFORM=darwin RF_LANG=de run platform-macos-de basic platform.js
 RF_FAKE_PLATFORM=linux RF_TEST_AUTOSTART=1 run platform-linux basic platform.js
+if [ -z "${ONLY:-}" ] || [[ " $ONLY " == *" platform-linux "* ]]; then
 f="$TMP/profile-platform-linux/autostart/reminderfoxagain.desktop"
 echo "E2E Linux: autostart entry written: $([ -f "$f" ] && grep -c -e '^Exec="reminderfoxagain" --hidden$' -e '^X-GNOME-Autostart-enabled=true$' "$f" || echo 0) (expected 2)$([ -f "$f" ] && [ "$(grep -c -e '^Exec="reminderfoxagain" --hidden$' -e '^X-GNOME-Autostart-enabled=true$' "$f")" = 2 ] || echo '  WRONG')" | tee "$TMP/autostart.log"
+fi
 RF_FAKE_PLATFORM=linux RF_FAKE_TRAYLESS=1 run platform-linux-trayless basic platform.js
 # the macOS application menu: labels and shortcuts (RF_PRINT_MENU prints it and the app quits)
 menu() { RF_FAKE_PLATFORM=darwin RF_PRINT_MENU=1 RF_LANG="$1" XDG_CONFIG_HOME="$TMP/menu-$1" RF_DATA_DIR="$TMP/menu-$1/data" timeout 60 xvfb-run -a ./node_modules/.bin/electron . --no-sandbox --disable-gpu 2>/dev/null | sed -n 's/^RF_MENU //p'; }

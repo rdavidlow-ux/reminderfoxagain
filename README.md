@@ -1,10 +1,18 @@
-# ReminderFoxAgain 0.9.0
+# ReminderFoxAgain 0.9.1
 
 A desktop app for Windows, macOS and Linux for reminders, to-dos and pop-up alarms — a tribute to the original
 [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and
 Daniel Lee with Guenter Wahl, which kept people's birthdays, bills and to-dos on time for many years. ReminderFoxAgain
 carries its ideas forward as a desktop app: it reads and writes ReminderFox's own iCalendar file, so everything its
 users built up comes along unchanged.
+
+## New in 0.9.1 — imports with other programs' dates
+
+- **Importing an .ics file no longer stops with "Could not extract integer from "Tue "".** Some programs write dates
+  the JavaScript or e-mail way ("Tue Oct 20 2026 10:00:00 GMT-0400", "Tue, 20 Oct 2026 14:00:00 GMT") or as
+  2026-10-20 instead of iCalendar's 20261020T140000Z. Those dates (start, end, due, stamps, excluded dates and a repeat's
+  end) are now read and saved the iCalendar way; one that can't be read at all is left out, and the rest of the file
+  still comes in. The same goes for the reminders file itself when the app starts.
 
 ## New in 0.9.0 — macOS and Linux
 
@@ -315,7 +323,7 @@ Download the files for your system from the [Releases](https://github.com/rdavid
 
 ### macOS
 
-1. Download `ReminderFoxAgain-0.9.0-macos-universal.zip` and double-click it to unzip.
+1. Download `ReminderFoxAgain-0.9.1-macos-universal.zip` and double-click it to unzip.
 2. Drag **ReminderFoxAgain.app** into **Applications**.
 3. The first time, macOS says it can't check the app for malicious software: it is signed ad hoc, not by an Apple
    developer account, and not notarized. Open it once anyway — on macOS 15 Sequoia and later, try to open it, then
@@ -327,17 +335,17 @@ it, drag it to the Bin. Your data is in `~/Library/Application Support/ReminderF
 
 ### Linux
 
-**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.0_amd64.deb` (`arm64` for ARM) and run
-`sudo apt install ./reminderfoxagain_0.9.0_amd64.deb` (or open it with your software centre). Updating is the same
+**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.1_amd64.deb` (`arm64` for ARM) and run
+`sudo apt install ./reminderfoxagain_0.9.1_amd64.deb` (or open it with your software centre). Updating is the same
 command with the newer file; `sudo apt remove reminderfoxagain` removes it. The package puts the app in
 `/opt/ReminderFoxAgain` with the command `reminderfoxagain`, a menu entry and icons, and sets up Chromium's sandbox
 (on Ubuntu 24.04 and later it adds the AppArmor profile Electron apps need).
 
-**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.0-linux-x64.tar.gz` (or `-arm64`), then:
+**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.1-linux-x64.tar.gz` (or `-arm64`), then:
 
 ```sh
-tar -xzf ReminderFoxAgain-0.9.0-linux-x64.tar.gz
-cd ReminderFoxAgain-0.9.0-linux-x64
+tar -xzf ReminderFoxAgain-0.9.1-linux-x64.tar.gz
+cd ReminderFoxAgain-0.9.1-linux-x64
 ./install.sh          # again with a newer download to update
 ./uninstall.sh        # removes the app, keeps your reminders (--purge removes them too)
 ```
@@ -358,10 +366,10 @@ Put every file from `dist/release/` in one folder and double-click **Install or 
 | --- | --- |
 | `Install or Update ReminderFoxAgain.bat` | always |
 | `ReminderFoxAgain-Setup.ps1` | always |
-| `ReminderFoxAgain-app-0.9.0.asar` | always |
-| `ReminderFoxAgain-runtime-0.9.0.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
+| `ReminderFoxAgain-app-0.9.1.asar` | always |
+| `ReminderFoxAgain-runtime-0.9.1.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
 
-Updating a 0.7.x or 0.8.x install needs only the .bat, the .ps1 and the .asar; the setup reuses the installed runtime. When
+Updating a 0.7.x, 0.8.x or 0.9.x install needs only the .bat, the .ps1 and the .asar; the setup reuses the installed runtime. When
 updating from 0.6.x, include the runtime parts too: the earlier runtime has English date pickers only, and the setup
 replaces it when the parts are there (without them the app still works and is translated, but the date and time
 pickers stay in English). The
@@ -406,7 +414,7 @@ node tools/i18n/build.js # rebuild src/ui/locales/ after editing tools/i18n/*.tx
 for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done
 tools/e2e.sh             # UI checks (incl. every theme's contrast and starred colours, and German, French from the system locale, Japanese picked in Settings, Arabic right to left, and the continuous alarm sound in the alarm window): every line shows the value and the expected one; no WRONG/ERROR lines
 tools/test-setup.sh      # 20 checks (optional argument: the pwsh binary)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.0-linux-x64.tar.gz   # 19 checks in a fake home
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.1-linux-x64.tar.gz   # 19 checks in a fake home
 tools/shots.sh shots/    # every screen, to compare with reference/screenshots/
 tools/screenshot.sh <dataDir> <out.png> [script.js]
 node tools/sounds.js <outDir>   # the built-in alarm sounds as .wav files (for platforms that need sound files)
