@@ -25,6 +25,61 @@ agenda on the right.
 
 <img src="docs/readme/alarm.png" alt="The alarm window with two reminders" width="500">
 
+## Compared with the original ReminderFox add-on
+
+ReminderFoxAgain reads and writes the add-on's own file and covers most of what the add-on did. Below is what is still
+missing, and what the app adds. The full list, with effort estimates, is in
+[docs/feature-gaps.xlsx](docs/feature-gaps.xlsx).
+
+### Still missing from the add-on
+
+| Feature in ReminderFox | Status in ReminderFoxAgain | Priority |
+| --- | --- | --- |
+| Print or view all or selected events, or a daily agenda, with editable templates | Not started | 3 |
+| Subscribe to a calendar by URL (holidays, sports), read-only and refreshed regularly | Not started; .ics files can be imported | 3 |
+| CalDAV sync (fruux, Nextcloud/ownCloud, Radicale), with per-account colours | Not started | 4 |
+| Sync the file through an FTP or web server | Not started | Later |
+| Google Calendar and Google Tasks sync | Not started | Later |
+| Send reminders or to-dos by email, and invitations with accept/decline | Export to an .ics file only | Later |
+| Birthday reminders from address-book contacts | Not started | Later |
+| Right-click "Add reminder" on a web page or selected text | Not started | Later |
+
+Some add-on features only make sense inside Firefox or Thunderbird and aren't planned as such: opening the email a
+reminder came from, making a reminder from an email, "Send++", message tagging and address-book autocomplete. The
+Thunderbird email scanning planned below would bring some of this back.
+
+Everything else from the add-on is in: remind until completed, ages in titles (`<1960>`), tooltip items, quick alarms,
+suspend, snooze until a time, repeated and custom alarm sounds, the reminder pop-up (alert slider), the count badge,
+lists, saved filters (views), repeat display options, manual to-do order, categories, layouts and several months at
+once, go to date, date formats, "Show map", backup and restore, import choices, all 34 of its languages, and Windows,
+macOS and Linux.
+
+### Added beyond the add-on
+
+- **A desktop app of its own** for Windows, macOS (Apple silicon and Intel) and Linux (x64 and arm64), with its own
+  installers, start at login, tray or menu bar icon, and wording and shortcuts for each system.
+- **To-dos with a due-by date and their own reminders**: a "remind me" start, a time and how often, until it's done; a
+  to-do can become a dated reminder once the date is known.
+- **Planning**: future repeats shown in every list, with counts per month; past occurrences listed ticked or not;
+  ticking one occurrence of a repeat records when you did it.
+- **Lists**: picked from a dropdown that includes To-Do's; duplicate, move and copy items between lists; the "Terminated
+  or Suspended" list keeps expired items for reference; the add-on's list names come across on import.
+- **Your layout**: Show completed in every view (keeping your place), the columns you want, ordering by any column, and
+  a day picked in the calendar starting the list there.
+- **Your look**: a Month grid, six themes including high contrast, starred items in their own colour, and your own
+  themes from five colours with contrast warnings.
+- **Alarms**: five built-in sounds besides your own file, repeated continuously until cleared if you like, and desktop
+  notifications on macOS and Linux.
+- **Data safety and standards**: automatic daily backups, an unreadable file never overwritten, proper time zones, data
+  the app doesn't understand kept from Google or Outlook files, and dates written by other programs read correctly.
+- **Builds and tests**: byte-identical release builds, and unit, UI and installer tests.
+
+### Planned new features
+
+- Android and iOS apps (specified in the build prompt pack).
+- Thunderbird email scanning: an add-on that passes new email to ReminderFoxAgain, which suggests reminders from
+  invitations, bookings and dates in the text (with an optional local language model), linked back to the email.
+
 ## New in 0.9.1 — imports with other programs' dates
 
 - **Importing an .ics file no longer stops with "Could not extract integer from "Tue "".** Some programs write dates
