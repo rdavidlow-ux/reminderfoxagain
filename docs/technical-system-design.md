@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.8.1 — Technical System Design
+# ReminderFoxAgain 0.9.1 — Technical System Design
 
 Oct 18, 2026 · David
 
@@ -214,6 +214,8 @@ Every import in the UI now goes through askImport(files) in features.js: pickIcs
 
 **Replace.** importFiles() parses every file first, so a bad file changes nothing. mode: 'replace' then writes backups/before-import-\<stamp\>.ics in the combined lists + archive form (described as “Saved before an import replaced everything”), starts from an empty Store and imports with duplicates allowed. A new category is added to settings.categories.
 
+**Loose dates (0.9.1).** Before ICAL.parse, repairDates() in parseCalendars() unfolds the lines and checks every DATE or DATE-TIME value: by its VALUE= parameter, or by the property's default type in ical.js's design set, plus a repeat rule's UNTIL. A value that isn't iCalendar, such as Tue Oct 20 2026 10:00:00 GMT-0400, Tue, 20 Oct 2026 14:00:00 GMT or 2026-10-20, is read with Date.parse and rewritten as 20261020T140000Z (a date as 20261020); a now-UTC value drops its TZID. A value that can't be read is left out with its line. Without this, ical.js stopped the whole file with "Could not extract integer from "Tue "".
+
 ### Completed list items leave the calendar (0.7.0)
 
 The renderer filters notDoneItem(r) (not a completed VTODO) out of the Month grid, the mini calendar's dots and red marks, and the day agenda. Completed reminder occurrences still show, struck through, and completed to-dos stay in their list behind Show completed. Nothing changes in the Store or the file.
@@ -341,7 +343,23 @@ Install or Update ReminderFoxAgain.bat runs ReminderFoxAgain-Setup.ps1 with Wind
 
 4.  Writes Uninstall ReminderFoxAgain.ps1. It removes the program, the shortcuts and the keys, and removes the data folder only if the user types YES.
 
-An update from 0.7.0 needs only the .bat, the .ps1 and the .asar (the asar now carries the 34 locale files). An update from 0.6.x should include the runtime parts.
+An update from 0.7.0 or later needs only the .bat, the .ps1 and the .asar (the asar now carries the 34 locale files). An update from 0.6.x should include the runtime parts.
+
+### macOS and Linux (0.9.0)
+
+The same source runs on all three systems; src/main.js branches on process.platform (or RF_FAKE_PLATFORM in tests).
+
+| Concern         | Windows                             | macOS                                          | Linux                                                                |
+|-----------------|-------------------------------------|------------------------------------------------|----------------------------------------------------------------------|
+| Data folder     | %APPDATA%\ReminderFoxAgain          | ~/Library/Application Support/ReminderFoxAgain | ~/.config/ReminderFoxAgain                                           |
+| Tray            | tray.png in the system tray         | trayTemplate.png in the menu bar               | tray.png via StatusNotifier; on GNOME without a watcher, close quits |
+| Start at login  | Run key                             | Login Items                                    | ~/.config/autostart/reminderfoxagain.desktop                         |
+| Alarm attention | flashFrame                          | Dock bounce + notification                     | flashFrame + notification                                            |
+| Badge           | taskbar overlay icon                | Dock badge                                     | setBadgeCount + tray image                                           |
+| Menu            | none                                | application menu (appMenuTemplate())           | none                                                                 |
+| Release         | .bat + .ps1 + .asar + runtime parts | universal .zip, ad-hoc signed                  | .deb and .tar.gz, x64 and arm64                                      |
+
+build-linux.sh and build-macos.sh build on Linux and are deterministic. The macOS app is joined from arm64 and x64 builds by @electron/universal with a Python stand-in for lipo, then signed ad hoc with rcodesign. The renderer adapts Windows wording and, on macOS, Ctrl+ shortcuts to ⌘ in i18n-dom.js before translation.
 
 ## 7. Testing, risks and limitations
 

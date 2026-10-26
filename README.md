@@ -402,7 +402,7 @@ node tools/i18n/build.js # rebuild src/ui/locales/ after editing tools/i18n/*.tx
 | `src/ui/` | `index.html`, `alarm.html`, `styles.css` and `common.js`, `app.js`, `features.js` (settings sections and the feature dialogs), `alarm.js`, `slider.html`/`slider.js` (reminder pop-up), `i18n.js` (translation core: language choice, patterns, plurals) and `i18n-dom.js` (translates each window as it renders) |
 | `src/ui/locales/` | One JSON file per language, built from `tools/i18n/` |
 | `tools/i18n/` | `catalog.txt` (every English string, the keys), `<language>.txt` (its translations, one numbered line each) and `build.js` (checks placeholders and writes `src/ui/locales/`) |
-| `test/store.test.js`, `test/i18n.test.js` | 30 data-layer and 5 translation unit tests against `test/reminderfox-addon-sample.ics` and `test/reminderfox-addon-full.ics` (`test/reminderfox-addon-prefs.js` is an add-on profile's prefs for the list import check) |
+| `test/store.test.js`, `test/i18n.test.js` | 31 data-layer and 5 translation unit tests against `test/reminderfox-addon-sample.ics` and `test/reminderfox-addon-full.ics` (`test/reminderfox-addon-prefs.js` is an add-on profile's prefs for the list import check) |
 | `installer/` | Setup template (filled in by `build.sh` via `fill-setup.sh`) and the .bat |
 | `build/linux/` | install.sh, uninstall.sh, the menu entry, icons and the .deb's scripts and AppArmor profile |
 | `build/macos/` | The icon, Info.plist additions, entitlements, `universal.mjs` (joins the arm64 and x64 apps) and `lipo` (a small stand-in for Apple's, so the universal app builds on Linux) |

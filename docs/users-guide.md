@@ -1,8 +1,8 @@
-# ReminderFoxAgain 0.8.1 — User's Guide
+# ReminderFoxAgain 0.9.1 — User's Guide
 
 Oct 18, 2026 · David
 
-ReminderFoxAgain is a Windows 11 app for reminders, to-dos and pop-up alarms, and a tribute to the original [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl. It reads and writes ReminderFox's own file, so everything you kept in ReminderFox comes across unchanged.
+ReminderFoxAgain is an app for Windows, macOS and Linux for reminders, to-dos and pop-up alarms, and a tribute to the original [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl. It reads and writes ReminderFox's own file, so everything you kept in ReminderFox comes across unchanged.
 
 ## 1. Getting started
 
@@ -19,9 +19,31 @@ Put every release file in one folder, then double-click **Install or Update Remi
 
 - The app goes to %LOCALAPPDATA%\Programs\ReminderFoxAgain, with Start-menu and desktop shortcuts and an entry in Settings → Apps.
 
-- To update a 0.7.0 install, you only need the .bat, the .ps1 and the .asar. The setup reuses the installed runtime. When you update from 0.6.x, include the runtime parts too, so the date and time pickers follow your language (without them everything else is still translated).
+- To update a 0.7.x or 0.8.x install, you only need the .bat, the .ps1 and the .asar. The setup reuses the installed runtime. When you update from 0.6.x, include the runtime parts too, so the date and time pickers follow your language (without them everything else is still translated).
 
 - Your data lives in %APPDATA%\ReminderFoxAgain. Updating never touches it.
+
+### Install or update on a Mac
+
+Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.1-macos-universal.zip.
+
+1.  Double-click the zip, then drag **ReminderFoxAgain.app** into **Applications**.
+
+2.  The first time, macOS says it can't check the app for malicious software, because it isn't notarized by Apple. On macOS 15 and later, try to open it, then choose System Settings → **Privacy & Security** → **Open Anyway**. On macOS 13–14, Control-click the app → **Open** → **Open**.
+
+3.  To update, quit the app (⌘Q) and replace it in Applications with the new one. Your reminders stay in ~/Library/Application Support/ReminderFoxAgain.
+
+On a Mac the shortcuts use ⌘ (⌘N new reminder, ⌘T new list item, ⇧⌘A quick alarm, ⌘, Settings), the fox sits in the menu bar, and closing the window keeps the app running; click its Dock icon to bring it back.
+
+### Install or update on Linux
+
+- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.1_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.1_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
+
+- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.1-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
+
+- **GNOME:** add the "AppIndicator and KStatusNotifierItem Support" extension to see the fox in the top bar. Without it, closing the window quits the app, and Settings says so.
+
+Your reminders are in ~/.config/ReminderFoxAgain.
 
 ### First start: bring your data over
 
@@ -377,7 +399,7 @@ If an earlier version left items in its archive, the app moves them into the “
 
 ### Import and export
 
-- **Settings → Data → Import an .ics file…** (Ctrl+I) adds items from one or more .ics files. Every import (also from the welcome page and **Import from ReminderFox…**) first shows what the file holds and asks how to bring it in — see *Import choices* below.
+- **Settings → Data → Import an .ics file…** (Ctrl+I) adds items from one or more .ics files. Every import (also from the welcome page and **Import from ReminderFox…**) first shows what the file holds and asks how to bring it in — see *Import choices* below. Since 0.9.1, dates that other programs write their own way (such as Tue Oct 20 2026 10:00:00 GMT-0400) are read and saved the iCalendar way; a date that can't be read is left out and the rest of the file still comes in.
 
 - **Settings → Data → Export to .ics…** (Ctrl+E) saves everything, reminders only, to-dos only as an .ics file. Outlook, Google Calendar, Thunderbird, Apple Calendar and the original add-on can open it.
 

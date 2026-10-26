@@ -34,7 +34,10 @@ pinned. Nothing else at runtime.
 1. Unit tests in seven zones.
 2. `electron-packager . ReminderFoxAgain --platform=darwin --arch=arm64` and `--arch=x64` (same ignores, `--asar`,
    `--icon`, `--app-bundle-id`, `--app-category-type`, `--extend-info` with the keys above). Merge them with
-   `@electron/universal` into `ReminderFoxAgain.app` (universal). Keep only the en, en_GB and fr `.lproj` folders.
+   `@electron/universal` into `ReminderFoxAgain.app` (universal); on Linux, patch `process.platform` to `darwin` for the
+   call and put a small `lipo` stand-in on PATH (`lipo A B -create -output C`: a fat header, magic 0xcafebabe, x86_64 then
+   arm64, aligned 2^12 and 2^14). Keep only the `.lproj` folders of `en`, `en_GB` and the app's languages
+   (`CHROMIUM_LOCALES`, `-` → `_`).
 3. **Signing.** Electron's bundle is signed; changing it (asar, Info.plist) breaks the signature, and Apple-silicon
    Macs refuse unsigned code. Re-sign ad hoc: `codesign --force --deep --sign - ReminderFoxAgain.app` on a Mac, or
    `rcodesign sign` on Linux, with the hardened-runtime entitlements Electron needs
@@ -42,9 +45,9 @@ pinned. Nothing else at runtime.
    `APPLE_ID`, `APPLE_TEAM_ID`, `APPLE_APP_PASSWORD` and a Developer ID certificate are available, sign with it and
    notarize (`xcrun notarytool submit --wait`, then `xcrun stapler staple`). Otherwise say the build is ad-hoc signed.
 4. **Release files**:
-   - `ReminderFoxAgain-0.8.1-mac-universal.zip`: `ditto -c -k --keepParent` on a Mac, or on Linux `zip -y -r -X` (keep
+   - `ReminderFoxAgain-0.9.1-macos-universal.zip`: `ditto -c -k --keepParent` on a Mac, or on Linux `zip -y -r -X` (keep
      the symlinks) after touching every file to `SOURCE_DATE_EPOCH`;
-   - `ReminderFoxAgain-0.8.1.dmg` (Mac only): `hdiutil create -volname ReminderFoxAgain -srcfolder <dir with the .app
+   - `ReminderFoxAgain-0.9.1.dmg` (Mac only): `hdiutil create -volname ReminderFoxAgain -srcfolder <dir with the .app
      and an /Applications symlink> -format UDZO`.
    Split anything over a delivery limit into 28 MiB parts with a `join.command`.
 5. Two builds in a row of the zip must be identical. The dmg and notarized builds needn't be.

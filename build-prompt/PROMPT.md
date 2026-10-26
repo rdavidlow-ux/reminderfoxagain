@@ -1,9 +1,9 @@
-# Build ReminderFoxAgain 0.8.1
+# Build ReminderFoxAgain 0.9.1
 
 > **TARGET PLATFORM:** `windows` ← change this word to `windows`, `linux`, `macos`, `android` or `ios` before sending.
 > If it is missing or unclear, ask the user which one, once, before doing anything else.
 
-Build **ReminderFoxAgain 0.8.1** for the target platform above: an app for reminders, to-dos and pop-up alarms that
+Build **ReminderFoxAgain 0.9.1** for the target platform above: an app for reminders, to-dos and pop-up alarms that
 is a tribute to the original **ReminderFox** add-on for Firefox and Thunderbird (https://github.com/tommut/reminderfox),
 created by Tom Mutdosch and Daniel Lee with Guenter Wahl. Honour its work: it must read and write ReminderFox's own
 iCalendar file so its users keep everything they built up, refer to it warmly in the UI and docs ("the original
@@ -19,7 +19,7 @@ Where both are silent, the reference source (below) decides.
 
 | Path | Use |
 | --- | --- |
-| `reference/source/` | The complete source of ReminderFoxAgain 0.8.1 for Windows: `src/` (store, main process, preload, UI), `test/` (35 unit tests: 30 for the Store, 5 for the translations; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
+| `reference/source/` | The complete source of ReminderFoxAgain 0.9.1 (Windows, macOS and Linux from one source): `src/` (store, main process, preload, UI), `test/` (36 unit tests: 31 for the Store, 5 for the translations; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
 | `reference/screenshots/*.png` | 70 screenshots of every screen, dialog, theme and the alarm and pop-up windows, made from `tools/sample-data.js` with a 1180×760 main window. The target look on desktop. Mobile layouts follow `platforms/mobile-common.md`. |
 | `reference/assets/` | App icon (`icon.png` 256 px, `icon.ico` 16–256 px, `tray.png` 32 px), vector masters (`svg/`), and every platform's icon set already made: `png/` (16–1024 px), `linux/hicolor/…`, `macos/icon.icns` + `trayTemplate.png`/`@2x`, `ios/AppIcon-1024.png` (opaque, full bleed), `android/` (adaptive foreground/background, legacy mipmaps, white notification icons, Play Store 512 px). `sounds/<id>.wav` and `<id>.caf` are the five built-in sounds (chime, bell, marimba, beeps, clock) as files, rendered by `tools/sounds.js` (for notification sounds). |
 | `reference/fixtures/` | `reminderfox-addon-sample.ics` and `reminderfox-addon-full.ics`, plus `reminderfox-addon-prefs.js` (the add-on's list names, as its profile's `prefs.js` holds them; the UI checks put it beside a copy of the full file) and `archive-sample.ics` (an archive.ics as 0.2.6–0.5.0 left it, for the archive-to-list check): files written the way the add-on writes `reminderfox.ics`. Unit-test fixtures and the compatibility benchmark. |
@@ -481,6 +481,16 @@ ru-RU, uk-UA, be-BY, pl, cs-CZ, sk-SK, ro-RO, tr, vi, zh-CN, zh-TW, ja-JP, ko-KR
   with its month heading when it is the first of its month; no such row → the end of the list. The day is selected as
   before, and the position is remembered for that Show choice. Selected day / month still re-list that day or month.
 
+### 6.16 Dates other programs write (0.9.1)
+
+Some programs write a DATE or DATE-TIME value the JavaScript or e-mail way (`Tue Oct 20 2026 10:00:00 GMT-0400`,
+`Tue, 20 Oct 2026 14:00:00 GMT`) or as `2026-10-20`. ical.js then stops the whole file with
+`Could not extract integer from "Tue "`. Before parsing, unfold the lines and check every value whose type (its
+`VALUE=` parameter, else the property's default type) is DATE or DATE-TIME, and a repeat rule's `UNTIL`. A value that
+isn't iCalendar is read with `Date.parse` and written back as `20261020T140000Z` (a DATE as `20261020`; a value turned
+to UTC loses its `TZID`). An unreadable one is left out with its line, so the rest of the file loads. This applies to
+imports and to the reminders file itself. Unit test 31 checks it.
+
 ## 7. Tests (shared)
 
 - **Unit** (`test/store.test.js`, 30 tests, and `test/i18n.test.js`, 5 tests, `node --test test/`), passing in TZ America/Toronto, UTC,
@@ -510,7 +520,7 @@ ru-RU, uk-UA, be-BY, pl, cs-CZ, sk-SK, ro-RO, tr, vi, zh-CN, zh-TW, ja-JP, ko-KR
 
 ## 8. Done when (all platforms)
 
-- All 35 unit tests pass in the seven time zones. The compatibility benchmark is identical.
+- All 36 unit tests pass in the seven time zones. The compatibility benchmark is identical.
 - The UI checks print no WRONG or ERROR. Screenshots match. The platform file's own checks pass.
 - The platform file's deliverables exist, two builds in a row are identical where the platform file says they can be,
   and a `README.md` for the build says how to install, update and uninstall on that platform.

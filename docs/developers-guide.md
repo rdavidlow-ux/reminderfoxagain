@@ -1,8 +1,8 @@
-# ReminderFoxAgain 0.8.1 — Developer's Guide
+# ReminderFoxAgain 0.9.1 — Developer's Guide
 
 Oct 18, 2026 · David
 
-This guide is the reference for working on the ReminderFoxAgain 0.8.1 code. It covers the Store's data API, the main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
+This guide is the reference for working on the ReminderFoxAgain 0.9.1 code. It covers the Store's data API, the main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
 
 ## 1. Setup and layout
 
@@ -15,6 +15,21 @@ RF_DATA_DIR=/tmp/rf npm start  # run with a throw-away data folder
 node tools/sample-data.js /tmp/rf basic   # or: bills
 ./build.sh                     # Windows x64 release in dist/release/
 ```
+
+### macOS and Linux builds (0.9.0)
+
+Both build on Linux and give the same SHA-256 hashes on every run.
+
+```sh
+./build-linux.sh   # dist/release-linux/: .tar.gz and .deb for x64 and arm64 (ARCHS=x64 for one)
+./build-macos.sh   # dist/release-macos/: one universal .zip (Apple silicon + Intel)
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.1-linux-x64.tar.gz
+python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.1
+```
+
+- **Linux:** `build/linux/` holds `install.sh`, `uninstall.sh`, the menu entry, the icons and the .deb's `postinst`, `postrm` and AppArmor profile. The .deb installs to `/opt/ReminderFoxAgain`, links `/usr/bin/reminderfoxagain` and makes `chrome-sandbox` setuid root. The tarball installs per user under `~/.local`, and its launcher adds `--no-sandbox` only where unprivileged user namespaces are off.
+- **macOS:** the packager builds arm64 and x64 apps. `build/macos/universal.mjs` joins them with `@electron/universal`, using `build/macos/lipo`, a small Python stand-in for Apple's `lipo`. `rcodesign` then signs the app ad hoc with `build/macos/entitlements.plist`. It isn't notarized, so users open it once with Open Anyway. `tools/check-macos-app.py` checks the result without a Mac: every Mach-O file is universal, every slice's page hashes match, the CodeResources seal holds, and the Info.plist keys are right.
+- **Platform code:** `src/main.js` picks the tray icon (`trayTemplate.png` on macOS), the application menu (macOS only), start at login (Run key, Login Items or `~/.config/autostart`), the badge and alarm attention per system. `src/ui/i18n-dom.js` adapts the Windows wording and turns Ctrl+ into ⌘ on macOS before translating. `RF_FAKE_PLATFORM=darwin|linux|win32`, `RF_PRINT_MENU`, `RF_FAKE_TRAYLESS` and `RF_TEST_AUTOSTART` let `tools/e2e.sh` check all three on Linux.
 
 | Path | What it is |
 | --- | --- |

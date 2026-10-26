@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.8.1 — Quick Start
+# ReminderFoxAgain 0.9.1 — Quick Start
 
 Oct 18, 2026 · David
 
@@ -11,6 +11,8 @@ Install the app, bring in your old reminders or start empty, then add your first
 2.  Double-click **Install or Update ReminderFoxAgain.bat**. No administrator rights are needed.
 
 3.  When it says it's done, ReminderFoxAgain starts. It also has a Start-menu and a desktop shortcut.
+
+The steps above are for Windows. **On a Mac**, unzip ReminderFoxAgain-0.9.1-macos-universal.zip, drag the app into Applications, and open it once with System Settings → Privacy & Security → **Open Anyway** (macOS 15 and later), or Control-click → **Open** (macOS 13–14). **On Linux**, run sudo apt install ./reminderfoxagain_0.9.1_amd64.deb, or unpack the .tar.gz and run ./install.sh.
 
 Already on 0.7.x? You only need the .bat, the .ps1 and the .asar. Coming from 0.6.x? Include the runtime parts too, so the date pickers speak your language. Your data is never touched by an update.
 
