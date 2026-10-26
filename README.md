@@ -6,6 +6,25 @@ Daniel Lee with Guenter Wahl, which kept people's birthdays, bills and to-dos on
 carries its ideas forward as a desktop app: it reads and writes ReminderFox's own iCalendar file, so everything its
 users built up comes along unchanged.
 
+## Screenshots
+
+**Reminders** — everything coming up, by month, with repeats, categories and alarms; the calendar panel and today's
+agenda on the right.
+
+![The Reminders view](docs/readme/reminders.png)
+
+**To-do lists** — due-by dates, repeats, starred items and completed ones struck through, in lists of your own.
+
+![A to-do list](docs/readme/todo-list.png)
+
+**Month** — reminders and to-dos on a month grid; double-click a day to add one.
+
+![The Month view](docs/readme/month.png)
+
+**Alarms** — a pop-up window when a reminder is due: snooze it, open it, mark it done or dismiss it.
+
+<img src="docs/readme/alarm.png" alt="The alarm window with two reminders" width="500">
+
 ## New in 0.9.1 — imports with other programs' dates
 
 - **Importing an .ics file no longer stops with "Could not extract integer from "Tue "".** Some programs write dates
@@ -379,6 +398,16 @@ touches it.
 
 To bring your reminders over from the add-on, choose **Import from your ReminderFox add-on** on the welcome page (or
 Settings → Data → Import from ReminderFox…), or import `reminderfox.ics` from your Firefox/Thunderbird profile's `reminderfox` folder (Settings → Data → Import an .ics file…).
+
+## Building it yourself
+
+- **From the source (the supported way):** clone this repository and run `./build.sh` (Windows), `./build-linux.sh` or
+  `./build-macos.sh` on Linux with Node.js 22 (see [Develop](#develop) below). Each build gives byte-identical files,
+  so you can check them against a release's `SHA256SUMS.txt`.
+- **From the build prompt pack:** [`build-prompt/`](build-prompt/) (and `ReminderFoxAgain-0.9.1-build-prompt.zip` on the
+  Releases page, which adds the full source as its reference) is a specification for an AI coding agent. It rebuilds
+  the app for Windows, Linux or macOS, or ports it to Android or iOS. A rebuild from it works and looks the same, but its
+  files won't match the release checksums.
 
 ## Develop
 
