@@ -1,0 +1,10 @@
+const sleep = (t) => new Promise((r) => setTimeout(r, t));
+const $ = (id) => document.getElementById(id);
+const set = (id, v) => { const el = $(id); if (el.type === 'checkbox') el.checked = v; else el.value = v; el.dispatchEvent(new Event('change', { bubbles: true })); };
+await window.__rf.setTab('todos'); await sleep(300);
+await window.__rf.openEditor({ kind: 'todo' }); await sleep(300);
+$('edSummary').value = 'File the expense report'; $('edSummary').dispatchEvent(new Event('input', { bubbles: true }));
+set('edNoDate', false); set('edDate', RF.dayKey(RF.addDays(RF.startOfDay(new Date()), 10)));
+set('edRmStart', 'b7'); set('edRmAt', '09:00'); set('edRmEvery', 'day'); set('edRmAfter', true);
+$('edCats').value = 'Work';
+$('edSummary').blur();

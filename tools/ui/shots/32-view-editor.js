@@ -1,0 +1,12 @@
+const sleep = (t) => new Promise((r) => setTimeout(r, t));
+const $ = (id) => document.getElementById(id);
+const X = window.__rfx; const R = window.__rf;
+await R.setSetting({ views: [{ name: 'Family & birthdays', criteria: [{ field: 'categories', value: 'Family, Birthday' }], date: null, includeTodos: false }] });
+await R.refresh(); await X.showView(0); await sleep(400);
+X.openViews(); await sleep(300); $('vwNew').click(); await sleep(300);
+$('veName').value = 'Appointments this month';
+const c = document.querySelector('#veCrit [data-k]'); c.querySelector('[data-f]').value = 'any'; c.querySelector('[data-f]').dispatchEvent(new Event('change', { bubbles: true })); await sleep(100);
+document.querySelector('#veCrit [data-k] [data-v]').value = 'dentist, doctor, appointment';
+$('veAdd').click(); await sleep(100);
+const rows = document.querySelectorAll('#veCrit [data-k]'); rows[1].querySelector('[data-f]').value = 'location'; rows[1].querySelector('[data-v]').value = 'Yonge';
+$('veDated').checked = true; $('veFromN').value = '0'; $('veToN').value = '1'; $('veToU').value = 'M'; $('veDated').dispatchEvent(new Event('change'));

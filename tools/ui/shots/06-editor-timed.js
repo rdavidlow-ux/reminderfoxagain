@@ -1,0 +1,12 @@
+const sleep = (t) => new Promise((r) => setTimeout(r, t));
+const $ = (id) => document.getElementById(id);
+const set = (id, v, ev = "input") => { const el = $(id); if (el.type === "checkbox") el.checked = v; else el.value = v; el.dispatchEvent(new Event(ev, { bubbles: true })); };
+const filter = async (f) => { set("remFilter", f, "change"); await sleep(500); };
+const row = (title) => [...document.querySelectorAll("#listView tbody tr")].find((tr) => tr.querySelector(".t") && tr.querySelector(".t").textContent === title);
+await window.__rf.openEditor({ kind: 'event' }); await sleep(200);
+set('edSummary', 'Piano lesson'); set('edAllDay', false, 'change'); set('edTime', '16:15'); set('edEndTime', '17:00');
+set('edFreq', 'WEEKLY', 'change');
+for (const b of document.querySelectorAll('#edDays button[aria-pressed="true"]')) b.click();
+document.querySelector('#edDays button[data-wd="WE"]').click(); document.querySelector('#edDays button[data-wd="TH"]').click();
+set('edEnds', 'count', 'change'); set('edCount', '8'); set('edAlarm', '30', 'change');
+set('edCats', 'Kids, Music'); set('edLocation', 'Music school'); $('edSummary').focus();

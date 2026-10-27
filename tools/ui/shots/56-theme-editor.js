@@ -1,0 +1,10 @@
+const sleep = (t) => new Promise((r) => setTimeout(r, t));
+const $ = (id) => document.getElementById(id);
+const X = window.__rfx;
+$('settingsBtn').click(); await sleep(300); X.showPanel('general'); await sleep(200);
+$('stThemeNew').click(); await sleep(400);
+const d = $('themeDlg');
+const setHex = (k, v) => { const el = d.querySelector(`[data-hex=${k}]`); el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); };
+d.querySelector('#thName').value = 'Forest';
+setHex('bg', '#0f1f14'); setHex('surface', '#16301f'); setHex('ink', '#e8f5e9'); setHex('accent', '#43a047'); setHex('star', '#ffca28');
+await sleep(300);
