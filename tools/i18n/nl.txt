@@ -853,4 +853,3 @@
 852| Zoals in het systeem ({s})
 853| Uw herinneringen, taken en alarmen als Mac-app — een eerbetoon aan de oorspronkelijke ReminderFox-add-on.
 854| Uw herinneringen, taken en alarmen als Linux-app — een eerbetoon aan de oorspronkelijke ReminderFox-add-on.
-855| Ook uw herinneringen en instellingen in {path} verwijderen? Kies Nee om ze te bewaren.

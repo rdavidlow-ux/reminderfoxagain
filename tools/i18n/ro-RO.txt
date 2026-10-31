@@ -853,4 +853,3 @@
 852| Ca în sistem ({s})
 853| Mementourile, sarcinile și alarmele dvs. ca aplicație Mac — un omagiu adus suplimentului ReminderFox original.
 854| Mementourile, sarcinile și alarmele dvs. ca aplicație Linux — un omagiu adus suplimentului ReminderFox original.
-855| Ștergeți și mementourile și setările din {path}? Alegeți Nu pentru a le păstra.

@@ -4,7 +4,7 @@ A Capacitor app per `mobile-common.md`. Read that file first.
 
 ## Project
 
-- App id `org.reminderfoxagain.app`, name **ReminderFoxAgain**, version name `0.9.2`, version code `902`.
+- App id `org.reminderfoxagain.app`, name **ReminderFoxAgain**, version name `0.9.1`, version code `901`.
 - `minSdkVersion 24`, `compileSdkVersion`/`targetSdkVersion` = the level Google Play currently requires (35 or newer).
   JDK 21, the Android Gradle Plugin from the Capacitor 7 template, Gradle wrapper committed.
 - Layout: `package.json` (Capacitor, plugins, esbuild, Playwright for tests), `capacitor.config.json`
@@ -70,7 +70,7 @@ ACTION_SEND) imports the file after a confirmation ("Import 12 items from family
 
 ## Deliverables
 
-`dist/android/`: `ReminderFoxAgain-0.9.2-debug.apk`, the release APK and AAB (signed or unsigned), `SHA256SUMS`; the
+`dist/android/`: `ReminderFoxAgain-0.9.1-debug.apk`, the release APK and AAB (signed or unsigned), `SHA256SUMS`; the
 project source zip (no `node_modules`, no `android/app/build`); phone and tablet screenshots; a README with install
 (sideload: allow "Install unknown apps"), update (install over the top keeps data) and uninstall (removes data — export
 or "Save a backup copy…" first).

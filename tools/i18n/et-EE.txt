@@ -853,4 +853,3 @@
 852| Nagu süsteemis ({s})
 853| Sinu meeldetuletused, ülesanded ja alarmid Maci rakendusena — austusavaldus algsele ReminderFoxi lisale.
 854| Sinu meeldetuletused, ülesanded ja alarmid Linuxi rakendusena — austusavaldus algsele ReminderFoxi lisale.
-855| Kas kustutada ka sinu meeldetuletused ja seaded kaustas {path}? Vali „Ei“, et need alles jätta.

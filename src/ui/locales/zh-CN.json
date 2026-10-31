@@ -874,6 +874,5 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "默认是狐狸、浅色或深色，与系统一致。加星标的项在每个主题中都有自己的颜色。高对比度使用黑、白、黄和青色，文字更大，线条更粗。",
  "As in your system ({s})": "与系统相同 ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "你的提醒、待办和闹钟，现在是一个 Mac 应用——向最初的 ReminderFox 附加组件致敬。",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "你的提醒、待办和闹钟，现在是一个 Linux 应用——向最初的 ReminderFox 附加组件致敬。",
- "Also delete your reminders and settings in {path}? Choose No to keep them.": "同时删除 {path} 中的提醒和设置吗？选择“否”可保留它们。"
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "你的提醒、待办和闹钟，现在是一个 Linux 应用——向最初的 ReminderFox 附加组件致敬。"
 }

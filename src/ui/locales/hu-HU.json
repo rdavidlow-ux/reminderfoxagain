@@ -874,6 +874,5 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Az alapértelmezett a Róka, világos vagy sötét a rendszernek megfelelően. A csillagozott elemeknek minden témában saját színük van. A nagy kontraszt fekete, fehér, sárga és cián színt használ nagyobb szöveggel és vastagabb vonalakkal.",
  "As in your system ({s})": "Mint a rendszerben ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Emlékeztetők, teendők és riasztások Mac-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Emlékeztetők, teendők és riasztások Linux-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.",
- "Also delete your reminders and settings in {path}? Choose No to keep them.": "Törli az emlékeztetőit és beállításait is ebből a mappából: {path}? A megtartásukhoz válassza a Nem lehetőséget."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Emlékeztetők, teendők és riasztások Linux-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt."
 }

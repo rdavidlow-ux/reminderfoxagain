@@ -853,4 +853,3 @@
 852| Come nel sistema ({s})
 853| I tuoi promemoria, attività e allarmi come app di Mac — un omaggio all'originale estensione ReminderFox.
 854| I tuoi promemoria, attività e allarmi come app di Linux — un omaggio all'originale estensione ReminderFox.
-855| Eliminare anche i promemoria e le impostazioni in {path}? Scegli No per conservarli.

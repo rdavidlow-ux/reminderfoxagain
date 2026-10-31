@@ -853,4 +853,3 @@
 852| Som i systemet ({s})
 853| Dina påminnelser, uppgifter och larm som en Mac-app — en hyllning till det ursprungliga ReminderFox-tillägget.
 854| Dina påminnelser, uppgifter och larm som en Linux-app — en hyllning till det ursprungliga ReminderFox-tillägget.
-855| Vill du även ta bort dina påminnelser och inställningar i {path}? Välj Nej för att behålla dem.

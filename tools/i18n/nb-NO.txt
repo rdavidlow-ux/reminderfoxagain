@@ -853,4 +853,3 @@
 852| Som i systemet ({s})
 853| Påminnelsene, oppgavene og alarmene dine som en Mac-app — en hyllest til det opprinnelige ReminderFox-tillegget.
 854| Påminnelsene, oppgavene og alarmene dine som en Linux-app — en hyllest til det opprinnelige ReminderFox-tillegget.
-855| Vil du også slette påminnelsene og innstillingene dine i {path}? Velg Nei for å beholde dem.

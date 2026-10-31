@@ -853,4 +853,3 @@
 852| Lykas yn it systeem ({s})
 853| Jo oantinkers, taken en alarms as Mac-app — in earbetoan oan de oarspronklike ReminderFox-add-on.
 854| Jo oantinkers, taken en alarms as Linux-app — in earbetoan oan de oarspronklike ReminderFox-add-on.
-855| Ek jo oantinkers en ynstellingen yn {path} fuortsmite? Kies Nee om se te hâlden.

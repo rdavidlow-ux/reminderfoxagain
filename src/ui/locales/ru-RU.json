@@ -1174,6 +1174,5 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "По умолчанию — Лиса, светлая или тёмная в соответствии с системой. Элементы со звёздочкой имеют свой цвет в каждой теме. Высокий контраст использует чёрный, белый, жёлтый и голубой с более крупным текстом и толстыми линиями.",
  "As in your system ({s})": "Как в системе ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Ваши напоминания, задачи и сигналы в приложении для Mac — дань уважения оригинальному дополнению ReminderFox.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Ваши напоминания, задачи и сигналы в приложении для Linux — дань уважения оригинальному дополнению ReminderFox.",
- "Also delete your reminders and settings in {path}? Choose No to keep them.": "Удалить также ваши напоминания и настройки в {path}? Выберите «Нет», чтобы сохранить их."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Ваши напоминания, задачи и сигналы в приложении для Linux — дань уважения оригинальному дополнению ReminderFox."
 }

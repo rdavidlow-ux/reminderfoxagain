@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.9.2
+# ReminderFoxAgain 0.9.1
 
 A desktop app for Windows, macOS and Linux for reminders, to-dos and pop-up alarms — a tribute to the original
 [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and
@@ -82,8 +82,7 @@ macOS and Linux.
 
 ## What's new
 
-**0.9.2** installs on Windows with a standard installer, `ReminderFoxAgain-Setup-0.9.2.exe`, instead of a .bat,
-a PowerShell script and runtime parts. **0.9.1** reads dates that other programs write their own way, so importing their .ics files no longer stops with
+**0.9.1** reads dates that other programs write their own way, so importing their .ics files no longer stops with
 "Could not extract integer from "Tue "". **0.9.0** brought the macOS and Linux apps. Every release is described in
 [CHANGELOG.md](CHANGELOG.md).
 
@@ -93,7 +92,7 @@ Download the files for your system from the [Releases](https://github.com/rdavid
 
 ### macOS
 
-1. Download `ReminderFoxAgain-0.9.2-macos-universal.zip` and double-click it to unzip.
+1. Download `ReminderFoxAgain-0.9.1-macos-universal.zip` and double-click it to unzip.
 2. Drag **ReminderFoxAgain.app** into **Applications**.
 3. The first time, macOS says it can't check the app for malicious software: it is signed ad hoc, not by an Apple
    developer account, and not notarized. Open it once anyway — on macOS 15 Sequoia and later, try to open it, then
@@ -105,17 +104,17 @@ it, drag it to the Bin. Your data is in `~/Library/Application Support/ReminderF
 
 ### Linux
 
-**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.2_amd64.deb` (`arm64` for ARM) and run
-`sudo apt install ./reminderfoxagain_0.9.2_amd64.deb` (or open it with your software centre). Updating is the same
+**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.1_amd64.deb` (`arm64` for ARM) and run
+`sudo apt install ./reminderfoxagain_0.9.1_amd64.deb` (or open it with your software centre). Updating is the same
 command with the newer file; `sudo apt remove reminderfoxagain` removes it. The package puts the app in
 `/opt/ReminderFoxAgain` with the command `reminderfoxagain`, a menu entry and icons, and sets up Chromium's sandbox
 (on Ubuntu 24.04 and later it adds the AppArmor profile Electron apps need).
 
-**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.2-linux-x64.tar.gz` (or `-arm64`), then:
+**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.1-linux-x64.tar.gz` (or `-arm64`), then:
 
 ```sh
-tar -xzf ReminderFoxAgain-0.9.2-linux-x64.tar.gz
-cd ReminderFoxAgain-0.9.2-linux-x64
+tar -xzf ReminderFoxAgain-0.9.1-linux-x64.tar.gz
+cd ReminderFoxAgain-0.9.1-linux-x64
 ./install.sh          # again with a newer download to update
 ./uninstall.sh        # removes the app, keeps your reminders (--purge removes them too)
 ```
@@ -130,20 +129,22 @@ running with the window closed. Your data is in `~/.config/ReminderFoxAgain`.
 
 ### Windows (per user, no administrator rights)
 
-Download `ReminderFoxAgain-Setup-0.9.2.exe` and run it. It installs for you alone, without administrator rights, to
-`%LOCALAPPDATA%\Programs\ReminderFoxAgain`, with Start-menu and desktop shortcuts and an entry in Settings → Apps.
+Put every file from `dist/release/` in one folder and double-click **Install or Update ReminderFoxAgain.bat**.
 
-To update, run the newer Setup: it closes ReminderFoxAgain if it's running and replaces the program, including an
-install made by the earlier .bat setup (0.9.1 and before). To uninstall, use Settings → Apps → ReminderFoxAgain; it asks
-whether to delete your reminders too (No is the default). For scripted installs: `ReminderFoxAgain-Setup-0.9.2.exe /S`
-installs silently, and `"Uninstall ReminderFoxAgain.exe" /S` uninstalls silently and keeps your reminders.
+| File | Needed for |
+| --- | --- |
+| `Install or Update ReminderFoxAgain.bat` | always |
+| `ReminderFoxAgain-Setup.ps1` | always |
+| `ReminderFoxAgain-app-0.9.1.asar` | always |
+| `ReminderFoxAgain-runtime-0.9.1.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
 
-Data lives in `%APPDATA%\ReminderFoxAgain` (`reminders.ics`, `state.json`, daily `backups\`; `archive.ics` only from
-earlier versions, emptied on start); installing and updating never touch it.
-
-The installer isn't code-signed yet, so Windows SmartScreen may say it "protected your PC" the first time: choose
-**More info** → **Run anyway**. Some antivirus programs may also flag a new, unsigned app; if that happens, restore it
-from quarantine and report it to the antivirus maker as a false positive.
+Updating a 0.7.x, 0.8.x or 0.9.x install needs only the .bat, the .ps1 and the .asar; the setup reuses the installed runtime. When
+updating from 0.6.x, include the runtime parts too: the earlier runtime has English date pickers only, and the setup
+replaces it when the parts are there (without them the app still works and is translated, but the date and time
+pickers stay in English). The
+app goes to `%LOCALAPPDATA%\Programs\ReminderFoxAgain`, with Start-menu and desktop shortcuts and an entry in Settings → Apps.
+Data lives in `%APPDATA%\ReminderFoxAgain` (`reminders.ics`, `state.json`, daily `backups\`; `archive.ics` only from earlier versions, emptied on start); updating never
+touches it.
 
 To bring your reminders over from the add-on, choose **Import from your ReminderFox add-on** on the welcome page (or
 Settings → Data → Import from ReminderFox…), or import `reminderfox.ics` from your Firefox/Thunderbird profile's `reminderfox` folder (Settings → Data → Import an .ics file…).
@@ -153,7 +154,7 @@ Settings → Data → Import from ReminderFox…), or import `reminderfox.ics` f
 - **From the source (the supported way):** clone this repository and run `./build.sh` (Windows), `./build-linux.sh` or
   `./build-macos.sh` on Linux with Node.js 22 (see [Develop](#develop) below). Each build gives byte-identical files,
   so you can check them against a release's `SHA256SUMS.txt`.
-- **From the build prompt pack:** [`build-prompt/`](build-prompt/) (and `ReminderFoxAgain-0.9.2-build-prompt.zip` on the
+- **From the build prompt pack:** [`build-prompt/`](build-prompt/) (and `ReminderFoxAgain-0.9.1-build-prompt.zip` on the
   Releases page, which adds the full source as its reference) is a specification for an AI coding agent. It rebuilds
   the app for Windows, Linux or macOS, or ports it to Android or iOS. A rebuild from it works and looks the same, but its
   files won't match the release checksums.
@@ -167,7 +168,7 @@ npm ci
 npm test                 # unit tests (node:test); build.sh runs them in seven time zones
 npm start                # run the app (RF_DATA_DIR=<folder> keeps your real data out of it)
 node tools/i18n/build.js # rebuild src/ui/locales/ after editing tools/i18n/*.txt
-./build.sh               # Windows x64 installer in dist/release/ (needs makensis: apt install nsis; identical hashes on every build)
+./build.sh               # Windows x64 release in dist/release/ (identical hashes on every build)
 ./build-linux.sh         # Linux .tar.gz and .deb, x64 and arm64, in dist/release-linux/ (ARCHS=x64 for one)
 ./build-macos.sh         # macOS universal .zip in dist/release-macos/ (on Linux; needs rcodesign for the ad-hoc signature)
 ```
@@ -181,18 +182,18 @@ node tools/i18n/build.js # rebuild src/ui/locales/ after editing tools/i18n/*.tx
 | `src/ui/locales/` | One JSON file per language, built from `tools/i18n/` |
 | `tools/i18n/` | `catalog.txt` (every English string, the keys), `<language>.txt` (its translations, one numbered line each) and `build.js` (checks placeholders and writes `src/ui/locales/`) |
 | `test/store.test.js`, `test/i18n.test.js` | 31 data-layer and 5 translation unit tests against `test/reminderfox-addon-sample.ics` and `test/reminderfox-addon-full.ics` (`test/reminderfox-addon-prefs.js` is an add-on profile's prefs for the list import check) |
-| `installer/` | `ReminderFoxAgain.nsi` (the NSIS installer script) and `wizard.bmp`; `tools/installer-lang.js` writes its languages and strings from `src/ui/locales/` |
+| `installer/` | Setup template (filled in by `build.sh` via `fill-setup.sh`) and the .bat |
 | `build/linux/` | install.sh, uninstall.sh, the menu entry, icons and the .deb's scripts and AppArmor profile |
 | `build/macos/` | The icon, Info.plist additions, entitlements, `universal.mjs` (joins the arm64 and x64 apps) and `lipo` (a small stand-in for Apple's, so the universal app builds on Linux) |
 | `tools/` | Sample data, screenshots, UI checks and installer tests |
 
-### Checks (need Xvfb; the installer test needs Wine with 64-bit support)
+### Checks (need Xvfb; the installer test needs PowerShell 7)
 
 ```sh
 for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done
 tools/e2e.sh             # UI checks (incl. every theme's contrast and starred colours, and German, French from the system locale, Japanese picked in Settings, Arabic right to left, and the continuous alarm sound in the alarm window): every line shows the value and the expected one; no WRONG/ERROR lines
-tools/test-installer.sh  # 19 checks of the Windows installer under Wine (install, update over 0.9.1, uninstall)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.2-linux-x64.tar.gz   # 19 checks in a fake home
+tools/test-setup.sh      # 20 checks (optional argument: the pwsh binary)
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.1-linux-x64.tar.gz   # 19 checks in a fake home
 tools/shots.sh shots/    # every screen, to compare with reference/screenshots/
 tools/screenshot.sh <dataDir> <out.png> [script.js]
 node tools/sounds.js <outDir>   # the built-in alarm sounds as .wav files (for platforms that need sound files)
@@ -213,7 +214,7 @@ version. It is distributed in the hope that it will be useful, but WITHOUT ANY W
 warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See [LICENSE](LICENSE) for the full text.
 
 It uses [ical.js](https://github.com/kewisch/ical.js) (Mozilla Public License 2.0) and [Electron](https://www.electronjs.org/)
-(MIT), whose licences allow this; the Windows installer, the Linux packages and the macOS app carry Electron's and Chromium's own licence files.
+(MIT), whose licences allow this; the runtime parts, the Linux packages and the macOS app carry Electron's and Chromium's own licence files.
 
 ## With thanks
 

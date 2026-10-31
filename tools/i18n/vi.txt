@@ -853,4 +853,3 @@
 852| Như trong hệ thống ({s})
 853| Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Mac — lời tri ân tiện ích ReminderFox gốc.
 854| Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Linux — lời tri ân tiện ích ReminderFox gốc.
-855| Xóa cả lời nhắc và cài đặt của bạn trong {path}? Chọn Không để giữ lại.

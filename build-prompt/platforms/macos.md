@@ -45,9 +45,9 @@ pinned. Nothing else at runtime.
    `APPLE_ID`, `APPLE_TEAM_ID`, `APPLE_APP_PASSWORD` and a Developer ID certificate are available, sign with it and
    notarize (`xcrun notarytool submit --wait`, then `xcrun stapler staple`). Otherwise say the build is ad-hoc signed.
 4. **Release files**:
-   - `ReminderFoxAgain-0.9.2-macos-universal.zip`: `ditto -c -k --keepParent` on a Mac, or on Linux `zip -y -r -X` (keep
+   - `ReminderFoxAgain-0.9.1-macos-universal.zip`: `ditto -c -k --keepParent` on a Mac, or on Linux `zip -y -r -X` (keep
      the symlinks) after touching every file to `SOURCE_DATE_EPOCH`;
-   - `ReminderFoxAgain-0.9.2.dmg` (Mac only): `hdiutil create -volname ReminderFoxAgain -srcfolder <dir with the .app
+   - `ReminderFoxAgain-0.9.1.dmg` (Mac only): `hdiutil create -volname ReminderFoxAgain -srcfolder <dir with the .app
      and an /Applications symlink> -format UDZO`.
    Split anything over a delivery limit into 28 MiB parts with a `join.command`.
 5. Two builds in a row of the zip must be identical. The dmg and notarized builds needn't be.

@@ -1054,6 +1054,5 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "El predeterminado es Zorro, claro u oscuro según el sistema. Los elementos destacados tienen su propio color en cada tema. Alto contraste usa negro, blanco, amarillo y cian con texto más grande y líneas más gruesas.",
  "As in your system ({s})": "Como en el sistema ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Sus recordatorios, tareas y alarmas como aplicación de Mac: un homenaje al complemento ReminderFox original.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Sus recordatorios, tareas y alarmas como aplicación de Linux: un homenaje al complemento ReminderFox original.",
- "Also delete your reminders and settings in {path}? Choose No to keep them.": "¿Eliminar también sus recordatorios y su configuración en {path}? Elija No para conservarlos."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Sus recordatorios, tareas y alarmas como aplicación de Linux: un homenaje al complemento ReminderFox original."
 }

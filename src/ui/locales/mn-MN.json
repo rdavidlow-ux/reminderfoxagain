@@ -874,6 +874,5 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Өгөгдмөл нь системийн дагуу Үнэг, цайвар эсвэл бараан. Одтой зүйлс загвар бүрт өөрийн өнгөтэй. Өндөр ялгарал нь хар, цагаан, шар, цэнхэр өнгийг том үсэг, бүдүүн зураастай хэрэглэнэ.",
  "As in your system ({s})": "Системтэй адил ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Таны сануулга, хийх ажил, сэрүүлэг Mac програмаар — анхны ReminderFox нэмэлтэд зориулсан хүндэтгэл.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Таны сануулга, хийх ажил, сэрүүлэг Linux програмаар — анхны ReminderFox нэмэлтэд зориулсан хүндэтгэл.",
- "Also delete your reminders and settings in {path}? Choose No to keep them.": "{path} доторх сануулга, тохиргоог мөн устгах уу? Хадгалах бол «Үгүй»-г сонгоно уу."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Таны сануулга, хийх ажил, сэрүүлэг Linux програмаар — анхны ReminderFox нэмэлтэд зориулсан хүндэтгэл."
 }

@@ -853,4 +853,3 @@
 852| Jak w systemie ({s})
 853| Twoje przypomnienia, zadania i alarmy jako aplikacja Mac — hołd dla oryginalnego dodatku ReminderFox.
 854| Twoje przypomnienia, zadania i alarmy jako aplikacja Linux — hołd dla oryginalnego dodatku ReminderFox.
-855| Usunąć także przypomnienia i ustawienia w {path}? Wybierz Nie, aby je zachować.
