@@ -853,3 +853,4 @@
 852| Comme dans le système ({s})
 853| Vos rappels, tâches et alarmes dans une application Mac — un hommage au module ReminderFox original.
 854| Vos rappels, tâches et alarmes dans une application Linux — un hommage au module ReminderFox original.
+855| Supprimer aussi vos rappels et vos réglages dans {path} ? Choisissez Non pour les conserver.

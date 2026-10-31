@@ -853,3 +853,4 @@
 852| Sistemdeki gibi ({s})
 853| Hatırlatıcılarınız, görevleriniz ve alarmlarınız bir Mac uygulamasında — özgün ReminderFox eklentisine bir saygı duruşu.
 854| Hatırlatıcılarınız, görevleriniz ve alarmlarınız bir Linux uygulamasında — özgün ReminderFox eklentisine bir saygı duruşu.
+855| {path} içindeki hatırlatıcılarınız ve ayarlarınız da silinsin mi? Saklamak için Hayır'ı seçin.

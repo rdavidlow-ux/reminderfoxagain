@@ -874,5 +874,6 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "既定は システムに合わせてキツネ、ライト、ダークのいずれかです。スター付きの項目はどのテーマでも独自の色になります。ハイコントラストは黒、白、黄、シアンを使い、文字を大きく、線を太くします。",
  "As in your system ({s})": "システムと同じ ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "リマインダー、ToDo、アラームを Mac アプリで — オリジナルの ReminderFox アドオンへのトリビュートです。",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "リマインダー、ToDo、アラームを Linux アプリで — オリジナルの ReminderFox アドオンへのトリビュートです。"
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "リマインダー、ToDo、アラームを Linux アプリで — オリジナルの ReminderFox アドオンへのトリビュートです。",
+ "Also delete your reminders and settings in {path}? Choose No to keep them.": "{path} にあるリマインダーと設定も削除しますか? 残す場合は「いいえ」を選んでください。"
 }

@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.9.1 — Quick Start
+# ReminderFoxAgain 0.9.2 — Quick Start
 
 Oct 18, 2026 · David
 
@@ -6,15 +6,15 @@ Install the app, bring in your old reminders or start empty, then add your first
 
 ## 1. Install
 
-1.  Put all the release files in one folder: the .bat, the .ps1, the .asar and the six runtime parts.
+1.  Download **ReminderFoxAgain-Setup-0.9.2.exe** and run it. No administrator rights are needed.
 
-2.  Double-click **Install or Update ReminderFoxAgain.bat**. No administrator rights are needed.
+2.  If Windows says "Windows protected your PC", choose **More info** → **Run anyway**. The installer isn't code-signed yet.
 
-3.  When it says it's done, ReminderFoxAgain starts. It also has a Start-menu and a desktop shortcut.
+3.  Click **Install**, then **Finish**. ReminderFoxAgain starts, and it also has a Start-menu and a desktop shortcut.
 
-The steps above are for Windows. **On a Mac**, unzip ReminderFoxAgain-0.9.1-macos-universal.zip, drag the app into Applications, and open it once with System Settings → Privacy & Security → **Open Anyway** (macOS 15 and later), or Control-click → **Open** (macOS 13–14). **On Linux**, run sudo apt install ./reminderfoxagain_0.9.1_amd64.deb, or unpack the .tar.gz and run ./install.sh.
+The steps above are for Windows. **On a Mac**, unzip ReminderFoxAgain-0.9.2-macos-universal.zip, drag the app into Applications, and open it once with System Settings → Privacy & Security → **Open Anyway** (macOS 15 and later), or Control-click → **Open** (macOS 13–14). **On Linux**, run sudo apt install ./reminderfoxagain_0.9.2_amd64.deb, or unpack the .tar.gz and run ./install.sh.
 
-Already on 0.7.x? You only need the .bat, the .ps1 and the .asar. Coming from 0.6.x? Include the runtime parts too, so the date pickers speak your language. Your data is never touched by an update.
+Already have ReminderFoxAgain? Run the new Setup file; it updates the installed copy, including one made by the earlier .bat setup. Your data is never touched by an update.
 
 ## 2. Start with an existing reminder file
 

@@ -1054,5 +1054,6 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Vaikimisi on Rebane, hele või tume vastavalt süsteemile. Tärniga kirjetel on igas teemas oma värv. Suur kontrast kasutab musta, valget, kollast ja tsüaani ning suuremat teksti ja paksemaid jooni.",
  "As in your system ({s})": "Nagu süsteemis ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Sinu meeldetuletused, ülesanded ja alarmid Maci rakendusena — austusavaldus algsele ReminderFoxi lisale.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Sinu meeldetuletused, ülesanded ja alarmid Linuxi rakendusena — austusavaldus algsele ReminderFoxi lisale."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Sinu meeldetuletused, ülesanded ja alarmid Linuxi rakendusena — austusavaldus algsele ReminderFoxi lisale.",
+ "Also delete your reminders and settings in {path}? Choose No to keep them.": "Kas kustutada ka sinu meeldetuletused ja seaded kaustas {path}? Vali „Ei“, et need alles jätta."
 }

@@ -1054,5 +1054,6 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Oletus on Kettu, vaalea tai tumma järjestelmän mukaan. Tähdellä merkityillä kohdilla on oma värinsä joka teemassa. Suuri kontrasti käyttää mustaa, valkoista, keltaista ja syaania sekä isompaa tekstiä ja paksumpia viivoja.",
  "As in your system ({s})": "Kuten järjestelmässä ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Muistutuksesi, tehtäväsi ja hälytyksesi Mac-sovelluksena — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Muistutuksesi, tehtäväsi ja hälytyksesi Linux-sovelluksena — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Muistutuksesi, tehtäväsi ja hälytyksesi Linux-sovelluksena — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle.",
+ "Also delete your reminders and settings in {path}? Choose No to keep them.": "Poistetaanko myös muistutuksesi ja asetuksesi kansiosta {path}? Valitse Ei, jos haluat säilyttää ne."
 }

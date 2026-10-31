@@ -1018,5 +1018,6 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Is é an réamhshocrú Sionnach, geal nó dorcha de réir an chórais. Tá a ndath féin ag míreanna réaltaithe i ngach téama. Úsáideann ardchodarsnacht dubh, bán, buí agus cian le téacs níos mó agus línte níos troime.",
  "As in your system ({s})": "Mar atá sa chóras ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Do mheabhrúcháin, do thascanna agus d’aláraim mar aip Mac — ómós don bhreiseán ReminderFox bunaidh.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Do mheabhrúcháin, do thascanna agus d’aláraim mar aip Linux — ómós don bhreiseán ReminderFox bunaidh."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Do mheabhrúcháin, do thascanna agus d’aláraim mar aip Linux — ómós don bhreiseán ReminderFox bunaidh.",
+ "Also delete your reminders and settings in {path}? Choose No to keep them.": "Scrios do mheabhrúcháin agus do shocruithe in {path} freisin? Roghnaigh Níl chun iad a choinneáil."
 }

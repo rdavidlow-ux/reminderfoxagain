@@ -853,3 +853,4 @@
 852| Mint a rendszerben ({s})
 853| Emlékeztetők, teendők és riasztások Mac-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.
 854| Emlékeztetők, teendők és riasztások Linux-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.
+855| Törli az emlékeztetőit és beállításait is ebből a mappából: {path}? A megtartásukhoz válassza a Nem lehetőséget.

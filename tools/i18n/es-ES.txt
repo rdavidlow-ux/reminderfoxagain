@@ -853,3 +853,4 @@
 852| Como en el sistema ({s})
 853| Sus recordatorios, tareas y alarmas como aplicación de Mac: un homenaje al complemento ReminderFox original.
 854| Sus recordatorios, tareas y alarmas como aplicación de Linux: un homenaje al complemento ReminderFox original.
+855| ¿Eliminar también sus recordatorios y su configuración en {path}? Elija No para conservarlos.

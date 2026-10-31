@@ -888,3 +888,5 @@ Default is Fox, light or dark to match your system. Starred items have their own
 As in your system ({s})
 Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.
 Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.
+# 0.9.2: the Windows uninstaller
+Also delete your reminders and settings in {path}? Choose No to keep them.

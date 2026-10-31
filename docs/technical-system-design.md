@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.9.1 — Technical System Design
+# ReminderFoxAgain 0.9.2 — Technical System Design
 
 Oct 18, 2026 · David
 
@@ -34,13 +34,13 @@ ReminderFoxAgain is a tribute to the original ReminderFox add-on for Firefox and
 
 ### Constraints
 
-| Constraint                                            | Consequence                                                                                                               |
-|-------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| Data must still open in the original add-on           | Only standard and X-REMINDERFOX-\* properties in reminders.ics; app-only data (archive, alarm state) lives in other files |
-| No admin rights                                       | Installs to %LOCALAPPDATA%\Programs; data in %APPDATA%\ReminderFoxAgain                                                   |
-| Release files under about 30 MB each                  | Runtime shipped as a deterministic zip in 28 MiB parts                                                                    |
-| Windows PowerShell 5.1 present on every Windows 11 PC | Installer is a .bat + .ps1, no installer framework                                                                        |
-| One runtime dependency                                | ical.js 2.2.1; everything else is the Node and Electron standard library                                                  |
+| Constraint                                                     | Consequence                                                                                                               |
+|----------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| Data must still open in the original add-on                    | Only standard and X-REMINDERFOX-\* properties in reminders.ics; app-only data (archive, alarm state) lives in other files |
+| No admin rights                                                | Installs to %LOCALAPPDATA%\Programs; data in %APPDATA%\ReminderFoxAgain                                                   |
+| Release files under about 30 MB each                           | Runtime shipped as a deterministic zip in 28 MiB parts                                                                    |
+| The Windows installer is built on Linux with makensis (NSIS 3) | One NSIS Setup .exe, per user, no PowerShell (0.9.2; a .bat + .ps1 before)                                                |
+| One runtime dependency                                         | ical.js 2.2.1; everything else is the Node and Electron standard library                                                  |
 
 ## 2. Architecture
 
@@ -325,39 +325,37 @@ build.sh produces dist/release/, and two builds in a row give the same SHA-256 f
 
 3.  The en-US and en-GB Chromium locales are kept, plus the 28 that the app's languages map to (CHROMIUM_LOCALES in src/main.js): 30 .pak files, so date and time pickers follow the chosen language.
 
-4.  The app file is copied as ReminderFoxAgain-app-\<ver\>.asar.
+4.  tools/installer-lang.js writes the installer's languages and its own strings from src/ui/locales/ (dist/lang.nsh).
 
-5.  The runtime (everything except the asar) is touched to a fixed time (2026-01-01 UTC), zipped in sorted order with zip -X -D, and split into 28 MiB parts.
+5.  Every file of the app is touched to a fixed time (2026-01-01 UTC), and makensis compiles installer/ReminderFoxAgain.nsi (64-bit stub, solid LZMA) into ReminderFoxAgain-Setup-\<ver\>.exe. With SOURCE_DATE_EPOCH set, two builds are byte-identical.
 
-6.  fill-setup.sh writes the version, runtime version, part count and hashes into the setup template, and the .bat is written with CRLF line endings.
+6.  Optional: SIGN_CERT/SIGN_PASS sign the Setup file with osslsigncode.
 
 ### Installer
 
-Install or Update ReminderFoxAgain.bat runs ReminderFoxAgain-Setup.ps1 with Windows PowerShell 5.1 (it also runs under PowerShell 7 for the tests). The setup:
+ReminderFoxAgain-Setup-\<ver\>.exe (NSIS, RequestExecutionLevel user) installs for the current user only, in the app's languages (the Windows display language picks one). It:
 
-1.  Chooses a runtime: the installed one if its Electron version matches, else the parts next to the script (checked against their SHA-256). Otherwise it stops with a message naming the missing parts. From 0.7.0, an installed runtime without locales\de.pak (0.6.x kept only three locales) is replaced when the parts are present; without them it is kept, with a note that date pickers stay in English.
+1.  closes a running ReminderFoxAgain (taskkill /IM ReminderFoxAgain.exe);
 
-2.  Builds the new program folder beside the old one and swaps it into %LOCALAPPDATA%\Programs\ReminderFoxAgain.
+2.  writes the new copy and its uninstaller to %LOCALAPPDATA%\Programs\ReminderFoxAgain.new, then swaps folders (the old one becomes .old and is removed only after the new one is in place; if the swap fails, the old copy is put back);
 
-3.  Creates the Start-menu and desktop shortcuts, the Settings → Apps entry (HKCU Uninstall key, with quiet uninstall) and the Run key when Start with Windows is on.
+3.  makes the Start-menu and desktop shortcuts (the same names as the earlier setup, so they are replaced) and the Settings → Apps entry under HKCU\\\Uninstall\ReminderFoxAgain, with a quiet uninstall string.
 
-4.  Writes Uninstall ReminderFoxAgain.ps1. It removes the program, the shortcuts and the keys, and removes the data folder only if the user types YES.
-
-An update from 0.7.0 or later needs only the .bat, the .ps1 and the .asar (the asar now carries the 34 locale files). An update from 0.6.x should include the runtime parts.
+The uninstaller closes the app, removes the shortcuts, the Settings → Apps entry, the start-at-login value and the program folder, then asks whether to delete %APPDATA%\ReminderFoxAgain (No is the default; /S never deletes it). An install made by the earlier .bat setup is replaced in place, including its PowerShell uninstaller and registry entry.
 
 ### macOS and Linux (0.9.0)
 
 The same source runs on all three systems; src/main.js branches on process.platform (or RF_FAKE_PLATFORM in tests).
 
-| Concern         | Windows                             | macOS                                          | Linux                                                                |
-|-----------------|-------------------------------------|------------------------------------------------|----------------------------------------------------------------------|
-| Data folder     | %APPDATA%\ReminderFoxAgain          | ~/Library/Application Support/ReminderFoxAgain | ~/.config/ReminderFoxAgain                                           |
-| Tray            | tray.png in the system tray         | trayTemplate.png in the menu bar               | tray.png via StatusNotifier; on GNOME without a watcher, close quits |
-| Start at login  | Run key                             | Login Items                                    | ~/.config/autostart/reminderfoxagain.desktop                         |
-| Alarm attention | flashFrame                          | Dock bounce + notification                     | flashFrame + notification                                            |
-| Badge           | taskbar overlay icon                | Dock badge                                     | setBadgeCount + tray image                                           |
-| Menu            | none                                | application menu (appMenuTemplate())           | none                                                                 |
-| Release         | .bat + .ps1 + .asar + runtime parts | universal .zip, ad-hoc signed                  | .deb and .tar.gz, x64 and arm64                                      |
+| Concern         | Windows                     | macOS                                          | Linux                                                                |
+|-----------------|-----------------------------|------------------------------------------------|----------------------------------------------------------------------|
+| Data folder     | %APPDATA%\ReminderFoxAgain  | ~/Library/Application Support/ReminderFoxAgain | ~/.config/ReminderFoxAgain                                           |
+| Tray            | tray.png in the system tray | trayTemplate.png in the menu bar               | tray.png via StatusNotifier; on GNOME without a watcher, close quits |
+| Start at login  | Run key                     | Login Items                                    | ~/.config/autostart/reminderfoxagain.desktop                         |
+| Alarm attention | flashFrame                  | Dock bounce + notification                     | flashFrame + notification                                            |
+| Badge           | taskbar overlay icon        | Dock badge                                     | setBadgeCount + tray image                                           |
+| Menu            | none                        | application menu (appMenuTemplate())           | none                                                                 |
+| Release         | one NSIS Setup .exe (0.9.2) | universal .zip, ad-hoc signed                  | .deb and .tar.gz, x64 and arm64                                      |
 
 build-linux.sh and build-macos.sh build on Linux and are deterministic. The macOS app is joined from arm64 and x64 builds by @electron/universal with a Python stand-in for lipo, then signed ad hoc with rcodesign. The renderer adapts Windows wording and, on macOS, Ctrl+ shortcuts to ⌘ in i18n-dom.js before translation.
 
@@ -370,7 +368,7 @@ build-linux.sh and build-macos.sh build on Linux and are deterministic. The macO
 | Unit          | test/store.test.js against the real add-on sample file: parsing, round trips, repeats, completion, remind-until-completed, ages, archive, order, lists, categories, import options; test/i18n.test.js: language choice, complete locale files, placeholders, plurals, ordinals, composed text; the store clock is injected | 35 tests (30 + 5) × 7 time zones                                                                                                                                                                                                                                                             | npm test; every build |
 | UI end-to-end | tools/e2e.sh: the real app under Xvfb runs a script inside the page and prints E2E name: got (expected want) lines; any WRONG or ERROR fails                                                                                                                                                                               | 532 checks in 27 runs, including layouts at 990 and 1180 px, runs in German, French (as the system language), Arabic and a language picked in Settings, the 0.8.0 view options and the continuous sound in the alarm window, keeping your place, the mini-calendar start and your own themes | Before a release      |
 | Screens       | tools/shots.sh: 70 screenshots of every screen and theme, plus the Import dialog, German, Japanese and Arabic, and the 0.8.0 toolbars, columns, Manage reminders and Order, and the theme editor and a custom theme, compared by eye                                                                                       | 70 images                                                                                                                                                                                                                                                                                    | Before a release      |
-| Installer     | tools/test-setup.sh with pwsh 7: fresh install, update, reuse of the runtime, replacing a 0.6.x runtime, damaged parts, uninstall with and without YES                                                                                                                                                                     | 20 checks                                                                                                                                                                                                                                                                                    | Before a release      |
+| Installer     | tools/test-installer.sh under Wine: fresh install, update over a 0.9.1 (.bat) install, repair, silent uninstall keeping your reminders; tools/test-linux-install.sh: the Linux tarball; tools/check-macos-app.py: the macOS app                                                                                            | 19 + 19 checks                                                                                                                                                                                                                                                                               | Before a release      |
 | Build         | Two builds, hashes compared                                                                                                                                                                                                                                                                                                | 9 files                                                                                                                                                                                                                                                                                      | Before a release      |
 
 ### Risks

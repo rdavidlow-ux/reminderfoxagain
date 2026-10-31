@@ -853,3 +853,4 @@
 852| Ako v systéme ({s})
 853| Vaše pripomienky, úlohy a alarmy ako aplikácia pre Mac — pocta pôvodnému doplnku ReminderFox.
 854| Vaše pripomienky, úlohy a alarmy ako aplikácia pre Linux — pocta pôvodnému doplnku ReminderFox.
+855| Odstrániť aj pripomienky a nastavenia v priečinku {path}? Ak ich chcete ponechať, zvoľte Nie.

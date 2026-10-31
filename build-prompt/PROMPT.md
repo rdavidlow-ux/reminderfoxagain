@@ -1,9 +1,9 @@
-# Build ReminderFoxAgain 0.9.1
+# Build ReminderFoxAgain 0.9.2
 
 > **TARGET PLATFORM:** `windows` ← change this word to `windows`, `linux`, `macos`, `android` or `ios` before sending.
 > If it is missing or unclear, ask the user which one, once, before doing anything else.
 
-Build **ReminderFoxAgain 0.9.1** for the target platform above: an app for reminders, to-dos and pop-up alarms that
+Build **ReminderFoxAgain 0.9.2** for the target platform above: an app for reminders, to-dos and pop-up alarms that
 is a tribute to the original **ReminderFox** add-on for Firefox and Thunderbird (https://github.com/tommut/reminderfox),
 created by Tom Mutdosch and Daniel Lee with Guenter Wahl. Honour its work: it must read and write ReminderFox's own
 iCalendar file so its users keep everything they built up, refer to it warmly in the UI and docs ("the original
@@ -19,7 +19,7 @@ Where both are silent, the reference source (below) decides.
 
 | Path | Use |
 | --- | --- |
-| `reference/source/` | The complete source of ReminderFoxAgain 0.9.1 (Windows, macOS and Linux from one source): `src/` (store, main process, preload, UI), `test/` (36 unit tests: 31 for the Store, 5 for the translations; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
+| `reference/source/` | The complete source of ReminderFoxAgain 0.9.2 (Windows, macOS and Linux from one source): `src/` (store, main process, preload, UI), `test/` (36 unit tests: 31 for the Store, 5 for the translations; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
 | `reference/screenshots/*.png` | 70 screenshots of every screen, dialog, theme and the alarm and pop-up windows, made from `tools/sample-data.js` with a 1180×760 main window. The target look on desktop. Mobile layouts follow `platforms/mobile-common.md`. |
 | `reference/assets/` | App icon (`icon.png` 256 px, `icon.ico` 16–256 px, `tray.png` 32 px), vector masters (`svg/`), and every platform's icon set already made: `png/` (16–1024 px), `linux/hicolor/…`, `macos/icon.icns` + `trayTemplate.png`/`@2x`, `ios/AppIcon-1024.png` (opaque, full bleed), `android/` (adaptive foreground/background, legacy mipmaps, white notification icons, Play Store 512 px). `sounds/<id>.wav` and `<id>.caf` are the five built-in sounds (chime, bell, marimba, beeps, clock) as files, rendered by `tools/sounds.js` (for notification sounds). |
 | `reference/fixtures/` | `reminderfox-addon-sample.ics` and `reminderfox-addon-full.ics`, plus `reminderfox-addon-prefs.js` (the add-on's list names, as its profile's `prefs.js` holds them; the UI checks put it beside a copy of the full file) and `archive-sample.ics` (an archive.ics as 0.2.6–0.5.0 left it, for the archive-to-list check): files written the way the add-on writes `reminderfox.ics`. Unit-test fixtures and the compatibility benchmark. |

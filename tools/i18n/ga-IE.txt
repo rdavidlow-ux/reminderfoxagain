@@ -853,3 +853,4 @@
 852| Mar atá sa chóras ({s})
 853| Do mheabhrúcháin, do thascanna agus d’aláraim mar aip Mac — ómós don bhreiseán ReminderFox bunaidh.
 854| Do mheabhrúcháin, do thascanna agus d’aláraim mar aip Linux — ómós don bhreiseán ReminderFox bunaidh.
+855| Scrios do mheabhrúcháin agus do shocruithe in {path} freisin? Roghnaigh Níl chun iad a choinneáil.

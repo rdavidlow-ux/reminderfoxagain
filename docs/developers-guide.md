@@ -1,19 +1,19 @@
-# ReminderFoxAgain 0.9.1 — Developer's Guide
+# ReminderFoxAgain 0.9.2 — Developer's Guide
 
 Oct 18, 2026 · David
 
-This guide is the reference for working on the ReminderFoxAgain 0.9.1 code. It covers the Store's data API, the main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
+This guide is the reference for working on the ReminderFoxAgain 0.9.2 code. It covers the Store's data API, the main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
 
 ## 1. Setup and layout
 
-You need Node.js 22. The runtime dependency is `ical.js` 2.2.1; the dev dependencies are Electron 44.7.0 and `@electron/packager` 20.3.0. The UI checks need Xvfb, and the installer tests need PowerShell 7 (`pwsh`).
+You need Node.js 22. The runtime dependency is `ical.js` 2.2.1; the dev dependencies are Electron 44.7.0 and `@electron/packager` 20.3.0. The UI checks need Xvfb, and the Windows build needs makensis (apt install nsis) and its test Wine with 64-bit support (`wine`).
 
 ```
 npm ci
 npm test                       # unit tests (node:test)
 RF_DATA_DIR=/tmp/rf npm start  # run with a throw-away data folder
 node tools/sample-data.js /tmp/rf basic   # or: bills
-./build.sh                     # Windows x64 release in dist/release/
+./build.sh                     # Windows installer in dist/release/ (needs makensis)
 ```
 
 ### macOS and Linux builds (0.9.0)
@@ -23,8 +23,8 @@ Both build on Linux and give the same SHA-256 hashes on every run.
 ```sh
 ./build-linux.sh   # dist/release-linux/: .tar.gz and .deb for x64 and arm64 (ARCHS=x64 for one)
 ./build-macos.sh   # dist/release-macos/: one universal .zip (Apple silicon + Intel)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.1-linux-x64.tar.gz
-python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.1
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.2-linux-x64.tar.gz
+python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.2
 ```
 
 - **Linux:** `build/linux/` holds `install.sh`, `uninstall.sh`, the menu entry, the icons and the .deb's `postinst`, `postrm` and AppArmor profile. The .deb installs to `/opt/ReminderFoxAgain`, links `/usr/bin/reminderfoxagain` and makes `chrome-sandbox` setuid root. The tarball installs per user under `~/.local`, and its launcher adds `--no-sandbox` only where unprivileged user namespaces are off.
@@ -45,7 +45,7 @@ python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.1
 | `assets/` | `icon.png`, `icon.ico`, `tray.png` |
 | `test/store.test.js`, `test/index.js`, `test/reminderfox-addon-sample.ics` | Unit tests and the real add-on sample |
 | `tools/` | Sample data, UI checks (`ui/`), screenshot scripts (`ui/shots/`), installer tests |
-| `installer/` | Setup template, `fill-setup.sh`, the .bat |
+| `installer/` | `The NSIS installer script ReminderFoxAgain.nsi and wizard.bmp` |
 | `build.sh` | Deterministic release build |
 | src/ui/i18n.js | Languages (34, native names, RTL), resolve(), and the translator: t(), plurals, ordinals, pattern and structural fallbacks. Loaded by main.js and every page |
 | src/ui/i18n-dom.js | Translates each page as it renders (MutationObserver); sets \<html lang dir> |
@@ -398,7 +398,7 @@ The UI speaks the original add-on's 34 languages. English text is the key everyw
 | Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 35/35 in every zone |
 | UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (532 checks in 27 runs in 0.8.1) |
 | Screens | `tools/shots.sh <outDir>` | 70 PNGs; compare by eye |
-| Installer | `tools/test-setup.sh [pwsh]` | 20/20 |
+| Installer | `tools/test-installer.sh (Wine)` | 0 problems (19 checks) |
 
 ### Unit tests
 
@@ -458,7 +458,7 @@ else if (a === 'dupTomorrow') {
 
 1. Bump `version` in `package.json` and `package-lock.json` (two places). The app reads its version from `package.json`.
 2. Update `README.md`: a “New in x.y.z” section and the release file names. After any change to UI text, run node tools/i18n/build.js and a collect run (see Translations in section 5).
-3. Run every suite: unit tests in 7 zones, `tools/e2e.sh`, `tools/test-setup.sh` and `tools/shots.sh`.
+3. Run every suite: unit tests in 7 zones, `tools/e2e.sh`, `tools/test-installer.sh` and `tools/shots.sh`.
 4. Run `./build.sh` twice and compare `dist/SHA256SUMS.txt`; every hash must match.
 5. Ship `dist/release/*` together with a source zip (without `node_modules` and `dist`) and the screenshots.
 

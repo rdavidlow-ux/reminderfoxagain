@@ -3,6 +3,22 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
+## 0.9.2 — a standard Windows installer
+
+- **Windows now installs with one file, `ReminderFoxAgain-Setup-0.9.2.exe`** (NSIS), instead of a .bat, a PowerShell
+  script, the app file and six runtime parts. It installs per user without administrator rights, to the same folder as
+  before (`%LOCALAPPDATA%\Programs\ReminderFoxAgain`), so it updates an existing install, including one made by the
+  earlier setup. It closes a running ReminderFoxAgain first, puts the new copy in place only once it's complete (a
+  failed install leaves the old one as it was), and makes the Start-menu and desktop shortcuts and the Settings → Apps
+  entry.
+- **A proper uninstaller** in Settings → Apps, in the app's languages. It asks whether to delete your reminders too
+  (No is the default; a silent uninstall never deletes them) and removes start at login.
+- **No PowerShell, no "execution policy bypass", no joining of parts and no unblocking of files** — the installer
+  behaviours antivirus programs treat as suspicious.
+  The app itself is still not code-signed; signing is the next step for SmartScreen and antivirus reputation.
+- Silent installs for administrators: `ReminderFoxAgain-Setup-0.9.2.exe /S`, `"Uninstall ReminderFoxAgain.exe" /S`.
+- macOS and Linux: no changes apart from the version.
+
 ## 0.9.1 — imports with other programs' dates
 
 - **Importing an .ics file no longer stops with "Could not extract integer from "Tue "".** Some programs write dates
