@@ -874,5 +874,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Varsayılan, sisteme göre Tilki, açık veya koyu temadır. Yıldızlı öğelerin her temada kendi rengi vardır. Yüksek karşıtlık; siyah, beyaz, sarı ve camgöbeği ile daha büyük yazı ve daha kalın çizgiler kullanır.",
  "As in your system ({s})": "Sistemdeki gibi ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Hatırlatıcılarınız, görevleriniz ve alarmlarınız bir Mac uygulamasında — özgün ReminderFox eklentisine bir saygı duruşu.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Hatırlatıcılarınız, görevleriniz ve alarmlarınız bir Linux uygulamasında — özgün ReminderFox eklentisine bir saygı duruşu."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Hatırlatıcılarınız, görevleriniz ve alarmlarınız bir Linux uygulamasında — özgün ReminderFox eklentisine bir saygı duruşu.",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Thunderbird'de hatırlatıcılarınız, görevleriniz ve alarmlarınız — özgün ReminderFox eklentisine bir saygı.",
+ "Save a copy of your reminders file": "Hatırlatıcı dosyanızın bir kopyasını kaydet",
+ "Show a number on the ReminderFoxAgain toolbar button": "Araç çubuğundaki ReminderFoxAgain düğmesinde bir sayı göster",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Hatırlatıcılarınız Thunderbird profilinizde saklanır ve her gün yedeklenir."
 }

@@ -853,3 +853,7 @@
 852| Lykas yn it systeem ({s})
 853| Jo oantinkers, taken en alarms as Mac-app — in earbetoan oan de oarspronklike ReminderFox-add-on.
 854| Jo oantinkers, taken en alarms as Linux-app — in earbetoan oan de oarspronklike ReminderFox-add-on.
+855| Jo oantinkers, taken en alarms yn Thunderbird — in earbetoan oan de oarspronklike ReminderFox-add-on.
+856| In kopy fan jo oantinkersbestân bewarje
+857| In getal op de ReminderFoxAgain-knop yn de arkbalke sjen litte
+858| Jo oantinkers wurde bewarre yn jo Thunderbird-profyl, mei alle dagen in reservekopy.

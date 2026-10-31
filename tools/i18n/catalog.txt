@@ -888,3 +888,8 @@ Default is Fox, light or dark to match your system. Starred items have their own
 As in your system ({s})
 Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.
 Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.
+# the Thunderbird add-on (experimental): its wording
+Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.
+Save a copy of your reminders file
+Show a number on the ReminderFoxAgain toolbar button
+Your reminders are kept in your Thunderbird profile, with a backup every day.

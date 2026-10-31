@@ -853,3 +853,7 @@
 852| Wie im System ({s})
 853| Ihre Erinnerungen, Aufgaben und Alarme als Mac-App — eine Hommage an das ursprüngliche ReminderFox-Add-on.
 854| Ihre Erinnerungen, Aufgaben und Alarme als Linux-App — eine Hommage an das ursprüngliche ReminderFox-Add-on.
+855| Ihre Erinnerungen, Aufgaben und Alarme in Thunderbird — eine Hommage an das ursprüngliche ReminderFox-Add-on.
+856| Eine Kopie Ihrer Erinnerungsdatei speichern
+857| Eine Zahl auf der ReminderFoxAgain-Schaltfläche in der Symbolleiste anzeigen
+858| Ihre Erinnerungen werden in Ihrem Thunderbird-Profil aufbewahrt, mit einer Sicherung pro Tag.

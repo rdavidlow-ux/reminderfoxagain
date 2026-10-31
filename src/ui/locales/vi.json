@@ -874,5 +874,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Mặc định là Cáo, sáng hoặc tối theo hệ thống. Mục gắn sao có màu riêng trong mỗi chủ đề. Tương phản cao dùng đen, trắng, vàng và lục lam với chữ lớn hơn và nét đậm hơn.",
  "As in your system ({s})": "Như trong hệ thống ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Mac — lời tri ân tiện ích ReminderFox gốc.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Linux — lời tri ân tiện ích ReminderFox gốc."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Linux — lời tri ân tiện ích ReminderFox gốc.",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Lời nhắc, việc cần làm và báo thức của bạn trong Thunderbird — để tưởng nhớ tiện ích ReminderFox gốc.",
+ "Save a copy of your reminders file": "Lưu một bản sao tệp lời nhắc",
+ "Show a number on the ReminderFoxAgain toolbar button": "Hiện số trên nút ReminderFoxAgain ở thanh công cụ",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Lời nhắc của bạn được lưu trong hồ sơ Thunderbird, với một bản sao lưu mỗi ngày."
 }

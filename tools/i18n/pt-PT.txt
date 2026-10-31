@@ -853,3 +853,7 @@
 852| Como no sistema ({s})
 853| Os seus lembretes, tarefas e alarmes como aplicação do Mac — uma homenagem à extensão ReminderFox original.
 854| Os seus lembretes, tarefas e alarmes como aplicação do Linux — uma homenagem à extensão ReminderFox original.
+855| Os seus lembretes, tarefas e alarmes no Thunderbird — uma homenagem ao extra ReminderFox original.
+856| Guardar uma cópia do seu ficheiro de lembretes
+857| Mostrar um número no botão do ReminderFoxAgain na barra de ferramentas
+858| Os seus lembretes ficam guardados no seu perfil do Thunderbird, com uma cópia de segurança por dia.

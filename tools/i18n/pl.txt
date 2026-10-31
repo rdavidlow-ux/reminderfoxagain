@@ -853,3 +853,7 @@
 852| Jak w systemie ({s})
 853| Twoje przypomnienia, zadania i alarmy jako aplikacja Mac — hołd dla oryginalnego dodatku ReminderFox.
 854| Twoje przypomnienia, zadania i alarmy jako aplikacja Linux — hołd dla oryginalnego dodatku ReminderFox.
+855| Twoje przypomnienia, zadania i alarmy w Thunderbirdzie — hołd dla oryginalnego dodatku ReminderFox.
+856| Zapisz kopię pliku przypomnień
+857| Pokazuj liczbę na przycisku ReminderFoxAgain na pasku narzędzi
+858| Twoje przypomnienia są przechowywane w profilu Thunderbirda, z kopią zapasową każdego dnia.

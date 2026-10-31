@@ -1054,5 +1054,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "O padrão é Raposa, claro ou escuro conforme o sistema. Itens com estrela têm cor própria em todos os temas. Alto contraste usa preto, branco, amarelo e ciano com texto maior e linhas mais grossas.",
  "As in your system ({s})": "Como no sistema ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Seus lembretes, tarefas e alarmes como aplicativo do Mac — uma homenagem à extensão ReminderFox original.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Seus lembretes, tarefas e alarmes como aplicativo do Linux — uma homenagem à extensão ReminderFox original."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Seus lembretes, tarefas e alarmes como aplicativo do Linux — uma homenagem à extensão ReminderFox original.",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Seus lembretes, tarefas e alarmes no Thunderbird — uma homenagem ao complemento ReminderFox original.",
+ "Save a copy of your reminders file": "Salvar uma cópia do seu arquivo de lembretes",
+ "Show a number on the ReminderFoxAgain toolbar button": "Mostrar um número no botão do ReminderFoxAgain na barra de ferramentas",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Seus lembretes ficam guardados no seu perfil do Thunderbird, com um backup por dia."
 }

@@ -874,5 +874,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "默认是狐狸、浅色或深色，与系统一致。加星标的项在每个主题中都有自己的颜色。高对比度使用黑、白、黄和青色，文字更大，线条更粗。",
  "As in your system ({s})": "与系统相同 ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "你的提醒、待办和闹钟，现在是一个 Mac 应用——向最初的 ReminderFox 附加组件致敬。",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "你的提醒、待办和闹钟，现在是一个 Linux 应用——向最初的 ReminderFox 附加组件致敬。"
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "你的提醒、待办和闹钟，现在是一个 Linux 应用——向最初的 ReminderFox 附加组件致敬。",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "在 Thunderbird 中管理你的提醒、待办和闹钟 — 向最初的 ReminderFox 附加组件致敬。",
+ "Save a copy of your reminders file": "保存提醒文件的副本",
+ "Show a number on the ReminderFoxAgain toolbar button": "在工具栏的 ReminderFoxAgain 按钮上显示数字",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "你的提醒保存在 Thunderbird 配置文件中，每天备份一次。"
 }

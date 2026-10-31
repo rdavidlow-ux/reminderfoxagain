@@ -1174,5 +1174,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Domyślny to Lis, jasny lub ciemny zgodnie z systemem. Pozycje z gwiazdką mają własny kolor w każdym motywie. Wysoki kontrast używa czerni, bieli, żółci i cyjanu z większym tekstem i grubszymi liniami.",
  "As in your system ({s})": "Jak w systemie ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Twoje przypomnienia, zadania i alarmy jako aplikacja Mac — hołd dla oryginalnego dodatku ReminderFox.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Twoje przypomnienia, zadania i alarmy jako aplikacja Linux — hołd dla oryginalnego dodatku ReminderFox."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Twoje przypomnienia, zadania i alarmy jako aplikacja Linux — hołd dla oryginalnego dodatku ReminderFox.",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Twoje przypomnienia, zadania i alarmy w Thunderbirdzie — hołd dla oryginalnego dodatku ReminderFox.",
+ "Save a copy of your reminders file": "Zapisz kopię pliku przypomnień",
+ "Show a number on the ReminderFoxAgain toolbar button": "Pokazuj liczbę na przycisku ReminderFoxAgain na pasku narzędzi",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Twoje przypomnienia są przechowywane w profilu Thunderbirda, z kopią zapasową każdego dnia."
 }

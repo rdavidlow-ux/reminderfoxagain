@@ -1238,5 +1238,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "الافتراضي هو الثعلب أو الفاتح أو الداكن بحسب النظام. للعناصر المميّزة بنجمة لونها الخاص في كل سمة. يستخدم التباين العالي الأسود والأبيض والأصفر والسماوي مع نص أكبر وخطوط أعرض.",
  "As in your system ({s})": "كما في النظام ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "تذكيراتك ومهامك ومنبّهاتك كتطبيق Mac — تحيّة لإضافة ReminderFox الأصلية.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "تذكيراتك ومهامك ومنبّهاتك كتطبيق Linux — تحيّة لإضافة ReminderFox الأصلية."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "تذكيراتك ومهامك ومنبّهاتك كتطبيق Linux — تحيّة لإضافة ReminderFox الأصلية.",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "تذكيراتك ومهامك ومنبّهاتك في Thunderbird — تحية للإضافة الأصلية ReminderFox.",
+ "Save a copy of your reminders file": "حفظ نسخة من ملف التذكيرات",
+ "Show a number on the ReminderFoxAgain toolbar button": "إظهار رقم على زر ReminderFoxAgain في شريط الأدوات",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "تُحفظ تذكيراتك في ملف تعريف Thunderbird الخاص بك، مع نسخة احتياطية كل يوم."
 }

@@ -874,5 +874,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "기본은 시스템에 맞춰 여우, 밝게 또는 어둡게입니다. 별표 항목은 모든 테마에서 고유한 색을 가집니다. 고대비는 검정, 흰색, 노랑, 청록을 사용하며 글자가 더 크고 선이 더 굵습니다.",
  "As in your system ({s})": "시스템과 같게({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "미리 알림, 할 일, 알람을 Mac 앱으로 — 원조 ReminderFox 부가 기능에 대한 헌정입니다.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "미리 알림, 할 일, 알람을 Linux 앱으로 — 원조 ReminderFox 부가 기능에 대한 헌정입니다."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "미리 알림, 할 일, 알람을 Linux 앱으로 — 원조 ReminderFox 부가 기능에 대한 헌정입니다.",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Thunderbird에서 쓰는 미리 알림, 할 일, 알람 — 원조 ReminderFox 부가 기능에 바치는 헌정입니다.",
+ "Save a copy of your reminders file": "미리 알림 파일의 사본 저장",
+ "Show a number on the ReminderFoxAgain toolbar button": "도구 모음의 ReminderFoxAgain 버튼에 숫자 표시",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "미리 알림은 Thunderbird 프로필에 보관되며 매일 백업됩니다."
 }

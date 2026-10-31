@@ -853,3 +853,7 @@
 852| Ca în sistem ({s})
 853| Mementourile, sarcinile și alarmele dvs. ca aplicație Mac — un omagiu adus suplimentului ReminderFox original.
 854| Mementourile, sarcinile și alarmele dvs. ca aplicație Linux — un omagiu adus suplimentului ReminderFox original.
+855| Mementourile, sarcinile și alarmele dvs. în Thunderbird — un omagiu adus suplimentului ReminderFox original.
+856| Salvează o copie a fișierului de mementouri
+857| Afișează un număr pe butonul ReminderFoxAgain din bara de instrumente
+858| Mementourile dvs. sunt păstrate în profilul Thunderbird, cu o copie de rezervă în fiecare zi.

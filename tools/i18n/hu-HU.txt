@@ -853,3 +853,7 @@
 852| Mint a rendszerben ({s})
 853| Emlékeztetők, teendők és riasztások Mac-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.
 854| Emlékeztetők, teendők és riasztások Linux-alkalmazásként — tisztelgés az eredeti ReminderFox bővítmény előtt.
+855| Emlékeztetői, teendői és riasztásai a Thunderbirdben — tisztelgés az eredeti ReminderFox kiegészítő előtt.
+856| Másolat mentése az emlékeztetőfájlról
+857| Szám megjelenítése a ReminderFoxAgain eszköztárgombján
+858| Emlékeztetőit a Thunderbird-profilja tárolja, naponta készülő biztonsági mentéssel.

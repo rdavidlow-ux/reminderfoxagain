@@ -853,3 +853,7 @@
 852| Như trong hệ thống ({s})
 853| Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Mac — lời tri ân tiện ích ReminderFox gốc.
 854| Lời nhắc, việc cần làm và báo thức của bạn trong một ứng dụng Linux — lời tri ân tiện ích ReminderFox gốc.
+855| Lời nhắc, việc cần làm và báo thức của bạn trong Thunderbird — để tưởng nhớ tiện ích ReminderFox gốc.
+856| Lưu một bản sao tệp lời nhắc
+857| Hiện số trên nút ReminderFoxAgain ở thanh công cụ
+858| Lời nhắc của bạn được lưu trong hồ sơ Thunderbird, với một bản sao lưu mỗi ngày.

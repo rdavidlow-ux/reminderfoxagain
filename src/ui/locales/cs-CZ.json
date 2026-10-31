@@ -1174,5 +1174,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Výchozí je Liška, světlý nebo tmavý podle systému. Položky s hvězdičkou mají v každém motivu vlastní barvu. Vysoký kontrast používá černou, bílou, žlutou a azurovou s větším písmem a silnějšími čarami.",
  "As in your system ({s})": "Jako v systému ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Vaše připomínky, úkoly a alarmy jako aplikace pro Mac — pocta původnímu doplňku ReminderFox.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Vaše připomínky, úkoly a alarmy jako aplikace pro Linux — pocta původnímu doplňku ReminderFox."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Vaše připomínky, úkoly a alarmy jako aplikace pro Linux — pocta původnímu doplňku ReminderFox.",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Vaše připomínky, úkoly a alarmy v Thunderbirdu — pocta původnímu doplňku ReminderFox.",
+ "Save a copy of your reminders file": "Uložit kopii souboru připomínek",
+ "Show a number on the ReminderFoxAgain toolbar button": "Zobrazit číslo na tlačítku ReminderFoxAgain na nástrojové liště",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Vaše připomínky jsou uloženy ve vašem profilu Thunderbirdu, se zálohou každý den."
 }

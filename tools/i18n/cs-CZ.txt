@@ -853,3 +853,7 @@
 852| Jako v systému ({s})
 853| Vaše připomínky, úkoly a alarmy jako aplikace pro Mac — pocta původnímu doplňku ReminderFox.
 854| Vaše připomínky, úkoly a alarmy jako aplikace pro Linux — pocta původnímu doplňku ReminderFox.
+855| Vaše připomínky, úkoly a alarmy v Thunderbirdu — pocta původnímu doplňku ReminderFox.
+856| Uložit kopii souboru připomínek
+857| Zobrazit číslo na tlačítku ReminderFoxAgain na nástrojové liště
+858| Vaše připomínky jsou uloženy ve vašem profilu Thunderbirdu, se zálohou každý den.

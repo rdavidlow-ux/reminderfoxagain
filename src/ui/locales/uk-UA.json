@@ -1174,5 +1174,9 @@
  "Default is Fox, light or dark to match your system. Starred items have their own colour in every theme. High contrast uses black, white, yellow and cyan with larger text and heavier lines.": "Типова — Лисиця, світла або темна відповідно до системи. Елементи із зірочкою мають власний колір у кожній темі. Висока контрастність використовує чорний, білий, жовтий і блакитний із більшим текстом і товщими лініями.",
  "As in your system ({s})": "Як у системі ({s})",
  "Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.": "Ваші нагадування, завдання й сигнали в застосунку для Mac — данина поваги оригінальному додатку ReminderFox.",
- "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Ваші нагадування, завдання й сигнали в застосунку для Linux — данина поваги оригінальному додатку ReminderFox."
+ "Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.": "Ваші нагадування, завдання й сигнали в застосунку для Linux — данина поваги оригінальному додатку ReminderFox.",
+ "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Ваші нагадування, завдання й сигнали в Thunderbird — данина оригінальному додатку ReminderFox.",
+ "Save a copy of your reminders file": "Зберегти копію файлу нагадувань",
+ "Show a number on the ReminderFoxAgain toolbar button": "Показувати число на кнопці ReminderFoxAgain на панелі інструментів",
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Ваші нагадування зберігаються у профілі Thunderbird, резервна копія створюється щодня."
 }

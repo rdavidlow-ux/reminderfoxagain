@@ -853,3 +853,7 @@
 852| Kuten järjestelmässä ({s})
 853| Muistutuksesi, tehtäväsi ja hälytyksesi Mac-sovelluksena — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle.
 854| Muistutuksesi, tehtäväsi ja hälytyksesi Linux-sovelluksena — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle.
+855| Muistutuksesi, tehtäväsi ja hälytyksesi Thunderbirdissä — kunnianosoitus alkuperäiselle ReminderFox-lisäosalle.
+856| Tallenna kopio muistutustiedostosta
+857| Näytä luku ReminderFoxAgainin työkalupalkin painikkeessa
+858| Muistutuksesi säilytetään Thunderbird-profiilissasi, ja niistä otetaan varmuuskopio joka päivä.

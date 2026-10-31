@@ -853,3 +853,7 @@
 852| Comme dans le système ({s})
 853| Vos rappels, tâches et alarmes dans une application Mac — un hommage au module ReminderFox original.
 854| Vos rappels, tâches et alarmes dans une application Linux — un hommage au module ReminderFox original.
+855| Vos rappels, tâches et alarmes dans Thunderbird — un hommage au module ReminderFox d'origine.
+856| Enregistrer une copie de votre fichier de rappels
+857| Afficher un nombre sur le bouton ReminderFoxAgain de la barre d'outils
+858| Vos rappels sont conservés dans votre profil Thunderbird, avec une sauvegarde chaque jour.

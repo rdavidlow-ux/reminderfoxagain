@@ -853,3 +853,7 @@
 852| Nagu süsteemis ({s})
 853| Sinu meeldetuletused, ülesanded ja alarmid Maci rakendusena — austusavaldus algsele ReminderFoxi lisale.
 854| Sinu meeldetuletused, ülesanded ja alarmid Linuxi rakendusena — austusavaldus algsele ReminderFoxi lisale.
+855| Sinu meeldetuletused, ülesanded ja alarmid Thunderbirdis — austusavaldus algsele ReminderFoxi lisale.
+856| Salvesta meeldetuletuste faili koopia
+857| Näita arvu ReminderFoxAgaini tööriistariba nupul
+858| Sinu meeldetuletusi hoitakse sinu Thunderbirdi profiilis ja neist tehakse iga päev varukoopia.

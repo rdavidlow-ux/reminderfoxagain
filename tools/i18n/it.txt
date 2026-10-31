@@ -853,3 +853,7 @@
 852| Come nel sistema ({s})
 853| I tuoi promemoria, attività e allarmi come app di Mac — un omaggio all'originale estensione ReminderFox.
 854| I tuoi promemoria, attività e allarmi come app di Linux — un omaggio all'originale estensione ReminderFox.
+855| I tuoi promemoria, attività e allarmi in Thunderbird — un omaggio al componente aggiuntivo ReminderFox originale.
+856| Salva una copia del file dei promemoria
+857| Mostra un numero sul pulsante di ReminderFoxAgain nella barra degli strumenti
+858| I tuoi promemoria sono conservati nel tuo profilo di Thunderbird, con un backup ogni giorno.

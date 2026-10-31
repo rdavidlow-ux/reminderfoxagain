@@ -87,6 +87,13 @@ off. **0.9.1** reads dates that other programs write their own way, so importing
 "Could not extract integer from "Tue "". **0.9.0** brought the macOS and Linux apps. Every release is described in
 [CHANGELOG.md](CHANGELOG.md).
 
+### Experimental: a Thunderbird add-on
+
+On the `experimental-add-on` branch, ReminderFoxAgain also runs inside Thunderbird (128 or later) as an add-on, with
+the same features, in a Thunderbird tab with a toolbar button. It is not released yet. Build it with
+`./build-thunderbird.sh`; how it works and what is still to be tried in a real Thunderbird are in
+[docs/thunderbird-addon.md](docs/thunderbird-addon.md).
+
 ## Install
 
 Download the files for your system from the [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.

@@ -853,3 +853,7 @@
 852| Som i systemet ({s})
 853| Dine påmindelser, opgaver og alarmer som en Mac-app — en hyldest til den oprindelige ReminderFox-tilføjelse.
 854| Dine påmindelser, opgaver og alarmer som en Linux-app — en hyldest til den oprindelige ReminderFox-tilføjelse.
+855| Dine påmindelser, opgaver og alarmer i Thunderbird — en hyldest til den oprindelige ReminderFox-tilføjelse.
+856| Gem en kopi af din påmindelsesfil
+857| Vis et tal på ReminderFoxAgain-knappen i værktøjslinjen
+858| Dine påmindelser gemmes i din Thunderbird-profil med en sikkerhedskopi hver dag.

@@ -33,10 +33,20 @@
     'Show a number on the tray and taskbar icons': 'Show a number on the tray icon',
     'Show the reminders file in File Explorer': 'Show the reminders file in your file manager',
   } : {};
+  // The Thunderbird add-on (experimental): the same pages in a Thunderbird tab and popup windows
+  const HOST = data.host || 'desktop';
+  if (HOST === 'thunderbird') {
+    document.documentElement.dataset.host = HOST;
+    Object.assign(PT, {
+      [WELCOME]: 'Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.',
+      'Show the reminders file in File Explorer': 'Save a copy of your reminders file',
+      'Show a number on the tray and taskbar icons': 'Show a number on the ReminderFoxAgain toolbar button',
+    });
+  }
   const keys = PLATFORM === 'macos' ? (t) => t.replace(/(Ctrl|Strg)\+Q\b/g, '⇧⌘A').replace(/(Ctrl|Strg)\+/g, '⌘') : (t) => t;
   RF.platformText = (s) => PT[s] || s;
   RF.platformKeys = keys;
-  if (I.lang === 'en' && !data.collect && PLATFORM === 'windows') return;
+  if (I.lang === 'en' && !data.collect && PLATFORM === 'windows' && HOST === 'desktop') return;
 
   const SKIP = '[translate="no"], .t, .tx b, .chip, span.sub, .mini-row b, textarea, script, style, .notes';
   const ATTRS = ['title', 'placeholder', 'aria-label', 'label', 'alt'];

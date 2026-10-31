@@ -1,0 +1,9 @@
+/* ReminderFoxAgain for Thunderbird: the desktop settings that don't apply in an add-on.
+   Thunderbird starts the add-on, the toolbar button replaces the tray, and the data lives in the Thunderbird profile. */
+html[data-host="thunderbird"] label.inline-chk:has(#stStart),
+html[data-host="thunderbird"] label.inline-chk:has(#stTray),
+html[data-host="thunderbird"] #stTrayNote,
+html[data-host="thunderbird"] #stFolder,
+html[data-host="thunderbird"] #stBackups,
+html[data-host="thunderbird"] #stOldRf,
+html[data-host="thunderbird"] #stPath { display: none !important; }
