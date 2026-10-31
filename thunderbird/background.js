@@ -181,6 +181,35 @@
       .then((value) => ({ ok: true, value: value === undefined ? null : value }), (err) => ({ ok: false, error: (err && err.message) || String(err) }));
   });
 
+  // ---------------------------------------------------------------- keyboard shortcuts
+  // Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q… for itself. The add-on's shortcuts (manifest "commands", Alt+Shift and the
+  // same letter by default) bring the tab to the front and press the desktop key in it, so app.js handles it as before.
+  // The pages show the shortcuts Thunderbird has now (people can change them) in place of "Ctrl+N" in their tooltips.
+  let SHORTCUTS = {};
+  const shortcutsReady = fetch(browser.runtime.getURL('tb/shortcuts.json')).then((r) => r.json()).then((j) => { SHORTCUTS = j; }).catch(() => {});
+  async function publishKeys() {
+    if (!browser.commands) return;
+    await shortcutsReady;
+    const keys = {};
+    for (const c of await browser.commands.getAll().catch(() => [])) {
+      const letter = (SHORTCUTS[c.name] || {}).letter;
+      if (letter) keys[letter] = c.shortcut || '';
+    }
+    try { localStorage.setItem('rf.keys', JSON.stringify(keys)); } catch (e) { /* the tooltips keep the desktop keys */ }
+  }
+  if (browser.commands) {
+    browser.commands.onCommand.addListener(async (name) => {
+      await shortcutsReady;
+      const letter = (SHORTCUTS[name] || {}).letter;
+      if (!letter) return;
+      await started;
+      await showMain();
+      emit('host:key', { key: letter.toLowerCase() }, 'main');
+    });
+    if (browser.commands.onChanged) browser.commands.onChanged.addListener(() => publishKeys());
+    publishKeys();
+  }
+
   // alarms: after the computer wakes or is unlocked, check at once (as the desktop app does after resume/unlock)
   if (browser.idle && browser.idle.onStateChanged) browser.idle.onStateChanged.addListener((s) => { if (s === 'active' && host) setTimeout(() => host.checkAlarms(), 1000); });
   // first install: open the welcome page

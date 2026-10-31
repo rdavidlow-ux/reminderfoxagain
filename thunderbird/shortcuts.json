@@ -1,0 +1,13 @@
+{
+  "_execute_browser_action": { "key": "Alt+Shift+R", "description": "Open ReminderFoxAgain" },
+  "new-reminder": { "key": "Alt+Shift+N", "letter": "N", "description": "New reminder" },
+  "new-list-item": { "key": "Alt+Shift+T", "letter": "T", "description": "New item in the list being shown" },
+  "quick-alarm": { "key": "Alt+Shift+Q", "letter": "Q", "description": "Quick alarm" },
+  "search": { "key": "Alt+Shift+F", "letter": "F", "description": "Search reminders and to-dos" },
+  "go-to": { "key": "Alt+Shift+G", "letter": "G", "description": "Go to a date" },
+  "calendar-panel": { "key": "Alt+Shift+B", "letter": "B", "description": "Show or hide the calendar panel" },
+  "import": { "key": "Alt+Shift+I", "letter": "I", "description": "Import an .ics file" },
+  "export": { "key": "Alt+Shift+E", "letter": "E", "description": "Export to .ics" },
+  "duplicate": { "key": "Alt+Shift+D", "letter": "D", "description": "Duplicate the selected item" },
+  "save": { "key": "Alt+Shift+S", "letter": "S", "description": "Save the reminder being edited" }
+}

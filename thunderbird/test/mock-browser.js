@@ -37,6 +37,7 @@
   const onRemovedTab = listeners('tabs.onRemoved');
   const onClicked = listeners('browserAction.onClicked');
   const onMenu = listeners('menus.onClicked');
+  const onCommand = listeners('commands.onCommand');
   const abs = (u) => new URL(u, location.origin).href;
   window.__mock = {
     state,
@@ -45,6 +46,7 @@
     closed: (kind, id) => { if (kind === 'tab') { state.tabs.delete(id); onRemovedTab._fire(id); } else { state.windows.delete(id); onRemovedWin._fire(id); } },
     clickButton: () => onClicked._fire({}),
     clickMenu: (id) => onMenu._fire({ menuItemId: id }),
+    command: (name) => onCommand._fire(name),
   };
   const seed = window.__seed || {};
   const store = new Map(Object.entries(seed.storage || {}));
@@ -90,5 +92,14 @@
     },
     notifications: { create: (id, o) => { state.notes.push(o); return ok(id); }, onClicked: listeners('notifications.onClicked') },
     idle: { onStateChanged: listeners('idle.onStateChanged') },
+    // the shortcuts the manifest suggests (seed.shortcuts can change one, as a person can in Thunderbird)
+    commands: {
+      getAll: async () => {
+        const m = await (await fetch('/manifest.json')).json();
+        return Object.entries(m.commands || {}).map(([name, c]) => ({ name, description: c.description, shortcut: (seed.shortcuts || {})[name] ?? c.suggested_key.default }));
+      },
+      onCommand,
+      onChanged: listeners('commands.onChanged'),
+    },
   };
 }());

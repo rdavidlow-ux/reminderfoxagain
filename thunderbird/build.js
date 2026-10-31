@@ -52,7 +52,7 @@ bundle += `self.RF_VERSION = ${JSON.stringify(VER)};\nself.RFHost = load('core')
 write('host.js', bundle);
 
 // ------------------------------------------------------------ the background page, the bridge, the overlay
-for (const f of ['background.js', 'bridge.js', 'tb.js', 'tb.css']) write(`tb/${f}`, rd(`thunderbird/${f}`));
+for (const f of ['background.js', 'bridge.js', 'tb.js', 'tb.css', 'shortcuts.json']) write(`tb/${f}`, rd(`thunderbird/${f}`));
 
 // ------------------------------------------------------------ the pages: src/ui as it is, with the bridge loaded first
 const UI = 'src/ui';
@@ -94,6 +94,9 @@ const manifest = {
   browser_action: { default_title: 'ReminderFoxAgain', default_icon: { 16: icons[16], 32: icons[32] } },
   background: { scripts: ['host.js', 'tb/background.js'] },
   permissions: ['storage', 'unlimitedStorage', 'notifications', 'menus', 'tabs', 'idle'],
+  // Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q… for itself, so the app's shortcuts are Thunderbird shortcuts with Alt+Shift
+  // and the same letter (people can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts).
+  commands: Object.fromEntries(Object.entries(require('./shortcuts.json')).map(([name, c]) => [name, { suggested_key: { default: c.key }, description: c.description }])),
 };
 write('manifest.json', `${JSON.stringify(manifest, null, 2)}\n`);
 console.log(`dist/thunderbird: ReminderFoxAgain ${VER} for Thunderbird`);

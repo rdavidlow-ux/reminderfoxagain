@@ -11,6 +11,7 @@
   try {
     const saved = JSON.parse(localStorage.getItem('rf.i18n') || 'null');
     if (saved) i18n = { ...i18n, ...saved, dict: {} };
+    i18n.keys = JSON.parse(localStorage.getItem('rf.keys') || 'null'); // the Thunderbird shortcuts, by the desktop letter
     if (i18n.lang && i18n.lang !== 'en') {
       const x = new XMLHttpRequest();
       x.open('GET', `locales/${i18n.lang}.json`, false); // a local file in the add-on; synchronous on purpose
@@ -74,6 +75,12 @@
     if (!msg || msg.rf !== 'emit') return;
     if (msg.target && msg.target !== PAGE) return;
     if (msg.ch === 'host:reload') { location.reload(); return; }
+    // a Thunderbird shortcut: press the desktop key here, so the page's own keyboard handler does what it always does
+    if (msg.ch === 'host:key') {
+      const target = document.activeElement || document.body;
+      target.dispatchEvent(new KeyboardEvent('keydown', { key: msg.payload.key, ctrlKey: true, bubbles: true, cancelable: true }));
+      return;
+    }
     for (const fn of listeners[msg.ch] || []) { try { fn(msg.payload); } catch (e) { console.error(e); } }
   });
 

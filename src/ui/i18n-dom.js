@@ -43,7 +43,11 @@
       'Show a number on the tray and taskbar icons': 'Show a number on the ReminderFoxAgain toolbar button',
     });
   }
-  const keys = PLATFORM === 'macos' ? (t) => t.replace(/(Ctrl|Strg)\+Q\b/g, '⇧⌘A').replace(/(Ctrl|Strg)\+/g, '⌘') : (t) => t;
+  // In Thunderbird the shortcuts are Thunderbird's (Alt+Shift+N…, which people can change): data.keys maps the desktop
+  // letter to the shortcut it has now; a shortcut that was removed drops its "(Ctrl+N)" from the text
+  const TBKEYS = HOST === 'thunderbird' && data.keys ? data.keys : null;
+  const keys = TBKEYS ? (t) => t.replace(/ ?\(?\b(?:Ctrl|Strg)\+([A-Z])\b\)?/g, (m, k) => (k in TBKEYS ? (TBKEYS[k] ? m.replace(/(?:Ctrl|Strg)\+[A-Z]/, TBKEYS[k]) : '') : m))
+    : PLATFORM === 'macos' ? (t) => t.replace(/(Ctrl|Strg)\+Q\b/g, '⇧⌘A').replace(/(Ctrl|Strg)\+/g, '⌘') : (t) => t;
   RF.platformText = (s) => PT[s] || s;
   RF.platformKeys = keys;
   if (I.lang === 'en' && !data.collect && PLATFORM === 'windows' && HOST === 'desktop') return;

@@ -154,6 +154,21 @@ function serve() {
     line('a notification for the quick alarm', s.notes >= 1, true);
     line('a map link opens in the system browser', s.urls.some((u) => /^https:\/\//.test(u)), true);
     line('the pop-up window opened', !!find('slider'), true);
+    // a Thunderbird shortcut brings the tab forward and does what the desktop key does
+    // (the app ignores shortcuts while a dialog is open, so close what the smoke script left open)
+    await main.evaluate(() => { for (const d of document.querySelectorAll('dialog[open]')) d.close(); });
+    await bg.evaluate(() => window.__mock.command('new-reminder'));
+    await sleep(800);
+    line('Alt+Shift+N opens a new reminder', await main.evaluate(() => { const d = document.getElementById('edSummary'); return !!d && d.offsetParent !== null; }), true);
+    await main.evaluate(() => document.getElementById('edCancel').click());
+    await sleep(500);
+    const side = () => main.evaluate(() => document.body.classList.contains('no-side'));
+    const before = await side();
+    await bg.evaluate(() => window.__mock.command('calendar-panel'));
+    await sleep(600);
+    line('Alt+Shift+B shows or hides the calendar panel', (await side()) !== before, true);
+    await bg.evaluate(() => window.__mock.command('calendar-panel'));
+    await sleep(400);
     const alarm = await waitFor('alarm', 6000);
     line('the alarm window opened for the quick alarm', !!alarm, true);
     if (alarm) {

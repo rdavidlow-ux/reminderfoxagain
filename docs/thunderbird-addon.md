@@ -4,8 +4,9 @@ Branch `experimental-add-on`. This is a Thunderbird add-on with the same feature
 reminders, to-do lists, the Month view, alarms, quick alarms, the pop-up, saved filters, categories, themes, 34
 languages, import and export, and daily backups. Like the original ReminderFox, it lives inside Thunderbird again.
 
-It is **not released**. It was built and tested with a stand-in for Thunderbird (see *Testing*), not yet in a real
-Thunderbird. The desktop app is unchanged by it.
+It is **not released**. It was built and tested with a stand-in for Thunderbird (see *Testing*), then loaded and
+checked by the owner in Thunderbird 153.6.0esr (64-bit) on Windows 11 on Oct 31, 2026 (see *Tried in a real
+Thunderbird*). The desktop app is unchanged by it.
 
 ## How it is built
 
@@ -55,6 +56,7 @@ core too is possible later, but not needed now.
 | Choose a sound file | A file picker; the sound is kept in storage. |
 | Start when you log in, Keep running in the tray | Hidden: Thunderbird starts the add-on, and alarms ring whenever Thunderbird is running. |
 | Text size | The page is zoomed (CSS `zoom`). |
+| Keyboard shortcuts (Ctrl+N, Ctrl+T, Ctrl+Q, Ctrl+F, Ctrl+G, Ctrl+B, Ctrl+I, Ctrl+E, Ctrl+D, Ctrl+S in the editor) | Thunderbird keeps the Ctrl keys for itself, so the add-on has Thunderbird shortcuts instead: **Alt+Shift** and the same letter (Alt+Shift+N new reminder, Alt+Shift+T new list item, Alt+Shift+Q quick alarm, and so on), plus **Alt+Shift+R** to open ReminderFoxAgain. They work anywhere in Thunderbird and bring the ReminderFoxAgain tab to the front. You can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts; the tooltips show the shortcuts as they are set. |
 | Links (maps, web pages in notes) | Open in the system browser (`windows.openDefaultBrowser`). |
 | After sleep or unlock: check alarms | `idle.onStateChanged` → check after 1 second. |
 
@@ -73,7 +75,7 @@ properties, anything unknown, and the add-on's own form when an item isn't chang
 
 ```sh
 ./build-thunderbird.sh           # unit tests, then dist/release-thunderbird/ReminderFoxAgain-<ver>-thunderbird.xpi
-thunderbird/test/e2e.sh          # the UI checks in Chromium with a mock Thunderbird; last line: 601 checks, 0 problem(s)
+thunderbird/test/e2e.sh          # the UI checks in Chromium with a mock Thunderbird; last line: 606 checks, 0 problem(s)
 ```
 
 - **Install in Thunderbird:** Add-ons and Themes → ⚙ → Install Add-on From File… → the `.xpi`. Thunderbird asks to
@@ -92,20 +94,25 @@ thunderbird/test/e2e.sh          # the UI checks in Chromium with a mock Thunder
 - **Lint:** `web-ext lint` (Mozilla's checker) passes with no errors. It warns that `windows.openDefaultBrowser` is
   not a Firefox API (it is Thunderbird's) and that the pages set `innerHTML` (the UI escapes every value it puts in).
 
+## Tried in a real Thunderbird
+
+Thunderbird 153.6.0esr (64-bit) on Windows 11, Oct 31, 2026:
+
+| What | Result |
+| --- | --- |
+| Installing and running the add-on | Works. |
+| Keyboard shortcuts | Thunderbird took the Ctrl keys before the add-on saw them. **Fixed** with the Alt+Shift shortcuts above (to be checked again in Thunderbird). |
+| Alarm sound | Plays without the alarm window being clicked first. |
+| Alarm window placement | Near the bottom right, close to the system tray, as on the desktop. |
+
 ## Still to try in a real Thunderbird
 
-These can't be checked without Thunderbird itself:
-
-1. **Keyboard shortcuts.** Thunderbird may handle Ctrl+N (new message), Ctrl+T, Ctrl+Q (quit on Windows and Linux)
-   and Ctrl+F before the tab sees them. If so, the add-on needs other keys, or `commands` in the manifest.
-2. **Alarm sound.** The built-in sounds are played with Web Audio in the alarm popup. Thunderbird's autoplay rules
-   may hold the sound until the window is clicked.
-3. **Saving files.** Export and "Data file" save through a download link. Check where Thunderbird puts the file and
+1. **The new Alt+Shift shortcuts**, and that none of them clashes with Thunderbird or Windows.
+2. **Saving files.** Export and "Data file" save through a download link. Check where Thunderbird puts the file and
    whether it asks.
-4. **Window placement and focus** of the alarm and pop-up windows on Windows, macOS and Linux, and the popup window's
-   title bar (the desktop's alarm window has no frame).
-5. **The welcome page on first install**, and the toolbar button's place in the unified toolbar (Thunderbird 115+).
-6. **Storage size** with years of backups (the `unlimitedStorage` permission should cover it).
+3. **macOS and Linux:** window placement and focus of the alarm and pop-up windows, and the shortcuts there.
+4. **The welcome page on first install**, and the toolbar button's place in the unified toolbar.
+5. **Storage size** with years of backups (the `unlimitedStorage` permission should cover it).
 
 ## Ideas for later
 

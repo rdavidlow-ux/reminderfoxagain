@@ -8,6 +8,10 @@ try {
   check('page marked as the add-on', document.documentElement.dataset.host, 'thunderbird');
   check('reminders loaded from storage', m.count > 0, true);
   check('"Data file" saves a copy', $('openFolder').title, 'Save a copy of your reminders file');
+  // Thunderbird keeps Ctrl+N… for itself: the tooltips show the add-on's own shortcuts
+  check('tooltip: new reminder', $('addReminder').title, 'New reminder (Alt+Shift+N)');
+  check('tooltip: quick alarm', $('quickBtn').title, 'Quick alarm: a one-off alarm in a few minutes (Alt+Shift+Q)');
+  check('tooltip: search', $('search').title, 'Search (Alt+Shift+F)');
   // a new reminder goes through the background page into storage
   await window.rf.save({ kind: 'event', summary: 'Smoke test reminder', date: '2026-12-01', allDay: true });
   // export: the page saves the file as a download
