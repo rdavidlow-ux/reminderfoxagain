@@ -78,7 +78,7 @@ textarea.inp { height: auto; padding: 6px 8px; resize: vertical; min-height: 64p
 .chk { accent-color: var(--fox); width: 16px; height: 16px; margin: 0; cursor: pointer; }
 
 /* ---------- app frame */
-.app { display: grid; grid-template-rows: auto 1fr auto; height: 100vh; }
+.app { display: grid; grid-template-rows: auto 1fr auto; grid-template-columns: minmax(0, 1fr); height: 100vh; }
 header.top {
   display: flex; align-items: center; gap: 10px; padding: 10px 14px;
   background: var(--surface); border-bottom: 1px solid var(--line);
@@ -87,8 +87,8 @@ header.top {
 .brand img { width: 26px; height: 26px; }
 .brand span { color: var(--fox-ink); }
 .top .spacer { flex: 1; }
-.search { position: relative; }
-.search input { width: 240px; padding-left: 30px; }
+.search { position: relative; flex: 0 1 240px; min-width: 120px; }
+.search input { width: 100%; padding-left: 30px; }
 .search::before { content: "⌕"; position: absolute; left: 10px; top: 5px; font-size: 17px; color: var(--ink-3); }
 
 .body { display: grid; grid-template-columns: 1fr 300px; min-height: 0; }
@@ -260,7 +260,15 @@ dialog::backdrop { background: rgba(40, 20, 8, .32); }
 @media (max-width: 980px) {
   .body { grid-template-columns: 1fr; }
   aside.side { display: none; }
-  .search input { width: 160px; }
+  /* narrow window: the fox icon stays, the name beside it goes (the title bar shows it), so the search box and Settings fit */
+  .brand > div { display: none; }
+  .brand { margin-right: 0; }
+  .search { flex-basis: 200px; }
+}
+/* up to here the header buttons sit a little closer, so long translations (Ukrainian, German) still fit */
+@media (max-width: 1100px) {
+  header.top { gap: 8px; }
+  header.top > .btn { padding: 0 9px; }
 }
 .inp.bad, .inp.bad:focus { border-color: var(--danger); }
 

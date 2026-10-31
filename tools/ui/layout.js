@@ -4,6 +4,15 @@ const check = (name, got, want) => console.log(`E2E ${name}: ${got} (expected ${
 const $ = (id) => document.getElementById(id);
 const W = window.innerWidth;
 try {
+  // the page itself never scrolls sideways, and the header (search box, Settings) is never cut off, with or without the calendar panel
+  for (const side of [true, false]) {
+    await window.__rf.setSetting({ sidePanel: side }); document.body.classList.toggle('no-side', !side); await sleep(300);
+    const de = document.documentElement, p = side ? '' : ' (calendar panel hidden)';
+    check(`${W}px page sideways${p}`, de.scrollWidth > de.clientWidth + 1 ? `scrolls (${de.scrollWidth} > ${de.clientWidth})` : 'fits', 'fits');
+    const cut = [...document.querySelectorAll('header.top > *, .tabs > *')].filter((e) => e.offsetParent && e.getBoundingClientRect().right > de.clientWidth + 1).map((e) => e.id || e.className);
+    check(`${W}px header and tabs cut off${p}`, cut.join(',') || 'none', 'none');
+  }
+  await window.__rf.setSetting({ sidePanel: true }); document.body.classList.remove('no-side'); await sleep(300);
   const sideways = () => { const lv = $('listView'); return lv.scrollWidth > lv.clientWidth + 1 ? `scrolls (${lv.scrollWidth} > ${lv.clientWidth})` : 'fits'; };
   for (const f of ['upcoming', 'all', 'past']) {
     $('remFilter').value = f; $('remFilter').dispatchEvent(new Event('change')); await sleep(500);

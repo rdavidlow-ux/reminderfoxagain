@@ -65,8 +65,12 @@ chk("Edit is the standard menu (copy, paste, undo)", en[2].role, "editMenu");
 chk("German menus", de.map((t) => t.label).join(","), "ReminderFoxAgain,Ablage,Bearbeiten,Ansicht,Fenster");
 chk("German: same shortcuts", acc(de), acc(en));
 ' "$TMP/menu-en.json" "$TMP/menu-de.json" | tee "$TMP/menu.log"
-for w in 990 1180; do
+for w in 820 990 1180; do   # 820: the smallest the window can be
   SIZE=${w}x760 run "layout-$w-bills" bills layout.js
   SIZE=${w}x760 run "layout-$w-basic" basic layout.js
 done
+# the longest header wording (German, Ukrainian) at the smallest window
+RF_LANG=de SIZE=820x760 run layout-820-de basic layout.js
+RF_LANG=uk-UA SIZE=820x760 run layout-820-uk basic layout.js
+RF_LANG=uk-UA SIZE=981x760 run layout-981-uk basic layout.js   # just wide enough for the full name and the calendar panel
 echo "== done: $(grep -h '^E2E' "$TMP"/*.log | grep -c -E 'WRONG|ERROR') problem(s)"
