@@ -6,7 +6,7 @@ or later. On Linux, do everything else (web build, host core, tests, the Xcode p
 
 ## Project
 
-- Bundle id `org.reminderfoxagain.app`, display name **ReminderFoxAgain**, version `0.9.1`, build `901`. Deployment
+- Bundle id `org.reminderfoxagain.app`, display name **ReminderFoxAgain**, version `0.9.2`, build `902`. Deployment
   target iOS 15.0; iPhone and iPad (iPad uses the desktop layout).
 - `npx cap add ios` (Capacitor 7 uses Swift Package Manager; no CocoaPods). Commit `ios/App` without `build/` and
   `DerivedData/`.
@@ -50,9 +50,9 @@ or later. On Linux, do everything else (web build, host core, tests, the Xcode p
 1. `npm ci && npm run build:web && npx cap sync ios`.
 2. Simulator build, always:
    `xcodebuild -project ios/App/App.xcodeproj -scheme App -sdk iphonesimulator -configuration Release -derivedDataPath build CODE_SIGNING_ALLOWED=NO`
-   → `ReminderFoxAgain-0.9.1-simulator.app.zip`.
+   → `ReminderFoxAgain-0.9.2-simulator.app.zip`.
 3. Device build: with `RFA_TEAM_ID` (and automatic signing), `xcodebuild archive` then `-exportArchive` with an
-   `ExportOptions.plist` (`method: development` or `app-store`) → `ReminderFoxAgain-0.9.1.ipa`. Without a team, stop
+   `ExportOptions.plist` (`method: development` or `app-store`) → `ReminderFoxAgain-0.9.2.ipa`. Without a team, stop
    after step 2 and say so.
 4. TestFlight/App Store submission is out of scope. The README lists the steps (App Store Connect record,
    `xcrun altool`/Transporter upload, privacy answers: no data collected, nothing leaves the device).

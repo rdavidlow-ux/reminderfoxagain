@@ -1,8 +1,8 @@
-# ReminderFoxAgain 0.9.1 — Developer's Guide
+# ReminderFoxAgain 0.9.2 — Developer's Guide
 
 Oct 18, 2026 · David
 
-This guide is the reference for working on the ReminderFoxAgain 0.9.1 code. It covers the Store's data API, the main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
+This guide is the reference for working on the ReminderFoxAgain 0.9.2 code. It covers the Store's data API, the main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
 
 ## 1. Setup and layout
 
@@ -23,8 +23,8 @@ Both build on Linux and give the same SHA-256 hashes on every run.
 ```sh
 ./build-linux.sh   # dist/release-linux/: .tar.gz and .deb for x64 and arm64 (ARCHS=x64 for one)
 ./build-macos.sh   # dist/release-macos/: one universal .zip (Apple silicon + Intel)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.1-linux-x64.tar.gz
-python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.1
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.2-linux-x64.tar.gz
+python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.2
 ```
 
 - **Linux:** `build/linux/` holds `install.sh`, `uninstall.sh`, the menu entry, the icons and the .deb's `postinst`, `postrm` and AppArmor profile. The .deb installs to `/opt/ReminderFoxAgain`, links `/usr/bin/reminderfoxagain` and makes `chrome-sandbox` setuid root. The tarball installs per user under `~/.local`, and its launcher adds `--no-sandbox` only where unprivileged user namespaces are off.
@@ -396,7 +396,7 @@ The UI speaks the original add-on's 34 languages. English text is the key everyw
 | Suite | Command | Passes when |
 | --- | --- | --- |
 | Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 35/35 in every zone |
-| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (532 checks in 27 runs in 0.8.1) |
+| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (658 checks in 37 runs in 0.9.2) |
 | Screens | `tools/shots.sh <outDir>` | 70 PNGs; compare by eye |
 | Installer | `tools/test-setup.sh [pwsh]` | 20/20 |
 
@@ -422,7 +422,7 @@ const check = (name, got, want) => console.log(`E2E ${name}: ${got} (expected ${
 | `lists-views.js` | Views, the Lists dropdown, move to list, lists manager, my order, categories, picker, go to date, side panel, overdue marks, formats |
 | `lists.js` | Importing the add-on's lists from a profile's prefs.js, an empty list, ＋ List Item on a list, duplicate (item row, Ctrl+D, menu), delete, copy and move between lists, copying a reminder to a list, a new list from the dropdown, removing a list with its to-dos |
 | `alarms-data.js` | Settings sections, pop-up data, badge, quick alarms, suspend, backup and restore with undo |
-| `layout.js` | No overflow at 990 and 1180 px wide, with both sample sets |
+| `layout.js` | No overflow at 820, 990 and 1180 px wide, with both sample sets (and at 820 px in German and Ukrainian, 981 px in Ukrainian): the page never scrolls sideways, and nothing in the header or tab bar is cut off, with or without the calendar panel |
 | i18n.js, i18n-pick.js | Per language (run with RF\_LANG=de, LANG=fr\_FR.UTF-8, RF\_LANG=ar, and after picking ja-JP in Settings): lang and dir, tab names, plurals, month names, repeat summary, buttons, the Language list (35 options, names untranslated), the note |
 | import-month.js | The Import dialog: preview counts, skip duplicates, a category on every imported item, Replace everything with its backup; completed list items absent from Month, mini calendar and agenda |
 | view-options.js (0.8.0) | Show completed in Reminders (every Show choice) and Month (off at first), the View section and its button order, column ticks and hidden cells per tab, the Saved filters wording (no “view” in the dialog), Order by every column and its place before Show completed, the five sounds and Continuously until cleared |

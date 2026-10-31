@@ -3,6 +3,13 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
+## 0.9.2 — fits the smallest window
+
+- **The window can be made as small as it allows (820 px wide) without anything being cut off.** Before, at that
+  width the page scrolled sideways and the search box, Settings and the reminder counts went off the right edge. Now,
+  in a narrow window the name beside the fox icon is hidden (the title bar still shows it) and the search box gets
+  narrower, so everything fits, in every language.
+
 ## 0.9.1 — imports with other programs' dates
 
 - **Importing an .ics file no longer stops with "Could not extract integer from "Tue "".** Some programs write dates
