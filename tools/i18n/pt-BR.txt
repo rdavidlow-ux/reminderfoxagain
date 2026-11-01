@@ -980,4 +980,3 @@
 979| Os itens “{item}” são difíceis de ler nas listas (contraste {n}:1; 3:1 ou mais é melhor).
 980| Novo item de lista
 981| Editar item de lista
-982| Nenhum reminderfox.ics foi encontrado nos seus perfis do Thunderbird ou do Firefox. O complemento ReminderFox o guardava na pasta reminderfox de um perfil: escolha-o você mesmo.

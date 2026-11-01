@@ -56,8 +56,6 @@ write('host.js', bundle);
 
 // ------------------------------------------------------------ the background page, the bridge, the overlay
 for (const f of ['background.js', 'bridge.js', 'tb.js', 'tb.css', 'shortcuts.json']) write(`tb/${f}`, rd(`thunderbird/${f}`));
-// the experiment that finds the original add-on's reminderfox.ics in the profile folders (Import from ReminderFox)
-for (const f of ['schema.json', 'implementation.js']) write(`tb/experiments/rfprofile/${f}`, rd(`thunderbird/experiments/rfprofile/${f}`));
 
 // ------------------------------------------------------------ the pages: src/ui as it is, with the bridge loaded first
 const UI = 'src/ui';
@@ -107,14 +105,6 @@ const manifest = {
   permissions: ['storage', 'unlimitedStorage', 'notifications', 'menus', 'tabs', 'idle', 'messagesRead', 'messagesTags', 'messagesUpdate', 'compose', 'addressBooks', 'accountsRead'],
   // reading an .ics link in an email: asked for that one site when the person chooses "Import this calendar…"
   optional_permissions: ['*://*/*'],
-  // finds and reads the original ReminderFox add-on's reminderfox.ics in the profile folders, which a plain add-on
-  // can't reach (thunderbird/experiments/rfprofile); it reads that file and one line of prefs.js, nothing else
-  experiment_apis: {
-    rfprofile: {
-      schema: 'tb/experiments/rfprofile/schema.json',
-      parent: { scopes: ['addon_parent'], paths: [['rfprofile']], script: 'tb/experiments/rfprofile/implementation.js' },
-    },
-  },
   // Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q… for itself, so the app's shortcuts are Thunderbird shortcuts with Alt+Shift
   // (people can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts). Alt+Shift with the access key
   // of a Thunderbird menu (F E V G M N T H) opens that menu instead, so those five use other letters: A (add a

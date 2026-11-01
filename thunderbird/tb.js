@@ -15,24 +15,50 @@
   const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   // ---------------------------------------------------------------- Settings → Data → Import from ReminderFox…
-  // As on the desktop, the reminderfox.ics files found in the profile folders are offered (app.js, with the add-on's
-  // experiment doing the finding). When none is found, it first says where the file would be, then app.js's own handler
-  // opens the file picker (with prefs.js allowed, as there).
+  // The desktop app finds reminderfox.ics in the Firefox and Thunderbird profiles; an add-on can't look there, so it
+  // first says where the file is, then app.js's own handler opens the file picker (with prefs.js allowed, as there).
+  // where the file is, before the file picker opens (Settings → Data, and the welcome page below)
+  const whereIsIt = () => RF().confirmDlg('Import from ReminderFox',
+    '<div>An add-on can\'t look in other programs\' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.</div>' +
+    '<div class="note">To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.</div>' +
+    '<div class="note">Pick the profile folder\'s prefs.js with it to bring your list names too.</div>',
+    [{ label: 'Cancel', value: null }, { label: 'Choose the file…', cls: 'primary', value: 'pick' }]);
   const oldRf = $('stOldRf');
   if (oldRf) {
     let go = false;
     oldRf.addEventListener('click', async (e) => {
       if (go) { go = false; return; }
       e.stopImmediatePropagation();
-      if ((await window.rf.findOld()).length) { go = true; oldRf.click(); return; } // found: the desktop's dialog lists them
-      const v = await RF().confirmDlg('Import from ReminderFox',
-        '<div>No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.</div>' +
-        '<div class="note">To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.</div>' +
-        '<div class="note">Pick the profile folder\'s prefs.js with it to bring your list names too.</div>',
-        [{ label: 'Cancel', value: null }, { label: 'Choose the file…', cls: 'primary', value: 'pick' }]);
-      if (v !== 'pick') return;
+      if ((await whereIsIt()) !== 'pick') return;
       go = true;
       oldRf.click(); // the click on "Choose the file…" still counts as the person's, so the file picker may open
+    }, true);
+  }
+
+  // ---------------------------------------------------------------- the welcome page of a new installation
+  // Its own option for the ReminderFox add-on's file (the desktop app lists the files it finds there): it says where
+  // the file is, then app.js's "Import a calendar file" choice opens the picker (which takes prefs.js too).
+  const list = $('listView');
+  if (list) {
+    const addOld = () => {
+      const pick = list.querySelector('.welcome .opt[data-w="pick"]:not(.tb-old)');
+      if (!pick || list.querySelector('.welcome .tb-old')) return;
+      const opt = pick.cloneNode(false);
+      opt.classList.add('tb-old');
+      opt.innerHTML = '<span style="font-size:22px">🦊</span><div><b>Import from your ReminderFox add-on</b><small>Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile</small></div>';
+      pick.before(opt);
+    };
+    new MutationObserver(addOld).observe(list, { childList: true, subtree: true });
+    addOld();
+    let go = false;
+    list.addEventListener('click', async (e) => {
+      const opt = e.target.closest('.welcome .tb-old');
+      if (!opt) return;
+      if (go) { go = false; return; }
+      e.stopImmediatePropagation();
+      if ((await whereIsIt()) !== 'pick') return;
+      go = true;
+      opt.click();
     }, true);
   }
 

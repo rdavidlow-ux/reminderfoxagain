@@ -1022,5 +1022,3 @@ Coming (future)
 # the editor title for a list item
 New list item
 Edit list item
-# Thunderbird add-on: Import from ReminderFox… when nothing was found
-No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.

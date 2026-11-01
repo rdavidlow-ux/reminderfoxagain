@@ -1185,6 +1185,5 @@
  "Coming (future)": "Kommande (framtid)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Objekt ”{item}” är svåra att läsa i listorna (kontrast {n}:1; 3:1 eller mer är bättre).",
  "New list item": "Nytt listobjekt",
- "Edit list item": "Redigera listobjekt",
- "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "Ingen reminderfox.ics hittades i dina Thunderbird- eller Firefox-profiler. Tillägget ReminderFox sparade den i mappen reminderfox i en profil: välj den själv."
+ "Edit list item": "Redigera listobjekt"
 }

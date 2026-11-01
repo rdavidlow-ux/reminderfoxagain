@@ -980,4 +980,3 @@
 979| Elementer «{item}» er vanskelige å lese i listene (kontrast {n}:1; 3:1 eller mer er bedre).
 980| Nytt listeelement
 981| Rediger listeelement
-982| Fant ingen reminderfox.ics i Thunderbird- eller Firefox-profilene dine. ReminderFox-tillegget lagret den i mappen reminderfox i en profil: velg den selv.

@@ -7,7 +7,7 @@ cd "$(dirname "$0")/../.."
 LOG="$(mktemp)"; trap 'rm -f "$LOG"' EXIT
 run() { echo "== $*"; timeout 180 node thunderbird/test/run.js "$@" 2>&1 | grep '^E2E' | tee -a "$LOG"; }
 run tb-smoke.js
-run --sample empty --rffile tb-welcome.js
+run --sample empty tb-welcome.js
 run editor-and-todos.js
 run --sample bills history.js
 run --sample bills positions.js

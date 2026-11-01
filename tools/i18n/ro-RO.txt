@@ -980,4 +980,3 @@
 979| Elementele „{item}” sunt greu de citit în liste (contrast {n}:1; 3:1 sau mai mult e mai bine).
 980| Element de listă nou
 981| Editează elementul de listă
-982| Nu s-a găsit niciun reminderfox.ics în profilurile tale Thunderbird sau Firefox. Suplimentul ReminderFox îl păstra în dosarul reminderfox al unui profil: alege-l tu.

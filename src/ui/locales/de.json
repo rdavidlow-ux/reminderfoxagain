@@ -1183,6 +1183,5 @@
  "Coming (future)": "Kommend (Zukunft)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Einträge „{item}“ sind auf den Listen schwer zu lesen (Kontrast {n}:1; 3:1 oder mehr ist besser).",
  "New list item": "Neuer Listeneintrag",
- "Edit list item": "Listeneintrag bearbeiten",
- "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "In Ihren Thunderbird- oder Firefox-Profilen wurde keine reminderfox.ics gefunden. Das ReminderFox-Add-on hat sie im Ordner reminderfox eines Profils gespeichert: Wählen Sie sie selbst aus."
+ "Edit list item": "Listeneintrag bearbeiten"
 }

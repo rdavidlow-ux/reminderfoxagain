@@ -150,11 +150,6 @@
         ...onContact,
       },
     },
-    // the add-on's experiment: the reminderfox.ics files the original add-on left (seed.rfFiles)
-    rfprofile: {
-      find: async () => (seed.rfFiles || []).map(({ path, modified, size, current }) => ({ path, modified, size, current })),
-      read: async (p) => { const f = (seed.rfFiles || []).find((x) => x.path === p); if (!f) throw new Error('That file is not a reminderfox.ics in a profile.'); return { name: 'reminderfox.ics', text: f.text, prefs: (/user_pref\("extensions\.reminderFox\.todoLists"[^\n]*\);/.exec(f.prefs) || [''])[0] }; },
-    },
     permissions: {
       contains: async ({ origins }) => origins.every((o) => state.permissions.includes(o)),
       request: async ({ origins }) => { state.permissions.push(...origins); return true; },

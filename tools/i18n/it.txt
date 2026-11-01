@@ -980,4 +980,3 @@
 979| Gli elementi «{item}» sono difficili da leggere negli elenchi (contrasto {n}:1; 3:1 o più è meglio).
 980| Nuovo elemento di elenco
 981| Modifica elemento di elenco
-982| Nessun reminderfox.ics trovato nei tuoi profili di Thunderbird o Firefox. Il componente aggiuntivo ReminderFox lo teneva nella cartella reminderfox di un profilo: sceglilo tu.

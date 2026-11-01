@@ -1001,6 +1001,5 @@
  "Coming (future)": "即將到來（未來）",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "「{item}」項目在清單中難以閱讀（對比 {n}:1；3:1 或以上較好）。",
  "New list item": "新增清單項目",
- "Edit list item": "編輯清單項目",
- "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "在你的 Thunderbird 或 Firefox 設定檔中找不到 reminderfox.ics。ReminderFox 附加元件將它儲存在設定檔的 reminderfox 資料夾中：請自行選擇。"
+ "Edit list item": "編輯清單項目"
 }

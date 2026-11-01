@@ -980,4 +980,3 @@
 979| Kirjeid „{item}” on loendites raske lugeda (kontrast {n}:1; 3:1 või rohkem on parem).
 980| Uus loendi kirje
 981| Muuda loendi kirjet
-982| Sinu Thunderbirdi või Firefoxi profiilidest ei leitud faili reminderfox.ics. ReminderFoxi lisa hoidis seda profiili kaustas reminderfox: vali see ise.

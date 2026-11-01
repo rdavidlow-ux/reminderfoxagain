@@ -980,4 +980,3 @@
 979| Items ‘{item}’ binne dreech te lêzen yn de listen (kontrast {n}:1; 3:1 of mear is better).
 980| Nij listitem
 981| Listitem bewurkje
-982| Der is gjin reminderfox.ics fûn yn dyn Thunderbird- of Firefox-profilen. De ReminderFox-add-on bewarre it yn de map reminderfox fan in profyl: kies it sels.

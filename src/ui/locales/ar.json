@@ -1365,6 +1365,5 @@
  "Coming (future)": "قادم (المستقبل)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "عناصر «{item}» صعبة القراءة في القوائم (التباين {n}:1؛ و3:1 أو أكثر أفضل).",
  "New list item": "عنصر قائمة جديد",
- "Edit list item": "تعديل عنصر القائمة",
- "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "لم يُعثر على ملف reminderfox.ics في ملفات تعريف Thunderbird أو Firefox. كانت إضافة ReminderFox تحفظه في مجلد reminderfox ضمن ملف تعريف: اختره بنفسك."
+ "Edit list item": "تعديل عنصر القائمة"
 }
