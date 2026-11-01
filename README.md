@@ -97,7 +97,7 @@ Download the files for your system from the [Releases](https://github.com/rdavid
 
 ### Thunderbird add-on (recommended)
 
-1. Download `ReminderFoxAgain-0.9.4-thunderbird.xpi`.
+1. Download `ReminderFoxAgain-0.9.4-td.xpi`.
 2. In Thunderbird 128 or later: **≡ → Add-ons and Themes → ⚙ → Install Add-on From File…** and pick the .xpi.
    Thunderbird asks you to confirm, since the add-on isn't on addons.thunderbird.net yet, and lists what it may do.
 3. The fox button appears in the toolbar at the top right, and ReminderFoxAgain opens in a tab on its welcome page.
