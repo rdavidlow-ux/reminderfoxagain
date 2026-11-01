@@ -67,10 +67,33 @@ test('maildate 6. past dates and quoted replies are passed over; the first date 
 
 test('maildate 7. the reminder for an email: subject without Re:, date from the subject first, then the text', () => {
   const r = reminderFromEmail({ subject: 'Re: Fwd: Car service at the dealer', date: REF, body: 'Hi Leo,\nyour car service is on Tuesday, Nov 3rd at 8:00 am.\nThanks' }, { now: NOW, locale: 'en-CA' });
-  assert.deepEqual(r, { summary: 'Car service at the dealer', date: '2026-11-03', time: '08:00', found: 'Tuesday, Nov 3rd' });
+  assert.deepEqual(r, { summary: 'Car service at the dealer', date: '2026-11-03', time: '08:00', location: null, found: 'Tuesday, Nov 3rd' });
   const s = reminderFromEmail({ subject: 'Parent-teacher interview Nov 12 at 6:30 pm', date: REF, body: 'Another date: Nov 20' }, { now: NOW, locale: 'en-US' });
   assert.equal(s.date, '2026-11-12');
   assert.equal(s.time, '18:30');
   const none = reminderFromEmail({ subject: 'Newsletter', date: REF, body: 'No dates here.' }, { now: NOW, locale: 'en-US' });
-  assert.deepEqual(none, { summary: 'Newsletter', date: null, time: null, found: null });
+  assert.deepEqual(none, { summary: 'Newsletter', date: null, time: null, location: null, found: null });
+});
+
+test('maildate 8. a time with its own label, next to the date or on another line', () => {
+  // found in a real email
+  assert.deepEqual(find('Appointment Date: Thursday, November 26, 2026 , Time 11:40 AM , Location: Canadian Blood Services'), ['2026-11-26', '11:40']);
+  assert.deepEqual(find('Date: Nov 26, 2026\nTime: 9:15 am\nRoom 4'), ['2026-11-26', '09:15']);
+  assert.deepEqual(find('Datum: 26.11.2026\nUhrzeit: 14:30 Uhr', 'de'), ['2026-11-26', '14:30']);
+  assert.deepEqual(find('Date : 26 novembre 2026 - Heure : 15h30', 'fr'), ['2026-11-26', '15:30']);
+  assert.deepEqual(find('Date: Nov 26, 2026\nTime zone: Eastern'), ['2026-11-26', null]); // no time after the label
+});
+
+test('maildate 9. the place: a labelled field, with the address lines under it, or a street address', () => {
+  const { findLocation } = require('../src/host/maildate');
+  // found in a real email: the location field, a blank line, then the street address
+  assert.equal(findLocation('Appointment Date: Thursday, November 26, 2026 , Time 11:40 AM , Location: Canadian Blood Services, Yonge & Bloor\n\n2 Bloor St E, M4W 1A8.'),
+    'Canadian Blood Services, Yonge & Bloor, 2 Bloor St E, M4W 1A8');
+  assert.equal(findLocation('Where: Room 4B  Phone: 416-555-0100'), 'Room 4B');
+  assert.equal(findLocation('Address:\n123 Main Street\nToronto, ON M5V 2T6\n\nSee you there'), '123 Main Street, Toronto, ON M5V 2T6');
+  assert.equal(findLocation('Hi,\nwe are at\n55 Queen St W, Toronto\nfrom 9.'), '55 Queen St W, Toronto');
+  assert.equal(findLocation('Ort: Praxis Dr. Weber, Hauptstraße 12\n10115 Berlin'), 'Praxis Dr. Weber, Hauptstraße 12, 10115 Berlin');
+  assert.equal(findLocation('Lieu : Salle des fêtes'), 'Salle des fêtes');
+  assert.equal(findLocation('Thanks!\n> Location: an old place'), null); // quoted
+  assert.equal(findLocation('No place in this one. We have 3 kids.'), null);
 });

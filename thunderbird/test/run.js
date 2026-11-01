@@ -68,7 +68,7 @@ function serve() {
   const ahead = new Date(Date.now() + 10 * 86400000);
   const aheadKey = `${ahead.getFullYear()}-${String(ahead.getMonth() + 1).padStart(2, '0')}-${String(ahead.getDate()).padStart(2, '0')}`;
   const aheadWords = ahead.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-  const messages = { 42: { contentType: 'multipart/alternative', parts: [{ contentType: 'text/html', body: `<html><body><p>Hi Leo,</p><p>Your car service at the dealer is booked for <b>${aheadWords}</b> at 8:00 am.</p><blockquote type="cite">On an earlier day you wrote: January 1, 2030</blockquote></body></html>` }] } };
+  const messages = { 42: { contentType: 'multipart/alternative', parts: [{ contentType: 'text/html', body: `<html><body><p>Hi Leo,</p><p>Your car service at the dealer is booked for <b>${aheadWords}</b> at 8:00 am.</p><p>Location: Maple Motors service desk<br><br>500 Queen St E, Toronto</p><blockquote type="cite">On an earlier day you wrote: January 1, 2030</blockquote></body></html>` }] } };
   await ctx.addInitScript({ content: `window.__seed = ${JSON.stringify({ storage, os: 'linux', uiLanguage: 'en-CA', messages })};\n${fs.readFileSync(path.join(__dirname, 'mock-browser.js'), 'utf8')}` });
   const pages = new Map(); // tab or window id → page
   const errors = [];
@@ -179,11 +179,12 @@ function serve() {
     line('"Add reminder…" is on the email menu', mailItem ? `${mailItem.title} [${mailItem.contexts}]` : 'missing', 'Add reminder… [message_list]');
     await bg.evaluate(() => window.__mock.clickMenu('rf-mail-reminder', { selectedMessages: { messages: [{ id: 42, subject: 'Fwd: Car service at the dealer', author: 'Service <service@example.com>', date: new Date().toISOString() }] } }));
     await sleep(1200);
-    const ed = await main.evaluate(() => ({ open: document.getElementById('edSummary').offsetParent !== null, summary: document.getElementById('edSummary').value, date: document.getElementById('edDate').value, time: document.getElementById('edTime').value, allDay: document.getElementById('edAllDay').checked }));
+    const ed = await main.evaluate(() => ({ open: document.getElementById('edSummary').offsetParent !== null, summary: document.getElementById('edSummary').value, date: document.getElementById('edDate').value, time: document.getElementById('edTime').value, allDay: document.getElementById('edAllDay').checked, location: (document.getElementById('edLocation') || {}).value }));
     line('the email opens the editor', ed.open, true);
     line('its subject is the description', ed.summary, 'Car service at the dealer');
     line('the date found in the email', ed.date, aheadKey);
     line('the time next to it', `${ed.time}${ed.allDay ? ' (all day)' : ''}`, '08:00');
+    line('the place from the email', ed.location, 'Maple Motors service desk, 500 Queen St E, Toronto');
     await main.evaluate(() => document.getElementById('edCancel').click());
     await sleep(300);
     const alarm = await waitFor('alarm', 6000);

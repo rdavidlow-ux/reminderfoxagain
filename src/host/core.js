@@ -739,10 +739,10 @@ function createHost(ad) {
     'backup:describe': (file) => describeBackup(file),
     'backup:restore': (file) => restoreBackup(file),
     'menu:click': (id) => menuClick(id),
-    // an email {subject, date (ms), body}: what the editor opens with (ui:new)
+    // an email {subject, date (ms), body}: what the editor opens with (ui:new): its subject, date, time and place
     'mail:reminder': (mail) => {
       const r = reminderFromEmail(mail, { now: now(), locale: dateLocale() });
-      return { kind: 'event', date: r.date, prefill: { summary: r.summary, time: r.time }, found: r.found };
+      return { kind: 'event', date: r.date, prefill: { summary: r.summary, time: r.time, location: r.location }, found: r.found };
     },
     'host:i18n': () => i18nInfo(),
   };

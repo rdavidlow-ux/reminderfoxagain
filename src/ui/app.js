@@ -1035,9 +1035,10 @@
         alarm: da != null && da !== '' ? { minutes: -540 } : null, timezone: null, completed: false,
         list: kind === 'todo' ? (curList() || DEFAULT_LIST) : null,
       };
-      // filled in by the host, e.g. the Thunderbird add-on's "Add reminder…" on an email: its subject and the time found in it
+      // filled in by the host, e.g. the Thunderbird add-on's "Add reminder…" on an email: its subject, the time and the place found in it
       const pf = opts.prefill || {};
       if (typeof pf.summary === 'string') dto.summary = pf.summary;
+      if (typeof pf.location === 'string') dto.location = pf.location;
       if (typeof pf.time === 'string' && /^\d{2}:\d{2}$/.test(pf.time)) { dto.time = pf.time; dto.allDay = false; }
       E.isNew = true;
     }

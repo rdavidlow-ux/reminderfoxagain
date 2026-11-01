@@ -66,23 +66,36 @@ function nextYearly(m, d, ref) {
 
 // the time written next to a date (just after it, or just before it)
 const TIME = String.raw`(?:at\s+|um\s+|à\s+|a las\s+|alle\s+|om\s+|@\s*)?(\d{1,2})(?:[:.h](\d{2}))?\s*(a\.?\s?m\.?|p\.?\s?m\.?|uhr|h)?\b|\b(noon|midday|mittag)\b`;
+// a "Time" label before a time: "Date: Nov 26, Time 11:40 AM", "Uhrzeit: 14:30"
+const TIME_LABEL = String.raw`(?:start(?:ing)?\s+time|time|heure|uhrzeit|zeit|hora|ora|tijd|tid|klo|aika|godzina|czas|время|час|時間|时间)`;
+function hm(m, lead) {
+  if (m[4]) return '12:00';
+  let h = Number(m[1]); const min = m[2] ? Number(m[2]) : 0; const ap = (m[3] || '').toLowerCase().replace(/[\s.]/g, '');
+  // a bare number is a time only with a colon, am/pm, "Uhr"/"h" or a lead word ("at 3")
+  if (!m[2] && !ap && !lead) return null;
+  if (ap === 'pm' && h < 12) h += 12;
+  if (ap === 'am' && h === 12) h = 0;
+  if (h > 23 || min > 59) return null;
+  return `${pad(h)}:${pad(min)}`;
+}
 function timeNear(text, start, end) {
-  const after = text.slice(end, end + 28);
+  const after = text.slice(end, end + 48);
   const before = text.slice(Math.max(0, start - 24), start);
   for (const [chunk, anchored] of [[after, true], [before, false]]) {
-    const re = new RegExp(anchored ? `^[\\s,]*(?:[-–]\\s*)?(?:${TIME})` : `(?:${TIME})[\\s,]*(?:on\\s+|am\\s+|le\\s+|el\\s+)?$`, 'i');
+    const re = new RegExp(anchored ? `^[\\s,;|]*(?:[-–]\\s*)?(${TIME_LABEL}\\s*[:\\-]?\\s*)?(?:${TIME})` : `(?:${TIME})[\\s,]*(?:on\\s+|am\\s+|le\\s+|el\\s+)?$`, 'i');
     const m = re.exec(chunk);
     if (!m) continue;
-    if (m[4]) return '12:00';
-    let h = Number(m[1]); const min = m[2] ? Number(m[2]) : 0; const ap = (m[3] || '').toLowerCase().replace(/[\s.]/g, '');
-    // a bare number is a time only with a colon, am/pm, "Uhr"/"h" or a lead word ("at 3")
-    if (!m[2] && !ap && !/^(at|um|à|a las|alle|om|@)/i.test(m[0].trim())) continue;
-    if (ap === 'pm' && h < 12) h += 12;
-    if (ap === 'am' && h === 12) h = 0;
-    if (h > 23 || min > 59) continue;
-    return `${pad(h)}:${pad(min)}`;
+    const g = anchored ? [m[0], m[2], m[3], m[4], m[5]] : m; // (the label is the first group after the date)
+    const t = hm(g, (anchored && m[1]) || /^(at|um|à|a las|alle|om|@)/i.test(m[0].replace(/^[\s,;|–-]+/, '')));
+    if (t) return t;
   }
   return null;
+}
+// a time with its own label anywhere in the text ("Time: 9:15 am" on the line under "Date: …")
+function labelledTime(text) {
+  const re = new RegExp(String.raw`(?:^|[\s,;|])${TIME_LABEL}\s*[:\-]?\s*(?:${TIME})`, 'i');
+  const m = re.exec(text);
+  return m ? hm(m, true) : null;
 }
 
 // the text worth reading: no quoted replies, no forwarded headers
@@ -156,17 +169,60 @@ function findDate(text, opts = {}) {
   // the first date in the text that is today or later, and not years away
   for (const c of candidates(body, { ref, locale: opts.locale })) {
     if (c.date < today || c.date > limit) continue;
-    return { date: key(c.date), time: timeNear(body, c.index, c.index + c.length), text: body.substr(c.index, c.length).trim() };
+    return { date: key(c.date), time: timeNear(body, c.index, c.index + c.length) || labelledTime(body), text: body.substr(c.index, c.length).trim() };
   }
   return null;
 }
 
 // the reminder for an email: the subject as its description, the first date ahead in the subject, else in the text
+// ------------------------------------------------------------ the place
+// A labelled field ("Location:", "Where:", "Address:"… and the same in other languages) with an address on the next
+// lines joined to it, else a street address on a line of its own: "123 Main St", "Hauptstraße 12", or a postcode.
+const LOC_LABEL = /(?:^|[\s,;|])(?:location|where|place|venue|address|meeting place|lieu|adresse|ort|standort|treffpunkt|ubicaci[oó]n|lugar|direcci[oó]n|luogo|indirizzo|locatie|plaats|adres|plats|sted|paikka|osoite|miejsce|adres|место|адрес|місце|адреса|場所|住所|地点|地址|장소|주소)\s*:\s*/i;
+const POSTCODE = /\b[A-Z]\d[A-Z]\s?\d[A-Z]\d\b|\b[A-Z]{1,2}\d[A-Z\d]?\s\d[A-Z]{2}\b|\b[A-Z]{2}\s+\d{5}(?:-\d{4})?\b|\b\d{5}\s+[A-ZÄÖÜ][a-zäöüß]+/;
+const STREET = /^\s*\d{1,5}[A-Za-z]?,?\s+[^\s,].*?\b(?:st|street|ave|avenue|rd|road|blvd|boulevard|dr|drive|ln|lane|way|cres|crescent|ct|court|pl|place|pkwy|parkway|hwy|highway|sq|square|terr|terrace|cir|circle|rue|calle|via|avenida)\b\.?|\b[A-ZÄÖÜ][\wäöüß-]*(?:straße|strasse|str\.|weg|platz|gasse|allee|straat|laan|gatan|vägen|gate|veien)\s+\d{1,4}[a-z]?\b/i;
+const clean = (s) => s.replace(/\s+/g, ' ').replace(/^[\s,;:–-]+|[\s,;.–-]+$/g, '').trim();
+function findLocation(text) {
+  const lines = ownText(text).split('\n');
+  const looksLikeAddress = (l) => STREET.test(l) || POSTCODE.test(l);
+  // the address lines after line i (up to two, a blank line between allowed)
+  const more = (i) => {
+    const out = [];
+    for (let j = i + 1, blanks = 0; j < lines.length && out.length < 2; j++) {
+      const l = lines[j].trim();
+      if (!l) { if (++blanks > 1) break; continue; }
+      if (!looksLikeAddress(l) || LOC_LABEL.test(l)) break;
+      out.push(clean(l)); blanks = 0;
+    }
+    return out;
+  };
+  for (let i = 0; i < lines.length; i++) {
+    const m = LOC_LABEL.exec(lines[i]);
+    if (!m) continue;
+    // the value runs to the end of the line, or to the next field (" , " or "  " or "Phone:")
+    let v = lines[i].slice(m.index + m[0].length).split(/\s+,\s+|\s{2,}|\t|\s\|\s|\s+(?=[A-Z][a-z]+(?:\s[A-Za-z]+)?\s*:\s)/)[0];
+    v = clean(v);
+    let first = i;
+    if (!v) { // the label on its own line: the value is on the next one
+      for (first = i + 1; first < lines.length && !lines[first].trim(); first++);
+      v = clean(lines[first] || '');
+    }
+    if (!v) continue;
+    return [v, ...more(first)].join(', ').slice(0, 200);
+  }
+  for (let i = 0; i < lines.length; i++) {
+    if (!STREET.test(lines[i])) continue;
+    return [clean(lines[i]), ...more(i)].join(', ').slice(0, 200);
+  }
+  return null;
+}
+
 function reminderFromEmail(mail, opts = {}) {
   const subject = String((mail && mail.subject) || '').replace(/^\s*((re|fwd?|aw|wg|tr|sv|vs|r|rif|odp|antw)\s*(\[\d+\])?\s*:\s*)+/i, '').trim();
   const o = { ...opts, ref: mail && mail.date ? Number(mail.date) : opts.ref };
   const hit = findDate(subject, o) || findDate(String((mail && mail.body) || '').slice(0, 20000), o);
-  return { summary: subject, date: hit ? hit.date : null, time: hit ? hit.time : null, found: hit ? hit.text : null };
+  const location = findLocation(String((mail && mail.body) || '').slice(0, 20000));
+  return { summary: subject, date: hit ? hit.date : null, time: hit ? hit.time : null, location, found: hit ? hit.text : null };
 }
 
-module.exports = { findDate, reminderFromEmail };
+module.exports = { findDate, findLocation, reminderFromEmail };
