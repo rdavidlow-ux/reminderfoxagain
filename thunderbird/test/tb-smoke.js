@@ -42,14 +42,14 @@ try {
   check('desktop-only settings hidden', ['stStart', 'stTray', 'stFolder', 'stBackups', 'stPath'].filter((id) => $(id) && $(id).offsetParent !== null).join(',') || 'none', 'none');
   check('the storage note', ($('tbPath') || {}).textContent, 'Your reminders are kept in your Thunderbird profile, with a backup every day.');
   check('import, Import from ReminderFox and export stay', ['stImport', 'stOldRf', 'stExport'].every((id) => $(id) && getComputedStyle($(id)).display !== 'none'), true);
-  check('its add-on tooltip', $('stOldRf').title, 'Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile');
+  check('its add-on tooltip', $('stOldRf').title, 'Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile');
   // Import from ReminderFox…: first where the file is, then the file picker (prefs.js allowed with it)
   let picked = null;
   const pickClick = HTMLInputElement.prototype.click;
   HTMLInputElement.prototype.click = function () { if (this.type === 'file') { picked = this.accept; return; } return pickClick.call(this); };
   $('stOldRf').click();
   await sleep(400);
-  check('Import from ReminderFox… says where the file is', !!$('confirm').open && /reminderfox folder of your Thunderbird or Firefox profile/.test($('cfBody').textContent), true);
+  check('Import from ReminderFox…, none found: says where the file is', !!$('confirm').open && /No reminderfox.ics was found/.test($('cfBody').textContent), true);
   check('… and nothing is picked yet', picked, null);
   [...$('cfFoot').querySelectorAll('button')].find((b) => b.textContent === 'Choose the file…').click();
   await sleep(400);

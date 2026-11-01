@@ -19,6 +19,8 @@ const SIZE = opt('size', '1180x760').split('x').map(Number);
 const LANG = opt('lang', '');
 const SAMPLE = opt('sample', 'basic');
 const ALARM = opt('alarm', '');
+// --rffile: a reminderfox.ics (with its prefs.js) for the add-on's experiment to find, as if the original add-on had run here
+const RFFILE = args.includes('--rffile') ? (args.splice(args.indexOf('--rffile'), 1), true) : false;
 const SCRIPT = args[0] || 'none.js';
 const sleep = (t) => new Promise((r) => setTimeout(r, t));
 const line = (name, got, want) => console.log(`E2E TB ${name}: ${got} (expected ${want})${String(got) === String(want) ? '' : '  WRONG'}`);
@@ -53,7 +55,7 @@ function serve() {
   if (!fs.existsSync(path.join(DIST, 'manifest.json'))) throw new Error('Build the add-on first: ./build-thunderbird.sh');
   // the same made-up sample data as the desktop checks, put into the add-on's storage
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'rf-tb-'));
-  execFileSync('node', [path.join(ROOT, 'tools', 'sample-data.js'), tmp, SAMPLE], { stdio: 'ignore' });
+  if (SAMPLE !== 'empty') execFileSync('node', [path.join(ROOT, 'tools', 'sample-data.js'), tmp, SAMPLE], { stdio: 'ignore' }); // empty: a brand-new installation
   const storage = { 'f-index': {} };
   for (const f of ['reminders.ics', 'state.json']) {
     if (!fs.existsSync(path.join(tmp, f))) continue;
@@ -68,6 +70,7 @@ function serve() {
   const origin = `http://127.0.0.1:${server.address().port}`;
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ viewport: { width: SIZE[0], height: SIZE[1] } });
+  const fixture = (f) => fs.readFileSync(path.join(ROOT, 'test', f), 'utf8');
   // an email for "Add reminder…": an HTML message whose text names a date ten days ahead at 8:00 am
   const ahead = new Date(Date.now() + 10 * 86400000);
   const aheadKey = `${ahead.getFullYear()}-${String(ahead.getMonth() + 1).padStart(2, '0')}-${String(ahead.getDate()).padStart(2, '0')}`;
@@ -82,7 +85,7 @@ function serve() {
     { id: 'c-cy', type: 'contact', vCard: 'BEGIN:VCARD\r\nVERSION:4.0\r\nFN:Cy Moore\r\nEMAIL:cy@example.com\r\nEND:VCARD' },
   ] }];
   const displayed = { id: 7, headerMessageId: 'lunch.7@example.com', subject: 'Plans', date: new Date().toISOString() };
-  await ctx.addInitScript({ content: `window.__seed = ${JSON.stringify({ storage, os: 'linux', uiLanguage: 'en-CA', messages, knownMessageIds: ['car-service.42@dealer.example.com'], library, account, addressBooks, displayed })};\n${fs.readFileSync(path.join(__dirname, 'mock-browser.js'), 'utf8')}` });
+  await ctx.addInitScript({ content: `window.__seed = ${JSON.stringify({ storage, os: 'linux', uiLanguage: 'en-CA', messages, knownMessageIds: ['car-service.42@dealer.example.com'], library, account, addressBooks, displayed, rfFiles: RFFILE ? [{ path: '/home/leo/.thunderbird/abcd1234.default-release/reminderfox/reminderfox.ics', modified: Date.now() - 864e5, size: 4000, current: true, text: fixture('reminderfox-addon-full.ics'), prefs: fixture('reminderfox-addon-prefs.js') }] : [] })};\n${fs.readFileSync(path.join(__dirname, 'mock-browser.js'), 'utf8')}` });
   const pages = new Map(); // tab or window id → page
   const errors = [];
   const watch = (page, label) => {
@@ -129,7 +132,6 @@ function serve() {
   }
   // The desktop scripts import test files by their path on disk; an add-on has no paths, only files the person picks.
   // Upload the same files the add-on's way and stand their tokens in for those paths.
-  const fixture = (f) => fs.readFileSync(path.join(ROOT, 'test', f), 'utf8');
   await main.evaluate(async (fx) => {
     const up = async (files) => (await browser.runtime.sendMessage({ rf: 'call', ch: 'upload', args: [files] })).value;
     const map = [

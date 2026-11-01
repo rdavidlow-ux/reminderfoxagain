@@ -980,3 +980,4 @@
 979| “{item}” 항목은 목록에서 읽기 어렵습니다(대비 {n}:1, 3:1 이상이 좋음).
 980| 새 목록 항목
 981| 목록 항목 편집
+982| Thunderbird나 Firefox 프로필에서 reminderfox.ics를 찾지 못했습니다. ReminderFox 부가 기능은 프로필의 reminderfox 폴더에 저장했습니다. 직접 선택하세요.

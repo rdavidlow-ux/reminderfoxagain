@@ -1001,5 +1001,6 @@
  "Coming (future)": "다가오는 일(미래)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "“{item}” 항목은 목록에서 읽기 어렵습니다(대비 {n}:1, 3:1 이상이 좋음).",
  "New list item": "새 목록 항목",
- "Edit list item": "목록 항목 편집"
+ "Edit list item": "목록 항목 편집",
+ "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "Thunderbird나 Firefox 프로필에서 reminderfox.ics를 찾지 못했습니다. ReminderFox 부가 기능은 프로필의 reminderfox 폴더에 저장했습니다. 직접 선택하세요."
 }

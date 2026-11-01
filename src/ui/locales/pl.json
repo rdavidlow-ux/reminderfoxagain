@@ -1301,5 +1301,6 @@
  "Coming (future)": "Nadchodzące (przyszłe)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Elementy „{item}” są trudne do odczytania na listach (kontrast {n}:1; lepiej 3:1 lub więcej).",
  "New list item": "Nowy element listy",
- "Edit list item": "Edytuj element listy"
+ "Edit list item": "Edytuj element listy",
+ "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "W Twoich profilach Thunderbirda ani Firefoksa nie znaleziono pliku reminderfox.ics. Dodatek ReminderFox przechowywał go w folderze reminderfox profilu: wybierz go samodzielnie."
 }

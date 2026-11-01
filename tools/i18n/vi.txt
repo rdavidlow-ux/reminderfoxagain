@@ -980,3 +980,4 @@
 979| Mục “{item}” khó đọc trong danh sách (độ tương phản {n}:1; từ 3:1 trở lên thì tốt hơn).
 980| Mục danh sách mới
 981| Sửa mục danh sách
+982| Không tìm thấy reminderfox.ics trong các hồ sơ Thunderbird hoặc Firefox của bạn. Tiện ích ReminderFox lưu nó trong thư mục reminderfox của một hồ sơ: hãy tự chọn.

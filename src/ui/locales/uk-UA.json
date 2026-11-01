@@ -1301,5 +1301,6 @@
  "Coming (future)": "Майбутнє (наступне)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Елементи «{item}» погано читаються у списках (контраст {n}:1; краще 3:1 або більше).",
  "New list item": "Новий елемент списку",
- "Edit list item": "Змінити елемент списку"
+ "Edit list item": "Змінити елемент списку",
+ "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "У ваших профілях Thunderbird і Firefox файл reminderfox.ics не знайдено. Доповнення ReminderFox зберігало його в теці reminderfox профілю: виберіть його самі."
 }

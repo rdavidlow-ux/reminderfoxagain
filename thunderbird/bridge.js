@@ -26,6 +26,30 @@
     if (!r || !r.ok) throw new Error((r && r.error) || 'Unknown error');
     return r.value;
   }
+  // Import from ReminderFox: the reminderfox.ics files the original add-on kept in the profile folders, found by the
+  // add-on's experiment (thunderbird/experiments/rfprofile). The pages see them by their path, as on the desktop; they
+  // are read and handed to the host (with the profile's list names) when one is previewed or imported.
+  const oldFiles = new Map(); // path → upload tokens (once read)
+  async function findOldFiles() {
+    if (!browser.rfprofile) return [];
+    try {
+      const list = await browser.rfprofile.find();
+      for (const f of list) if (!oldFiles.has(f.path)) oldFiles.set(f.path, null);
+      return list;
+    } catch (e) { console.error('find reminderfox.ics', e); return []; }
+  }
+  async function tokensOf(files) {
+    const out = [];
+    for (const f of [].concat(files || [])) {
+      if (!oldFiles.has(f)) { out.push(f); continue; }
+      if (!oldFiles.get(f)) {
+        const r = await browser.rfprofile.read(f);
+        oldFiles.set(f, await call('upload', [{ name: 'reminderfox.ics', text: r.text }, ...(r.prefs ? [{ name: 'prefs.js', text: r.prefs }] : [])]));
+      }
+      out.push(...oldFiles.get(f));
+    }
+    return out;
+  }
   // the add-on's own channels: Thunderbird's compose and address-book APIs (background.js)
   async function tb(ch, ...args) {
     const r = await browser.runtime.sendMessage({ rf: 'tb', ch, args });
@@ -161,13 +185,13 @@
       const t = await pickAndUpload({ accept: ICS, multiple: true });
       return t ? call('ics:importPaths', t, {}) : null;
     },
-    importPath: (p) => call('ics:importPath', p),
+    importPath: async (p) => (oldFiles.has(p) ? call('ics:importPaths', await tokensOf(p), {}) : call('ics:importPath', p)),
     // the add-on's prefs.js may be picked with the reminderfox.ics: it brings the add-on's list names
     pickIcs: (kind) => pickAndUpload({ accept: kind === 'old' || kind === 'any' ? `${ICS},.js` : ICS, multiple: true }),
-    previewImport: (files) => call('ics:preview', files),
-    importPaths: (files, opts) => call('ics:importPaths', files, opts),
+    previewImport: async (files) => call('ics:preview', await tokensOf(files)),
+    importPaths: async (files, opts) => call('ics:importPaths', await tokensOf(files), opts),
     exportIcs: async (opts) => { const d = await call('ics:exportText', opts); return save(d.name, d.text); },
-    findOld: () => call('rf:findOld'),
+    findOld: () => findOldFiles(),
     pickOld: async () => {
       const t = await pickAndUpload({ accept: `${ICS},.js`, multiple: true });
       return t ? call('ics:importPaths', t, {}) : null;

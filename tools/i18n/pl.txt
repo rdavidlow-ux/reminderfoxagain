@@ -980,3 +980,4 @@
 979| Elementy „{item}” są trudne do odczytania na listach (kontrast {n}:1; lepiej 3:1 lub więcej).
 980| Nowy element listy
 981| Edytuj element listy
+982| W Twoich profilach Thunderbirda ani Firefoksa nie znaleziono pliku reminderfox.ics. Dodatek ReminderFox przechowywał go w folderze reminderfox profilu: wybierz go samodzielnie.

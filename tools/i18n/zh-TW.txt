@@ -980,3 +980,4 @@
 979| 「{item}」項目在清單中難以閱讀（對比 {n}:1；3:1 或以上較好）。
 980| 新增清單項目
 981| 編輯清單項目
+982| 在你的 Thunderbird 或 Firefox 設定檔中找不到 reminderfox.ics。ReminderFox 附加元件將它儲存在設定檔的 reminderfox 資料夾中：請自行選擇。

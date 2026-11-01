@@ -980,3 +980,4 @@
 979| A(z) „{item}” elemek nehezen olvashatók a listákon (kontraszt {n}:1; 3:1 vagy több a jobb).
 980| Új listaelem
 981| Listaelem szerkesztése
+982| A Thunderbird- vagy Firefox-profiljaiban nem található reminderfox.ics. A ReminderFox kiegészítő egy profil reminderfox mappájában tárolta: válassza ki saját maga.

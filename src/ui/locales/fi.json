@@ -1181,5 +1181,6 @@
  "Coming (future)": "Tuleva (tulevaisuus)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Kohteita ”{item}” on vaikea lukea luetteloissa (kontrasti {n}:1; 3:1 tai enemmän on parempi).",
  "New list item": "Uusi luettelon kohde",
- "Edit list item": "Muokkaa luettelon kohdetta"
+ "Edit list item": "Muokkaa luettelon kohdetta",
+ "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "Thunderbird- tai Firefox-profiileistasi ei löytynyt reminderfox.ics-tiedostoa. ReminderFox-lisäosa säilytti sen profiilin reminderfox-kansiossa: valitse se itse."
 }

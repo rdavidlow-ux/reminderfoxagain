@@ -980,3 +980,4 @@
 979| Položky „{item}“ jsou v seznamech špatně čitelné (kontrast {n}:1; lepší je 3:1 nebo více).
 980| Nová položka seznamu
 981| Upravit položku seznamu
+982| Ve vašich profilech Thunderbirdu ani Firefoxu nebyl nalezen soubor reminderfox.ics. Doplněk ReminderFox ho ukládal do složky reminderfox profilu: vyberte ho sami.

@@ -1301,5 +1301,6 @@
  "Coming (future)": "Nadcházející (budoucí)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Položky „{item}“ jsou v seznamech špatně čitelné (kontrast {n}:1; lepší je 3:1 nebo více).",
  "New list item": "Nová položka seznamu",
- "Edit list item": "Upravit položku seznamu"
+ "Edit list item": "Upravit položku seznamu",
+ "No reminderfox.ics was found in your Thunderbird or Firefox profiles. The ReminderFox add-on kept it in the reminderfox folder of a profile: pick it yourself.": "Ve vašich profilech Thunderbirdu ani Firefoxu nebyl nalezen soubor reminderfox.ics. Doplněk ReminderFox ho ukládal do složky reminderfox profilu: vyberte ho sami."
 }

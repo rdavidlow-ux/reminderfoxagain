@@ -1,0 +1,22 @@
+[
+  {
+    "namespace": "rfprofile",
+    "description": "Finds and reads the reminderfox.ics the original ReminderFox add-on kept in a Thunderbird or Firefox profile (read only: nothing else is read, nothing is written).",
+    "functions": [
+      {
+        "name": "find",
+        "type": "function",
+        "async": true,
+        "description": "The reminderfox.ics files in this Thunderbird profile and the other Thunderbird, Firefox, SeaMonkey, Waterfox and Pale Moon profiles of this user, newest first: [{path, modified, size, current}].",
+        "parameters": []
+      },
+      {
+        "name": "read",
+        "type": "function",
+        "async": true,
+        "description": "One file that find() returned: {name, text, prefs} (prefs: the profile's prefs.js, for the add-on's list names, or '').",
+        "parameters": [{ "name": "path", "type": "string" }]
+      }
+    ]
+  }
+]

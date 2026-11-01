@@ -980,3 +980,4 @@
 979| Items ‘{item}’ zijn moeilijk te lezen in de lijsten (contrast {n}:1; 3:1 of meer is beter).
 980| Nieuw lijstitem
 981| Lijstitem bewerken
+982| Er is geen reminderfox.ics gevonden in je Thunderbird- of Firefox-profielen. De ReminderFox-add-on bewaarde het in de map reminderfox van een profiel: kies het zelf.
