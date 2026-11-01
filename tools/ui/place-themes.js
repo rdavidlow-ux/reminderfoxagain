@@ -70,7 +70,7 @@ try {
   $('stThemeNew').click(); await sleep(400);
   const d = $('themeDlg');
   check('New theme opens', `${d.open} ${d.querySelector('h2').textContent}`, 'true New theme');
-  check('five colours', d.querySelectorAll('input[type=color]').length, 5);
+  check('five colours, then the seven item colours', `${d.querySelectorAll('input[type=color]:not([data-k^=it])').length} ${d.querySelectorAll('input[type=color][data-k^=it]').length}`, '5 7');
   const setHex = async (k, v) => { const el = d.querySelector(`[data-hex=${k}]`); el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); await sleep(100); };
   await setHex('bg', '#0f1f14'); await setHex('surface', '#16301f'); await setHex('ink', '#e8f5e9'); await setHex('accent', '#43a047'); await setHex('star', '#ffca28');
   const css = (v) => document.documentElement.style.getPropertyValue(v).trim();
