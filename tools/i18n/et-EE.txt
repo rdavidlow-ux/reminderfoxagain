@@ -887,3 +887,32 @@
 886| Profiilikausta avamiseks: Abi → Veaotsingu teave (Firefoxis: Rohkem veaotsingu teavet) → Profiili kaust → Ava kaust.
 887| Vali koos sellega ka profiilikausta prefs.js, et tuua kaasa ka su loendite nimed.
 888| Vali fail…
+889| Äratused…
+890| ⏰ Äratused
+891| Iga äratus, mis heliseb, on edasi lükatud või alles heliseb (Ctrl+L)
+892| Järgmised 24 tundi
+893| Järgmised 7 päeva
+894| Järgmised 30 päeva
+895| Järgmised 12 kuud
+896| Jäta vahele takistab ühe äratuse helisemist; korduva meeldetuletuse teised helisevad ikka. Äratuse lõplikuks muutmiseks või eemaldamiseks ava meeldetuletus või loendi kirje.
+897| Loendi kirje
+898| Heliseb alates {time}
+899| Edasi lükatud kuni {time}
+900| Vahele jäetud: {time}
+901| Näita kiiräratusi
+902| Ava meeldetuletus või loendi kirje
+903| Lükka edasi vaikimisi aja võrra (Sätted → Äratused)
+904| Helise kohe
+905| Võta vahelejätmine tagasi
+906| Lase sel äratusel siiski heliseda
+907| Jäta vahele
+908| Ära seekord helise
+909| Äratused on peatatud kuni {time}: ükski neist ei helise enne seda.
+910| Äratused on peatatud: ükski neist ei helise enne, kui need jätkad.
+911| {n} äratus
+912| {n} äratust
+913| {n} heliseb
+914| kordub
+915| Näidatakse esimesed {n}.
+916| Selles ajavahemikus äratusi pole.
+917| Edasi lükatud {time}

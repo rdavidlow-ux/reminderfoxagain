@@ -1732,6 +1732,7 @@
       else if (k === 'g') { e.preventDefault(); FX('openGoTo'); }
       else if (k === 'b') { e.preventDefault(); toggleSide(); }
       else if (k === 'q') { e.preventDefault(); FX('openQuick'); }
+      else if (k === 'l') { e.preventDefault(); FX('openAlarms'); }
       else if (k === 'd' && !typing(e.target) && S.selKey && (S.tab === 'reminders' || todoTab())) {
         e.preventDefault();
         const tr = listView.querySelector(`tbody tr[data-key="${CSS.escape(S.selKey)}"]`);
@@ -1778,6 +1779,8 @@
     refresh();
   });
   window.rf.on('ui:quick', () => { if (!anyDialogOpen()) FX('openQuick'); });
+  window.rf.on('ui:alarms', () => { if (!anyDialogOpen()) FX('openAlarms'); });
+  $('alarmList').addEventListener('click', (e) => { e.preventDefault(); FX('openAlarms'); });
   // the macOS application menu (0.9.0)
   window.rf.on('ui:import', () => { if (!anyDialogOpen()) doImport(); });
   // a calendar file from a link (Thunderbird add-on): the usual import dialog, already holding the file

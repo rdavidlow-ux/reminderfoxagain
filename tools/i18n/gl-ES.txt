@@ -887,3 +887,32 @@
 886| Para abrir o cartafol do perfil: Axuda → Información para solucionar problemas (en Firefox: Máis información para solucionar problemas) → Cartafol do perfil → Abrir cartafol.
 887| Escolle tamén o prefs.js do cartafol do perfil para traer os nomes das túas listas.
 888| Escoller o ficheiro…
+889| Alarmas…
+890| ⏰ Alarmas
+891| Cada alarma que soa, está aprazada ou aínda soará (Ctrl+L)
+892| Próximas 24 horas
+893| Próximos 7 días
+894| Próximos 30 días
+895| Próximos 12 meses
+896| Omitir evita que soe unha alarma; as outras dun recordatorio que se repite seguen soando. Para cambiar ou quitar unha alarma para sempre, abre o recordatorio ou o elemento de lista.
+897| Elemento de lista
+898| Soando desde {time}
+899| Aprazada ata {time}
+900| Omitida: {time}
+901| Ver as alarmas rápidas
+902| Abrir o recordatorio ou o elemento de lista
+903| Aprazar o tempo predeterminado (Configuración → Alarmas)
+904| Soar agora
+905| Desfacer omitir
+906| Deixar que esta alarma soe ao final
+907| Omitir
+908| Non soar esta vez
+909| As alarmas están suspendidas ata {time}: ningunha destas soa antes.
+910| As alarmas están suspendidas: ningunha destas soa ata que as retomes.
+911| {n} alarma
+912| {n} alarmas
+913| {n} soando
+914| repítese
+915| Móstranse as primeiras {n}.
+916| Non hai alarmas neste período.
+917| Aprazada {time}

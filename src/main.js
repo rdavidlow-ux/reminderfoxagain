@@ -6,6 +6,7 @@ const os = require('os');
 const { app, BrowserWindow, ipcMain, Tray, Menu, shell, dialog, nativeImage, screen, powerMonitor, nativeTheme, Notification } = require('electron');
 const { execFileSync } = require('child_process');
 const { Store, dayKey, timeKey, setPhrases } = require('./core/store');
+const { listAlarms, keepDismissed } = require('./core/alarmlist');
 const I18N = require('./ui/i18n.js');
 
 const VERSION = require('../package.json').version;
@@ -441,6 +442,7 @@ function trayMenu() {
     { type: 'separator' },
     sus ? { label: tr('Resume alarms'), click: () => setSuspend(0) } : { label: tr('Suspend alarms…'), click: () => { showMain(); send(mainWin, 'ui:suspend'); } },
     { label: tr("Show today's reminders"), click: () => showSlider(true) },
+    { label: tr('Alarms…'), click: () => { showMain(); send(mainWin, 'ui:alarms'); } },
     { type: 'separator' },
     { label: tr('Quit {app}', { app: APP_NAME }), click: () => { quitting = true; app.quit(); } },
   ]);
@@ -566,6 +568,7 @@ function appMenuTemplate() {
       { label: tr('Show or hide the calendar panel'), accelerator: 'Command+B', click: ui('ui:side') },
       { label: tr('Go to…'), accelerator: 'Command+G', click: ui('ui:goto') },
       { label: tr('Search'), accelerator: 'Command+F', click: ui('ui:find') },
+      { label: tr('Alarms…'), accelerator: 'Command+L', click: ui('ui:alarms') },
       { type: 'separator' },
       { role: 'togglefullscreen' },
     ] },
@@ -592,7 +595,7 @@ function checkAlarms() {
   // quick alarms (kept in state.json, like the add-on kept them in its preferences)
   for (const q of state.quickAlarms) if (q.at <= now) fired.push(quickRow(q));
   // prune
-  for (const [k, t] of Object.entries(state.dismissed)) if (now - t > 7 * DAY) delete state.dismissed[k];
+  for (const [k, t] of Object.entries(state.dismissed)) if (!keepDismissed(k, t, now)) delete state.dismissed[k];
   for (const k of Object.keys(state.snoozed)) if (!itemExists(k)) delete state.snoozed[k];
   const due = [];
   const seen = new Set();
@@ -1038,6 +1041,9 @@ function setupIpc() {
   });
   handle('alarm:hide', () => { if (alarmWin && !alarmWin.isDestroyed()) alarmWin.hide(); return true; });
   handle('alarm:state', () => ({ alarms: suspendedUntil() ? [] : currentAlarms, settings: state.settings }));
+  // the Alarms view: ringing, snoozed and coming alarms; skipping one that is to come, and undoing that
+  handle('alarms:list', (e, days) => ({ ...listAlarms({ store, state, current: currentAlarms, quickRow, at: Date.now(), days }), suspended: suspendedUntil() }));
+  handle('alarm:unskip', (e, key) => { delete state.dismissed[String(key)]; saveState(true); checkAlarms(); return true; });
   // quick alarms
   handle('quick:list', () => state.quickAlarms.slice().sort((a, b) => a.at - b.at));
   handle('quick:add', (e, q) => {

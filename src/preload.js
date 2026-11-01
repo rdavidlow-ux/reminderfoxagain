@@ -9,7 +9,7 @@ async function call(ch, ...args) {
 }
 const CHANNELS = ['data:changed', 'settings:changed', 'alarms:update', 'alarms:ring', 'ui:new', 'ui:edit', 'ui:quick', 'ui:suspend', 'slider:update',
   // the macOS application menu (0.9.0)
-  'ui:import', 'ui:export', 'ui:settings', 'ui:goto', 'ui:side', 'ui:find', 'ui:importFiles'];
+  'ui:import', 'ui:export', 'ui:settings', 'ui:goto', 'ui:side', 'ui:find', 'ui:importFiles', 'ui:alarms'];
 
 // the language data, fetched once and synchronously, so a page is translated before it is first shown
 let i18n = { lang: 'en', dict: {}, dateLocale: '', collect: false };
@@ -69,6 +69,9 @@ contextBridge.exposeInMainWorld('rf', {
   openAlarm: (key) => call('alarm:open', key),
   hideAlarm: () => call('alarm:hide'),
   alarmState: () => call('alarm:state'),
+  // the Alarms view
+  alarmsList: (days) => call('alarms:list', days),
+  unskipAlarm: (key) => call('alarm:unskip', key),
   on: (channel, fn) => {
     if (!CHANNELS.includes(channel)) throw new Error(`Unknown channel ${channel}`);
     const h = (e, payload) => fn(payload);

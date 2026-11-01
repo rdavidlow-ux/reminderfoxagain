@@ -887,3 +887,32 @@
 886| Jak otevřít složku profilu: Nápověda → Informace pro řešení problémů (ve Firefoxu: Další informace pro řešení problémů) → Složka profilu → Otevřít složku.
 887| Vyberte s ním i soubor prefs.js ze složky profilu, abyste přenesli i názvy svých seznamů.
 888| Vybrat soubor…
+889| Upozornění…
+890| ⏰ Upozornění
+891| Každé upozornění, které zvoní, je odložené nebo teprve zazvoní (Ctrl+L)
+892| Příštích 24 hodin
+893| Příštích 7 dní
+894| Příštích 30 dní
+895| Příštích 12 měsíců
+896| Přeskočit zabrání zazvonění jednoho upozornění; ostatní u opakované připomínky zazvoní dál. Chcete-li upozornění změnit nebo odebrat natrvalo, otevřete připomínku nebo položku seznamu.
+897| Položka seznamu
+898| Zvoní od {time}
+899| Odloženo do {time}
+900| Přeskočeno: {time}
+901| Zobrazit rychlá upozornění
+902| Otevřít připomínku nebo položku seznamu
+903| Odložit o výchozí dobu (Nastavení → Upozornění)
+904| Zazvonit hned
+905| Zrušit přeskočení
+906| Nechat toto upozornění přece zazvonit
+907| Přeskočit
+908| Tentokrát nezvonit
+909| Upozornění jsou pozastavena do {time}: žádné z nich předtím nezazvoní.
+910| Upozornění jsou pozastavena: žádné z nich nezazvoní, dokud je neobnovíte.
+911| {n} upozornění
+912| {n} upozornění
+913| {n} zvoní
+914| opakuje se
+915| Zobrazeno prvních {n}.
+916| V tomto období žádná upozornění.
+917| Odloženo o {time}

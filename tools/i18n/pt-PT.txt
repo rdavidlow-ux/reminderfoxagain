@@ -887,3 +887,32 @@
 886| Para abrir a pasta do perfil: Ajuda → Informação de resolução de problemas (no Firefox: Mais informação de resolução de problemas) → Pasta do perfil → Abrir pasta.
 887| Escolha também o prefs.js da pasta do perfil para trazer os nomes das suas listas.
 888| Escolher o ficheiro…
+889| Alarmes…
+890| ⏰ Alarmes
+891| Cada alarme a tocar, adiado ou que ainda vai tocar (Ctrl+L)
+892| Próximas 24 horas
+893| Próximos 7 dias
+894| Próximos 30 dias
+895| Próximos 12 meses
+896| Saltar impede um alarme de tocar; os outros de um lembrete que se repete continuam a tocar. Para alterar ou remover um alarme de vez, abra o lembrete ou o item de lista.
+897| Item de lista
+898| A tocar desde {time}
+899| Adiado até {time}
+900| Saltado: {time}
+901| Mostrar os alarmes rápidos
+902| Abrir o lembrete ou o item de lista
+903| Adiar pelo tempo predefinido (Definições → Alarmes)
+904| Tocar agora
+905| Anular saltar
+906| Deixar este alarme tocar afinal
+907| Saltar
+908| Não tocar desta vez
+909| Os alarmes estão suspensos até {time}: nenhum destes toca antes disso.
+910| Os alarmes estão suspensos: nenhum destes toca até os retomar.
+911| {n} alarme
+912| {n} alarmes
+913| {n} a tocar
+914| repete-se
+915| A mostrar os primeiros {n}.
+916| Nenhum alarme neste período.
+917| Adiado por {time}

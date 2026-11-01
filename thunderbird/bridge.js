@@ -76,7 +76,7 @@
   // ---------------------------------------------------------------- events from the background page
   const listeners = {};
   const CHANNELS = ['data:changed', 'settings:changed', 'alarms:update', 'alarms:ring', 'ui:new', 'ui:edit', 'ui:quick', 'ui:suspend', 'slider:update',
-    'ui:import', 'ui:export', 'ui:settings', 'ui:goto', 'ui:side', 'ui:find', 'ui:importFiles'];
+    'ui:import', 'ui:export', 'ui:settings', 'ui:goto', 'ui:side', 'ui:find', 'ui:importFiles', 'ui:alarms'];
   browser.runtime.onMessage.addListener((msg) => {
     if (!msg || msg.rf !== 'emit') return;
     if (msg.target && msg.target !== PAGE) return;
@@ -179,6 +179,8 @@
     openAlarm: (key) => call('alarm:open', key),
     hideAlarm: () => call('alarm:hide'),
     alarmState: () => call('alarm:state'),
+    alarmsList: (days) => call('alarms:list', days),
+    unskipAlarm: (key) => call('alarm:unskip', key),
     on: (channel, fn) => {
       if (!CHANNELS.includes(channel)) throw new Error(`Unknown channel ${channel}`);
       (listeners[channel] = listeners[channel] || []).push(fn);

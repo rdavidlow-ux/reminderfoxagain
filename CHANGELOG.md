@@ -3,6 +3,17 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
+## Next — the Alarms view (branch `experimental-add-on`, not released)
+
+- **One place for every alarm**, in the desktop app and the Thunderbird add-on: ⏰ Alarms in the status bar, Alarms…
+  in the tray (or toolbar button) menu and the macOS View menu, or Ctrl+L (⌘L on a Mac, Alt+Shift+L in Thunderbird).
+  It lists what is ringing, what is snoozed and until when, and every alarm still to ring in the next 24 hours, 7 days,
+  30 days or 12 months, in the order they ring, with quick alarms among them.
+- **What you can do there:** snooze a ringing alarm (for your default snooze time) or dismiss it; make a snoozed one
+  ring now; skip one alarm still to come (the others of a repeating reminder still ring) and undo that; cancel a
+  quick alarm; open the reminder or list item to change or remove its alarm for good. A skipped alarm stays skipped
+  however far ahead it is.
+
 ## Experimental — ReminderFoxAgain for Thunderbird (branch `experimental-add-on`, not released)
 
 - **The app inside Thunderbird** (128 or later) as an add-on, with the same features as the desktop app: in a

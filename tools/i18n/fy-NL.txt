@@ -887,3 +887,32 @@
 886| Sa iepenje jo de profylmap: Help → Probleemoplossingsynformaasje (yn Firefox: Mear probleemoplossingsynformaasje) → Profylmap → Map iepenje.
 887| Kies ek de prefs.js út de profylmap om dyn listnammen mei te nimmen.
 888| Bestân kieze…
+889| Alarms…
+890| ⏰ Alarms
+891| Elk alarm dat ôfgiet, snoozed is of noch ôfgean sil (Ctrl+L)
+892| Kommende 24 oeren
+893| Kommende 7 dagen
+894| Kommende 30 dagen
+895| Kommende 12 moannen
+896| Oerslaan hâldt ien alarm tsjin; de oare fan in werheljende herinnering geane noch ôf. Om in alarm foargoed te wizigjen of fuort te heljen, iepenje de herinnering of it listitem.
+897| Listitem
+898| Giet ôf sûnt {time}
+899| Snoozed oant {time}
+900| Oerslein: {time}
+901| De flugge alarms toane
+902| De herinnering of it listitem iepenje
+903| Snoozje foar de standerttiid (Ynstellingen → Alarms)
+904| No ôfgean litte
+905| Oerslaan ûngedien meitsje
+906| Dit alarm dochs ôfgean litte
+907| Oerslaan
+908| Dizze kear net ôfgean
+909| Alarms binne útsteld oant {time}: gjin fan dizze giet earder ôf.
+910| Alarms binne útsteld: gjin fan dizze giet ôf oant do se ferfetsje.
+911| {n} alarm
+912| {n} alarms
+913| {n} geane ôf
+914| werhellet
+915| De earste {n} wurde toand.
+916| Gjin alarms yn dizze perioade.
+917| Snoozed foar {time}

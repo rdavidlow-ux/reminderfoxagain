@@ -926,3 +926,33 @@ An add-on can't look in other programs' folders, so pick the file yourself: the 
 To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.
 Pick the profile folder's prefs.js with it to bring your list names too.
 Choose the file…
+# the Alarms view (desktop app and Thunderbird add-on)
+Alarms…
+⏰ Alarms
+Every alarm that is ringing, snoozed or still to ring (Ctrl+L)
+Next 24 hours
+Next 7 days
+Next 30 days
+Next 12 months
+Skip stops one alarm from ringing; the others of a repeating reminder still ring. To change or remove an alarm for good, open the reminder or list item.
+List item
+Ringing since {time}
+Snoozed until {time}
+Skipped: {time}
+Show the quick alarms
+Open the reminder or list item
+Snooze for the default time (Settings → Alarms)
+Ring now
+Undo skip
+Let this alarm ring after all
+Skip
+Don't ring this time
+Alarms are suspended until {time}: none of these ring before then.
+Alarms are suspended: none of these ring until you resume them.
+{n} alarm
+{n} alarms
+{n} ringing
+repeats
+Showing the first {n}.
+No alarms in this period.
+Snoozed for {time}

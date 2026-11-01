@@ -887,3 +887,32 @@
 886| Ako otvoriť priečinok profilu: Pomocník → Informácie pre riešenie problémov (vo Firefoxe: Ďalšie informácie pre riešenie problémov) → Priečinok profilu → Otvoriť priečinok.
 887| Vyberte s ním aj súbor prefs.js z priečinka profilu, aby ste preniesli aj názvy svojich zoznamov.
 888| Vybrať súbor…
+889| Upozornenia…
+890| ⏰ Upozornenia
+891| Každé upozornenie, ktoré zvoní, je odložené alebo ešte zazvoní (Ctrl+L)
+892| Ďalších 24 hodín
+893| Ďalších 7 dní
+894| Ďalších 30 dní
+895| Ďalších 12 mesiacov
+896| Preskočiť zabráni zazvoneniu jedného upozornenia; ostatné pri opakovanej pripomienke zazvonia ďalej. Ak chcete upozornenie zmeniť alebo odstrániť natrvalo, otvorte pripomienku alebo položku zoznamu.
+897| Položka zoznamu
+898| Zvoní od {time}
+899| Odložené do {time}
+900| Preskočené: {time}
+901| Zobraziť rýchle upozornenia
+902| Otvoriť pripomienku alebo položku zoznamu
+903| Odložiť o predvolený čas (Nastavenia → Upozornenia)
+904| Zazvoniť teraz
+905| Zrušiť preskočenie
+906| Nechať toto upozornenie predsa zazvoniť
+907| Preskočiť
+908| Tentoraz nezvoniť
+909| Upozornenia sú pozastavené do {time}: žiadne z nich predtým nezazvoní.
+910| Upozornenia sú pozastavené: žiadne z nich nezazvoní, kým ich neobnovíte.
+911| {n} upozornenie
+912| {n} upozornení
+913| {n} zvoní
+914| opakuje sa
+915| Zobrazených prvých {n}.
+916| V tomto období žiadne upozornenia.
+917| Odložené o {time}

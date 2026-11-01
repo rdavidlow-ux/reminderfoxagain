@@ -116,7 +116,7 @@ function serve() {
 
   // the toolbar button opens the main tab
   const menu = await bg.evaluate(() => window.__mock.state.menus.filter((m) => m.type !== 'separator' && m.contexts.includes('browser_action')).map((m) => m.title).join(' | '));
-  if (!LANG) line('toolbar menu', menu, "Open ReminderFoxAgain | Add reminder… | Add list item… | Quick alarm… | Suspend alarms… | Show today's reminders");
+  if (!LANG) line('toolbar menu', menu, "Open ReminderFoxAgain | Add reminder… | Add list item… | Quick alarm… | Suspend alarms… | Show today's reminders | Alarms…");
   await bg.evaluate(() => window.__mock.clickButton());
   const main = await waitFor('index');
   line('the toolbar button opens the main tab', !!main, true);
@@ -186,6 +186,13 @@ function serve() {
     line('Alt+Shift+B shows or hides the calendar panel', (await side()) !== before, true);
     await bg.evaluate(() => window.__mock.command('calendar-panel'));
     await sleep(400);
+    await bg.evaluate(() => window.__mock.command('alarms'));
+    await sleep(800);
+    line('Alt+Shift+L opens the Alarms view', await main.evaluate(() => { const d = document.getElementById('alarmsDlg'); const o = !!d && d.open; if (o) d.close(); return o; }), true);
+    line('its link says so', await main.evaluate(() => document.getElementById('alarmList').title), 'Every alarm that is ringing, snoozed or still to ring (Alt+Shift+L)');
+    await bg.evaluate(() => window.__mock.clickMenu('rf-alarms'));
+    await sleep(800);
+    line('the toolbar menu\'s Alarms… opens it', await main.evaluate(() => { const d = document.getElementById('alarmsDlg'); const o = !!d && d.open; if (o) d.close(); return o; }), true);
     // right-click on an email → Add reminder…
     const mailItem = await bg.evaluate(() => window.__mock.state.menus.find((m) => m.id === 'rf-mail-reminder'));
     line('"Add reminder…" is on the email menu', mailItem ? `${mailItem.title} [${mailItem.contexts}]` : 'missing', 'Add reminder… [message_list]');

@@ -887,3 +887,32 @@
 886| Så öppnar du profilmappen: Hjälp → Felsökningsinformation (i Firefox: Mer felsökningsinformation) → Profilmapp → Öppna mapp.
 887| Välj även prefs.js från profilmappen för att få med namnen på dina listor.
 888| Välj filen…
+889| Alarm…
+890| ⏰ Alarm
+891| Alla alarm som ringer, är snoozade eller ska ringa (Ctrl+L)
+892| Nästa 24 timmar
+893| Nästa 7 dagar
+894| Nästa 30 dagar
+895| Nästa 12 månader
+896| Hoppa över hindrar ett alarm från att ringa; de andra i en återkommande påminnelse ringer ändå. Öppna påminnelsen eller listobjektet för att ändra eller ta bort ett alarm för gott.
+897| Listobjekt
+898| Ringer sedan {time}
+899| Snoozat till {time}
+900| Överhoppat: {time}
+901| Visa snabbalarmen
+902| Öppna påminnelsen eller listobjektet
+903| Snooza standardtiden (Inställningar → Alarm)
+904| Ring nu
+905| Ångra överhoppning
+906| Låt alarmet ringa ändå
+907| Hoppa över
+908| Ring inte den här gången
+909| Alarmen är pausade till {time}: inget av dessa ringer innan dess.
+910| Alarmen är pausade: inget av dessa ringer förrän du återupptar dem.
+911| {n} alarm
+912| {n} alarm
+913| {n} ringer
+914| upprepas
+915| De första {n} visas.
+916| Inga alarm under den här perioden.
+917| Snoozat i {time}

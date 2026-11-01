@@ -887,3 +887,32 @@
 886| Pentru a deschide dosarul profilului: Ajutor → Informații de depanare (în Firefox: Mai multe informații de depanare) → Dosarul profilului → Deschide dosarul.
 887| Alege împreună cu el și prefs.js din dosarul profilului, ca să aduci și numele listelor tale.
 888| Alege fișierul…
+889| Alarme…
+890| ⏰ Alarme
+891| Fiecare alarmă care sună, este amânată sau va suna (Ctrl+L)
+892| Următoarele 24 de ore
+893| Următoarele 7 zile
+894| Următoarele 30 de zile
+895| Următoarele 12 luni
+896| Omite oprește o alarmă să sune; celelalte ale unui memento repetat sună în continuare. Pentru a schimba sau elimina definitiv o alarmă, deschide mementoul sau elementul de listă.
+897| Element de listă
+898| Sună din {time}
+899| Amânată până la {time}
+900| Omisă: {time}
+901| Arată alarmele rapide
+902| Deschide mementoul sau elementul de listă
+903| Amână cu timpul implicit (Setări → Alarme)
+904| Sună acum
+905| Anulează omiterea
+906| Lasă totuși această alarmă să sune
+907| Omite
+908| Nu suna de data asta
+909| Alarmele sunt suspendate până la {time}: niciuna dintre acestea nu sună înainte.
+910| Alarmele sunt suspendate: niciuna dintre acestea nu sună până nu le reiei.
+911| {n} alarmă
+912| {n} alarme
+913| {n} sună
+914| se repetă
+915| Se arată primele {n}.
+916| Nicio alarmă în această perioadă.
+917| Amânată cu {time}

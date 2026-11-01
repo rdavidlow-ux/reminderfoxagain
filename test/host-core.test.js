@@ -340,3 +340,43 @@ test('host 15. invitations: sent from the organizer to attendees, replies record
   assert.equal(await tb.call('mail:reply', reply.replace('olivia@x.example', 'stranger@x.example')), null);
   assert.equal(await tb.call('mail:reply', 'not a calendar'), null);
 });
+
+test('host 16. the Alarms view: ringing, snoozed, to come and skipped; a skip ahead of time holds past a week', async () => {
+  const tb = fakeThunderbird(); // Oct 20, 2026, 9:00
+  await tb.host.start();
+  await tb.call('data:save', { kind: 'event', summary: 'Call the pharmacy', date: '2026-10-20', time: '09:30', allDay: false, alarm: { minutes: 15 } });
+  await tb.call('data:save', { kind: 'event', summary: 'Water the plants', date: '2026-10-21', time: '08:00', allDay: false, alarm: { minutes: 0 }, repeat: { freq: 'DAILY', interval: 1, end: 'never' } });
+  await tb.call('quick:add', { text: 'Tea', at: tb.now() + 60 * 60000 });
+  let v = await tb.call('alarms:list', 7);
+  assert.equal(v.days, 7);
+  assert.deepEqual(v.alarms.slice(0, 3).map((a) => `${a.summary} ${a.status}${a.quick ? ' quick' : ''}`), ['Call the pharmacy upcoming', 'Tea upcoming quick', 'Water the plants upcoming']);
+  assert.equal(v.alarms.filter((a) => a.summary === 'Water the plants' && a.repeat).length, 7); // Oct 21 … Oct 27
+  assert.ok(v.alarms.every((a, i, all) => i === 0 || a.when >= all[i - 1].when));
+  assert.equal((await tb.call('alarms:list', 1)).alarms.filter((a) => a.summary === 'Water the plants').length, 1);
+  // 9:16: the pharmacy alarm rings; snoozed, it shows as snoozed until 9:26
+  await tb.advance(16 * 60000);
+  tb.host.checkAlarms();
+  v = await tb.call('alarms:list', 7);
+  const ring = v.alarms[0];
+  assert.equal(`${ring.summary} ${ring.status}`, 'Call the pharmacy ringing');
+  await tb.call('alarm:snooze', ring.key, 600);
+  v = await tb.call('alarms:list', 7);
+  assert.equal(`${v.alarms[0].summary} ${v.alarms[0].status} ${v.alarms[0].when - tb.now()}`, 'Call the pharmacy snoozed 600000');
+  // skip Wednesday's watering ahead of time: listed as skipped, and it doesn't ring, even 8 days after the skip
+  const wed = v.alarms.find((a) => a.summary === 'Water the plants');
+  await tb.call('alarm:dismiss', wed.key);
+  assert.equal((await tb.call('alarms:list', 7)).alarms.find((a) => a.key === wed.key).status, 'skipped');
+  await tb.call('alarm:unskip', wed.key);
+  assert.equal((await tb.call('alarms:list', 7)).alarms.find((a) => a.key === wed.key).status, 'upcoming');
+  const later = (await tb.call('alarms:list', 30)).alarms.filter((a) => a.summary === 'Water the plants')[9]; // Oct 30
+  await tb.call('alarm:dismiss', later.key);
+  await tb.advance(new Date(2026, 9, 30, 8, 16).getTime() - tb.now()); // Oct 30, 8:16 (local, past any clock change)
+  tb.host.checkAlarms();
+  const ringing = (await tb.call('alarm:state')).alarms.map((a) => a.key);
+  assert.ok(!ringing.includes(later.key), 'the skipped alarm rang');
+  assert.equal((await tb.call('alarms:list', 1)).alarms.find((a) => a.key === later.key), undefined); // past now
+  // a quick alarm is cancelled from the view; the toolbar menu has "Alarms…" and it opens the view
+  assert.equal(tb.log.menu.find((i) => i.id === 'alarms').title, 'Alarms…');
+  await tb.host.menuClick('alarms');
+  assert.ok(tb.log.emits.some((e) => e.ch === 'ui:alarms' && e.target === 'main'));
+});

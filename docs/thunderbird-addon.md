@@ -32,7 +32,7 @@ Every desktop feature is there; the ones tied to the operating system work the T
 | Desktop app                                                              | Add-on                                                                                                                                                                                                                                                                                                                                                                                                                    |
 |--------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Main window                                                              | A Thunderbird tab. The toolbar button (or Alt+Shift+R) opens it or brings it to the front. The first install opens it on the welcome page.                                                                                                                                                                                                                                                                                |
-| Tray icon, its menu and tooltip                                          | The ReminderFoxAgain toolbar button. Its tooltip lists today's reminders, a number on it counts them (Settings → Alarms), and its right-click menu has Open, Add reminder…, Add list item…, Quick alarm…, Suspend or Resume alarms, and Show today's reminders.                                                                                                                                                           |
+| Tray icon, its menu and tooltip                                          | The ReminderFoxAgain toolbar button. Its tooltip lists today's reminders, a number on it counts them (Settings → Alarms), and its right-click menu has Open, Add reminder…, Add list item…, Quick alarm…, Suspend or Resume alarms, Show today's reminders, and Alarms….                                                                                                                                                  |
 | Alarm window                                                             | A popup window (500×360) at the bottom right of the screen, plus a notification. Its “–” button minimises it.                                                                                                                                                                                                                                                                                                             |
 | Pop-up (today and upcoming)                                              | A popup window (360×380) in the chosen corner.                                                                                                                                                                                                                                                                                                                                                                            |
 | Data folder (reminders.ics, state.json, backups/)                        | The add-on's storage in the Thunderbird profile, one entry per file, with the same names and the same daily backups (30 days).                                                                                                                                                                                                                                                                                            |
@@ -65,8 +65,27 @@ Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q and the other Ctrl keys for itself, so 
 | Alt+Shift+E | Ctrl+E      | Export to .ics                   |
 | Alt+Shift+D | Ctrl+D      | Duplicate the selected item      |
 | Alt+Shift+S | Ctrl+S      | Save the reminder being edited   |
+| Alt+Shift+L | Ctrl+L      | The Alarms view                  |
 
 To change one: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+N)”) show the shortcuts as they are set, in every language; a shortcut that was removed is left out of its tooltip.
+
+## The Alarms view
+
+One place for every alarm, in the add-on and in the desktop app alike: **⏰ Alarms** in the status bar, **Alarms…** in the toolbar button's menu (the tray menu and the macOS View menu on the desktop), or Alt+Shift+L (Ctrl+L on the desktop, ⌘L on a Mac).
+
+<img src="media/thunderbird-addon/alarms-view.png" style="width:6in;height:3.86441in" alt="The Alarms view with made-up reminders: one ringing, one snoozed, a quick alarm, alarms to come and one skipped" />
+
+It lists what is ringing, what is snoozed and until when, then every alarm still to ring in the next 24 hours, 7 days, 30 days or 12 months (the choice is remembered), in the order they ring, with quick alarms among them. It refreshes itself while open.
+
+| Alarm               | What you can do                                                                     |
+|---------------------|-------------------------------------------------------------------------------------|
+| Ringing             | **Snooze** (for your default snooze time, Settings → Alarms), **Dismiss**, **Open** |
+| Snoozed             | **Ring now**, **Dismiss**, **Open**                                                 |
+| To come             | **Skip** this one time (the others of a repeating reminder still ring), **Open**    |
+| Skipped             | **Undo skip**, **Open**                                                             |
+| Quick alarm to come | **Cancel**, **Open** (the Quick alarm dialog)                                       |
+
+Open shows the reminder or list item in the editor, where its alarm can be changed or removed for good. A skipped alarm stays skipped however far ahead it is: a dismissed alarm is forgotten a week after it was dismissed only once its time has passed. The list is worked out by src/core/alarmlist.js, shared by the desktop app (src/main.js) and the add-on (src/host/core.js), through alarms:list and alarm:unskip.
 
 ## Reminders and list items from email
 
@@ -114,17 +133,17 @@ Everything the desktop import keeps is kept here too: the ReminderFox add-on's X
 ## Building, installing, testing
 
 ./build-thunderbird.sh \# unit tests, then dist/release-thunderbird/ReminderFoxAgain-\<ver\>-thunderbird.xpi  
-thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last line: 664 checks, 0 problem(s)
+thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last line: 686 checks, 0 problem(s)
 
 - **Install:** Add-ons and Themes → ⚙ → Install Add-on From File… → the .xpi. Thunderbird asks to confirm because the add-on isn't signed. To try it without installing: Tools → Developer Tools → Debug Add-ons → Load Temporary Add-on… → dist/thunderbird/manifest.json (removed when Thunderbird closes).
 
 - **Deterministic:** two builds give the same .xpi, byte for byte.
 
-- **Unit tests:** test/host-core.test.js (15 tests) and test/maildate.test.js (9 tests, the dates, times and places found in emails), part of npm test (60 in all, in 7 time zones). The host-core tests run the core with an in-memory adapter and a clock the test moves: saving and reloading, daily backups, import with a picked prefs.js, an unreadable file kept aside, alarms (due, snooze, dismiss), quick alarms and suspend, backup and restore, export, the toolbar menu, a chosen language, a chosen sound, the reminder made from an email, the email it came from (kept on edits, read from the original add-on's file, opened), an item as an email, an invitation and its reply, the emails to tag, and birthdays from contacts.
+- **Unit tests:** test/host-core.test.js (16 tests) and test/maildate.test.js (9 tests, the dates, times and places found in emails), part of npm test (61 in all, in 7 time zones). The host-core tests run the core with an in-memory adapter and a clock the test moves: saving and reloading, daily backups, import with a picked prefs.js, an unreadable file kept aside, alarms (due, snooze, dismiss), quick alarms and suspend, backup and restore, export, the toolbar menu, a chosen language, a chosen sound, the reminder made from an email, the email it came from (kept on edits, read from the original add-on's file, opened), an item as an email, an invitation and its reply, the emails to tag, birthdays from contacts, and the Alarms view (ringing, snoozed, to come, skipped ahead of time).
 
-- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages and their tags, the compose window, address books, accounts), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, Add reminder… and Add list item… on an HTML email with its date, time and place, Open email from the editor and the right-click menu, the six Thunderbird-only features (tags on and off, Send by email…, an invitation and a reply, birthdays from an address book, selected text, an .ics link, Send++), the pop-up and a quick alarm). Desktop scripts that import test files by their path get those files uploaded the add-on's way.
+- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages and their tags, the compose window, address books, accounts), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, Add reminder… and Add list item… on an HTML email with its date, time and place, Open email from the editor and the right-click menu, the six Thunderbird-only features (tags on and off, Send by email…, an invitation and a reply, birthdays from an address book, selected text, an .ics link, Send++), Alt+Shift+L and the toolbar menu's Alarms…, the pop-up and a quick alarm); the desktop's alarms-view.js runs in the add-on too. Desktop scripts that import test files by their path get those files uploaded the add-on's way.
 
-- **Desktop app:** its own checks still pass (tools/e2e.sh, 658 checks), since the add-on shares its pages.
+- **Desktop app:** its own checks still pass (tools/e2e.sh, 673 checks, with the Alarms view's own script), since the add-on shares its pages.
 
 - **Lint:** Mozilla's web-ext lint gives no errors. It warns that windows.openDefaultBrowser, the messages, messageDisplay, compose, composeAction, addressBooks, accounts and identities APIs, and their permissions, are not Firefox's (they are Thunderbird's) and that the pages set innerHTML (the UI escapes every value it puts in).
 

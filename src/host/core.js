@@ -25,6 +25,7 @@
 const { Store, dayKey, timeKey, setPhrases } = require('../core/store');
 const I18N = require('../ui/i18n.js');
 const { reminderFromEmail } = require('./maildate');
+const { listAlarms, keepDismissed } = require('../core/alarmlist');
 
 const APP_NAME = 'ReminderFoxAgain';
 const HOUR = 3600000;
@@ -279,6 +280,7 @@ function createHost(ad) {
       { type: 'separator' },
       sus ? { id: 'resume', title: tr('Resume alarms') } : { id: 'suspend', title: tr('Suspend alarms…') },
       { id: 'slider', title: tr("Show today's reminders") },
+      { id: 'alarms', title: tr('Alarms…') },
       // right-click on an email (the Thunderbird add-on): a new reminder with its subject and the date it mentions
       { id: 'mail-reminder', title: tr('Add reminder…'), contexts: ['message_list'] },
       // … or a list item, the date and time found being its "due by"
@@ -298,6 +300,7 @@ function createHost(ad) {
     else if (id === 'suspend') await ui('ui:suspend');
     else if (id === 'resume') setSuspend(0);
     else if (id === 'slider') showSlider(true);
+    else if (id === 'alarms') await ui('ui:alarms');
   }
   let lastTip = '';
   function updateTray() {
@@ -313,7 +316,7 @@ function createHost(ad) {
     let fired = [];
     try { fired = store.alarms(at - 48 * HOUR, at + 1); } catch (e) { console.error('alarms', e.message); }
     for (const q of state.quickAlarms) if (q.at <= at) fired.push(quickRow(q));
-    for (const [k, t] of Object.entries(state.dismissed)) if (at - t > 7 * DAY) delete state.dismissed[k];
+    for (const [k, t] of Object.entries(state.dismissed)) if (!keepDismissed(k, t, at)) delete state.dismissed[k];
     for (const k of Object.keys(state.snoozed)) if (!itemExists(k)) delete state.snoozed[k];
     const due = [];
     const seen = new Set();
@@ -680,6 +683,9 @@ function createHost(ad) {
     'alarm:hide': () => { ad.windows.alarm.hide(); return true; },
     'alarm:closed': () => { alarmClosed(); return true; },
     'alarm:state': () => ({ alarms: suspendedUntil() ? [] : currentAlarms, settings: state.settings }),
+    // the Alarms view: ringing, snoozed and coming alarms; skipping one that is to come, and undoing that
+    'alarms:list': (days) => ({ ...listAlarms({ store, state, current: currentAlarms, quickRow, at: now(), days }), suspended: suspendedUntil() }),
+    'alarm:unskip': (key) => { delete state.dismissed[String(key)]; saveState(true); checkAlarms(); return true; },
     'quick:list': () => state.quickAlarms.slice().sort((a, b) => a.at - b.at),
     'quick:add': (q) => {
       const at = Number(q && q.at);

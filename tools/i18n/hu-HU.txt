@@ -887,3 +887,32 @@
 886| A profilmappa megnyitása: Súgó → Hibaelhárítási információk (Firefoxban: További hibaelhárítási információk) → Profilmappa → Mappa megnyitása.
 887| Válassza ki vele együtt a profilmappa prefs.js fájlját is, hogy a listák nevei is átkerüljenek.
 888| Fájl kiválasztása…
+889| Riasztások…
+890| ⏰ Riasztások
+891| Minden riasztás, amely szól, szundi módban van vagy még szólni fog (Ctrl+L)
+892| Következő 24 óra
+893| Következő 7 nap
+894| Következő 30 nap
+895| Következő 12 hónap
+896| A kihagyás egy riasztást elnémít; egy ismétlődő emlékeztető többi riasztása továbbra is szól. Egy riasztás végleges módosításához vagy törléséhez nyissa meg az emlékeztetőt vagy a listaelemet.
+897| Listaelem
+898| Szól ekkortól: {time}
+899| Szundi eddig: {time}
+900| Kihagyva: {time}
+901| A gyors riasztások megjelenítése
+902| Az emlékeztető vagy a listaelem megnyitása
+903| Szundi az alapértelmezett ideig (Beállítások → Riasztások)
+904| Szóljon most
+905| Kihagyás visszavonása
+906| Mégis szóljon ez a riasztás
+907| Kihagyás
+908| Most ne szóljon
+909| A riasztások szünetelnek eddig: {time}; egyik sem szól előtte.
+910| A riasztások szünetelnek: egyik sem szól, amíg újra be nem kapcsolja őket.
+911| {n} riasztás
+912| {n} riasztás
+913| {n} szól
+914| ismétlődik
+915| Az első {n} látható.
+916| Ebben az időszakban nincs riasztás.
+917| Szundi: {time}

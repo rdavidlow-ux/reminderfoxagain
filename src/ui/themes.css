@@ -257,3 +257,12 @@ footer.status #alarmState.off { color: var(--danger); font-weight: 600; text-dec
 .th-btn { background: var(--fox); color: var(--on-accent); border-radius: 8px; padding: 6px 12px; font-weight: 600; }
 .th-today { background: var(--fox); color: var(--on-accent); border-radius: 50%; width: 30px; height: 30px; display: grid; place-items: center; font-weight: 700; }
 .note.warn { color: var(--danger); }
+/* the Alarms view */
+.dlg.alarms-dlg { width: 640px; }
+.al-list { max-height: min(420px, calc(100vh - 300px)); }
+.al-row { align-items: flex-start; }
+.al-icon { width: 1.4em; text-align: center; padding-top: 2px; }
+.al-when { font-size: 12.5px; color: var(--ink-2); }
+.al-ringing .al-when { color: var(--fox-ink); font-weight: 600; }
+.al-skipped b, .al-skipped .al-when { color: var(--done); text-decoration: line-through; }
+.al-acts { display: flex; gap: 2px; flex-wrap: wrap; justify-content: flex-end; max-width: 50%; }

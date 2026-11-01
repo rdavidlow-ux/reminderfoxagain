@@ -887,3 +887,32 @@
 886| Per aprire la cartella del profilo: Aiuto → Informazioni per la risoluzione di problemi (in Firefox: Altre informazioni per la risoluzione di problemi) → Cartella del profilo → Apri cartella.
 887| Scegli insieme anche il file prefs.js della cartella del profilo per portare i nomi dei tuoi elenchi.
 888| Scegli il file…
+889| Allarmi…
+890| ⏰ Allarmi
+891| Ogni allarme che suona, è posticipato o deve ancora suonare (Ctrl+L)
+892| Prossime 24 ore
+893| Prossimi 7 giorni
+894| Prossimi 30 giorni
+895| Prossimi 12 mesi
+896| Salta impedisce a un allarme di suonare; gli altri di un promemoria ricorrente suonano comunque. Per cambiare o togliere un allarme per sempre, apri il promemoria o l'elemento di elenco.
+897| Elemento di elenco
+898| Suona da {time}
+899| Posticipato fino a {time}
+900| Saltato: {time}
+901| Mostra gli allarmi rapidi
+902| Apri il promemoria o l'elemento di elenco
+903| Posticipa del tempo predefinito (Impostazioni → Allarmi)
+904| Suona ora
+905| Annulla salto
+906| Lascia suonare questo allarme
+907| Salta
+908| Non suonare questa volta
+909| Gli allarmi sono sospesi fino a {time}: nessuno di questi suona prima.
+910| Gli allarmi sono sospesi: nessuno di questi suona finché non li riprendi.
+911| {n} allarme
+912| {n} allarmi
+913| {n} in corso
+914| si ripete
+915| Sono mostrati i primi {n}.
+916| Nessun allarme in questo periodo.
+917| Posticipato di {time}

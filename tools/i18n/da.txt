@@ -887,3 +887,32 @@
 886| Sådan åbner du profilmappen: Hjælp → Fejlsøgningsinformation (i Firefox: Mere fejlsøgningsinformation) → Profilmappe → Åbn mappe.
 887| Vælg også prefs.js fra profilmappen for at få dine listenavne med.
 888| Vælg filen…
+889| Alarmer…
+890| ⏰ Alarmer
+891| Alle alarmer, der ringer, er udsat eller endnu skal ringe (Ctrl+L)
+892| Næste 24 timer
+893| Næste 7 dage
+894| Næste 30 dage
+895| Næste 12 måneder
+896| Spring over stopper én alarm i at ringe; de andre i en gentaget påmindelse ringer stadig. For at ændre eller fjerne en alarm for altid skal du åbne påmindelsen eller listeelementet.
+897| Listeelement
+898| Ringer siden {time}
+899| Udsat til {time}
+900| Sprunget over: {time}
+901| Vis de hurtige alarmer
+902| Åbn påmindelsen eller listeelementet
+903| Udsæt i standardtiden (Indstillinger → Alarmer)
+904| Ring nu
+905| Fortryd spring over
+906| Lad alligevel denne alarm ringe
+907| Spring over
+908| Ring ikke denne gang
+909| Alarmer er sat på pause til {time}: ingen af disse ringer før.
+910| Alarmer er sat på pause: ingen af disse ringer, før du genoptager dem.
+911| {n} alarm
+912| {n} alarmer
+913| {n} ringer
+914| gentages
+915| Viser de første {n}.
+916| Ingen alarmer i denne periode.
+917| Udsat i {time}

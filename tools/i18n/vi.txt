@@ -887,3 +887,32 @@
 886| Để mở thư mục hồ sơ: Trợ giúp → Thông tin gỡ rối (trong Firefox: Thêm thông tin gỡ rối) → Thư mục hồ sơ → Mở thư mục.
 887| Chọn kèm tệp prefs.js trong thư mục hồ sơ để mang theo cả tên các danh sách của bạn.
 888| Chọn tệp…
+889| Báo thức…
+890| ⏰ Báo thức
+891| Mọi báo thức đang reo, đang tạm hoãn hoặc sắp reo (Ctrl+L)
+892| 24 giờ tới
+893| 7 ngày tới
+894| 30 ngày tới
+895| 12 tháng tới
+896| Bỏ qua khiến một báo thức không reo; các báo thức khác của lời nhắc lặp lại vẫn reo. Để thay đổi hoặc gỡ báo thức hẳn, hãy mở lời nhắc hoặc mục danh sách.
+897| Mục danh sách
+898| Đang reo từ {time}
+899| Tạm hoãn đến {time}
+900| Đã bỏ qua: {time}
+901| Hiện các báo thức nhanh
+902| Mở lời nhắc hoặc mục danh sách
+903| Tạm hoãn theo thời gian mặc định (Cài đặt → Báo thức)
+904| Reo ngay
+905| Hoàn tác bỏ qua
+906| Vẫn để báo thức này reo
+907| Bỏ qua
+908| Lần này đừng reo
+909| Báo thức bị tạm dừng đến {time}: không cái nào trong số này reo trước lúc đó.
+910| Báo thức bị tạm dừng: không cái nào trong số này reo cho đến khi bạn tiếp tục.
+911| {n} báo thức
+912| {n} báo thức
+913| {n} đang reo
+914| lặp lại
+915| Đang hiện {n} cái đầu tiên.
+916| Không có báo thức trong khoảng này.
+917| Tạm hoãn {time}

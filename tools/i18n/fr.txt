@@ -887,3 +887,32 @@
 886| Pour ouvrir le dossier du profil : Aide → Informations de dépannage (dans Firefox : Plus d'informations de dépannage) → Dossier de profil → Ouvrir le dossier.
 887| Choisissez aussi le fichier prefs.js du dossier du profil pour reprendre les noms de vos listes.
 888| Choisir le fichier…
+889| Alarmes…
+890| ⏰ Alarmes
+891| Chaque alarme qui sonne, est en répétition ou sonnera (Ctrl+L)
+892| 24 prochaines heures
+893| 7 prochains jours
+894| 30 prochains jours
+895| 12 prochains mois
+896| Ignorer empêche une alarme de sonner ; les autres d'un rappel récurrent sonnent quand même. Pour changer ou supprimer une alarme pour de bon, ouvrez le rappel ou l'élément de liste.
+897| Élément de liste
+898| Sonne depuis {time}
+899| En répétition jusqu'à {time}
+900| Ignorée : {time}
+901| Voir les alarmes rapides
+902| Ouvrir le rappel ou l'élément de liste
+903| Répéter pendant la durée par défaut (Paramètres → Alarmes)
+904| Sonner maintenant
+905| Annuler l'ignorance
+906| Laisser sonner cette alarme finalement
+907| Ignorer
+908| Ne pas sonner cette fois
+909| Les alarmes sont suspendues jusqu'à {time} : aucune de celles-ci ne sonne avant.
+910| Les alarmes sont suspendues : aucune de celles-ci ne sonne avant que vous les repreniez.
+911| {n} alarme
+912| {n} alarmes
+913| {n} en train de sonner
+914| se répète
+915| Les {n} premières sont affichées.
+916| Aucune alarme dans cette période.
+917| Répétition dans {time}

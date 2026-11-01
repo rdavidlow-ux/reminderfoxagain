@@ -887,3 +887,32 @@
 886| Per obrir la carpeta del perfil: Ajuda → Informació de resolució de problemes (al Firefox: Més informació de resolució de problemes) → Carpeta del perfil → Obre la carpeta.
 887| Tria també el prefs.js de la carpeta del perfil per portar els noms de les teves llistes.
 888| Tria el fitxer…
+889| Alarmes…
+890| ⏰ Alarmes
+891| Cada alarma que sona, està posposada o encara sonarà (Ctrl+L)
+892| Properes 24 hores
+893| Propers 7 dies
+894| Propers 30 dies
+895| Propers 12 mesos
+896| Omet fa que una alarma no soni; les altres d'un recordatori que es repeteix continuen sonant. Per canviar o treure una alarma per sempre, obre el recordatori o l'element de llista.
+897| Element de llista
+898| Sona des de {time}
+899| Posposada fins a {time}
+900| Omesa: {time}
+901| Mostra les alarmes ràpides
+902| Obre el recordatori o l'element de llista
+903| Posposa el temps per defecte (Configuració → Alarmes)
+904| Fes sonar ara
+905| Desfés l'omissió
+906| Deixa que aquesta alarma soni al final
+907| Omet
+908| No sonis aquesta vegada
+909| Les alarmes estan suspeses fins a {time}: cap d'aquestes sona abans.
+910| Les alarmes estan suspeses: cap d'aquestes sona fins que les reprenguis.
+911| {n} alarma
+912| {n} alarmes
+913| {n} sonant
+914| es repeteix
+915| Es mostren les primeres {n}.
+916| No hi ha alarmes en aquest període.
+917| Posposada {time}

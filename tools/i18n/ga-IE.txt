@@ -887,3 +887,32 @@
 886| Chun fillteán na próifíle a oscailt: Cabhair → Eolas Fabhtcheartaithe (i Firefox: Tuilleadh Eolais Fabhtcheartaithe) → Fillteán Próifíle → Oscail Fillteán.
 887| Roghnaigh prefs.js ó fhillteán na próifíle leis chun ainmneacha do liostaí a thabhairt leat freisin.
 888| Roghnaigh an comhad…
+889| Aláraim…
+890| ⏰ Aláraim
+891| Gach aláram atá ag bualadh, curtha siar nó le bualadh fós (Ctrl+L)
+892| Na 24 uair an chloig seo chugainn
+893| Na 7 lá seo chugainn
+894| Na 30 lá seo chugainn
+895| Na 12 mhí seo chugainn
+896| Cuireann Scipeáil stop le haláram amháin; buailfidh na cinn eile de mheabhrúchán athfhillteach fós. Chun aláram a athrú nó a bhaint go buan, oscail an meabhrúchán nó an mhír liosta.
+897| Mír liosta
+898| Ag bualadh ó {time}
+899| Curtha siar go {time}
+900| Scipeáilte: {time}
+901| Taispeáin na haláraim thapa
+902| Oscail an meabhrúchán nó an mhír liosta
+903| Cuir siar ar feadh an ama réamhshocraithe (Socruithe → Aláraim)
+904| Buail anois
+905| Cealaigh an scipeáil
+906| Lig don aláram seo bualadh tar éis an tsaoil
+907| Scipeáil
+908| Ná buail an uair seo
+909| Tá aláraim ar fionraí go {time}: ní bhuailfidh aon cheann díobh seo roimhe sin.
+910| Tá aláraim ar fionraí: ní bhuailfidh aon cheann díobh seo go dtí go n-atosóidh tú iad.
+911| {n} aláram
+912| {n} aláraim
+913| {n} ag bualadh
+914| athfhillteach
+915| Na chéad {n} á dtaispeáint.
+916| Níl aon aláraim sa tréimhse seo.
+917| Curtha siar ar feadh {time}

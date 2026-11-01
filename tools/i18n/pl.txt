@@ -887,3 +887,32 @@
 886| Aby otworzyć folder profilu: Pomoc → Informacje dla pomocy technicznej (w Firefoksie: Więcej informacji dla pomocy technicznej) → Folder profilu → Otwórz folder.
 887| Wybierz razem z nim plik prefs.js z folderu profilu, aby przenieść też nazwy list.
 888| Wybierz plik…
+889| Alarmy…
+890| ⏰ Alarmy
+891| Każdy alarm, który dzwoni, jest odłożony lub dopiero zadzwoni (Ctrl+L)
+892| Następne 24 godziny
+893| Następne 7 dni
+894| Następne 30 dni
+895| Następne 12 miesięcy
+896| Pomiń sprawia, że jeden alarm nie zadzwoni; pozostałe przypomnienia cyklicznego nadal dzwonią. Aby zmienić lub usunąć alarm na stałe, otwórz przypomnienie lub element listy.
+897| Element listy
+898| Dzwoni od {time}
+899| Odłożony do {time}
+900| Pominięty: {time}
+901| Pokaż szybkie alarmy
+902| Otwórz przypomnienie lub element listy
+903| Odłóż na domyślny czas (Ustawienia → Alarmy)
+904| Zadzwoń teraz
+905| Cofnij pominięcie
+906| Jednak pozwól zadzwonić temu alarmowi
+907| Pomiń
+908| Nie dzwoń tym razem
+909| Alarmy są wstrzymane do {time}: żaden z nich nie zadzwoni wcześniej.
+910| Alarmy są wstrzymane: żaden z nich nie zadzwoni, dopóki ich nie wznowisz.
+911| {n} alarm
+912| {n} alarmów
+913| {n} dzwoni
+914| powtarza się
+915| Pokazano pierwsze {n}.
+916| Brak alarmów w tym okresie.
+917| Odłożono na {time}

@@ -887,3 +887,32 @@
 886| Profil klasörünü açmak için: Yardım → Sorun giderme bilgileri (Firefox'ta: Daha fazla sorun giderme bilgisi) → Profil klasörü → Klasörü aç.
 887| Liste adlarınızı da getirmek için profil klasöründeki prefs.js dosyasını da birlikte seçin.
 888| Dosyayı seç…
+889| Alarmlar…
+890| ⏰ Alarmlar
+891| Çalan, ertelenmiş veya henüz çalacak her alarm (Ctrl+L)
+892| Sonraki 24 saat
+893| Sonraki 7 gün
+894| Sonraki 30 gün
+895| Sonraki 12 ay
+896| Atla bir alarmın çalmasını engeller; yinelenen bir anımsatıcının diğerleri yine çalar. Bir alarmı kalıcı olarak değiştirmek veya kaldırmak için anımsatıcıyı veya liste öğesini açın.
+897| Liste öğesi
+898| {time} itibarıyla çalıyor
+899| {time} saatine kadar ertelendi
+900| Atlandı: {time}
+901| Hızlı alarmları göster
+902| Anımsatıcıyı veya liste öğesini aç
+903| Varsayılan süre kadar ertele (Ayarlar → Alarmlar)
+904| Şimdi çal
+905| Atlamayı geri al
+906| Bu alarm yine de çalsın
+907| Atla
+908| Bu kez çalma
+909| Alarmlar {time} saatine kadar askıda: bunların hiçbiri o zamana kadar çalmaz.
+910| Alarmlar askıda: siz devam ettirene kadar bunların hiçbiri çalmaz.
+911| {n} alarm
+912| {n} alarm
+913| {n} çalıyor
+914| yinelenir
+915| İlk {n} gösteriliyor.
+916| Bu dönemde alarm yok.
+917| {time} ertelendi

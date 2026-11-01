@@ -887,3 +887,32 @@
 886| So öffnen Sie den Profilordner: Hilfe → Informationen zur Fehlerbehebung (in Firefox: Weitere Informationen zur Fehlerbehebung) → Profilordner → Ordner öffnen.
 887| Wählen Sie die prefs.js aus dem Profilordner mit aus, um auch Ihre Listennamen zu übernehmen.
 888| Datei auswählen…
+889| Alarme…
+890| ⏰ Alarme
+891| Jeder Alarm, der klingelt, schlummert oder noch klingeln wird (Strg+L)
+892| Nächste 24 Stunden
+893| Nächste 7 Tage
+894| Nächste 30 Tage
+895| Nächste 12 Monate
+896| Überspringen hält einen Alarm vom Klingeln ab; die anderen einer wiederkehrenden Erinnerung klingeln weiter. Um einen Alarm dauerhaft zu ändern oder zu entfernen, öffnen Sie die Erinnerung oder den Listeneintrag.
+897| Listeneintrag
+898| Klingelt seit {time}
+899| Schlummert bis {time}
+900| Übersprungen: {time}
+901| Die Schnellalarme zeigen
+902| Die Erinnerung oder den Listeneintrag öffnen
+903| Für die Standardzeit schlummern (Einstellungen → Alarme)
+904| Jetzt klingeln
+905| Überspringen rückgängig
+906| Diesen Alarm doch klingeln lassen
+907| Überspringen
+908| Diesmal nicht klingeln
+909| Alarme sind bis {time} ausgesetzt: Keiner davon klingelt vorher.
+910| Alarme sind ausgesetzt: Keiner davon klingelt, bis Sie sie fortsetzen.
+911| {n} Alarm
+912| {n} Alarme
+913| {n} klingeln
+914| wiederholt sich
+915| Die ersten {n} werden gezeigt.
+916| Keine Alarme in diesem Zeitraum.
+917| Schlummert für {time}

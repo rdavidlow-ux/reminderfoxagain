@@ -887,3 +887,32 @@
 886| Zo open je de profielmap: Help → Probleemoplossingsinformatie (in Firefox: Meer probleemoplossingsinformatie) → Profielmap → Map openen.
 887| Kies ook de prefs.js uit de profielmap om je lijstnamen mee te nemen.
 888| Bestand kiezen…
+889| Alarmen…
+890| ⏰ Alarmen
+891| Elk alarm dat afgaat, gesnoozed is of nog af zal gaan (Ctrl+L)
+892| Komende 24 uur
+893| Komende 7 dagen
+894| Komende 30 dagen
+895| Komende 12 maanden
+896| Overslaan houdt één alarm tegen; de andere van een herhalende herinnering gaan nog af. Om een alarm voorgoed te wijzigen of te verwijderen, open je de herinnering of het lijstitem.
+897| Lijstitem
+898| Gaat af sinds {time}
+899| Gesnoozed tot {time}
+900| Overgeslagen: {time}
+901| De snelle alarmen tonen
+902| De herinnering of het lijstitem openen
+903| Snoozen voor de standaardtijd (Instellingen → Alarmen)
+904| Nu laten afgaan
+905| Overslaan ongedaan maken
+906| Dit alarm toch laten afgaan
+907| Overslaan
+908| Deze keer niet afgaan
+909| Alarmen zijn uitgesteld tot {time}: geen ervan gaat eerder af.
+910| Alarmen zijn uitgesteld: geen ervan gaat af tot je ze hervat.
+911| {n} alarm
+912| {n} alarmen
+913| {n} gaan af
+914| herhaalt
+915| De eerste {n} worden getoond.
+916| Geen alarmen in deze periode.
+917| Gesnoozed voor {time}

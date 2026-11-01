@@ -33,6 +33,7 @@ run todo-remind basic todo-remind.js
 run lists-views basic lists-views.js
 run lists basic lists.js
 run alarms-data basic alarms-data.js
+run alarms-view basic alarms-view.js
 run import-month basic import-month.js
 run view-options basic view-options.js
 run place-themes bills place-themes.js
@@ -60,7 +61,7 @@ const [en, de] = process.argv.slice(1).map((f) => JSON.parse(require("fs").readF
 const chk = (n, g, w) => console.log(`E2E macOS menu: ${n}: ${g} (expected ${w})${String(g) === String(w) ? "" : "  WRONG"}`);
 const acc = (m) => m.flatMap((t) => (t.submenu || []).filter((i) => i.accelerator).map((i) => i.accelerator)).join(" ");
 chk("menus", en.map((t) => t.label).join(","), "ReminderFoxAgain,File,Edit,View,Window");
-chk("shortcuts", acc(en), "Command+, Command+Q Command+N Command+T Shift+Command+A Command+I Command+E Command+B Command+G Command+F");
+chk("shortcuts", acc(en), "Command+, Command+Q Command+N Command+T Shift+Command+A Command+I Command+E Command+B Command+G Command+F Command+L");
 chk("Edit is the standard menu (copy, paste, undo)", en[2].role, "editMenu");
 chk("German menus", de.map((t) => t.label).join(","), "ReminderFoxAgain,Ablage,Bearbeiten,Ansicht,Fenster");
 chk("German: same shortcuts", acc(de), acc(en));

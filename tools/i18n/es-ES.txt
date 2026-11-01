@@ -887,3 +887,32 @@
 886| Para abrir la carpeta del perfil: Ayuda → Información para solucionar problemas (en Firefox: Más información para solucionar problemas) → Carpeta de perfil → Abrir carpeta.
 887| Elige también el prefs.js de la carpeta del perfil para traer los nombres de tus listas.
 888| Elegir el archivo…
+889| Alarmas…
+890| ⏰ Alarmas
+891| Cada alarma que suena, está pospuesta o aún sonará (Ctrl+L)
+892| Próximas 24 horas
+893| Próximos 7 días
+894| Próximos 30 días
+895| Próximos 12 meses
+896| Omitir evita que suene una alarma; las demás de un recordatorio que se repite siguen sonando. Para cambiar o quitar una alarma para siempre, abre el recordatorio o el elemento de lista.
+897| Elemento de lista
+898| Sonando desde {time}
+899| Pospuesta hasta {time}
+900| Omitida: {time}
+901| Ver las alarmas rápidas
+902| Abrir el recordatorio o el elemento de lista
+903| Posponer el tiempo predeterminado (Ajustes → Alarmas)
+904| Sonar ahora
+905| Deshacer omitir
+906| Dejar que esta alarma suene al final
+907| Omitir
+908| No sonar esta vez
+909| Las alarmas están suspendidas hasta {time}: ninguna de estas suena antes.
+910| Las alarmas están suspendidas: ninguna de estas suena hasta que las reanudes.
+911| {n} alarma
+912| {n} alarmas
+913| {n} sonando
+914| se repite
+915| Se muestran las primeras {n}.
+916| No hay alarmas en este periodo.
+917| Pospuesta {time}

@@ -887,3 +887,32 @@
 886| Profiilikansion avaaminen: Ohje → Tietoja ongelmanratkaisua varten (Firefoxissa: Lisää tietoja ongelmanratkaisua varten) → Profiilikansio → Avaa kansio.
 887| Valitse samalla profiilikansion prefs.js, niin myös luetteloidesi nimet tulevat mukaan.
 888| Valitse tiedosto…
+889| Hälytykset…
+890| ⏰ Hälytykset
+891| Kaikki hälytykset, jotka soivat, on torkutettu tai vielä soivat (Ctrl+L)
+892| Seuraavat 24 tuntia
+893| Seuraavat 7 päivää
+894| Seuraavat 30 päivää
+895| Seuraavat 12 kuukautta
+896| Ohita estää yhden hälytyksen soimasta; toistuvan muistutuksen muut soivat silti. Jos haluat muuttaa tai poistaa hälytyksen pysyvästi, avaa muistutus tai luettelon kohde.
+897| Luettelon kohde
+898| Soinut {time} alkaen
+899| Torkutettu {time} asti
+900| Ohitettu: {time}
+901| Näytä pikahälytykset
+902| Avaa muistutus tai luettelon kohde
+903| Torkuta oletusajan (Asetukset → Hälytykset)
+904| Soita nyt
+905| Kumoa ohitus
+906| Anna tämän hälytyksen sittenkin soida
+907| Ohita
+908| Älä soi tällä kertaa
+909| Hälytykset on keskeytetty {time} asti: mikään näistä ei soi sitä ennen.
+910| Hälytykset on keskeytetty: mikään näistä ei soi ennen kuin jatkat niitä.
+911| {n} hälytys
+912| {n} hälytystä
+913| {n} soi
+914| toistuu
+915| Näytetään ensimmäiset {n}.
+916| Ei hälytyksiä tällä aikavälillä.
+917| Torkutettu {time}

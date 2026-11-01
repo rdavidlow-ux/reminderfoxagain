@@ -46,6 +46,88 @@
   const wholeNumber = (v, max) => { const s = String(v).trim(); if (!/^\d{1,4}$/.test(s)) return null; const n = Number(s); return n >= 1 && n <= max ? n : null; };
 
   // ------------------------------------------------------------ quick alarms
+  // ------------------------------------------------------------ the Alarms view: every alarm ringing, snoozed or to come
+  // Ringing and snoozed ones first, then the coming ones in the order they ring. What each can do: ringing → Snooze
+  // (the default snooze), Dismiss; snoozed → Ring now, Dismiss; to come → Skip (that one time; the rest still ring),
+  // and Undo skip; a quick alarm → Cancel. Open shows the reminder or list item (a quick alarm: the Quick alarm dialog).
+  const ALARM_SPANS = [['1', 'Next 24 hours'], ['7', 'Next 7 days'], ['30', 'Next 30 days'], ['366', 'Next 12 months']];
+  let alarmTimer = null;
+  async function openAlarms() {
+    const d = dlg('alarmsDlg', {
+      title: 'Alarms',
+      cls: 'alarms-dlg',
+      body: '<div class="row"><label class="lbl" for="alSpan">Show</label><select class="sel" id="alSpan">' +
+        ALARM_SPANS.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('') + '</select>' +
+        '<span class="spacer"></span><span class="note" id="alCount"></span></div>' +
+        '<div class="note warn hidden" id="alSuspended"></div>' +
+        '<div id="alList" class="mini-list al-list" role="list"></div>' +
+        '<div class="note">Skip stops one alarm from ringing; the others of a repeating reminder still ring. To change or remove an alarm for good, open the reminder or list item.</div>',
+      foot: '<span class="spacer"></span><button type="button" class="btn primary" data-x>Close</button>',
+    });
+    let span = '7';
+    try { span = localStorage.getItem('rf.alarmSpan') || '7'; } catch (e) { /* the default */ }
+    if (!ALARM_SPANS.some(([v]) => v === span)) span = '7';
+    q(d, '#alSpan').value = span;
+    const kindText = (a) => (a.quick ? 'Quick alarm' : a.kind === 'todo' ? 'List item' : 'Reminder');
+    const stateText = (a) => (a.status === 'ringing' ? RF.T('Ringing since {time}', { time: whenText(a.at) })
+      : a.status === 'snoozed' ? RF.T('Snoozed until {time}', { time: whenText(a.when) })
+        : a.status === 'skipped' ? RF.T('Skipped: {time}', { time: whenText(a.at) }) : `${whenText(a.at)} (${untilText(a.at)})`);
+    const btn = (act, label, title) => `<button type="button" class="btn ghost" data-al="${act}"${title ? ` title="${esc(title)}"` : ''}>${esc(label)}</button>`;
+    function actions(a) {
+      const open = btn('open', 'Open', a.quick ? 'Show the quick alarms' : 'Open the reminder or list item');
+      if (a.status === 'ringing') return btn('snooze', 'Snooze', 'Snooze for the default time (Settings → Alarms)') + btn('dismiss', 'Dismiss') + open;
+      if (a.status === 'snoozed') return btn('now', 'Ring now') + btn('dismiss', 'Dismiss') + open;
+      if (a.quick) return btn('dismiss', 'Cancel', 'Cancel this alarm') + open;
+      if (a.status === 'skipped') return btn('unskip', 'Undo skip', 'Let this alarm ring after all') + open;
+      return btn('dismiss', 'Skip', 'Don\'t ring this time') + open;
+    }
+    let rows = [];
+    async function list() {
+      const r = await A.guard(window.rf.alarmsList(Number(q(d, '#alSpan').value)));
+      if (!r || !d.open) return;
+      rows = r.alarms;
+      const sus = q(d, '#alSuspended');
+      sus.classList.toggle('hidden', !r.suspended);
+      if (r.suspended) sus.textContent = r.suspended.until ? RF.T('Alarms are suspended until {time}: none of these ring before then.', { time: whenText(r.suspended.until) }) : RF.T('Alarms are suspended: none of these ring until you resume them.');
+      const ringing = rows.filter((a) => a.status === 'ringing').length;
+      q(d, '#alCount').textContent = `${plural(rows.filter((a) => a.status !== 'skipped').length, 'alarm', 'alarms')}${ringing ? ` · ${RF.T('{n} ringing', { n: ringing })}` : ''}`;
+      q(d, '#alList').innerHTML = rows.length ? rows.map((a, i) => `<div class="mini-row al-row al-${a.status}" role="listitem" data-i="${i}">` +
+        `<span class="al-icon" aria-hidden="true">${a.status === 'ringing' ? '🔔' : a.status === 'snoozed' ? '💤' : a.status === 'skipped' ? '⏭' : a.quick ? '⏰' : a.kind === 'todo' ? '☑' : '📅'}</span>` +
+        `<span class="grow"><b>${esc(a.summary || RF.T(kindText(a)))}</b> <span class="note">${esc(RF.T(kindText(a)))}${a.repeat ? ` · ${esc(RF.T('repeats'))}` : ''}</span><br>` +
+        `<span class="al-when">${esc(stateText(a))}</span></span><span class="al-acts">${actions(a)}</span></div>`).join('') +
+        (r.more ? `<div class="note">${esc(RF.T('Showing the first {n}.', { n: rows.length }))}</div>` : '')
+        : '<div class="note">No alarms in this period.</div>';
+    }
+    q(d, '#alSpan').addEventListener('alarms-refresh', list);
+    q(d, '#alSpan').addEventListener('change', () => { try { localStorage.setItem('rf.alarmSpan', q(d, '#alSpan').value); } catch (e) { /* ignore */ } list(); });
+    q(d, '#alList').addEventListener('click', async (e) => {
+      const b = e.target.closest('button[data-al]');
+      const row = b && b.closest('[data-i]');
+      const a = row && rows[Number(row.dataset.i)];
+      if (!a) return;
+      const act = b.dataset.al;
+      if (act === 'open') {
+        d.close();
+        if (a.quick) openQuick(); else A.openEditor({ uid: a.uid, start: a.start == null ? undefined : a.start });
+        return;
+      }
+      let ok = false;
+      if (act === 'snooze') { const t = RF.snooze.fromSettings(S.settings); ok = await A.guard(window.rf.snooze(a.key, RF.snooze.seconds(t.amount, t.unit))); if (ok) A.toast(RF.T('Snoozed for {time}', { time: plural(t.amount, t.unit.replace(/s$/, ''), t.unit) })); }
+      else if (act === 'now') ok = await A.guard(window.rf.snooze(a.key, 1));
+      else if (act === 'dismiss') ok = await A.guard(window.rf.dismiss(a.key));
+      else if (act === 'unskip') ok = await A.guard(window.rf.unskipAlarm(a.key));
+      if (ok) setTimeout(list, act === 'now' ? 1500 : 150);
+    });
+    clearInterval(alarmTimer);
+    alarmTimer = setInterval(() => { if (d.open) list(); else clearInterval(alarmTimer); }, 15000);
+    d.addEventListener('close', () => clearInterval(alarmTimer), { once: true });
+    if (!d.open) d.showModal();
+    await list();
+    q(d, '#alSpan').focus();
+    return d;
+  }
+  window.rf.on('data:changed', () => { const d = $('alarmsDlg'); if (d && d.open) setTimeout(() => { if (d.open) q(d, '#alSpan').dispatchEvent(new Event('alarms-refresh')); }, 300); });
+
   async function openQuick() {
     const d = dlg('quickDlg', {
       title: 'Quick alarm',
@@ -979,7 +1061,7 @@
   window.rf.on('settings:changed', () => { if (st.open) fillSettings(); });
 
   window.__rfx = {
-    fillSettings, showPanel, openQuick, openSuspend, openViews, editView, showView, openLists, openCategories, pickCategories,
+    fillSettings, showPanel, openQuick, openAlarms, openSuspend, openViews, editView, showView, openLists, openCategories, pickCategories,
     askMoveToList, askNewList, addList, askSchedule, askImport, askText, openGoTo, openRestore, backupNow, describeView, testSound, editTheme, deleteTheme,
   };
 })();
