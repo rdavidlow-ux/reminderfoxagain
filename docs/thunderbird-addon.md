@@ -71,7 +71,7 @@ To change one: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The to
 
 ## The Alarms view
 
-One place for every alarm, in the add-on and in the desktop app alike: **⏰ Alarms** in the status bar, **Alarms…** in the toolbar button's menu (the tray menu and the macOS View menu on the desktop), or Alt+Shift+L (Ctrl+L on the desktop, ⌘L on a Mac).
+One place for every alarm, in the add-on and in the desktop app alike: **⏰ Alarms** in the status bar, **Alarms…** in the toolbar button's menu (the tray menu and the macOS View menu on the desktop), or Alt+Shift+L (⌥⇧L on a Mac).
 
 <img src="media/thunderbird-addon/alarms-view.png" style="width:6in;height:3.86441in" alt="The Alarms view with made-up reminders: one ringing, one snoozed, a quick alarm, alarms to come and one skipped" />
 
@@ -115,7 +115,7 @@ In the add-on and the desktop app alike, you can subscribe to any calendar with 
 
 - **Which views show it:** 📅 Calendars in each toolbar has a tick for every subscription, so one calendar can be in the Month view but not in the Reminders list (the calendar panel follows the Month view). A dot on the button means some are hidden in that view.
 
-- **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu, and Ctrl+D). It can't be ticked, changed or deleted.
+- **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu, and Alt+Shift+D). It can't be ticked, changed or deleted.
 
 - **Kept up to date:** each subscription is fetched again on its own: every hour, 6 hours, 12 hours, day (at first) or week. If its site can't be reached, the last good copy stays and the dialog says why; it is tried again in half an hour. Calendar subscriptions… also renames, recolours, refreshes and removes them.
 
