@@ -87,6 +87,24 @@ It lists what is ringing, what is snoozed and until when, then every alarm still
 
 Open shows the reminder or list item in the editor, where its alarm can be changed or removed for good. A skipped alarm stays skipped however far ahead it is: a dismissed alarm is forgotten a week after it was dismissed only once its time has passed. The list is worked out by src/core/alarmlist.js, shared by the desktop app (src/main.js) and the add-on (src/host/core.js), through alarms:list and alarm:unskip.
 
+## The Month view scrolls
+
+In the add-on and the desktop app alike, the Month view is a run of weeks you scroll through: past and coming months are a scroll of the mouse wheel or a swipe on the touchpad away, instead of a click per month.
+
+<img src="media/thunderbird-addon/month-scroll.png" style="width:6in;height:3.86441in" alt="The Month view scrolled halfway between November and December, with made-up reminders" />
+
+- A month's worth of weeks (six) still fills the view, and the weeks settle on a week's edge when you stop.
+
+- The month in focus is in the title; the days of the other months are dimmed, and each month's 1st is labelled (“Dec 1”).
+
+- More weeks load as you near either end (about three years can be shown at once).
+
+- **‹ ›** and **Page Up / Page Down** move a month at a time, smoothly; **Today** and **Go to…** jump there.
+
+- A change to your reminders, a filter (Show to-dos, Show completed) or a search keeps the view where it is.
+
+- Clicking a day picks it, double-clicking adds a reminder, and a reminder opens with a click, as before.
+
 ## Reminders and list items from email
 
 Right-click an email in the message list and choose **Add reminder…** or **Add list item…**. Thunderbird shows them under a ReminderFoxAgain submenu, with the fox icon, because the add-on puts two items there. The editor opens with the email's subject as the description and the date, time and place the email mentions, if it gives them. Check it, change anything, and save.
@@ -133,7 +151,7 @@ Everything the desktop import keeps is kept here too: the ReminderFox add-on's X
 ## Building, installing, testing
 
 ./build-thunderbird.sh \# unit tests, then dist/release-thunderbird/ReminderFoxAgain-\<ver\>-thunderbird.xpi  
-thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last line: 686 checks, 0 problem(s)
+thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last line: 711 checks, 0 problem(s)
 
 - **Install:** Add-ons and Themes → ⚙ → Install Add-on From File… → the .xpi. Thunderbird asks to confirm because the add-on isn't signed. To try it without installing: Tools → Developer Tools → Debug Add-ons → Load Temporary Add-on… → dist/thunderbird/manifest.json (removed when Thunderbird closes).
 
@@ -141,9 +159,9 @@ thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last l
 
 - **Unit tests:** test/host-core.test.js (16 tests) and test/maildate.test.js (9 tests, the dates, times and places found in emails), part of npm test (61 in all, in 7 time zones). The host-core tests run the core with an in-memory adapter and a clock the test moves: saving and reloading, daily backups, import with a picked prefs.js, an unreadable file kept aside, alarms (due, snooze, dismiss), quick alarms and suspend, backup and restore, export, the toolbar menu, a chosen language, a chosen sound, the reminder made from an email, the email it came from (kept on edits, read from the original add-on's file, opened), an item as an email, an invitation and its reply, the emails to tag, birthdays from contacts, and the Alarms view (ringing, snoozed, to come, skipped ahead of time).
 
-- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages and their tags, the compose window, address books, accounts), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, Add reminder… and Add list item… on an HTML email with its date, time and place, Open email from the editor and the right-click menu, the six Thunderbird-only features (tags on and off, Send by email…, an invitation and a reply, birthdays from an address book, selected text, an .ics link, Send++), Alt+Shift+L and the toolbar menu's Alarms…, the pop-up and a quick alarm); the desktop's alarms-view.js runs in the add-on too. Desktop scripts that import test files by their path get those files uploaded the add-on's way.
+- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages and their tags, the compose window, address books, accounts), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, Add reminder… and Add list item… on an HTML email with its date, time and place, Open email from the editor and the right-click menu, the six Thunderbird-only features (tags on and off, Send by email…, an invitation and a reply, birthdays from an address book, selected text, an .ics link, Send++), Alt+Shift+L and the toolbar menu's Alarms…, the pop-up and a quick alarm); the desktop's alarms-view.js and month-scroll.js run in the add-on too. Desktop scripts that import test files by their path get those files uploaded the add-on's way.
 
-- **Desktop app:** its own checks still pass (tools/e2e.sh, 673 checks, with the Alarms view's own script), since the add-on shares its pages.
+- **Desktop app:** its own checks still pass (tools/e2e.sh, 696 checks, with the Alarms view's and the scrolling Month view's own scripts), since the add-on shares its pages.
 
 - **Lint:** Mozilla's web-ext lint gives no errors. It warns that windows.openDefaultBrowser, the messages, messageDisplay, compose, composeAction, addressBooks, accounts and identities APIs, and their permissions, are not Firefox's (they are Thunderbird's) and that the pages set innerHTML (the UI escapes every value it puts in).
 
