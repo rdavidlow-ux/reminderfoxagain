@@ -3,7 +3,7 @@
 // (mock-browser.js), and runs UI check scripts from tools/ui/ in its pages, as tools/e2e.sh does for the desktop app.
 //   node thunderbird/test/run.js [--size 1180x760] [--lang de] [--sample basic|bills] [--alarm alarm-script.js] main-script.js
 // Prints the scripts' "E2E …" lines plus the add-on's own checks ("E2E TB …"). Not a real Thunderbird: see
-// docs/thunderbird-addon.md for what is still to be tried there.
+// docs/technical-system-design.md (Tried in a real Thunderbird) for what is still to be tried there.
 const fs = require('fs');
 const os = require('os');
 const path = require('path');

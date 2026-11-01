@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# UI checks for the experimental Thunderbird add-on: the built add-on (dist/thunderbird) in Chromium with a mock of
+# UI checks for the Thunderbird add-on: the built add-on (dist/thunderbird) in Chromium with a mock of
 # Thunderbird's WebExtension API, running the desktop's tools/ui scripts plus its own (tb-smoke.js).
 # Every line shows the value found and the expected one; WRONG or ERROR is a problem. Build first: ./build-thunderbird.sh
 set -uo pipefail

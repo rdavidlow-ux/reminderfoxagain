@@ -888,18 +888,18 @@ Default is Fox, light or dark to match your system. Starred items have their own
 As in your system ({s})
 Your reminders, to-dos and alarms as a Mac app — a tribute to the original ReminderFox add-on.
 Your reminders, to-dos and alarms as a Linux app — a tribute to the original ReminderFox add-on.
-# the Thunderbird add-on (experimental): its wording
+# the Thunderbird add-on: its wording
 Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.
 Save a copy of your reminders file
 Show a number on the ReminderFoxAgain toolbar button
 Your reminders are kept in your Thunderbird profile, with a backup every day.
-# the Thunderbird add-on (experimental): open the email an item came from
+# the Thunderbird add-on: open the email an item came from
 Open email
 ✉ Open email
 Open the email this came from
 This item has no email to open.
 The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.
-# the Thunderbird add-on (experimental): Send++, tags, send by email, birthdays, selected text and .ics links, invitations
+# the Thunderbird add-on: Send++, tags, send by email, birthdays, selected text and .ics links, invitations
 Send by email…
 Invite people…
 Import this calendar…
@@ -920,7 +920,7 @@ no answer yet
 No email address to invite.
 Thunderbird has no email account to send the invitation from.
 That calendar could not be read.
-# the Thunderbird add-on (experimental): Import from ReminderFox… (the person picks the file)
+# the Thunderbird add-on: Import from ReminderFox… (the person picks the file)
 Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile
 An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.
 To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.

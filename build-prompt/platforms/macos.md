@@ -20,7 +20,7 @@ pinned. Nothing else at runtime.
 | Data folder | `~/Library/Application Support/ReminderFoxAgain` (`app.getPath('appData')`); `RF_DATA_DIR` overrides. |
 | ReminderFox add-on files | `~/Library/Application Support/Firefox/Profiles/*/reminderfox/reminderfox.ics`, `~/Library/Thunderbird/Profiles/*/…`, `~/Library/Application Support/SeaMonkey/Profiles/*/…`, `~/Library/Application Support/Waterfox/Profiles/*/…`. |
 | Application menu | **Required** (don't call `removeMenu` on macOS: without an Edit menu ⌘C/⌘V/⌘X/⌘A/⌘Z don't work in text fields). App menu: About ReminderFoxAgain, Settings… (⌘,), Services, Hide (⌘H), Hide Others, Show All, Quit (⌘Q). File: New Reminder (⌘N), New To-Do (⌘T), Quick Alarm (⇧⌘A), Import… (⌘I), Export… (⌘E). Edit: the standard roles. View: Show/Hide Calendar Panel (⌘B), Go to Date… (⌘G), Find (⌘F). Window: minimize, zoom, front. Menu items send the same `ui:*` events the tray uses (add `ui:import`, `ui:export`, `ui:settings`, `ui:goto`, `ui:side` to the preload's allowed channels). |
-| Keyboard | The UI already accepts ⌘ for Ctrl. On macOS, Quick alarm is ⇧⌘A (⌘Q quits); show ⌘ in tooltips (for example "New reminder (⌘N)"). |
+| Keyboard | The Alt+Shift shortcuts, shown as ⌥⇧ and the letter (for example "New reminder (⌥⇧A)"), also as the menus' accelerators; ⌘, Settings and ⌘Q quit. |
 | Window close | Closing the main window hides it; the app keeps running with its Dock icon and menu-bar icon. Clicking the Dock icon (`app.on('activate')`) shows it again. ⌘Q quits for real. `closeToTray` is labelled "Keep running in the menu bar when the window is closed". |
 | Menu-bar icon | `Tray` with `trayTemplate.png` (+ `@2x`), so macOS tints it. The tooltip is the templated text. The menu is the tray menu. |
 | Badge | `app.dock.setBadge(n ? String(n) : '')`; leave the tray image as the template (no number). |
@@ -45,9 +45,9 @@ pinned. Nothing else at runtime.
    `APPLE_ID`, `APPLE_TEAM_ID`, `APPLE_APP_PASSWORD` and a Developer ID certificate are available, sign with it and
    notarize (`xcrun notarytool submit --wait`, then `xcrun stapler staple`). Otherwise say the build is ad-hoc signed.
 4. **Release files**:
-   - `ReminderFoxAgain-0.9.2-macos-universal.zip`: `ditto -c -k --keepParent` on a Mac, or on Linux `zip -y -r -X` (keep
+   - `ReminderFoxAgain-0.9.3-macos-universal.zip`: `ditto -c -k --keepParent` on a Mac, or on Linux `zip -y -r -X` (keep
      the symlinks) after touching every file to `SOURCE_DATE_EPOCH`;
-   - `ReminderFoxAgain-0.9.2.dmg` (Mac only): `hdiutil create -volname ReminderFoxAgain -srcfolder <dir with the .app
+   - `ReminderFoxAgain-0.9.3.dmg` (Mac only): `hdiutil create -volname ReminderFoxAgain -srcfolder <dir with the .app
      and an /Applications symlink> -format UDZO`.
    Split anything over a delivery limit into 28 MiB parts with a `join.command`.
 5. Two builds in a row of the zip must be identical. The dmg and notarized builds needn't be.

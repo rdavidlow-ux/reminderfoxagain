@@ -14,7 +14,7 @@ OUT="dist/macos"; REL="dist/release-macos"
 rm -rf "$OUT" "$REL"; mkdir -p "$OUT" "$REL"
 KEEP="en en_GB $(node -e "const t=require('fs').readFileSync('src/main.js','utf8');console.log(eval(/CHROMIUM_LOCALES = (\[[^\]]*\])/.exec(t)[1]).map((l)=>l.replace('-','_')).join(' '))")"
 IGNORE=(--ignore='^/test' --ignore='^/tools' --ignore='^/shots' --ignore='^/dist' --ignore='^/installer' --ignore='^/build($|/)' --ignore='^/build.*\.sh$'
-  --ignore='\.zip$' --ignore='^/docs' --ignore='\.md$' --ignore='^/node_modules/(?!ical\.js)' --ignore='^/node_modules/ical\.js/(lib|dist/types)')
+  --ignore='\.zip$' --ignore='^/docs' --ignore='^/thunderbird' --ignore='^/build-prompt' --ignore='\.md$' --ignore='^/node_modules/(?!ical\.js)' --ignore='^/node_modules/ical\.js/(lib|dist/types)')
 
 for A in arm64 x64; do
   echo "== package darwin $A"

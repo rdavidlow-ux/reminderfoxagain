@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Builds the experimental Thunderbird add-on (Thunderbird 128 or later) into dist/release-thunderbird/:
+# Builds the Thunderbird add-on (Thunderbird 128 or later) into dist/release-thunderbird/:
 #   ReminderFoxAgain-<ver>-thunderbird.xpi
 # Two builds in a row give identical SHA-256 hashes. Install it in Thunderbird from Add-ons and Themes → ⚙ →
 # Install Add-on From File…, or load dist/thunderbird/manifest.json from about:debugging for a quick try.

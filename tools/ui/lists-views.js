@@ -140,8 +140,9 @@ try {
   document.dispatchEvent(new KeyboardEvent('keydown', { key: 'B', code: 'KeyB', altKey: true, shiftKey: true, bubbles: true })); await sleep(400);
   check('Alt+Shift+B shows it again', document.body.classList.contains('no-side'), false);
   // overdue mark: "Renew passport" (2 days ago) is still open
-  await window.__rf.selectDay(R.S.today); await sleep(300);
+  // (its day picked, so the calendar panel shows its month: on the 1st of a month, 2 days ago is in the month before)
   const pass = (await window.rf.all()).find((d) => d.summary === 'Renew passport');
+  await window.__rf.selectDay(pass.date); await sleep(300);
   check('overdue day marked', document.querySelector(`#mcal .mday[data-day="${pass.date}"]`).classList.contains('overdue'), true);
   // ---------- date and time formats
   await R.setSetting({ dateFormat: 'iso', timeFormat: '24' }); await R.refresh(); await sleep(400);

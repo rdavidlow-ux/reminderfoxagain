@@ -14,7 +14,7 @@ OUT="dist/linux"; REL="dist/release-linux"
 rm -rf "$OUT" "$REL"; mkdir -p "$OUT" "$REL"
 KEEP="en-US en-GB $(node -e "const t=require('fs').readFileSync('src/main.js','utf8');console.log(eval(/CHROMIUM_LOCALES = (\[[^\]]*\])/.exec(t)[1]).join(' '))")"
 IGNORE=(--ignore='^/test' --ignore='^/tools' --ignore='^/shots' --ignore='^/dist' --ignore='^/installer' --ignore='^/build($|/)' --ignore='^/build.*\.sh$'
-  --ignore='\.zip$' --ignore='^/docs' --ignore='\.md$' --ignore='^/node_modules/(?!ical\.js)' --ignore='^/node_modules/ical\.js/(lib|dist/types)')
+  --ignore='\.zip$' --ignore='^/docs' --ignore='^/thunderbird' --ignore='^/build-prompt' --ignore='\.md$' --ignore='^/node_modules/(?!ical\.js)' --ignore='^/node_modules/ical\.js/(lib|dist/types)')
 
 for A in $ARCHS; do
   DA=$([ "$A" = x64 ] && echo amd64 || echo arm64)

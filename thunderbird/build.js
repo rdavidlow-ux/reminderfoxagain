@@ -1,5 +1,5 @@
 'use strict';
-// Builds the experimental Thunderbird add-on:
+// Builds the Thunderbird add-on:
 //   dist/thunderbird/                                   the unpacked add-on (load it from about:debugging)
 //   dist/release-thunderbird/ReminderFoxAgain-<ver>-thunderbird.xpi
 // node thunderbird/build.js   (run by build-thunderbird.sh, which also zips it deterministically)

@@ -1,8 +1,8 @@
-# ReminderFoxAgain 0.9.2 — Developer's Guide
+# ReminderFoxAgain 0.9.3 — Developer's Guide
 
-Oct 18, 2026 · David
+Nov 1, 2026 · David
 
-This guide is the reference for working on the ReminderFoxAgain 0.9.2 code. It covers the Store's data API, the main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
+This guide is the reference for working on the ReminderFoxAgain 0.9.3 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
 
 ## 1. Setup and layout
 
@@ -14,7 +14,24 @@ npm test                       # unit tests (node:test)
 RF_DATA_DIR=/tmp/rf npm start  # run with a throw-away data folder
 node tools/sample-data.js /tmp/rf basic   # or: bills
 ./build.sh                     # Windows x64 release in dist/release/
+./build-thunderbird.sh         # the add-on: dist/release-thunderbird/ReminderFoxAgain-<ver>-thunderbird.xpi
 ```
+
+### The Thunderbird add-on
+
+| Path | What it is |
+| --- | --- |
+| `src/host/core.js` | The host core: data, backups, settings, alarms, quick alarms, suspend, pop-up data, import and export, subscriptions, and every `window.rf` channel. It takes an adapter ({storage, timers, windows, notify, files, fetch, …}) and has no Electron or Node imports. |
+| `src/host/maildate.js` | Finds the date, time and place in an email (tested in `test/maildate.test.js`). |
+| `thunderbird/background.js` | The adapter: runs the core in the background page and wires Thunderbird's APIs (storage.local, tabs, windows, browserAction, menus, notifications, commands, permissions, messages, compose, addressBooks, accounts). |
+| `thunderbird/bridge.js` | `window.rf` in each page, as runtime messages to the background page; file pickers and downloads run in the page. |
+| `thunderbird/tb.js`, `tb.css` | The add-on's overlay on the shared pages: hidden desktop settings, the welcome page's ReminderFox import instructions, Settings → General's tags and birthdays, the Invite people dialog. |
+| `thunderbird/shortcuts.json` | The Alt+Shift commands and the key each presses in the page. |
+| `thunderbird/build.js` | Bundles `host.js`, copies `src/ui` with the bridge, writes `manifest.json` (author David Low, permissions, optional_permissions `*://*/*` for subscriptions and .ics links, commands, compose_action) and zips a deterministic .xpi. |
+
+To try a change without installing: build, then in Thunderbird Tools → Developer Tools → Debug Add-ons → Load Temporary Add-on… → `dist/thunderbird/manifest.json`. A new `window.rf` call is added in three places: the desktop `src/main.js` (ipcMain.handle) and `src/preload.js`, and the host core's channel table; `bridge.js` forwards every channel by name. Desktop-only settings are hidden in the add-on by `tb.css`; a feature that needs email is shown only when the host says it is Thunderbird (`document.documentElement.dataset.host`).
+
+Shared modules used by both hosts: `src/core/store.js`, `src/core/alarmlist.js` (the Alarms view: `listAlarms`, `keepDismissed`) and `src/core/subscriptions.js` (`createSubscriptions`, `subscriptionChannels`, `guardReadOnly`, `isSubUid`).
 
 ### macOS and Linux builds (0.9.0)
 
@@ -23,8 +40,8 @@ Both build on Linux and give the same SHA-256 hashes on every run.
 ```sh
 ./build-linux.sh   # dist/release-linux/: .tar.gz and .deb for x64 and arm64 (ARCHS=x64 for one)
 ./build-macos.sh   # dist/release-macos/: one universal .zip (Apple silicon + Intel)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.2-linux-x64.tar.gz
-python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.2
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.3-linux-x64.tar.gz
+python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.3
 ```
 
 - **Linux:** `build/linux/` holds `install.sh`, `uninstall.sh`, the menu entry, the icons and the .deb's `postinst`, `postrm` and AppArmor profile. The .deb installs to `/opt/ReminderFoxAgain`, links `/usr/bin/reminderfoxagain` and makes `chrome-sandbox` setuid root. The tarball installs per user under `~/.local`, and its launcher adds `--no-sandbox` only where unprivileged user namespaces are off.
@@ -256,6 +273,20 @@ Every method returns a Promise. The preload calls `ipcRenderer.invoke(channel, �
 | `sliderState()` / `showSlider()` / `closeSlider()` / `openFromSlider(uid, start)` | `slider:*` | → `{today, upcoming, settings}` |
 | `setBadge(trayUrl, overlayUrl, text, count)` | `badge:set` | PNG data URLs or null |
 
+### Alarms view and calendar subscriptions (0.9.3)
+
+| Method | Channel | Arguments → returns |
+| --- | --- | --- |
+| `alarmsList(days)` | `alarms:list` | 1 \| 7 \| 30 \| 365 → `[{key, uid, summary, when, status: ringing\|snoozed\|upcoming\|skipped, until?, quick?}]` |
+| `unskipAlarm(key)` | `alarm:unskip` | an alarm key skipped ahead of time → true |
+| `subsList()` | `subs:list` | → `[{id, url, name, color, refreshHours, showList, showMonth, updated, error, count}]` |
+| `subsAdd({url})` | `subs:add` | an https://, http:// or webcal:// address → the new subscription (fetched once) |
+| `subsUpdate(id, patch)` / `subsRemove(id)` / `subsRefresh(id)` | `subs:update` / `subs:remove` / `subs:refresh` | name, color, refreshHours, showList, showMonth; refresh with no id refreshes all |
+| `subsRange(from, to, view)` / `subsNext(from, opts, view)` | `subs:range` / `subs:next` | as `range`/`next`, for `'list'` or `'month'`: the subscribed occurrences shown there, uids `sub:<id>:<uid>`, `readOnly: true` |
+| `subsCopy(uid)` | `subs:copy` | a subscribed item → the uid of your own copy |
+
+Every write channel calls `guardReadOnly(uid)` first, so a subscribed item can't be changed, ticked or deleted.
+
 ### Events (main → windows)
 
 `window.rf.on(channel, fn)` returns an unsubscribe function. Only these channels are allowed:
@@ -395,8 +426,10 @@ The UI speaks the original add-on's 34 languages. English text is the key everyw
 
 | Suite | Command | Passes when |
 | --- | --- | --- |
-| Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 35/35 in every zone |
-| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (658 checks in 37 runs in 0.9.2) |
+| Add-on UI | `thunderbird/test/e2e.sh` (options for `run.js`: `--sample empty\|bills`, `--lang`, `--size`) | Last line `0 problem(s)` (about 790 checks in 0.9.3) |
+| Add-on lint | `web-ext lint -s dist/thunderbird` | 0 errors (the warnings are Thunderbird-only APIs) |
+| Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 62/62 in every zone |
+| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 760 checks in 0.9.3) |
 | Screens | `tools/shots.sh <outDir>` | 70 PNGs; compare by eye |
 | Installer | `tools/test-setup.sh [pwsh]` | 20/20 |
 
@@ -420,7 +453,7 @@ const check = (name, got, want) => console.log(`E2E ${name}: ${got} (expected ${
 | `addon-compat.js` | Remind until completed, ages, tooltip flags |
 | `archive-to-list.js` | An earlier version's archive.ics moved into the “Terminated or Suspended” list on start (backup kept, toast with Show), no Archive tab or archive commands, the List dropdown as the tab, ＋ List Item. past-repeats.js: unticked past occurrences in All and Past, ticking from Past, the 3-month limit. upcoming-import.js: projected repeats in Upcoming, All, search and views against rf.range, month counts, the Future dates setting, Import and Export in Settings. todo-remind.js: Due by, the reminder plan in the editor, list flag, plan firing, old alarms, Schedule as a reminder from the menu and the editor |
 | `lists-views.js` | Views, the Lists dropdown, move to list, lists manager, my order, categories, picker, go to date, side panel, overdue marks, formats |
-| `lists.js` | Importing the add-on's lists from a profile's prefs.js, an empty list, ＋ List Item on a list, duplicate (item row, Ctrl+D, menu), delete, copy and move between lists, copying a reminder to a list, a new list from the dropdown, removing a list with its to-dos |
+| `lists.js` | Importing the add-on's lists from a profile's prefs.js, an empty list, ＋ List Item on a list, duplicate (item row, Alt+Shift+D, menu), delete, copy and move between lists, copying a reminder to a list, a new list from the dropdown, removing a list with its to-dos |
 | `alarms-data.js` | Settings sections, pop-up data, badge, quick alarms, suspend, backup and restore with undo |
 | `layout.js` | No overflow at 820, 990 and 1180 px wide, with both sample sets (and at 820 px in German and Ukrainian, 981 px in Ukrainian): the page never scrolls sideways, and nothing in the header or tab bar is cut off, with or without the calendar panel |
 | i18n.js, i18n-pick.js | Per language (run with RF\_LANG=de, LANG=fr\_FR.UTF-8, RF\_LANG=ar, and after picking ja-JP in Settings): lang and dir, tab names, plurals, month names, repeat summary, buttons, the Language list (35 options, names untranslated), the note |
@@ -458,9 +491,9 @@ else if (a === 'dupTomorrow') {
 
 1. Bump `version` in `package.json` and `package-lock.json` (two places). The app reads its version from `package.json`.
 2. Update `README.md`: a “New in x.y.z” section and the release file names. After any change to UI text, run node tools/i18n/build.js and a collect run (see Translations in section 5).
-3. Run every suite: unit tests in 7 zones, `tools/e2e.sh`, `tools/test-setup.sh` and `tools/shots.sh`.
-4. Run `./build.sh` twice and compare `dist/SHA256SUMS.txt`; every hash must match.
-5. Ship `dist/release/*` together with a source zip (without `node_modules` and `dist`) and the screenshots.
+3. Run every suite: unit tests in 7 zones, `tools/e2e.sh`, `thunderbird/test/e2e.sh`, web-ext lint, `tools/test-setup.sh` and `tools/shots.sh`.
+4. Run `./build.sh`, `./build-macos.sh`, `./build-linux.sh` and `./build-thunderbird.sh` twice and compare the hashes; every one must match.
+5. Ship the .xpi, `dist/release/*`, the macOS and Linux files together with a source zip (without `node_modules` and `dist`) and the screenshots.
 
 A change to the Electron version is a full release: the installer reuses an installed runtime only when its version matches, so users then need the runtime parts.
 

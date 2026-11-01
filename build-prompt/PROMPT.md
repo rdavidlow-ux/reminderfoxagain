@@ -1,9 +1,9 @@
-# Build ReminderFoxAgain 0.9.2
+# Build ReminderFoxAgain 0.9.3
 
-> **TARGET PLATFORM:** `windows` ← change this word to `windows`, `linux`, `macos`, `android` or `ios` before sending.
+> **TARGET PLATFORM:** `thunderbird` ← change this word to `thunderbird`, `windows`, `linux`, `macos`, `android` or `ios` before sending.
 > If it is missing or unclear, ask the user which one, once, before doing anything else.
 
-Build **ReminderFoxAgain 0.9.2** for the target platform above: an app for reminders, to-dos and pop-up alarms that
+Build **ReminderFoxAgain 0.9.3** for the target platform above: a Thunderbird add-on (the main platform) or a desktop or phone app for reminders, to-dos and pop-up alarms that
 is a tribute to the original **ReminderFox** add-on for Firefox and Thunderbird (https://github.com/tommut/reminderfox),
 created by Tom Mutdosch and Daniel Lee with Guenter Wahl. Honour its work: it must read and write ReminderFox's own
 iCalendar file so its users keep everything they built up, refer to it warmly in the UI and docs ("the original
@@ -19,7 +19,7 @@ Where both are silent, the reference source (below) decides.
 
 | Path | Use |
 | --- | --- |
-| `reference/source/` | The complete source of ReminderFoxAgain 0.9.2 (Windows, macOS and Linux from one source): `src/` (store, main process, preload, UI), `test/` (36 unit tests: 31 for the Store, 5 for the translations; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
+| `reference/source/` | The complete source of ReminderFoxAgain 0.9.3 (the Thunderbird add-on, Windows, macOS and Linux from one source): `src/` (store, alarm list, subscriptions, host core, main process, preload, UI), `thunderbird/` (the add-on's adapter, bridge, overlay, shortcuts, build and tests), `test/` (62 unit tests: the Store, translations, host core, the email date finder; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
 | `reference/screenshots/*.png` | 70 screenshots of every screen, dialog, theme and the alarm and pop-up windows, made from `tools/sample-data.js` with a 1180×760 main window. The target look on desktop. Mobile layouts follow `platforms/mobile-common.md`. |
 | `reference/assets/` | App icon (`icon.png` 256 px, `icon.ico` 16–256 px, `tray.png` 32 px), vector masters (`svg/`), and every platform's icon set already made: `png/` (16–1024 px), `linux/hicolor/…`, `macos/icon.icns` + `trayTemplate.png`/`@2x`, `ios/AppIcon-1024.png` (opaque, full bleed), `android/` (adaptive foreground/background, legacy mipmaps, white notification icons, Play Store 512 px). `sounds/<id>.wav` and `<id>.caf` are the five built-in sounds (chime, bell, marimba, beeps, clock) as files, rendered by `tools/sounds.js` (for notification sounds). |
 | `reference/fixtures/` | `reminderfox-addon-sample.ics` and `reminderfox-addon-full.ics`, plus `reminderfox-addon-prefs.js` (the add-on's list names, as its profile's `prefs.js` holds them; the UI checks put it beside a copy of the full file) and `archive-sample.ics` (an archive.ics as 0.2.6–0.5.0 left it, for the archive-to-list check): files written the way the add-on writes `reminderfox.ics`. Unit-test fixtures and the compatibility benchmark. |
@@ -60,14 +60,21 @@ re-design: same element ids, classes, wording, colours and behaviour.
 - **Languages** (0.7.0): the same 34 languages as the original add-on (English plus 33 translations), following the
   system language by default, with a Language setting; Arabic and Hebrew right to left.
 - **Look**: six themes (Default, Fox, Light, Dark, Ocean, High contrast), starred colour, text size 90–150 %, date and
-  time formats, keyboard shortcuts throughout.
+  time formats, keyboard shortcuts throughout (Alt+Shift and a letter, 0.9.3).
+- **0.9.3**: **calendar subscriptions** (read-only calendars from a web address, refreshed on a timer, shown per view,
+  `src/core/subscriptions.js`), the **Alarms view** (every alarm ringing, snoozed or to come, with snooze, dismiss,
+  ring now, skip and undo, cancel; `src/core/alarmlist.js`), a **Month view that scrolls** through weeks, seven optional
+  **item colours** in custom themes, and the list item editor titled "New list item".
+- **Email (Thunderbird only)**: reminders and list items from an email (date, time and place found), Open email,
+  Remind me after sending, tags, Send by email…, birthdays from address books, selected text and .ics links,
+  invitations and replies. See `platforms/thunderbird.md`.
 
 ## 2. Architecture (all platforms)
 
 ```
 UI (src/ui: index.html, alarm.html, slider.html, styles.css, themes.css, common.js, app.js, features.js, alarm.js, slider.js)
    │  window.rf — the bridge contract (§5): promise-returning calls + events
-Host (desktop: Electron main + preload · mobile: host core in the WebView + native plugins)
+Host (Thunderbird: host core in the background page + adapter + bridge · desktop: Electron main + preload · mobile: host core in the WebView + native plugins)
    │  owns files, settings, alarm engine, notifications, tray/badge, dialogs
 Store (src/core/store.js on ical.js 2.2.1) — the calendar model, no platform code
    │
@@ -290,13 +297,13 @@ platform files are allowed. Behaviour summary (the reference source is exact):
 
 ### 6.1 Main window
 
-- Top bar: brand "ReminderFox**Again**", **＋ Reminder** (Ctrl+N) and **＋ List Item** (Ctrl+T, `#addTodo`), both `btn primary` (same orange), **⏰ Quick alarm** (Ctrl+Q),
-  search (Ctrl+F), **⚙ Settings**. (Import and Export are in Settings → Data; Ctrl+I and Ctrl+E still work.)
+- Top bar: brand "ReminderFox**Again**", **＋ Reminder** (Alt+Shift+A) and **＋ List Item** (Alt+Shift+O, `#addTodo`), both `btn primary` (same orange), **⏰ Quick alarm** (Alt+Shift+Q),
+  search (Alt+Shift+K), **⚙ Settings**. (Import and Export are in Settings → Data; Alt+Shift+I and Alt+Shift+X.) The status bar has **⏰ Alarms** (the Alarms view, Alt+Shift+L); the Reminders and Month toolbars have **📅 Calendars** (subscriptions, ticked per view).
 - Tabs: Reminders (open count), the **List dropdown** (`div.tab.tab-list[data-tab=todos]` holding `select#todoList`), Month;
-  ◧ toggles the calendar panel (Ctrl+B).
+  ◧ toggles the calendar panel (Alt+Shift+B).
 - Status bar: item count, version, "🔔 Alarms on" / "🔕 Alarms suspended until … · Resume", "Data file".
 - Calendar panel: 1–3 mini months (prev/next on the outer ones), dots for open items (starred colour for important), a
-  red mark under past days with an open to-do or remind-until-completed reminder, Today / Go to… (Ctrl+G) / Show day in
+  red mark under past days with an open to-do or remind-until-completed reminder, Today / Go to… (Alt+Shift+J) / Show day in
   list, and the day agenda.
 
 ### 6.2 Reminders tab
@@ -328,7 +335,7 @@ at the bottom, except with Completed, which lists them first (most recently comp
 Time: timed items first, by time. Description: A–Z, locale-aware, numbers in order. Important, Repeat, Alarm: those with
 it first (Repeat then by its text). Category: by the first category A–Z, uncategorised last. A second row (`#tbTodoActs`) always shows "Selected
 item: Duplicate · Move to… · Copy to… · Delete" (greyed out until a row is selected) and the "n open · n done" hint, so
-selecting never shifts the layout. Duplicate (also Ctrl+D and the menu) = `duplicate(uid,{suffix:' (copy)'})` with a
+selecting never shifts the layout. Duplicate (also Alt+Shift+D and the menu) = `duplicate(uid,{suffix:' (copy)'})` with a
 toast "Duplicated “…”" + "Edit the copy". Move to… / Copy to… open the list dialog (copy keeps the original; a reminder
 can be copied to a list, becoming a to-do there). Removing a list that has to-dos asks "Move to “To-Do's”" (focused) or
 "Delete list and to-dos". Import from an add-on profile also adds the lists named in its `prefs.js`
@@ -343,11 +350,11 @@ Repeat box with live summary, Alarm (reminders) or **Remind me** box (to-dos: st
 it's done", "also after the due date", a summary line such as "Every day at 9:00 AM, from Tuesday, October 27, 2026,
 until it's done or due (Nov 3)."). Then remind-until-completed (reminders) or show-in-tooltip (to-dos), Category (▾
 picker), List, Location (🗺 map), Link (↗), Notes. Footer: Delete…, **Schedule as a reminder…**
-(to-dos), Completed (to-dos), Cancel, Save (Ctrl+S). Age preview for `<1960>`. Validation toasts as in the reference.
+(to-dos), Completed (to-dos), Cancel, Save (Alt+Shift+S). Age preview for `<1960>`. Validation toasts as in the reference.
 
 ### 6.5 Dialogs
 
-Confirm/message (`#confirm`); **Import** (`#importDlg`, 0.7.0: every import — welcome page, Settings → Data, Ctrl+I,
+Confirm/message (`#confirm`); **Import** (`#importDlg`, 0.7.0: every import — welcome page, Settings → Data, Alt+Shift+I,
 the old-add-on finder — goes through it: the file names, "N reminders and N list items; N already here (the newer copy
 is kept); N look like duplicates (same title and date as an item you have)", **How** = "Add to what I have" (default) or
 "Replace everything (your N items are saved as a backup first)" (asks again, Cancel focused), **Duplicates** = "Skip
@@ -362,7 +369,7 @@ in `features.js` and `app.js`.
 
 ### 6.6 Month tab
 
-A 6-week grid from the week-start day. The toolbar's **Show completed** (`#mDone`, 0.8.0; since 0.8.1 **ticked at every
+A scrolling run of whole weeks from the week-start day (0.9.3), six to a view, snapping to weeks, extending near either end, the month in focus in the title and the others dimmed; ‹ › and Page Up/Down move a month. The toolbar's **Show completed** (`#mDone`, 0.8.0; since 0.8.1 **ticked at every
 start**, and unticking lasts until the app closes; kept in the window's state, not in settings) decides whether completed items show here: unticked, neither ticked reminder occurrences nor
 completed list items appear; ticked, both do, struck through. **The calendar panel's mini months (dots, overdue marks)
 and day agenda never show completed list items** (0.7.0); they stay in their list (Show completed). Chips: time, ☐ for to-dos, ★ for important, all-day solid, carried with a red
@@ -416,7 +423,7 @@ picker + a `#rrggbb` box (bad codes are marked and ignored) with a hint, a previ
 on the background or lists is < 4.5:1, or the accent or starred colour on the lists is < 3:1. The whole window shows
 the theme while editing; Cancel restores it, Save stores and chooses it. Delete asks first (Cancel focused) and falls
 back to Default. Text size via zoom factor. Date formats `'' | dmy-text | iso | mdy | dmy | dmy-dot`, time `'' | 12 | 24`. Keys:
-Ctrl+N, T, Q, F, G, B, I, E, S; Enter, Delete, ↑/↓, Alt+↑/↓, Esc.
+Alt+Shift (matched on `e.code`) + A new reminder, O new list item, Q quick alarm, K search, J go to, B panel, I import, X export, D duplicate, S save, L Alarms view; Enter, Delete, ↑/↓, Alt+↑/↓, Page Up/Down (Month), Esc. Custom themes may add `itOpen, itDone, itImp, itPlain, itPast, itToday, itFuture` (optional `#rrggbb`), applied time → starred/not → completed so the most particular wins; built-in themes don't fade past open items.
 
 ### 6.12 Platform-dependent UI (the only allowed differences)
 
@@ -424,8 +431,8 @@ Ctrl+N, T, Q, F, G, B, I, E, S; Enter, Delete, ↑/↓, Alt+↑/↓, Esc.
   running in the tray, pop-up corner, tray tooltip labels, "Open data folder" / "Open backups folder", import from old
   ReminderFox by profile scan. Relabel "Start ReminderFoxAgain when Windows starts" as "…when you log in" on Linux and
   macOS.
-- Keyboard: on macOS show and accept ⌘ for every Ctrl shortcut (the reference already accepts `metaKey`). Quick alarm
-  is ⇧⌘A on macOS, because ⌘Q quits.
+- Keyboard: the same Alt+Shift shortcuts everywhere; macOS shows them as ⌥⇧ and the letter (⌘, Settings, ⌘Q quit). In Thunderbird they are declared as commands (`shortcuts.json`) and Alt+Shift+R opens the tab.
+- Thunderbird: email features shown only when `document.documentElement.dataset.host === 'thunderbird'`.
 - Mobile layout per `platforms/mobile-common.md`.
 
 ### 6.13 Languages (0.7.0)
@@ -522,7 +529,7 @@ imports and to the reminders file itself. Unit test 31 checks it.
 
 ## 8. Done when (all platforms)
 
-- All 36 unit tests pass in the seven time zones. The compatibility benchmark is identical.
+- All 62 unit tests pass in the seven time zones. The compatibility benchmark is identical.
 - The UI checks print no WRONG or ERROR. Screenshots match. The platform file's own checks pass.
 - The platform file's deliverables exist, two builds in a row are identical where the platform file says they can be,
   and a `README.md` for the build says how to install, update and uninstall on that platform.

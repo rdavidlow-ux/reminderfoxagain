@@ -1,12 +1,36 @@
-# ReminderFoxAgain 0.9.2 — User's Guide
+# ReminderFoxAgain 0.9.3 — User's Guide
 
-Oct 18, 2026 · David
+Nov 1, 2026 · David
 
-ReminderFoxAgain is an app for Windows, macOS and Linux for reminders, to-dos and pop-up alarms, and a tribute to the original [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl. It reads and writes ReminderFox's own file, so everything you kept in ReminderFox comes across unchanged.
+ReminderFoxAgain is a Thunderbird add-on for reminders, to-dos and pop-up alarms, and a tribute to the original [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl. It reads and writes ReminderFox's own file, so everything you kept in ReminderFox comes across unchanged, and it turns emails into reminders.
+
+Where Thunderbird isn't available or can't be used, the same app runs on its own on Windows, macOS and Linux: the **desktop app**. Both have the same windows and features; this guide says where they differ. Features that need email (chapter 8) are only in the add-on.
 
 ## 1. Getting started
 
-### Install or update
+### Install the Thunderbird add-on
+
+You need Thunderbird 128 or later, on Windows, macOS or Linux.
+
+1.  Download **ReminderFoxAgain-0.9.3-thunderbird.xpi**.
+
+2.  In Thunderbird, open **≡ → Add-ons and Themes**, click **⚙ → Install Add-on From File…** and pick the .xpi.
+
+3.  Thunderbird asks you to confirm, because the add-on isn't published on addons.thunderbird.net, and lists what the add-on may do. Click **Add**.
+
+4.  The fox button appears in the toolbar at the top right, and a ReminderFoxAgain tab opens on the welcome page.
+
+- **To update,** install the newer .xpi the same way. Your reminders stay.
+
+- **Your data** is kept in the add-on's storage in your Thunderbird profile: reminders.ics, state.json and 30 days of daily backups, as in the desktop app. Settings → Data shows where.
+
+- **What it may do.** Thunderbird lists these when you install: store data, show notifications, add menu items, open tabs and windows, keyboard shortcuts, read the emails you make reminders from (and replies to invitations), tag emails, open a new message for you to send, read your address books (birthdays, address suggestions) and your accounts (who an invitation is from). It collects nothing and sends nothing by itself: every message it prepares waits for you to send it. It goes online only to read a calendar link you import or a calendar you subscribe to, after Thunderbird asks you to allow that one site.
+
+### Install the desktop app (without Thunderbird)
+
+Use the desktop app on a computer without Thunderbird, or where you can't add add-ons to it. It has every feature except those that need email. It and the add-on keep separate data; to move from one to the other, export in one and import in the other (Settings → Data).
+
+#### On Windows
 
 Put every release file in one folder, then double-click **Install or Update ReminderFoxAgain.bat**. No administrator rights are needed.
 
@@ -14,18 +38,18 @@ Put every release file in one folder, then double-click **Install or Update Remi
 |------------------------------------------------------|--------------------------------------|
 | Install or Update ReminderFoxAgain.bat               | Always                               |
 | ReminderFoxAgain-Setup.ps1                           | Always                               |
-| ReminderFoxAgain-app-0.7.0.asar                      | Always                               |
-| ReminderFoxAgain-runtime-0.7.0.part1.bin … part6.bin | New installs, and updates from 0.6.x |
+| ReminderFoxAgain-app-0.9.3.asar                      | Always                               |
+| ReminderFoxAgain-runtime-0.9.3.part1.bin … part6.bin | New installs, and updates from 0.6.x |
 
 - The app goes to %LOCALAPPDATA%\Programs\ReminderFoxAgain, with Start-menu and desktop shortcuts and an entry in Settings → Apps.
 
-- To update a 0.7.x or 0.8.x install, you only need the .bat, the .ps1 and the .asar. The setup reuses the installed runtime. When you update from 0.6.x, include the runtime parts too, so the date and time pickers follow your language (without them everything else is still translated).
+- To update a 0.7.x, 0.8.x or 0.9.x install, you only need the .bat, the .ps1 and the .asar. The setup reuses the installed runtime. When you update from 0.6.x, include the runtime parts too, so the date and time pickers follow your language (without them everything else is still translated).
 
 - Your data lives in %APPDATA%\ReminderFoxAgain. Updating never touches it.
 
-### Install or update on a Mac
+#### On a Mac
 
-Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.2-macos-universal.zip.
+Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.3-macos-universal.zip.
 
 1.  Double-click the zip, then drag **ReminderFoxAgain.app** into **Applications**.
 
@@ -33,13 +57,13 @@ Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ve
 
 3.  To update, quit the app (⌘Q) and replace it in Applications with the new one. Your reminders stay in ~/Library/Application Support/ReminderFoxAgain.
 
-On a Mac the shortcuts use ⌘ (⌘N new reminder, ⌘T new list item, ⇧⌘A quick alarm, ⌘, Settings), the fox sits in the menu bar, and closing the window keeps the app running; click its Dock icon to bring it back.
+On a Mac the shortcuts use ⌥⇧ and the letter (⌥⇧A new reminder, ⌥⇧O new list item, ⌥⇧Q quick alarm; ⌘, opens Settings), the fox sits in the menu bar, and closing the window keeps the app running; click its Dock icon to bring it back.
 
-### Install or update on Linux
+#### On Linux
 
-- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.2_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.2_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
+- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.3_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.3_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
 
-- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.2-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
+- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.3-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
 
 - **GNOME:** add the "AppIndicator and KStatusNotifierItem Support" extension to see the fox in the top bar. Without it, closing the window quits the app, and Settings says so.
 
@@ -47,35 +71,41 @@ Your reminders are in ~/.config/ReminderFoxAgain.
 
 ### First start: bring your data over
 
-When there is nothing to show yet, the app opens a welcome page with three choices:
+When there is nothing to show yet, ReminderFoxAgain opens a welcome page with these choices:
 
-1.  **Import from your ReminderFox add-on.** The app looks in your Firefox and Thunderbird profiles for reminderfox.ics and lists what it finds, with the date each file last changed.
+1.  **Import from your ReminderFox add-on.**
+
+    - *In the add-on*, it first says where the original add-on kept its file: the reminderfox folder of your Thunderbird (or Firefox) profile. To find it, open Thunderbird's **Help → Troubleshooting Information → Profile Folder → Open Folder**. Then **Choose the file…** opens the file picker: pick reminderfox.ics, and pick the profile's prefs.js with it to bring your list names too.
+
+    - *In the desktop app*, it looks in your Firefox and Thunderbird profiles itself and lists what it finds, with the date each file last changed.
 
 2.  **Import a reminderfox.ics or other calendar file…** Use this for a copied add-on file, or an export from Outlook or Google Calendar.
 
-3.  **Start with an empty list.** You can import later **from Settings → Data → Import an .ics file… or** **Import from ReminderFox…**.
+3.  **Start with an empty list.** You can import later from **Settings → Data → Import an .ics file…** or **Import from ReminderFox…**.
 
-*Example:* your Firefox profile with ReminderFox is still on the PC. Choose **Import from your ReminderFox add-on**, and a summary such as “143 new items” appears. Everything keeps its repeats, alarms, categories and lists. The add-on's list names are read from the same profile too, so even empty lists come across, in the add-on's order.
+*Example:* ReminderFox is still in your Thunderbird profile. Choose **Import from your ReminderFox add-on**, open the profile folder as it says, go into reminderfox and pick reminderfox.ics and, one folder up, prefs.js. A summary such as “143 new items” appears. Everything keeps its repeats, alarms, categories and lists, and even empty lists come across, in the add-on's order.
 
 ### The main window
 
-- **Top bar.** **＋ Reminder** (Ctrl+N), **＋ List Item** (Ctrl+T), **⏰ Quick alarm** (Ctrl+Q), Search (Ctrl+F) and **⚙ Settings**. Import and Export are in Settings → Data (Ctrl+I, Ctrl+E).
+- **Where it is.** In Thunderbird, ReminderFoxAgain is a tab: the fox button in the toolbar (or **Alt+Shift+R**) opens it or brings it to the front. The desktop app is a window of its own.
+
+- **Top bar.** **＋ Reminder** (Alt+Shift+A), **＋ List Item** (Alt+Shift+O), **⏰ Quick alarm** (Alt+Shift+Q), Search (Alt+Shift+K) and **⚙ Settings**. Import and Export are in Settings → Data (Alt+Shift+I, Alt+Shift+X).
 
 - **Tabs.** Reminders, the **List dropdown**, and Month. The List dropdown is the tab for your lists: it shows the list being viewed, for example “List: To-Do's (3)”, in a box of its own that stands out from the bar (with an orange edge while its list is shown), and picking another list shows that one. Opening it from another tab takes you to your lists. The number beside Reminders, and beside each list, is how many items are still open.
 
-- **Toolbar under the tabs.** It holds what to show, the category, **Show completed** and, in the lists, the order for the current tab.
+- **Toolbar under the tabs.** It holds what to show, the category, **Show completed**, **📅 Calendars** (your calendar subscriptions) and, in the lists, the order for the current tab.
 
-- **Calendar panel** on the right. It has a mini calendar with dots on busy days and the agenda for the selected day. The ◧ button (or Ctrl+B) hides and shows it.
+- **Calendar panel** on the right. It has a mini calendar with dots on busy days and the agenda for the selected day. The ◧ button (or Alt+Shift+B) hides and shows it.
 
 - **A narrow window.** When the window is narrower than about 980 pixels, the calendar panel is hidden and so is the name beside the fox icon, and the search box gets narrower. At the smallest size the window allows, everything in the top bar still fits.
 
-- **Status bar.** It shows the item count and the version. **🔔 Alarms on** (click it to suspend alarms) and **Data file** (opens the folder that holds your reminders) sit at the right.
+- **Status bar.** It shows the item count and the version. **⏰ Alarms** (the Alarms view), **🔔 Alarms on** (click it to suspend alarms) and **Data file** sit at the right. In the desktop app, Data file opens the folder that holds your reminders; in the add-on it saves a copy of reminders.ics.
 
-- **Tray icon.** Closing the window keeps the app running in the system tray, so alarms still pop up. Right-click the fox for the tray menu.
+- **Fox button or tray icon.** In Thunderbird, the fox button's tooltip lists today's reminders and its right-click menu has the everyday commands; alarms ring whenever Thunderbird is running. The desktop app keeps running in the system tray when its window is closed, so alarms still pop up; right-click the fox for the tray menu.
 
 ## 2. Reminders
 
-A reminder is something that happens on a date: a one-off, a repeating event or an all-day event. Click **＋ Reminder** or press **Ctrl+N** to add one. You can also double-click a day in the calendar or the Month tab, or use the ＋ on the day agenda.
+A reminder is something that happens on a date: a one-off, a repeating event or an all-day event. Click **＋ Reminder** or press **Alt+Shift+A** to add one. You can also double-click a day in the calendar or the Month tab, or use the ＋ on the day agenda.
 
 ### The editor, field by field
 
@@ -92,7 +122,7 @@ A reminder is something that happens on a date: a one-off, a repeating event or 
 | Link                            | ↗ opens the web address.                                                                                                                                                                       |
 | Notes                           | Free text, shown in the alarm window.                                                                                                                                                          |
 
-The coloured line under Repeat says the rule in words, for example “Every 2 weeks on Thu”. **Save** (or Ctrl+S) stores the reminder.
+The coloured line under Repeat says the rule in words, for example “Every 2 weeks on Thu”. **Save** (or Alt+Shift+S) stores the reminder.
 
 ### Examples
 
@@ -112,7 +142,7 @@ The coloured line under Repeat says the rule in words, for example “Every 2 we
 
 - Tick the ✓ box in the list to mark a reminder completed. For a repeating reminder, only that occurrence is ticked.
 
-- Right-click a reminder for these choices: **Edit…**, **Mark completed**, **Remind daily until completed**, **Make it a to-do…**, **Copy to a list…**, **Show on a map**, **Duplicate** (Ctrl+D) and **Delete…**. Duplicate makes an exact copy titled “… (copy)”, with the same repeats, alarm, notes and categories; the copy starts not completed.
+- Right-click a reminder for these choices: **Edit…**, **Mark completed**, **Remind daily until completed**, **Make it a to-do…**, **Copy to a list…**, **Show on a map**, **Duplicate** (Alt+Shift+D) and **Delete…**. Duplicate makes an exact copy titled “… (copy)”, with the same repeats, alarm, notes and categories; the copy starts not completed.
 
 - Deleting a repeating reminder asks whether to remove **only this one** or **all occurrences**.
 
@@ -120,7 +150,7 @@ The coloured line under Repeat says the rule in words, for example “Every 2 we
 
 ## 3. To-dos and lists
 
-A to-do (a list item) is something to get done, with or without a due date. Click **＋ List Item** or press **Ctrl+T**. The editor is like the reminder editor, with these differences (and the reminders described below):
+A to-do (a list item) is something to get done, with or without a due date. Click **＋ List Item** or press **Alt+Shift+O**. Its editor is titled New list item and is like the reminder editor, with these differences (and the reminders described below):
 
 - **No date** makes an undated to-do.
 
@@ -165,15 +195,15 @@ The to-do leaves its list and becomes a reminder on that date. It keeps its note
 
 ### The List dropdown
 
-Your own lists hold to-dos, just like “To-Do's”, which is the main list. The **List dropdown** in the tab bar, between Reminders and Month, chooses which list is shown, one at a time. Each list shows its number of open items. **All lists** shows every list together, and each row names its list. The dropdown ends with **＋ New list…** and **Manage lists…**. The list you were looking at is remembered, and **＋ List Item** (Ctrl+T) adds to the list being shown.
+Your own lists hold to-dos, just like “To-Do's”, which is the main list. The **List dropdown** in the tab bar, between Reminders and Month, chooses which list is shown, one at a time. Each list shows its number of open items. **All lists** shows every list together, and each row names its list. The dropdown ends with **＋ New list…** and **Manage lists…**. The list you were looking at is remembered, and **＋ List Item** (Alt+Shift+O) adds to the list being shown.
 
-Example: make a list called “Groceries”. In the List dropdown, choose **＋ New list…**, type Groceries and click OK. The empty list opens; press Ctrl+T and the new item is already set to Groceries.
+Example: make a list called “Groceries”. In the List dropdown, choose **＋ New list…**, type Groceries and click OK. The empty list opens; press Alt+Shift+O and the new item is already set to Groceries.
 
 ### Working with the items in a list
 
 Click an item to select it, then use the row under the toolbar. Right-click it for the same commands.
 
-- **Duplicate** (Ctrl+D): an exact copy right after the original, titled “… (copy)”. Its due date, repeat, reminders, notes, categories and star come along; the copy starts not completed.
+- **Duplicate** (Alt+Shift+D): an exact copy right after the original, titled “… (copy)”. Its due date, repeat, reminders, notes, categories and star come along; the copy starts not completed.
 
 - **Move to…**: puts it on another list. Only its list changes.
 
@@ -253,7 +283,7 @@ For dated to-dos alongside reminders, use the **Month** tab with **Show to-dos**
 
 ### Search
 
-Type in the search box (Ctrl+F). It searches descriptions, notes, locations and categories across all reminders, whatever filter is chosen. Clear the box to go back to where you were.
+Type in the search box (Alt+Shift+K). It searches descriptions, notes, locations and categories across all reminders, whatever filter is chosen. Clear the box to go back to where you were.
 
 ### Saved filters (Manage reminders)
 
@@ -293,7 +323,19 @@ In **Manage reminders** you can Show, Edit, Delete and reorder saved filters (�
 
 A full month grid. Timed items show their time, all-day ones are solid, and to-dos start with ☐. Click an item to open it. Double-click an empty spot to add a reminder on that day. “+3 more” opens that day in the list. **Show to-dos** turns to-dos on and off. **Show completed** is ticked every time the app starts, so the reminders and list items you have ticked show too, struck through; untick it to see only what is still to do (until you close the app).
 
-<img src="media/users-guide/image2.png" style="width:6in;height:3.86441in" alt="The Month tab with Show completed ticked: a ticked reminder and a completed list item, struck through" />
+The Month tab scrolls: it is a run of weeks, so past and coming months are a turn of the mouse wheel or a swipe on the touchpad away.
+
+- Six weeks fill the view, and the weeks settle on a week's edge when you stop.
+
+- The month in focus is in the title; the days of the other months are dimmed, and each month's 1st is labelled (“Dec 1”).
+
+- More weeks load as you near either end. **‹ ›** and **Page Up / Page Down** move a month at a time; **Today** and **Go to…** jump there.
+
+- A change to your reminders, a filter or a search keeps the view where it is.
+
+<img src="media/users-guide/image2.png" style="width:6in;height:3.86441in" alt="The Month tab scrolled halfway between November and December, with made-up reminders" />
+
+<img src="media/users-guide/image3.png" style="width:6in;height:3.86441in" alt="The Month tab with Show completed ticked: a ticked reminder and a completed list item, struck through" />
 
 ### Calendar panel and Go to date
 
@@ -303,15 +345,31 @@ A full month grid. Timed items show their time, all-day ones are solid, and to-d
 
 - Click a day to see its agenda below. In the Reminders tab the list also moves to that day: the first reminder on or after it goes to the top, within what Show lists (a day after the last one shows the end of the list). Double-click to add a reminder.
 
-- **Today**, **Go to…** (or **Ctrl+G**) and **Show day in list** sit under the calendar. Go to has quick jumps: Today, +1 week, +1 month, +1 year.
+- **Today**, **Go to…** (or **Alt+Shift+J**) and **Show day in list** sit under the calendar. Go to has quick jumps: Today, +1 week, +1 month, +1 year.
 
-- Settings → Display shows 1, 2 or 3 months. ◧ or **Ctrl+B** hides the panel for a wider list.
+- Settings → Display shows 1, 2 or 3 months. ◧ or **Alt+Shift+B** hides the panel for a wider list.
 
-*Example:* to check what is on Christmas Eve, press Ctrl+G, choose 24 Dec and press **Go**. The Reminders tab shows that day, and the calendar jumps to December.
+*Example:* to check what is on Christmas Eve, press Alt+Shift+J, choose 24 Dec and press **Go**. The Reminders tab shows that day, and the calendar jumps to December.
 
 ### Show on a map
 
 For an item with a location, right-click → **Show on a map**, or click 🗺 in the editor. It opens Google Maps, OpenStreetMap or Bing Maps (Settings → Display → Maps).
+
+### Calendar subscriptions
+
+Subscribe to any calendar with a web address: holidays, sports, a school or team calendar (https://, http:// or webcal://). Its events show among your reminders in the subscription's own colour, marked with its name, and they are read-only.
+
+<img src="media/users-guide/image4.png" style="width:6in;height:3.86441in" alt="The Month tab with a subscribed holiday calendar in green, and the Calendars menu open, with made-up reminders" />
+
+- **Subscribe:** **📅 Calendars** in the Reminders or Month toolbar → **Subscribe to a calendar…**, or Settings → Data → **Calendar subscriptions…**. Paste the address and click **Subscribe**; the calendar's own name is used. The add-on asks Thunderbird once for permission to read that site.
+
+- **Which views show it:** 📅 Calendars in each toolbar has a tick for every subscription, so one calendar can be in the Month tab but not in the Reminders list (the calendar panel follows the Month tab). A dot on the button means some are hidden in that view.
+
+- **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu). It can't be ticked, changed or deleted.
+
+- **Kept up to date:** each subscription is fetched again every hour, 6 hours, 12 hours, day (at first) or week. If its site can't be reached, the last good copy stays and the dialog says why. **Calendar subscriptions…** also renames, recolours, refreshes and removes them.
+
+*Example:* paste the web address of your country's public holidays, click Subscribe, then in the Reminders toolbar's 📅 Calendars untick it: the holidays show in the Month tab only.
 
 ## 5. Alarms
 
@@ -331,9 +389,27 @@ When an alarm is due, a window opens in the bottom-right corner of the screen, o
 
 *Example:* the dentist alarm goes off at 1:30 PM, but you want it again just before you leave. Choose **until…**, type 2:05 pm, and press Snooze.
 
+### The Alarms view
+
+Every alarm in one place: **⏰ Alarms** in the status bar, **Alarms…** in the fox button's menu (the tray menu on the desktop), or **Alt+Shift+L**.
+
+<img src="media/users-guide/image5.png" style="width:6in;height:3.86441in" alt="The Alarms view with made-up reminders: one ringing, one snoozed, a quick alarm, alarms to come and one skipped" />
+
+It lists what is ringing, what is snoozed and until when, then every alarm still to ring in the next 24 hours, 7 days, 30 days or 12 months (the choice is remembered), in the order they ring, with quick alarms among them. It refreshes itself while open.
+
+| Alarm               | What you can do                                                                  |
+|---------------------|----------------------------------------------------------------------------------|
+| Ringing             | **Snooze** (for your default snooze time), **Dismiss**, **Open**                 |
+| Snoozed             | **Ring now**, **Dismiss**, **Open**                                              |
+| To come             | **Skip** this one time (the others of a repeating reminder still ring), **Open** |
+| Skipped             | **Undo skip**, **Open**                                                          |
+| Quick alarm to come | **Cancel**, **Open**                                                             |
+
+**Open** shows the reminder or list item in the editor, where its alarm can be changed or removed for good.
+
 ### Quick alarms
 
-A one-off alarm that isn't saved as a reminder, like the add-on's Quick Alarm. Use **⏰ Quick alarm** in the top bar, **Ctrl+Q**, or the tray menu.
+A one-off alarm that isn't saved as a reminder, like the add-on's Quick Alarm. Use **⏰ Quick alarm** in the top bar, **Alt+Shift+Q**, or the tray menu.
 
 - Type the alarm text and optional notes.
 
@@ -343,7 +419,7 @@ A one-off alarm that isn't saved as a reminder, like the add-on's Quick Alarm. U
 
 A quick alarm rings like any other and survives a restart. Done or Dismiss removes it.
 
-*Example:* pasta is on the stove. Press Ctrl+Q, type “Drain the pasta”, In **9** minutes, **Set alarm**.
+*Example:* pasta is on the stove. Press Alt+Shift+Q, type “Drain the pasta”, In **9** minutes, **Set alarm**.
 
 ### Suspend alarms
 
@@ -383,13 +459,15 @@ The add-on's “alert slider”: a small window in a corner of the screen listin
 
 “Upcoming” means the next 15 days, which you can change from 1 to 60. Click an item in the pop-up to open it. **Show it now**, or tray → **Show today's reminders**, opens it at any time.
 
-### Tray icon
+### Fox button and tray icon
+
+In Thunderbird the fox button in the toolbar does what the tray icon does in the desktop app.
 
 - **Number on the icon.** Settings → Alarms → **Count on the icon** shows today's (or today's and upcoming) open items as a red number on the tray and taskbar icons.
 
 - **Tooltip.** Hover the tray fox to see today's reminders, then upcoming ones and flagged to-dos. Settings → Display → **Tray icon tooltip** sets the wording with the add-on's codes. *Example:* \[time\] \[reminderDesc\] gives “5:30 PM Thanksgiving dinner”. \[shortMonth\] \[date\] (\[daysUntil\] days) \[reminderDesc\] gives “Oct 26 (8 days) Dentist”.
 
-- **Menu.** Open, Add reminder…, Add to-do…, Quick alarm…, Suspend or Resume alarms, Show today's reminders, Quit.
+- **Menu.** Open, Add reminder…, Add list item…, Quick alarm…, Suspend or Resume alarms, Show today's reminders, Alarms… (and Quit in the desktop app).
 
 ## 6. Items you no longer need, import and export, backup and restore
 
@@ -401,9 +479,9 @@ If an earlier version left items in its archive, the app moves them into the “
 
 ### Import and export
 
-- **Settings → Data → Import an .ics file…** (Ctrl+I) adds items from one or more .ics files. Every import (also from the welcome page and **Import from ReminderFox…**) first shows what the file holds and asks how to bring it in — see *Import choices* below. Since 0.9.1, dates that other programs write their own way (such as Tue Oct 20 2026 10:00:00 GMT-0400) are read and saved the iCalendar way; a date that can't be read is left out and the rest of the file still comes in.
+- **Settings → Data → Import an .ics file…** (Alt+Shift+I) adds items from one or more .ics files. Every import (also from the welcome page and **Import from ReminderFox…**) first shows what the file holds and asks how to bring it in — see *Import choices* below. Since 0.9.1, dates that other programs write their own way (such as Tue Oct 20 2026 10:00:00 GMT-0400) are read and saved the iCalendar way; a date that can't be read is left out and the rest of the file still comes in.
 
-- **Settings → Data → Export to .ics…** (Ctrl+E) saves everything, reminders only, to-dos only as an .ics file. Outlook, Google Calendar, Thunderbird, Apple Calendar and the original add-on can open it.
+- **Settings → Data → Export to .ics…** (Alt+Shift+X) saves everything, reminders only, to-dos only as an .ics file. Outlook, Google Calendar, Thunderbird, Apple Calendar and the original add-on can open it.
 
 ### Import choices
 
@@ -415,7 +493,7 @@ The Import dialog names the file, counts its reminders and list items, and says 
 | Duplicates | **Skip items with the same title and date as one I have**, or **Import them anyway**       |
 | Category   | None, or a category added to every imported item (pick one you have or type a new one)     |
 
-<img src="media/users-guide/image3.png" style="width:6in;height:3.86441in" alt="The Import dialog for an add-on file, with one likely duplicate and a category typed in" />
+<img src="media/users-guide/image6.png" style="width:6in;height:3.86441in" alt="The Import dialog for an add-on file, with one likely duplicate and a category typed in" />
 
 Replace everything asks once more. What you had is saved as “Saved before an import replaced everything”, so **Restore from a backup…** can bring it back. Duplicates only matter when adding: replacing brings in everything in the file.
 
@@ -441,7 +519,7 @@ In Settings → Data:
 
 - **Save a backup copy…** makes a manual backup and also saves a copy where you choose, for example a USB stick or OneDrive.
 
-- **Open backups folder** shows the backups in File Explorer.
+- **Open backups folder** shows the backups in File Explorer (desktop app; in the add-on, Restore… lists every backup).
 
 ### Restore from a backup
 
@@ -465,8 +543,8 @@ Settings take effect at once; there is no Save button.
 
 | Section | Setting                                                                                                              | Choices (default first)                                                                                                |
 |---------|----------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| General | Start when Windows starts                                                                                            | On / off                                                                                                               |
-| General | Keep running in the tray when the window is closed                                                                   | On / off                                                                                                               |
+| General | Start when Windows starts (desktop app)                                                                              | On / off                                                                                                               |
+| General | Keep running in the tray when the window is closed (desktop app)                                                     | On / off                                                                                                               |
 | General | Week starts on                                                                                                       | Sunday, Monday                                                                                                         |
 | General | Theme                                                                                                                | Default, Fox, Light, Dark, Ocean, High contrast, or your own (＋ New theme…)                                           |
 | Alarms  | Play a sound; Sound; Repeat the sound                                                                                | On; Chime, Bell, Marimba, Digital beeps, Alarm clock or your file; once, every 1–15 min, or continuously until cleared |
@@ -509,7 +587,7 @@ For even larger text, combine High contrast with Text size 125 % or 150 %.
 
 ### Your own themes
 
-**Settings → General → ＋ New theme…** makes a theme from five colours: **Background**, **Lists and panels**, **Text**, **Accent** (buttons, today, selection) and **Starred items**. Pick a colour, or type its code (#rrggbb). The whole window shows the theme while you choose, and a small preview shows text, a starred item and a button. Everything else — lines, hover colours, soft tints, whether text on buttons is black or white, light or dark — is worked out from the five.
+**Settings → General → ＋ New theme…** makes a theme from five colours (and, if you like, seven item colours): **Background**, **Lists and panels**, **Text**, **Accent** (buttons, today, selection) and **Starred items**. Pick a colour, or type its code (#rrggbb). The whole window shows the theme while you choose, and a small preview shows text, a starred item and a button. Everything else — lines, hover colours, soft tints, whether text on buttons is black or white, light or dark — is worked out from the five.
 
 - **Start from** fills in the colours of any theme, built-in or yours, as a starting point.
 
@@ -519,9 +597,15 @@ For even larger text, combine High contrast with Text size 125 % or 150 %.
 
 - Your themes are listed under **Your themes** in the Theme list and get a swatch. With one chosen, **Edit…** changes its colours and **Delete…** removes it (the app goes back to Default).
 
-<img src="media/users-guide/image4.png" style="width:6in;height:3.86441in" alt="The theme editor with a dark green theme being made" />
+**Item text colours** (optional): tick a colour to use it for items that are **Completed**, **Not completed**, **Starred** or **Not starred**, and **Past**, **Today** or **Coming**. The most particular one wins: Completed, then Starred or Not starred, then Past, Today or Coming, then Not completed. Unticked ones follow the theme. They apply in the lists, the Month tab and the calendar panel's day list.
 
-<img src="media/users-guide/image5.png" style="width:6in;height:3.86441in" alt="The main window in the new theme" />
+<img src="media/users-guide/image7.png" style="width:6in;height:3.86441in" alt="The theme editor&#39;s item text colours, with Past and Today ticked" />
+
+In every built-in theme, a past reminder that is neither completed nor starred has the same colour as today's and coming ones.
+
+<img src="media/users-guide/image8.png" style="width:6in;height:3.86441in" alt="The theme editor with a dark green theme being made" />
+
+<img src="media/users-guide/image9.png" style="width:6in;height:3.86441in" alt="The main window in the new theme" />
 
 *Example — a calm dark theme:* ＋ New theme…, Start from Dark, set Accent to a soft teal (#4db6ac) and Starred items to amber (#ffca28), name it “Evening” and Save.
 
@@ -529,7 +613,7 @@ For even larger text, combine High contrast with Text size 125 % or 150 %.
 
 ReminderFoxAgain speaks the same 34 languages as the original ReminderFox add-on: English, Deutsch, Français, Español, Italiano, Nederlands, Português (Brasil and Portugal), Català, Galego, Svenska, Dansk, Norsk bokmål, Suomi, Eesti, Magyar, Русский, Українська, Беларуская, Polski, Čeština, Slovenčina, Română, Türkçe, Tiếng Việt, 简体中文, 繁體中文, 日本語, 한국어, العربية, עברית, Монгол, Gaeilge and Frysk.
 
-- By default it follows the Windows display language. A language it doesn't have falls back to the nearest one (Swiss German to Deutsch, Hong Kong Chinese to 繁體中文), else English.
+- By default it follows Thunderbird's language in the add-on, and the system's display language in the desktop app. A language it doesn't have falls back to the nearest one (Swiss German to Deutsch, Hong Kong Chinese to 繁體中文), else English.
 
 - **Settings → Display → Language** picks one. The windows reload in the new language at once and Settings stays open. The date and time pickers in the editor follow at the next start.
 
@@ -539,7 +623,7 @@ ReminderFoxAgain speaks the same 34 languages as the original ReminderFox add-on
 
 - Your own words — titles, notes, categories, list names — are never translated. The main list “To-Do's” shows under its name in your language (“Aufgaben” in German), but the file keeps the add-on's name, so the add-on still finds it.
 
-<img src="media/users-guide/image6.png" style="width:6in;height:3.86441in" alt="Settings → Display in Japanese, with the Language list" />
+<img src="media/users-guide/image10.png" style="width:6in;height:3.86441in" alt="Settings → Display in Japanese, with the Language list" />
 
 The translations were written for ReminderFoxAgain and have not yet been checked by native speakers; the Language setting says so too. Corrections are welcome.
 
@@ -549,41 +633,94 @@ The translations were written for ReminderFoxAgain and have not yet been checked
 
 **Settings → Display → Columns** chooses which columns the Reminders tab and the lists show. Each has a row of ticks: ✓ Completed, ★ Important, Date (Due by in the lists), Day (Reminders only), Time, Repeat, Category and 🔔 Alarm. Untick one to hide it; the Description always shows and takes the room. The two rows are separate, so the lists can be simpler than the Reminders tab.
 
-<img src="media/users-guide/image7.png" style="width:6in;height:3.86441in" alt="Settings → Display → Columns, with Day and Repeat hidden in the Reminders tab" />
+<img src="media/users-guide/image11.png" style="width:6in;height:3.86441in" alt="Settings → Display → Columns, with Day and Repeat hidden in the Reminders tab" />
 
 *Example — a cleaner shopping list:* in the Lists row, untick Due by, Time, Repeat and 🔔 Alarm. The lists now show just the tick, the star, the item and its category.
 
 ### Keyboard shortcuts
 
-| Keys                 | Action                                |
-|----------------------|---------------------------------------|
-| Ctrl+N / Ctrl+T      | New reminder / new to-do              |
-| Ctrl+Q               | Quick alarm                           |
-| Ctrl+F               | Search                                |
-| Ctrl+G               | Go to date                            |
-| Ctrl+B               | Show or hide the calendar panel       |
-| Ctrl+I / Ctrl+E      | Import / export                       |
-| Ctrl+S               | Save in the editor                    |
-| ↑ / ↓, Enter, Delete | Select, open, delete the selected row |
-| Ctrl+D               | Duplicate the selected item           |
-| Alt+↑ / Alt+↓        | Move a to-do up or down (My order)    |
-| Esc                  | Close a menu or dialog                |
+The shortcuts are **Alt+Shift** and a letter, the same in the add-on and the desktop app (⌥⇧ and the letter on a Mac). In Thunderbird they work anywhere, not just in the ReminderFoxAgain tab: they bring it to the front first. Thunderbird keeps the Ctrl keys for itself, and Alt+Shift with the first letter of one of its menus opens that menu, so the letters avoid those.
+
+| Keys                      | Action                                |
+|---------------------------|---------------------------------------|
+| Alt+Shift+R               | Open ReminderFoxAgain (add-on)        |
+| Alt+Shift+A               | New reminder                          |
+| Alt+Shift+O               | New item in the list being shown      |
+| Alt+Shift+Q               | Quick alarm                           |
+| Alt+Shift+K               | Search                                |
+| Alt+Shift+J               | Go to a date                          |
+| Alt+Shift+B               | Show or hide the calendar panel       |
+| Alt+Shift+I / Alt+Shift+X | Import / export                       |
+| Alt+Shift+S               | Save in the editor                    |
+| Alt+Shift+D               | Duplicate the selected item           |
+| Alt+Shift+L               | The Alarms view                       |
+| ↑ / ↓, Enter, Delete      | Select, open, delete the selected row |
+| Alt+↑ / Alt+↓             | Move a to-do up or down (My order)    |
+| Page Up / Page Down       | A month back or on, in the Month tab  |
+| Esc                       | Close a menu or dialog                |
+
+To change a shortcut in Thunderbird: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+A)”) show the shortcuts as they are set.
 
 ### Troubleshooting and questions
 
-- **No alarm appeared.** Check the status bar: “🔕 Alarms suspended” means alarms are off, so click it to resume. Check that the app is running (the fox in the tray). With **Keep running in the tray** off, closing the window quits the app.
+- **No alarm appeared.** Check the status bar: “🔕 Alarms suspended” means alarms are off, so click it to resume. In the add-on, alarms ring while Thunderbird is running. In the desktop app, check that it is running (the fox in the tray); with **Keep running in the tray** off, closing the window quits the app.
 
 - **An alarm keeps coming back every day.** The reminder has **Remind me daily until completed**. Tick it, or untick the option.
 
 - **“Your reminders file could not be read.”** The damaged file is kept as reminders.ics.unreadable. Restore the latest daily backup from Settings → Data → Restore from a backup…
 
-- **Will the original ReminderFox add-on still read my file?** Yes. The app writes the add-on's own properties.
+- **Will the original ReminderFox add-on still read my file?** Yes. ReminderFoxAgain writes the add-on's own properties.
 
-- **Where are my files?** In %APPDATA%\ReminderFoxAgain: reminders.ics, state.json (settings and alarm state), sounds\\ and backups\\ Click **Data file** in the status bar to open the folder.
+- **Where are my files?** In the add-on, in its storage in your Thunderbird profile (Settings → Data says so); **Data file** saves a copy of reminders.ics, and **Save a backup copy…** a backup. In the desktop app, in %APPDATA%\ReminderFoxAgain: reminders.ics, state.json (settings and alarm state), sounds\\ and backups\\ Click **Data file** in the status bar to open the folder.
 
-- **Moving to a new PC.** Copy the whole %APPDATA%\ReminderFoxAgain folder. Or use **Save a backup copy…** on the old PC, then **Restore → Choose another file…** on the new one.
+- **Moving to a new computer.** Use **Save a backup copy…** on the old one, then **Restore → Choose another file…** on the new one (this also moves data between the add-on and the desktop app). For the desktop app you can also copy the whole %APPDATA%\ReminderFoxAgain folder.
 
-- **Uninstall.** Use Settings → Apps → ReminderFoxAgain. You are asked before your data folder is removed.
+- **Uninstall.** The add-on: Add-ons and Themes → ReminderFoxAgain → ⋯ → Remove (save a backup copy first: its data goes with it). The desktop app: Settings → Apps → ReminderFoxAgain; you are asked before your data folder is removed.
+
+- **A shortcut opens a Thunderbird menu instead.** Another add-on or a change in Thunderbird may use the same keys. Pick other keys in Add-ons and Themes → ⚙ → Manage Extension Shortcuts.
+
+- **Open email says the email can't be found.** It was deleted, or it is in an account that isn't set up in this Thunderbird.
+
+## 8. Email and Thunderbird (add-on only)
+
+These need Thunderbird, so the desktop app shows none of them. Every message the add-on prepares opens for you to check and send; it never sends one by itself.
+
+### Reminders and list items from email
+
+Right-click an email in the message list and choose **ReminderFoxAgain → Add reminder…** or **Add list item…**. The editor opens with the email's subject as the description and the date, time and place the email mentions, if it gives them. Check it, change anything, and save.
+
+- **Add reminder…** — the date found is the reminder's date.
+
+- **Add list item…** — a new item in the list being shown: the date and time found are its **due by** date and time.
+
+| What                  | How                                                                                                                                                                                                                                 |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description           | The subject, without “Re:”, “Fwd:”, “AW:” and the like.                                                                                                                                                                             |
+| Date                  | The first date that is today or later, from the subject, else from the email's text. Dates already past and dates more than three years away are passed over. No date found: today.                                                 |
+| Time                  | A time next to the date (“at 2:30 pm”, “14:30”, “noon”, “15h30”) or a labelled time (“Time: 9:15 am”). With a time the reminder is timed; without one it is all day.                                                                |
+| Location              | A labelled field (“Location:”, “Where:”, “Venue:”, “Address:”, and the like in other languages), with the street address on the next lines, or a street address on a line of its own.                                               |
+| Dates it understands  | 2026-11-03 · November 3, 2026 · Nov 3 · Tuesday, Nov 3rd · 3 November 2026 · 03/11/2026 in the order your language writes it · today, tomorrow · on Friday, next Friday. Names are understood in English and in the app's language. |
+| Words like “tomorrow” | Read from the day the email was sent.                                                                                                                                                                                               |
+| What is left out      | Quoted replies (lines starting with “\>”, and everything after “On … wrote:”), so an old date in the conversation isn't picked.                                                                                                     |
+
+The email is read only when you choose one of the two, on your computer; nothing is sent anywhere.
+
+*Example:* an email “Re: Parent–teacher meeting” says “Thursday, Nov 12 at 6:30 pm, Room 204”. Right-click it → Add reminder…: the editor opens on Nov 12, 6:30 PM, with Location Room 204. Set an alarm and save.
+
+### Open the email it came from
+
+A reminder or list item made from an email remembers it: **✉ Open email** in its editor, or **Open email** in its right-click menu, opens that email in a Thunderbird tab, wherever it was filed. Reminders made from email in the original ReminderFox add-on open their emails the same way.
+
+### What else only Thunderbird makes possible
+
+| Feature                           | How to use it                                                                                                                                                                                                                                                           |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Remind me after sending           | In the message you are writing, click **Remind me** in its toolbar (a ✓ shows it is on), then send. After the email is sent, the editor opens with its subject and any date it mentions, linked to the sent email.                                                      |
+| Tags on emails                    | An email with an open reminder or list item gets the orange **ReminderFoxAgain** tag, which goes when the item is done or deleted. Settings → General → “Tag emails that have a reminder or list item” (on at first).                                                   |
+| Send by email…                    | Right-click a reminder or list item → **Send by email…**. A new message opens with it as text and as an .ics file.                                                                                                                                                      |
+| Birthdays from your address books | Settings → General → “Birthday reminders from your address books” (off at first). Each contact with a birthday gets a yearly reminder, such as “Ana Lima's birthday \<1990\>”, in the Birthday category. Changed contacts are followed.                                 |
+| Selected text, and calendar links | Select text in an email and right-click → **Add reminder…** or **Add list item…**: its first line is the description. Right-click a link to an .ics file → **Import this calendar…**.                                                                                   |
+| Invitations and replies           | Right-click a reminder → **Invite people…**, type the addresses (suggested from your address books) → **Create invitation**. A new message opens with the invitation. When someone answers, a notification says so and the editor shows “Invited: Ana Lima (accepted)”. |
 
 ## With thanks
 

@@ -33,7 +33,7 @@
     'Show a number on the tray and taskbar icons': 'Show a number on the tray icon',
     'Show the reminders file in File Explorer': 'Show the reminders file in your file manager',
   } : {};
-  // The Thunderbird add-on (experimental): the same pages in a Thunderbird tab and popup windows
+  // The Thunderbird add-on: the same pages in a Thunderbird tab and popup windows
   const HOST = data.host || 'desktop';
   if (HOST === 'thunderbird') {
     document.documentElement.dataset.host = HOST;

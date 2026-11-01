@@ -3,7 +3,55 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
-## Next — calendar subscriptions, item colours, the Alarms view and a scrolling Month view (branch `experimental-add-on`, not released)
+## 0.9.3 — the Thunderbird add-on, calendar subscriptions, the Alarms view and a scrolling Month view
+
+ReminderFoxAgain is now first of all a Thunderbird add-on; the desktop app stays for computers without Thunderbird.
+The documentation is rewritten that way, with the add-on's own document folded into the User's Guide, the Technical
+System Design and the Developer's Guide.
+
+### The Thunderbird add-on
+
+- **The app inside Thunderbird** (128 or later) as an add-on, with the same features as the desktop app: in a
+  Thunderbird tab, with the alarm and the pop-up in their own windows, and a toolbar button that shows today's count,
+  lists today's reminders in its tooltip and has the tray menu on a right-click. Your reminders and daily backups are
+  kept in your Thunderbird profile. Install the .xpi from Add-ons and Themes → ⚙ → Install Add-on From File…; build it with `./build-thunderbird.sh`.
+- **Shortcuts:** Thunderbird keeps the Ctrl keys for itself, so the add-on uses Alt+Shift: Alt+Shift+A new reminder,
+  Alt+Shift+O new list item, Alt+Shift+Q quick alarm, Alt+Shift+K search, Alt+Shift+J go to a date, Alt+Shift+X
+  export, Alt+Shift+B calendar panel, Alt+Shift+I import, Alt+Shift+D duplicate, Alt+Shift+S save, Alt+Shift+L
+  alarms, plus Alt+Shift+R to open it. You can change them in Thunderbird's Manage Extension Shortcuts; the tooltips show them as they are set.
+- **Reminders and list items from email:** right-click an email → Add reminder… or Add list item…. The editor opens
+  with the subject as the description, and the date, time and place the email mentions (for a list item, the date and
+  time are its "due by"). Dates such as "Tuesday, Nov 3rd", "3 November", "2026/11/02", "tomorrow" or "next Friday",
+  times next to the date or labelled ("Time 11:40 AM"), and places from a "Location:", "Where:" or "Address:" field or
+  a street address. Quoted replies are left out.
+- **Open the email it came from:** a reminder or list item made from an email keeps a link to it (ReminderFox's own
+  `X-REMINDERFOX-MESSAGEID`); ✉ Open email in its editor, or Open email in its right-click menu, opens it in a
+  Thunderbird tab. Reminders made from email in the original ReminderFox add-on open the same way.
+- **What only Thunderbird makes possible** (from the original ReminderFox add-on):
+  - **Remind me after sending (Send++):** the Remind me button in the message you are writing; after the email is
+    sent, the editor opens for a reminder linked to it, with its subject and any date it mentions.
+  - **Tags on emails:** an email with an open reminder or list item gets the orange ReminderFoxAgain tag, and loses
+    it when the item is done or deleted (Settings → General; on at first).
+  - **Send by email…** in a reminder's or list item's right-click menu: a new message with it as text and as an .ics
+    file, for you to check and send.
+  - **Birthdays from your address books** (Settings → General; off at first): a yearly reminder for each contact with
+    a birthday ("Ana Lima's birthday <1990>", ReminderFox's way of keeping the year), kept up to date as contacts change.
+  - **Selected text and calendar links in an email:** select text in an email and right-click → Add reminder… or Add
+    list item… (its first line is the description, its date, time and place are used, and it links to the email);
+    right-click a link to an .ics file → Import this calendar… (it asks once to read that site).
+  - **Invitations:** Invite people… on a reminder: the addresses you type (suggested from your address books) get an
+    invitation from your Thunderbird account, in a new message for you to send. The reminder records who was invited,
+    and the replies are read as they arrive: the editor shows who accepted, declined, said maybe or hasn't answered.
+- **Import from your ReminderFox add-on, on its own on the welcome page** of a new installation, as on the desktop.
+  The add-on can't search the profile folders, so (as in Settings → Data) it says where the file is and you pick it.
+- **Import from ReminderFox… is back in Settings → Data.** An add-on can't search the profile folders as the desktop
+  app does, so it first says where the original add-on kept `reminderfox.ics` (the `reminderfox` folder of your
+  Thunderbird or Firefox profile, opened from Help → Troubleshooting Information → Profile Folder), then you pick it,
+  with the profile's `prefs.js` if you want your list names too.
+- Tried in Thunderbird 153.6.0esr on Windows 11: it works, the alarm sound plays without a click, and the alarm
+  window sits at the bottom right.
+
+### In the add-on and the desktop app
 
 - **The desktop app's shortcuts are now the Thunderbird add-on's**, so both work the same: Alt+Shift+A new reminder,
   Alt+Shift+O new list item, Alt+Shift+Q quick alarm, Alt+Shift+K search, Alt+Shift+J go to a date, Alt+Shift+B
@@ -46,50 +94,6 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   ring now; skip one alarm still to come (the others of a repeating reminder still ring) and undo that; cancel a
   quick alarm; open the reminder or list item to change or remove its alarm for good. A skipped alarm stays skipped
   however far ahead it is.
-
-## Experimental — ReminderFoxAgain for Thunderbird (branch `experimental-add-on`, not released)
-
-- **The app inside Thunderbird** (128 or later) as an add-on, with the same features as the desktop app: in a
-  Thunderbird tab, with the alarm and the pop-up in their own windows, and a toolbar button that shows today's count,
-  lists today's reminders in its tooltip and has the tray menu on a right-click. Your reminders and daily backups are
-  kept in your Thunderbird profile. Build it with `./build-thunderbird.sh`; see `docs/thunderbird-addon.md`.
-- **Shortcuts:** Thunderbird keeps the Ctrl keys for itself, so the add-on uses Alt+Shift: Alt+Shift+A new reminder,
-  Alt+Shift+O new list item, Alt+Shift+Q quick alarm, Alt+Shift+K search, Alt+Shift+J go to a date, Alt+Shift+X
-  export, Alt+Shift+B calendar panel, Alt+Shift+I import, Alt+Shift+D duplicate, Alt+Shift+S save, Alt+Shift+L
-  alarms, plus Alt+Shift+R to open it. (N, T, F, G and E opened Thunderbird's menus instead, so those use other
-  letters.) You
-  can change them in Thunderbird's Manage Extension Shortcuts; the tooltips show them as they are set.
-- **Reminders and list items from email:** right-click an email → Add reminder… or Add list item…. The editor opens
-  with the subject as the description, and the date, time and place the email mentions (for a list item, the date and
-  time are its "due by"). Dates such as "Tuesday, Nov 3rd", "3 November", "2026/11/02", "tomorrow" or "next Friday",
-  times next to the date or labelled ("Time 11:40 AM"), and places from a "Location:", "Where:" or "Address:" field or
-  a street address. Quoted replies are left out.
-- **Open the email it came from:** a reminder or list item made from an email keeps a link to it (ReminderFox's own
-  `X-REMINDERFOX-MESSAGEID`); ✉ Open email in its editor, or Open email in its right-click menu, opens it in a
-  Thunderbird tab. Reminders made from email in the original ReminderFox add-on open the same way.
-- **What only Thunderbird makes possible** (from the original ReminderFox add-on):
-  - **Remind me after sending (Send++):** the Remind me button in the message you are writing; after the email is
-    sent, the editor opens for a reminder linked to it, with its subject and any date it mentions.
-  - **Tags on emails:** an email with an open reminder or list item gets the orange ReminderFoxAgain tag, and loses
-    it when the item is done or deleted (Settings → General; on at first).
-  - **Send by email…** in a reminder's or list item's right-click menu: a new message with it as text and as an .ics
-    file, for you to check and send.
-  - **Birthdays from your address books** (Settings → General; off at first): a yearly reminder for each contact with
-    a birthday ("Ana Lima's birthday <1990>", ReminderFox's way of keeping the year), kept up to date as contacts change.
-  - **Selected text and calendar links in an email:** select text in an email and right-click → Add reminder… or Add
-    list item… (its first line is the description, its date, time and place are used, and it links to the email);
-    right-click a link to an .ics file → Import this calendar… (it asks once to read that site).
-  - **Invitations:** Invite people… on a reminder: the addresses you type (suggested from your address books) get an
-    invitation from your Thunderbird account, in a new message for you to send. The reminder records who was invited,
-    and the replies are read as they arrive: the editor shows who accepted, declined, said maybe or hasn't answered.
-- **Import from your ReminderFox add-on, on its own on the welcome page** of a new installation, as on the desktop.
-  The add-on can't search the profile folders, so (as in Settings → Data) it says where the file is and you pick it.
-- **Import from ReminderFox… is back in Settings → Data.** An add-on can't search the profile folders as the desktop
-  app does, so it first says where the original add-on kept `reminderfox.ics` (the `reminderfox` folder of your
-  Thunderbird or Firefox profile, opened from Help → Troubleshooting Information → Profile Folder), then you pick it,
-  with the profile's `prefs.js` if you want your list names too.
-- Tried in Thunderbird 153.6.0esr on Windows 11: it works, the alarm sound plays without a click, and the alarm
-  window sits at the bottom right.
 
 ## 0.9.2 — fits the smallest window
 

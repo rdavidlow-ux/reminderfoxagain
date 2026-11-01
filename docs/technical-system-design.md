@@ -1,12 +1,12 @@
-# ReminderFoxAgain 0.9.2 — Technical System Design
+# ReminderFoxAgain 0.9.3 — Technical System Design
 
-Oct 18, 2026 · David
+Nov 1, 2026 · David
 
-ReminderFoxAgain is a single-user Electron desktop app. One iCalendar file, kept compatible with the ReminderFox add-on, is the source of truth; every feature reads and edits that file in place through one data layer.
+ReminderFoxAgain is a single-user reminder app with two hosts: a Thunderbird add-on, the main platform, and an Electron desktop app for computers where Thunderbird isn't available or can't be used. Both run the same pages (src/ui) and the same data layer (src/core). One iCalendar file, kept compatible with the ReminderFox add-on, is the source of truth; every feature reads and edits that file in place.
 
 ## 1. Purpose and scope
 
-ReminderFoxAgain is a tribute to the original ReminderFox add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl, which served its users for many years. It offers the same reminders, to-dos and alarms as a standalone Windows 11 app, and keeps ReminderFox's file and data exactly as they are.
+ReminderFoxAgain is a tribute to the original ReminderFox add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl, which served its users for many years. It offers the same reminders, to-dos and alarms inside Thunderbird 128 and later, where the original lived, adds what email makes possible, and keeps ReminderFox's file and data exactly as they are. The desktop app (Windows, macOS, Linux) offers everything except the email features.
 
 ### Goals
 
@@ -24,9 +24,11 @@ ReminderFoxAgain is a tribute to the original ReminderFox add-on for Firefox and
 
 ### Non-goals
 
-- Sync (CalDAV, Google, FTP/WebDAV), calendar subscriptions, email integration and printing. These are tracked in the feature-gap spreadsheet.
+- Sync (CalDAV, Google, FTP/WebDAV) and printing. These are tracked in the feature-gap spreadsheet.
 
-- macOS and Linux builds. The code is cross-platform, but only Windows is packaged and tested.
+- Sharing one data file between the add-on and the desktop app. Each keeps its own; export and import move data between them.
+
+- Scanning incoming mail on its own. The add-on reads an email only when the user asks.
 
 - Multi-user or networked data.
 
@@ -44,9 +46,37 @@ ReminderFoxAgain is a tribute to the original ReminderFox add-on for Firefox and
 
 ## 2. Architecture
 
+### Two hosts, one app
+
+The pages in src/ui and the modules in src/core are shared. Each host supplies window.rf, the one interface the pages use, and does the work behind it.
+
+<img src="media/technical-system-design/image1.png" style="width:6in;height:3.05357in" alt="the add-on&#39;s parts · background page, bridge, three pages" />
+
+| Part                | File                                  | What it does                                                                                                                                                                                                                                                                            |
+|---------------------|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Host core           | src/host/core.js                      | The data file, backups, state and settings, the alarm engine, quick alarms, suspend, the pop-up data, import and export, subscriptions and every window.rf call. No Electron or Node imports; it takes an adapter for the platform. The phone apps of the build prompt pack use it too. |
+| Thunderbird adapter | thunderbird/background.js             | Runs the core in the add-on's background page and connects it to Thunderbird: storage, the tab, popup windows, the toolbar button and its menu, notifications, links, shortcuts, permissions, and the email features (tags, compose, invitations and replies, address books).           |
+| Page bridge         | thunderbird/bridge.js                 | Gives each page the same window.rf as the desktop's src/preload.js; calls go to the background page as messages. Picking and saving files happens in the page, since only a page can show a file dialog.                                                                                |
+| Overlay             | thunderbird/tb.css, thunderbird/tb.js | Hides desktop-only settings, adds where the data is kept, the Thunderbird settings (tags, birthdays), the Invite people dialog and the welcome page's ReminderFox import with its instructions.                                                                                         |
+| Shortcuts           | thunderbird/shortcuts.json            | The Alt+Shift commands; each presses the same key in the page.                                                                                                                                                                                                                          |
+| Desktop main        | src/main.js, src/preload.js           | The desktop host: Electron windows, tray, start at login, files in the data folder, and the same core modules.                                                                                                                                                                          |
+
+| Desktop app                                       | Add-on                                                                                                |
+|---------------------------------------------------|-------------------------------------------------------------------------------------------------------|
+| Main window                                       | A Thunderbird tab, opened by the toolbar button or Alt+Shift+R                                        |
+| Tray icon, its menu and tooltip                   | The toolbar button: tooltip, badge, right-click menu                                                  |
+| Alarm window, pop-up                              | Popup windows (500×360 at the bottom right; 360×380 in the chosen corner), plus a notification        |
+| Data folder (reminders.ics, state.json, backups/) | storage.local in the profile, one entry per file, same names, same 30 daily backups                   |
+| Import from ReminderFox (searches the profiles)   | The welcome page says where the file is; the user picks reminderfox.ics (and prefs.js for list names) |
+| Export, backup copy, Data file                    | Saved as a download                                                                                   |
+| Start at login, keep running in the tray          | Not needed: Thunderbird starts the add-on                                                             |
+| net.fetch for subscriptions                       | fetch, after permissions.request for that one origin (optional permission \*://\*/\*)                 |
+
+### The desktop app
+
 Three sandboxed windows sit on top of one main process, which owns all data, alarms and the tray. The pages never touch the disk: every read and write goes through the preload bridge to the main process, and from there to the Store.
 
-<img src="media/technical-system-design/image1.png" style="width:6in;height:4.69643in" alt="architecture · 3 windows, 1 bridge, main process, 4 stores on disk" />
+<img src="media/technical-system-design/image2.png" style="width:6in;height:4.69643in" alt="architecture · 3 windows, 1 bridge, main process, 4 stores on disk" />
 
 architecture · 3 windows, 1 bridge, main process, 4 stores on disk
 
@@ -73,7 +103,7 @@ Arrows down are window.rf calls (ipcRenderer.invoke); the main process pushes ch
 
 - The main process validates input. Snooze lengths are whole seconds from 1 to 999 h; quick alarms must be in the future; list names can't contain commas or colons; sound files are checked by extension and must be under 10 MB.
 
-- The app makes no network requests. Map and link buttons open the user's browser.
+- The app goes online only for what the user asks: a calendar subscription (fetched again on its timer) or an .ics link to import. Responses over 10 MB or that are not iCalendar are refused, and subscribed items are read-only (guardReadOnly in every write path). The add-on asks Thunderbird for each site's permission first, reads an email only when the user picks Add reminder… or Add list item… on it, and never sends a message itself: every message it prepares opens in a compose window. Map and link buttons open the user's browser.
 
 ## 3. Data design
 
@@ -302,6 +332,30 @@ Saved filters are evaluated in the renderer. In the code and in state.json they 
 
 The main window can be as small as 820×540. The .app grid has one column of minmax(0, 1fr), so nothing inside can make the page wider than the window. Below 980 px a media query hides the calendar panel and the name beside the fox icon, and the search box (flex: 0 1 240px, at least 120 px) shrinks. Up to 1100 px the header buttons have less padding and gap, so the longest translations (Ukrainian, German) still fit. tools/ui/layout.js checks this at 820, 981, 990 and 1180 px.
 
+### Keyboard shortcuts (0.9.3)
+
+Thunderbird takes the Ctrl keys before an add-on sees them, and Alt+Shift with the first letter of one of its menus (File, Edit, View, Go, Message, Events and Tasks, Tools, Help) opens that menu. Both hosts therefore use Alt+Shift and a letter: A new reminder, O new list item, Q quick alarm, K search, J go to, B calendar panel, I import, X export, D duplicate, S save, L Alarms view, and R (add-on) to open the tab. The page matches e.code (KeyA…), so keyboard layouts and the Mac's ⌥ characters don't matter; Mac labels show ⌥⇧. In the add-on, shortcuts.json declares the commands; the adapter brings the tab forward and sends the key to the page. The tooltips read the shortcuts as set (commands.getAll()), so a changed or removed one shows correctly.
+
+### Alarms view (0.9.3)
+
+src/core/alarmlist.js lists every alarm for the next 1, 7, 30 or 365 days from the store and the alarm state: ringing, snoozed (with until when), to come, skipped, and pending quick alarms, sorted by when they ring. Both hosts serve it as alarms:list; alarm:unskip removes a skip. A skip of an alarm still to come is kept as a dismissal with its time; keepDismissed() drops a dismissal a week after its time has passed, so a skip far ahead holds.
+
+### Scrolling Month view (0.9.3)
+
+The Month view renders a run of whole weeks (MV.from, MV.weeks) in a scrolling grid whose row height is one sixth of the view. Scrolling snaps to week edges; near either end more weeks are added (up to about three years) and the scroll position is kept. The month with the most days in view is the focus: its name is the title and the other months' days are dimmed. ‹ › and Page Up/Down scroll a month smoothly within the rendered range; Today and Go to re-render around the target, and data changes re-render in place.
+
+### Calendar subscriptions (0.9.3)
+
+src/core/subscriptions.js holds the subscriptions ({id, url, name, color, refreshHours, showList, showMonth, updated, error, count}, in settings.subscriptions) and a copy of each calendar as subscriptions/\<id\>.ics next to the reminders. webcal:// is fetched as https://. Each one is refreshed on its own timer (1, 6, 12, 24 or 168 hours); a failure keeps the last good copy, records the error and retries in 30 minutes. The views ask for occurrences with their view ('list' or 'month'), and the hosts merge in the subscribed items (rangeWithSubs, nextWithSubs) with uids sub:\<id\>:\<uid\>, which every write path refuses. Copy to my reminders saves a normal item from one. Subscribed items never ring alarms.
+
+### Item colours (0.9.3)
+
+A custom theme has five required colours and seven optional item colours (itOpen, itDone, itImp, itPlain, itPast, itToday, itFuture). They become CSS variables, applied in this order so the most particular wins: time (past, today, coming), then starred or not, then completed. Built-in themes no longer fade past items that are neither completed nor starred.
+
+### Email features (add-on)
+
+The add-on adds what only Thunderbird allows. src/host/maildate.js finds the first date to come, the time and the place in an email's subject and text (quoted replies left out, relative words read from the sent date). The item keeps the email's Message-ID in X-REMINDERFOX-MESSAGEID, as the original did, so Open email works for both. Tags use messages.tags and messages.update; Send by email… and invitations use compose.beginNew with an .ics (METHOD:REQUEST); replies (METHOD:REPLY) in new mail are matched by UID; birthdays come from the address books' vCard BDAY; the compose window's Remind me button opens the editor after onAfterSend.
+
 ## 5. Reliability and data safety
 
 | Risk                                     | Design response                                                                                                                                                                                                                                     |
@@ -321,7 +375,7 @@ Single instance: a second launch focuses the running window (requestSingleInstan
 
 ## 6. Build, packaging and installer
 
-build.sh produces dist/release/, and two builds in a row give the same SHA-256 for every file.
+build.sh produces dist/release/ (the Windows release), and two builds in a row give the same SHA-256 for every file. build-thunderbird.sh makes the add-on (below).
 
 1.  Run the unit tests in seven time zones (Toronto, UTC, Los Angeles, Kolkata, Sydney, Auckland, Honolulu). Any failure stops the build.
 
@@ -363,19 +417,28 @@ The same source runs on all three systems; src/main.js branches on process.platf
 | Menu            | none                                | application menu (appMenuTemplate())           | none                                                                 |
 | Release         | .bat + .ps1 + .asar + runtime parts | universal .zip, ad-hoc signed                  | .deb and .tar.gz, x64 and arm64                                      |
 
-build-linux.sh and build-macos.sh build on Linux and are deterministic. The macOS app is joined from arm64 and x64 builds by @electron/universal with a Python stand-in for lipo, then signed ad hoc with rcodesign. The renderer adapts Windows wording and, on macOS, Ctrl+ shortcuts to ⌘ in i18n-dom.js before translation.
+build-linux.sh and build-macos.sh build on Linux and are deterministic. The macOS app is joined from arm64 and x64 builds by @electron/universal with a Python stand-in for lipo, then signed ad hoc with rcodesign. The renderer adapts Windows wording and, on macOS, shows the Alt+Shift shortcuts as ⌥⇧ in i18n-dom.js before translation.
+
+### Thunderbird add-on
+
+build-thunderbird.sh runs the unit tests, then thunderbird/build.js bundles the core, the store, ical.js, alarmlist.js, subscriptions.js and the translations into host.js, copies src/ui with the bridge added, writes manifest.json (version, author, permissions, optional permissions, commands, compose_action, strict_min_version 128.0) and zips dist/release-thunderbird/ReminderFoxAgain-\<ver\>-thunderbird.xpi with fixed dates and order, so two builds give the same file. Mozilla's web-ext lint gives no errors.
 
 ## 7. Testing, risks and limitations
 
 ### Test strategy
 
-| Level         | What                                                                                                                                                                                                                                                                                                                       | Size (0.7.0)                                                                                                                                                                                                                                                                                      | Runs                  |
-|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
-| Unit          | test/store.test.js against the real add-on sample file: parsing, round trips, repeats, completion, remind-until-completed, ages, archive, order, lists, categories, import options; test/i18n.test.js: language choice, complete locale files, placeholders, plurals, ordinals, composed text; the store clock is injected | 35 tests (30 + 5) × 7 time zones                                                                                                                                                                                                                                                                  | npm test; every build |
-| UI end-to-end | tools/e2e.sh: the real app under Xvfb runs a script inside the page and prints E2E name: got (expected want) lines; any WRONG or ERROR fails                                                                                                                                                                               | 658 checks in 37 runs, including layouts at 820, 990 and 1180 px, runs in German, French (as the system language), Arabic and a language picked in Settings, the 0.8.0 view options and the continuous sound in the alarm window, keeping your place, the mini-calendar start and your own themes | Before a release      |
-| Screens       | tools/shots.sh: 70 screenshots of every screen and theme, plus the Import dialog, German, Japanese and Arabic, and the 0.8.0 toolbars, columns, Manage reminders and Order, and the theme editor and a custom theme, compared by eye                                                                                       | 70 images                                                                                                                                                                                                                                                                                         | Before a release      |
-| Installer     | tools/test-setup.sh with pwsh 7: fresh install, update, reuse of the runtime, replacing a 0.6.x runtime, damaged parts, uninstall with and without YES                                                                                                                                                                     | 20 checks                                                                                                                                                                                                                                                                                         | Before a release      |
-| Build         | Two builds, hashes compared                                                                                                                                                                                                                                                                                                | 9 files                                                                                                                                                                                                                                                                                           | Before a release      |
+| Level         | What                                                                                                                                                                                                                                                                                                                                                                                                                           | Size (0.9.3)                                                                                                                                                                                                                                                                                 | Runs                  |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------|
+| Unit          | test/store.test.js against the real add-on sample file: parsing, round trips, repeats, completion, remind-until-completed, ages, archive, order, lists, categories, import options; test/i18n.test.js: language choice, complete locale files, placeholders, plurals, ordinals, composed text; test/host-core.test.js and test/maildate.test.js: the add-on's host core and the email date finder; the store clock is injected | 62 tests × 7 time zones                                                                                                                                                                                                                                                                      | npm test; every build |
+| UI end-to-end | tools/e2e.sh: the real app under Xvfb runs a script inside the page and prints E2E name: got (expected want) lines; any WRONG or ERROR fails                                                                                                                                                                                                                                                                                   | About 760 checks, including layouts at 820, 990 and 1180 px, runs in German, French (as the system language), Arabic and a language picked in Settings, the 0.8.0 view options and the continuous sound in the alarm window, keeping your place, the mini-calendar start and your own themes | Before a release      |
+| Add-on UI     | thunderbird/test/e2e.sh: the built add-on in Chromium with a mock Thunderbird (mock-browser.js); the desktop's UI scripts run in its tab and windows, plus tb-smoke.js and tb-welcome.js for what the add-on does its own way                                                                                                                                                                                                  | About 790 checks                                                                                                                                                                                                                                                                             | Before a release      |
+| Screens       | tools/shots.sh: 70 screenshots of every screen and theme, plus the Import dialog, German, Japanese and Arabic, and the 0.8.0 toolbars, columns, Manage reminders and Order, and the theme editor and a custom theme, compared by eye                                                                                                                                                                                           | 70 images                                                                                                                                                                                                                                                                                    | Before a release      |
+| Installer     | tools/test-setup.sh with pwsh 7: fresh install, update, reuse of the runtime, replacing a 0.6.x runtime, damaged parts, uninstall with and without YES                                                                                                                                                                                                                                                                         | 20 checks                                                                                                                                                                                                                                                                                    | Before a release      |
+| Build         | Two builds, hashes compared                                                                                                                                                                                                                                                                                                                                                                                                    | 9 files                                                                                                                                                                                                                                                                                      | Before a release      |
+
+### Tried in a real Thunderbird
+
+The add-on was tried by David in Thunderbird 153.6.0esr (64-bit) on Windows 11 between Oct 31 and Nov 1, 2026: installing and running, the welcome page with Import from your ReminderFox add-on, the toolbar button, every Alt+Shift shortcut, the alarm sound and window placement, Export and backups asking where to save, Add reminder… and Add list item… on emails (subject, date, time and place), the author shown as David Low, and the six Thunderbird-only features. Still to try: macOS and Linux, storage size after years of backups, and invitation replies from Outlook and Gmail.
 
 ### Risks
 
@@ -387,6 +450,10 @@ build-linux.sh and build-macos.sh build on Linux and are deterministic. The macO
 | Electron or Windows changes                                                           | Medium     | Pinned Electron 44.7.0; deterministic builds; the runtime is reused on update, so a runtime bump is a deliberate full release |
 
 ### Known limitations
+
+- The add-on and the desktop app keep separate data; export and import move it between them.
+
+- The add-on is not yet signed or listed on addons.thunderbird.net, so it is installed from a file and updated by hand.
 
 - The data file is read once at start-up. Changes made to it outside the app while it runs are not picked up, and the app's next save overwrites them.
 
@@ -400,4 +467,4 @@ build-linux.sh and build-macos.sh build on Linux and are deterministic. The macO
 
 ### Future work
 
-The feature-gap spreadsheet ranks what is left. The largest items are CalDAV sync, calendar subscriptions by URL, printing and agenda templates, and the Thunderbird email-scanning add-on with an optional local language model.
+The feature-gap spreadsheet ranks what is left. The largest items are CalDAV sync, printing and agenda templates, publishing the add-on on addons.thunderbird.net, Manifest V3 when Thunderbird requires it, and suggesting reminders from new mail, with an optional local language model.
