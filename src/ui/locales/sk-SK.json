@@ -1178,5 +1178,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Vaše pripomienky, úlohy a alarmy v Thunderbirde — pocta pôvodnému doplnku ReminderFox.",
  "Save a copy of your reminders file": "Uložiť kópiu súboru pripomienok",
  "Show a number on the ReminderFoxAgain toolbar button": "Zobraziť číslo na tlačidle ReminderFoxAgain na paneli nástrojov",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Vaše pripomienky sú uložené vo vašom profile Thunderbirdu, so zálohou každý deň."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Vaše pripomienky sú uložené vo vašom profile Thunderbirdu, so zálohou každý deň.",
+ "Open email": "Otvoriť e-mail",
+ "✉ Open email": "✉ Otvoriť e-mail",
+ "Open the email this came from": "Otvoriť e-mail, z ktorého to pochádza",
+ "This item has no email to open.": "Táto položka nemá žiadny e-mail na otvorenie.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "E-mail, z ktorého to pochádza, sa nenašiel. Možno bol odstránený, alebo je v účte, ktorý v tomto Thunderbirde nie je nastavený."
 }

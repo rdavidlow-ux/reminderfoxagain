@@ -857,3 +857,8 @@
 856| Sábháil cóip de do chomhad meabhrúchán
 857| Taispeáin uimhir ar chnaipe ReminderFoxAgain sa bharra uirlisí
 858| Coinnítear do mheabhrúcháin i do phróifíl Thunderbird, le cúltaca gach lá.
+859| Oscail an ríomhphost
+860| ✉ Oscail an ríomhphost
+861| Oscail an ríomhphost ar tháinig sé seo as
+862| Níl aon ríomhphost le hoscailt ag an mír seo.
+863| Níor aimsíodh an ríomhphost ar tháinig sé seo as. B'fhéidir gur scriosadh é, nó tá sé i gcuntas nach bhfuil socraithe sa Thunderbird seo.

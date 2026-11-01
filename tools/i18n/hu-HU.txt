@@ -857,3 +857,8 @@
 856| Másolat mentése az emlékeztetőfájlról
 857| Szám megjelenítése a ReminderFoxAgain eszköztárgombján
 858| Emlékeztetőit a Thunderbird-profilja tárolja, naponta készülő biztonsági mentéssel.
+859| E-mail megnyitása
+860| ✉ E-mail megnyitása
+861| Annak az e-mailnek a megnyitása, amelyből ez származik
+862| Ehhez az elemhez nincs megnyitható e-mail.
+863| Nem található az e-mail, amelyből ez származik. Lehet, hogy törölték, vagy olyan fiókban van, amely nincs beállítva ebben a Thunderbirdben.

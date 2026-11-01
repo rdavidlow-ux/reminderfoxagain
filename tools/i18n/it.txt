@@ -857,3 +857,8 @@
 856| Salva una copia del file dei promemoria
 857| Mostra un numero sul pulsante di ReminderFoxAgain nella barra degli strumenti
 858| I tuoi promemoria sono conservati nel tuo profilo di Thunderbird, con un backup ogni giorno.
+859| Apri l'email
+860| ✉ Apri l'email
+861| Apri l'email da cui proviene
+862| Questo elemento non ha un'email da aprire.
+863| L'email da cui proviene non è stata trovata. Forse è stata eliminata, oppure si trova in un account non configurato in questo Thunderbird.

@@ -35,6 +35,7 @@ function fakeThunderbird(files = new Map(), start = new Date(2026, 9, 20, 9, 0).
     tooltip: (t) => { log.tooltip = t; },
     menu: (items) => { log.menu = items; },
     openUrl: (u) => log.urls.push(u),
+    openEmail: async (mid) => { if (mid === '<gone@example.com>') throw new Error('not found'); log.opened = mid; },
     systemLocale: () => 'en-CA',
     loadDict: async (lang) => JSON.parse(fs.readFileSync(path.join(LOCALES, `${lang}.json`), 'utf8')),
     languageChanged: (info) => { log.lang = info; },
@@ -239,9 +240,31 @@ test('host 11. "Add reminder…" on an email: the menu item, and what the editor
   const p = await tb.call('mail:reminder', { subject: 'Re: Dentist — Dr. Patel', date: tb.now(), body: 'Your appointment is on Thursday, October 22 at 2:30 pm.\n\nOn Mon, Oct 19, 2026 at 9:00 AM, the office wrote:\n> old text' });
   assert.deepEqual(p, { kind: 'event', date: '2026-10-22', prefill: { summary: 'Dentist — Dr. Patel', time: '14:30', location: null }, found: 'Thursday, October 22' });
   // the same email as a list item: the date and time become its "due by"
-  const t = await tb.call('mail:reminder', { subject: 'Re: Renew passport', date: tb.now(), body: 'Due by Friday, October 30 at 5 pm.\nWhere: Service Canada' }, 'todo');
-  assert.deepEqual(t, { kind: 'todo', date: '2026-10-30', prefill: { summary: 'Renew passport', time: '17:00', location: 'Service Canada' }, found: 'Friday, October 30' });
+  const t = await tb.call('mail:reminder', { subject: 'Re: Renew passport', date: tb.now(), body: 'Due by Friday, October 30 at 5 pm.\nWhere: Service Canada', messageId: 'abc.42@mail.example.com' }, 'todo');
+  assert.deepEqual(t, { kind: 'todo', date: '2026-10-30', prefill: { summary: 'Renew passport', time: '17:00', location: 'Service Canada', messageId: '<abc.42@mail.example.com>' }, found: 'Friday, October 30' });
   const none = await tb.call('mail:reminder', { subject: 'Hello', date: tb.now(), body: 'No date.' });
   assert.equal(none.date, null);
   assert.equal(none.prefill.summary, 'Hello');
+});
+
+test('host 12. the email an item came from: kept with it, kept on edits, opened through Thunderbird', async () => {
+  const tb = fakeThunderbird();
+  await tb.host.start();
+  // saved from the editor opened on an email
+  const uid = await tb.call('data:save', { kind: 'todo', summary: 'Renew passport', date: '2026-10-30', allDay: true, messageId: '<abc.42@mail.example.com>' });
+  await tb.host.flush();
+  assert.match(tb.files.get('reminders.ics').text, /X-REMINDERFOX-MESSAGEID:<abc\.42@mail\.example\.com>/);
+  assert.equal((await tb.call('data:get', uid)).messageId, '<abc.42@mail.example.com>');
+  // an edit that doesn't send it keeps it
+  await tb.call('data:save', { uid, kind: 'todo', summary: 'Renew passport (form 12)', date: '2026-10-30', allDay: true });
+  assert.equal((await tb.call('data:get', uid)).messageId, '<abc.42@mail.example.com>');
+  // a reminder from the original ReminderFox add-on keeps its message id and can open it
+  const [tok] = await tb.call('upload', [{ name: 'reminderfox.ics', text: require('fs').readFileSync(require('path').join(__dirname, 'reminderfox-addon-full.ics'), 'utf8') }]);
+  await tb.call('ics:importPaths', [tok], {});
+  const fromAddon = (await tb.call('data:all')).find((d) => d.messageId === '<abc123@mail.example.com>');
+  assert.ok(fromAddon, 'the add-on item with X-REMINDERFOX-MESSAGEID');
+  assert.equal(await tb.call('mail:open', fromAddon.messageId), true);
+  assert.equal(tb.log.opened, '<abc123@mail.example.com>');
+  await assert.rejects(tb.call('mail:open', ''), /no email/);
+  await assert.rejects(tb.call('mail:open', '<gone@example.com>'), /not found/);
 });

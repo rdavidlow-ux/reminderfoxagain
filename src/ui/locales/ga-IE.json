@@ -1022,5 +1022,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Do mheabhrúcháin, do thascanna agus d'aláraim in Thunderbird — ómós don bhreiseán bunaidh ReminderFox.",
  "Save a copy of your reminders file": "Sábháil cóip de do chomhad meabhrúchán",
  "Show a number on the ReminderFoxAgain toolbar button": "Taispeáin uimhir ar chnaipe ReminderFoxAgain sa bharra uirlisí",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Coinnítear do mheabhrúcháin i do phróifíl Thunderbird, le cúltaca gach lá."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Coinnítear do mheabhrúcháin i do phróifíl Thunderbird, le cúltaca gach lá.",
+ "Open email": "Oscail an ríomhphost",
+ "✉ Open email": "✉ Oscail an ríomhphost",
+ "Open the email this came from": "Oscail an ríomhphost ar tháinig sé seo as",
+ "This item has no email to open.": "Níl aon ríomhphost le hoscailt ag an mír seo.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "Níor aimsíodh an ríomhphost ar tháinig sé seo as. B'fhéidir gur scriosadh é, nó tá sé i gcuntas nach bhfuil socraithe sa Thunderbird seo."
 }

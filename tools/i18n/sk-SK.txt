@@ -857,3 +857,8 @@
 856| Uložiť kópiu súboru pripomienok
 857| Zobraziť číslo na tlačidle ReminderFoxAgain na paneli nástrojov
 858| Vaše pripomienky sú uložené vo vašom profile Thunderbirdu, so zálohou každý deň.
+859| Otvoriť e-mail
+860| ✉ Otvoriť e-mail
+861| Otvoriť e-mail, z ktorého to pochádza
+862| Táto položka nemá žiadny e-mail na otvorenie.
+863| E-mail, z ktorého to pochádza, sa nenašiel. Možno bol odstránený, alebo je v účte, ktorý v tomto Thunderbirde nie je nastavený.

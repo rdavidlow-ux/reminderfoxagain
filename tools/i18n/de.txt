@@ -857,3 +857,8 @@
 856| Eine Kopie Ihrer Erinnerungsdatei speichern
 857| Eine Zahl auf der ReminderFoxAgain-Schaltfläche in der Symbolleiste anzeigen
 858| Ihre Erinnerungen werden in Ihrem Thunderbird-Profil aufbewahrt, mit einer Sicherung pro Tag.
+859| E-Mail öffnen
+860| ✉ E-Mail öffnen
+861| Die E-Mail öffnen, aus der dies stammt
+862| Zu diesem Eintrag gibt es keine E-Mail.
+863| Die E-Mail, aus der dies stammt, wurde nicht gefunden. Sie wurde vielleicht gelöscht, oder sie liegt in einem Konto, das in diesem Thunderbird nicht eingerichtet ist.

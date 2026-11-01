@@ -1118,5 +1118,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "התזכורות, המשימות וההתראות שלך ב־Thunderbird — מחווה לתוספת ReminderFox המקורית.",
  "Save a copy of your reminders file": "שמירת עותק של קובץ התזכורות",
  "Show a number on the ReminderFoxAgain toolbar button": "להציג מספר על הכפתור של ReminderFoxAgain בסרגל הכלים",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "התזכורות שלך נשמרות בפרופיל של Thunderbird, עם גיבוי בכל יום."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "התזכורות שלך נשמרות בפרופיל של Thunderbird, עם גיבוי בכל יום.",
+ "Open email": "פתיחת הדוא״ל",
+ "✉ Open email": "✉ פתיחת הדוא״ל",
+ "Open the email this came from": "פתיחת הדוא״ל שממנו זה הגיע",
+ "This item has no email to open.": "לפריט הזה אין דוא״ל לפתוח.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "הדוא״ל שממנו זה הגיע לא נמצא. ייתכן שנמחק, או שהוא בחשבון שאינו מוגדר ב־Thunderbird הזה."
 }

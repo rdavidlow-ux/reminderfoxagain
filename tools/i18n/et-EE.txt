@@ -857,3 +857,8 @@
 856| Salvesta meeldetuletuste faili koopia
 857| Näita arvu ReminderFoxAgaini tööriistariba nupul
 858| Sinu meeldetuletusi hoitakse sinu Thunderbirdi profiilis ja neist tehakse iga päev varukoopia.
+859| Ava e-kiri
+860| ✉ Ava e-kiri
+861| Ava e-kiri, millest see pärineb
+862| Sellel kirjel pole avatavat e-kirja.
+863| E-kirja, millest see pärineb, ei leitud. See võib olla kustutatud või on see kontol, mida selles Thunderbirdis pole seadistatud.

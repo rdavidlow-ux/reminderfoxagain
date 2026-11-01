@@ -893,3 +893,9 @@ Your reminders, to-dos and alarms in Thunderbird — a tribute to the original R
 Save a copy of your reminders file
 Show a number on the ReminderFoxAgain toolbar button
 Your reminders are kept in your Thunderbird profile, with a backup every day.
+# the Thunderbird add-on (experimental): open the email an item came from
+Open email
+✉ Open email
+Open the email this came from
+This item has no email to open.
+The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.

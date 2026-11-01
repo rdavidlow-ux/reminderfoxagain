@@ -857,3 +857,8 @@
 856| Zapisz kopię pliku przypomnień
 857| Pokazuj liczbę na przycisku ReminderFoxAgain na pasku narzędzi
 858| Twoje przypomnienia są przechowywane w profilu Thunderbirda, z kopią zapasową każdego dnia.
+859| Otwórz e-mail
+860| ✉ Otwórz e-mail
+861| Otwórz e-mail, z którego to pochodzi
+862| Ten element nie ma e-maila do otwarcia.
+863| Nie znaleziono e-maila, z którego to pochodzi. Mógł zostać usunięty albo jest na koncie, które nie jest skonfigurowane w tym Thunderbirdzie.

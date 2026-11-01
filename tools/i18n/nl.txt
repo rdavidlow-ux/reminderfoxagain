@@ -857,3 +857,8 @@
 856| Een kopie van uw herinneringenbestand opslaan
 857| Een getal op de ReminderFoxAgain-knop in de werkbalk tonen
 858| Uw herinneringen worden bewaard in uw Thunderbird-profiel, met elke dag een back-up.
+859| E-mail openen
+860| ✉ E-mail openen
+861| De e-mail openen waar dit vandaan komt
+862| Dit item heeft geen e-mail om te openen.
+863| De e-mail waar dit vandaan komt, is niet gevonden. Misschien is hij verwijderd, of hij staat in een account dat niet in deze Thunderbird is ingesteld.

@@ -1178,5 +1178,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Ваши напоминания, задачи и сигналы в Thunderbird — дань уважения оригинальному дополнению ReminderFox.",
  "Save a copy of your reminders file": "Сохранить копию файла напоминаний",
  "Show a number on the ReminderFoxAgain toolbar button": "Показывать число на кнопке ReminderFoxAgain на панели инструментов",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Ваши напоминания хранятся в профиле Thunderbird, резервная копия делается каждый день."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Ваши напоминания хранятся в профиле Thunderbird, резервная копия делается каждый день.",
+ "Open email": "Открыть письмо",
+ "✉ Open email": "✉ Открыть письмо",
+ "Open the email this came from": "Открыть письмо, из которого это создано",
+ "This item has no email to open.": "У этого элемента нет письма, которое можно открыть.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "Письмо, из которого это создано, не найдено. Возможно, оно удалено или находится в учётной записи, которая не настроена в этом Thunderbird."
 }

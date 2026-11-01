@@ -878,5 +878,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Lời nhắc, việc cần làm và báo thức của bạn trong Thunderbird — để tưởng nhớ tiện ích ReminderFox gốc.",
  "Save a copy of your reminders file": "Lưu một bản sao tệp lời nhắc",
  "Show a number on the ReminderFoxAgain toolbar button": "Hiện số trên nút ReminderFoxAgain ở thanh công cụ",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Lời nhắc của bạn được lưu trong hồ sơ Thunderbird, với một bản sao lưu mỗi ngày."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Lời nhắc của bạn được lưu trong hồ sơ Thunderbird, với một bản sao lưu mỗi ngày.",
+ "Open email": "Mở email",
+ "✉ Open email": "✉ Mở email",
+ "Open the email this came from": "Mở email mà mục này được tạo từ đó",
+ "This item has no email to open.": "Mục này không có email để mở.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "Không tìm thấy email mà mục này được tạo từ đó. Có thể email đã bị xóa, hoặc nằm trong một tài khoản chưa được thiết lập trong Thunderbird này."
 }

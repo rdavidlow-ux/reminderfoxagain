@@ -1121,5 +1121,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Mementourile, sarcinile și alarmele dvs. în Thunderbird — un omagiu adus suplimentului ReminderFox original.",
  "Save a copy of your reminders file": "Salvează o copie a fișierului de mementouri",
  "Show a number on the ReminderFoxAgain toolbar button": "Afișează un număr pe butonul ReminderFoxAgain din bara de instrumente",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Mementourile dvs. sunt păstrate în profilul Thunderbird, cu o copie de rezervă în fiecare zi."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Mementourile dvs. sunt păstrate în profilul Thunderbird, cu o copie de rezervă în fiecare zi.",
+ "Open email": "Deschide e-mailul",
+ "✉ Open email": "✉ Deschide e-mailul",
+ "Open the email this came from": "Deschide e-mailul din care provine",
+ "This item has no email to open.": "Acest element nu are niciun e-mail de deschis.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "E-mailul din care provine nu a fost găsit. Poate a fost șters sau se află într-un cont care nu este configurat în acest Thunderbird."
 }

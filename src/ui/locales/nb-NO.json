@@ -1058,5 +1058,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Påminnelsene, oppgavene og alarmene dine i Thunderbird — en hyllest til det opprinnelige ReminderFox-tillegget.",
  "Save a copy of your reminders file": "Lagre en kopi av påminnelsesfilen",
  "Show a number on the ReminderFoxAgain toolbar button": "Vis et tall på ReminderFoxAgain-knappen i verktøylinjen",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Påminnelsene dine lagres i Thunderbird-profilen din, med en sikkerhetskopi hver dag."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Påminnelsene dine lagres i Thunderbird-profilen din, med en sikkerhetskopi hver dag.",
+ "Open email": "Åpne e-post",
+ "✉ Open email": "✉ Åpne e-post",
+ "Open the email this came from": "Åpne e-posten dette kom fra",
+ "This item has no email to open.": "Dette elementet har ingen e-post å åpne.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "Fant ikke e-posten dette kom fra. Den kan være slettet, eller den ligger i en konto som ikke er satt opp i denne Thunderbird."
 }

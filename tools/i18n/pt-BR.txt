@@ -857,3 +857,8 @@
 856| Salvar uma cópia do seu arquivo de lembretes
 857| Mostrar um número no botão do ReminderFoxAgain na barra de ferramentas
 858| Seus lembretes ficam guardados no seu perfil do Thunderbird, com um backup por dia.
+859| Abrir o e-mail
+860| ✉ Abrir o e-mail
+861| Abrir o e-mail de onde isto veio
+862| Este item não tem um e-mail para abrir.
+863| O e-mail de onde isto veio não foi encontrado. Talvez tenha sido excluído, ou está em uma conta que não está configurada neste Thunderbird.

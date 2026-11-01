@@ -69,7 +69,7 @@ function serve() {
   const aheadKey = `${ahead.getFullYear()}-${String(ahead.getMonth() + 1).padStart(2, '0')}-${String(ahead.getDate()).padStart(2, '0')}`;
   const aheadWords = ahead.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
   const messages = { 42: { contentType: 'multipart/alternative', parts: [{ contentType: 'text/html', body: `<html><body><p>Hi Leo,</p><p>Your car service at the dealer is booked for <b>${aheadWords}</b> at 8:00 am.</p><p>Location: Maple Motors service desk<br><br>500 Queen St E, Toronto</p><blockquote type="cite">On an earlier day you wrote: January 1, 2030</blockquote></body></html>` }] } };
-  await ctx.addInitScript({ content: `window.__seed = ${JSON.stringify({ storage, os: 'linux', uiLanguage: 'en-CA', messages })};\n${fs.readFileSync(path.join(__dirname, 'mock-browser.js'), 'utf8')}` });
+  await ctx.addInitScript({ content: `window.__seed = ${JSON.stringify({ storage, os: 'linux', uiLanguage: 'en-CA', messages, knownMessageIds: ['car-service.42@dealer.example.com'] })};\n${fs.readFileSync(path.join(__dirname, 'mock-browser.js'), 'utf8')}` });
   const pages = new Map(); // tab or window id → page
   const errors = [];
   const watch = (page, label) => {
@@ -190,14 +190,37 @@ function serve() {
     // … or Add list item…: the same email as an item in the list being shown, its date and time the "due by"
     const todoItem = await bg.evaluate(() => window.__mock.state.menus.find((m) => m.id === 'rf-mail-todo'));
     line('"Add list item…" is on the email menu', todoItem ? `${todoItem.title} [${todoItem.contexts}]` : 'missing', 'Add list item… [message_list]');
-    await bg.evaluate(() => window.__mock.clickMenu('rf-mail-todo', { selectedMessages: { messages: [{ id: 42, subject: 'Re: Car service at the dealer', date: new Date().toISOString() }] } }));
+    await bg.evaluate(() => window.__mock.clickMenu('rf-mail-todo', { selectedMessages: { messages: [{ id: 42, subject: 'Re: Car service at the dealer', date: new Date().toISOString(), headerMessageId: 'car-service.42@dealer.example.com' }] } }));
     await sleep(1200);
     const td = await main.evaluate(() => ({ open: document.getElementById('edSummary').offsetParent !== null, summary: document.getElementById('edSummary').value, noDateShown: document.getElementById('edNoDate').offsetParent !== null, noDate: document.getElementById('edNoDate').checked, date: document.getElementById('edDate').value, time: document.getElementById('edTime').value, allDay: document.getElementById('edAllDay').checked }));
     line('the email opens a list item', td.open && td.noDateShown, true);
     line('list item: the subject', td.summary, 'Car service at the dealer');
     line('list item: due by date', td.noDate ? 'no date' : td.date, aheadKey);
     line('list item: due by time', `${td.time}${td.allDay ? ' (all day)' : ''}`, '08:00');
-    await main.evaluate(() => document.getElementById('edCancel').click());
+    // the item made from an email can open it: the editor's button, and after saving, the row's right-click menu
+    line('the editor offers "Open email"', await main.evaluate(() => !document.getElementById('edMail').classList.contains('hidden')), true);
+    await main.evaluate(() => document.getElementById('edMail').click());
+    await sleep(500);
+    line('"Open email" opens it in Thunderbird', (await bg.evaluate(() => window.__mock.state.openedEmails || [])).join(','), 'car-service.42@dealer.example.com');
+    await main.evaluate(() => document.getElementById('edSave').click());
+    await sleep(800);
+    const saved = await main.evaluate(async () => (await window.rf.all()).find((d) => d.summary === 'Car service at the dealer' && d.kind === 'todo'));
+    line('the saved list item keeps its email', saved && saved.messageId, '<car-service.42@dealer.example.com>');
+    const ctxHas = await main.evaluate(async (uid) => {
+      await window.__rf.setTab('todos'); await new Promise((r) => setTimeout(r, 500));
+      const row = [...document.querySelectorAll('#listView tbody tr')].find((tr) => tr.dataset.uid === uid);
+      if (!row) return 'row not shown';
+      row.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, clientX: 100, clientY: 100 }));
+      await new Promise((r) => setTimeout(r, 300));
+      const has = !!document.querySelector('.ctx:not(.hidden) button[data-ctx="mail"]');
+      document.dispatchEvent(new MouseEvent('mousedown', { bubbles: true }));
+      return has;
+    }, saved && saved.uid);
+    line('its right-click menu has "Open email"', ctxHas, true);
+    const plain = await main.evaluate(async () => { await window.__rf.openEditor({ kind: 'event' }); await new Promise((r) => setTimeout(r, 300)); const h = document.getElementById('edMail').classList.contains('hidden'); document.getElementById('edCancel').click(); return h; });
+    line('an item not from an email has no "Open email"', plain, true);
+    const gone = await main.evaluate(async () => { try { await window.rf.openEmail('<deleted@example.com>'); return 'opened'; } catch (e) { return e.message.split('.')[0]; } });
+    line('a deleted email says so', gone, 'The email this came from was not found');
     await sleep(300);
     const alarm = await waitFor('alarm', 6000);
     line('the alarm window opened for the quick alarm', !!alarm, true);

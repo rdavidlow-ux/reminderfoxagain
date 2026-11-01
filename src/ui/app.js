@@ -944,6 +944,7 @@
         : '<button data-ctx="list">Make it a to-do…</button><button data-ctx="copy">Copy to a list…</button>') +
       (dto.kind === 'todo' && todoTab() && !S.search.trim() ? '<button data-ctx="up">Move up <span class="kbd">Alt+↑</span></button><button data-ctx="down">Move down <span class="kbd">Alt+↓</span></button>' : '') +
       (dto.location ? '<button data-ctx="map">Show on a map</button>' : '') +
+      (dto.messageId && window.rf.openEmail ? '<button data-ctx="mail">Open email</button>' : '') +
       '<button data-ctx="dup">Duplicate <span class="kbd">Ctrl+D</span></button><hr>' +
       (repeatingEvent ? '<button data-ctx="delOne">Delete this occurrence</button><button data-ctx="delAll">Delete all occurrences…</button>' : '<button data-ctx="del">Delete…</button>');
     ctx.classList.remove('hidden');
@@ -968,6 +969,7 @@
     else if (a === 'schedule') await FX('askSchedule', dto);
     else if (a === 'up' || a === 'down') { selectTr(listView.querySelector(`tr[data-key="${CSS.escape(tr0Key())}"]`)); await moveSelected(a === 'up' ? -1 : 1); }
     else if (a === 'map') openMap(dto.location);
+    else if (a === 'mail') await guard(window.rf.openEmail(dto.messageId));
     else if (a === 'ruc') { if (await guard(window.rf.save({ ...dto, untilDone: !dto.untilDone }))) toast(dto.untilDone ? 'No longer reminds daily' : 'Reminds daily until completed'); }
     else if (a === 'tip') { if (await guard(window.rf.save({ ...dto, showInTooltip: !dto.showInTooltip }))) toast(dto.showInTooltip ? 'Removed from the tray tooltip' : 'Shown in the tray tooltip'); }
     else if (a === 'delOne') { if (await guard(window.rf.remove(uid, start))) toast('Occurrence deleted'); }
@@ -1039,6 +1041,7 @@
       const pf = opts.prefill || {};
       if (typeof pf.summary === 'string') dto.summary = pf.summary;
       if (typeof pf.location === 'string') dto.location = pf.location;
+      if (typeof pf.messageId === 'string') dto.messageId = pf.messageId;
       if (typeof pf.time === 'string' && /^\d{2}:\d{2}$/.test(pf.time)) { dto.time = pf.time; dto.allDay = false; }
       E.isNew = true;
     }
@@ -1130,6 +1133,8 @@
     $('edRemindBox').classList.toggle('hidden', !todo);
     $('edAlarmRow').classList.toggle('hidden', todo);
     $('edSchedule').classList.toggle('hidden', !todo);
+    // the email it came from, where the host can open it (the Thunderbird add-on)
+    $('edMail').classList.toggle('hidden', !(E.dto && E.dto.messageId && window.rf.openEmail));
     if (!initial && todo && !E.remind) E.remind = legacyRemind(currentAlarm(), $('edDate').value, $('edAllDay').checked, $('edTime').value);
     if (!initial) renderRemind();
     if (!todo) $('edNoDate').checked = false;
@@ -1394,6 +1399,7 @@
     $(id).addEventListener('input', () => { showRemindParts(); E.remind = readRemindUI(); });
   }
   for (const id of ['edDate', 'edTime', 'edAllDay']) $(id).addEventListener('change', () => { if (E.kind === 'todo') { E.remind = readRemindUI(); renderRemind(); } });
+  $('edMail').addEventListener('click', () => { if (E.dto && E.dto.messageId) guard(window.rf.openEmail(E.dto.messageId)); });
   $('edSchedule').addEventListener('click', async () => {
     const dto = buildEditorDto();
     if (!dto) return;
@@ -1501,6 +1507,7 @@
       untilDone: kind === 'event' && !noDate && $('edRuc').checked,
       showInTooltip: kind === 'todo' && $('edTip').checked,
     };
+    if (E.dto && E.dto.messageId) dto.messageId = E.dto.messageId; // the email it came from stays with it
     if (E.isNew) delete dto.uid;
     return dto;
   }

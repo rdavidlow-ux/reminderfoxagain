@@ -878,5 +878,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Thunderbird'de hatırlatıcılarınız, görevleriniz ve alarmlarınız — özgün ReminderFox eklentisine bir saygı.",
  "Save a copy of your reminders file": "Hatırlatıcı dosyanızın bir kopyasını kaydet",
  "Show a number on the ReminderFoxAgain toolbar button": "Araç çubuğundaki ReminderFoxAgain düğmesinde bir sayı göster",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Hatırlatıcılarınız Thunderbird profilinizde saklanır ve her gün yedeklenir."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Hatırlatıcılarınız Thunderbird profilinizde saklanır ve her gün yedeklenir.",
+ "Open email": "E-postayı aç",
+ "✉ Open email": "✉ E-postayı aç",
+ "Open the email this came from": "Bunun geldiği e-postayı aç",
+ "This item has no email to open.": "Bu öğenin açılacak bir e-postası yok.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "Bunun geldiği e-posta bulunamadı. Silinmiş olabilir ya da bu Thunderbird'de kurulu olmayan bir hesapta olabilir."
 }

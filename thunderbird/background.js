@@ -156,9 +156,18 @@
     let body = '';
     try { body = textOf(await browser.messages.getFull(msg.id)); } catch (e) { /* the subject alone */ }
     const date = msg.date instanceof Date ? msg.date.getTime() : Number(new Date(msg.date)) || Date.now();
-    const p = await host.call('mail:reminder', [{ subject: msg.subject || '', date, body }, kind]);
+    const p = await host.call('mail:reminder', [{ subject: msg.subject || '', date, body, messageId: msg.headerMessageId || '' }, kind]);
     await showMain();
     emit('ui:new', p, 'main');
+  }
+  // open the email an item came from, by its Message-ID, in a Thunderbird tab (any account it is in)
+  async function openEmail(messageId) {
+    const headerMessageId = String(messageId).trim().replace(/^<|>$/g, '');
+    try {
+      await browser.messageDisplay.open({ headerMessageId, location: 'tab', active: true });
+    } catch (e) {
+      throw new Error('The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.');
+    }
   }
   // the readable text of a message: its plain-text parts, else its HTML parts without the markup
   function textOf(part) {
@@ -203,7 +212,7 @@
     const info = await browser.runtime.getPlatformInfo().catch(() => ({ os: 'win' }));
     host = RFHost.createHost({
       platform: 'thunderbird', os: OS[info.os] || 'linux', version: RF_VERSION, dataLabel: DATA_LABEL,
-      files, emit, windows, notify, badge, tooltip, menu, openUrl, loadDict, languageChanged,
+      files, emit, windows, notify, badge, tooltip, menu, openUrl, loadDict, languageChanged, openEmail,
       systemLocale: () => browser.i18n.getUILanguage() || navigator.language || 'en',
     });
     await host.start();

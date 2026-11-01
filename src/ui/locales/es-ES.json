@@ -1058,5 +1058,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Sus recordatorios, tareas y alarmas en Thunderbird — un homenaje al complemento ReminderFox original.",
  "Save a copy of your reminders file": "Guardar una copia de su archivo de recordatorios",
  "Show a number on the ReminderFoxAgain toolbar button": "Mostrar un número en el botón de ReminderFoxAgain de la barra de herramientas",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Sus recordatorios se guardan en su perfil de Thunderbird, con una copia de seguridad cada día."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Sus recordatorios se guardan en su perfil de Thunderbird, con una copia de seguridad cada día.",
+ "Open email": "Abrir el correo",
+ "✉ Open email": "✉ Abrir el correo",
+ "Open the email this came from": "Abrir el correo del que procede",
+ "This item has no email to open.": "Este elemento no tiene ningún correo que abrir.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "No se encontró el correo del que procede. Puede que se haya eliminado o que esté en una cuenta que no está configurada en este Thunderbird."
 }

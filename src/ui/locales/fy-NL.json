@@ -1058,5 +1058,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Jo oantinkers, taken en alarms yn Thunderbird — in earbetoan oan de oarspronklike ReminderFox-add-on.",
  "Save a copy of your reminders file": "In kopy fan jo oantinkersbestân bewarje",
  "Show a number on the ReminderFoxAgain toolbar button": "In getal op de ReminderFoxAgain-knop yn de arkbalke sjen litte",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Jo oantinkers wurde bewarre yn jo Thunderbird-profyl, mei alle dagen in reservekopy."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Jo oantinkers wurde bewarre yn jo Thunderbird-profyl, mei alle dagen in reservekopy.",
+ "Open email": "E-mail iepenje",
+ "✉ Open email": "✉ E-mail iepenje",
+ "Open the email this came from": "De e-mail iepenje dêr't dit wei komt",
+ "This item has no email to open.": "Dit item hat gjin e-mail om te iepenjen.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "De e-mail dêr't dit wei komt, is net fûn. Miskien is er fuortsmiten, of er stiet yn in account dat net yn dizze Thunderbird ynsteld is."
 }

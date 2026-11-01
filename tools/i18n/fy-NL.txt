@@ -857,3 +857,8 @@
 856| In kopy fan jo oantinkersbestân bewarje
 857| In getal op de ReminderFoxAgain-knop yn de arkbalke sjen litte
 858| Jo oantinkers wurde bewarre yn jo Thunderbird-profyl, mei alle dagen in reservekopy.
+859| E-mail iepenje
+860| ✉ E-mail iepenje
+861| De e-mail iepenje dêr't dit wei komt
+862| Dit item hat gjin e-mail om te iepenjen.
+863| De e-mail dêr't dit wei komt, is net fûn. Miskien is er fuortsmiten, of er stiet yn in account dat net yn dizze Thunderbird ynsteld is.

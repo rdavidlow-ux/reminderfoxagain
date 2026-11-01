@@ -857,3 +857,8 @@
 856| Gardar unha copia do ficheiro de lembretes
 857| Mostrar un número no botón de ReminderFoxAgain da barra de ferramentas
 858| Os seus lembretes gárdanse no seu perfil de Thunderbird, cunha copia de seguranza cada día.
+859| Abrir o correo
+860| ✉ Abrir o correo
+861| Abrir o correo do que procede
+862| Este elemento non ten ningún correo que abrir.
+863| Non se atopou o correo do que procede. Quizais se eliminou, ou está nunha conta que non está configurada neste Thunderbird.

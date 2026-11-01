@@ -1178,5 +1178,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Ваші нагадування, завдання й сигнали в Thunderbird — данина оригінальному додатку ReminderFox.",
  "Save a copy of your reminders file": "Зберегти копію файлу нагадувань",
  "Show a number on the ReminderFoxAgain toolbar button": "Показувати число на кнопці ReminderFoxAgain на панелі інструментів",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Ваші нагадування зберігаються у профілі Thunderbird, резервна копія створюється щодня."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Ваші нагадування зберігаються у профілі Thunderbird, резервна копія створюється щодня.",
+ "Open email": "Відкрити лист",
+ "✉ Open email": "✉ Відкрити лист",
+ "Open the email this came from": "Відкрити лист, з якого це створено",
+ "This item has no email to open.": "У цього елемента немає листа, який можна відкрити.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "Лист, з якого це створено, не знайдено. Можливо, його видалено або він в обліковому записі, який не налаштовано в цьому Thunderbird."
 }

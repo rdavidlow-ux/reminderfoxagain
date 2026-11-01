@@ -857,3 +857,8 @@
 856| Desa una còpia del fitxer de recordatoris
 857| Mostra un número al botó del ReminderFoxAgain de la barra d'eines
 858| Els vostres recordatoris es guarden al vostre perfil del Thunderbird, amb una còpia de seguretat cada dia.
+859| Obre el correu
+860| ✉ Obre el correu
+861| Obre el correu d'on prové
+862| Aquest element no té cap correu per obrir.
+863| No s'ha trobat el correu d'on prové. Potser s'ha suprimit, o és en un compte que no està configurat en aquest Thunderbird.

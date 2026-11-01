@@ -878,5 +878,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Thunderbird で使うリマインダー、ToDo、アラーム — オリジナルの ReminderFox アドオンへのオマージュです。",
  "Save a copy of your reminders file": "リマインダーファイルのコピーを保存",
  "Show a number on the ReminderFoxAgain toolbar button": "ツールバーの ReminderFoxAgain ボタンに数を表示する",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "リマインダーは Thunderbird のプロファイルに保存され、毎日バックアップされます。"
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "リマインダーは Thunderbird のプロファイルに保存され、毎日バックアップされます。",
+ "Open email": "メールを開く",
+ "✉ Open email": "✉ メールを開く",
+ "Open the email this came from": "これの元になったメールを開く",
+ "This item has no email to open.": "この項目には開くメールがありません。",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "これの元になったメールが見つかりません。削除されたか、この Thunderbird に設定されていないアカウントにある可能性があります。"
 }

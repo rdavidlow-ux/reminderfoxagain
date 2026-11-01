@@ -857,3 +857,8 @@
 856| Enregistrer une copie de votre fichier de rappels
 857| Afficher un nombre sur le bouton ReminderFoxAgain de la barre d'outils
 858| Vos rappels sont conservés dans votre profil Thunderbird, avec une sauvegarde chaque jour.
+859| Ouvrir le courriel
+860| ✉ Ouvrir le courriel
+861| Ouvrir le courriel d'où vient cet élément
+862| Cet élément n'a pas de courriel à ouvrir.
+863| Le courriel d'où vient cet élément est introuvable. Il a peut-être été supprimé, ou il se trouve dans un compte qui n'est pas configuré dans ce Thunderbird.

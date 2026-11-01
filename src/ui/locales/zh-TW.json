@@ -878,5 +878,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "在 Thunderbird 中管理你的提醒、待辦事項和鬧鐘 — 向最初的 ReminderFox 附加元件致敬。",
  "Save a copy of your reminders file": "儲存提醒檔案的副本",
  "Show a number on the ReminderFoxAgain toolbar button": "在工具列的 ReminderFoxAgain 按鈕上顯示數字",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "你的提醒保存在 Thunderbird 設定檔中，每天備份一次。"
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "你的提醒保存在 Thunderbird 設定檔中，每天備份一次。",
+ "Open email": "開啟郵件",
+ "✉ Open email": "✉ 開啟郵件",
+ "Open the email this came from": "開啟這一項來自的郵件",
+ "This item has no email to open.": "此項目沒有可開啟的郵件。",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "找不到這一項來自的郵件。它可能已被刪除，或位於此 Thunderbird 中未設定的帳號裡。"
 }

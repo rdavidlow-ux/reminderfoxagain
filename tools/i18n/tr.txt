@@ -857,3 +857,8 @@
 856| Hatırlatıcı dosyanızın bir kopyasını kaydet
 857| Araç çubuğundaki ReminderFoxAgain düğmesinde bir sayı göster
 858| Hatırlatıcılarınız Thunderbird profilinizde saklanır ve her gün yedeklenir.
+859| E-postayı aç
+860| ✉ E-postayı aç
+861| Bunun geldiği e-postayı aç
+862| Bu öğenin açılacak bir e-postası yok.
+863| Bunun geldiği e-posta bulunamadı. Silinmiş olabilir ya da bu Thunderbird'de kurulu olmayan bir hesapta olabilir.

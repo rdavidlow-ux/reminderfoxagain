@@ -94,6 +94,8 @@
     idle: { onStateChanged: listeners('idle.onStateChanged') },
     // the emails the runner offers (seed.messages: id → the MessagePart tree messages.getFull returns)
     messages: { getFull: async (id) => { const m = (seed.messages || {})[id]; if (!m) throw new Error('no message'); return m; } },
+    // opening an email by its Message-ID: recorded; an unknown one is not found
+    messageDisplay: { open: async (o) => { if (!(seed.knownMessageIds || []).includes(o.headerMessageId)) throw new Error('not found'); state.openedEmails = (state.openedEmails || []).concat(o.headerMessageId); return {}; } },
     // the shortcuts the manifest suggests (seed.shortcuts can change one, as a person can in Thunderbird)
     commands: {
       getAll: async () => {

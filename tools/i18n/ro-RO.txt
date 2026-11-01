@@ -857,3 +857,8 @@
 856| Salvează o copie a fișierului de mementouri
 857| Afișează un număr pe butonul ReminderFoxAgain din bara de instrumente
 858| Mementourile dvs. sunt păstrate în profilul Thunderbird, cu o copie de rezervă în fiecare zi.
+859| Deschide e-mailul
+860| ✉ Deschide e-mailul
+861| Deschide e-mailul din care provine
+862| Acest element nu are niciun e-mail de deschis.
+863| E-mailul din care provine nu a fost găsit. Poate a fost șters sau se află într-un cont care nu este configurat în acest Thunderbird.

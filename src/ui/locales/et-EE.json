@@ -1058,5 +1058,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Sinu meeldetuletused, ülesanded ja alarmid Thunderbirdis — austusavaldus algsele ReminderFoxi lisale.",
  "Save a copy of your reminders file": "Salvesta meeldetuletuste faili koopia",
  "Show a number on the ReminderFoxAgain toolbar button": "Näita arvu ReminderFoxAgaini tööriistariba nupul",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Sinu meeldetuletusi hoitakse sinu Thunderbirdi profiilis ja neist tehakse iga päev varukoopia."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Sinu meeldetuletusi hoitakse sinu Thunderbirdi profiilis ja neist tehakse iga päev varukoopia.",
+ "Open email": "Ava e-kiri",
+ "✉ Open email": "✉ Ava e-kiri",
+ "Open the email this came from": "Ava e-kiri, millest see pärineb",
+ "This item has no email to open.": "Sellel kirjel pole avatavat e-kirja.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "E-kirja, millest see pärineb, ei leitud. See võib olla kustutatud või on see kontol, mida selles Thunderbirdis pole seadistatud."
 }

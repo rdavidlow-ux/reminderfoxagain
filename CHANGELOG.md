@@ -17,6 +17,9 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   time are its "due by"). Dates such as "Tuesday, Nov 3rd", "3 November", "2026/11/02", "tomorrow" or "next Friday",
   times next to the date or labelled ("Time 11:40 AM"), and places from a "Location:", "Where:" or "Address:" field or
   a street address. Quoted replies are left out.
+- **Open the email it came from:** a reminder or list item made from an email keeps a link to it (ReminderFox's own
+  `X-REMINDERFOX-MESSAGEID`); ✉ Open email in its editor, or Open email in its right-click menu, opens it in a
+  Thunderbird tab. Reminders made from email in the original ReminderFox add-on open the same way.
 - Tried in Thunderbird 153.6.0esr on Windows 11: it works, the alarm sound plays without a click, and the alarm
   window sits at the bottom right.
 

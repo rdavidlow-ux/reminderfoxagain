@@ -744,7 +744,16 @@ function createHost(ad) {
     // an email {subject, date (ms), body}: what the editor opens with (ui:new): its subject, date, time and place
     'mail:reminder': (mail, kind) => {
       const r = reminderFromEmail(mail, { now: now(), locale: dateLocale() });
-      return { kind: kind === 'todo' ? 'todo' : 'event', date: r.date, prefill: { summary: r.summary, time: r.time, location: r.location }, found: r.found };
+      // the email's Message-ID, kept as ReminderFox kept it ("<…>"), so the item can open its email later
+      const mid = String((mail && mail.messageId) || '').trim().replace(/^<|>$/g, '');
+      return { kind: kind === 'todo' ? 'todo' : 'event', date: r.date, prefill: { summary: r.summary, time: r.time, location: r.location, ...(mid ? { messageId: `<${mid}>` } : {}) }, found: r.found };
+    },
+    // open the email an item came from (its Message-ID), where the host can
+    'mail:open': async (messageId) => {
+      const mid = String(messageId || '').trim();
+      if (!mid || !ad.openEmail) throw new Error('This item has no email to open.');
+      await ad.openEmail(mid);
+      return true;
     },
     'host:i18n': () => i18nInfo(),
   };

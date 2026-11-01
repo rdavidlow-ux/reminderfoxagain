@@ -20,6 +20,8 @@ const ARCHIVED_PROP = 'x-reminderfoxagain-archived';
 const ARCHIVE_REASON_PROP = 'x-reminderfoxagain-archive-reason';
 // Manual to-do order: the same property Apple Reminders uses, so the order survives other apps
 const ORDER_PROP = 'x-apple-sort-order';
+// The email an item was made from: ReminderFox's own property (in Thunderbird it opened the message)
+const MESSAGEID_PROP = 'x-reminderfox-messageid';
 // A to-do's reminder plan (0.4.0): "remind me from <start> at <time>, then every <step> until it's done".
 //   start=before;days=7  (7 days before the due date)  or  start=date;date=2026-11-23
 //   at=09:00; every=once|day|2days|week|2weeks|month; overdue=1 (keep reminding after the due date)
@@ -406,6 +408,9 @@ class Store {
       archivedAt: (() => { const v = c.getFirstPropertyValue(ARCHIVED_PROP); return v && v.toJSDate ? v.toJSDate().getTime() : (v ? parseUtcStamp(v) : null); })(),
       archiveReason: str(c.getFirstPropertyValue(ARCHIVE_REASON_PROP)),
       order: (() => { const v = parseInt(str(c.getFirstPropertyValue(ORDER_PROP)), 10); return Number.isFinite(v) ? v : null; })(),
+      // the email it came from: the Message-ID ReminderFox kept, e.g. "<abc123@mail.example.com>" (the Thunderbird
+      // add-on opens it; the desktop app only keeps it)
+      messageId: str(c.getFirstPropertyValue(MESSAGEID_PROP)),
     };
     if (startT) {
       const sd = jsDate(startT);
@@ -483,6 +488,11 @@ class Store {
     c.removeAllProperties('priority');
     c.removeAllProperties('x-reminderfox-priority');
     if (dto.important) c.addPropertyWithValue('priority', 1);
+    // the email it came from: written only when it changes, so the add-on's own form of the line is kept otherwise
+    if (typeof dto.messageId === 'string' && dto.messageId.trim() !== str(c.getFirstPropertyValue(MESSAGEID_PROP))) {
+      c.removeAllProperties(MESSAGEID_PROP);
+      if (dto.messageId.trim()) c.addPropertyWithValue(MESSAGEID_PROP, dto.messageId.trim());
+    }
     // to-do list
     c.removeAllProperties('x-reminderfox-listid');
     if (wantName === 'vtodo' && dto.list && dto.list.trim() && dto.list.trim() !== DEFAULT_LIST) c.addPropertyWithValue('x-reminderfox-listid', dto.list.trim());

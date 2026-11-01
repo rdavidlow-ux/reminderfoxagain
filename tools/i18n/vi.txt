@@ -857,3 +857,8 @@
 856| Lưu một bản sao tệp lời nhắc
 857| Hiện số trên nút ReminderFoxAgain ở thanh công cụ
 858| Lời nhắc của bạn được lưu trong hồ sơ Thunderbird, với một bản sao lưu mỗi ngày.
+859| Mở email
+860| ✉ Mở email
+861| Mở email mà mục này được tạo từ đó
+862| Mục này không có email để mở.
+863| Không tìm thấy email mà mục này được tạo từ đó. Có thể email đã bị xóa, hoặc nằm trong một tài khoản chưa được thiết lập trong Thunderbird này.

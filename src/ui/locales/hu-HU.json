@@ -878,5 +878,10 @@
  "Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.": "Emlékeztetői, teendői és riasztásai a Thunderbirdben — tisztelgés az eredeti ReminderFox kiegészítő előtt.",
  "Save a copy of your reminders file": "Másolat mentése az emlékeztetőfájlról",
  "Show a number on the ReminderFoxAgain toolbar button": "Szám megjelenítése a ReminderFoxAgain eszköztárgombján",
- "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Emlékeztetőit a Thunderbird-profilja tárolja, naponta készülő biztonsági mentéssel."
+ "Your reminders are kept in your Thunderbird profile, with a backup every day.": "Emlékeztetőit a Thunderbird-profilja tárolja, naponta készülő biztonsági mentéssel.",
+ "Open email": "E-mail megnyitása",
+ "✉ Open email": "✉ E-mail megnyitása",
+ "Open the email this came from": "Annak az e-mailnek a megnyitása, amelyből ez származik",
+ "This item has no email to open.": "Ehhez az elemhez nincs megnyitható e-mail.",
+ "The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.": "Nem található az e-mail, amelyből ez származik. Lehet, hogy törölték, vagy olyan fiókban van, amely nincs beállítva ebben a Thunderbirdben."
 }

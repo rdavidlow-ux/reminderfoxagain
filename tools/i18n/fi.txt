@@ -857,3 +857,8 @@
 856| Tallenna kopio muistutustiedostosta
 857| Näytä luku ReminderFoxAgainin työkalupalkin painikkeessa
 858| Muistutuksesi säilytetään Thunderbird-profiilissasi, ja niistä otetaan varmuuskopio joka päivä.
+859| Avaa sähköposti
+860| ✉ Avaa sähköposti
+861| Avaa sähköposti, josta tämä tuli
+862| Tällä kohteella ei ole avattavaa sähköpostia.
+863| Sähköpostia, josta tämä tuli, ei löytynyt. Se on ehkä poistettu, tai se on tilillä, jota ei ole määritetty tähän Thunderbirdiin.

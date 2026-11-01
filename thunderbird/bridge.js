@@ -143,6 +143,8 @@
     // "Data file": there is no folder to open, so it saves a copy of the reminders file instead
     openDataFolder: async () => { const d = await call('data:text'); save(d.name, d.text); return true; },
     openUrl: (u) => call('open:url', u),
+    // the email a reminder or list item came from (Thunderbird only: the desktop has no openEmail, so it shows no button)
+    openEmail: (messageId) => call('mail:open', messageId),
     setSettings: (patch) => call('settings:set', patch),
     importIcs: async () => {
       const t = await pickAndUpload({ accept: ICS, multiple: true });

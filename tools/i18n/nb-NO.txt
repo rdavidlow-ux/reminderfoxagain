@@ -857,3 +857,8 @@
 856| Lagre en kopi av påminnelsesfilen
 857| Vis et tall på ReminderFoxAgain-knappen i verktøylinjen
 858| Påminnelsene dine lagres i Thunderbird-profilen din, med en sikkerhetskopi hver dag.
+859| Åpne e-post
+860| ✉ Åpne e-post
+861| Åpne e-posten dette kom fra
+862| Dette elementet har ingen e-post å åpne.
+863| Fant ikke e-posten dette kom fra. Den kan være slettet, eller den ligger i en konto som ikke er satt opp i denne Thunderbird.
