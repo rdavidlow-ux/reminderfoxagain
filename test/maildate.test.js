@@ -32,6 +32,12 @@ test('maildate 3. numbers in the order of the locale', () => {
   assert.deepEqual(find('Due 03/11/2026', 'en-GB'), ['2026-11-03', null]);
   assert.deepEqual(find('Fällig am 3.11.2026 um 14:00 Uhr', 'de'), ['2026-11-03', '14:00']);
   assert.equal(find('Due 13/13/2026', 'en-US'), null);
+  // year first is always year, month, day, whatever the locale (found in a real email: "Due date\n\n2026/11/02")
+  assert.deepEqual(find('Due date\n\n2026/11/02', 'en-US'), ['2026-11-02', null]);
+  assert.deepEqual(find('Due date: 2026/11/02', 'en-GB'), ['2026-11-02', null]);
+  assert.deepEqual(find('Frist 2026.11.02 14:00', 'de'), ['2026-11-02', '14:00']);
+  assert.deepEqual(find('締め切り：2026年11月2日', 'ja-JP'), ['2026-11-02', null]);
+  assert.equal(find('2026/13/02 or 2026/11-02', 'en-US'), null); // no month 13; mixed separators are not a date
 });
 
 test('maildate 4. words: today, tomorrow and weekdays are read from the day the email was sent', () => {

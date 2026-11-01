@@ -7,7 +7,7 @@
 //   now     today (ms): dates before today are passed over (a reminder is for something ahead)
 //   locale  the date locale ('en-CA', 'de'…): its month and weekday names are understood besides English, and its
 //           order of day and month decides what 3/11/2026 means
-// Understood: 2026-11-03 · November 3, 2026 · Nov 3 · Tuesday, Nov 3rd · 3 November 2026 · 3. November · 03/11/2026
+// Understood: 2026-11-03, 2026/11/03, 2026.11.03, 2026年11月3日 · November 3, 2026 · Nov 3 · Tuesday, Nov 3rd · 3 November 2026 · 3. November · 03/11/2026
 // (in the locale's order) · today, tonight, tomorrow · on Friday, this Friday, next Friday — each optionally with a
 // time next to it: at 2:30 pm, 2pm, 14:30, 9 a.m., noon. Quoted replies (> lines, "On … wrote:") are left out.
 
@@ -103,8 +103,9 @@ function candidates(text, { ref, locale }) {
   const add = (index, length, date, word) => { if (date) found.push({ index, length, date, word }); };
   const r0 = new Date(ref); r0.setHours(0, 0, 0, 0);
   let m;
-  // 2026-11-03
-  for (const re = /\b(\d{4})-(\d{1,2})-(\d{1,2})\b/g; (m = re.exec(text));) add(m.index, m[0].length, valid(+m[1], +m[2] - 1, +m[3]));
+  // year first is always year, month, day: 2026-11-03, 2026/11/03, 2026.11.03, and 2026年11月3日 (Chinese, Japanese)
+  for (const re = /\b(\d{4})([-/.])(\d{1,2})\2(\d{1,2})\b/g; (m = re.exec(text));) add(m.index, m[0].length, valid(+m[1], +m[3] - 1, +m[4]));
+  for (const re = /(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日/g; (m = re.exec(text));) add(m.index, m[0].length, valid(+m[1], +m[2] - 1, +m[3]));
   // (Tuesday,) November 3(rd)(, 2026)
   const mdy = new RegExp(String.raw`(?:\b(?:${W})\.?,?\s+)?\b(${M})\.?\s+(\d{1,2})(?:st|nd|rd|th)?\b(?:,?\s+(\d{4}))?`, 'gi');
   for (; (m = mdy.exec(text));) {
