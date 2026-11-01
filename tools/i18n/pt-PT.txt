@@ -916,3 +916,65 @@
 915| A mostrar os primeiros {n}.
 916| Nenhum alarme neste período.
 917| Adiado por {time}
+918| 📅 Calendários
+919| Calendários na vista Mês
+920| Calendários na vista Lembretes
+921| Os meus lembretes
+922| Ainda não há subscrições de calendários.
+923| Subscrever um calendário…
+924| Gerir subscrições…
+925| {shown} de {all} subscrições de calendários mostradas aqui
+926| Subscrever calendários da web (feriados, desporto, uma equipa)
+927| Do calendário que subscreve: {name}
+928| De um calendário que subscreve
+929| Abrir…
+930| Copiar para os meus lembretes
+931| “{s}” copiado para os seus lembretes
+932| De “{name}”, um calendário que subscreve. Não pode ser alterado aqui.
+933| Guardar a sua própria cópia nos seus lembretes
+934| Subscrições de calendários…
+935| Calendários da web (feriados, desporto, um calendário escolar ou de equipa), só de leitura e sempre atualizados
+936| Subscrições de calendários
+937| Feriados, desporto, um calendário escolar ou de equipa: qualquer calendário (.ics) com um endereço web. É só de leitura e mantém-se atualizado sozinho.
+938| Endereço web do calendário
+939| Subscrever
+940| Atualizar todos
+941| Cor
+942| Com que frequência é transferido de novo
+943| De hora a hora
+944| De 6 em 6 horas
+945| De 12 em 12 horas
+946| Vista Lembretes
+947| Vista Mês
+948| Atualizar agora
+949| Remover
+950| Não foi possível atualizar: {why}
+951| A mostrar a cópia de {time}.
+952| Atualizado {time} · {events}
+953| {n} evento
+954| {n} eventos
+955| Introduza o endereço web de um calendário.
+956| A subscrever…
+957| Subscreveu “{name}” ({events}).
+958| Remover a subscrição?
+959| “{name}” e os seus eventos deixam de ser mostrados. Os seus próprios lembretes não são alterados.
+960| Introduza um endereço web que comece por https://, http:// ou webcal://.
+961| Já subscreve esse calendário.
+962| Esse calendário é demasiado grande (mais de 10 MB).
+963| Esse endereço não deu um calendário (um ficheiro .ics).
+964| Essa subscrição já não existe.
+965| Isto vem de um calendário que subscreve, por isso não pode ser alterado aqui.
+966| O site do calendário não forneceu o calendário. Verifique o endereço.
+967| O site do calendário não respondeu a tempo.
+968| Não foi possível transferir o calendário. Verifique o endereço e a sua ligação.
+969| Não foi possível transferir o calendário. Verifique o endereço e a sua ligação (e se o ReminderFoxAgain pode ler esse site).
+970| O ReminderFoxAgain precisa da sua permissão para ler esse site.
+971| As subscrições de calendários não estão disponíveis aqui.
+972| Não foi possível atualizar
+973| Cores do texto dos itens
+974| Assinale uma cor para a usar. Ganha a mais específica: Concluído, depois Com estrela ou Sem estrela, depois Passado, Hoje ou Próximo, depois Não concluído. As não assinaladas seguem o tema (os itens passados ficam iguais aos outros).
+975| Não concluído
+976| Com estrela (importante)
+977| Sem estrela
+978| Próximo (futuro)
+979| Os itens “{item}” são difíceis de ler nas listas (contraste {n}:1; 3:1 ou mais é melhor).

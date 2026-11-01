@@ -916,3 +916,65 @@
 915| Se arată primele {n}.
 916| Nicio alarmă în această perioadă.
 917| Amânată cu {time}
+918| 📅 Calendare
+919| Calendare în vizualizarea Lună
+920| Calendare în vizualizarea Mementouri
+921| Mementourile mele
+922| Încă nu ai abonamente la calendare.
+923| Abonează-te la un calendar…
+924| Gestionează abonamentele…
+925| Se arată aici {shown} din {all} abonamente la calendare
+926| Abonează-te la calendare de pe web (sărbători, sport, o echipă)
+927| Din calendarul la care ești abonat: {name}
+928| Dintr-un calendar la care ești abonat
+929| Deschide…
+930| Copiază în mementourile mele
+931| „{s}” a fost copiat în mementourile tale
+932| Din „{name}”, un calendar la care ești abonat. Nu poate fi modificat aici.
+933| Salvează propria copie în mementourile tale
+934| Abonamente la calendare…
+935| Calendare de pe web (sărbători, sport, un calendar școlar sau de echipă), doar pentru citire și mereu actualizate
+936| Abonamente la calendare
+937| Sărbători, sport, un calendar școlar sau de echipă: orice calendar (.ics) cu o adresă web. Este doar pentru citire și se actualizează singur.
+938| Adresa web a calendarului
+939| Abonează-te
+940| Reîmprospătează tot
+941| Culoare
+942| Cât de des este descărcat din nou
+943| În fiecare oră
+944| La fiecare 6 ore
+945| La fiecare 12 ore
+946| Vizualizarea Mementouri
+947| Vizualizarea Lună
+948| Reîmprospătează acum
+949| Elimină
+950| Nu a putut fi actualizat: {why}
+951| Se arată copia din {time}.
+952| Actualizat {time} · {events}
+953| {n} eveniment
+954| {n} evenimente
+955| Introdu adresa web a unui calendar.
+956| Abonare…
+957| Abonat la „{name}” ({events}).
+958| Elimini abonamentul?
+959| „{name}” și evenimentele lui nu vor mai fi arătate. Mementourile tale nu sunt atinse.
+960| Introdu o adresă web care începe cu https://, http:// sau webcal://.
+961| Ești deja abonat la acel calendar.
+962| Acel calendar este prea mare (peste 10 MB).
+963| Acea adresă nu a dat un calendar (un fișier .ics).
+964| Acel abonament nu mai există.
+965| Acesta vine dintr-un calendar la care ești abonat, așa că nu poate fi modificat aici.
+966| Site-ul calendarului nu a oferit calendarul. Verifică adresa.
+967| Site-ul calendarului nu a răspuns la timp.
+968| Calendarul nu a putut fi descărcat. Verifică adresa și conexiunea.
+969| Calendarul nu a putut fi descărcat. Verifică adresa și conexiunea (și că ReminderFoxAgain poate citi acel site).
+970| ReminderFoxAgain are nevoie de permisiunea ta pentru a citi acel site.
+971| Abonamentele la calendare nu sunt disponibile aici.
+972| Nu a putut fi actualizat
+973| Culorile textului elementelor
+974| Bifează o culoare ca s-o folosești. Câștigă cea mai precisă: Finalizat, apoi Cu stea sau Fără stea, apoi Trecut, Azi sau Viitor apropiat, apoi Nefinalizat. Cele nebifate urmează tema (elementele trecute arată ca celelalte).
+975| Nefinalizat
+976| Cu stea (important)
+977| Fără stea
+978| Viitor apropiat (viitor)
+979| Elementele „{item}” sunt greu de citit în liste (contrast {n}:1; 3:1 sau mai mult e mai bine).

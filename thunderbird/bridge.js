@@ -180,6 +180,23 @@
     hideAlarm: () => call('alarm:hide'),
     alarmState: () => call('alarm:state'),
     alarmsList: (days) => call('alarms:list', days),
+    // calendar subscriptions: Thunderbird asks once to let the add-on read the calendar's web site
+    subsList: () => call('subs:list'),
+    subsAdd: async (o) => {
+      let origin = '';
+      try { origin = new URL(String((o && o.url) || '').trim().replace(/^webcals?:\/\//i, 'https://')).origin; } catch (e) { origin = ''; }
+      if (origin && /^https?:/.test(origin) && browser.permissions && browser.permissions.request) {
+        const has = browser.permissions.contains ? await browser.permissions.contains({ origins: [`${origin}/*`] }) : false;
+        if (!has && !(await browser.permissions.request({ origins: [`${origin}/*`] }))) throw new Error('ReminderFoxAgain needs your permission to read that web site.');
+      }
+      return call('subs:add', o);
+    },
+    subsUpdate: (id, patch) => call('subs:update', id, patch),
+    subsRemove: (id) => call('subs:remove', id),
+    subsRefresh: (id) => call('subs:refresh', id),
+    subsRange: (from, to, view) => call('subs:range', from, to, view),
+    subsNext: (from, opts, view) => call('subs:next', from, opts, view),
+    subsCopy: (uid) => call('subs:copy', uid),
     unskipAlarm: (key) => call('alarm:unskip', key),
     on: (channel, fn) => {
       if (!CHANNELS.includes(channel)) throw new Error(`Unknown channel ${channel}`);

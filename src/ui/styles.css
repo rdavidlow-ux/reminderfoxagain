@@ -1,4 +1,5 @@
 :root {
+  --it-done: var(--done); --it-imp: var(--imp-ink);
   --bg: #fbf8f4;
   --surface: #ffffff;
   --surface-2: #f6f0e8;
@@ -109,6 +110,9 @@ aside.side { border-left: 1px solid var(--line); background: var(--surface-2); o
 .toolbar label { color: var(--ink-3); font-size: 12.5px; }
 .toolbar .spacer { flex: 1; }
 .toolbar .hint { color: var(--ink-3); font-size: 12.5px; }
+/* the Month toolbar's hint gives way (cut short) rather than taking a line of its own */
+#tbMonth .spacer { flex: 0 0 0; }
+#tbMonth .hint { flex: 1 1 0; min-width: 0; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ---------- list table */
 .listwrap { flex: 1; overflow: auto; padding: 0 14px 14px; min-height: 0; }
@@ -130,8 +134,18 @@ table.list { width: 100%; border-collapse: separate; border-spacing: 0; backgrou
 .list tbody tr.selected td { background: var(--sel); }
 .list tr.today td { background: var(--fox-soft); }
 .list tr.today td.c-date { color: var(--fox-ink); font-weight: 700; }
-.list tr.past td { color: var(--ink-3); }
-.list tr.done td.c-desc .t { text-decoration: line-through; color: var(--done); }
+/* Item colours: open items in the text colour, past ones too; a theme of your own can colour them by when (past, today,
+   coming), by starred or not and by completed or not. The most particular colour wins: completed, then starred / not
+   starred, then past / today / coming, then not completed. A colour the theme leaves out falls through to the next. */
+.list tbody tr, .ev, .agenda .item { --it-t: var(--it-future, var(--it-open, var(--ink))); }
+.list tbody tr.today, .ev.today, .agenda .item.today { --it-t: var(--it-today, var(--it-open, var(--ink))); }
+.list tbody tr.past, .ev.past, .agenda .item.past { --it-t: var(--it-past, var(--it-open, var(--ink))); }
+.list tbody tr, .ev, .agenda .item { --it-i: var(--it-plain, var(--it-t)); --it-c: var(--it-i); }
+.list tbody tr.important, .ev.important, .agenda .item.important { --it-i: var(--it-imp, var(--it-t)); }
+.list tbody tr.done, .ev.done, .agenda .item.done { --it-c: var(--it-done, var(--it-i)); }
+.list tbody tr:not(.sep) td { color: var(--it-t); }
+.list tbody tr td.c-desc .t { color: var(--it-c); }
+.list tr.done td.c-desc .t { text-decoration: line-through; }
 .list tr.sep td { background: var(--surface-2); font-weight: 650; font-size: 12px; color: var(--ink-2); padding: 5px 10px; letter-spacing: .02em; }
 .c-chk, .c-imp, .c-alarm { width: 30px; text-align: center; padding-left: 4px !important; padding-right: 4px !important; }
 .c-date { white-space: nowrap; width: 1%; font-variant-numeric: tabular-nums; }
@@ -181,7 +195,8 @@ table.list { width: 100%; border-collapse: separate; border-spacing: 0; backgrou
 .agenda .item .tx { min-width: 0; }
 .agenda .item .tx b { font-weight: 600; display: block; overflow: hidden; text-overflow: ellipsis; }
 .agenda .item .tx small { color: var(--ink-3); }
-.agenda .item.done b { text-decoration: line-through; color: var(--done); }
+.agenda .item .tx b { color: var(--it-c); }
+.agenda .item.done b { text-decoration: line-through; }
 .agenda .none { color: var(--ink-3); font-size: 13px; padding: 6px 2px; }
 
 /* ---------- month grid view */
@@ -199,7 +214,7 @@ table.list { width: 100%; border-collapse: separate; border-spacing: 0; backgrou
 .cell .num { font-size: 12.5px; font-weight: 600; align-self: flex-start; padding: 1px 6px; border-radius: 999px; font-variant-numeric: tabular-nums; }
 .cell.today .num { background: var(--fox); color: #fff; }
 .cell.picked { box-shadow: inset 0 0 0 2px var(--fox); }
-.ev { font-size: 12px; border-radius: 4px; padding: 1px 5px; background: var(--fox-soft); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; flex: none; }
+.ev { font-size: 12px; border-radius: 4px; padding: 1px 5px; background: var(--fox-soft); color: var(--it-c); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; flex: none; }
 .ev:hover { filter: brightness(.96); }
 .ev.allday { background: var(--fox); color: #fff; }
 .ev.todo, .ev.allday.todo { background: var(--surface-3); color: var(--ink-2); }

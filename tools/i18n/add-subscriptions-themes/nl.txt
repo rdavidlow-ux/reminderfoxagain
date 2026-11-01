@@ -1,0 +1,62 @@
+📅 Agenda's
+Agenda's in de maandweergave
+Agenda's in de herinneringsweergave
+Mijn herinneringen
+Nog geen agenda-abonnementen.
+Abonneren op een agenda…
+Abonnementen beheren…
+{shown} van {all} agenda-abonnementen hier getoond
+Abonneren op agenda's van het web (feestdagen, sport, een team)
+Uit de agenda waarop je geabonneerd bent: {name}
+Uit een agenda waarop je geabonneerd bent
+Openen…
+Kopiëren naar mijn herinneringen
+‘{s}’ gekopieerd naar je herinneringen
+Uit ‘{name}’, een agenda waarop je geabonneerd bent. Hier kan het niet gewijzigd worden.
+Een eigen kopie bewaren in je herinneringen
+Agenda-abonnementen…
+Agenda's van het web (feestdagen, sport, een school- of teamagenda), alleen-lezen en up-to-date gehouden
+Agenda-abonnementen
+Feestdagen, sport, een school- of teamagenda: elke agenda (.ics) met een webadres. Hij is alleen-lezen en houdt zichzelf up-to-date.
+Webadres van de agenda
+Abonneren
+Alles vernieuwen
+Kleur
+Hoe vaak hij opnieuw wordt opgehaald
+Elk uur
+Elke 6 uur
+Elke 12 uur
+Herinneringsweergave
+Maandweergave
+Nu vernieuwen
+Verwijderen
+Kon niet worden bijgewerkt: {why}
+De kopie van {time} wordt getoond.
+Bijgewerkt {time} · {events}
+{n} afspraak
+{n} afspraken
+Voer het webadres van een agenda in.
+Abonneren…
+Geabonneerd op ‘{name}’ ({events}).
+Abonnement verwijderen?
+‘{name}’ en zijn afspraken worden niet meer getoond. Je eigen herinneringen blijven onaangeroerd.
+Voer een webadres in dat begint met https://, http:// of webcal://.
+Je bent al op die agenda geabonneerd.
+Die agenda is te groot (meer dan 10 MB).
+Dat adres gaf geen agenda (een .ics-bestand).
+Dat abonnement bestaat niet meer.
+Dit komt uit een agenda waarop je geabonneerd bent, dus hier kan het niet gewijzigd worden.
+De website van de agenda gaf de agenda niet. Controleer het adres.
+De website van de agenda antwoordde niet op tijd.
+De agenda kon niet worden opgehaald. Controleer het adres en je verbinding.
+De agenda kon niet worden opgehaald. Controleer het adres en je verbinding (en dat ReminderFoxAgain die website mag lezen).
+ReminderFoxAgain heeft je toestemming nodig om die website te lezen.
+Agenda-abonnementen zijn hier niet beschikbaar.
+Kon niet worden bijgewerkt
+Tekstkleuren van items
+Vink een kleur aan om hem te gebruiken. De meest specifieke wint: Voltooid, dan Met ster of Zonder ster, dan Voorbij, Vandaag of Komend, dan Niet voltooid. Niet-aangevinkte volgen het thema (voorbije items zien eruit als de andere).
+Niet voltooid
+Met ster (belangrijk)
+Zonder ster
+Komend (toekomst)
+Items ‘{item}’ zijn moeilijk te lezen in de lijsten (contrast {n}:1; 3:1 of meer is beter).

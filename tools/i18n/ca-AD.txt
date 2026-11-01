@@ -916,3 +916,65 @@
 915| Es mostren les primeres {n}.
 916| No hi ha alarmes en aquest període.
 917| Posposada {time}
+918| 📅 Calendaris
+919| Calendaris a la vista Mes
+920| Calendaris a la vista Recordatoris
+921| Els meus recordatoris
+922| Encara no hi ha subscripcions a calendaris.
+923| Subscriu-te a un calendari…
+924| Gestiona les subscripcions…
+925| Es mostren aquí {shown} de {all} subscripcions
+926| Subscriu-te a calendaris del web (festius, esports, un equip)
+927| Del calendari al qual et subscrius: {name}
+928| D'un calendari al qual et subscrius
+929| Obre…
+930| Copia als meus recordatoris
+931| «{s}» copiat als teus recordatoris
+932| De «{name}», un calendari al qual et subscrius. No es pot canviar aquí.
+933| Desa la teva pròpia còpia als teus recordatoris
+934| Subscripcions a calendaris…
+935| Calendaris del web (festius, esports, un calendari escolar o d'equip), només de lectura i sempre al dia
+936| Subscripcions a calendaris
+937| Festius, esports, un calendari escolar o d'equip: qualsevol calendari (.ics) amb una adreça web. És només de lectura i es manté al dia tot sol.
+938| Adreça web del calendari
+939| Subscriu-te
+940| Actualitza-ho tot
+941| Color
+942| Cada quant es torna a baixar
+943| Cada hora
+944| Cada 6 hores
+945| Cada 12 hores
+946| Vista Recordatoris
+947| Vista Mes
+948| Actualitza ara
+949| Treu
+950| No s'ha pogut actualitzar: {why}
+951| Es mostra la còpia del {time}.
+952| Actualitzat {time} · {events}
+953| {n} esdeveniment
+954| {n} esdeveniments
+955| Escriu l'adreça web d'un calendari.
+956| S'està subscrivint…
+957| Subscrit a «{name}» ({events}).
+958| Vols treure la subscripció?
+959| «{name}» i els seus esdeveniments ja no es mostraran. Els teus recordatoris no es toquen.
+960| Escriu una adreça web que comenci per https://, http:// o webcal://.
+961| Ja estàs subscrit a aquest calendari.
+962| Aquest calendari és massa gran (més de 10 MB).
+963| Aquesta adreça no ha donat cap calendari (un fitxer .ics).
+964| Aquesta subscripció ja no existeix.
+965| Això ve d'un calendari al qual et subscrius, així que no es pot canviar aquí.
+966| El web del calendari no ha donat el calendari. Comprova l'adreça.
+967| El web del calendari no ha respost a temps.
+968| No s'ha pogut baixar el calendari. Comprova l'adreça i la connexió.
+969| No s'ha pogut baixar el calendari. Comprova l'adreça i la connexió (i que ReminderFoxAgain pot llegir aquest web).
+970| ReminderFoxAgain necessita el teu permís per llegir aquest web.
+971| Les subscripcions a calendaris no estan disponibles aquí.
+972| No s'ha pogut actualitzar
+973| Colors del text dels elements
+974| Marca un color per fer-lo servir. Guanya el més concret: Completat, després Destacat o No destacat, després Passat, Avui o Proper, després No completat. Els no marcats segueixen el tema (els elements passats es veuen com els altres).
+975| No completat
+976| Destacat (important)
+977| No destacat
+978| Proper (futur)
+979| Els elements «{item}» són difícils de llegir a les llistes (contrast {n}:1; 3:1 o més és millor).

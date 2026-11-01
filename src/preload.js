@@ -69,6 +69,15 @@ contextBridge.exposeInMainWorld('rf', {
   openAlarm: (key) => call('alarm:open', key),
   hideAlarm: () => call('alarm:hide'),
   alarmState: () => call('alarm:state'),
+  // calendar subscriptions
+  subsList: () => call('subs:list'),
+  subsAdd: (o) => call('subs:add', o),
+  subsUpdate: (id, patch) => call('subs:update', id, patch),
+  subsRemove: (id) => call('subs:remove', id),
+  subsRefresh: (id) => call('subs:refresh', id),
+  subsRange: (from, to, view) => call('subs:range', from, to, view),
+  subsNext: (from, opts, view) => call('subs:next', from, opts, view),
+  subsCopy: (uid) => call('subs:copy', uid),
   // the Alarms view
   alarmsList: (days) => call('alarms:list', days),
   unskipAlarm: (key) => call('alarm:unskip', key),

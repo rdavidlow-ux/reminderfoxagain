@@ -916,3 +916,65 @@
 915| Viser de første {n}.
 916| Ingen alarmer i denne periode.
 917| Udsat i {time}
+918| 📅 Kalendere
+919| Kalendere i månedsvisningen
+920| Kalendere i påmindelsesvisningen
+921| Mine påmindelser
+922| Ingen kalenderabonnementer endnu.
+923| Abonnér på en kalender…
+924| Administrer abonnementer…
+925| {shown} af {all} kalenderabonnementer vises her
+926| Abonnér på kalendere fra nettet (helligdage, sport, et hold)
+927| Fra kalenderen, du abonnerer på: {name}
+928| Fra en kalender, du abonnerer på
+929| Åbn…
+930| Kopiér til mine påmindelser
+931| “{s}” kopieret til dine påmindelser
+932| Fra “{name}”, en kalender, du abonnerer på. Den kan ikke ændres her.
+933| Gem din egen kopi i dine påmindelser
+934| Kalenderabonnementer…
+935| Kalendere fra nettet (helligdage, sport, en skole- eller holdkalender), skrivebeskyttede og holdt opdateret
+936| Kalenderabonnementer
+937| Helligdage, sport, en skole- eller holdkalender: enhver kalender (.ics) med en webadresse. Den er skrivebeskyttet og holder sig selv opdateret.
+938| Kalenderens webadresse
+939| Abonnér
+940| Opdater alle
+941| Farve
+942| Hvor ofte den hentes igen
+943| Hver time
+944| Hver 6. time
+945| Hver 12. time
+946| Påmindelsesvisning
+947| Månedsvisning
+948| Opdater nu
+949| Fjern
+950| Kunne ikke opdateres: {why}
+951| Viser kopien fra {time}.
+952| Opdateret {time} · {events}
+953| {n} begivenhed
+954| {n} begivenheder
+955| Skriv en kalenders webadresse.
+956| Abonnerer…
+957| Abonnerer på “{name}” ({events}).
+958| Fjern abonnement?
+959| “{name}” og dens begivenheder vises ikke længere. Dine egne påmindelser røres ikke.
+960| Skriv en webadresse, der starter med https://, http:// eller webcal://.
+961| Du abonnerer allerede på den kalender.
+962| Den kalender er for stor (mere end 10 MB).
+963| Den adresse gav ikke en kalender (en .ics-fil).
+964| Det abonnement findes ikke længere.
+965| Dette kommer fra en kalender, du abonnerer på, så det kan ikke ændres her.
+966| Kalenderens websted gav ikke kalenderen. Tjek adressen.
+967| Kalenderens websted svarede ikke i tide.
+968| Kalenderen kunne ikke hentes. Tjek adressen og din forbindelse.
+969| Kalenderen kunne ikke hentes. Tjek adressen og din forbindelse (og at ReminderFoxAgain må læse det websted).
+970| ReminderFoxAgain skal have din tilladelse til at læse det websted.
+971| Kalenderabonnementer er ikke tilgængelige her.
+972| Kunne ikke opdateres
+973| Tekstfarver for elementer
+974| Sæt flueben ved en farve for at bruge den. Den mest specifikke vinder: Fuldført, så Med stjerne eller Uden stjerne, så Tidligere, I dag eller Kommende, så Ikke fuldført. Dem uden flueben følger temaet (tidligere elementer ser ud som de andre).
+975| Ikke fuldført
+976| Med stjerne (vigtig)
+977| Uden stjerne
+978| Kommende (fremtid)
+979| Elementer “{item}” er svære at læse på listerne (kontrast {n}:1; 3:1 eller mere er bedre).

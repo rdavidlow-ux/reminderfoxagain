@@ -218,6 +218,15 @@
       platform: 'thunderbird', os: OS[info.os] || 'linux', version: RF_VERSION, dataLabel: DATA_LABEL,
       files, emit, windows, notify, badge, tooltip, menu, openUrl, loadDict, languageChanged, openEmail,
       onSettings: (settings, patch) => onSettings(settings, patch),
+      // calendar subscriptions: read with the permission asked for that site when subscribing
+      fetchText: async (url) => {
+        let r = null;
+        try { r = await fetch(url, { credentials: 'omit', cache: 'no-store' }); } catch (e) {
+          throw new Error('The calendar could not be fetched. Check the address and your connection (and that ReminderFoxAgain may read that web site).');
+        }
+        if (!r.ok) throw new Error('The calendar\'s web site did not give the calendar. Check the address.');
+        return r.text();
+      },
       systemLocale: () => browser.i18n.getUILanguage() || navigator.language || 'en',
     });
     await host.start();

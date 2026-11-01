@@ -916,3 +916,65 @@
 915| Pokazano pierwsze {n}.
 916| Brak alarmów w tym okresie.
 917| Odłożono na {time}
+918| 📅 Kalendarze
+919| Kalendarze w widoku Miesiąc
+920| Kalendarze w widoku Przypomnienia
+921| Moje przypomnienia
+922| Nie ma jeszcze subskrypcji kalendarzy.
+923| Subskrybuj kalendarz…
+924| Zarządzaj subskrypcjami…
+925| Pokazano tu {shown} z {all} subskrypcji kalendarzy
+926| Subskrybuj kalendarze z sieci (święta, sport, drużyna)
+927| Z subskrybowanego kalendarza: {name}
+928| Z subskrybowanego kalendarza
+929| Otwórz…
+930| Kopiuj do moich przypomnień
+931| Skopiowano „{s}” do Twoich przypomnień
+932| Z „{name}”, kalendarza, który subskrybujesz. Nie można go tu zmienić.
+933| Zapisz własną kopię w swoich przypomnieniach
+934| Subskrypcje kalendarzy…
+935| Kalendarze z sieci (święta, sport, kalendarz szkolny lub drużyny), tylko do odczytu i zawsze aktualne
+936| Subskrypcje kalendarzy
+937| Święta, sport, kalendarz szkolny lub drużyny: dowolny kalendarz (.ics) z adresem internetowym. Jest tylko do odczytu i sam się aktualizuje.
+938| Adres internetowy kalendarza
+939| Subskrybuj
+940| Odśwież wszystkie
+941| Kolor
+942| Jak często jest pobierany ponownie
+943| Co godzinę
+944| Co 6 godzin
+945| Co 12 godzin
+946| Widok Przypomnienia
+947| Widok Miesiąc
+948| Odśwież teraz
+949| Usuń
+950| Nie udało się zaktualizować: {why}
+951| Pokazano kopię z {time}.
+952| Zaktualizowano {time} · {events}
+953| {n} wydarzenie
+954| {n} wydarzeń
+955| Wpisz adres internetowy kalendarza.
+956| Subskrybowanie…
+957| Subskrybujesz „{name}” ({events}).
+958| Usunąć subskrypcję?
+959| „{name}” i jego wydarzenia nie będą już pokazywane. Twoje własne przypomnienia pozostaną bez zmian.
+960| Wpisz adres internetowy zaczynający się od https://, http:// lub webcal://.
+961| Już subskrybujesz ten kalendarz.
+962| Ten kalendarz jest za duży (ponad 10 MB).
+963| Pod tym adresem nie było kalendarza (pliku .ics).
+964| Ta subskrypcja już nie istnieje.
+965| To pochodzi z subskrybowanego kalendarza, więc nie można tego tu zmienić.
+966| Witryna kalendarza nie udostępniła kalendarza. Sprawdź adres.
+967| Witryna kalendarza nie odpowiedziała na czas.
+968| Nie udało się pobrać kalendarza. Sprawdź adres i połączenie.
+969| Nie udało się pobrać kalendarza. Sprawdź adres i połączenie (oraz czy ReminderFoxAgain może czytać tę witrynę).
+970| ReminderFoxAgain potrzebuje Twojej zgody na czytanie tej witryny.
+971| Subskrypcje kalendarzy nie są tu dostępne.
+972| Nie udało się zaktualizować
+973| Kolory tekstu elementów
+974| Zaznacz kolor, aby go użyć. Wygrywa najbardziej szczegółowy: Ukończone, potem Z gwiazdką lub Bez gwiazdki, potem Przeszłe, Dziś lub Nadchodzące, potem Nieukończone. Niezaznaczone kierują się motywem (przeszłe elementy wyglądają jak pozostałe).
+975| Nieukończone
+976| Z gwiazdką (ważne)
+977| Bez gwiazdki
+978| Nadchodzące (przyszłe)
+979| Elementy „{item}” są trudne do odczytania na listach (kontrast {n}:1; lepiej 3:1 lub więcej).

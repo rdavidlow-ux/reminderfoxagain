@@ -3,7 +3,10 @@
 # Every line shows the value found and the expected one; a mismatch is marked WRONG.
 set -uo pipefail
 cd "$(dirname "$0")/.."
-TMP="$(mktemp -d)"; trap 'rm -rf "$TMP"' EXIT
+TMP="$(mktemp -d)"
+# a made-up calendar to subscribe to (tools/ui/subscriptions.js)
+node tools/sample-calendar.js serve 8765 & CAL_PID=$!
+trap 'kill $CAL_PID 2>/dev/null; rm -rf "$TMP"' EXIT
 run() { # name sample mainScript [alarmScript]   (env SIZE=WxH fixes the window size)
   [ -n "${ONLY:-}" ] && [[ " $ONLY " != *" $1 "* ]] && return 0   # ONLY="lists archive" runs just those
   local dir="$TMP/${KEEP:-$1}"   # KEEP=<earlier run> runs again on that run's data and settings
@@ -35,6 +38,8 @@ run lists basic lists.js
 run alarms-data basic alarms-data.js
 run alarms-view basic alarms-view.js
 run month-scroll basic month-scroll.js
+run subscriptions basic subscriptions.js
+run item-colours basic item-colours.js
 run import-month basic import-month.js
 run view-options basic view-options.js
 run place-themes bills place-themes.js

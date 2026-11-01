@@ -222,9 +222,18 @@
       '--shadow': dark ? '0 10px 30px rgba(0, 0, 0, .45), 0 2px 6px rgba(0, 0, 0, .3)' : '0 10px 30px rgba(20, 20, 20, .16), 0 2px 6px rgba(20, 20, 20, .08)',
       '--imp': star, '--imp-ink': contrast(star, surface) >= 4.5 ? star : mix(star, ink, 0.35), '--imp-soft': mix(bg, star, dark ? 0.24 : 0.12),
       '--on-accent': onAccent, 'color-scheme': dark ? 'dark' : 'light',
+      ...itemVars(t, mix(ink, bg, 0.55), contrast(star, surface) >= 4.5 ? star : mix(star, ink, 0.35)),
     };
   }
-  const VAR_NAMES = Object.keys(themeVars({}));
+  // A theme's own item colours (optional; one left out falls through, see styles.css): completed, not completed,
+  // starred, not starred, past, today, coming. Completed and starred items keep their usual colours by default.
+  const ITEM_COLORS = [['itDone', '--it-done'], ['itOpen', '--it-open'], ['itImp', '--it-imp'], ['itPlain', '--it-plain'], ['itPast', '--it-past'], ['itToday', '--it-today'], ['itFuture', '--it-future']];
+  function itemVars(t, done, imp) {
+    const out = { '--it-done': hex(t.itDone, done), '--it-imp': hex(t.itImp, imp) };
+    for (const [k, v] of ITEM_COLORS) if (k !== 'itDone' && k !== 'itImp' && hex(t[k], '')) out[v] = hex(t[k], '');
+    return out;
+  }
+  const VAR_NAMES = [...new Set([...Object.keys(themeVars({})), ...ITEM_COLORS.map(([, v]) => v)])];
   // every theme to offer: the built-in ones, then yours (with swatches: background, accent, starred, text)
   function themeList(customs) {
     return [...THEMES, ...(customs || []).map((c) => ({ id: `custom:${c.id}`, label: c.name, custom: c, sw: [hex(c.bg, '#fbf8f4'), hex(c.accent, '#e26e26'), hex(c.star, '#8b3fc9'), hex(c.ink, '#2a1c11')] }))];
@@ -285,5 +294,5 @@
     }
   }
 
-  window.RF = { ...(window.RF || {}), pad, dayKey, parseKey, startOfDay, addDays, fmt, T, esc, chime, playSound, playTone, stopSound, TONES, snooze, LOCALE, THEMES, THEME_COLORS, themeList, themeVars, contrast, applyTheme, expandAges, setFormats, DATE_FORMATS };
+  window.RF = { ...(window.RF || {}), pad, dayKey, parseKey, startOfDay, addDays, fmt, T, esc, chime, playSound, playTone, stopSound, TONES, snooze, LOCALE, THEMES, THEME_COLORS, themeList, themeVars, ITEM_COLORS, contrast, applyTheme, expandAges, setFormats, DATE_FORMATS };
 })();

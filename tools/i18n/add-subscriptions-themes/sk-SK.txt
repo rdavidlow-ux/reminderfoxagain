@@ -1,0 +1,62 @@
+📅 Kalendáre
+Kalendáre v zobrazení Mesiac
+Kalendáre v zobrazení Pripomienky
+Moje pripomienky
+Zatiaľ žiadne odoberané kalendáre.
+Odoberať kalendár…
+Spravovať odbery…
+Zobrazených tu {shown} z {all} odoberaných kalendárov
+Odoberať kalendáre z webu (sviatky, šport, tím)
+Z odoberaného kalendára: {name}
+Z odoberaného kalendára
+Otvoriť…
+Skopírovať do mojich pripomienok
+„{s}“ skopírované do vašich pripomienok
+Z „{name}“, kalendára, ktorý odoberáte. Tu sa nedá zmeniť.
+Uložiť vlastnú kópiu do pripomienok
+Odoberané kalendáre…
+Kalendáre z webu (sviatky, šport, školský alebo tímový kalendár), iba na čítanie a stále aktuálne
+Odoberané kalendáre
+Sviatky, šport, školský alebo tímový kalendár: akýkoľvek kalendár (.ics) s webovou adresou. Je iba na čítanie a sám sa aktualizuje.
+Webová adresa kalendára
+Odoberať
+Obnoviť všetko
+Farba
+Ako často sa znova sťahuje
+Každú hodinu
+Každých 6 hodín
+Každých 12 hodín
+Zobrazenie Pripomienky
+Zobrazenie Mesiac
+Obnoviť teraz
+Odstrániť
+Nepodarilo sa aktualizovať: {why}
+Zobrazuje sa kópia z {time}.
+Aktualizované {time} · {events}
+{n} udalosť
+{n} udalostí
+Zadajte webovú adresu kalendára.
+Prihlasuje sa na odber…
+Odoberáte „{name}“ ({events}).
+Zrušiť odber?
+„{name}“ a jeho udalosti sa už nebudú zobrazovať. Vaše vlastné pripomienky zostanú nedotknuté.
+Zadajte webovú adresu začínajúcu https://, http:// alebo webcal://.
+Tento kalendár už odoberáte.
+Tento kalendár je príliš veľký (viac ako 10 MB).
+Na tejto adrese nebol kalendár (súbor .ics).
+Tento odber už neexistuje.
+Pochádza z kalendára, ktorý odoberáte, takže sa tu nedá zmeniť.
+Web kalendára kalendár neposkytol. Skontrolujte adresu.
+Web kalendára neodpovedal včas.
+Kalendár sa nepodarilo stiahnuť. Skontrolujte adresu a pripojenie.
+Kalendár sa nepodarilo stiahnuť. Skontrolujte adresu a pripojenie (a či ReminderFoxAgain smie tento web čítať).
+ReminderFoxAgain potrebuje vaše povolenie na čítanie tohto webu.
+Odoberané kalendáre tu nie sú dostupné.
+Nepodarilo sa aktualizovať
+Farby textu položiek
+Začiarknite farbu, ak ju chcete použiť. Vyhráva najkonkrétnejšia: Dokončené, potom S hviezdičkou alebo Bez hviezdičky, potom Minulé, Dnes alebo Nadchádzajúce, potom Nedokončené. Nezačiarknuté sa riadia motívom (minulé položky vyzerajú ako ostatné).
+Nedokončené
+S hviezdičkou (dôležité)
+Bez hviezdičky
+Nadchádzajúce (budúce)
+Položky „{item}“ sú v zoznamoch zle čitateľné (kontrast {n}:1; lepšie je 3:1 alebo viac).

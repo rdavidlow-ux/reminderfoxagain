@@ -1,0 +1,62 @@
+📅 Kalenterit
+Kalenterit kuukausinäkymässä
+Kalenterit muistutusnäkymässä
+Omat muistutukset
+Ei vielä kalenteritilauksia.
+Tilaa kalenteri…
+Hallitse tilauksia…
+{shown}/{all} kalenteritilausta näytetään tässä
+Tilaa kalentereita verkosta (pyhäpäivät, urheilu, joukkue)
+Tilaamastasi kalenterista: {name}
+Tilaamastasi kalenterista
+Avaa…
+Kopioi omiin muistutuksiin
+”{s}” kopioitiin muistutuksiisi
+Kalenterista ”{name}”, jonka olet tilannut. Sitä ei voi muuttaa täällä.
+Tallenna oma kopio muistutuksiisi
+Kalenteritilaukset…
+Kalenterit verkosta (pyhäpäivät, urheilu, koulun tai joukkueen kalenteri), vain luku -tilassa ja ajan tasalla
+Kalenteritilaukset
+Pyhäpäivät, urheilu, koulun tai joukkueen kalenteri: mikä tahansa kalenteri (.ics), jolla on verkko-osoite. Se on vain luku -tilassa ja pysyy itse ajan tasalla.
+Kalenterin verkko-osoite
+Tilaa
+Päivitä kaikki
+Väri
+Kuinka usein se haetaan uudelleen
+Joka tunti
+6 tunnin välein
+12 tunnin välein
+Muistutusnäkymä
+Kuukausinäkymä
+Päivitä nyt
+Poista
+Päivitys ei onnistunut: {why}
+Näytetään kopio ajalta {time}.
+Päivitetty {time} · {events}
+{n} tapahtuma
+{n} tapahtumaa
+Kirjoita kalenterin verkko-osoite.
+Tilataan…
+Tilattu ”{name}” ({events}).
+Poistetaanko tilaus?
+”{name}” ja sen tapahtumat eivät enää näy. Omiin muistutuksiisi ei kosketa.
+Kirjoita verkko-osoite, joka alkaa https://, http:// tai webcal://.
+Olet jo tilannut sen kalenterin.
+Kalenteri on liian suuri (yli 10 Mt).
+Osoitteesta ei saatu kalenteria (.ics-tiedostoa).
+Tilausta ei enää ole.
+Tämä on tilaamastasi kalenterista, joten sitä ei voi muuttaa täällä.
+Kalenterin sivusto ei antanut kalenteria. Tarkista osoite.
+Kalenterin sivusto ei vastannut ajoissa.
+Kalenteria ei voitu hakea. Tarkista osoite ja yhteys.
+Kalenteria ei voitu hakea. Tarkista osoite ja yhteys (ja että ReminderFoxAgain saa lukea sivustoa).
+ReminderFoxAgain tarvitsee luvan lukea sivustoa.
+Kalenteritilaukset eivät ole käytettävissä täällä.
+Päivitys ei onnistunut
+Kohteiden tekstivärit
+Valitse väri ottaaksesi sen käyttöön. Tarkin voittaa: Valmis, sitten Tähdellä tai Ilman tähteä, sitten Mennyt, Tänään tai Tuleva, sitten Keskeneräinen. Valitsemattomat seuraavat teemaa (menneet kohteet näyttävät samalta kuin muut).
+Keskeneräinen
+Tähdellä (tärkeä)
+Ilman tähteä
+Tuleva (tulevaisuus)
+Kohteita ”{item}” on vaikea lukea luetteloissa (kontrasti {n}:1; 3:1 tai enemmän on parempi).

@@ -3,7 +3,24 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
-## Next — the Alarms view and a scrolling Month view (branch `experimental-add-on`, not released)
+## Next — calendar subscriptions, item colours, the Alarms view and a scrolling Month view (branch `experimental-add-on`, not released)
+
+- **Calendar subscriptions**, in the desktop app and the Thunderbird add-on: subscribe to any calendar with a web
+  address (holidays, sports, a school or team calendar; https://, http:// or webcal://) from 📅 Calendars in the
+  Reminders or Month toolbar, or Settings → Data → Calendar subscriptions…. Its events show in the subscription's own
+  colour, marked with its name, and are read-only: open one to see it, or Copy to my reminders to make it yours. Each
+  subscription is fetched again on its own (every hour to every week; every day at first), keeps its last good copy
+  when it can't be reached (and says why), and can be renamed, recoloured, refreshed or removed. The add-on asks
+  Thunderbird once for permission to read the calendar's site.
+- **Choose which calendars each view shows:** 📅 Calendars in the Reminders toolbar and in the Month toolbar each have
+  a tick for every subscription, so a holiday calendar can be in the Month view but not in your list (the calendar
+  panel follows the Month view). A dot on the button means some are hidden there.
+- **Item colours in your own themes:** a theme of your own can now colour items' text by completed / not completed,
+  starred / not starred and past / today / coming (Settings → Display → New theme… or Edit…, "Item text colours").
+  The most particular colour wins: completed, then starred or not, then past, today or coming, then not completed;
+  colours left unticked follow the theme. They apply in the lists, the Month view and the calendar panel's day list.
+- **Past reminders no longer look faded:** in every built-in theme a past reminder that is neither completed nor
+  starred now has the same colour as today's and coming ones.
 
 - **The Month view scrolls**, in the desktop app and the Thunderbird add-on: the weeks run on above and below the
   month, so past and coming months are a scroll (or a swipe) away instead of a click per month. A month's worth of

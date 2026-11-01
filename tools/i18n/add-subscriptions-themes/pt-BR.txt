@@ -1,0 +1,62 @@
+📅 Calendários
+Calendários na visão Mês
+Calendários na visão Lembretes
+Meus lembretes
+Nenhuma assinatura de calendário ainda.
+Assinar um calendário…
+Gerenciar assinaturas…
+{shown} de {all} assinaturas de calendário mostradas aqui
+Assinar calendários da web (feriados, esportes, um time)
+Do calendário que você assina: {name}
+De um calendário que você assina
+Abrir…
+Copiar para meus lembretes
+“{s}” copiado para seus lembretes
+De “{name}”, um calendário que você assina. Não pode ser alterado aqui.
+Salvar sua própria cópia nos seus lembretes
+Assinaturas de calendários…
+Calendários da web (feriados, esportes, um calendário escolar ou de equipe), somente leitura e sempre atualizados
+Assinaturas de calendários
+Feriados, esportes, um calendário escolar ou de equipe: qualquer calendário (.ics) com um endereço web. É somente leitura e se mantém atualizado sozinho.
+Endereço web do calendário
+Assinar
+Atualizar todos
+Cor
+Com que frequência é baixado de novo
+A cada hora
+A cada 6 horas
+A cada 12 horas
+Visão Lembretes
+Visão Mês
+Atualizar agora
+Remover
+Não foi possível atualizar: {why}
+Mostrando a cópia de {time}.
+Atualizado {time} · {events}
+{n} evento
+{n} eventos
+Digite o endereço web de um calendário.
+Assinando…
+Assinatura de “{name}” feita ({events}).
+Remover a assinatura?
+“{name}” e seus eventos não serão mais mostrados. Seus próprios lembretes não são alterados.
+Digite um endereço web que comece com https://, http:// ou webcal://.
+Você já assina esse calendário.
+Esse calendário é grande demais (mais de 10 MB).
+Esse endereço não trouxe um calendário (um arquivo .ics).
+Essa assinatura não existe mais.
+Isto vem de um calendário que você assina, então não pode ser alterado aqui.
+O site do calendário não entregou o calendário. Confira o endereço.
+O site do calendário não respondeu a tempo.
+Não foi possível baixar o calendário. Confira o endereço e sua conexão.
+Não foi possível baixar o calendário. Confira o endereço e sua conexão (e se o ReminderFoxAgain pode ler esse site).
+O ReminderFoxAgain precisa da sua permissão para ler esse site.
+Assinaturas de calendários não estão disponíveis aqui.
+Não foi possível atualizar
+Cores do texto dos itens
+Marque uma cor para usá-la. A mais específica vence: Concluído, depois Com estrela ou Sem estrela, depois Passado, Hoje ou Próximo, depois Não concluído. As não marcadas seguem o tema (itens passados ficam como os outros).
+Não concluído
+Com estrela (importante)
+Sem estrela
+Próximo (futuro)
+Os itens “{item}” são difíceis de ler nas listas (contraste {n}:1; 3:1 ou mais é melhor).

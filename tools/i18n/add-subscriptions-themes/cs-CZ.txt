@@ -1,0 +1,62 @@
+📅 Kalendáře
+Kalendáře v zobrazení Měsíc
+Kalendáře v zobrazení Připomínky
+Moje připomínky
+Zatím žádné odebírané kalendáře.
+Odebírat kalendář…
+Spravovat odběry…
+Zobrazeno zde {shown} z {all} odebíraných kalendářů
+Odebírat kalendáře z webu (svátky, sport, tým)
+Z odebíraného kalendáře: {name}
+Z odebíraného kalendáře
+Otevřít…
+Zkopírovat do mých připomínek
+„{s}“ zkopírováno do vašich připomínek
+Z „{name}“, kalendáře, který odebíráte. Zde jej nelze změnit.
+Uložit vlastní kopii do připomínek
+Odebírané kalendáře…
+Kalendáře z webu (svátky, sport, školní nebo týmový kalendář), jen pro čtení a stále aktuální
+Odebírané kalendáře
+Svátky, sport, školní nebo týmový kalendář: jakýkoli kalendář (.ics) s webovou adresou. Je jen pro čtení a sám se aktualizuje.
+Webová adresa kalendáře
+Odebírat
+Obnovit vše
+Barva
+Jak často se znovu stahuje
+Každou hodinu
+Každých 6 hodin
+Každých 12 hodin
+Zobrazení Připomínky
+Zobrazení Měsíc
+Obnovit nyní
+Odebrat
+Nepodařilo se aktualizovat: {why}
+Zobrazuje se kopie z {time}.
+Aktualizováno {time} · {events}
+{n} událost
+{n} událostí
+Zadejte webovou adresu kalendáře.
+Přihlašování k odběru…
+Odebíráte „{name}“ ({events}).
+Zrušit odběr?
+„{name}“ a jeho události se už nebudou zobrazovat. Vaše vlastní připomínky zůstanou beze změny.
+Zadejte webovou adresu začínající https://, http:// nebo webcal://.
+Tento kalendář už odebíráte.
+Tento kalendář je příliš velký (více než 10 MB).
+Na této adrese nebyl kalendář (soubor .ics).
+Tento odběr už neexistuje.
+Pochází z kalendáře, který odebíráte, takže jej zde nelze změnit.
+Web kalendáře kalendář nevydal. Zkontrolujte adresu.
+Web kalendáře neodpověděl včas.
+Kalendář se nepodařilo stáhnout. Zkontrolujte adresu a připojení.
+Kalendář se nepodařilo stáhnout. Zkontrolujte adresu a připojení (a že ReminderFoxAgain smí tento web číst).
+ReminderFoxAgain potřebuje vaše svolení ke čtení tohoto webu.
+Odebírané kalendáře zde nejsou dostupné.
+Nepodařilo se aktualizovat
+Barvy textu položek
+Zaškrtněte barvu, chcete-li ji použít. Vyhrává nejkonkrétnější: Dokončeno, pak S hvězdičkou nebo Bez hvězdičky, pak Minulé, Dnes nebo Nadcházející, pak Nedokončeno. Nezaškrtnuté se řídí motivem (minulé položky vypadají jako ostatní).
+Nedokončeno
+S hvězdičkou (důležité)
+Bez hvězdičky
+Nadcházející (budoucí)
+Položky „{item}“ jsou v seznamech špatně čitelné (kontrast {n}:1; lepší je 3:1 nebo více).

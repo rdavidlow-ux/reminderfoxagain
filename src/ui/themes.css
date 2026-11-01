@@ -87,7 +87,6 @@
 :root[data-theme="contrast"] .agenda .item,
 :root[data-theme="contrast"] .welcome .opt,
 :root[data-theme="contrast"] .ctx { border: 2px solid #ffffff; }
-:root[data-theme="contrast"] .list tr.past td { color: #d0d0d0; }
 :root[data-theme="contrast"] .list tr.today td { box-shadow: inset 0 2px 0 var(--fox), inset 0 -2px 0 var(--fox); }
 :root[data-theme="contrast"] .list tr.selected td { outline: 2px solid #00e5ff; outline-offset: -2px; }
 :root[data-theme="contrast"] .mday.out,
@@ -111,17 +110,13 @@
 span.imp, .star-btn[aria-pressed="true"] { color: var(--imp); }
 .star-btn[aria-pressed="true"] { border-color: var(--imp); background: var(--imp-soft); }
 .list tr.important td.c-chk { box-shadow: inset 4px 0 0 var(--imp); }
-.list tr.important td.c-desc .t { color: var(--imp-ink); font-weight: 650; }
-.list tr.important.done td.c-desc .t { color: var(--done); }
-.list tr.important.past td.c-desc .t { color: var(--imp-ink); opacity: .8; }
-.ev.important { background: var(--imp-soft); color: var(--imp-ink); font-weight: 600; }
+.list tr.important td.c-desc .t { font-weight: 650; }
+.ev.important { background: var(--imp-soft); font-weight: 600; }
 .ev.important.allday { background: var(--imp); color: #fff; }
-.ev.important.todo { background: var(--imp-soft); color: var(--imp-ink); }
+.ev.important.todo { background: var(--imp-soft); }
 .mday.has.imp::after { background: var(--imp); }
 .mday.picked.has.imp::after { background: var(--on-accent); }
 .agenda .item.important { border-left: 4px solid var(--imp); padding-left: 7px; }
-.agenda .item.important .tx b { color: var(--imp-ink); }
-.agenda .item.important.done .tx b { color: var(--done); }
 .card.important { border-left: 4px solid var(--imp); }
 .card.important h2, .card h2 .star { color: var(--imp-ink); }
 :root[data-theme="contrast"] .ev.important.allday { color: #000; }
@@ -266,3 +261,26 @@ footer.status #alarmState.off { color: var(--danger); font-weight: 600; text-dec
 .al-ringing .al-when { color: var(--fox-ink); font-weight: 600; }
 .al-skipped b, .al-skipped .al-when { color: var(--done); text-decoration: line-through; }
 .al-acts { display: flex; gap: 2px; flex-wrap: wrap; justify-content: flex-end; max-width: 50%; }
+/* calendar subscriptions: their items in the subscription's colour, read-only */
+.list tr.subcal td.c-chk { box-shadow: inset 4px 0 0 var(--sub-c); }
+.subcal-name { display: inline-block; margin-left: 6px; padding: 0 6px; border-radius: 999px; font-size: 11.5px; line-height: 18px; background: color-mix(in srgb, var(--sub-c) 16%, var(--surface)); color: var(--ink-2); border: 1px solid color-mix(in srgb, var(--sub-c) 45%, var(--surface)); vertical-align: 1px; }
+.ev.subcal { background: color-mix(in srgb, var(--sub-c) 18%, var(--surface)); box-shadow: inset 3px 0 0 var(--sub-c); }
+.ev.subcal.allday { background: var(--sub-c); color: #fff; box-shadow: none; }
+.agenda .item.subcal { border-left: 4px solid var(--sub-c); padding-left: 7px; }
+.cal-btn.has-hidden::after { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--fox); margin-left: 5px; vertical-align: 2px; }
+.cal-pop { min-width: 240px; max-width: 340px; padding: 6px; }
+.cal-pop .cal-pop-h { font-size: 12px; font-weight: 600; color: var(--ink-3); padding: 4px 8px 6px; }
+.cal-pop label.inline-chk { display: flex; align-items: center; gap: 6px; padding: 5px 8px; border-radius: 5px; cursor: pointer; }
+.cal-pop label.inline-chk:hover { background: var(--surface-2); }
+.cal-pop .cal-mine { cursor: default; color: var(--ink-2); }
+.cal-pop .dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.cal-pop .dot.mine { background: var(--fox); }
+.cal-pop .warn-dot { color: var(--danger); font-weight: 700; }
+.cal-pop .note { padding: 4px 8px; }
+.dlg.subs-dlg { width: 640px; }
+.sub-list { max-height: min(380px, calc(100vh - 320px)); }
+.sub-row { padding: 10px 12px; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.sub-row:last-child { border-bottom: 0; }
+.sub-url { font-size: 12px; color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ro-note { margin: 0 18px; padding: 8px 12px; border-radius: 8px; background: var(--surface-2); }
+#editor.readonly .dlg-body { opacity: .92; }

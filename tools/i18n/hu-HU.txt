@@ -916,3 +916,65 @@
 915| Az első {n} látható.
 916| Ebben az időszakban nincs riasztás.
 917| Szundi: {time}
+918| 📅 Naptárak
+919| Naptárak a Hónap nézetben
+920| Naptárak az Emlékeztetők nézetben
+921| Saját emlékeztetőim
+922| Még nincs feliratkozott naptár.
+923| Feliratkozás egy naptárra…
+924| Feliratkozások kezelése…
+925| {all} feliratkozott naptárból {shown} látható itt
+926| Feliratkozás webes naptárakra (ünnepek, sport, csapat)
+927| A feliratkozott naptárból: {name}
+928| Feliratkozott naptárból
+929| Megnyitás…
+930| Másolás a saját emlékeztetőimbe
+931| „{s}” átmásolva az emlékeztetőibe
+932| Innen: „{name}”, egy feliratkozott naptár. Itt nem módosítható.
+933| Saját másolat mentése az emlékeztetői közé
+934| Naptár-feliratkozások…
+935| Webes naptárak (ünnepek, sport, iskolai vagy csapatnaptár), csak olvashatók és naprakészek
+936| Naptár-feliratkozások
+937| Ünnepek, sport, iskolai vagy csapatnaptár: bármely naptár (.ics), amelynek webcíme van. Csak olvasható, és magától naprakész marad.
+938| A naptár webcíme
+939| Feliratkozás
+940| Összes frissítése
+941| Szín
+942| Milyen gyakran töltődik le újra
+943| Óránként
+944| 6 óránként
+945| 12 óránként
+946| Emlékeztetők nézet
+947| Hónap nézet
+948| Frissítés most
+949| Eltávolítás
+950| Nem sikerült frissíteni: {why}
+951| A másolat látható ekkortól: {time}.
+952| Frissítve: {time} · {events}
+953| {n} esemény
+954| {n} esemény
+955| Adja meg egy naptár webcímét.
+956| Feliratkozás…
+957| Feliratkozva erre: „{name}” ({events}).
+958| Eltávolítja a feliratkozást?
+959| „{name}” és eseményei többé nem láthatók. A saját emlékeztetőit ez nem érinti.
+960| Adjon meg egy https://, http:// vagy webcal:// kezdetű webcímet.
+961| Erre a naptárra már feliratkozott.
+962| Ez a naptár túl nagy (több mint 10 MB).
+963| Ez a cím nem adott naptárt (.ics fájlt).
+964| Ez a feliratkozás már nem létezik.
+965| Ez egy feliratkozott naptárból származik, ezért itt nem módosítható.
+966| A naptár webhelye nem adta a naptárt. Ellenőrizze a címet.
+967| A naptár webhelye nem válaszolt időben.
+968| A naptárt nem sikerült letölteni. Ellenőrizze a címet és a kapcsolatot.
+969| A naptárt nem sikerült letölteni. Ellenőrizze a címet és a kapcsolatot (és hogy a ReminderFoxAgain olvashatja-e azt a webhelyet).
+970| A ReminderFoxAgainnak engedélyre van szüksége a webhely olvasásához.
+971| A naptár-feliratkozások itt nem érhetők el.
+972| Nem sikerült frissíteni
+973| Elemek szövegszínei
+974| Jelöljön be egy színt a használatához. A legpontosabb nyer: Kész, aztán Csillagos vagy Nem csillagos, aztán Múltbeli, Mai vagy Közelgő, aztán Nincs kész. A be nem jelöltek a témát követik (a múltbeli elemek olyanok, mint a többi).
+975| Nincs kész
+976| Csillagos (fontos)
+977| Nem csillagos
+978| Közelgő (jövőbeli)
+979| A(z) „{item}” elemek nehezen olvashatók a listákon (kontraszt {n}:1; 3:1 vagy több a jobb).

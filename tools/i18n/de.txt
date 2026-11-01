@@ -916,3 +916,65 @@
 915| Die ersten {n} werden gezeigt.
 916| Keine Alarme in diesem Zeitraum.
 917| Schlummert für {time}
+918| 📅 Kalender
+919| Kalender in der Monatsansicht
+920| Kalender in der Erinnerungsansicht
+921| Meine Erinnerungen
+922| Noch keine Kalenderabonnements.
+923| Einen Kalender abonnieren…
+924| Abonnements verwalten…
+925| {shown} von {all} Kalenderabonnements werden hier gezeigt
+926| Kalender aus dem Web abonnieren (Feiertage, Sport, ein Team)
+927| Aus dem Kalender, den Sie abonniert haben: {name}
+928| Aus einem Kalender, den Sie abonniert haben
+929| Öffnen…
+930| In meine Erinnerungen kopieren
+931| „{s}“ in Ihre Erinnerungen kopiert
+932| Aus „{name}“, einem Kalender, den Sie abonniert haben. Er kann hier nicht geändert werden.
+933| Eine eigene Kopie davon in Ihren Erinnerungen speichern
+934| Kalenderabonnements…
+935| Kalender aus dem Web (Feiertage, Sport, ein Schul- oder Teamkalender), schreibgeschützt und aktuell gehalten
+936| Kalenderabonnements
+937| Feiertage, Sport, ein Schul- oder Teamkalender: jeder Kalender (.ics) mit einer Webadresse. Er ist schreibgeschützt und hält sich selbst aktuell.
+938| Webadresse des Kalenders
+939| Abonnieren
+940| Alle aktualisieren
+941| Farbe
+942| Wie oft er neu abgerufen wird
+943| Jede Stunde
+944| Alle 6 Stunden
+945| Alle 12 Stunden
+946| Erinnerungsansicht
+947| Monatsansicht
+948| Jetzt aktualisieren
+949| Entfernen
+950| Konnte nicht aktualisiert werden: {why}
+951| Gezeigt wird die Kopie vom {time}.
+952| Aktualisiert {time} · {events}
+953| {n} Termin
+954| {n} Termine
+955| Geben Sie die Webadresse eines Kalenders ein.
+956| Wird abonniert…
+957| „{name}“ abonniert ({events}).
+958| Abonnement entfernen?
+959| „{name}“ und seine Termine werden nicht mehr gezeigt. Ihre eigenen Erinnerungen bleiben unberührt.
+960| Bitte geben Sie eine Webadresse ein, die mit https://, http:// oder webcal:// beginnt.
+961| Diesen Kalender haben Sie bereits abonniert.
+962| Dieser Kalender ist zu groß (mehr als 10 MB).
+963| Unter dieser Adresse gab es keinen Kalender (keine .ics-Datei).
+964| Dieses Abonnement gibt es nicht mehr.
+965| Dies stammt aus einem Kalender, den Sie abonniert haben, und kann hier nicht geändert werden.
+966| Die Website des Kalenders hat den Kalender nicht geliefert. Prüfen Sie die Adresse.
+967| Die Website des Kalenders hat nicht rechtzeitig geantwortet.
+968| Der Kalender konnte nicht abgerufen werden. Prüfen Sie die Adresse und Ihre Verbindung.
+969| Der Kalender konnte nicht abgerufen werden. Prüfen Sie die Adresse und Ihre Verbindung (und dass ReminderFoxAgain diese Website lesen darf).
+970| ReminderFoxAgain braucht Ihre Erlaubnis, diese Website zu lesen.
+971| Kalenderabonnements sind hier nicht verfügbar.
+972| Konnte nicht aktualisiert werden
+973| Textfarben der Einträge
+974| Haken Sie eine Farbe an, um sie zu verwenden. Die genaueste gewinnt: Erledigt, dann Markiert oder Nicht markiert, dann Vergangen, Heute oder Kommend, dann Nicht erledigt. Nicht angehakte folgen dem Design (vergangene Einträge sehen aus wie die anderen).
+975| Nicht erledigt
+976| Markiert (wichtig)
+977| Nicht markiert
+978| Kommend (Zukunft)
+979| Einträge „{item}“ sind auf den Listen schwer zu lesen (Kontrast {n}:1; 3:1 oder mehr ist besser).

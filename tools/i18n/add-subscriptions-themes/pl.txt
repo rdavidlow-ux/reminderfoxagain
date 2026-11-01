@@ -1,0 +1,62 @@
+📅 Kalendarze
+Kalendarze w widoku Miesiąc
+Kalendarze w widoku Przypomnienia
+Moje przypomnienia
+Nie ma jeszcze subskrypcji kalendarzy.
+Subskrybuj kalendarz…
+Zarządzaj subskrypcjami…
+Pokazano tu {shown} z {all} subskrypcji kalendarzy
+Subskrybuj kalendarze z sieci (święta, sport, drużyna)
+Z subskrybowanego kalendarza: {name}
+Z subskrybowanego kalendarza
+Otwórz…
+Kopiuj do moich przypomnień
+Skopiowano „{s}” do Twoich przypomnień
+Z „{name}”, kalendarza, który subskrybujesz. Nie można go tu zmienić.
+Zapisz własną kopię w swoich przypomnieniach
+Subskrypcje kalendarzy…
+Kalendarze z sieci (święta, sport, kalendarz szkolny lub drużyny), tylko do odczytu i zawsze aktualne
+Subskrypcje kalendarzy
+Święta, sport, kalendarz szkolny lub drużyny: dowolny kalendarz (.ics) z adresem internetowym. Jest tylko do odczytu i sam się aktualizuje.
+Adres internetowy kalendarza
+Subskrybuj
+Odśwież wszystkie
+Kolor
+Jak często jest pobierany ponownie
+Co godzinę
+Co 6 godzin
+Co 12 godzin
+Widok Przypomnienia
+Widok Miesiąc
+Odśwież teraz
+Usuń
+Nie udało się zaktualizować: {why}
+Pokazano kopię z {time}.
+Zaktualizowano {time} · {events}
+{n} wydarzenie
+{n} wydarzeń
+Wpisz adres internetowy kalendarza.
+Subskrybowanie…
+Subskrybujesz „{name}” ({events}).
+Usunąć subskrypcję?
+„{name}” i jego wydarzenia nie będą już pokazywane. Twoje własne przypomnienia pozostaną bez zmian.
+Wpisz adres internetowy zaczynający się od https://, http:// lub webcal://.
+Już subskrybujesz ten kalendarz.
+Ten kalendarz jest za duży (ponad 10 MB).
+Pod tym adresem nie było kalendarza (pliku .ics).
+Ta subskrypcja już nie istnieje.
+To pochodzi z subskrybowanego kalendarza, więc nie można tego tu zmienić.
+Witryna kalendarza nie udostępniła kalendarza. Sprawdź adres.
+Witryna kalendarza nie odpowiedziała na czas.
+Nie udało się pobrać kalendarza. Sprawdź adres i połączenie.
+Nie udało się pobrać kalendarza. Sprawdź adres i połączenie (oraz czy ReminderFoxAgain może czytać tę witrynę).
+ReminderFoxAgain potrzebuje Twojej zgody na czytanie tej witryny.
+Subskrypcje kalendarzy nie są tu dostępne.
+Nie udało się zaktualizować
+Kolory tekstu elementów
+Zaznacz kolor, aby go użyć. Wygrywa najbardziej szczegółowy: Ukończone, potem Z gwiazdką lub Bez gwiazdki, potem Przeszłe, Dziś lub Nadchodzące, potem Nieukończone. Niezaznaczone kierują się motywem (przeszłe elementy wyglądają jak pozostałe).
+Nieukończone
+Z gwiazdką (ważne)
+Bez gwiazdki
+Nadchodzące (przyszłe)
+Elementy „{item}” są trudne do odczytania na listach (kontrast {n}:1; lepiej 3:1 lub więcej).

@@ -1,0 +1,62 @@
+📅 Naptárak
+Naptárak a Hónap nézetben
+Naptárak az Emlékeztetők nézetben
+Saját emlékeztetőim
+Még nincs feliratkozott naptár.
+Feliratkozás egy naptárra…
+Feliratkozások kezelése…
+{all} feliratkozott naptárból {shown} látható itt
+Feliratkozás webes naptárakra (ünnepek, sport, csapat)
+A feliratkozott naptárból: {name}
+Feliratkozott naptárból
+Megnyitás…
+Másolás a saját emlékeztetőimbe
+„{s}” átmásolva az emlékeztetőibe
+Innen: „{name}”, egy feliratkozott naptár. Itt nem módosítható.
+Saját másolat mentése az emlékeztetői közé
+Naptár-feliratkozások…
+Webes naptárak (ünnepek, sport, iskolai vagy csapatnaptár), csak olvashatók és naprakészek
+Naptár-feliratkozások
+Ünnepek, sport, iskolai vagy csapatnaptár: bármely naptár (.ics), amelynek webcíme van. Csak olvasható, és magától naprakész marad.
+A naptár webcíme
+Feliratkozás
+Összes frissítése
+Szín
+Milyen gyakran töltődik le újra
+Óránként
+6 óránként
+12 óránként
+Emlékeztetők nézet
+Hónap nézet
+Frissítés most
+Eltávolítás
+Nem sikerült frissíteni: {why}
+A másolat látható ekkortól: {time}.
+Frissítve: {time} · {events}
+{n} esemény
+{n} esemény
+Adja meg egy naptár webcímét.
+Feliratkozás…
+Feliratkozva erre: „{name}” ({events}).
+Eltávolítja a feliratkozást?
+„{name}” és eseményei többé nem láthatók. A saját emlékeztetőit ez nem érinti.
+Adjon meg egy https://, http:// vagy webcal:// kezdetű webcímet.
+Erre a naptárra már feliratkozott.
+Ez a naptár túl nagy (több mint 10 MB).
+Ez a cím nem adott naptárt (.ics fájlt).
+Ez a feliratkozás már nem létezik.
+Ez egy feliratkozott naptárból származik, ezért itt nem módosítható.
+A naptár webhelye nem adta a naptárt. Ellenőrizze a címet.
+A naptár webhelye nem válaszolt időben.
+A naptárt nem sikerült letölteni. Ellenőrizze a címet és a kapcsolatot.
+A naptárt nem sikerült letölteni. Ellenőrizze a címet és a kapcsolatot (és hogy a ReminderFoxAgain olvashatja-e azt a webhelyet).
+A ReminderFoxAgainnak engedélyre van szüksége a webhely olvasásához.
+A naptár-feliratkozások itt nem érhetők el.
+Nem sikerült frissíteni
+Elemek szövegszínei
+Jelöljön be egy színt a használatához. A legpontosabb nyer: Kész, aztán Csillagos vagy Nem csillagos, aztán Múltbeli, Mai vagy Közelgő, aztán Nincs kész. A be nem jelöltek a témát követik (a múltbeli elemek olyanok, mint a többi).
+Nincs kész
+Csillagos (fontos)
+Nem csillagos
+Közelgő (jövőbeli)
+A(z) „{item}” elemek nehezen olvashatók a listákon (kontraszt {n}:1; 3:1 vagy több a jobb).

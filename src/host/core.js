@@ -26,6 +26,7 @@ const { Store, dayKey, timeKey, setPhrases } = require('../core/store');
 const I18N = require('../ui/i18n.js');
 const { reminderFromEmail } = require('./maildate');
 const { listAlarms, keepDismissed } = require('../core/alarmlist');
+const { createSubscriptions, subscriptionChannels, guardReadOnly, isSubUid } = require('../core/subscriptions');
 
 const APP_NAME = 'ReminderFoxAgain';
 const HOUR = 3600000;
@@ -49,6 +50,7 @@ const DEFAULT_SETTINGS = {
   todayLabel: '[time]  [reminderDesc]', upcomingLabel: '[shortMonth] [date]  [reminderDesc]', tooltipUpcoming: true,
   language: '', listTabs: true, lists: [], categories: [], views: [], repeatAhead: 'm12', pastRepeatDays: 'all', hideRepeating: false, hideCompleted: false, todoSort: 'date',
   customThemes: [],
+  subscriptions: [],
 };
 
 function createHost(ad) {
@@ -74,6 +76,18 @@ function createHost(ad) {
   let shownKeys = new Set();
   let alarmOpen = false;
   const timers = { snooze: null, quick: null, resume: null, slider: null, check: null, state: null };
+
+  // ------------------------------------------------------------ calendar subscriptions (src/core/subscriptions.js)
+  // fetched by the platform (ad.fetchText); their copies are files like any other (subscriptions/<id>.ics)
+  const subs = createSubscriptions({
+    Store, newId: () => newId(), now: () => now(),
+    fetchText: (url) => { if (!ad.fetchText) throw new Error('Calendar subscriptions are not available here.'); return ad.fetchText(url); },
+    getList: () => state.settings.subscriptions || [],
+    setList: (l) => { state.settings.subscriptions = l; saveState(true); broadcast('settings:changed', state.settings); },
+    read: (n) => read(n), write: (n, text) => put(n, text), remove: async (n) => drop(n),
+    setTimer: (fn, ms) => T.set(fn, ms), clearTimer: (id) => T.clear(id),
+    onChange: () => broadcast('data:changed'),
+  });
 
   // ------------------------------------------------------------ files: an in-memory copy, written in order
   // disk[name] = the text last written (null = no such file); index = the backups and other files we know of
@@ -641,10 +655,12 @@ function createHost(ad) {
       return store.completedHistory(before, { since });
     },
     'data:all': () => store.list(),
-    'data:get': (uid) => store.get(uid),
-    'data:save': (dto) => { const uid = store.upsert(dto); changed(); return uid; },
-    'data:delete': (uid, occ) => { const r = store.remove(uid, occ); changed(); return r; },
-    'data:complete': (uid, done, occ) => { const r = store.setCompleted(uid, done, occ); changed(); return r; },
+    'data:get': (uid) => (isSubUid(uid) ? subs.get(uid) : store.get(uid)),
+    'data:save': (dto) => { (dto && dto.uid) ? guardReadOnly(dto.uid) : null; const uid = store.upsert(dto); changed(); return uid; },
+    'data:delete': (uid, occ) => { guardReadOnly(uid); const r = store.remove(uid, occ); changed(); return r; },
+    'data:complete': (uid, done, occ) => { guardReadOnly(uid); const r = store.setCompleted(uid, done, occ); changed(); return r; },
+    // calendar subscriptions (read-only calendars from a web address)
+    ...subscriptionChannels(subs, () => store, () => changed()),
     'data:meta': () => meta(),
     'open:url': (u) => { if (typeof u === 'string' && /^(https?:\/\/|mailto:)/i.test(u)) { ad.openUrl(u); return true; } return false; },
     'settings:set': (patch) => setSettings(patch),
@@ -706,8 +722,9 @@ function createHost(ad) {
     'slider:close': () => { ad.windows.slider.close(); return true; },
     'slider:open': async (uid, start) => { await ad.windows.showMain(); send('main', 'ui:edit', { uid, start }); ad.windows.slider.close(); return true; },
     'badge:set': (trayUrl, overlayUrl, text, count) => { try { ad.badge(Number(count) || 0, text || ''); } catch (e) { /* optional */ } return true; },
-    'data:moveToList': (uid, list) => { const r = store.moveToList(uid, list); changed(); return r; },
+    'data:moveToList': (uid, list) => { guardReadOnly(uid); const r = store.moveToList(uid, list); changed(); return r; },
     'data:duplicate': (uid, opts) => {
+      if (isSubUid(uid)) { const u = store.upsert(subs.copyOf(uid)); changed(); return u; } // a subscription's item: your own copy
       const o = opts || {};
       if (o.list != null && /[,:]/.test(String(o.list))) throw new Error('A list name can\'t contain a comma or a colon.');
       const r = store.duplicate(uid, o);
@@ -878,6 +895,8 @@ function createHost(ad) {
     const a = loadStore(ARCHIVE_FILE, disk[ARCHIVE_FILE], 'archive');
     archive = a.store; archiveBroken = a.broken;
     try { archiveMoved = archiveToList(); } catch (e) { console.error('archive to list', e.message); }
+    await subs.load();
+    subs.refresh().catch((e) => console.error('subscriptions', e && e.message));
     refreshTrayMenu();
     checkAlarms();
     timers.check = T.every(checkAlarms, 15000);

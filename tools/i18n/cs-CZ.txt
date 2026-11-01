@@ -916,3 +916,65 @@
 915| Zobrazeno prvních {n}.
 916| V tomto období žádná upozornění.
 917| Odloženo o {time}
+918| 📅 Kalendáře
+919| Kalendáře v zobrazení Měsíc
+920| Kalendáře v zobrazení Připomínky
+921| Moje připomínky
+922| Zatím žádné odebírané kalendáře.
+923| Odebírat kalendář…
+924| Spravovat odběry…
+925| Zobrazeno zde {shown} z {all} odebíraných kalendářů
+926| Odebírat kalendáře z webu (svátky, sport, tým)
+927| Z odebíraného kalendáře: {name}
+928| Z odebíraného kalendáře
+929| Otevřít…
+930| Zkopírovat do mých připomínek
+931| „{s}“ zkopírováno do vašich připomínek
+932| Z „{name}“, kalendáře, který odebíráte. Zde jej nelze změnit.
+933| Uložit vlastní kopii do připomínek
+934| Odebírané kalendáře…
+935| Kalendáře z webu (svátky, sport, školní nebo týmový kalendář), jen pro čtení a stále aktuální
+936| Odebírané kalendáře
+937| Svátky, sport, školní nebo týmový kalendář: jakýkoli kalendář (.ics) s webovou adresou. Je jen pro čtení a sám se aktualizuje.
+938| Webová adresa kalendáře
+939| Odebírat
+940| Obnovit vše
+941| Barva
+942| Jak často se znovu stahuje
+943| Každou hodinu
+944| Každých 6 hodin
+945| Každých 12 hodin
+946| Zobrazení Připomínky
+947| Zobrazení Měsíc
+948| Obnovit nyní
+949| Odebrat
+950| Nepodařilo se aktualizovat: {why}
+951| Zobrazuje se kopie z {time}.
+952| Aktualizováno {time} · {events}
+953| {n} událost
+954| {n} událostí
+955| Zadejte webovou adresu kalendáře.
+956| Přihlašování k odběru…
+957| Odebíráte „{name}“ ({events}).
+958| Zrušit odběr?
+959| „{name}“ a jeho události se už nebudou zobrazovat. Vaše vlastní připomínky zůstanou beze změny.
+960| Zadejte webovou adresu začínající https://, http:// nebo webcal://.
+961| Tento kalendář už odebíráte.
+962| Tento kalendář je příliš velký (více než 10 MB).
+963| Na této adrese nebyl kalendář (soubor .ics).
+964| Tento odběr už neexistuje.
+965| Pochází z kalendáře, který odebíráte, takže jej zde nelze změnit.
+966| Web kalendáře kalendář nevydal. Zkontrolujte adresu.
+967| Web kalendáře neodpověděl včas.
+968| Kalendář se nepodařilo stáhnout. Zkontrolujte adresu a připojení.
+969| Kalendář se nepodařilo stáhnout. Zkontrolujte adresu a připojení (a že ReminderFoxAgain smí tento web číst).
+970| ReminderFoxAgain potřebuje vaše svolení ke čtení tohoto webu.
+971| Odebírané kalendáře zde nejsou dostupné.
+972| Nepodařilo se aktualizovat
+973| Barvy textu položek
+974| Zaškrtněte barvu, chcete-li ji použít. Vyhrává nejkonkrétnější: Dokončeno, pak S hvězdičkou nebo Bez hvězdičky, pak Minulé, Dnes nebo Nadcházející, pak Nedokončeno. Nezaškrtnuté se řídí motivem (minulé položky vypadají jako ostatní).
+975| Nedokončeno
+976| S hvězdičkou (důležité)
+977| Bez hvězdičky
+978| Nadcházející (budoucí)
+979| Položky „{item}“ jsou v seznamech špatně čitelné (kontrast {n}:1; lepší je 3:1 nebo více).

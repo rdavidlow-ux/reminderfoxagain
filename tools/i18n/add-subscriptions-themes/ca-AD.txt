@@ -1,0 +1,62 @@
+📅 Calendaris
+Calendaris a la vista Mes
+Calendaris a la vista Recordatoris
+Els meus recordatoris
+Encara no hi ha subscripcions a calendaris.
+Subscriu-te a un calendari…
+Gestiona les subscripcions…
+Es mostren aquí {shown} de {all} subscripcions
+Subscriu-te a calendaris del web (festius, esports, un equip)
+Del calendari al qual et subscrius: {name}
+D'un calendari al qual et subscrius
+Obre…
+Copia als meus recordatoris
+«{s}» copiat als teus recordatoris
+De «{name}», un calendari al qual et subscrius. No es pot canviar aquí.
+Desa la teva pròpia còpia als teus recordatoris
+Subscripcions a calendaris…
+Calendaris del web (festius, esports, un calendari escolar o d'equip), només de lectura i sempre al dia
+Subscripcions a calendaris
+Festius, esports, un calendari escolar o d'equip: qualsevol calendari (.ics) amb una adreça web. És només de lectura i es manté al dia tot sol.
+Adreça web del calendari
+Subscriu-te
+Actualitza-ho tot
+Color
+Cada quant es torna a baixar
+Cada hora
+Cada 6 hores
+Cada 12 hores
+Vista Recordatoris
+Vista Mes
+Actualitza ara
+Treu
+No s'ha pogut actualitzar: {why}
+Es mostra la còpia del {time}.
+Actualitzat {time} · {events}
+{n} esdeveniment
+{n} esdeveniments
+Escriu l'adreça web d'un calendari.
+S'està subscrivint…
+Subscrit a «{name}» ({events}).
+Vols treure la subscripció?
+«{name}» i els seus esdeveniments ja no es mostraran. Els teus recordatoris no es toquen.
+Escriu una adreça web que comenci per https://, http:// o webcal://.
+Ja estàs subscrit a aquest calendari.
+Aquest calendari és massa gran (més de 10 MB).
+Aquesta adreça no ha donat cap calendari (un fitxer .ics).
+Aquesta subscripció ja no existeix.
+Això ve d'un calendari al qual et subscrius, així que no es pot canviar aquí.
+El web del calendari no ha donat el calendari. Comprova l'adreça.
+El web del calendari no ha respost a temps.
+No s'ha pogut baixar el calendari. Comprova l'adreça i la connexió.
+No s'ha pogut baixar el calendari. Comprova l'adreça i la connexió (i que ReminderFoxAgain pot llegir aquest web).
+ReminderFoxAgain necessita el teu permís per llegir aquest web.
+Les subscripcions a calendaris no estan disponibles aquí.
+No s'ha pogut actualitzar
+Colors del text dels elements
+Marca un color per fer-lo servir. Guanya el més concret: Completat, després Destacat o No destacat, després Passat, Avui o Proper, després No completat. Els no marcats segueixen el tema (els elements passats es veuen com els altres).
+No completat
+Destacat (important)
+No destacat
+Proper (futur)
+Els elements «{item}» són difícils de llegir a les llistes (contrast {n}:1; 3:1 o més és millor).

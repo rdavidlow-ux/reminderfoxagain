@@ -22,8 +22,9 @@ fs.rmSync(OUT, { recursive: true, force: true });
 // ------------------------------------------------------------ host.js: the core, the store, ical.js and i18n in one file
 // A small CommonJS loader: each module gets module/exports/require; require maps the few names the modules use.
 const MODULES = {
-  core: { file: 'src/host/core.js', req: { '../core/store': 'store', '../ui/i18n.js': 'i18n', './maildate': 'maildate', '../core/alarmlist': 'alarmlist' } },
+  core: { file: 'src/host/core.js', req: { '../core/store': 'store', '../ui/i18n.js': 'i18n', './maildate': 'maildate', '../core/alarmlist': 'alarmlist', '../core/subscriptions': 'subscriptions' } },
   alarmlist: { file: 'src/core/alarmlist.js', req: {} },
+  subscriptions: { file: 'src/core/subscriptions.js', req: {} },
   maildate: { file: 'src/host/maildate.js', req: {} },
   store: { file: 'src/core/store.js', req: { crypto: 'crypto', 'ical.js': 'ical' } },
   i18n: { file: 'src/ui/i18n.js', req: {} },

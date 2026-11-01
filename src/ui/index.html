@@ -45,6 +45,7 @@
         <label for="remCat">Category</label>
         <select class="sel" id="remCat"></select>
         <label class="inline-chk" title="Show reminders you have ticked as completed"><input type="checkbox" class="chk" id="remDone" checked> Show completed</label>
+        <button type="button" class="btn ghost sm cal-btn" data-calview="list">📅 Calendars</button>
         <span class="spacer"></span>
         <span class="hint" id="remHint"></span>
       </div>
@@ -77,6 +78,7 @@
         <button class="btn" id="mToday">Today</button>
         <label class="inline-chk"><input type="checkbox" class="chk" id="mTodos" checked> Show to-dos</label>
         <label class="inline-chk" title="Show reminders and list items you have ticked as completed"><input type="checkbox" class="chk" id="mDone"> Show completed</label>
+        <button type="button" class="btn ghost sm cal-btn" data-calview="month">📅 Calendars</button>
         <span class="spacer"></span>
         <span class="hint">Double-click a day to add a reminder</span>
       </div>
@@ -113,6 +115,7 @@
         <button type="button" data-kind="todo" aria-pressed="false">To-Do</button>
       </div>
     </div>
+    <div class="note ro-note hidden" id="edReadOnly"><span></span></div>
     <div class="dlg-body">
       <div class="row">
         <input class="inp title-inp grow" id="edSummary" placeholder="What do you want to be reminded of?" required aria-label="Description">
@@ -211,6 +214,7 @@
       <button type="button" class="btn danger hidden" id="edDelete">Delete…</button>
       <button type="button" class="btn ghost hidden" id="edSchedule" title="The date is known: make this to-do a reminder on an exact date">Schedule as a reminder…</button>
       <button type="button" class="btn ghost hidden" id="edMail" title="Open the email this came from">✉ Open email</button>
+      <button type="button" class="btn primary hidden" id="edCopyMine" title="Save your own copy of it in your reminders">Copy to my reminders</button>
       <label class="inline-chk hidden" id="edDoneWrap"><input type="checkbox" class="chk" id="edDone"> Completed</label>
       <span class="spacer"></span>
       <button type="button" class="btn" id="edCancel">Cancel</button>
@@ -316,6 +320,7 @@
       <section class="st-panel" data-st-panel="data" hidden>
         <h3 class="st-h st-first">Import and export</h3>
         <div class="row"><button class="btn" id="stImport" title="Add the items from an .ics file (Ctrl+I)">Import an .ics file…</button><button class="btn" id="stOldRf" title="Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile">Import from ReminderFox…</button><button class="btn" id="stExport" title="Save an .ics file (Ctrl+E)">Export to .ics…</button></div>
+        <div class="row"><button class="btn" id="stSubs" title="Calendars from the web (holidays, sports, a school or team calendar), read-only and kept up to date">Calendar subscriptions…</button></div>
         <div class="note">Imports add to what you have; items already here are updated only if the file's copy is newer. Exports open in Outlook, Google Calendar, Thunderbird, Apple Calendar and the original ReminderFox add-on.</div>
         <h3 class="st-h">Backups</h3>
         <div class="row"><button class="btn" id="stBackup">Back up now</button><button class="btn" id="stBackupCopy">Save a backup copy…</button><button class="btn" id="stRestore">Restore from a backup…</button></div>
@@ -328,6 +333,7 @@
 </dialog>
 
 <div class="ctx hidden" id="ctx"></div>
+<div class="ctx cal-pop hidden" id="calPop"></div>
 
 <script src="i18n.js"></script>
 <script src="i18n-dom.js"></script>

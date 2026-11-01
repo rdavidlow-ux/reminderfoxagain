@@ -7,6 +7,7 @@ const { app, BrowserWindow, ipcMain, Tray, Menu, shell, dialog, nativeImage, scr
 const { execFileSync } = require('child_process');
 const { Store, dayKey, timeKey, setPhrases } = require('./core/store');
 const { listAlarms, keepDismissed } = require('./core/alarmlist');
+const { createSubscriptions, subscriptionChannels, guardReadOnly, isSubUid } = require('./core/subscriptions');
 const I18N = require('./ui/i18n.js');
 
 const VERSION = require('../package.json').version;
@@ -71,6 +72,8 @@ const DEFAULT_SETTINGS = {
   language: '', listTabs: true, lists: [], categories: [], views: [], repeatAhead: 'm12', pastRepeatDays: 'all', hideRepeating: false, hideCompleted: false, todoSort: 'date',
   // your own themes (0.8.1): [{id, name, bg, surface, ink, accent, star}]; theme 'custom:<id>' uses one
   customThemes: [],
+  // calendar subscriptions: [{id, url, name, color, refreshHours, showList, showMonth, updated, error, count}]
+  subscriptions: [],
 };
 const SOUND_DIR = path.join(DATA_DIR, 'sounds');
 
@@ -951,6 +954,33 @@ function handle(ch, fn) {
   });
 }
 function parentOf(e) { return BrowserWindow.fromWebContents(e.sender) || mainWin; }
+// calendar subscriptions: their copies in subscriptions/ next to the reminders, fetched through Chromium's network stack
+// (so system proxies apply)
+const subFile = (name) => path.join(DATA_DIR, ...name.split('/'));
+async function fetchText(url) {
+  const { net } = require('electron');
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), 30000);
+  try {
+    const r = await (net && net.fetch ? net.fetch(url, { signal: ctl.signal }) : fetch(url, { signal: ctl.signal }));
+    if (!r.ok) throw new Error('The calendar\'s web site did not give the calendar. Check the address.');
+    return await r.text();
+  } catch (err) {
+    if (err && err.name === 'AbortError') throw new Error('The calendar\'s web site did not answer in time.');
+    if (err && /web site/.test(err.message)) throw err;
+    throw new Error('The calendar could not be fetched. Check the address and your connection.');
+  } finally { clearTimeout(t); }
+}
+const subs = createSubscriptions({
+  Store, newId: () => require('crypto').randomUUID().slice(0, 8), now: () => Date.now(), fetchText,
+  getList: () => state.settings.subscriptions || [],
+  setList: (l) => { state.settings.subscriptions = l; saveState(true); broadcast('settings:changed', state.settings); },
+  read: async (n) => { try { return fs.readFileSync(subFile(n), 'utf8'); } catch (e) { return null; } },
+  write: async (n, text) => writeAtomic(subFile(n), text),
+  remove: async (n) => fs.rmSync(subFile(n), { force: true }),
+  setTimer: (fn, ms) => setTimeout(fn, ms), clearTimer: (id) => clearTimeout(id),
+  onChange: () => broadcast('data:changed'),
+});
 function setupIpc() {
   handle('data:range', (e, from, to, opts) => store.occurrences(from, to, opts || {}));
   handle('data:next', (e, from, opts) => store.nextOccurrences(from, opts || {}));
@@ -962,10 +992,12 @@ function setupIpc() {
     return store.completedHistory(before, { since });
   });
   handle('data:all', () => store.list());
-  handle('data:get', (e, uid) => store.get(uid));
-  handle('data:save', (e, dto) => { const uid = store.upsert(dto); changed(); return uid; });
-  handle('data:delete', (e, uid, occ) => { const r = store.remove(uid, occ); changed(); return r; });
-  handle('data:complete', (e, uid, done, occ) => { const r = store.setCompleted(uid, done, occ); changed(); return r; });
+  handle('data:get', (e, uid) => (isSubUid(uid) ? subs.get(uid) : store.get(uid)));
+  handle('data:save', (e, dto) => { (dto && dto.uid) ? guardReadOnly(dto.uid) : null; const uid = store.upsert(dto); changed(); return uid; });
+  handle('data:delete', (e, uid, occ) => { guardReadOnly(uid); const r = store.remove(uid, occ); changed(); return r; });
+  handle('data:complete', (e, uid, done, occ) => { guardReadOnly(uid); const r = store.setCompleted(uid, done, occ); changed(); return r; });
+  // calendar subscriptions (read-only calendars from a web address)
+  for (const [ch, fn] of Object.entries(subscriptionChannels(subs, () => store, changed))) handle(ch, (e, ...a) => fn(...a));
   handle('data:meta', () => meta());
   handle('data:openFolder', () => { if (exists(DATA_FILE)) shell.showItemInFolder(DATA_FILE); else shell.openPath(DATA_DIR); return true; });
   handle('open:url', (e, u) => openExternal(u));
@@ -1100,9 +1132,10 @@ function setupIpc() {
     return true;
   });
   // lists, categories, order
-  handle('data:moveToList', (e, uid, list) => { const r = store.moveToList(uid, list); changed(); return r; });
+  handle('data:moveToList', (e, uid, list) => { guardReadOnly(uid); const r = store.moveToList(uid, list); changed(); return r; });
   // an exact copy, in the same place (opts.suffix for the title) or on another list (opts.list)
   handle('data:duplicate', (e, uid, opts) => {
+    if (isSubUid(uid)) { const u = store.upsert(subs.copyOf(uid)); changed(); return u; } // a subscription's item: your own copy
     const o = opts || {};
     if (o.list != null && /[,:]/.test(String(o.list))) throw new Error('A list name can\'t contain a comma or a colon.');
     const r = store.duplicate(uid, o);
@@ -1208,6 +1241,7 @@ if (!app.requestSingleInstanceLock()) {
     loadLanguage();
     loadData();
     loadArchive();
+    subs.load().then(() => subs.refresh()).catch((e) => console.error('subscriptions', e.message));
     try { archiveMoved = archiveToList(); } catch (e) { console.error('archive to list', e.message); }
     applyNativeTheme();
     setupIpc();

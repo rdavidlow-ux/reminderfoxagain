@@ -94,7 +94,8 @@ the same features, in a Thunderbird tab with a toolbar button. A right-click on 
 item, with the subject and the date, time and place the email mentions, and it can open that email again. It also
 does what only Thunderbird allows: a reminder after you send an email, a tag on emails that have a reminder, sending a
 reminder by email, birthdays from your address books, reminders from selected text and .ics links, and invitations
-with their replies. It is not released yet. The branch also has, in both the app and the add-on, an Alarms view
+with their replies. It is not released yet. The branch also has, in both the app and the add-on, calendar subscriptions (holidays,
+sports or a team calendar from a web address, shown per view), item colours in your own themes, an Alarms view
 (Ctrl+L: every alarm ringing, snoozed or still to ring, with snooze, dismiss, skip and cancel) and a Month view that
 scrolls through past and coming weeks. Build it with
 `./build-thunderbird.sh`; how it works and what is still to be tried in a real Thunderbird are in

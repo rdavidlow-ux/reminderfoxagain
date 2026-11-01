@@ -916,3 +916,65 @@
 915| Đang hiện {n} cái đầu tiên.
 916| Không có báo thức trong khoảng này.
 917| Tạm hoãn {time}
+918| 📅 Lịch
+919| Lịch trong chế độ xem Tháng
+920| Lịch trong chế độ xem Lời nhắc
+921| Lời nhắc của tôi
+922| Chưa có lịch đăng ký nào.
+923| Đăng ký một lịch…
+924| Quản lý đăng ký…
+925| Đang hiện {shown} trên {all} lịch đăng ký ở đây
+926| Đăng ký lịch từ web (ngày lễ, thể thao, một đội)
+927| Từ lịch bạn đăng ký: {name}
+928| Từ một lịch bạn đăng ký
+929| Mở…
+930| Sao chép vào lời nhắc của tôi
+931| Đã sao chép “{s}” vào lời nhắc của bạn
+932| Từ “{name}”, một lịch bạn đăng ký. Không thể thay đổi ở đây.
+933| Lưu bản sao của riêng bạn vào lời nhắc
+934| Lịch đăng ký…
+935| Lịch từ web (ngày lễ, thể thao, lịch trường hoặc đội), chỉ đọc và luôn được cập nhật
+936| Lịch đăng ký
+937| Ngày lễ, thể thao, lịch trường hoặc đội: bất kỳ lịch nào (.ics) có địa chỉ web. Lịch chỉ đọc và tự cập nhật.
+938| Địa chỉ web của lịch
+939| Đăng ký
+940| Làm mới tất cả
+941| Màu
+942| Bao lâu thì tải lại
+943| Mỗi giờ
+944| Mỗi 6 giờ
+945| Mỗi 12 giờ
+946| Chế độ xem Lời nhắc
+947| Chế độ xem Tháng
+948| Làm mới ngay
+949| Gỡ bỏ
+950| Không cập nhật được: {why}
+951| Đang hiện bản sao từ {time}.
+952| Đã cập nhật {time} · {events}
+953| {n} sự kiện
+954| {n} sự kiện
+955| Nhập địa chỉ web của một lịch.
+956| Đang đăng ký…
+957| Đã đăng ký “{name}” ({events}).
+958| Gỡ bỏ đăng ký?
+959| “{name}” và các sự kiện của nó sẽ không còn hiện. Lời nhắc của riêng bạn không bị đụng đến.
+960| Nhập địa chỉ web bắt đầu bằng https://, http:// hoặc webcal://.
+961| Bạn đã đăng ký lịch đó rồi.
+962| Lịch đó quá lớn (hơn 10 MB).
+963| Địa chỉ đó không cho ra lịch (tệp .ics).
+964| Đăng ký đó không còn nữa.
+965| Mục này đến từ một lịch bạn đăng ký nên không thể thay đổi ở đây.
+966| Trang web của lịch không cung cấp lịch. Hãy kiểm tra địa chỉ.
+967| Trang web của lịch không trả lời kịp.
+968| Không tải được lịch. Hãy kiểm tra địa chỉ và kết nối.
+969| Không tải được lịch. Hãy kiểm tra địa chỉ và kết nối (và ReminderFoxAgain có được phép đọc trang web đó).
+970| ReminderFoxAgain cần bạn cho phép để đọc trang web đó.
+971| Lịch đăng ký không dùng được ở đây.
+972| Không cập nhật được
+973| Màu chữ của mục
+974| Đánh dấu một màu để dùng. Màu cụ thể nhất được ưu tiên: Đã xong, rồi Có sao hoặc Không có sao, rồi Đã qua, Hôm nay hoặc Sắp tới, rồi Chưa xong. Màu không đánh dấu theo giao diện (mục đã qua trông như các mục khác).
+975| Chưa xong
+976| Có sao (quan trọng)
+977| Không có sao
+978| Sắp tới (tương lai)
+979| Mục “{item}” khó đọc trong danh sách (độ tương phản {n}:1; từ 3:1 trở lên thì tốt hơn).

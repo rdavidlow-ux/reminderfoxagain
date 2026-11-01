@@ -1,0 +1,62 @@
+📅 Calendarios
+Calendarios na vista Mes
+Calendarios na vista Recordatorios
+Os meus recordatorios
+Aínda non hai subscricións a calendarios.
+Subscribirse a un calendario…
+Xestionar subscricións…
+Móstranse aquí {shown} de {all} subscricións
+Subscribirse a calendarios da web (festivos, deportes, un equipo)
+Do calendario ao que te subscribes: {name}
+Dun calendario ao que te subscribes
+Abrir…
+Copiar aos meus recordatorios
+«{s}» copiado aos teus recordatorios
+De «{name}», un calendario ao que te subscribes. Non se pode cambiar aquí.
+Gardar a túa propia copia nos teus recordatorios
+Subscricións a calendarios…
+Calendarios da web (festivos, deportes, un calendario escolar ou de equipo), só de lectura e sempre ao día
+Subscricións a calendarios
+Festivos, deportes, un calendario escolar ou de equipo: calquera calendario (.ics) cun enderezo web. É só de lectura e mantense ao día el só.
+Enderezo web do calendario
+Subscribirse
+Actualizar todo
+Cor
+Cada canto se volve descargar
+Cada hora
+Cada 6 horas
+Cada 12 horas
+Vista Recordatorios
+Vista Mes
+Actualizar agora
+Quitar
+Non se puido actualizar: {why}
+Móstrase a copia do {time}.
+Actualizado {time} · {events}
+{n} evento
+{n} eventos
+Escribe o enderezo web dun calendario.
+Subscribindo…
+Subscrito a «{name}» ({events}).
+Quitar a subscrición?
+«{name}» e os seus eventos deixarán de mostrarse. Os teus propios recordatorios non se tocan.
+Escribe un enderezo web que comece por https://, http:// ou webcal://.
+Xa estás subscrito a ese calendario.
+Ese calendario é demasiado grande (máis de 10 MB).
+Ese enderezo non deu un calendario (un ficheiro .ics).
+Esa subscrición xa non existe.
+Isto vén dun calendario ao que te subscribes, así que non se pode cambiar aquí.
+A web do calendario non deu o calendario. Comproba o enderezo.
+A web do calendario non respondeu a tempo.
+Non se puido descargar o calendario. Comproba o enderezo e a túa conexión.
+Non se puido descargar o calendario. Comproba o enderezo e a túa conexión (e que ReminderFoxAgain pode ler esa web).
+ReminderFoxAgain necesita o teu permiso para ler esa web.
+As subscricións a calendarios non están dispoñibles aquí.
+Non se puido actualizar
+Cores do texto dos elementos
+Marca unha cor para usala. Gaña a máis concreta: Completado, logo Destacado ou Non destacado, logo Pasado, Hoxe ou Próximo, logo Non completado. As non marcadas seguen o tema (os elementos pasados vense coma os demais).
+Non completado
+Destacado (importante)
+Non destacado
+Próximo (futuro)
+Os elementos «{item}» son difíciles de ler nas listas (contraste {n}:1; 3:1 ou máis é mellor).

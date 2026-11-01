@@ -46,6 +46,84 @@
   const wholeNumber = (v, max) => { const s = String(v).trim(); if (!/^\d{1,4}$/.test(s)) return null; const n = Number(s); return n >= 1 && n <= max ? n : null; };
 
   // ------------------------------------------------------------ quick alarms
+  // ------------------------------------------------------------ calendar subscriptions
+  // Subscribe by web address (https://, http:// or webcal://); each subscription has a name, a colour, how often it is
+  // fetched again, and the views it shows in. Its items are read-only (open one to see it, or copy it to your reminders).
+  const REFRESH_TEXT = [[1, 'Every hour'], [6, 'Every 6 hours'], [12, 'Every 12 hours'], [24, 'Every day'], [168, 'Every week']];
+  let subsTimer = null;
+  function openSubscriptions(opts = {}) {
+    const d = dlg('subsDlg', {
+      title: 'Calendar subscriptions',
+      cls: 'subs-dlg',
+      body: '<div class="note">Holidays, sports, a school or team calendar: any calendar (.ics) with a web address. It is read-only and kept up to date on its own.</div>' +
+        '<div class="row"><input class="inp grow" id="subUrl" type="url" placeholder="https://… or webcal://…" aria-label="Web address of the calendar" spellcheck="false">' +
+        '<button type="button" class="btn primary" id="subAdd">Subscribe</button></div>' +
+        '<div class="note" id="subMsg" role="status"></div>' +
+        '<div id="subList" class="mini-list tall sub-list"></div>',
+      foot: '<button type="button" class="btn" id="subRefreshAll">Refresh all</button><span class="spacer"></span><button type="button" class="btn primary" data-x>Close</button>',
+    });
+    const msg = (t, warn) => { q(d, '#subMsg').textContent = t || ''; q(d, '#subMsg').classList.toggle('warn', !!warn); };
+    function render() {
+      const list = S.settings.subscriptions || [];
+      q(d, '#subRefreshAll').disabled = !list.length;
+      q(d, '#subList').innerHTML = list.length ? list.map((x) => `<div class="sub-row" data-id="${esc(x.id)}">` +
+        `<div class="row"><input type="color" class="th-color" data-f="color" value="${esc(x.color)}" aria-label="Colour"><input class="inp grow" data-f="name" value="${esc(x.name)}" maxlength="80" aria-label="Name" translate="no">` +
+        `<select class="sel" data-f="refreshHours" aria-label="How often it is fetched again">${REFRESH_TEXT.map(([h, l]) => `<option value="${h}"${Number(x.refreshHours) === h ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select></div>` +
+        `<div class="sub-url" translate="no" title="${esc(x.url)}">${esc(x.url)}</div>` +
+        `<div class="row"><label class="inline-chk"><input type="checkbox" class="chk" data-f="showList"${x.showList !== false ? ' checked' : ''}> Reminders view</label>` +
+        `<label class="inline-chk"><input type="checkbox" class="chk" data-f="showMonth"${x.showMonth !== false ? ' checked' : ''}> Month view</label><span class="spacer"></span>` +
+        '<button type="button" class="btn ghost sm" data-sa="refresh">Refresh now</button><button type="button" class="btn ghost sm danger" data-sa="remove">Remove</button></div>' +
+        `<div class="note${x.error ? ' warn' : ''}">${esc(x.error ? RF.T('Could not be updated: {why}', { why: RF.T(x.error) }) + (x.updated ? ` ${RF.T('Showing the copy from {time}.', { time: `${fmt.date(x.updated)}, ${fmt.time(x.updated)}` })}` : '')
+          : RF.T('Updated {time} · {events}', { time: `${fmt.date(x.updated)}, ${fmt.time(x.updated)}`, events: plural(x.count || 0, 'event', 'events') }))}</div></div>`).join('')
+        : '<div class="note">No calendar subscriptions yet.</div>';
+    }
+    q(d, '#subAdd').addEventListener('click', async () => {
+      const url = q(d, '#subUrl').value.trim();
+      if (!url) { msg(RF.T('Enter the web address of a calendar.'), true); q(d, '#subUrl').focus(); return; }
+      q(d, '#subAdd').disabled = true; msg(RF.T('Subscribing…'));
+      try {
+        const sub = await window.rf.subsAdd({ url });
+        q(d, '#subUrl').value = '';
+        msg(RF.T('Subscribed to “{name}” ({events}).', { name: sub.name, events: plural(sub.count || 0, 'event', 'events') }));
+      } catch (e) { msg(RF.T(String((e && e.message) || e)), true); } finally { q(d, '#subAdd').disabled = false; }
+    });
+    q(d, '#subUrl').addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); q(d, '#subAdd').click(); } });
+    q(d, '#subList').addEventListener('change', async (e) => {
+      const row = e.target.closest('[data-id]'); const f = e.target.dataset.f;
+      if (!row || !f) return;
+      const v = e.target.type === 'checkbox' ? e.target.checked : f === 'refreshHours' ? Number(e.target.value) : e.target.value;
+      if (f === 'name' && !String(v).trim()) { render(); return; }
+      await A.guard(window.rf.subsUpdate(row.dataset.id, { [f]: v }));
+    });
+    q(d, '#subList').addEventListener('click', async (e) => {
+      const b = e.target.closest('[data-sa]'); const row = b && b.closest('[data-id]');
+      if (!row) return;
+      const x = (S.settings.subscriptions || []).find((s) => s.id === row.dataset.id);
+      if (!x) return;
+      if (b.dataset.sa === 'refresh') { b.disabled = true; await A.guard(window.rf.subsRefresh(x.id)); b.disabled = false; return; }
+      const ok = await A.confirmDlg('Remove subscription?', `<div>${esc(RF.T('“{name}” and its events will no longer show. Your own reminders are not touched.', { name: x.name }))}</div>`,
+        [{ label: 'Cancel', value: false, focus: true }, { label: 'Remove', cls: 'danger', value: true }]);
+      if (ok) await A.guard(window.rf.subsRemove(x.id));
+      if (!d.open) d.showModal();
+    });
+    q(d, '#subRefreshAll').addEventListener('click', async () => { q(d, '#subRefreshAll').disabled = true; await A.guard(window.rf.subsRefresh()); q(d, '#subRefreshAll').disabled = false; });
+    // the list follows the subscriptions as they change (an update, a refresh in the background)
+    clearInterval(subsTimer);
+    let last = '';
+    subsTimer = setInterval(() => {
+      if (!d.open) { clearInterval(subsTimer); return; }
+      const now = JSON.stringify(S.settings.subscriptions || []);
+      const typing = document.activeElement && document.activeElement.matches && document.activeElement.matches('#subsDlg input[data-f=name]');
+      if (now !== last && !typing) { last = now; render(); }
+    }, 400);
+    last = JSON.stringify(S.settings.subscriptions || []);
+    render();
+    msg('');
+    if (!d.open) d.showModal();
+    if (opts.add || !(S.settings.subscriptions || []).length) q(d, '#subUrl').focus();
+    return d;
+  }
+
   // ------------------------------------------------------------ the Alarms view: every alarm ringing, snoozed or to come
   // Ringing and snoozed ones first, then the coming ones in the order they ring. What each can do: ringing → Snooze
   // (the default snooze), Dismiss; snoozed → Ring now, Dismiss; to come → Skip (that one time; the rest still ring),
@@ -834,6 +912,9 @@
   // them by RF.themeVars. The window shows the theme while you edit it, and goes back if you cancel.
   const THEME_FIELDS = [['bg', 'Background', 'Behind everything'], ['surface', 'Lists and panels', 'The lists, the calendar panel, dialogs'],
     ['ink', 'Text', ''], ['accent', 'Accent', 'Buttons, today, selection'], ['star', 'Starred items', 'Important reminders and to-dos']];
+  // the item colours a theme of your own may set (ticked = used; see the cascade in styles.css)
+  const ITEM_FIELDS = [['itDone', 'Completed'], ['itOpen', 'Not completed'], ['itImp', 'Starred (important)'], ['itPlain', 'Not starred'],
+    ['itPast', 'Past'], ['itToday', 'Today'], ['itFuture', 'Coming (future)']];
   function baseColors(themeId) {
     const own = (S.settings.customThemes || []).find((c) => `custom:${c.id}` === themeId);
     if (own) return { ...own };
@@ -846,6 +927,9 @@
     const low = (x, min) => x < min;
     if (low(r(c.ink, c.surface), 4.5) || low(r(c.ink, c.bg), 4.5)) out.push(RF.T('The text is hard to read on the background (contrast {n}:1; 4.5:1 or more is easy to read).', { n: Math.min(r(c.ink, c.surface), r(c.ink, c.bg)).toFixed(1) }));
     if (low(r(c.accent, c.surface), 3)) out.push(RF.T('The accent is hard to see on the lists (contrast {n}:1; 3:1 or more is better).', { n: r(c.accent, c.surface).toFixed(1) }));
+    for (const [k, label] of ITEM_FIELDS) {
+      if (/^#[0-9a-f]{6}$/i.test(c[k] || '') && low(r(c[k], c.surface), 3)) out.push(RF.T('{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).', { item: RF.T(label), n: r(c[k], c.surface).toFixed(1) }));
+    }
     if (low(r(c.star, c.surface), 3)) out.push(RF.T('Starred items are hard to see on the lists (contrast {n}:1; 3:1 or more is better).', { n: r(c.star, c.surface).toFixed(1) }));
     return out;
   }
@@ -862,6 +946,9 @@
         body: '<div class="field"><label for="thName">Name</label><input class="inp" id="thName" maxlength="40" placeholder="e.g. Forest"></div>' +
           `<div class="row"><span class="lbl st-l">Start from</span><select class="sel" id="thBase">${bases.map((b) => `<option value="${esc(b.id)}"${b.custom ? ' translate="no"' : ''}>${esc(b.custom ? b.label : RF.T(b.label))}</option>`).join('')}</select></div>` +
           THEME_FIELDS.map(([k, label, hint]) => `<div class="row"><label class="lbl st-l" for="th-${k}">${esc(RF.T(label))}</label><input type="color" class="th-color" id="th-${k}" data-k="${k}"><input class="inp th-hex" data-hex="${k}" maxlength="7" spellcheck="false" aria-label="${esc(RF.T(label))}">${hint ? `<span class="note">${esc(RF.T(hint))}</span>` : ''}</div>`).join('') +
+          '<h3 class="st-h">Item text colours</h3>' +
+          '<div class="note">Tick a colour to use it. The most particular one wins: Completed, then Starred or Not starred, then Past, Today or Coming, then Not completed. Unticked ones follow the theme (past items look like the others).</div>' +
+          ITEM_FIELDS.map(([k, label]) => `<div class="row"><label class="inline-chk st-l"><input type="checkbox" class="chk" data-use="${k}"> ${esc(RF.T(label))}</label><input type="color" class="th-color" id="th-${k}" data-k="${k}"><input class="inp th-hex" data-hex="${k}" maxlength="7" spellcheck="false" aria-label="${esc(RF.T(label))}"></div>`).join('') +
           '<div class="th-preview" id="thPreview" aria-hidden="true"><div class="th-card" translate="no"><span class="th-star">★ <span translate="no">Sarah\'s birthday</span></span><span class="th-text" translate="no">Team stand-up</span><span class="th-mute">9:30 AM</span></div><span class="th-btn">＋ Reminder</span><span class="th-today">25</span></div>' +
           '<div class="note" id="thWarn" role="status"></div>' +
           '<div class="note">The whole window shows the theme while you choose. Cancel puts the old one back.</div>',
@@ -873,6 +960,17 @@
       q(d, '#thBase').value = old ? `custom:${old.id}` : (bases.some((b) => b.id === startFrom) ? startFrom : '');
       function fill() {
         for (const [k] of THEME_FIELDS) { q(d, `#th-${k}`).value = t[k]; q(d, `[data-hex=${k}]`).value = t[k]; q(d, `[data-hex=${k}]`).classList.remove('bad'); }
+        // an item colour not set shows what the theme uses for it, ready to tick and change
+        const v = RF.themeVars({ ...t, itDone: '', itImp: '' });
+        const auto = { itDone: v['--it-done'], itImp: v['--it-imp'] };
+        for (const [k] of ITEM_FIELDS) {
+          const on = /^#[0-9a-f]{6}$/i.test(t[k] || '');
+          const val = on ? t[k] : (auto[k] || t.ink);
+          q(d, `[data-use=${k}]`).checked = on;
+          q(d, `#th-${k}`).value = val; q(d, `[data-hex=${k}]`).value = val;
+          q(d, `#th-${k}`).disabled = !on; q(d, `[data-hex=${k}]`).disabled = !on;
+          q(d, `[data-hex=${k}]`).classList.remove('bad');
+        }
         show();
       }
       function show() {
@@ -883,7 +981,14 @@
         q(d, '#thWarn').textContent = w.join(' ');
         q(d, '#thWarn').classList.toggle('warn', w.length > 0);
       }
-      q(d, '#thBase').addEventListener('change', () => { Object.assign(t, baseColors(q(d, '#thBase').value)); if (old) t.id = old.id; t.name = q(d, '#thName').value; fill(); });
+      q(d, '#thBase').addEventListener('change', () => { for (const [k] of ITEM_FIELDS) delete t[k]; Object.assign(t, baseColors(q(d, '#thBase').value)); if (old) t.id = old.id; t.name = q(d, '#thName').value; fill(); });
+      d.addEventListener('change', (e) => {
+        const k = e.target.dataset.use;
+        if (!k) return;
+        q(d, `#th-${k}`).disabled = !e.target.checked; q(d, `[data-hex=${k}]`).disabled = !e.target.checked;
+        if (e.target.checked) t[k] = q(d, `#th-${k}`).value.toLowerCase(); else delete t[k];
+        show();
+      });
       d.addEventListener('input', (e) => {
         const k = e.target.dataset.k || e.target.dataset.hex;
         if (!k) return;
@@ -904,6 +1009,7 @@
         const builtIn = RF.THEMES.some((b) => RF.T(b.label).toLowerCase() === name.toLowerCase() || b.label.toLowerCase() === name.toLowerCase());
         if (builtIn || list.some((c) => c.id !== (old && old.id) && c.name.toLowerCase() === name.toLowerCase())) { A.toast('There is already a theme with that name.'); q(d, '#thName').focus(); return; }
         const item = { id: old ? old.id : Date.now().toString(36), name, bg: t.bg, surface: t.surface, ink: t.ink, accent: t.accent, star: t.star };
+        for (const [k] of ITEM_FIELDS) if (/^#[0-9a-f]{6}$/i.test(t[k] || '')) item[k] = t[k];
         const next = old ? list.map((c) => (c.id === old.id ? item : c)) : [...list, item];
         if (!(await A.setSetting({ customThemes: next, theme: `custom:${item.id}` }))) return;
         saved = true;
@@ -1037,6 +1143,7 @@
   bind('stSoundTest', 'click', () => testSound());
   bind('stSuspend', 'click', () => openSuspend());
   bind('stQuick', 'click', () => openQuick());
+  bind('stSubs', 'click', () => openSubscriptions());
   bind('stTextSize', 'change', () => set({ textSize: Number($('stTextSize').value) }));
   bind('stLanguage', 'change', async () => { try { sessionStorage.setItem('rf-reopen', 'display'); } catch (e) { /* none */ } await set({ language: $('stLanguage').value }); }); // main reloads the windows
   bind('stDateFormat', 'change', async () => { await set({ dateFormat: $('stDateFormat').value }); RF.setFormats(S.settings); await A.refresh(); });
@@ -1061,7 +1168,7 @@
   window.rf.on('settings:changed', () => { if (st.open) fillSettings(); });
 
   window.__rfx = {
-    fillSettings, showPanel, openQuick, openAlarms, openSuspend, openViews, editView, showView, openLists, openCategories, pickCategories,
+    fillSettings, showPanel, openQuick, openAlarms, openSubscriptions, openSuspend, openViews, editView, showView, openLists, openCategories, pickCategories,
     askMoveToList, askNewList, addList, askSchedule, askImport, askText, openGoTo, openRestore, backupNow, describeView, testSound, editTheme, deleteTheme,
   };
 })();

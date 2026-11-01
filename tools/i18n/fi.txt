@@ -916,3 +916,65 @@
 915| Näytetään ensimmäiset {n}.
 916| Ei hälytyksiä tällä aikavälillä.
 917| Torkutettu {time}
+918| 📅 Kalenterit
+919| Kalenterit kuukausinäkymässä
+920| Kalenterit muistutusnäkymässä
+921| Omat muistutukset
+922| Ei vielä kalenteritilauksia.
+923| Tilaa kalenteri…
+924| Hallitse tilauksia…
+925| {shown}/{all} kalenteritilausta näytetään tässä
+926| Tilaa kalentereita verkosta (pyhäpäivät, urheilu, joukkue)
+927| Tilaamastasi kalenterista: {name}
+928| Tilaamastasi kalenterista
+929| Avaa…
+930| Kopioi omiin muistutuksiin
+931| ”{s}” kopioitiin muistutuksiisi
+932| Kalenterista ”{name}”, jonka olet tilannut. Sitä ei voi muuttaa täällä.
+933| Tallenna oma kopio muistutuksiisi
+934| Kalenteritilaukset…
+935| Kalenterit verkosta (pyhäpäivät, urheilu, koulun tai joukkueen kalenteri), vain luku -tilassa ja ajan tasalla
+936| Kalenteritilaukset
+937| Pyhäpäivät, urheilu, koulun tai joukkueen kalenteri: mikä tahansa kalenteri (.ics), jolla on verkko-osoite. Se on vain luku -tilassa ja pysyy itse ajan tasalla.
+938| Kalenterin verkko-osoite
+939| Tilaa
+940| Päivitä kaikki
+941| Väri
+942| Kuinka usein se haetaan uudelleen
+943| Joka tunti
+944| 6 tunnin välein
+945| 12 tunnin välein
+946| Muistutusnäkymä
+947| Kuukausinäkymä
+948| Päivitä nyt
+949| Poista
+950| Päivitys ei onnistunut: {why}
+951| Näytetään kopio ajalta {time}.
+952| Päivitetty {time} · {events}
+953| {n} tapahtuma
+954| {n} tapahtumaa
+955| Kirjoita kalenterin verkko-osoite.
+956| Tilataan…
+957| Tilattu ”{name}” ({events}).
+958| Poistetaanko tilaus?
+959| ”{name}” ja sen tapahtumat eivät enää näy. Omiin muistutuksiisi ei kosketa.
+960| Kirjoita verkko-osoite, joka alkaa https://, http:// tai webcal://.
+961| Olet jo tilannut sen kalenterin.
+962| Kalenteri on liian suuri (yli 10 Mt).
+963| Osoitteesta ei saatu kalenteria (.ics-tiedostoa).
+964| Tilausta ei enää ole.
+965| Tämä on tilaamastasi kalenterista, joten sitä ei voi muuttaa täällä.
+966| Kalenterin sivusto ei antanut kalenteria. Tarkista osoite.
+967| Kalenterin sivusto ei vastannut ajoissa.
+968| Kalenteria ei voitu hakea. Tarkista osoite ja yhteys.
+969| Kalenteria ei voitu hakea. Tarkista osoite ja yhteys (ja että ReminderFoxAgain saa lukea sivustoa).
+970| ReminderFoxAgain tarvitsee luvan lukea sivustoa.
+971| Kalenteritilaukset eivät ole käytettävissä täällä.
+972| Päivitys ei onnistunut
+973| Kohteiden tekstivärit
+974| Valitse väri ottaaksesi sen käyttöön. Tarkin voittaa: Valmis, sitten Tähdellä tai Ilman tähteä, sitten Mennyt, Tänään tai Tuleva, sitten Keskeneräinen. Valitsemattomat seuraavat teemaa (menneet kohteet näyttävät samalta kuin muut).
+975| Keskeneräinen
+976| Tähdellä (tärkeä)
+977| Ilman tähteä
+978| Tuleva (tulevaisuus)
+979| Kohteita ”{item}” on vaikea lukea luetteloissa (kontrasti {n}:1; 3:1 tai enemmän on parempi).

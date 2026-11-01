@@ -916,3 +916,65 @@
 915| Na chéad {n} á dtaispeáint.
 916| Níl aon aláraim sa tréimhse seo.
 917| Curtha siar ar feadh {time}
+918| 📅 Féilirí
+919| Féilirí san amharc Míosa
+920| Féilirí san amharc Meabhrúchán
+921| Mo mheabhrúcháin
+922| Níl aon síntiús féilire fós.
+923| Liostáil le féilire…
+924| Bainistigh síntiúis…
+925| {shown} as {all} síntiús féilire á dtaispeáint anseo
+926| Liostáil le féilirí ón ngréasán (laethanta saoire, spórt, foireann)
+927| Ón bhféilire a bhfuil tú liostáilte leis: {name}
+928| Ó fhéilire a bhfuil tú liostáilte leis
+929| Oscail…
+930| Cóipeáil chuig mo mheabhrúcháin
+931| Cóipeáladh “{s}” chuig do mheabhrúcháin
+932| Ó “{name}”, féilire a bhfuil tú liostáilte leis. Ní féidir é a athrú anseo.
+933| Sábháil do chóip féin i do mheabhrúcháin
+934| Síntiúis féilire…
+935| Féilirí ón ngréasán (laethanta saoire, spórt, féilire scoile nó foirne), inléite amháin agus coinnithe cothrom le dáta
+936| Síntiúis féilire
+937| Laethanta saoire, spórt, féilire scoile nó foirne: aon fhéilire (.ics) a bhfuil seoladh gréasáin aige. Is inléite amháin é agus coinníonn sé é féin cothrom le dáta.
+938| Seoladh gréasáin an fhéilire
+939| Liostáil
+940| Athnuaigh gach ceann
+941| Dath
+942| Cé chomh minic a fhaightear arís é
+943| Gach uair an chloig
+944| Gach 6 uair an chloig
+945| Gach 12 uair an chloig
+946| Amharc Meabhrúchán
+947| Amharc Míosa
+948| Athnuaigh anois
+949| Bain
+950| Níorbh fhéidir é a nuashonrú: {why}
+951| An chóip ó {time} á taispeáint.
+952| Nuashonraithe {time} · {events}
+953| {n} imeacht
+954| {n} imeacht
+955| Cuir isteach seoladh gréasáin féilire.
+956| Ag liostáil…
+957| Liostáilte le “{name}” ({events}).
+958| Bain an síntiús?
+959| Ní thaispeánfar “{name}” ná a imeachtaí níos mó. Ní bhaintear le do mheabhrúcháin féin.
+960| Cuir isteach seoladh gréasáin a thosaíonn le https://, http:// nó webcal://.
+961| Tá tú liostáilte leis an bhféilire sin cheana.
+962| Tá an féilire sin rómhór (níos mó ná 10 MB).
+963| Níor thug an seoladh sin féilire (comhad .ics).
+964| Níl an síntiús sin ann níos mó.
+965| Is ó fhéilire a bhfuil tú liostáilte leis é seo, mar sin ní féidir é a athrú anseo.
+966| Níor thug suíomh gréasáin an fhéilire an féilire. Seiceáil an seoladh.
+967| Níor fhreagair suíomh gréasáin an fhéilire in am.
+968| Níorbh fhéidir an féilire a fháil. Seiceáil an seoladh agus do cheangal.
+969| Níorbh fhéidir an féilire a fháil. Seiceáil an seoladh agus do cheangal (agus go bhfuil cead ag ReminderFoxAgain an suíomh sin a léamh).
+970| Teastaíonn do chead ó ReminderFoxAgain chun an suíomh gréasáin sin a léamh.
+971| Níl síntiúis féilire ar fáil anseo.
+972| Níorbh fhéidir é a nuashonrú
+973| Dathanna téacs na mír
+974| Cuir tic le dath chun é a úsáid. Buann an ceann is sainiúla: Críochnaithe, ansin Le réalta nó Gan réalta, ansin Caite, Inniu nó Le teacht, ansin Gan críochnú. Leanann na cinn gan tic an téama (bíonn míreanna caite cosúil leis na cinn eile).
+975| Gan críochnú
+976| Le réalta (tábhachtach)
+977| Gan réalta
+978| Le teacht (todhchaí)
+979| Is deacair míreanna “{item}” a léamh sna liostaí (codarsnacht {n}:1; is fearr 3:1 nó níos mó).

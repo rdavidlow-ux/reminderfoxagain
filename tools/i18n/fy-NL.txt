@@ -916,3 +916,65 @@
 915| De earste {n} wurde toand.
 916| Gjin alarms yn dizze perioade.
 917| Snoozed foar {time}
+918| 📅 Aginda's
+919| Aginda's yn de moanneweargave
+920| Aginda's yn de herinneringsweargave
+921| Myn herinneringen
+922| Noch gjin aginda-abonneminten.
+923| Abonnearje op in aginda…
+924| Abonneminten beheare…
+925| {shown} fan {all} aginda-abonneminten hjir toand
+926| Abonnearje op aginda's fan it web (feestdagen, sport, in team)
+927| Ut de aginda dêr't do op abonnearre bist: {name}
+928| Ut in aginda dêr't do op abonnearre bist
+929| Iepenje…
+930| Kopiearje nei myn herinneringen
+931| ‘{s}’ kopiearre nei dyn herinneringen
+932| Ut ‘{name}’, in aginda dêr't do op abonnearre bist. Hjir kin it net wizige wurde.
+933| In eigen kopy bewarje yn dyn herinneringen
+934| Aginda-abonneminten…
+935| Aginda's fan it web (feestdagen, sport, in skoal- of teamaginda), allinnich-lêze en by de tiid hâlden
+936| Aginda-abonneminten
+937| Feestdagen, sport, in skoal- of teamaginda: elke aginda (.ics) mei in webadres. Hy is allinnich-lêze en hâldt himsels by de tiid.
+938| Webadres fan de aginda
+939| Abonnearje
+940| Alles fernije
+941| Kleur
+942| Hoe faak er opnij ophelle wurdt
+943| Elk oere
+944| Elke 6 oeren
+945| Elke 12 oeren
+946| Herinneringsweargave
+947| Moanneweargave
+948| No fernije
+949| Fuortsmite
+950| Koe net bywurke wurde: {why}
+951| De kopy fan {time} wurdt toand.
+952| Bywurke {time} · {events}
+953| {n} ôfspraak
+954| {n} ôfspraken
+955| Fier it webadres fan in aginda yn.
+956| Abonnearje…
+957| Abonnearre op ‘{name}’ ({events}).
+958| Abonnemint fuortsmite?
+959| ‘{name}’ en syn ôfspraken wurde net mear toand. Dyn eigen herinneringen bliuwe ûnoanrekke.
+960| Fier in webadres yn dat begjint mei https://, http:// of webcal://.
+961| Do bist al op dy aginda abonnearre.
+962| Dy aginda is te grut (mear as 10 MB).
+963| Dat adres joech gjin aginda (in .ics-bestân).
+964| Dat abonnemint bestiet net mear.
+965| Dit komt út in aginda dêr't do op abonnearre bist, dus hjir kin it net wizige wurde.
+966| De website fan de aginda joech de aginda net. Kontrolearje it adres.
+967| De website fan de aginda antwurde net op tiid.
+968| De aginda koe net ophelle wurde. Kontrolearje it adres en dyn ferbining.
+969| De aginda koe net ophelle wurde. Kontrolearje it adres en dyn ferbining (en dat ReminderFoxAgain dy website lêze mei).
+970| ReminderFoxAgain hat dyn tastimming nedich om dy website te lêzen.
+971| Aginda-abonneminten binne hjir net beskikber.
+972| Koe net bywurke wurde
+973| Tekstkleuren fan items
+974| Fink in kleur oan om him te brûken. De meast spesifike wint: Foltôge, dan Mei stjer of Sûnder stjer, dan Foarby, Hjoed of Kommend, dan Net foltôge. Net-oanfinkte folgje it tema (foarbye items sjogge der út as de oaren).
+975| Net foltôge
+976| Mei stjer (wichtich)
+977| Sûnder stjer
+978| Kommend (takomst)
+979| Items ‘{item}’ binne dreech te lêzen yn de listen (kontrast {n}:1; 3:1 of mear is better).

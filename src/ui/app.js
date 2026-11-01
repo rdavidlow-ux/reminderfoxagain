@@ -331,13 +331,70 @@
     return { count: Infinity, until: until.getTime() };
   }
 
+  // ---------------------------------------------------------------- calendar subscriptions in the views
+  // A view ('list' = the Reminders tab, 'month' = the Month tab and the calendar panel) shows the subscriptions ticked
+  // for it under 📅 Calendars; their items are read-only and marked with the subscription's colour.
+  const subsFor = (view) => (S.settings.subscriptions || []).filter((x) => (view === 'month' ? x.showMonth : x.showList) !== false);
+  async function rangeWithSubs(a, b, opts, view) {
+    const own = await window.rf.range(a, b, opts);
+    if (!window.rf.subsRange || !subsFor(view).length) return own;
+    const more = (await window.rf.subsRange(a, b, view).catch(() => [])) || [];
+    return more.length ? [...own, ...more].sort((x, y) => x.start - y.start) : own;
+  }
+  async function nextWithSubs(from, opts, view) {
+    const own = await window.rf.next(from, opts);
+    if (!window.rf.subsNext || !subsFor(view).length) return own;
+    const more = (await window.rf.subsNext(from, opts, view).catch(() => [])) || [];
+    return more.length ? [...own, ...more] : own;
+  }
+  const subAttrs = (r) => (r.sub ? ` style="--sub-c:${esc(r.subColor || '#888888')}"` : '');
+  // the 📅 Calendars button of a toolbar: tick which subscriptions that view shows
+  const calPop = $('calPop');
+  let calView = 'list';
+  function showCalPop(btn) {
+    calView = btn.dataset.calview;
+    const list = S.settings.subscriptions || [];
+    const key = calView === 'month' ? 'showMonth' : 'showList';
+    calPop.innerHTML = `<div class="cal-pop-h">${esc(T(calView === 'month' ? 'Calendars in the Month view' : 'Calendars in the Reminders view'))}</div>` +
+      '<label class="inline-chk cal-mine"><input type="checkbox" class="chk" checked disabled> <span class="dot mine"></span> My reminders</label>' +
+      (list.length ? list.map((x) => `<label class="inline-chk"${x.error ? ` title="${esc(x.error)}"` : ''}><input type="checkbox" class="chk" data-sub="${esc(x.id)}"${x[key] !== false ? ' checked' : ''}> <span class="dot" style="background:${esc(x.color)}"></span> <span translate="no">${esc(x.name)}</span>${x.error ? ' <span class="warn-dot" aria-label="Could not be updated">!</span>' : ''}</label>`).join('')
+        : '<div class="note">No calendar subscriptions yet.</div>') +
+      '<hr><button type="button" data-calact="add">Subscribe to a calendar…</button>' + (list.length ? '<button type="button" data-calact="manage">Manage subscriptions…</button>' : '');
+    calPop.classList.remove('hidden');
+    const r = btn.getBoundingClientRect();
+    calPop.style.left = `${Math.max(4, Math.min(r.left, window.innerWidth - calPop.offsetWidth - 4))}px`;
+    calPop.style.top = `${Math.min(r.bottom + 4, window.innerHeight - calPop.offsetHeight - 4)}px`;
+  }
+  for (const b of document.querySelectorAll('[data-calview]')) b.addEventListener('click', (e) => { e.stopPropagation(); if (calPop.classList.contains('hidden') || calView !== b.dataset.calview) showCalPop(b); else calPop.classList.add('hidden'); });
+  document.addEventListener('mousedown', (e) => { if (!calPop.contains(e.target) && !(e.target.closest && e.target.closest('[data-calview]'))) calPop.classList.add('hidden'); });
+  calPop.addEventListener('change', async (e) => {
+    const id = e.target.dataset.sub;
+    if (!id) return;
+    await guard(window.rf.subsUpdate(id, { [calView === 'month' ? 'showMonth' : 'showList']: e.target.checked }));
+  });
+  calPop.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-calact]');
+    if (!b) return;
+    calPop.classList.add('hidden');
+    FX('openSubscriptions', { add: b.dataset.calact === 'add' });
+  });
+  function updateCalButtons() {
+    const list = S.settings.subscriptions || [];
+    for (const b of document.querySelectorAll('[data-calview]')) {
+      const key = b.dataset.calview === 'month' ? 'showMonth' : 'showList';
+      const shown = list.filter((x) => x[key] !== false).length;
+      b.classList.toggle('has-hidden', shown < list.length);
+      b.title = list.length ? T('{shown} of {all} calendar subscriptions shown here', { shown, all: list.length }) : T('Subscribe to calendars from the web (holidays, sports, a team)');
+    }
+  }
+
   async function reminderRows() {
     const t0 = todayStart();
     const q = S.search.trim().toLowerCase();
     let rows;
     // upcoming rows, past one-offs, and past occurrences of repeating reminders (ticked or not; tickedOnly: as before 0.3.1)
     const allRows = async (kinds = ['event'], tickedOnly = false) => {
-      const [next, hist] = await Promise.all([window.rf.next(t0.getTime(), repeatOpts()), window.rf.history(t0.getTime(), { tickedOnly })]);
+      const [next, hist] = await Promise.all([nextWithSubs(t0.getTime(), repeatOpts(), 'list'), window.rf.history(t0.getTime(), { tickedOnly })]);
       const ev = next.filter((r) => kinds.includes(r.kind) && (r.kind === 'event' || r.start != null));
       const have = new Set(ev.map(keyOf));
       for (const h of hist) if (!have.has(keyOf(h))) { ev.push(h); have.add(keyOf(h)); }
@@ -346,7 +403,7 @@
     if (q) rows = (await allRows()).filter((r) => matches(r, q));
     else {
       const f = S.filter;
-      const range = async (a, b) => (await window.rf.range(a.getTime(), b.getTime(), { includeTodos: false }));
+      const range = async (a, b) => rangeWithSubs(a.getTime(), b.getTime(), { includeTodos: false }, 'list');
       if (f === 'today') rows = await range(t0, addDays(t0, 1));
       else if (f === 'week') rows = await range(t0, addDays(t0, 7));
       else if (f === 'day') { const d = parseKey(S.selDay); rows = await range(d, addDays(d, 1)); }
@@ -356,10 +413,10 @@
         const v = viewOf(f);
         const kinds = v.includeTodos ? ['event', 'todo'] : ['event'];
         const span = viewRange(v);
-        rows = span ? (await window.rf.range(span[0].getTime(), span[1].getTime(), { includeTodos: !!v.includeTodos })) : await allRows(kinds, true);
+        rows = span ? (await rangeWithSubs(span[0].getTime(), span[1].getTime(), { includeTodos: !!v.includeTodos }, 'list')) : await allRows(kinds, true);
         rows = rows.filter((r) => kinds.includes(r.kind) && viewMatches(v, r));
       } else {
-        const next = (await window.rf.next(t0.getTime(), repeatOpts())).filter((r) => r.kind === 'event');
+        const next = (await nextWithSubs(t0.getTime(), repeatOpts(), 'list')).filter((r) => r.kind === 'event');
         // past one-offs, and every past occurrence of repeating reminders, ticked or not
         if (f === 'past') rows = (await allRows()).filter((r) => r.past);
         else if (f === 'important') rows = next.filter((r) => r.important);
@@ -398,9 +455,10 @@
     if (r.start != null && isPast(r)) cls.push('past');
     if (r.completed) cls.push('done');
     if (r.important) cls.push('important');
+    if (r.sub) cls.push('subcal');
     const key = keyOf(r);
     if (key === S.selKey) cls.push('selected');
-    const sub = r.location ? `<span class="sub">· ${esc(r.location)}</span>` : '';
+    const sub = (r.location ? `<span class="sub">· ${esc(r.location)}</span>` : '') + (r.sub ? `<span class="subcal-name" translate="no" title="${esc(T('From the calendar you subscribe to: {name}', { name: r.subName }))}">${esc(r.subName)}</span>` : '');
     const flags = (r.carried ? `<span class="flag overdue" title="Missed on ${esc(fmt.long(r.overdueSince))}; it reminds you every day until you tick it">Overdue since ${esc(fmt.date(r.overdueSince))}</span>`
       : r.untilDone && !r.completed ? '<span class="flag" title="Remind daily until completed">Until done</span>' : '') +
       (r.showInTooltip ? '<span class="flag" title="Shown in the tray tooltip">Tooltip</span>' : '') +
@@ -419,8 +477,8 @@
       dateCells = `<td class="c-date">${esc(fmt.date(r.start))}</td><td class="c-day">${esc(fmt.weekday(r.start))}</td><td class="c-time">${r.allDay ? '' : esc(fmt.time(r.start))}</td>`;
     }
     if (r.carried) cls.push('carried');
-    return `<tr class="${cls.join(' ')}" data-key="${esc(key)}" data-uid="${esc(r.uid)}" data-start="${occOf(r) == null ? '' : occOf(r)}" data-sort="${r.start == null ? '' : r.start}">` +
-      `<td class="c-chk"><input type="checkbox" class="chk" data-act="done"${r.completed ? ' checked' : ''} aria-label="Completed"></td>` +
+    return `<tr class="${cls.join(' ')}" data-key="${esc(key)}" data-uid="${esc(r.uid)}" data-start="${occOf(r) == null ? '' : occOf(r)}" data-sort="${r.start == null ? '' : r.start}"${subAttrs(r)}>` +
+      `<td class="c-chk"><input type="checkbox" class="chk" data-act="done"${r.completed ? ' checked' : ''}${r.sub ? ' disabled title="From a calendar you subscribe to"' : ''} aria-label="Completed"></td>` +
       `<td class="c-imp">${r.important ? '<span class="imp" title="Important">★</span>' : ''}</td>` +
       dateCells +
       `<td class="c-desc"><span class="t">${esc(r.summary || '(no description)')}</span>${sub}${listSub}${flags}${doneAt}</td>` +
@@ -692,9 +750,11 @@
     if (r.completed) cls.push('done');
     if (r.important) cls.push('important');
     if (r.carried) cls.push('carried');
+    if (r.date === S.today) cls.push('today'); else if (r.start != null && isPast(r)) cls.push('past');
+    if (r.sub) cls.push('subcal');
     const pre = (r.kind === 'todo' ? '☐ ' : '') + (r.important ? '★ ' : '');
     const tm = r.allDay ? '' : `<span class="tm">${esc(fmt.time(r.start))}</span>`;
-    return `<div class="${cls.join(' ')}" data-uid="${esc(r.uid)}" data-start="${occOf(r)}" title="${esc((r.allDay ? '' : fmt.time(r.start) + ' ') + r.summary + (r.carried ? ` (overdue since ${fmt.date(r.overdueSince)})` : ''))}">${tm}${esc(pre + r.summary)}</div>`;
+    return `<div class="${cls.join(' ')}"${subAttrs(r)} data-uid="${esc(r.uid)}" data-start="${occOf(r)}" title="${esc((r.allDay ? '' : fmt.time(r.start) + ' ') + r.summary + (r.carried ? ` (overdue since ${fmt.date(r.overdueSince)})` : ''))}">${tm}${esc(pre + r.summary)}</div>`;
   }
   // The Month view scrolls: weeks run on above and below the month in focus, so past and coming months are a scroll
   // away. A month's worth of weeks fills the view, the month in focus is the one in the title (the others are dimmed),
@@ -728,7 +788,7 @@
     const to = addDays(from, weeks * 7);
     const q = S.search.trim().toLowerCase();
     // Show completed (the Month toolbar, off at first): ticked reminders and list items
-    const rows = (await window.rf.range(from.getTime(), to.getTime(), { includeTodos: S.mTodos })).filter((r) => (S.mShowDone || !r.completed) && matches(r, q));
+    const rows = (await rangeWithSubs(from.getTime(), to.getTime(), { includeTodos: S.mTodos }, 'month')).filter((r) => (S.mShowDone || !r.completed) && matches(r, q));
     const map = spreadByDay(rows, from, to);
     // how many lines fit in a day: its number (about 20 px with the padding), then 19 px a line plus a 2 px gap
     const fit = Math.max(1, Math.floor((rowH - 28) / 21));
@@ -816,7 +876,7 @@
     const months = Array.from({ length: n }, (_, i) => new Date(S.calMonth.getFullYear(), S.calMonth.getMonth() + i, 1));
     const gs = gridStart(months[0]);
     const ge = addDays(gridStart(months[n - 1]), 42);
-    const rows = (await window.rf.range(gs.getTime(), ge.getTime(), { includeTodos: true })).filter(notDoneItem);
+    const rows = (await rangeWithSubs(gs.getTime(), ge.getTime(), { includeTodos: true }, 'month')).filter(notDoneItem);
     const map = spreadByDay(rows, gs, ge);
     let html = months.map((m, i) => `<div class="mcal-month${i ? ' more-month' : ''}">${monthHtml(m, map, i === 0, i === n - 1)}</div>`).join('');
     html += '<div class="mcal-foot"><button class="btn ghost" data-cal="today">Today</button><button class="btn ghost" data-cal="goto" title="Go to a date (Ctrl+G)">Go to…</button><button class="btn ghost" data-cal="list">Show day in list</button></div>';
@@ -826,7 +886,7 @@
   }
   async function renderAgenda() {
     const d = parseKey(S.selDay);
-    const rows = (await window.rf.range(d.getTime(), addDays(d, 1).getTime(), { includeTodos: true })).filter(notDoneItem)
+    const rows = (await rangeWithSubs(d.getTime(), addDays(d, 1).getTime(), { includeTodos: true }, 'month')).filter(notDoneItem)
       .sort((a, b) => (b.allDay - a.allDay) || (a.start - b.start));
     const head = S.selDay === S.today ? `Today · ${fmt.date(d)}` : fmt.long(d);
     let html = `<h3><span>${esc(head)}</span><button class="btn ghost" data-ag="add" title="Add a reminder on this day">＋</button></h3>`;
@@ -834,7 +894,7 @@
     for (const r of rows) {
       const tm = r.kind === 'todo' ? 'To-do' : r.allDay ? 'All day' : fmt.time(r.start);
       const small = [r.carried ? `Overdue since ${fmt.date(r.overdueSince)}` : '', r.location, r.repeatText ? `↻ ${r.repeatText}` : ''].filter(Boolean).map(esc).join(' · ');
-      html += `<div class="item${r.completed ? ' done' : ''}${r.important ? ' important' : ''}${r.carried ? ' carried' : ''}" data-uid="${esc(r.uid)}" data-start="${occOf(r)}"><div class="tm">${esc(tm)}</div><div class="tx"><b>${r.important ? '★ ' : ''}${esc(r.summary)}</b>${small ? `<small>${small}</small>` : ''}</div></div>`;
+      html += `<div class="item${r.completed ? ' done' : ''}${r.important ? ' important' : ''}${r.carried ? ' carried' : ''}${S.selDay === S.today ? ' today' : S.selDay < S.today ? ' past' : ''}${r.sub ? ' subcal' : ''}"${subAttrs(r)} data-uid="${esc(r.uid)}" data-start="${occOf(r)}"><div class="tm">${esc(tm)}</div><div class="tx"><b>${r.important ? '★ ' : ''}${esc(r.summary)}</b>${small ? `<small>${small}</small>` : ''}</div></div>`;
     }
     $('agenda').innerHTML = html;
   }
@@ -909,6 +969,7 @@
       do {
         job.again = false;
         await loadMeta();
+        updateCalButtons();
         S.welcome = S.meta.count === 0 && !S.meta.archiveCount && !S.settings.welcomeDone;
         await Promise.all([renderMain('refresh'), renderSide(), updateCounts()]);
       } while (job.again);
@@ -990,7 +1051,9 @@
     const checked = tr.querySelector('input[data-act=done]').checked;
     ctxRow = { uid: dto.uid, start, dto, checked };
     const repeatingEvent = dto.kind === 'event' && dto.repeat;
-    ctx.innerHTML = '<button data-ctx="edit">Edit…</button>' +
+    if (dto.readOnly) { // from a calendar subscription: look, copy, map
+      ctx.innerHTML = '<button data-ctx="edit">Open…</button><button data-ctx="mine">Copy to my reminders</button>' + (dto.location ? '<button data-ctx="map">Show on a map</button>' : '');
+    } else ctx.innerHTML = '<button data-ctx="edit">Edit…</button>' +
       `<button data-ctx="toggle">${checked ? 'Mark not completed' : 'Mark completed'}</button>` +
       (dto.kind === 'event' ? `<button data-ctx="ruc">${dto.untilDone ? '✓ ' : ''}Remind daily until completed</button>` : `<button data-ctx="tip">${dto.showInTooltip ? '✓ ' : ''}Show in the tray tooltip</button>`) +
       (dto.kind === 'todo' ? '<button data-ctx="list">Move to list…</button><button data-ctx="copy">Copy to list…</button><button data-ctx="schedule">Schedule as a reminder…</button>'
@@ -1019,6 +1082,7 @@
     if (a === 'edit') openEditor({ uid, start });
     else if (a === 'toggle') { const r = await guard(window.rf.complete(uid, !checked, start == null ? undefined : start)); if (r === 'advanced') toast('Done — moved to the next date'); }
     else if (a === 'dup') await duplicate(dto);
+    else if (a === 'mine') await copyToMine(dto);
     else if (a === 'list') await FX('askMoveToList', dto);
     else if (a === 'copy') await FX('askMoveToList', dto, { copy: true });
     else if (a === 'schedule') await FX('askSchedule', dto);
@@ -1048,7 +1112,14 @@
     guard(window.rf.openUrl(mapUrl(place)));
   }
   // An exact copy right after the original (same list, same place in "My order"), titled "… (copy)".
+  // an item from a calendar subscription, as your own reminder (Ctrl+D does the same)
+  async function copyToMine(dto) {
+    const uid = await guard(window.rf.subsCopy(dto.uid));
+    if (uid) toast(T('“{s}” copied to your reminders', { s: dto.summary }), 4500, { label: 'Edit the copy', fn: () => openEditor({ uid }) });
+    return uid;
+  }
   async function duplicate(dto) {
+    if (dto.readOnly) return copyToMine(dto);
     const uid = await guard(window.rf.duplicate(dto.uid, { suffix: ' (copy)' }));
     if (uid) toast(`Duplicated “${dto.summary}”`, 4500, { label: 'Edit the copy', fn: () => openEditor({ uid }) });
     return uid;
@@ -1108,9 +1179,17 @@
     E.origRepeat = dto.repeat;
     E.origAlarm = dto.alarm;
     fillEditor(dto);
+    // from a calendar subscription: shown, not changed (Copy to my reminders makes it yours)
+    const ro = !!dto.readOnly;
+    ed.querySelector('.dlg-body').inert = ro;
+    ed.classList.toggle('readonly', ro);
+    $('edReadOnly').classList.toggle('hidden', !ro);
+    if (ro) $('edReadOnly').querySelector('span').textContent = T('From “{name}”, a calendar you subscribe to. It can\'t be changed here.', { name: dto.subName || '' });
+    for (const id of ['edSave', 'edDelete', 'edSchedule', 'edMail']) if (ro) $(id).classList.add('hidden');
+    if (!ro) $('edSave').classList.remove('hidden');
+    $('edCopyMine').classList.toggle('hidden', !ro);
     if (!ed.open) ed.showModal();
-    $('edSummary').focus();
-    $('edSummary').select();
+    if (ro) $('edCancel').focus(); else { $('edSummary').focus(); $('edSummary').select(); }
   }
 
   function fillEditor(d) {
@@ -1461,6 +1540,7 @@
     $(id).addEventListener('input', () => { showRemindParts(); E.remind = readRemindUI(); });
   }
   for (const id of ['edDate', 'edTime', 'edAllDay']) $(id).addEventListener('change', () => { if (E.kind === 'todo') { E.remind = readRemindUI(); renderRemind(); } });
+  $('edCopyMine').addEventListener('click', async () => { if (E.dto && E.dto.readOnly && await copyToMine(E.dto)) ed.close(); });
   $('edMail').addEventListener('click', () => { if (E.dto && E.dto.messageId) guard(window.rf.openEmail(E.dto.messageId)); });
   $('edSchedule').addEventListener('click', async () => {
     const dto = buildEditorDto();
@@ -1522,6 +1602,7 @@
   $('edForm').addEventListener('submit', (e) => { e.preventDefault(); saveEditor(); });
 
   async function saveEditor() {
+    if (E.dto && E.dto.readOnly) return;
     const dto = buildEditorDto();
     if (!dto) return;
     const kind = dto.kind;
@@ -1829,6 +1910,7 @@
   window.rf.on('data:changed', () => refresh());
   window.rf.on('settings:changed', async (s) => {
     S.settings = s;
+    updateCalButtons();
     applyTheme();
     RF.setFormats(s);
     try { S.meta.suspend = await window.rf.suspended(); } catch (e) { /* keep */ }

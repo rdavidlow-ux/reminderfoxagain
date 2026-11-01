@@ -1,0 +1,62 @@
+📅 Féilirí
+Féilirí san amharc Míosa
+Féilirí san amharc Meabhrúchán
+Mo mheabhrúcháin
+Níl aon síntiús féilire fós.
+Liostáil le féilire…
+Bainistigh síntiúis…
+{shown} as {all} síntiús féilire á dtaispeáint anseo
+Liostáil le féilirí ón ngréasán (laethanta saoire, spórt, foireann)
+Ón bhféilire a bhfuil tú liostáilte leis: {name}
+Ó fhéilire a bhfuil tú liostáilte leis
+Oscail…
+Cóipeáil chuig mo mheabhrúcháin
+Cóipeáladh “{s}” chuig do mheabhrúcháin
+Ó “{name}”, féilire a bhfuil tú liostáilte leis. Ní féidir é a athrú anseo.
+Sábháil do chóip féin i do mheabhrúcháin
+Síntiúis féilire…
+Féilirí ón ngréasán (laethanta saoire, spórt, féilire scoile nó foirne), inléite amháin agus coinnithe cothrom le dáta
+Síntiúis féilire
+Laethanta saoire, spórt, féilire scoile nó foirne: aon fhéilire (.ics) a bhfuil seoladh gréasáin aige. Is inléite amháin é agus coinníonn sé é féin cothrom le dáta.
+Seoladh gréasáin an fhéilire
+Liostáil
+Athnuaigh gach ceann
+Dath
+Cé chomh minic a fhaightear arís é
+Gach uair an chloig
+Gach 6 uair an chloig
+Gach 12 uair an chloig
+Amharc Meabhrúchán
+Amharc Míosa
+Athnuaigh anois
+Bain
+Níorbh fhéidir é a nuashonrú: {why}
+An chóip ó {time} á taispeáint.
+Nuashonraithe {time} · {events}
+{n} imeacht
+{n} imeacht
+Cuir isteach seoladh gréasáin féilire.
+Ag liostáil…
+Liostáilte le “{name}” ({events}).
+Bain an síntiús?
+Ní thaispeánfar “{name}” ná a imeachtaí níos mó. Ní bhaintear le do mheabhrúcháin féin.
+Cuir isteach seoladh gréasáin a thosaíonn le https://, http:// nó webcal://.
+Tá tú liostáilte leis an bhféilire sin cheana.
+Tá an féilire sin rómhór (níos mó ná 10 MB).
+Níor thug an seoladh sin féilire (comhad .ics).
+Níl an síntiús sin ann níos mó.
+Is ó fhéilire a bhfuil tú liostáilte leis é seo, mar sin ní féidir é a athrú anseo.
+Níor thug suíomh gréasáin an fhéilire an féilire. Seiceáil an seoladh.
+Níor fhreagair suíomh gréasáin an fhéilire in am.
+Níorbh fhéidir an féilire a fháil. Seiceáil an seoladh agus do cheangal.
+Níorbh fhéidir an féilire a fháil. Seiceáil an seoladh agus do cheangal (agus go bhfuil cead ag ReminderFoxAgain an suíomh sin a léamh).
+Teastaíonn do chead ó ReminderFoxAgain chun an suíomh gréasáin sin a léamh.
+Níl síntiúis féilire ar fáil anseo.
+Níorbh fhéidir é a nuashonrú
+Dathanna téacs na mír
+Cuir tic le dath chun é a úsáid. Buann an ceann is sainiúla: Críochnaithe, ansin Le réalta nó Gan réalta, ansin Caite, Inniu nó Le teacht, ansin Gan críochnú. Leanann na cinn gan tic an téama (bíonn míreanna caite cosúil leis na cinn eile).
+Gan críochnú
+Le réalta (tábhachtach)
+Gan réalta
+Le teacht (todhchaí)
+Is deacair míreanna “{item}” a léamh sna liostaí (codarsnacht {n}:1; is fearr 3:1 nó níos mó).

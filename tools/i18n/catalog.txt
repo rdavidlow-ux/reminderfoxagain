@@ -956,3 +956,66 @@ repeats
 Showing the first {n}.
 No alarms in this period.
 Snoozed for {time}
+# calendar subscriptions, and the item colours of themes (desktop app and Thunderbird add-on)
+📅 Calendars
+Calendars in the Month view
+Calendars in the Reminders view
+My reminders
+No calendar subscriptions yet.
+Subscribe to a calendar…
+Manage subscriptions…
+{shown} of {all} calendar subscriptions shown here
+Subscribe to calendars from the web (holidays, sports, a team)
+From the calendar you subscribe to: {name}
+From a calendar you subscribe to
+Open…
+Copy to my reminders
+“{s}” copied to your reminders
+From “{name}”, a calendar you subscribe to. It can't be changed here.
+Save your own copy of it in your reminders
+Calendar subscriptions…
+Calendars from the web (holidays, sports, a school or team calendar), read-only and kept up to date
+Calendar subscriptions
+Holidays, sports, a school or team calendar: any calendar (.ics) with a web address. It is read-only and kept up to date on its own.
+Web address of the calendar
+Subscribe
+Refresh all
+Colour
+How often it is fetched again
+Every hour
+Every 6 hours
+Every 12 hours
+Reminders view
+Month view
+Refresh now
+Remove
+Could not be updated: {why}
+Showing the copy from {time}.
+Updated {time} · {events}
+{n} event
+{n} events
+Enter the web address of a calendar.
+Subscribing…
+Subscribed to “{name}” ({events}).
+Remove subscription?
+“{name}” and its events will no longer show. Your own reminders are not touched.
+Please enter a web address starting with https://, http:// or webcal://.
+You already subscribe to that calendar.
+That calendar is too big (more than 10 MB).
+That address did not give a calendar (an .ics file).
+That subscription no longer exists.
+This comes from a calendar you subscribe to, so it can't be changed here.
+The calendar's web site did not give the calendar. Check the address.
+The calendar's web site did not answer in time.
+The calendar could not be fetched. Check the address and your connection.
+The calendar could not be fetched. Check the address and your connection (and that ReminderFoxAgain may read that web site).
+ReminderFoxAgain needs your permission to read that web site.
+Calendar subscriptions are not available here.
+Could not be updated
+Item text colours
+Tick a colour to use it. The most particular one wins: Completed, then Starred or Not starred, then Past, Today or Coming, then Not completed. Unticked ones follow the theme (past items look like the others).
+Not completed
+Starred (important)
+Not starred
+Coming (future)
+{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).

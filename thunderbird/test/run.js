@@ -38,6 +38,7 @@ function serve() {
   const server = http.createServer((req, res) => {
     const u = new URL(req.url, 'http://x');
     // a calendar file behind a link in an email ("Import this calendar…")
+    if (u.pathname === '/_cal/holidays.ics') { res.writeHead(200, { 'content-type': 'text/calendar' }); res.end(require(path.join(ROOT, 'tools', 'sample-calendar.js')).text()); return; }
     if (u.pathname === '/_cal/team.ics') { res.writeHead(200, { 'content-type': 'text/calendar' }); res.end(TEAM_ICS); return; }
     if (u.pathname === '/_bg.html') { res.writeHead(200, { 'content-type': 'text/html' }); res.end('<!doctype html><meta charset="utf-8"><script src="/host.js"></script><script src="/tb/background.js"></script>'); return; }
     const p = path.join(DIST, decodeURIComponent(u.pathname));

@@ -1,0 +1,62 @@
+📅 Kalendrar
+Kalendrar i månadsvyn
+Kalendrar i påminnelsevyn
+Mina påminnelser
+Inga kalenderprenumerationer än.
+Prenumerera på en kalender…
+Hantera prenumerationer…
+{shown} av {all} kalenderprenumerationer visas här
+Prenumerera på kalendrar från webben (helgdagar, sport, ett lag)
+Från kalendern du prenumererar på: {name}
+Från en kalender du prenumererar på
+Öppna…
+Kopiera till mina påminnelser
+”{s}” kopierad till dina påminnelser
+Från ”{name}”, en kalender du prenumererar på. Den kan inte ändras här.
+Spara en egen kopia i dina påminnelser
+Kalenderprenumerationer…
+Kalendrar från webben (helgdagar, sport, en skol- eller lagkalender), skrivskyddade och uppdaterade
+Kalenderprenumerationer
+Helgdagar, sport, en skol- eller lagkalender: vilken kalender (.ics) som helst med en webbadress. Den är skrivskyddad och håller sig uppdaterad själv.
+Kalenderns webbadress
+Prenumerera
+Uppdatera alla
+Färg
+Hur ofta den hämtas igen
+Varje timme
+Var 6:e timme
+Var 12:e timme
+Påminnelsevyn
+Månadsvyn
+Uppdatera nu
+Ta bort
+Kunde inte uppdateras: {why}
+Visar kopian från {time}.
+Uppdaterad {time} · {events}
+{n} händelse
+{n} händelser
+Skriv en kalenders webbadress.
+Prenumererar…
+Prenumererar på ”{name}” ({events}).
+Ta bort prenumerationen?
+”{name}” och dess händelser visas inte längre. Dina egna påminnelser rörs inte.
+Skriv en webbadress som börjar med https://, http:// eller webcal://.
+Du prenumererar redan på den kalendern.
+Den kalendern är för stor (mer än 10 MB).
+Den adressen gav ingen kalender (en .ics-fil).
+Den prenumerationen finns inte längre.
+Det här kommer från en kalender du prenumererar på, så det kan inte ändras här.
+Kalenderns webbplats gav inte kalendern. Kontrollera adressen.
+Kalenderns webbplats svarade inte i tid.
+Kalendern kunde inte hämtas. Kontrollera adressen och din anslutning.
+Kalendern kunde inte hämtas. Kontrollera adressen och din anslutning (och att ReminderFoxAgain får läsa den webbplatsen).
+ReminderFoxAgain behöver ditt tillstånd för att läsa den webbplatsen.
+Kalenderprenumerationer finns inte här.
+Kunde inte uppdateras
+Textfärger för objekt
+Bocka för en färg för att använda den. Den mest specifika vinner: Klar, sedan Stjärnmärkt eller Inte stjärnmärkt, sedan Tidigare, I dag eller Kommande, sedan Inte klar. De utan bock följer temat (tidigare objekt ser ut som de andra).
+Inte klar
+Stjärnmärkt (viktig)
+Inte stjärnmärkt
+Kommande (framtid)
+Objekt ”{item}” är svåra att läsa i listorna (kontrast {n}:1; 3:1 eller mer är bättre).

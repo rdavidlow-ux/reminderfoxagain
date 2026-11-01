@@ -1,0 +1,62 @@
+📅 Calendários
+Calendários na vista Mês
+Calendários na vista Lembretes
+Os meus lembretes
+Ainda não há subscrições de calendários.
+Subscrever um calendário…
+Gerir subscrições…
+{shown} de {all} subscrições de calendários mostradas aqui
+Subscrever calendários da web (feriados, desporto, uma equipa)
+Do calendário que subscreve: {name}
+De um calendário que subscreve
+Abrir…
+Copiar para os meus lembretes
+“{s}” copiado para os seus lembretes
+De “{name}”, um calendário que subscreve. Não pode ser alterado aqui.
+Guardar a sua própria cópia nos seus lembretes
+Subscrições de calendários…
+Calendários da web (feriados, desporto, um calendário escolar ou de equipa), só de leitura e sempre atualizados
+Subscrições de calendários
+Feriados, desporto, um calendário escolar ou de equipa: qualquer calendário (.ics) com um endereço web. É só de leitura e mantém-se atualizado sozinho.
+Endereço web do calendário
+Subscrever
+Atualizar todos
+Cor
+Com que frequência é transferido de novo
+De hora a hora
+De 6 em 6 horas
+De 12 em 12 horas
+Vista Lembretes
+Vista Mês
+Atualizar agora
+Remover
+Não foi possível atualizar: {why}
+A mostrar a cópia de {time}.
+Atualizado {time} · {events}
+{n} evento
+{n} eventos
+Introduza o endereço web de um calendário.
+A subscrever…
+Subscreveu “{name}” ({events}).
+Remover a subscrição?
+“{name}” e os seus eventos deixam de ser mostrados. Os seus próprios lembretes não são alterados.
+Introduza um endereço web que comece por https://, http:// ou webcal://.
+Já subscreve esse calendário.
+Esse calendário é demasiado grande (mais de 10 MB).
+Esse endereço não deu um calendário (um ficheiro .ics).
+Essa subscrição já não existe.
+Isto vem de um calendário que subscreve, por isso não pode ser alterado aqui.
+O site do calendário não forneceu o calendário. Verifique o endereço.
+O site do calendário não respondeu a tempo.
+Não foi possível transferir o calendário. Verifique o endereço e a sua ligação.
+Não foi possível transferir o calendário. Verifique o endereço e a sua ligação (e se o ReminderFoxAgain pode ler esse site).
+O ReminderFoxAgain precisa da sua permissão para ler esse site.
+As subscrições de calendários não estão disponíveis aqui.
+Não foi possível atualizar
+Cores do texto dos itens
+Assinale uma cor para a usar. Ganha a mais específica: Concluído, depois Com estrela ou Sem estrela, depois Passado, Hoje ou Próximo, depois Não concluído. As não assinaladas seguem o tema (os itens passados ficam iguais aos outros).
+Não concluído
+Com estrela (importante)
+Sem estrela
+Próximo (futuro)
+Os itens “{item}” são difíceis de ler nas listas (contraste {n}:1; 3:1 ou mais é melhor).

@@ -1,0 +1,62 @@
+📅 Kalendere
+Kalendere i månedsvisningen
+Kalendere i påmindelsesvisningen
+Mine påmindelser
+Ingen kalenderabonnementer endnu.
+Abonnér på en kalender…
+Administrer abonnementer…
+{shown} af {all} kalenderabonnementer vises her
+Abonnér på kalendere fra nettet (helligdage, sport, et hold)
+Fra kalenderen, du abonnerer på: {name}
+Fra en kalender, du abonnerer på
+Åbn…
+Kopiér til mine påmindelser
+“{s}” kopieret til dine påmindelser
+Fra “{name}”, en kalender, du abonnerer på. Den kan ikke ændres her.
+Gem din egen kopi i dine påmindelser
+Kalenderabonnementer…
+Kalendere fra nettet (helligdage, sport, en skole- eller holdkalender), skrivebeskyttede og holdt opdateret
+Kalenderabonnementer
+Helligdage, sport, en skole- eller holdkalender: enhver kalender (.ics) med en webadresse. Den er skrivebeskyttet og holder sig selv opdateret.
+Kalenderens webadresse
+Abonnér
+Opdater alle
+Farve
+Hvor ofte den hentes igen
+Hver time
+Hver 6. time
+Hver 12. time
+Påmindelsesvisning
+Månedsvisning
+Opdater nu
+Fjern
+Kunne ikke opdateres: {why}
+Viser kopien fra {time}.
+Opdateret {time} · {events}
+{n} begivenhed
+{n} begivenheder
+Skriv en kalenders webadresse.
+Abonnerer…
+Abonnerer på “{name}” ({events}).
+Fjern abonnement?
+“{name}” og dens begivenheder vises ikke længere. Dine egne påmindelser røres ikke.
+Skriv en webadresse, der starter med https://, http:// eller webcal://.
+Du abonnerer allerede på den kalender.
+Den kalender er for stor (mere end 10 MB).
+Den adresse gav ikke en kalender (en .ics-fil).
+Det abonnement findes ikke længere.
+Dette kommer fra en kalender, du abonnerer på, så det kan ikke ændres her.
+Kalenderens websted gav ikke kalenderen. Tjek adressen.
+Kalenderens websted svarede ikke i tide.
+Kalenderen kunne ikke hentes. Tjek adressen og din forbindelse.
+Kalenderen kunne ikke hentes. Tjek adressen og din forbindelse (og at ReminderFoxAgain må læse det websted).
+ReminderFoxAgain skal have din tilladelse til at læse det websted.
+Kalenderabonnementer er ikke tilgængelige her.
+Kunne ikke opdateres
+Tekstfarver for elementer
+Sæt flueben ved en farve for at bruge den. Den mest specifikke vinder: Fuldført, så Med stjerne eller Uden stjerne, så Tidligere, I dag eller Kommende, så Ikke fuldført. Dem uden flueben følger temaet (tidligere elementer ser ud som de andre).
+Ikke fuldført
+Med stjerne (vigtig)
+Uden stjerne
+Kommende (fremtid)
+Elementer “{item}” er svære at læse på listerne (kontrast {n}:1; 3:1 eller mere er bedre).

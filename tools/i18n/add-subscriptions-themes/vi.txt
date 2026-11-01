@@ -1,0 +1,62 @@
+📅 Lịch
+Lịch trong chế độ xem Tháng
+Lịch trong chế độ xem Lời nhắc
+Lời nhắc của tôi
+Chưa có lịch đăng ký nào.
+Đăng ký một lịch…
+Quản lý đăng ký…
+Đang hiện {shown} trên {all} lịch đăng ký ở đây
+Đăng ký lịch từ web (ngày lễ, thể thao, một đội)
+Từ lịch bạn đăng ký: {name}
+Từ một lịch bạn đăng ký
+Mở…
+Sao chép vào lời nhắc của tôi
+Đã sao chép “{s}” vào lời nhắc của bạn
+Từ “{name}”, một lịch bạn đăng ký. Không thể thay đổi ở đây.
+Lưu bản sao của riêng bạn vào lời nhắc
+Lịch đăng ký…
+Lịch từ web (ngày lễ, thể thao, lịch trường hoặc đội), chỉ đọc và luôn được cập nhật
+Lịch đăng ký
+Ngày lễ, thể thao, lịch trường hoặc đội: bất kỳ lịch nào (.ics) có địa chỉ web. Lịch chỉ đọc và tự cập nhật.
+Địa chỉ web của lịch
+Đăng ký
+Làm mới tất cả
+Màu
+Bao lâu thì tải lại
+Mỗi giờ
+Mỗi 6 giờ
+Mỗi 12 giờ
+Chế độ xem Lời nhắc
+Chế độ xem Tháng
+Làm mới ngay
+Gỡ bỏ
+Không cập nhật được: {why}
+Đang hiện bản sao từ {time}.
+Đã cập nhật {time} · {events}
+{n} sự kiện
+{n} sự kiện
+Nhập địa chỉ web của một lịch.
+Đang đăng ký…
+Đã đăng ký “{name}” ({events}).
+Gỡ bỏ đăng ký?
+“{name}” và các sự kiện của nó sẽ không còn hiện. Lời nhắc của riêng bạn không bị đụng đến.
+Nhập địa chỉ web bắt đầu bằng https://, http:// hoặc webcal://.
+Bạn đã đăng ký lịch đó rồi.
+Lịch đó quá lớn (hơn 10 MB).
+Địa chỉ đó không cho ra lịch (tệp .ics).
+Đăng ký đó không còn nữa.
+Mục này đến từ một lịch bạn đăng ký nên không thể thay đổi ở đây.
+Trang web của lịch không cung cấp lịch. Hãy kiểm tra địa chỉ.
+Trang web của lịch không trả lời kịp.
+Không tải được lịch. Hãy kiểm tra địa chỉ và kết nối.
+Không tải được lịch. Hãy kiểm tra địa chỉ và kết nối (và ReminderFoxAgain có được phép đọc trang web đó).
+ReminderFoxAgain cần bạn cho phép để đọc trang web đó.
+Lịch đăng ký không dùng được ở đây.
+Không cập nhật được
+Màu chữ của mục
+Đánh dấu một màu để dùng. Màu cụ thể nhất được ưu tiên: Đã xong, rồi Có sao hoặc Không có sao, rồi Đã qua, Hôm nay hoặc Sắp tới, rồi Chưa xong. Màu không đánh dấu theo giao diện (mục đã qua trông như các mục khác).
+Chưa xong
+Có sao (quan trọng)
+Không có sao
+Sắp tới (tương lai)
+Mục “{item}” khó đọc trong danh sách (độ tương phản {n}:1; từ 3:1 trở lên thì tốt hơn).

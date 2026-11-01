@@ -1,0 +1,62 @@
+📅 Takvimler
+Ay görünümündeki takvimler
+Anımsatıcılar görünümündeki takvimler
+Anımsatıcılarım
+Henüz takvim aboneliği yok.
+Bir takvime abone ol…
+Abonelikleri yönet…
+Burada {all} takvim aboneliğinden {shown} tanesi gösteriliyor
+Web'deki takvimlere abone ol (tatiller, spor, bir takım)
+Abone olduğunuz takvimden: {name}
+Abone olduğunuz bir takvimden
+Aç…
+Anımsatıcılarıma kopyala
+“{s}” anımsatıcılarınıza kopyalandı
+Abone olduğunuz “{name}” takviminden. Burada değiştirilemez.
+Kendi kopyanızı anımsatıcılarınıza kaydedin
+Takvim abonelikleri…
+Web'deki takvimler (tatiller, spor, okul veya takım takvimi), salt okunur ve güncel tutulur
+Takvim abonelikleri
+Tatiller, spor, okul veya takım takvimi: web adresi olan herhangi bir takvim (.ics). Salt okunurdur ve kendini günceller.
+Takvimin web adresi
+Abone ol
+Tümünü yenile
+Renk
+Ne sıklıkla yeniden alınacağı
+Her saat
+6 saatte bir
+12 saatte bir
+Anımsatıcılar görünümü
+Ay görünümü
+Şimdi yenile
+Kaldır
+Güncellenemedi: {why}
+{time} tarihli kopya gösteriliyor.
+Güncellendi {time} · {events}
+{n} etkinlik
+{n} etkinlik
+Bir takvimin web adresini girin.
+Abone olunuyor…
+“{name}” takvimine abone olundu ({events}).
+Abonelik kaldırılsın mı?
+“{name}” ve etkinlikleri artık gösterilmeyecek. Kendi anımsatıcılarınıza dokunulmaz.
+https://, http:// veya webcal:// ile başlayan bir web adresi girin.
+O takvime zaten abonesiniz.
+O takvim çok büyük (10 MB'tan fazla).
+O adres bir takvim (.ics dosyası) vermedi.
+O abonelik artık yok.
+Bu, abone olduğunuz bir takvimden geliyor, bu yüzden burada değiştirilemez.
+Takvimin web sitesi takvimi vermedi. Adresi kontrol edin.
+Takvimin web sitesi zamanında yanıt vermedi.
+Takvim alınamadı. Adresi ve bağlantınızı kontrol edin.
+Takvim alınamadı. Adresi ve bağlantınızı kontrol edin (ve ReminderFoxAgain'in o siteyi okuyabildiğini).
+ReminderFoxAgain'in o web sitesini okumak için izninize ihtiyacı var.
+Takvim abonelikleri burada kullanılamıyor.
+Güncellenemedi
+Öğe metin renkleri
+Kullanmak için bir rengi işaretleyin. En belirgin olan kazanır: Tamamlandı, sonra Yıldızlı veya Yıldızsız, sonra Geçmiş, Bugün veya Yaklaşan, sonra Tamamlanmadı. İşaretlenmeyenler temayı izler (geçmiş öğeler diğerleri gibi görünür).
+Tamamlanmadı
+Yıldızlı (önemli)
+Yıldızsız
+Yaklaşan (gelecek)
+“{item}” öğeleri listelerde zor okunuyor (karşıtlık {n}:1; 3:1 veya üzeri daha iyi).

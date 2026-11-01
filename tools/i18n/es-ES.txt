@@ -916,3 +916,65 @@
 915| Se muestran las primeras {n}.
 916| No hay alarmas en este periodo.
 917| Pospuesta {time}
+918| 📅 Calendarios
+919| Calendarios en la vista Mes
+920| Calendarios en la vista Recordatorios
+921| Mis recordatorios
+922| Aún no hay suscripciones a calendarios.
+923| Suscribirse a un calendario…
+924| Gestionar suscripciones…
+925| Se muestran aquí {shown} de {all} suscripciones
+926| Suscribirse a calendarios de la web (festivos, deportes, un equipo)
+927| Del calendario al que te suscribes: {name}
+928| De un calendario al que te suscribes
+929| Abrir…
+930| Copiar a mis recordatorios
+931| «{s}» copiado a tus recordatorios
+932| De «{name}», un calendario al que te suscribes. No se puede cambiar aquí.
+933| Guardar tu propia copia en tus recordatorios
+934| Suscripciones a calendarios…
+935| Calendarios de la web (festivos, deportes, un calendario escolar o de equipo), de solo lectura y siempre al día
+936| Suscripciones a calendarios
+937| Festivos, deportes, un calendario escolar o de equipo: cualquier calendario (.ics) con una dirección web. Es de solo lectura y se mantiene al día solo.
+938| Dirección web del calendario
+939| Suscribirse
+940| Actualizar todo
+941| Color
+942| Cada cuánto se vuelve a descargar
+943| Cada hora
+944| Cada 6 horas
+945| Cada 12 horas
+946| Vista Recordatorios
+947| Vista Mes
+948| Actualizar ahora
+949| Quitar
+950| No se pudo actualizar: {why}
+951| Se muestra la copia del {time}.
+952| Actualizado {time} · {events}
+953| {n} evento
+954| {n} eventos
+955| Escribe la dirección web de un calendario.
+956| Suscribiendo…
+957| Suscrito a «{name}» ({events}).
+958| ¿Quitar la suscripción?
+959| «{name}» y sus eventos dejarán de mostrarse. Tus propios recordatorios no se tocan.
+960| Escribe una dirección web que empiece por https://, http:// o webcal://.
+961| Ya estás suscrito a ese calendario.
+962| Ese calendario es demasiado grande (más de 10 MB).
+963| Esa dirección no dio un calendario (un archivo .ics).
+964| Esa suscripción ya no existe.
+965| Esto viene de un calendario al que te suscribes, así que no se puede cambiar aquí.
+966| La web del calendario no dio el calendario. Comprueba la dirección.
+967| La web del calendario no respondió a tiempo.
+968| No se pudo descargar el calendario. Comprueba la dirección y tu conexión.
+969| No se pudo descargar el calendario. Comprueba la dirección y tu conexión (y que ReminderFoxAgain puede leer esa web).
+970| ReminderFoxAgain necesita tu permiso para leer esa web.
+971| Las suscripciones a calendarios no están disponibles aquí.
+972| No se pudo actualizar
+973| Colores del texto de los elementos
+974| Marca un color para usarlo. Gana el más concreto: Completado, luego Destacado o No destacado, luego Pasado, Hoy o Próximo, luego No completado. Los no marcados siguen el tema (los elementos pasados se ven como los demás).
+975| No completado
+976| Destacado (importante)
+977| No destacado
+978| Próximo (futuro)
+979| Los elementos «{item}» son difíciles de leer en las listas (contraste {n}:1; 3:1 o más es mejor).

@@ -1,0 +1,62 @@
+📅 Kalender
+Kalender in der Monatsansicht
+Kalender in der Erinnerungsansicht
+Meine Erinnerungen
+Noch keine Kalenderabonnements.
+Einen Kalender abonnieren…
+Abonnements verwalten…
+{shown} von {all} Kalenderabonnements werden hier gezeigt
+Kalender aus dem Web abonnieren (Feiertage, Sport, ein Team)
+Aus dem Kalender, den Sie abonniert haben: {name}
+Aus einem Kalender, den Sie abonniert haben
+Öffnen…
+In meine Erinnerungen kopieren
+„{s}“ in Ihre Erinnerungen kopiert
+Aus „{name}“, einem Kalender, den Sie abonniert haben. Er kann hier nicht geändert werden.
+Eine eigene Kopie davon in Ihren Erinnerungen speichern
+Kalenderabonnements…
+Kalender aus dem Web (Feiertage, Sport, ein Schul- oder Teamkalender), schreibgeschützt und aktuell gehalten
+Kalenderabonnements
+Feiertage, Sport, ein Schul- oder Teamkalender: jeder Kalender (.ics) mit einer Webadresse. Er ist schreibgeschützt und hält sich selbst aktuell.
+Webadresse des Kalenders
+Abonnieren
+Alle aktualisieren
+Farbe
+Wie oft er neu abgerufen wird
+Jede Stunde
+Alle 6 Stunden
+Alle 12 Stunden
+Erinnerungsansicht
+Monatsansicht
+Jetzt aktualisieren
+Entfernen
+Konnte nicht aktualisiert werden: {why}
+Gezeigt wird die Kopie vom {time}.
+Aktualisiert {time} · {events}
+{n} Termin
+{n} Termine
+Geben Sie die Webadresse eines Kalenders ein.
+Wird abonniert…
+„{name}“ abonniert ({events}).
+Abonnement entfernen?
+„{name}“ und seine Termine werden nicht mehr gezeigt. Ihre eigenen Erinnerungen bleiben unberührt.
+Bitte geben Sie eine Webadresse ein, die mit https://, http:// oder webcal:// beginnt.
+Diesen Kalender haben Sie bereits abonniert.
+Dieser Kalender ist zu groß (mehr als 10 MB).
+Unter dieser Adresse gab es keinen Kalender (keine .ics-Datei).
+Dieses Abonnement gibt es nicht mehr.
+Dies stammt aus einem Kalender, den Sie abonniert haben, und kann hier nicht geändert werden.
+Die Website des Kalenders hat den Kalender nicht geliefert. Prüfen Sie die Adresse.
+Die Website des Kalenders hat nicht rechtzeitig geantwortet.
+Der Kalender konnte nicht abgerufen werden. Prüfen Sie die Adresse und Ihre Verbindung.
+Der Kalender konnte nicht abgerufen werden. Prüfen Sie die Adresse und Ihre Verbindung (und dass ReminderFoxAgain diese Website lesen darf).
+ReminderFoxAgain braucht Ihre Erlaubnis, diese Website zu lesen.
+Kalenderabonnements sind hier nicht verfügbar.
+Konnte nicht aktualisiert werden
+Textfarben der Einträge
+Haken Sie eine Farbe an, um sie zu verwenden. Die genaueste gewinnt: Erledigt, dann Markiert oder Nicht markiert, dann Vergangen, Heute oder Kommend, dann Nicht erledigt. Nicht angehakte folgen dem Design (vergangene Einträge sehen aus wie die anderen).
+Nicht erledigt
+Markiert (wichtig)
+Nicht markiert
+Kommend (Zukunft)
+Einträge „{item}“ sind auf den Listen schwer zu lesen (Kontrast {n}:1; 3:1 oder mehr ist besser).

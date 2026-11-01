@@ -916,3 +916,65 @@
 915| De första {n} visas.
 916| Inga alarm under den här perioden.
 917| Snoozat i {time}
+918| 📅 Kalendrar
+919| Kalendrar i månadsvyn
+920| Kalendrar i påminnelsevyn
+921| Mina påminnelser
+922| Inga kalenderprenumerationer än.
+923| Prenumerera på en kalender…
+924| Hantera prenumerationer…
+925| {shown} av {all} kalenderprenumerationer visas här
+926| Prenumerera på kalendrar från webben (helgdagar, sport, ett lag)
+927| Från kalendern du prenumererar på: {name}
+928| Från en kalender du prenumererar på
+929| Öppna…
+930| Kopiera till mina påminnelser
+931| ”{s}” kopierad till dina påminnelser
+932| Från ”{name}”, en kalender du prenumererar på. Den kan inte ändras här.
+933| Spara en egen kopia i dina påminnelser
+934| Kalenderprenumerationer…
+935| Kalendrar från webben (helgdagar, sport, en skol- eller lagkalender), skrivskyddade och uppdaterade
+936| Kalenderprenumerationer
+937| Helgdagar, sport, en skol- eller lagkalender: vilken kalender (.ics) som helst med en webbadress. Den är skrivskyddad och håller sig uppdaterad själv.
+938| Kalenderns webbadress
+939| Prenumerera
+940| Uppdatera alla
+941| Färg
+942| Hur ofta den hämtas igen
+943| Varje timme
+944| Var 6:e timme
+945| Var 12:e timme
+946| Påminnelsevyn
+947| Månadsvyn
+948| Uppdatera nu
+949| Ta bort
+950| Kunde inte uppdateras: {why}
+951| Visar kopian från {time}.
+952| Uppdaterad {time} · {events}
+953| {n} händelse
+954| {n} händelser
+955| Skriv en kalenders webbadress.
+956| Prenumererar…
+957| Prenumererar på ”{name}” ({events}).
+958| Ta bort prenumerationen?
+959| ”{name}” och dess händelser visas inte längre. Dina egna påminnelser rörs inte.
+960| Skriv en webbadress som börjar med https://, http:// eller webcal://.
+961| Du prenumererar redan på den kalendern.
+962| Den kalendern är för stor (mer än 10 MB).
+963| Den adressen gav ingen kalender (en .ics-fil).
+964| Den prenumerationen finns inte längre.
+965| Det här kommer från en kalender du prenumererar på, så det kan inte ändras här.
+966| Kalenderns webbplats gav inte kalendern. Kontrollera adressen.
+967| Kalenderns webbplats svarade inte i tid.
+968| Kalendern kunde inte hämtas. Kontrollera adressen och din anslutning.
+969| Kalendern kunde inte hämtas. Kontrollera adressen och din anslutning (och att ReminderFoxAgain får läsa den webbplatsen).
+970| ReminderFoxAgain behöver ditt tillstånd för att läsa den webbplatsen.
+971| Kalenderprenumerationer finns inte här.
+972| Kunde inte uppdateras
+973| Textfärger för objekt
+974| Bocka för en färg för att använda den. Den mest specifika vinner: Klar, sedan Stjärnmärkt eller Inte stjärnmärkt, sedan Tidigare, I dag eller Kommande, sedan Inte klar. De utan bock följer temat (tidigare objekt ser ut som de andra).
+975| Inte klar
+976| Stjärnmärkt (viktig)
+977| Inte stjärnmärkt
+978| Kommande (framtid)
+979| Objekt ”{item}” är svåra att läsa i listorna (kontrast {n}:1; 3:1 eller mer är bättre).

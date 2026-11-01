@@ -916,3 +916,65 @@
 915| Les {n} premières sont affichées.
 916| Aucune alarme dans cette période.
 917| Répétition dans {time}
+918| 📅 Calendriers
+919| Calendriers dans la vue Mois
+920| Calendriers dans la vue Rappels
+921| Mes rappels
+922| Aucun abonnement à un calendrier pour l'instant.
+923| S'abonner à un calendrier…
+924| Gérer les abonnements…
+925| {shown} abonnements sur {all} affichés ici
+926| S'abonner à des calendriers du Web (fêtes, sports, une équipe)
+927| Du calendrier auquel vous êtes abonné : {name}
+928| D'un calendrier auquel vous êtes abonné
+929| Ouvrir…
+930| Copier dans mes rappels
+931| « {s} » copié dans vos rappels
+932| De « {name} », un calendrier auquel vous êtes abonné. Il ne peut pas être modifié ici.
+933| Enregistrer votre propre copie dans vos rappels
+934| Abonnements aux calendriers…
+935| Calendriers du Web (fêtes, sports, calendrier d'école ou d'équipe), en lecture seule et tenus à jour
+936| Abonnements aux calendriers
+937| Fêtes, sports, calendrier d'école ou d'équipe : tout calendrier (.ics) ayant une adresse Web. Il est en lecture seule et se tient à jour tout seul.
+938| Adresse Web du calendrier
+939| S'abonner
+940| Tout actualiser
+941| Couleur
+942| Fréquence de récupération
+943| Toutes les heures
+944| Toutes les 6 heures
+945| Toutes les 12 heures
+946| Vue Rappels
+947| Vue Mois
+948| Actualiser maintenant
+949| Retirer
+950| Mise à jour impossible : {why}
+951| Copie affichée : celle du {time}.
+952| Mis à jour {time} · {events}
+953| {n} événement
+954| {n} événements
+955| Entrez l'adresse Web d'un calendrier.
+956| Abonnement en cours…
+957| Abonné à « {name} » ({events}).
+958| Retirer l'abonnement?
+959| « {name} » et ses événements ne seront plus affichés. Vos propres rappels ne sont pas touchés.
+960| Entrez une adresse Web commençant par https://, http:// ou webcal://.
+961| Vous êtes déjà abonné à ce calendrier.
+962| Ce calendrier est trop gros (plus de 10 Mo).
+963| Cette adresse n'a pas donné de calendrier (un fichier .ics).
+964| Cet abonnement n'existe plus.
+965| Ceci vient d'un calendrier auquel vous êtes abonné; on ne peut donc pas le modifier ici.
+966| Le site Web du calendrier n'a pas fourni le calendrier. Vérifiez l'adresse.
+967| Le site Web du calendrier n'a pas répondu à temps.
+968| Le calendrier n'a pas pu être récupéré. Vérifiez l'adresse et votre connexion.
+969| Le calendrier n'a pas pu être récupéré. Vérifiez l'adresse et votre connexion (et que ReminderFoxAgain peut lire ce site Web).
+970| ReminderFoxAgain a besoin de votre permission pour lire ce site Web.
+971| Les abonnements aux calendriers ne sont pas disponibles ici.
+972| Mise à jour impossible
+973| Couleurs du texte des éléments
+974| Cochez une couleur pour l'utiliser. La plus précise l'emporte : Terminé, puis Étoilé ou Non étoilé, puis Passé, Aujourd'hui ou À venir, puis Non terminé. Celles qui ne sont pas cochées suivent le thème (les éléments passés ressemblent aux autres).
+975| Non terminé
+976| Étoilé (important)
+977| Non étoilé
+978| À venir (futur)
+979| Les éléments « {item} » sont difficiles à lire dans les listes (contraste {n}:1; 3:1 ou plus est mieux).

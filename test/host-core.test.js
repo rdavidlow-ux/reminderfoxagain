@@ -45,6 +45,9 @@ function fakeThunderbird(files = new Map(), start = new Date(2026, 9, 20, 9, 0).
     setInterval: () => 0,
     clearInterval: () => {},
   };
+  // calendar subscriptions: the web as a Map of address → text (or an Error to throw)
+  log.web = new Map();
+  ad.fetchText = async (url) => { log.fetched = (log.fetched || []).concat(url); const v = log.web.get(url); if (v instanceof Error) throw v; if (v == null) throw new Error('The calendar could not be fetched.'); return v; };
   const host = createHost(ad);
   const call = (ch, ...args) => host.call(ch, args);
   // move the clock and run the timers that came due (in order)
@@ -379,4 +382,61 @@ test('host 16. the Alarms view: ringing, snoozed, to come and skipped; a skip ah
   assert.equal(tb.log.menu.find((i) => i.id === 'alarms').title, 'Alarms…');
   await tb.host.menuClick('alarms');
   assert.ok(tb.log.emits.some((e) => e.ch === 'ui:alarms' && e.target === 'main'));
+});
+
+test('host 17. calendar subscriptions: subscribe, show per view, read-only, copy, refresh on time, keep the last copy', async () => {
+  const tb = fakeThunderbird(); // Oct 20, 2026, 9:00
+  await tb.host.start();
+  const cal = (title, day) => ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Example//Holidays//EN', 'X-WR-CALNAME:Holidays in Example', 'BEGIN:VEVENT', 'UID:h1@example.com', 'DTSTAMP:20260101T000000Z',
+    `DTSTART;VALUE=DATE:${day}`, `SUMMARY:${title}`, 'END:VEVENT', 'END:VCALENDAR', ''].join('\r\n');
+  tb.log.web.set('https://cal.example.com/holidays.ics', cal('Harvest Day', '20261026'));
+  await assert.rejects(tb.call('subs:add', { url: 'ftp://x' }), /web address/);
+  tb.log.web.set('https://cal.example.com/page.html', '<html>not a calendar</html>');
+  await assert.rejects(tb.call('subs:add', { url: 'https://cal.example.com/page.html' }), /did not give a calendar/);
+  const sub = await tb.call('subs:add', { url: 'webcal://cal.example.com/holidays.ics' });
+  assert.equal(`${sub.name} ${sub.url} ${sub.count} ${sub.showList} ${sub.showMonth}`, 'Holidays in Example https://cal.example.com/holidays.ics 1 true true');
+  await assert.rejects(tb.call('subs:add', { url: 'https://cal.example.com/holidays.ics' }), /already subscribe/);
+  assert.ok(tb.files.has(`subscriptions/${sub.id}.ics`) || (await tb.host.flush(), tb.files.has(`subscriptions/${sub.id}.ics`)));
+  const from = new Date(2026, 9, 20).getTime(); const to = new Date(2026, 10, 1).getTime();
+  let rows = await tb.call('subs:range', from, to, 'month');
+  assert.equal(rows.length, 1);
+  const r = rows[0];
+  assert.equal(`${r.summary} ${r.readOnly} ${r.subColor === sub.color} ${r.uid.startsWith(`sub:${sub.id}:`)}`, 'Harvest Day true true true');
+  assert.equal((await tb.call('subs:next', from, {}, 'list')).length, 1);
+  // not in your own reminders, and it can't be changed
+  assert.equal((await tb.call('data:range', from, to, {})).length, 0);
+  await assert.rejects(tb.call('data:complete', r.uid, true), /subscribe to/);
+  await assert.rejects(tb.call('data:delete', r.uid), /subscribe to/);
+  await assert.rejects(tb.call('data:save', { uid: r.uid, summary: 'x' }), /subscribe to/);
+  const d = await tb.call('data:get', r.uid);
+  assert.equal(`${d.summary} ${d.readOnly} ${d.subName}`, 'Harvest Day true Holidays in Example');
+  // copied to your reminders: your own item, changeable
+  const mine = await tb.call('data:duplicate', r.uid, { suffix: ' (copy)' });
+  const own = await tb.call('data:get', mine);
+  assert.equal(`${own.summary} ${!!own.readOnly} ${own.date}`, 'Harvest Day false 2026-10-26');
+  // hidden from the Reminders view only
+  await tb.call('subs:update', sub.id, { showList: false, color: '#123456', refreshHours: 6, name: 'Holidays' });
+  assert.equal((await tb.call('subs:range', from, to, 'list')).length, 0);
+  assert.equal((await tb.call('subs:range', from, to, 'month'))[0].subColor, '#123456');
+  // refreshed on its timer (6 hours): the new copy replaces the old one
+  tb.log.web.set('https://cal.example.com/holidays.ics', cal('Harvest Festival', '20261027'));
+  await tb.advance(6 * 3600000 + 10000);
+  rows = await tb.call('subs:range', from, to, 'month');
+  assert.equal(`${rows[0].summary} ${rows[0].date}`, 'Harvest Festival 2026-10-27');
+  // a failed refresh keeps the last good copy and says why
+  tb.log.web.set('https://cal.example.com/holidays.ics', new Error('The calendar\'s web site answered “404 Not Found”.'));
+  assert.equal(await tb.call('subs:refresh', sub.id), false);
+  const st = (await tb.call('subs:list'))[0];
+  assert.match(st.error, /404/);
+  assert.equal((await tb.call('subs:range', from, to, 'month'))[0].summary, 'Harvest Festival');
+  // a new start shows the kept copy without fetching
+  await tb.host.flush();
+  const again = fakeThunderbird(tb.files, tb.now());
+  await again.host.start();
+  assert.equal((await again.call('subs:range', from, to, 'month'))[0].summary, 'Harvest Festival');
+  // removed: gone, its file too
+  assert.equal(await tb.call('subs:remove', sub.id), true);
+  await tb.host.flush();
+  assert.equal((await tb.call('subs:list')).length, 0);
+  assert.equal(tb.files.has(`subscriptions/${sub.id}.ics`), false);
 });

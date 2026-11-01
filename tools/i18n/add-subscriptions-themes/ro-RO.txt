@@ -1,0 +1,62 @@
+📅 Calendare
+Calendare în vizualizarea Lună
+Calendare în vizualizarea Mementouri
+Mementourile mele
+Încă nu ai abonamente la calendare.
+Abonează-te la un calendar…
+Gestionează abonamentele…
+Se arată aici {shown} din {all} abonamente la calendare
+Abonează-te la calendare de pe web (sărbători, sport, o echipă)
+Din calendarul la care ești abonat: {name}
+Dintr-un calendar la care ești abonat
+Deschide…
+Copiază în mementourile mele
+„{s}” a fost copiat în mementourile tale
+Din „{name}”, un calendar la care ești abonat. Nu poate fi modificat aici.
+Salvează propria copie în mementourile tale
+Abonamente la calendare…
+Calendare de pe web (sărbători, sport, un calendar școlar sau de echipă), doar pentru citire și mereu actualizate
+Abonamente la calendare
+Sărbători, sport, un calendar școlar sau de echipă: orice calendar (.ics) cu o adresă web. Este doar pentru citire și se actualizează singur.
+Adresa web a calendarului
+Abonează-te
+Reîmprospătează tot
+Culoare
+Cât de des este descărcat din nou
+În fiecare oră
+La fiecare 6 ore
+La fiecare 12 ore
+Vizualizarea Mementouri
+Vizualizarea Lună
+Reîmprospătează acum
+Elimină
+Nu a putut fi actualizat: {why}
+Se arată copia din {time}.
+Actualizat {time} · {events}
+{n} eveniment
+{n} evenimente
+Introdu adresa web a unui calendar.
+Abonare…
+Abonat la „{name}” ({events}).
+Elimini abonamentul?
+„{name}” și evenimentele lui nu vor mai fi arătate. Mementourile tale nu sunt atinse.
+Introdu o adresă web care începe cu https://, http:// sau webcal://.
+Ești deja abonat la acel calendar.
+Acel calendar este prea mare (peste 10 MB).
+Acea adresă nu a dat un calendar (un fișier .ics).
+Acel abonament nu mai există.
+Acesta vine dintr-un calendar la care ești abonat, așa că nu poate fi modificat aici.
+Site-ul calendarului nu a oferit calendarul. Verifică adresa.
+Site-ul calendarului nu a răspuns la timp.
+Calendarul nu a putut fi descărcat. Verifică adresa și conexiunea.
+Calendarul nu a putut fi descărcat. Verifică adresa și conexiunea (și că ReminderFoxAgain poate citi acel site).
+ReminderFoxAgain are nevoie de permisiunea ta pentru a citi acel site.
+Abonamentele la calendare nu sunt disponibile aici.
+Nu a putut fi actualizat
+Culorile textului elementelor
+Bifează o culoare ca s-o folosești. Câștigă cea mai precisă: Finalizat, apoi Cu stea sau Fără stea, apoi Trecut, Azi sau Viitor apropiat, apoi Nefinalizat. Cele nebifate urmează tema (elementele trecute arată ca celelalte).
+Nefinalizat
+Cu stea (important)
+Fără stea
+Viitor apropiat (viitor)
+Elementele „{item}” sunt greu de citit în liste (contrast {n}:1; 3:1 sau mai mult e mai bine).

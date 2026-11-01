@@ -23,6 +23,8 @@ run lists.js
 run alarms-data.js
 run alarms-view.js
 run month-scroll.js
+run subscriptions.js
+run item-colours.js
 run import-month.js
 run view-options.js
 run --sample bills place-themes.js

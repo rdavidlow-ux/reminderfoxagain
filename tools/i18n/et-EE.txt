@@ -916,3 +916,65 @@
 915| Näidatakse esimesed {n}.
 916| Selles ajavahemikus äratusi pole.
 917| Edasi lükatud {time}
+918| 📅 Kalendrid
+919| Kalendrid kuuvaates
+920| Kalendrid meeldetuletuste vaates
+921| Minu meeldetuletused
+922| Kalendritellimusi veel pole.
+923| Telli kalender…
+924| Halda tellimusi…
+925| Siin on näha {shown} kalendritellimust {all}-st
+926| Telli kalendreid veebist (pühad, sport, meeskond)
+927| Tellitud kalendrist: {name}
+928| Tellitud kalendrist
+929| Ava…
+930| Kopeeri minu meeldetuletustesse
+931| „{s}” kopeeriti sinu meeldetuletustesse
+932| Kalendrist „{name}”, mille oled tellinud. Siin ei saa seda muuta.
+933| Salvesta oma koopia meeldetuletustesse
+934| Kalendritellimused…
+935| Kalendrid veebist (pühad, sport, kooli- või meeskonnakalender), kirjutuskaitstud ja ajakohased
+936| Kalendritellimused
+937| Pühad, sport, kooli- või meeskonnakalender: iga kalender (.ics), millel on veebiaadress. See on kirjutuskaitstud ja hoiab end ise ajakohasena.
+938| Kalendri veebiaadress
+939| Telli
+940| Värskenda kõiki
+941| Värv
+942| Kui tihti seda uuesti laaditakse
+943| Iga tund
+944| Iga 6 tunni järel
+945| Iga 12 tunni järel
+946| Meeldetuletuste vaade
+947| Kuuvaade
+948| Värskenda kohe
+949| Eemalda
+950| Ei saanud värskendada: {why}
+951| Näidatakse koopiat ajast {time}.
+952| Värskendatud {time} · {events}
+953| {n} sündmus
+954| {n} sündmust
+955| Sisesta kalendri veebiaadress.
+956| Tellimine…
+957| Tellitud „{name}” ({events}).
+958| Kas eemaldada tellimus?
+959| „{name}” ja selle sündmusi enam ei näidata. Sinu enda meeldetuletusi see ei puuduta.
+960| Sisesta veebiaadress, mis algab https://, http:// või webcal://.
+961| Sa juba tellid seda kalendrit.
+962| See kalender on liiga suur (üle 10 MB).
+963| See aadress ei andnud kalendrit (.ics-faili).
+964| Seda tellimust enam pole.
+965| See pärineb tellitud kalendrist, nii et siin ei saa seda muuta.
+966| Kalendri veebisait ei andnud kalendrit. Kontrolli aadressi.
+967| Kalendri veebisait ei vastanud õigel ajal.
+968| Kalendrit ei saanud laadida. Kontrolli aadressi ja ühendust.
+969| Kalendrit ei saanud laadida. Kontrolli aadressi ja ühendust (ja et ReminderFoxAgain tohib seda veebisaiti lugeda).
+970| ReminderFoxAgain vajab sinu luba selle veebisaidi lugemiseks.
+971| Kalendritellimused pole siin saadaval.
+972| Ei saanud värskendada
+973| Kirjete tekstivärvid
+974| Märgi värv, et seda kasutada. Kõige täpsem võidab: Tehtud, siis Tärniga või Tärnita, siis Möödunud, Täna või Tulev, siis Tegemata. Märkimata järgivad teemat (möödunud kirjed näevad välja nagu teised).
+975| Tegemata
+976| Tärniga (tähtis)
+977| Tärnita
+978| Tulev (tulevik)
+979| Kirjeid „{item}” on loendites raske lugeda (kontrast {n}:1; 3:1 või rohkem on parem).
