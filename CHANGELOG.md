@@ -13,6 +13,7 @@ Every ReminderFoxAgain release, newest first. Release files are on the
 - The checker's other warnings name Thunderbird's own email features, which its Firefox rules don't know; they are
   expected for every Thunderbird add-on.
 - Released as a beta (a pre-release on GitHub) for the add-on's review.
+- The made-up "bills" sample used in screenshots names its credit cards generically ("Credit card 1", "Credit card 2").
 
 ## 0.9.3 — the Thunderbird add-on, calendar subscriptions, the Alarms view and a scrolling Month view
 

@@ -42,9 +42,9 @@ if (kind === 'basic') {
 } else if (kind === 'bills') {
   const start = new Date(now.getFullYear(), now.getMonth() - 2, 1);
   const items = [
-    ['Mortgage (auth payment)', 14, 'Bills'], ['Enbridge Gas', 28, 'Bills', true], ['RBC WestJet MC', 29, 'Credit card', true],
+    ['Mortgage (auth payment)', 14, 'Bills'], ['Enbridge Gas', 28, 'Bills', true], ['Credit card 1', 29, 'Credit card', true],
     ['Telus Cell Phone (auth payment)', 29, 'Bills'], ['Rogers Cell Phone (auth payment)', 4, 'Bills'], ['Toronto Hydro', 5, 'Bills', true],
-    ['CIBC Costco MC', 12, 'Credit card', true], ['Netflix (auth payment)', 17, 'Subscriptions'],
+    ['Credit card 2', 12, 'Credit card', true], ['Netflix (auth payment)', 17, 'Subscriptions'],
   ];
   for (const [summary, day, cat, imp] of items) {
     const first = new Date(start.getFullYear(), start.getMonth(), day);
