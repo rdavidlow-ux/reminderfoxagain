@@ -26,6 +26,7 @@ run alarms-view.js
 run month-scroll.js
 run subscriptions.js
 run item-colours.js
+run safe-html.js
 run shortcuts.js
 run import-month.js
 run view-options.js

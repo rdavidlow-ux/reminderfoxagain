@@ -31,7 +31,7 @@
     let html = '';
     if (s.sliderShow !== 'upcoming') html += `<div class="grp">Today · ${esc(fmt.date(Date.now()))}</div>${t.length ? t.map((r) => item(r, false)).join('') : '<div class="none">Nothing today.</div>'}`;
     if (s.sliderShow !== 'today') html += `<div class="grp">Next ${Number(s.upcomingDays) || 15} days</div>${u.length ? u.map((r) => item(r, true)).join('') : '<div class="none">Nothing coming up.</div>'}`;
-    $('list').innerHTML = html;
+    RF.setHTML($('list'), html);
     armClose();
     // the first render and the window's first update arrive together: ring once
     if (p.ring && s.sliderSound && s.alarmSound !== false && Date.now() - lastRing > 3000) { lastRing = Date.now(); playSound(s); }

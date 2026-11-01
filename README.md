@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.9.3
+# ReminderFoxAgain 0.9.4 (beta)
 
 A Thunderbird add-on for reminders, to-dos and pop-up alarms — a tribute to the original
 [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and
@@ -82,7 +82,8 @@ layouts and several months at once, go to date, date formats, "Show map", backup
 
 ## What's new
 
-**0.9.3** makes the Thunderbird add-on the main way to use ReminderFoxAgain: reminders and list items from email,
+**0.9.4 (beta)** puts the HTML that the windows build into the page through one safe function instead of
+`innerHTML`, so Mozilla's add-on checker no longer warns about it; nothing else changes. **0.9.3** made the Thunderbird add-on the main way to use ReminderFoxAgain: reminders and list items from email,
 Remind me after sending, tags, Send by email, birthdays from address books, selected text and .ics links, and
 invitations with replies. In the add-on and the desktop app alike it adds **calendar subscriptions** (holidays, sports
 or a team calendar from a web address, shown per view), an **Alarms view** (Alt+Shift+L), a **Month view that
@@ -96,7 +97,7 @@ Download the files for your system from the [Releases](https://github.com/rdavid
 
 ### Thunderbird add-on (recommended)
 
-1. Download `ReminderFoxAgain-0.9.3-thunderbird.xpi`.
+1. Download `ReminderFoxAgain-0.9.4-thunderbird.xpi`.
 2. In Thunderbird 128 or later: **≡ → Add-ons and Themes → ⚙ → Install Add-on From File…** and pick the .xpi.
    Thunderbird asks you to confirm, since the add-on isn't on addons.thunderbird.net yet, and lists what it may do.
 3. The fox button appears in the toolbar at the top right, and ReminderFoxAgain opens in a tab on its welcome page.
@@ -116,7 +117,7 @@ The desktop app and the add-on keep separate data; to move between them, export 
 
 #### macOS
 
-1. Download `ReminderFoxAgain-0.9.3-macos-universal.zip` and double-click it to unzip.
+1. Download `ReminderFoxAgain-0.9.4-macos-universal.zip` and double-click it to unzip.
 2. Drag **ReminderFoxAgain.app** into **Applications**.
 3. The first time, macOS says it can't check the app for malicious software: it is signed ad hoc, not by an Apple
    developer account, and not notarized. Open it once anyway — on macOS 15 Sequoia and later, try to open it, then
@@ -128,17 +129,17 @@ it, drag it to the Bin. Your data is in `~/Library/Application Support/ReminderF
 
 #### Linux
 
-**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.3_amd64.deb` (`arm64` for ARM) and run
-`sudo apt install ./reminderfoxagain_0.9.3_amd64.deb` (or open it with your software centre). Updating is the same
+**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.4_amd64.deb` (`arm64` for ARM) and run
+`sudo apt install ./reminderfoxagain_0.9.4_amd64.deb` (or open it with your software centre). Updating is the same
 command with the newer file; `sudo apt remove reminderfoxagain` removes it. The package puts the app in
 `/opt/ReminderFoxAgain` with the command `reminderfoxagain`, a menu entry and icons, and sets up Chromium's sandbox
 (on Ubuntu 24.04 and later it adds the AppArmor profile Electron apps need).
 
-**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.3-linux-x64.tar.gz` (or `-arm64`), then:
+**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.4-linux-x64.tar.gz` (or `-arm64`), then:
 
 ```sh
-tar -xzf ReminderFoxAgain-0.9.3-linux-x64.tar.gz
-cd ReminderFoxAgain-0.9.3-linux-x64
+tar -xzf ReminderFoxAgain-0.9.4-linux-x64.tar.gz
+cd ReminderFoxAgain-0.9.4-linux-x64
 ./install.sh          # again with a newer download to update
 ./uninstall.sh        # removes the app, keeps your reminders (--purge removes them too)
 ```
@@ -159,8 +160,8 @@ Put every file from `dist/release/` in one folder and double-click **Install or 
 | --- | --- |
 | `Install or Update ReminderFoxAgain.bat` | always |
 | `ReminderFoxAgain-Setup.ps1` | always |
-| `ReminderFoxAgain-app-0.9.3.asar` | always |
-| `ReminderFoxAgain-runtime-0.9.3.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
+| `ReminderFoxAgain-app-0.9.4.asar` | always |
+| `ReminderFoxAgain-runtime-0.9.4.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
 
 Updating a 0.7.x, 0.8.x or 0.9.x install needs only the .bat, the .ps1 and the .asar; the setup reuses the installed runtime. When
 updating from 0.6.x, include the runtime parts too: the earlier runtime has English date pickers only, and the setup
@@ -178,7 +179,7 @@ Settings → Data → Import from ReminderFox…): the desktop app finds the fil
 - **From the source (the supported way):** clone this repository and run `./build-thunderbird.sh` (the add-on),
   `./build.sh` (Windows), `./build-linux.sh` or `./build-macos.sh` on Linux with Node.js 22 (see [Develop](#develop) below). Each build gives byte-identical files,
   so you can check them against a release's `SHA256SUMS.txt`.
-- **From the build prompt pack:** [`build-prompt/`](build-prompt/) (and `ReminderFoxAgain-0.9.3-build-prompt.zip` on the
+- **From the build prompt pack:** [`build-prompt/`](build-prompt/) (and `ReminderFoxAgain-0.9.4-build-prompt.zip` on the
   Releases page, which adds the full source as its reference) is a specification for an AI coding agent. It rebuilds
   the add-on or the app for Windows, Linux or macOS, or ports it to Android or iOS. A rebuild from it works and looks the same, but its
   files won't match the release checksums.
@@ -222,7 +223,7 @@ for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney 
 tools/e2e.sh             # UI checks (incl. every theme's contrast and starred colours, and German, French from the system locale, Japanese picked in Settings, Arabic right to left, and the continuous alarm sound in the alarm window): every line shows the value and the expected one; no WRONG/ERROR lines
 thunderbird/test/e2e.sh  # the add-on's UI checks in Chromium with a mock Thunderbird: last line 0 problem(s)
 tools/test-setup.sh      # 20 checks (optional argument: the pwsh binary)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.3-linux-x64.tar.gz   # 19 checks in a fake home
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.4-linux-x64.tar.gz   # 19 checks in a fake home
 tools/shots.sh shots/    # every screen, to compare with reference/screenshots/
 tools/screenshot.sh <dataDir> <out.png> [script.js]
 node tools/sounds.js <outDir>   # the built-in alarm sounds as .wav files (for platforms that need sound files)

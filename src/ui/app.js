@@ -90,9 +90,9 @@
       if (cfResolve) cfResolve(null);
       cfResolve = resolve;
       $('cfTitle').textContent = title;
-      $('cfBody').innerHTML = bodyHtml;
+      RF.setHTML($('cfBody'), bodyHtml);
       const foot = $('cfFoot');
-      foot.innerHTML = '<span class="spacer"></span>';
+      RF.setHTML(foot, '<span class="spacer"></span>');
       let focus = null;
       for (const b of buttons) {
         const el = document.createElement('button');
@@ -144,14 +144,14 @@
     fillSelect($('todoCat'), [['', 'All'], ...S.meta.categories.map((c) => [c, c])], S.todoCat);
     renderListPicker();
     S.cat = $('remCat').value; S.todoCat = $('todoCat').value;
-    $('catList').innerHTML = S.meta.categories.map((c) => `<option value="${esc(c)}">`).join('');
-    $('listList').innerHTML = S.meta.todoLists.map((c) => `<option value="${esc(c)}">`).join('');
+    RF.setHTML($('catList'), S.meta.categories.map((c) => `<option value="${esc(c)}">`).join(''));
+    RF.setHTML($('listList'), S.meta.todoLists.map((c) => `<option value="${esc(c)}">`).join(''));
   }
   function renderFilterOptions() {
     const sel = $('remFilter');
     const views = S.settings.views || [];
-    sel.innerHTML = BASE_FILTERS + (views.length ? `<optgroup label="Saved filters">${views.map((v, i) => `<option value="view:${i}" translate="no">${esc(v.name)}</option>`).join('')}</optgroup>` : '') +
-      '<option value="manage">Manage reminders…</option>';
+    RF.setHTML(sel, BASE_FILTERS + (views.length ? `<optgroup label="Saved filters">${views.map((v, i) => `<option value="view:${i}" translate="no">${esc(v.name)}</option>`).join('')}</optgroup>` : '') +
+      '<option value="manage">Manage reminders…</option>');
     if (![...sel.options].some((o) => o.value === S.filter) || S.filter === 'manage') S.filter = 'upcoming';
     sel.value = S.filter;
   }
@@ -163,9 +163,9 @@
     if (S.todoList && !lists.includes(S.todoList)) S.todoList = DEFAULT_LIST;
     const n = (l) => (open ? ` (${open[l] || 0})` : '');
     const total = open ? ` (${Object.values(open).reduce((a, b) => a + b, 0)})` : '';
-    sel.innerHTML = `<optgroup label="Lists">${lists.map((l) => `<option value="${esc(l)}" data-label="${esc(l)}${n(l)}">${esc(l)}${n(l)}</option>`).join('')}</optgroup>` +
+    RF.setHTML(sel, `<optgroup label="Lists">${lists.map((l) => `<option value="${esc(l)}" data-label="${esc(l)}${n(l)}">${esc(l)}${n(l)}</option>`).join('')}</optgroup>` +
       `<option value="" data-label="All lists${total}">All lists${total}</option>` +
-      '<option disabled>──────────</option><option value="__new">＋ New list…</option><option value="__manage">Manage lists…</option>';
+      '<option disabled>──────────</option><option value="__new">＋ New list…</option><option value="__manage">Manage lists…</option>');
     sel.value = S.todoList;
     sel.title = 'Choose which list to show';
     markPickedList();
@@ -201,7 +201,7 @@
     el.title = 'Click to turn alarms back on';
   }
   function fillSelect(sel, opts, value) {
-    sel.innerHTML = opts.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join('');
+    RF.setHTML(sel, opts.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join(''));
     sel.value = opts.some(([v]) => v === value) ? value : opts[0][0];
   }
 
@@ -355,11 +355,11 @@
     calView = btn.dataset.calview;
     const list = S.settings.subscriptions || [];
     const key = calView === 'month' ? 'showMonth' : 'showList';
-    calPop.innerHTML = `<div class="cal-pop-h">${esc(T(calView === 'month' ? 'Calendars in the Month view' : 'Calendars in the Reminders view'))}</div>` +
+    RF.setHTML(calPop, `<div class="cal-pop-h">${esc(T(calView === 'month' ? 'Calendars in the Month view' : 'Calendars in the Reminders view'))}</div>` +
       '<label class="inline-chk cal-mine"><input type="checkbox" class="chk" checked disabled> <span class="dot mine"></span> My reminders</label>' +
       (list.length ? list.map((x) => `<label class="inline-chk"${x.error ? ` title="${esc(x.error)}"` : ''}><input type="checkbox" class="chk" data-sub="${esc(x.id)}"${x[key] !== false ? ' checked' : ''}> <span class="dot" style="background:${esc(x.color)}"></span> <span translate="no">${esc(x.name)}</span>${x.error ? ' <span class="warn-dot" aria-label="Could not be updated">!</span>' : ''}</label>`).join('')
         : '<div class="note">No calendar subscriptions yet.</div>') +
-      '<hr><button type="button" data-calact="add">Subscribe to a calendar…</button>' + (list.length ? '<button type="button" data-calact="manage">Manage subscriptions…</button>' : '');
+      '<hr><button type="button" data-calact="add">Subscribe to a calendar…</button>' + (list.length ? '<button type="button" data-calact="manage">Manage subscriptions…</button>' : ''));
     calPop.classList.remove('hidden');
     const r = btn.getBoundingClientRect();
     calPop.style.left = `${Math.max(4, Math.min(r.left, window.innerWidth - calPop.offsetWidth - 4))}px`;
@@ -510,9 +510,9 @@
     S.rows = rows;
     $('remHint').textContent = hintFor(rows.length);
     if (!rows.length) {
-      listView.innerHTML = S.search.trim()
+      RF.setHTML(listView, S.search.trim()
         ? '<div class="empty"><h3>Nothing matches your search</h3><div>Try different words.</div></div>'
-        : '<div class="empty"><h3>No reminders here</h3><div>Click ＋ Reminder to add one, or choose a different view.</div></div>';
+        : '<div class="empty"><h3>No reminders here</h3><div>Click ＋ Reminder to add one, or choose a different view.</div></div>');
     } else {
       const sep = S.filter !== 'day' || S.search.trim();
       let html = `<table class="list">${HEAD_REM}<tbody>`;
@@ -528,7 +528,7 @@
         }
         html += rowHtml(r, {});
       }
-      listView.innerHTML = html + '</tbody></table>';
+      RF.setHTML(listView, html + '</tbody></table>');
     }
     if (anchor) restoreAnchor(anchor); else position(reason === 'anchor' ? 'refresh' : reason, keep);
   }
@@ -628,8 +628,8 @@
     const multi = S.meta.todoLists.length > 1;
     S.todos = items;
     if (!items.length) {
-      listView.innerHTML = q ? '<div class="empty"><h3>Nothing matches your search</h3><div>Try different words.</div></div>'
-        : `<div class="empty"><h3>${list ? `“${esc(list)}” is empty` : 'Nothing to do'}</h3><div>Click ＋ List Item to add one${list ? ' to this list' : ''}.</div></div>`;
+      RF.setHTML(listView, q ? '<div class="empty"><h3>Nothing matches your search</h3><div>Try different words.</div></div>'
+        : `<div class="empty"><h3>${list ? `“${esc(list)}” is empty` : 'Nothing to do'}</h3><div>Click ＋ List Item to add one${list ? ' to this list' : ''}.</div></div>`);
     } else {
       let html = `<table class="list">${HEAD_TODO}<tbody>`;
       for (const d of items) {
@@ -637,7 +637,7 @@
         const r = { ...d, summary: d.display || d.summary, start, end: start, hasAlarm: !!d.alarm, completedAt: null };
         html += rowHtml(r, { todo: true, listName: !list && multi && d.list !== DEFAULT_LIST ? d.list : '' });
       }
-      listView.innerHTML = html + '</tbody></table>';
+      RF.setHTML(listView, html + '</tbody></table>');
       if (manualOrder() && !q) for (const tr of listView.querySelectorAll('tbody tr[data-uid]')) { tr.draggable = true; tr.classList.add('drag'); }
       for (const tr of listView.querySelectorAll('tr.past')) tr.classList.remove('past');
     }
@@ -770,7 +770,7 @@
     const grid = $('monthGrid');
     const focus = new Date(S.monthView);
     const gs0 = gridStart(focus);
-    $('monthHead').innerHTML = Array.from({ length: 7 }, (_, i) => `<div>${esc(fmt.weekday(addDays(gs0, i)))}</div>`).join('');
+    RF.setHTML($('monthHead'), Array.from({ length: 7 }, (_, i) => `<div>${esc(fmt.weekday(addDays(gs0, i)))}</div>`).join(''));
     const rowH = Math.max(76, Math.floor((grid.clientHeight - 5) / 6) - 1);
     const step = rowH + 1;
     const oldFrom = MV.from; const oldStep = MV.step;
@@ -810,7 +810,7 @@
       html += `<div class="${cls.join(' ')}" data-day="${k}"><span class="num">${num}</span>${shown.map(chipHtml).join('')}${more ? `<div class="more" data-day="${k}">${esc(T('+{n} more', { n: more }))}</div>` : ''}</div>`;
     }
     grid.style.setProperty('--wk-h', `${rowH}px`);
-    grid.innerHTML = html;
+    RF.setHTML(grid, html);
     MV.from = from; MV.weeks = weeks; MV.step = step; MV.focus = fk;
     $('mTitle').textContent = fmt.month(focus);
     const rowOf = (d) => Math.round((startOfDay(d) - from) / (7 * DAY));
@@ -880,7 +880,7 @@
     const map = spreadByDay(rows, gs, ge);
     let html = months.map((m, i) => `<div class="mcal-month${i ? ' more-month' : ''}">${monthHtml(m, map, i === 0, i === n - 1)}</div>`).join('');
     html += '<div class="mcal-foot"><button class="btn ghost" data-cal="today">Today</button><button class="btn ghost" data-cal="goto" title="Go to a date (Alt+Shift+J)">Go to…</button><button class="btn ghost" data-cal="list">Show day in list</button></div>';
-    $('mcal').innerHTML = html;
+    RF.setHTML($('mcal'), html);
     $('mcal').classList.toggle('multi', n > 1);
     await renderAgenda();
   }
@@ -896,7 +896,7 @@
       const small = [r.carried ? `Overdue since ${fmt.date(r.overdueSince)}` : '', r.location, r.repeatText ? `↻ ${r.repeatText}` : ''].filter(Boolean).map(esc).join(' · ');
       html += `<div class="item${r.completed ? ' done' : ''}${r.important ? ' important' : ''}${r.carried ? ' carried' : ''}${S.selDay === S.today ? ' today' : S.selDay < S.today ? ' past' : ''}${r.sub ? ' subcal' : ''}"${subAttrs(r)} data-uid="${esc(r.uid)}" data-start="${occOf(r)}"><div class="tm">${esc(tm)}</div><div class="tx"><b>${r.important ? '★ ' : ''}${esc(r.summary)}</b>${small ? `<small>${small}</small>` : ''}</div></div>`;
     }
-    $('agenda').innerHTML = html;
+    RF.setHTML($('agenda'), html);
   }
   async function selectDay(k, opts = {}) {
     S.selDay = k;
@@ -1052,8 +1052,8 @@
     ctxRow = { uid: dto.uid, start, dto, checked };
     const repeatingEvent = dto.kind === 'event' && dto.repeat;
     if (dto.readOnly) { // from a calendar subscription: look, copy, map
-      ctx.innerHTML = '<button data-ctx="edit">Open…</button><button data-ctx="mine">Copy to my reminders</button>' + (dto.location ? '<button data-ctx="map">Show on a map</button>' : '');
-    } else ctx.innerHTML = '<button data-ctx="edit">Edit…</button>' +
+      RF.setHTML(ctx, '<button data-ctx="edit">Open…</button><button data-ctx="mine">Copy to my reminders</button>' + (dto.location ? '<button data-ctx="map">Show on a map</button>' : ''));
+    } else RF.setHTML(ctx, '<button data-ctx="edit">Edit…</button>' +
       `<button data-ctx="toggle">${checked ? 'Mark not completed' : 'Mark completed'}</button>` +
       (dto.kind === 'event' ? `<button data-ctx="ruc">${dto.untilDone ? '✓ ' : ''}Remind daily until completed</button>` : `<button data-ctx="tip">${dto.showInTooltip ? '✓ ' : ''}Show in the tray tooltip</button>`) +
       (dto.kind === 'todo' ? '<button data-ctx="list">Move to list…</button><button data-ctx="copy">Copy to list…</button><button data-ctx="schedule">Schedule as a reminder…</button>'
@@ -1064,7 +1064,7 @@
       (window.rf.sendByEmail ? '<button data-ctx="send">Send by email…</button>' : '') +
       (window.rf.invite && dto.kind === 'event' ? '<button data-ctx="invite">Invite people…</button>' : '') +
       '<button data-ctx="dup">Duplicate <span class="kbd">Alt+Shift+D</span></button><hr>' +
-      (repeatingEvent ? '<button data-ctx="delOne">Delete this occurrence</button><button data-ctx="delAll">Delete all occurrences…</button>' : '<button data-ctx="del">Delete…</button>');
+      (repeatingEvent ? '<button data-ctx="delOne">Delete this occurrence</button><button data-ctx="delAll">Delete all occurrences…</button>' : '<button data-ctx="del">Delete…</button>'));
     ctx.classList.remove('hidden');
     const w = ctx.offsetWidth; const h = ctx.offsetHeight;
     ctx.style.left = `${Math.max(4, Math.min(x, window.innerWidth - w - 4))}px`;
@@ -1231,7 +1231,7 @@
     const att = d.attendees || [];
     $('edAttendeesRow').classList.toggle('hidden', !att.length);
     const ANSWER = { accepted: 'accepted', declined: 'declined', tentative: 'maybe' };
-    $('edAttendees').innerHTML = att.map((p) => `<span class="att att-${esc(p.status)}"><span translate="no">${esc(p.name || p.email)}</span> (${esc(T(ANSWER[p.status] || 'no answer yet'))})</span>`).join(', ');
+    RF.setHTML($('edAttendees'), att.map((p) => `<span class="att att-${esc(p.status)}"><span translate="no">${esc(p.name || p.email)}</span> (${esc(T(ANSWER[p.status] || 'no answer yet'))})</span>`).join(', '));
     $('edDone').checked = !!d.completed;
     $('edRuc').checked = !!d.untilDone;
     $('edTip').checked = !!d.showInTooltip;
@@ -1321,7 +1321,7 @@
         const w = (ws + i) % 7;
         h += `<button type="button" data-wd="${WD[w]}" aria-pressed="${E.days.includes(WD[w])}" title="${WD_LONG[w]}">${WD_LABEL[w]}</button>`;
       }
-      $('edDays').innerHTML = h;
+      RF.setHTML($('edDays'), h);
     }
     if (f === 'MONTHLY' || f === 'YEARLY') {
       const d = parseKey($('edDate').value || S.today);
@@ -1338,7 +1338,7 @@
         opts.push(['rule', onNth(E.rule.nth, WD_LONG[WD.indexOf(E.rule.wd)])]);
       }
       const sel = $('edMode');
-      sel.innerHTML = opts.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('');
+      RF.setHTML(sel, opts.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join(''));
       sel.value = opts.some(([v]) => v === E.mode) ? E.mode : 'date';
       E.mode = sel.value;
     }
@@ -1399,7 +1399,7 @@
     if (allDay) opts = [['', 'None'], ['remind', 'Remind me…']];
     else opts = [...TIMED_ALARMS, ['custom', 'Custom…']];
     if (alarm && alarm.keep) opts.push(['keep', `Keep imported: ${alarm.text || 'Custom alarm'}`]);
-    sel.innerHTML = opts.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('');
+    RF.setHTML(sel, opts.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join(''));
     let v = '';
     if (alarm && alarm.keep) v = 'keep';
     else if (alarm && alarm.minutes != null) {
@@ -1409,7 +1409,7 @@
         const days = m > 0 ? Math.ceil(m / 1440) : 0;
         const at = days * 1440 - m;
         const daySel = $('edAlarmDay');
-        if (![...daySel.options].some((o) => Number(o.value) === days)) daySel.insertAdjacentHTML('beforeend', `<option value="${days}">${days} days before</option>`);
+        if (![...daySel.options].some((o) => Number(o.value) === days)) RF.addHTML(daySel, 'beforeend', `<option value="${days}">${days} days before</option>`);
         daySel.value = String(days);
         $('edAlarmAt').value = `${RF.pad(Math.floor(at / 60) % 24)}:${RF.pad(at % 60)}`;
       } else if (TIMED_ALARMS.some(([x]) => x !== '' && Number(x) === m)) v = String(m);
@@ -1494,7 +1494,7 @@
     if (r && r.start === 'date') v = 'date';
     else if (r && due) { v = `b${r.days}`; if (!opts.some(([k]) => k === v)) opts.splice(opts.length - 1, 0, [v, `${r.days} days before`]); }
     else if (r) { v = 'date'; date = date || S.today; } // no due date any more: from today
-    $('edRmStart').innerHTML = opts.map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join('');
+    RF.setHTML($('edRmStart'), opts.map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join(''));
     $('edRmStart').value = v;
     $('edRmDate').value = date || '';
     $('edRmAt').value = (r && r.at) || '09:00';
@@ -1661,9 +1661,9 @@
     S.oldFiles = (await guard(window.rf.findOld())) || [];
     const err = S.meta.loadError ? `<div style="color:var(--danger);margin-top:10px">${esc(S.meta.loadError)}</div>` : '';
     const olds = S.oldFiles.map((f, i) => `<div class="opt" data-w="old" data-i="${i}"><span style="font-size:22px">🦊</span><div><b>Import from your ReminderFox add-on</b><small>${esc(T('{path} — last changed {date}', { path: f.path, date: fmt.date(f.modified) }))}</small></div></div>`).join('');
-    listView.innerHTML = `<div class="welcome"><img src="../../assets/icon.png" alt=""><h2>Welcome to ReminderFoxAgain</h2><div>Your reminders, to-dos and alarms as a Windows app — a tribute to the original ReminderFox add-on.</div>${err}<div class="opts">${olds}` +
+    RF.setHTML(listView, `<div class="welcome"><img src="../../assets/icon.png" alt=""><h2>Welcome to ReminderFoxAgain</h2><div>Your reminders, to-dos and alarms as a Windows app — a tribute to the original ReminderFox add-on.</div>${err}<div class="opts">${olds}` +
       '<div class="opt" data-w="pick"><span style="font-size:22px">📂</span><div><b>Import a reminderfox.ics or other calendar file…</b><small>From the ReminderFox add-on (in your Firefox/Thunderbird profile\'s "reminderfox" folder), Outlook, Google Calendar…</small></div></div>' +
-      '<div class="opt" data-w="fresh"><span style="font-size:22px">✨</span><div><b>Start with an empty list</b><small>You can import later from Settings → Data.</small></div></div></div></div>';
+      '<div class="opt" data-w="fresh"><span style="font-size:22px">✨</span><div><b>Start with an empty list</b><small>You can import later from Settings → Data.</small></div></div></div></div>');
   }
   async function welcomeChoice(opt) {
     const w = opt.dataset.w;
@@ -1708,7 +1708,7 @@
     $('stTrayNote').hidden = !(S.meta && S.meta.trayMissing);
     $('stSound').checked = s.alarmSound !== false;
     $('stWeek').value = String(Number(s.weekStart) || 0);
-    $('stAlarm').innerHTML = TIMED_ALARMS.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('');
+    RF.setHTML($('stAlarm'), TIMED_ALARMS.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join(''));
     $('stAlarm').value = s.defaultAlarm == null ? '' : String(s.defaultAlarm);
     const sn = RF.snooze.fromSettings(s);
     $('stSnoozeAmount').value = String(sn.amount);
@@ -1736,15 +1736,15 @@
     const list = RF.themeList(S.settings.customThemes);
     const built = list.filter((t) => !t.custom); const own = list.filter((t) => t.custom);
     const opt = (t) => `<option value="${esc(t.id)}"${t.custom ? ' translate="no"' : ''}>${esc(t.label)}</option>`;
-    $('stTheme').innerHTML = built.map(opt).join('') + (own.length ? `<optgroup label="${esc(T('Your themes'))}">${own.map(opt).join('')}</optgroup>` : '');
+    RF.setHTML($('stTheme'), built.map(opt).join('') + (own.length ? `<optgroup label="${esc(T('Your themes'))}">${own.map(opt).join('')}</optgroup>` : ''));
     const cur = S.settings.theme || '';
     $('stTheme').value = list.some((t) => t.id === cur) ? cur : '';
     renderSwatches();
   }
   function renderSwatches() {
     const cur = $('stTheme').value;
-    $('stThemeSw').innerHTML = RF.themeList(S.settings.customThemes).map((t) => `<button type="button" data-theme-id="${esc(t.id)}" aria-pressed="${t.id === cur}" title="${esc(t.custom ? t.label : T(RF.platformText(t.label)))}" aria-label="${esc(t.custom ? t.label : T(RF.platformText(t.label)))}"${t.custom ? ' translate="no"' : ''}>` +
-      t.sw.map((c) => `<span style="background:${c}"></span>`).join('') + '</button>').join('');
+    RF.setHTML($('stThemeSw'), RF.themeList(S.settings.customThemes).map((t) => `<button type="button" data-theme-id="${esc(t.id)}" aria-pressed="${t.id === cur}" title="${esc(t.custom ? t.label : T(RF.platformText(t.label)))}" aria-label="${esc(t.custom ? t.label : T(RF.platformText(t.label)))}"${t.custom ? ' translate="no"' : ''}>` +
+      t.sw.map((c) => `<span style="background:${c}"></span>`).join('') + '</button>').join(''));
     const own = cur.startsWith('custom:');
     $('stThemeEdit').disabled = !own; $('stThemeDel').disabled = !own;
   }

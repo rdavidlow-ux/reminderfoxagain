@@ -1,8 +1,8 @@
-# ReminderFoxAgain 0.9.3 — Developer's Guide
+# ReminderFoxAgain 0.9.4 (beta) — Developer's Guide
 
 Nov 1, 2026 · David
 
-This guide is the reference for working on the ReminderFoxAgain 0.9.3 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
+This guide is the reference for working on the ReminderFoxAgain 0.9.4 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
 
 ## 1. Setup and layout
 
@@ -40,8 +40,8 @@ Both build on Linux and give the same SHA-256 hashes on every run.
 ```sh
 ./build-linux.sh   # dist/release-linux/: .tar.gz and .deb for x64 and arm64 (ARCHS=x64 for one)
 ./build-macos.sh   # dist/release-macos/: one universal .zip (Apple silicon + Intel)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.3-linux-x64.tar.gz
-python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.3
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.4-linux-x64.tar.gz
+python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.4
 ```
 
 - **Linux:** `build/linux/` holds `install.sh`, `uninstall.sh`, the menu entry, the icons and the .deb's `postinst`, `postrm` and AppArmor profile. The .deb installs to `/opt/ReminderFoxAgain`, links `/usr/bin/reminderfoxagain` and makes `chrome-sandbox` setuid root. The tarball installs per user under `~/.local`, and its launcher adds `--no-sandbox` only where unprivileged user namespaces are off.
@@ -319,7 +319,8 @@ The pages are plain HTML, CSS and JavaScript, with no framework or bundler. Each
 | `pad`, `dayKey`, `parseKey`, `startOfDay`, `addDays` | Local date helpers; keys are `YYYY-MM-DD` |
 | `fmt` | `time`, `date`, `weekday`, `weekdayLong`, `narrow`, `month`, `monthName`, `long`, `dateTime`, `relDay` (“Today”, “Tomorrow”, “Fri, Oct 16”), `rel`; all honour `setFormats` |
 | `setFormats(settings)`, `DATE_FORMATS` | The date (`''`, `dmy-text`, `iso`, `mdy`, `dmy`, `dmy-dot`) and time (`''`, `12`, `24`) formats |
-| `esc(s)` | HTML-escape; use it for every user string put into `innerHTML` |
+| `esc(s)` | HTML-escape; use it for every user string put into HTML |
+| `setHTML(el, html)`, `addHTML(el, where, html)` | Put HTML into the page without `innerHTML` (0.9.4): parsed off the page by `DOMParser`, cleaned (no `script`, `iframe`, `object` and the like, no `on…` attributes, only safe links), then moved in; table rows and options are parsed inside a table or select. Never assign `innerHTML` or call `insertAdjacentHTML`: Mozilla's checker flags it, and `tools/ui/safe-html.js` checks the cleaning. |
 | `THEMES`, `applyTheme(id)` | Theme list with swatches; sets `data-theme` on `<html>` |
 | `snooze` | `seconds(amount, unit)`, `untilSeconds(text, now)`, `label`, `fromSettings`, `UNITS`, `MAX` |
 | `TONES, playTone(id), chime(), playSound(url, tone), stopSound(``)` | The built-in sounds; playSound(url, tone) plays a data URL or, without one, the built-in tone, and resolves when it ends or is stopped; stopSound() stops it; TONES lists the five sounds (id, label, dur, draw(ctx, out, t0)) |
@@ -386,7 +387,7 @@ The UI speaks the original add-on's 34 languages. English text is the key everyw
 
 **Writing UI text.**
 
-- Plain text in the markup, and text a script sets with `textContent` or `innerHTML`, is translated as it appears by `i18n-dom.js`. Nothing to do, as long as the exact text is in the catalog.
+- Plain text in the markup, and text a script sets with `textContent` or `RF.setHTML`, is translated as it appears by `i18n-dom.js`. Nothing to do, as long as the exact text is in the catalog.
 - Text put together from parts goes through `RF.T()` with placeholders, never string concatenation: `T('{n} reminders', {n})`, `T('Due by {date}', {date: fmt.date(d)})`. Names starting with `n` (`{n}`, `{n2}`) match numbers; others match any text, which is translated in turn.
 - Plurals: one key per form you'd write in English (`'{n} reminder'` / `'{n} reminders'`); the values carry each language's forms, `one=… | few=… | other=…`.
 - User text must not be translated: give its element `translate="no"` or one of the skipped classes (`.t`, `.chip`, `.notes`, `span.sub`).
@@ -429,7 +430,7 @@ The UI speaks the original add-on's 34 languages. English text is the key everyw
 | Add-on UI | `thunderbird/test/e2e.sh` (options for `run.js`: `--sample empty\|bills`, `--lang`, `--size`) | Last line `0 problem(s)` (about 790 checks in 0.9.3) |
 | Add-on lint | `web-ext lint -s dist/thunderbird` | 0 errors (the warnings are Thunderbird-only APIs) |
 | Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 62/62 in every zone |
-| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 760 checks in 0.9.3) |
+| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 765 checks in 0.9.4) |
 | Screens | `tools/shots.sh <outDir>` | 70 PNGs; compare by eye |
 | Installer | `tools/test-setup.sh [pwsh]` | 20/20 |
 
@@ -502,7 +503,7 @@ A change to the Electron version is a full release: the installer reuses an inst
 - **Data compatibility first.** Never drop or rewrite properties you don't own. App-only data goes in `state.json`, or in `X-REMINDERFOXAGAIN-*` properties (such as the to-do reminder plan).
 - **Time.** Store code takes “now” from `_now()`. Main-process alarm code passes `now` down. Use local `dayKey` / `timeKey` strings for dates, never `toISOString()` (it's UTC).
 - **Safety.** Write files with `writeAtomic`. Write the receiving file first when moving items. Every IPC handler validates its input.
-- **UI.** Escape user text with `esc()`. Call IPC through `guard()`. Use theme tokens instead of fixed colours. Make every control keyboard-reachable, with a `title` or `aria-label`. Keep messages short and in plain words.
+- **UI.** Escape user text with `esc()`, and put HTML into the page with `RF.setHTML` / `RF.addHTML`, never `innerHTML`. Call IPC through `guard()`. Use theme tokens instead of fixed colours. Make every control keyboard-reachable, with a `title` or `aria-label`. Keep messages short and in plain words.
 - **Style.** `'use strict'`, IIFEs, 2-space indent, single quotes, no build step. Comments explain why, not what.
 - **Tests.** Every behaviour change gets a unit test or an E2E line. Expected values are written out, never computed the same way as the code under test.
 

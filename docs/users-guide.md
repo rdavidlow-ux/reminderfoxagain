@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.9.3 — User's Guide
+# ReminderFoxAgain 0.9.4 (beta) — User's Guide
 
 Nov 1, 2026 · David
 
@@ -12,7 +12,7 @@ Where Thunderbird isn't available or can't be used, the same app runs on its own
 
 You need Thunderbird 128 or later, on Windows, macOS or Linux.
 
-1.  Download **ReminderFoxAgain-0.9.3-thunderbird.xpi**.
+1.  Download **ReminderFoxAgain-0.9.4-thunderbird.xpi**.
 
 2.  In Thunderbird, open **≡ → Add-ons and Themes**, click **⚙ → Install Add-on From File…** and pick the .xpi.
 
@@ -38,8 +38,8 @@ Put every release file in one folder, then double-click **Install or Update Remi
 |------------------------------------------------------|--------------------------------------|
 | Install or Update ReminderFoxAgain.bat               | Always                               |
 | ReminderFoxAgain-Setup.ps1                           | Always                               |
-| ReminderFoxAgain-app-0.9.3.asar                      | Always                               |
-| ReminderFoxAgain-runtime-0.9.3.part1.bin … part6.bin | New installs, and updates from 0.6.x |
+| ReminderFoxAgain-app-0.9.4.asar                      | Always                               |
+| ReminderFoxAgain-runtime-0.9.4.part1.bin … part6.bin | New installs, and updates from 0.6.x |
 
 - The app goes to %LOCALAPPDATA%\Programs\ReminderFoxAgain, with Start-menu and desktop shortcuts and an entry in Settings → Apps.
 
@@ -49,7 +49,7 @@ Put every release file in one folder, then double-click **Install or Update Remi
 
 #### On a Mac
 
-Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.3-macos-universal.zip.
+Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.4-macos-universal.zip.
 
 1.  Double-click the zip, then drag **ReminderFoxAgain.app** into **Applications**.
 
@@ -61,9 +61,9 @@ On a Mac the shortcuts use ⌥⇧ and the letter (⌥⇧A new reminder, ⌥⇧O 
 
 #### On Linux
 
-- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.3_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.3_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
+- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.4_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.4_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
 
-- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.3-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
+- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.4-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
 
 - **GNOME:** add the "AppIndicator and KStatusNotifierItem Support" extension to see the fox in the top bar. Without it, closing the window quits the app, and Settings says so.
 

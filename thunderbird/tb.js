@@ -45,7 +45,7 @@
       if (!pick || list.querySelector('.welcome .tb-old')) return;
       const opt = pick.cloneNode(false);
       opt.classList.add('tb-old');
-      opt.innerHTML = '<span style="font-size:22px">🦊</span><div><b>Import from your ReminderFox add-on</b><small>Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile</small></div>';
+      window.RF.setHTML(opt, '<span style="font-size:22px">🦊</span><div><b>Import from your ReminderFox add-on</b><small>Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile</small></div>');
       pick.before(opt);
     };
     new MutationObserver(addOld).observe(list, { childList: true, subtree: true });
@@ -66,8 +66,8 @@
   const tray = $('stTrayNote') || $('stTray');
   if (tray && !$('stTbTags')) {
     const box = document.createElement('div');
-    box.innerHTML = '<label class="inline-chk"><input type="checkbox" class="chk" id="stTbTags"> Tag emails that have a reminder or list item</label>' +
-      '<label class="inline-chk"><input type="checkbox" class="chk" id="stTbBdays"> Birthday reminders from your address books</label>';
+    window.RF.setHTML(box, '<label class="inline-chk"><input type="checkbox" class="chk" id="stTbTags"> Tag emails that have a reminder or list item</label>' +
+      '<label class="inline-chk"><input type="checkbox" class="chk" id="stTbBdays"> Birthday reminders from your address books</label>');
     (tray.closest('label') || tray).after(...box.children);
     const show = (s) => { if (!s) return; $('stTbTags').checked = s.tbTagEmails !== false; $('stTbBdays').checked = !!s.tbBirthdays; };
     window.rf.on('settings:changed', show);
@@ -80,14 +80,14 @@
   // the address books), then a new message with the invitation for the person to check and send
   const dlg = document.createElement('dialog');
   dlg.id = 'tbInvite';
-  dlg.innerHTML = '<form class="dlg small" method="dialog">' +
+  window.RF.setHTML(dlg, '<form class="dlg small" method="dialog">' +
     '<div class="dlg-head"><h2>Invite people</h2></div>' +
     '<div class="dlg-body">' +
     '<div class="field"><label for="tbInvTo">Email addresses, separated by commas</label><input class="inp" id="tbInvTo" autocomplete="off" list="tbInvList"><datalist id="tbInvList"></datalist></div>' +
     '<div class="note">The invitation opens in a new message for you to check and send.</div>' +
     '</div>' +
     '<div class="dlg-foot"><span class="spacer"></span><button type="button" class="btn" id="tbInvCancel">Cancel</button><button type="submit" class="btn primary" id="tbInvGo">Create invitation</button></div>' +
-    '</form>';
+    '</form>');
   document.body.appendChild(dlg);
   let invUid = null; let sugTimer = null;
   const to = $('tbInvTo');
@@ -98,7 +98,7 @@
       const parts = to.value.split(','); const last = parts.pop().trim(); const head = parts.map((x) => x.trim()).filter(Boolean);
       const found = last.length >= 2 ? await window.rf.contacts(last).catch(() => []) : [];
       const pre = head.length ? `${head.join(', ')}, ` : '';
-      $('tbInvList').innerHTML = found.map((c) => `<option value="${esc(pre + c.email)}" translate="no">${esc(c.name || c.email)}</option>`).join('');
+      window.RF.setHTML($('tbInvList'), found.map((c) => `<option value="${esc(pre + c.email)}" translate="no">${esc(c.name || c.email)}</option>`).join(''));
     }, 200);
   });
   $('tbInvCancel').addEventListener('click', () => dlg.close());
@@ -113,7 +113,7 @@
       invUid = uid;
       const d = await window.rf.get(uid).catch(() => null);
       to.value = d && d.attendees && d.attendees.length ? `${d.attendees.map((a) => a.email).join(', ')}, ` : '';
-      $('tbInvList').innerHTML = '';
+      window.RF.setHTML($('tbInvList'), '');
       dlg.showModal();
       to.focus();
       return true;

@@ -73,6 +73,50 @@
 
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
+  // Putting HTML into the page safely. The windows build their lists and dialogs as HTML text, with every value from
+  // the data escaped by esc() first. setHTML() and addHTML() then put that text into an element without innerHTML:
+  // the text is parsed off the page by DOMParser (which never runs scripts), anything that could run code is removed
+  // (script, iframe, object and similar elements, on… event attributes, and links other than http(s), mailto, data
+  // images, relative paths and #anchors), and only the clean nodes are moved into the element.
+  const DROP_TAGS = new Set(['SCRIPT', 'IFRAME', 'FRAME', 'FRAMESET', 'OBJECT', 'EMBED', 'APPLET', 'BASE', 'META', 'LINK', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'PORTAL', 'NOEMBED', 'NOFRAMES']);
+  const URL_ATTRS = new Set(['href', 'src', 'action', 'formaction', 'xlink:href', 'poster', 'data', 'srcset', 'background', 'ping', 'cite', 'longdesc']);
+  const SAFE_URL = /^(?:https?:|mailto:|data:image\/(?:png|jpe?g|gif|webp|svg\+xml);|#|\.{0,2}\/|[^:]*$)/i;
+  function cleanNodes(root) {
+    const walker = root.ownerDocument.createTreeWalker(root, 1); // elements only
+    const drop = [];
+    for (let el = walker.nextNode(); el; el = walker.nextNode()) {
+      if (DROP_TAGS.has(el.tagName.toUpperCase())) { drop.push(el); continue; }
+      for (const a of [...el.attributes]) {
+        const n = a.name.toLowerCase();
+        const v = a.value.replace(/[\u0000- \u007f]+/g, '');
+        if (n.startsWith('on') || n === 'srcdoc' || n === 'is') el.removeAttribute(a.name);
+        else if (URL_ATTRS.has(n) && !SAFE_URL.test(v)) el.removeAttribute(a.name);
+        else if (n === 'style' && /expression\(|url\(\s*['"]?\s*javascript:/i.test(v)) el.removeAttribute(a.name);
+      }
+    }
+    for (const el of drop) el.remove();
+    return root;
+  }
+  // the nodes the HTML stands for, parsed where they belong (table rows inside a table body, options inside a select)
+  function parseHTML(html, ctx) {
+    const tag = String((ctx && ctx.tagName) || '').toUpperCase();
+    const wrap = { TBODY: ['<table><tbody>', 'tbody'], THEAD: ['<table><thead>', 'thead'], TFOOT: ['<table><tfoot>', 'tfoot'],
+      TABLE: ['<table>', 'table'], TR: ['<table><tbody><tr>', 'tr'], SELECT: ['<select>', 'select'], OPTGROUP: ['<select><optgroup>', 'optgroup'],
+      COLGROUP: ['<table><colgroup>', 'colgroup'] }[tag];
+    const doc = new DOMParser().parseFromString(`<!doctype html><body>${wrap ? wrap[0] : ''}${String(html == null ? '' : html)}`, 'text/html');
+    const host = cleanNodes(wrap ? doc.body.querySelector(wrap[1]) || doc.body : doc.body);
+    return [...host.childNodes];
+  }
+  // replaces el's contents with the HTML (instead of el.innerHTML = html)
+  function setHTML(el, html) { el.replaceChildren(...parseHTML(html, el)); return el; }
+  // adds the HTML at a place relative to el, as insertAdjacentHTML does: 'beforebegin', 'afterbegin', 'beforeend', 'afterend'
+  function addHTML(el, where, html) {
+    const inside = where === 'afterbegin' || where === 'beforeend';
+    const nodes = parseHTML(html, inside ? el : el.parentNode);
+    ({ beforebegin: () => el.before(...nodes), afterbegin: () => el.prepend(...nodes), beforeend: () => el.append(...nodes), afterend: () => el.after(...nodes) })[where]();
+    return el;
+  }
+
   // The built-in alarm sounds, drawn with Web Audio so they need no files. Each draws into any AudioContext (also an
   // OfflineAudioContext, which tools/sounds.js uses to write them out as .wav files) from time t0, and says how long
   // it lasts in seconds. id is stored in settings.alarmTone ('file' = the user's own sound file).
@@ -294,5 +338,5 @@
     }
   }
 
-  window.RF = { ...(window.RF || {}), pad, dayKey, parseKey, startOfDay, addDays, fmt, T, esc, chime, playSound, playTone, stopSound, TONES, snooze, LOCALE, THEMES, THEME_COLORS, themeList, themeVars, ITEM_COLORS, contrast, applyTheme, expandAges, setFormats, DATE_FORMATS };
+  window.RF = { ...(window.RF || {}), pad, dayKey, parseKey, startOfDay, addDays, fmt, T, esc, chime, playSound, playTone, stopSound, TONES, snooze, LOCALE, THEMES, THEME_COLORS, themeList, themeVars, ITEM_COLORS, contrast, applyTheme, expandAges, setFormats, DATE_FORMATS, setHTML, addHTML };
 })();

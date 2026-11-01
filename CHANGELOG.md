@@ -3,6 +3,17 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
+## 0.9.4 (beta) — safe HTML for the add-on review
+
+- **No more "Unsafe assignment to innerHTML" warnings** from Mozilla's add-on checker on addons.thunderbird.net. The
+  windows still build their lists and dialogs as HTML with every value escaped, but now put it into the page through
+  one function, `RF.setHTML` (and `RF.addHTML`), instead of `innerHTML`: the HTML is parsed off the page, anything that
+  could run code (scripts, frames, embedded objects, event attributes, `javascript:` links) is removed, and only the
+  clean result is shown. The same in the desktop app and the add-on; a new UI check (`tools/ui/safe-html.js`) tests it.
+- The checker's other warnings name Thunderbird's own email features, which its Firefox rules don't know; they are
+  expected for every Thunderbird add-on.
+- Released as a beta (a pre-release on GitHub) for the add-on's review.
+
 ## 0.9.3 — the Thunderbird add-on, calendar subscriptions, the Alarms view and a scrolling Month view
 
 ReminderFoxAgain is now first of all a Thunderbird add-on; the desktop app stays for computers without Thunderbird.

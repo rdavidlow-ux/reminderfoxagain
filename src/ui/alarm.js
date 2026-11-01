@@ -65,7 +65,7 @@
     const keys = alarms.map((a) => a.key).join('\n');
     if (list.dataset.keys !== keys) {
       for (const k of [...typed.keys()]) if (!alarms.some((a) => a.key === k)) typed.delete(k);
-      list.innerHTML = alarms.map(card).join('');
+      RF.setHTML(list, alarms.map(card).join(''));
       list.dataset.keys = keys;
       for (const c of list.querySelectorAll('.card')) validate(c);
     } else refreshWhen();
@@ -81,7 +81,7 @@
       if (!a) continue;
       const w = whenHtml(a, now);
       const el = c.querySelector('.when');
-      el.innerHTML = w.html;
+      RF.setHTML(el, w.html);
       el.classList.toggle('late', w.late);
     }
   }

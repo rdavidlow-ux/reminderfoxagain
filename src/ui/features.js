@@ -22,8 +22,8 @@
       d.id = id;
       document.body.appendChild(d);
     }
-    d.innerHTML = `<form class="dlg ${cls}" method="dialog" autocomplete="off"><div class="dlg-head"><h2>${esc(title)}</h2></div>` +
-      `<div class="dlg-body">${body}</div><div class="dlg-foot">${foot}</div></form>`;
+    RF.setHTML(d, `<form class="dlg ${cls}" method="dialog" autocomplete="off"><div class="dlg-head"><h2>${esc(title)}</h2></div>` +
+      `<div class="dlg-body">${body}</div><div class="dlg-foot">${foot}</div></form>`);
     d.querySelector('form').addEventListener('submit', (e) => e.preventDefault());
     for (const b of d.querySelectorAll('[data-x]')) b.addEventListener('click', () => d.close());
     return d;
@@ -66,7 +66,7 @@
     function render() {
       const list = S.settings.subscriptions || [];
       q(d, '#subRefreshAll').disabled = !list.length;
-      q(d, '#subList').innerHTML = list.length ? list.map((x) => `<div class="sub-row" data-id="${esc(x.id)}">` +
+      RF.setHTML(q(d, '#subList'), list.length ? list.map((x) => `<div class="sub-row" data-id="${esc(x.id)}">` +
         `<div class="row"><input type="color" class="th-color" data-f="color" value="${esc(x.color)}" aria-label="Colour"><input class="inp grow" data-f="name" value="${esc(x.name)}" maxlength="80" aria-label="Name" translate="no">` +
         `<select class="sel" data-f="refreshHours" aria-label="How often it is fetched again">${REFRESH_TEXT.map(([h, l]) => `<option value="${h}"${Number(x.refreshHours) === h ? ' selected' : ''}>${esc(l)}</option>`).join('')}</select></div>` +
         `<div class="sub-url" translate="no" title="${esc(x.url)}">${esc(x.url)}</div>` +
@@ -75,7 +75,7 @@
         '<button type="button" class="btn ghost sm" data-sa="refresh">Refresh now</button><button type="button" class="btn ghost sm danger" data-sa="remove">Remove</button></div>' +
         `<div class="note${x.error ? ' warn' : ''}">${esc(x.error ? RF.T('Could not be updated: {why}', { why: RF.T(x.error) }) + (x.updated ? ` ${RF.T('Showing the copy from {time}.', { time: `${fmt.date(x.updated)}, ${fmt.time(x.updated)}` })}` : '')
           : RF.T('Updated {time} · {events}', { time: `${fmt.date(x.updated)}, ${fmt.time(x.updated)}`, events: plural(x.count || 0, 'event', 'events') }))}</div></div>`).join('')
-        : '<div class="note">No calendar subscriptions yet.</div>';
+        : '<div class="note">No calendar subscriptions yet.</div>');
     }
     q(d, '#subAdd').addEventListener('click', async () => {
       const url = q(d, '#subUrl').value.trim();
@@ -169,12 +169,12 @@
       if (r.suspended) sus.textContent = r.suspended.until ? RF.T('Alarms are suspended until {time}: none of these ring before then.', { time: whenText(r.suspended.until) }) : RF.T('Alarms are suspended: none of these ring until you resume them.');
       const ringing = rows.filter((a) => a.status === 'ringing').length;
       q(d, '#alCount').textContent = `${plural(rows.filter((a) => a.status !== 'skipped').length, 'alarm', 'alarms')}${ringing ? ` · ${RF.T('{n} ringing', { n: ringing })}` : ''}`;
-      q(d, '#alList').innerHTML = rows.length ? rows.map((a, i) => `<div class="mini-row al-row al-${a.status}" role="listitem" data-i="${i}">` +
+      RF.setHTML(q(d, '#alList'), rows.length ? rows.map((a, i) => `<div class="mini-row al-row al-${a.status}" role="listitem" data-i="${i}">` +
         `<span class="al-icon" aria-hidden="true">${a.status === 'ringing' ? '🔔' : a.status === 'snoozed' ? '💤' : a.status === 'skipped' ? '⏭' : a.quick ? '⏰' : a.kind === 'todo' ? '☑' : '📅'}</span>` +
         `<span class="grow"><b>${esc(a.summary || RF.T(kindText(a)))}</b> <span class="note">${esc(RF.T(kindText(a)))}${a.repeat ? ` · ${esc(RF.T('repeats'))}` : ''}</span><br>` +
         `<span class="al-when">${esc(stateText(a))}</span></span><span class="al-acts">${actions(a)}</span></div>`).join('') +
         (r.more ? `<div class="note">${esc(RF.T('Showing the first {n}.', { n: rows.length }))}</div>` : '')
-        : '<div class="note">No alarms in this period.</div>';
+        : '<div class="note">No alarms in this period.</div>');
     }
     q(d, '#alSpan').addEventListener('alarms-refresh', list);
     q(d, '#alSpan').addEventListener('change', () => { try { localStorage.setItem('rf.alarmSpan', q(d, '#alSpan').value); } catch (e) { /* ignore */ } list(); });
@@ -250,8 +250,8 @@
     q(d, '#qaN').addEventListener('focus', () => { q(d, 'input[name=qaMode][value=in]').checked = true; preview(); });
     async function list() {
       const items = (await A.guard(window.rf.quickList())) || [];
-      q(d, '#qaList').innerHTML = items.length ? items.map((x) => `<div class="mini-row"><span class="grow"><b>${esc(x.text)}</b> <span class="note">${esc(whenText(x.at))}</span></span>` +
-        `<button type="button" class="btn ghost" data-cancel="${esc(x.id)}" title="Cancel this alarm">Cancel</button></div>`).join('') : '<div class="note">No quick alarms.</div>';
+      RF.setHTML(q(d, '#qaList'), items.length ? items.map((x) => `<div class="mini-row"><span class="grow"><b>${esc(x.text)}</b> <span class="note">${esc(whenText(x.at))}</span></span>` +
+        `<button type="button" class="btn ghost" data-cancel="${esc(x.id)}" title="Cancel this alarm">Cancel</button></div>`).join('') : '<div class="note">No quick alarms.</div>');
     }
     q(d, '#qaList').addEventListener('click', async (e) => {
       const b = e.target.closest('[data-cancel]');
@@ -377,11 +377,11 @@
     });
     function render() {
       const views = S.settings.views || [];
-      q(d, '#vwList').innerHTML = views.length ? views.map((v, i) => `<div class="mini-row" data-i="${i}"><span class="grow"><b>${esc(v.name)}</b><br><span class="note">${esc(describeView(v))}</span></span>` +
+      RF.setHTML(q(d, '#vwList'), views.length ? views.map((v, i) => `<div class="mini-row" data-i="${i}"><span class="grow"><b>${esc(v.name)}</b><br><span class="note">${esc(describeView(v))}</span></span>` +
         `<button type="button" class="btn ghost" data-a="show" title="Show it in the Reminders tab">Show</button>` +
         `<button type="button" class="nav" data-a="up" title="Move up"${i ? '' : ' disabled'}>↑</button><button type="button" class="nav" data-a="down" title="Move down"${i < views.length - 1 ? '' : ' disabled'}>↓</button>` +
         '<button type="button" class="btn ghost" data-a="edit">Edit…</button><button type="button" class="btn ghost danger" data-a="del">Delete</button></div>').join('')
-        : '<div class="note">No saved filters yet. Click “New saved filter…” to make one — for example every reminder with the category “Birthday” in the coming year.</div>';
+        : '<div class="note">No saved filters yet. Click “New saved filter…” to make one — for example every reminder with the category “Birthday” in the coming year.</div>');
     }
     q(d, '#vwList').addEventListener('click', async (e) => {
       const b = e.target.closest('button[data-a]');
@@ -436,9 +436,9 @@
       q(d, '#veName').value = v.name;
       let saved = false;
       function critRows() {
-        q(d, '#veCrit').innerHTML = v.criteria.map((c, k) => `<div class="row" data-k="${k}"><select class="sel" data-f>${FIELDS.map(([f, l]) => `<option value="${f}"${f === c.field ? ' selected' : ''}>${l}</option>`).join('')}</select>` +
+        RF.setHTML(q(d, '#veCrit'), v.criteria.map((c, k) => `<div class="row" data-k="${k}"><select class="sel" data-f>${FIELDS.map(([f, l]) => `<option value="${f}"${f === c.field ? ' selected' : ''}>${l}</option>`).join('')}</select>` +
           `<span class="note" style="width:56px">${c.field === 'categories' ? 'is' : 'contains'}</span><input class="inp grow" data-v value="${esc(c.value || '')}" placeholder="${c.field === 'categories' ? 'Birthday, Anniversary' : 'words, separated by commas'}"${c.field === 'categories' ? ' list="catList"' : ''}>` +
-          `<button type="button" class="nav" data-rm title="Remove this condition"${v.criteria.length > 1 ? '' : ' disabled'}>✕</button></div>`).join('');
+          `<button type="button" class="nav" data-rm title="Remove this condition"${v.criteria.length > 1 ? '' : ' disabled'}>✕</button></div>`).join(''));
       }
       function read() {
         v.name = q(d, '#veName').value.trim();
@@ -557,9 +557,9 @@
     function render() {
       const counts = S.meta.listCounts || {};
       const lists = S.meta.todoLists;
-      q(d, '#lsList').innerHTML = lists.map((l, i) => `<div class="mini-row" data-l="${esc(l)}"><span class="grow"><b>${esc(l)}</b> <span class="note">${plural(counts[l] || 0, 'to-do', 'to-dos')}</span></span>` +
+      RF.setHTML(q(d, '#lsList'), lists.map((l, i) => `<div class="mini-row" data-l="${esc(l)}"><span class="grow"><b>${esc(l)}</b> <span class="note">${plural(counts[l] || 0, 'to-do', 'to-dos')}</span></span>` +
         (i ? `<button type="button" class="nav" data-a="up" title="Move up"${i > 1 ? '' : ' disabled'}>↑</button><button type="button" class="nav" data-a="down" title="Move down"${i < lists.length - 1 ? '' : ' disabled'}>↓</button>` +
-          '<button type="button" class="btn ghost" data-a="ren">Rename…</button><button type="button" class="btn ghost danger" data-a="del">Remove…</button>' : '<span class="note">main list</span>') + '</div>').join('');
+          '<button type="button" class="btn ghost" data-a="ren">Rename…</button><button type="button" class="btn ghost danger" data-a="del">Remove…</button>' : '<span class="note">main list</span>') + '</div>').join(''));
     }
     async function reload() { await A.refresh(); render(); }
     q(d, '#lsList').addEventListener('click', async (e) => {
@@ -695,7 +695,7 @@
         const all = q(d, '#scAllDay').checked;
         const list = all ? allDayAlarms : timedAlarms;
         const keep = q(d, '#scAlarm').value;
-        q(d, '#scAlarm').innerHTML = list.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('');
+        RF.setHTML(q(d, '#scAlarm'), list.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join(''));
         const def = S.settings.defaultAlarm == null ? (all ? '-540' : '15') : (all ? '-540' : String(S.settings.defaultAlarm));
         q(d, '#scAlarm').value = list.some(([v]) => v === keep) ? keep : list.some(([v]) => v === def) ? def : list[0][0];
         q(d, '#scTimeWrap').classList.toggle('hidden', all);
@@ -747,8 +747,8 @@
     function render() {
       const counts = S.meta.categoryCounts || {};
       const cats = S.meta.categories;
-      q(d, '#ctList').innerHTML = cats.length ? cats.map((c) => `<div class="mini-row" data-c="${esc(c)}"><span class="grow"><span class="chip">${esc(c)}</span> <span class="note">${counts[c] ? plural(counts[c], 'item', 'items') : 'not used yet'}</span></span>` +
-        '<button type="button" class="btn ghost" data-a="ren">Rename…</button><button type="button" class="btn ghost danger" data-a="del">Delete…</button></div>').join('') : '<div class="note">No categories yet.</div>';
+      RF.setHTML(q(d, '#ctList'), cats.length ? cats.map((c) => `<div class="mini-row" data-c="${esc(c)}"><span class="grow"><span class="chip">${esc(c)}</span> <span class="note">${counts[c] ? plural(counts[c], 'item', 'items') : 'not used yet'}</span></span>` +
+        '<button type="button" class="btn ghost" data-a="ren">Rename…</button><button type="button" class="btn ghost danger" data-a="del">Delete…</button></div>').join('') : '<div class="note">No categories yet.</div>');
     }
     async function reload() { await A.refresh(); render(); }
     async function addCats(names) {
@@ -863,9 +863,9 @@
       return `${parts.join(', ')} <span class="note">· ${KB(b.size)}</span>`;
     }
     function render() {
-      q(d, '#rsList').innerHTML = items.length ? items.map((b, i) => `<tr data-i="${i}" class="${picked === i ? 'selected' : ''}${b.error ? ' past' : ''}"><td class="c-chk"><input type="radio" name="rsPick" ${picked === i ? 'checked' : ''}${b.error ? ' disabled' : ''} aria-label="Choose"></td>` +
+      RF.setHTML(q(d, '#rsList'), items.length ? items.map((b, i) => `<tr data-i="${i}" class="${picked === i ? 'selected' : ''}${b.error ? ' past' : ''}"><td class="c-chk"><input type="radio" name="rsPick" ${picked === i ? 'checked' : ''}${b.error ? ' disabled' : ''} aria-label="Choose"></td>` +
         `<td class="nw">${esc(fmt.date(b.modified))} <span class="note">${esc(fmt.time(b.modified))}</span></td><td>${esc(b.kind)}<br><span class="note">${esc(b.name)}</span></td><td>${contents(b)}</td></tr>`).join('')
-        : '<tr><td colspan="4" class="note" style="padding:14px">No backups yet. They are made every day the app runs; you can also click “Back up now”.</td></tr>';
+        : '<tr><td colspan="4" class="note" style="padding:14px">No backups yet. They are made every day the app runs; you can also click “Back up now”.</td></tr>');
       q(d, '#rsGo').disabled = picked == null;
     }
     q(d, '#rsList').addEventListener('click', (e) => {
@@ -1059,10 +1059,10 @@
     $('stTextSize').value = String(Number(s.textSize) || 100);
     const L = RF.i18n || { languages: [['en', 'English']], systemLang: 'en' };
     const nameOf = (c) => (L.languages.find(([k]) => k === c) || [c, c])[1];
-    $('stLanguage').innerHTML = `<option value="">${esc(`System language (${nameOf(L.systemLang)})`)}</option>` +
-      L.languages.map(([c, n]) => `<option value="${c}" translate="no" lang="${c}">${esc(n)}</option>`).join('');
+    RF.setHTML($('stLanguage'), `<option value="">${esc(`System language (${nameOf(L.systemLang)})`)}</option>` +
+      L.languages.map(([c, n]) => `<option value="${c}" translate="no" lang="${c}">${esc(n)}</option>`).join(''));
     $('stLanguage').value = s.language || '';
-    $('stDateFormat').innerHTML = RF.DATE_FORMATS.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join('');
+    RF.setHTML($('stDateFormat'), RF.DATE_FORMATS.map(([v, l]) => `<option value="${v}">${esc(l)}</option>`).join(''));
     $('stDateFormat').value = s.dateFormat || '';
     $('stTimeFormat').value = s.timeFormat || '';
     $('stSide').checked = s.sidePanel !== false;
@@ -1082,8 +1082,8 @@
   function fillTones() {
     const s = S.settings;
     const tone = s.alarmTone === 'file' && !s.soundFile ? 'chime' : s.alarmTone || 'chime';
-    $('stTone').innerHTML = RF.TONES.map((t) => `<option value="${t.id}">${esc(RF.T(t.label))}</option>`).join('') +
-      (s.soundFile ? `<option value="file">${esc(RF.T('Your file: {s}', { s: s.soundName || s.soundFile }))}</option>` : '');
+    RF.setHTML($('stTone'), RF.TONES.map((t) => `<option value="${t.id}">${esc(RF.T(t.label))}</option>`).join('') +
+      (s.soundFile ? `<option value="file">${esc(RF.T('Your file: {s}', { s: s.soundName || s.soundFile }))}</option>` : ''));
     $('stTone').value = tone;
   }
   async function testSound() {
@@ -1098,10 +1098,10 @@
   function fillColumns() {
     for (const [id, key, cols] of COL_SETS) {
       const hidden = new Set(S.settings[key] || []);
-      $(id).innerHTML = cols.map((c) => {
+      RF.setHTML($(id), cols.map((c) => {
         const name = c === 'date' && key === 'todoColumnsHidden' ? 'Due by' : COL_NAMES[c];
         return `<label class="inline-chk"><input type="checkbox" class="chk" data-col="${c}"${c === 'desc' ? ' checked disabled' : hidden.has(c) ? '' : ' checked'}> ${esc(RF.T(name))}</label>`;
-      }).join('');
+      }).join(''));
     }
   }
   function updateSliderParts() {
