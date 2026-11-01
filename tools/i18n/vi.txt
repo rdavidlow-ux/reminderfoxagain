@@ -978,3 +978,5 @@
 977| Không có sao
 978| Sắp tới (tương lai)
 979| Mục “{item}” khó đọc trong danh sách (độ tương phản {n}:1; từ 3:1 trở lên thì tốt hơn).
+980| Mục danh sách mới
+981| Sửa mục danh sách

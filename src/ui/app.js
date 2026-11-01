@@ -1259,7 +1259,7 @@
     E.kind = kind;
     for (const b of ed.querySelectorAll('.seg button')) b.setAttribute('aria-pressed', String(b.dataset.kind === kind));
     const todo = kind === 'todo';
-    $('edTitle').textContent = `${E.isNew ? 'New' : 'Edit'} ${todo ? 'to-do' : 'reminder'}`;
+    $('edTitle').textContent = `${E.isNew ? 'New' : 'Edit'} ${todo ? 'list item' : 'reminder'}`;
     $('edSummary').placeholder = todo ? 'What needs doing?' : 'What do you want to be reminded of?';
     $('edNoDateWrap').classList.toggle('hidden', !todo);
     $('edListWrap').classList.toggle('hidden', !todo);

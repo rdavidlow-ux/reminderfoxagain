@@ -9,9 +9,14 @@ try {
   check('reminders loaded from storage', m.count > 0, true);
   check('"Data file" saves a copy', $('openFolder').title, 'Save a copy of your reminders file');
   // Thunderbird keeps Ctrl+N… for itself: the tooltips show the add-on's own shortcuts
-  check('tooltip: new reminder', $('addReminder').title, 'New reminder (Alt+Shift+N)');
+  check('tooltip: new reminder', $('addReminder').title, 'New reminder (Alt+Shift+A)');
   check('tooltip: quick alarm', $('quickBtn').title, 'Quick alarm: a one-off alarm in a few minutes (Alt+Shift+Q)');
-  check('tooltip: search', $('search').title, 'Search (Alt+Shift+F)');
+  check('tooltip: search', $('search').title, 'Search (Alt+Shift+K)');
+  // none of the add-on's shortcuts is Alt+Shift and the access key of a Thunderbird menu (File, Edit, View, Go,
+  // Message, Events and Tasks, Tools, Help): Thunderbird opens the menu instead
+  const keys = (await (await fetch('/manifest.json')).json()).commands;
+  check('no shortcut on a menu\'s letter', Object.values(keys).map((c) => c.suggested_key.default).filter((k) => /^Alt\+Shift\+[FEVGMNTH]$/.test(k)).join(', ') || 'none', 'none');
+  check('the new-item shortcuts', ['new-reminder', 'new-list-item', 'search', 'go-to', 'export'].map((n) => keys[n].suggested_key.default).join(' '), 'Alt+Shift+A Alt+Shift+O Alt+Shift+K Alt+Shift+J Alt+Shift+X');
   // a new reminder goes through the background page into storage
   await window.rf.save({ kind: 'event', summary: 'Smoke test reminder', date: '2026-12-01', allDay: true });
   // export: the page saves the file as a download

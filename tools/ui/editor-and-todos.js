@@ -52,4 +52,10 @@ try {
   await sleep(600);
   check('search rows', document.querySelectorAll('#listView tbody tr[data-key]').length, 1);
   check('search hint', $('remHint').textContent, 'Searching all reminders · 1 reminder');
+  set('search', ''); await sleep(400);
+  // the editor's title says what it is: a reminder or a list item
+  const titleOf = async (o) => { await window.__rf.openEditor(o); await sleep(300); const t = $('edTitle').textContent; $('edCancel').click(); await sleep(200); return t; };
+  check('editor titles', [await titleOf({ kind: 'event' }), await titleOf({ kind: 'todo' })].join(' | '), 'New reminder | New list item');
+  const anyTodo = (await window.rf.all()).find((x) => x.kind === 'todo');
+  if (anyTodo) check('editing a list item', await titleOf({ uid: anyTodo.uid }), 'Edit list item');
 } catch (e) { console.log(`E2E ERROR ${e && e.stack || e}`); }

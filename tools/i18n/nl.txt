@@ -978,3 +978,5 @@
 977| Zonder ster
 978| Komend (toekomst)
 979| Items ‘{item}’ zijn moeilijk te lezen in de lijsten (contrast {n}:1; 3:1 of meer is beter).
+980| Nieuw lijstitem
+981| Lijstitem bewerken

@@ -89,7 +89,7 @@ const manifest = {
   name: 'ReminderFoxAgain',
   version: VER,
   description: 'Reminders, to-dos and pop-up alarms in Thunderbird — a tribute to the ReminderFox add-on. It reads and writes ReminderFox\'s own iCalendar file.',
-  author: 'David',
+  author: 'David Low',
   homepage_url: 'https://github.com/rdavidlow-ux/reminderfoxagain',
   // it collects nothing: everything stays in the Thunderbird profile
   browser_specific_settings: { gecko: { id: 'reminderfoxagain@rdavidlow-ux.github.io', strict_min_version: '128.0', data_collection_permissions: { required: ['none'] } } },
@@ -106,7 +106,10 @@ const manifest = {
   // reading an .ics link in an email: asked for that one site when the person chooses "Import this calendar…"
   optional_permissions: ['*://*/*'],
   // Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q… for itself, so the app's shortcuts are Thunderbird shortcuts with Alt+Shift
-  // and the same letter (people can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts).
+  // (people can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts). Alt+Shift with the access key
+  // of a Thunderbird menu (F E V G M N T H) opens that menu instead, so those five use other letters: A (add a
+  // reminder), O (to-do), K (search, as Ctrl+K in Thunderbird), J (jump to a date), X (export); the rest keep the
+  // desktop letter.
   commands: Object.fromEntries(Object.entries(require('./shortcuts.json')).map(([name, c]) => [name, { suggested_key: { default: c.key }, description: c.description }])),
 };
 write('manifest.json', `${JSON.stringify(manifest, null, 2)}\n`);

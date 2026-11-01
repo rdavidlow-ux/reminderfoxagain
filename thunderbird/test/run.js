@@ -177,7 +177,7 @@ function serve() {
     await main.evaluate(() => { for (const d of document.querySelectorAll('dialog[open]')) d.close(); });
     await bg.evaluate(() => window.__mock.command('new-reminder'));
     await sleep(800);
-    line('Alt+Shift+N opens a new reminder', await main.evaluate(() => { const d = document.getElementById('edSummary'); return !!d && d.offsetParent !== null; }), true);
+    line('Alt+Shift+A opens a new reminder', await main.evaluate(() => { const d = document.getElementById('edSummary'); return !!d && d.offsetParent !== null; }), true);
     await main.evaluate(() => document.getElementById('edCancel').click());
     await sleep(500);
     const side = () => main.evaluate(() => document.body.classList.contains('no-side'));

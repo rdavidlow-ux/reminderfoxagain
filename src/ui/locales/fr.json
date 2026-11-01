@@ -1182,5 +1182,7 @@
  "Starred (important)": "Étoilé (important)",
  "Not starred": "Non étoilé",
  "Coming (future)": "À venir (futur)",
- "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Les éléments « {item} » sont difficiles à lire dans les listes (contraste {n}:1; 3:1 ou plus est mieux)."
+ "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Les éléments « {item} » sont difficiles à lire dans les listes (contraste {n}:1; 3:1 ou plus est mieux).",
+ "New list item": "Nouvel élément de liste",
+ "Edit list item": "Modifier l'élément de liste"
 }

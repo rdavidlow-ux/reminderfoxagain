@@ -999,5 +999,7 @@
  "Starred (important)": "Có sao (quan trọng)",
  "Not starred": "Không có sao",
  "Coming (future)": "Sắp tới (tương lai)",
- "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Mục “{item}” khó đọc trong danh sách (độ tương phản {n}:1; từ 3:1 trở lên thì tốt hơn)."
+ "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Mục “{item}” khó đọc trong danh sách (độ tương phản {n}:1; từ 3:1 trở lên thì tốt hơn).",
+ "New list item": "Mục danh sách mới",
+ "Edit list item": "Sửa mục danh sách"
 }

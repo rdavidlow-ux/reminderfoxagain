@@ -978,3 +978,5 @@
 977| Bez hvězdičky
 978| Nadcházející (budoucí)
 979| Položky „{item}“ jsou v seznamech špatně čitelné (kontrast {n}:1; lepší je 3:1 nebo více).
+980| Nová položka seznamu
+981| Upravit položku seznamu

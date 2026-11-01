@@ -978,3 +978,5 @@
 977| Gan réalta
 978| Le teacht (todhchaí)
 979| Is deacair míreanna “{item}” a léamh sna liostaí (codarsnacht {n}:1; is fearr 3:1 nó níos mó).
+980| Mír liosta nua
+981| Cuir mír liosta in eagar

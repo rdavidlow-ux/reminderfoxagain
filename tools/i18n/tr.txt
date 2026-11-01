@@ -978,3 +978,5 @@
 977| Yıldızsız
 978| Yaklaşan (gelecek)
 979| “{item}” öğeleri listelerde zor okunuyor (karşıtlık {n}:1; 3:1 veya üzeri daha iyi).
+980| Yeni liste öğesi
+981| Liste öğesini düzenle

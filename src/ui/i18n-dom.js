@@ -45,7 +45,7 @@
       'Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile': 'Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile',
     });
   }
-  // In Thunderbird the shortcuts are Thunderbird's (Alt+Shift+N…, which people can change): data.keys maps the desktop
+  // In Thunderbird the shortcuts are Thunderbird's (Alt+Shift+A…, which people can change): data.keys maps the desktop
   // letter to the shortcut it has now; a shortcut that was removed drops its "(Ctrl+N)" from the text
   const TBKEYS = HOST === 'thunderbird' && data.keys ? data.keys : null;
   const keys = TBKEYS ? (t) => t.replace(/ ?\(?\b(?:Ctrl|Strg)\+([A-Z])\b\)?/g, (m, k) => (k in TBKEYS ? (TBKEYS[k] ? m.replace(/(?:Ctrl|Strg)\+[A-Z]/, TBKEYS[k]) : '') : m))

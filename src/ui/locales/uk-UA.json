@@ -1299,5 +1299,7 @@
  "Starred (important)": "Із зірочкою (важливе)",
  "Not starred": "Без зірочки",
  "Coming (future)": "Майбутнє (наступне)",
- "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Елементи «{item}» погано читаються у списках (контраст {n}:1; краще 3:1 або більше)."
+ "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Елементи «{item}» погано читаються у списках (контраст {n}:1; краще 3:1 або більше).",
+ "New list item": "Новий елемент списку",
+ "Edit list item": "Змінити елемент списку"
 }

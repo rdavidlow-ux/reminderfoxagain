@@ -1184,5 +1184,7 @@
  "Starred (important)": "Destacat (important)",
  "Not starred": "No destacat",
  "Coming (future)": "Proper (futur)",
- "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Els elements «{item}» són difícils de llegir a les llistes (contrast {n}:1; 3:1 o més és millor)."
+ "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Els elements «{item}» són difícils de llegir a les llistes (contrast {n}:1; 3:1 o més és millor).",
+ "New list item": "Element de llista nou",
+ "Edit list item": "Edita l'element de llista"
 }

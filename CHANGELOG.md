@@ -5,6 +5,10 @@ Every ReminderFoxAgain release, newest first. Release files are on the
 
 ## Next — calendar subscriptions, item colours, the Alarms view and a scrolling Month view (branch `experimental-add-on`, not released)
 
+- **The editor for a list item is titled "New list item" / "Edit list item"** (it said "New to-do"), in the desktop
+  app and the add-on.
+- The add-on shows its author as David Low in Thunderbird's Add-ons Manager.
+
 - **Calendar subscriptions**, in the desktop app and the Thunderbird add-on: subscribe to any calendar with a web
   address (holidays, sports, a school or team calendar; https://, http:// or webcal://) from 📅 Calendars in the
   Reminders or Month toolbar, or Settings → Data → Calendar subscriptions…. Its events show in the subscription's own
@@ -43,8 +47,11 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   Thunderbird tab, with the alarm and the pop-up in their own windows, and a toolbar button that shows today's count,
   lists today's reminders in its tooltip and has the tray menu on a right-click. Your reminders and daily backups are
   kept in your Thunderbird profile. Build it with `./build-thunderbird.sh`; see `docs/thunderbird-addon.md`.
-- **Shortcuts:** Thunderbird keeps the Ctrl keys for itself, so the add-on uses Alt+Shift and the same letter
-  (Alt+Shift+N new reminder, Alt+Shift+T new list item, Alt+Shift+Q quick alarm…), plus Alt+Shift+R to open it. You
+- **Shortcuts:** Thunderbird keeps the Ctrl keys for itself, so the add-on uses Alt+Shift: Alt+Shift+A new reminder,
+  Alt+Shift+O new list item, Alt+Shift+Q quick alarm, Alt+Shift+K search, Alt+Shift+J go to a date, Alt+Shift+X
+  export, Alt+Shift+B calendar panel, Alt+Shift+I import, Alt+Shift+D duplicate, Alt+Shift+S save, Alt+Shift+L
+  alarms, plus Alt+Shift+R to open it. (N, T, F, G and E opened Thunderbird's menus instead, so those use other
+  letters.) You
   can change them in Thunderbird's Manage Extension Shortcuts; the tooltips show them as they are set.
 - **Reminders and list items from email:** right-click an email → Add reminder… or Add list item…. The editor opens
   with the subject as the description, and the date, time and place the email mentions (for a list item, the date and

@@ -978,3 +978,5 @@
 977| Uden stjerne
 978| Kommende (fremtid)
 979| Elementer “{item}” er svære at læse på listerne (kontrast {n}:1; 3:1 eller mere er bedre).
+980| Nyt listeelement
+981| Rediger listeelement

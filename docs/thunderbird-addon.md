@@ -50,24 +50,24 @@ Permissions: storage, unlimited storage, notifications, menus, tabs, idle, keybo
 
 ## Keyboard shortcuts
 
-Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q and the other Ctrl keys for itself, so the add-on has its own Thunderbird shortcuts: **Alt+Shift** and the same letter as the desktop app. They work anywhere in Thunderbird, bring the ReminderFoxAgain tab to the front, and then do exactly what the Ctrl key does in the desktop app (nothing while a dialog is open, as there).
+Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q and the other Ctrl keys for itself, so the add-on has its own Thunderbird shortcuts: **Alt+Shift** and, mostly, the same letter as the desktop app. Five use another letter, because Alt+Shift with the letter of a Thunderbird menu (File, Edit, View, Go, Message, Events and Tasks, Tools, Help) opens that menu instead: A for a new reminder, O for a new list item, K to search, J to go to a date and X to export. They work anywhere in Thunderbird, bring the ReminderFoxAgain tab to the front, and then do exactly what the Ctrl key does in the desktop app (nothing while a dialog is open, as there).
 
 | Shortcut    | Desktop app | What it does                     |
 |-------------|-------------|----------------------------------|
 | Alt+Shift+R | —           | Open ReminderFoxAgain            |
-| Alt+Shift+N | Ctrl+N      | New reminder                     |
-| Alt+Shift+T | Ctrl+T      | New item in the list being shown |
+| Alt+Shift+A | Ctrl+N      | New reminder                     |
+| Alt+Shift+O | Ctrl+T      | New item in the list being shown |
 | Alt+Shift+Q | Ctrl+Q      | Quick alarm                      |
-| Alt+Shift+F | Ctrl+F      | Search reminders and to-dos      |
-| Alt+Shift+G | Ctrl+G      | Go to a date                     |
+| Alt+Shift+K | Ctrl+F      | Search reminders and to-dos      |
+| Alt+Shift+J | Ctrl+G      | Go to a date                     |
 | Alt+Shift+B | Ctrl+B      | Show or hide the calendar panel  |
 | Alt+Shift+I | Ctrl+I      | Import an .ics file              |
-| Alt+Shift+E | Ctrl+E      | Export to .ics                   |
+| Alt+Shift+X | Ctrl+E      | Export to .ics                   |
 | Alt+Shift+D | Ctrl+D      | Duplicate the selected item      |
 | Alt+Shift+S | Ctrl+S      | Save the reminder being edited   |
 | Alt+Shift+L | Ctrl+L      | The Alarms view                  |
 
-To change one: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+N)”) show the shortcuts as they are set, in every language; a shortcut that was removed is left out of its tooltip.
+To change one: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+A)”) show the shortcuts as they are set, in every language; a shortcut that was removed is left out of its tooltip.
 
 ## The Alarms view
 
@@ -183,7 +183,7 @@ thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last l
 
 - **Unit tests:** test/host-core.test.js (16 tests) and test/maildate.test.js (9 tests, the dates, times and places found in emails), part of npm test (61 in all, in 7 time zones). The host-core tests run the core with an in-memory adapter and a clock the test moves: saving and reloading, daily backups, import with a picked prefs.js, an unreadable file kept aside, alarms (due, snooze, dismiss), quick alarms and suspend, backup and restore, export, the toolbar menu, a chosen language, a chosen sound, the reminder made from an email, the email it came from (kept on edits, read from the original add-on's file, opened), an item as an email, an invitation and its reply, the emails to tag, birthdays from contacts, and the Alarms view (ringing, snoozed, to come, skipped ahead of time).
 
-- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages and their tags, the compose window, address books, accounts), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, Add reminder… and Add list item… on an HTML email with its date, time and place, Open email from the editor and the right-click menu, the six Thunderbird-only features (tags on and off, Send by email…, an invitation and a reply, birthdays from an address book, selected text, an .ics link, Send++), Alt+Shift+L and the toolbar menu's Alarms…, the pop-up and a quick alarm); the desktop's alarms-view.js and month-scroll.js run in the add-on too. Desktop scripts that import test files by their path get those files uploaded the add-on's way.
+- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages and their tags, the compose window, address books, accounts), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+A and Alt+Shift+B, Add reminder… and Add list item… on an HTML email with its date, time and place, Open email from the editor and the right-click menu, the six Thunderbird-only features (tags on and off, Send by email…, an invitation and a reply, birthdays from an address book, selected text, an .ics link, Send++), Alt+Shift+L and the toolbar menu's Alarms…, the pop-up and a quick alarm); the desktop's alarms-view.js and month-scroll.js run in the add-on too. Desktop scripts that import test files by their path get those files uploaded the add-on's way.
 
 - **Desktop app:** its own checks still pass (tools/e2e.sh, 696 checks, with the Alarms view's and the scrolling Month view's own scripts), since the add-on shares its pages.
 
@@ -193,18 +193,18 @@ thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last l
 
 The add-on works in Thunderbird 153.6.0esr (64-bit) on Windows 11, tried by David on Oct 31, 2026.
 
-| What                              | Result                                                                                                                             |
-|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| Installing and running the add-on | Works.                                                                                                                             |
-| Keyboard shortcuts                | Thunderbird took the Ctrl keys before the add-on saw them. Fixed with the Alt+Shift shortcuts, to be checked again in Thunderbird. |
-| Alarm sound                       | Plays without the alarm window being clicked first.                                                                                |
-| Alarm window placement            | Near the bottom right, close to the system tray, as on the desktop.                                                                |
+| What                              | Result                                                                                                                                                                                                                                                           |
+|-----------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Installing and running the add-on | Works.                                                                                                                                                                                                                                                           |
+| Keyboard shortcuts                | Thunderbird took the Ctrl keys before the add-on saw them. Fixed with the Alt+Shift shortcuts. Checked on Nov 1, 2026: R, Q, B, I, D, S and L work; N, T, F, G and E opened Thunderbird's menus instead, so they are now A, O, K, J and X (to be checked again). |
+| Alarm sound                       | Plays without the alarm window being clicked first.                                                                                                                                                                                                              |
+| Alarm window placement            | Near the bottom right, close to the system tray, as on the desktop.                                                                                                                                                                                              |
 
 ## Still to try, and ideas for later
 
 Still to try in a real Thunderbird:
 
-- [ ] The Alt+Shift shortcuts, and that none of them clashes with Thunderbird or Windows.
+- [ ] The new Alt+Shift shortcuts A, O, K, J and X, and that none of them clashes with Thunderbird or Windows.
 
 - [ ] Where Export and “Data file” save the file, and whether Thunderbird asks.
 
