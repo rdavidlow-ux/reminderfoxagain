@@ -34,9 +34,22 @@ try {
   if (!$('stImport') || $('stImport').offsetParent === null) { const b = $('settingsBtn'); if (b) b.click(); await sleep(400); }
   for (const btn of document.querySelectorAll('[data-panel="data"], [data-p="data"]')) btn.click();
   await sleep(300);
-  check('desktop-only settings hidden', ['stStart', 'stTray', 'stFolder', 'stBackups', 'stOldRf', 'stPath'].filter((id) => $(id) && $(id).offsetParent !== null).join(',') || 'none', 'none');
+  check('desktop-only settings hidden', ['stStart', 'stTray', 'stFolder', 'stBackups', 'stPath'].filter((id) => $(id) && $(id).offsetParent !== null).join(',') || 'none', 'none');
   check('the storage note', ($('tbPath') || {}).textContent, 'Your reminders are kept in your Thunderbird profile, with a backup every day.');
-  check('import and export stay', ['stImport', 'stExport'].every((id) => !!$(id)), true);
+  check('import, Import from ReminderFox and export stay', ['stImport', 'stOldRf', 'stExport'].every((id) => $(id) && getComputedStyle($(id)).display !== 'none'), true);
+  check('its add-on tooltip', $('stOldRf').title, 'Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile');
+  // Import from ReminderFox…: first where the file is, then the file picker (prefs.js allowed with it)
+  let picked = null;
+  const pickClick = HTMLInputElement.prototype.click;
+  HTMLInputElement.prototype.click = function () { if (this.type === 'file') { picked = this.accept; return; } return pickClick.call(this); };
+  $('stOldRf').click();
+  await sleep(400);
+  check('Import from ReminderFox… says where the file is', !!$('confirm').open && /reminderfox folder of your Thunderbird or Firefox profile/.test($('cfBody').textContent), true);
+  check('… and nothing is picked yet', picked, null);
+  [...$('cfFoot').querySelectorAll('button')].find((b) => b.textContent === 'Choose the file…').click();
+  await sleep(400);
+  HTMLInputElement.prototype.click = pickClick;
+  check('"Choose the file…" opens the file picker for .ics and prefs.js', !!picked && /\.ics/.test(picked) && /\.js/.test(picked), true);
   document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true }));
   await sleep(300);
   // a map link opens in the system browser

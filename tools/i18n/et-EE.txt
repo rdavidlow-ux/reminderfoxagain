@@ -882,3 +882,8 @@
 881| Pole e-posti aadressi, kuhu kutsuda.
 882| Thunderbirdis pole e-posti kontot, kust kutset saata.
 883| Seda kalendrit ei saanud lugeda.
+884| Vali reminderfox.ics, mida ReminderFoxi lisa hoidis sinu Firefoxi või Thunderbirdi profiilis
+885| Lisa ei saa vaadata teiste programmide kaustadesse, seega vali fail ise: ReminderFoxi lisa hoidis seda nimega reminderfox.ics sinu Thunderbirdi või Firefoxi profiili kaustas reminderfox.
+886| Profiilikausta avamiseks: Abi → Veaotsingu teave (Firefoxis: Rohkem veaotsingu teavet) → Profiili kaust → Ava kaust.
+887| Vali koos sellega ka profiilikausta prefs.js, et tuua kaasa ka su loendite nimed.
+888| Vali fail…

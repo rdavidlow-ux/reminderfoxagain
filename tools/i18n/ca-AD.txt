@@ -882,3 +882,8 @@
 881| No hi ha cap adreça de correu per convidar.
 882| Thunderbird no té cap compte de correu des d'on enviar la invitació.
 883| No s'ha pogut llegir aquest calendari.
+884| Tria el reminderfox.ics que el complement ReminderFox desava al teu perfil del Firefox o del Thunderbird
+885| Un complement no pot mirar a les carpetes d'altres programes, així que tria el fitxer tu mateix: el complement ReminderFox el desava com a reminderfox.ics, a la carpeta reminderfox del teu perfil del Thunderbird o del Firefox.
+886| Per obrir la carpeta del perfil: Ajuda → Informació de resolució de problemes (al Firefox: Més informació de resolució de problemes) → Carpeta del perfil → Obre la carpeta.
+887| Tria també el prefs.js de la carpeta del perfil per portar els noms de les teves llistes.
+888| Tria el fitxer…

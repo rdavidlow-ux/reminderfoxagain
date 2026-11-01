@@ -1143,5 +1143,10 @@
  "no answer yet": "עדיין אין תשובה",
  "No email address to invite.": "אין כתובת דוא״ל להזמנה.",
  "Thunderbird has no email account to send the invitation from.": "ב־Thunderbird אין חשבון דוא״ל לשליחת ההזמנה ממנו.",
- "That calendar could not be read.": "לא ניתן היה לקרוא את לוח השנה הזה."
+ "That calendar could not be read.": "לא ניתן היה לקרוא את לוח השנה הזה.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "בחירת הקובץ reminderfox.ics שהתוסף ReminderFox שמר בפרופיל ה־Firefox או ה־Thunderbird שלך",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "תוסף לא יכול להסתכל בתיקיות של תוכנות אחרות, לכן יש לבחור את הקובץ בעצמך: התוסף ReminderFox שמר אותו בשם reminderfox.ics, בתיקייה reminderfox של פרופיל ה־Thunderbird או ה־Firefox שלך.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "לפתיחת תיקיית הפרופיל: עזרה ← מידע לפתרון בעיות (ב־Firefox: מידע נוסף לפתרון בעיות) ← תיקיית פרופיל ← פתיחת תיקייה.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "יש לבחור יחד איתו גם את prefs.js מתיקיית הפרופיל כדי להביא גם את שמות הרשימות שלך.",
+ "Choose the file…": "בחירת הקובץ…"
 }

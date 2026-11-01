@@ -14,6 +14,26 @@
   const RF = () => window.__rf || {};
   const esc = (t) => String(t == null ? '' : t).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
+  // ---------------------------------------------------------------- Settings → Data → Import from ReminderFox…
+  // The desktop app finds reminderfox.ics in the Firefox and Thunderbird profiles; an add-on can't look there, so it
+  // first says where the file is, then app.js's own handler opens the file picker (with prefs.js allowed, as there).
+  const oldRf = $('stOldRf');
+  if (oldRf) {
+    let go = false;
+    oldRf.addEventListener('click', async (e) => {
+      if (go) { go = false; return; }
+      e.stopImmediatePropagation();
+      const v = await RF().confirmDlg('Import from ReminderFox',
+        '<div>An add-on can\'t look in other programs\' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.</div>' +
+        '<div class="note">To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.</div>' +
+        '<div class="note">Pick the profile folder\'s prefs.js with it to bring your list names too.</div>',
+        [{ label: 'Cancel', value: null }, { label: 'Choose the file…', cls: 'primary', value: 'pick' }]);
+      if (v !== 'pick') return;
+      go = true;
+      oldRf.click(); // the click on "Choose the file…" still counts as the person's, so the file picker may open
+    }, true);
+  }
+
   // ---------------------------------------------------------------- Settings → General: what only Thunderbird can do
   const tray = $('stTrayNote') || $('stTray');
   if (tray && !$('stTbTags')) {

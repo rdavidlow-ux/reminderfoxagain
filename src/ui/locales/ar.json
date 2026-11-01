@@ -1267,5 +1267,10 @@
  "no answer yet": "لا رد بعد",
  "No email address to invite.": "لا يوجد عنوان بريد للدعوة.",
  "Thunderbird has no email account to send the invitation from.": "لا يوجد في Thunderbird حساب بريد لإرسال الدعوة منه.",
- "That calendar could not be read.": "تعذّرت قراءة ذلك التقويم."
+ "That calendar could not be read.": "تعذّرت قراءة ذلك التقويم.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "اختيار ملف reminderfox.ics الذي كانت إضافة ReminderFox تحفظه في ملف تعريف Firefox أو Thunderbird",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "لا يمكن للإضافة أن تبحث في مجلدات البرامج الأخرى، لذا اختر الملف بنفسك: كانت إضافة ReminderFox تحفظه باسم reminderfox.ics في مجلد reminderfox ضمن ملف تعريف Thunderbird أو Firefox.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "لفتح مجلد ملف التعريف: مساعدة ← معلومات استكشاف الأخطاء (في Firefox: مزيد من معلومات استكشاف الأخطاء) ← مجلد ملف التعريف ← افتح المجلد.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "اختر معه أيضًا ملف prefs.js من مجلد ملف التعريف لجلب أسماء قوائمك.",
+ "Choose the file…": "اختيار الملف…"
 }

@@ -882,3 +882,8 @@
 881| Žádná e-mailová adresa k pozvání.
 882| Thunderbird nemá žádný e-mailový účet, ze kterého by pozvánku odeslal.
 883| Tento kalendář nelze přečíst.
+884| Vybrat soubor reminderfox.ics, který doplněk ReminderFox ukládal ve vašem profilu Firefoxu nebo Thunderbirdu
+885| Doplněk se nemůže dívat do složek jiných programů, vyberte proto soubor sami: doplněk ReminderFox ho ukládal jako reminderfox.ics ve složce reminderfox vašeho profilu Thunderbirdu nebo Firefoxu.
+886| Jak otevřít složku profilu: Nápověda → Informace pro řešení problémů (ve Firefoxu: Další informace pro řešení problémů) → Složka profilu → Otevřít složku.
+887| Vyberte s ním i soubor prefs.js ze složky profilu, abyste přenesli i názvy svých seznamů.
+888| Vybrat soubor…

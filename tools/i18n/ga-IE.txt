@@ -882,3 +882,8 @@
 881| Níl aon seoladh ríomhphoist le cuireadh a thabhairt dó.
 882| Níl aon chuntas ríomhphoist ag Thunderbird chun an cuireadh a sheoladh uaidh.
 883| Níorbh fhéidir an féilire sin a léamh.
+884| Roghnaigh an reminderfox.ics a choinnigh an breiseán ReminderFox i do phróifíl Firefox nó Thunderbird
+885| Ní féidir le breiseán féachaint i bhfillteáin clár eile, mar sin roghnaigh an comhad tú féin: choinnigh an breiseán ReminderFox é mar reminderfox.ics, san fhillteán reminderfox de do phróifíl Thunderbird nó Firefox.
+886| Chun fillteán na próifíle a oscailt: Cabhair → Eolas Fabhtcheartaithe (i Firefox: Tuilleadh Eolais Fabhtcheartaithe) → Fillteán Próifíle → Oscail Fillteán.
+887| Roghnaigh prefs.js ó fhillteán na próifíle leis chun ainmneacha do liostaí a thabhairt leat freisin.
+888| Roghnaigh an comhad…

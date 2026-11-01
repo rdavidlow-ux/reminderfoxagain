@@ -882,3 +882,8 @@
 881| Non hai ningún enderezo de correo ao que invitar.
 882| Thunderbird non ten ningunha conta de correo desde a que enviar a invitación.
 883| Non se puido ler ese calendario.
+884| Escoller o reminderfox.ics que o complemento ReminderFox gardaba no teu perfil de Firefox ou Thunderbird
+885| Un complemento non pode mirar nos cartafoles doutros programas, así que escolle ti o ficheiro: o complemento ReminderFox gardábao como reminderfox.ics, no cartafol reminderfox do teu perfil de Thunderbird ou Firefox.
+886| Para abrir o cartafol do perfil: Axuda → Información para solucionar problemas (en Firefox: Máis información para solucionar problemas) → Cartafol do perfil → Abrir cartafol.
+887| Escolle tamén o prefs.js do cartafol do perfil para traer os nomes das túas listas.
+888| Escoller o ficheiro…

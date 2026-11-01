@@ -882,3 +882,8 @@
 881| Keine E-Mail-Adresse zum Einladen.
 882| Thunderbird hat kein E-Mail-Konto, von dem die Einladung gesendet werden kann.
 883| Dieser Kalender konnte nicht gelesen werden.
+884| Die reminderfox.ics auswählen, die das ReminderFox-Add-on in Ihrem Firefox- oder Thunderbird-Profil gespeichert hat
+885| Ein Add-on kann nicht in die Ordner anderer Programme schauen, also wählen Sie die Datei selbst aus: Das ReminderFox-Add-on hat sie als reminderfox.ics im Ordner reminderfox Ihres Thunderbird- oder Firefox-Profils gespeichert.
+886| So öffnen Sie den Profilordner: Hilfe → Informationen zur Fehlerbehebung (in Firefox: Weitere Informationen zur Fehlerbehebung) → Profilordner → Ordner öffnen.
+887| Wählen Sie die prefs.js aus dem Profilordner mit aus, um auch Ihre Listennamen zu übernehmen.
+888| Datei auswählen…

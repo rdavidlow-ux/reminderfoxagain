@@ -882,3 +882,8 @@
 881| Aucune adresse courriel à inviter.
 882| Thunderbird n'a aucun compte de courriel pour envoyer l'invitation.
 883| Ce calendrier n'a pas pu être lu.
+884| Choisir le fichier reminderfox.ics que l'extension ReminderFox gardait dans votre profil Firefox ou Thunderbird
+885| Une extension ne peut pas regarder dans les dossiers d'autres programmes, choisissez donc le fichier vous-même : l'extension ReminderFox le gardait sous le nom reminderfox.ics, dans le dossier reminderfox de votre profil Thunderbird ou Firefox.
+886| Pour ouvrir le dossier du profil : Aide → Informations de dépannage (dans Firefox : Plus d'informations de dépannage) → Dossier de profil → Ouvrir le dossier.
+887| Choisissez aussi le fichier prefs.js du dossier du profil pour reprendre les noms de vos listes.
+888| Choisir le fichier…

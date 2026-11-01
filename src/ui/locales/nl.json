@@ -1083,5 +1083,10 @@
  "no answer yet": "nog geen antwoord",
  "No email address to invite.": "Geen e-mailadres om uit te nodigen.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird heeft geen e-mailaccount om de uitnodiging vanaf te versturen.",
- "That calendar could not be read.": "Die agenda kon niet worden gelezen."
+ "That calendar could not be read.": "Die agenda kon niet worden gelezen.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Kies de reminderfox.ics die de ReminderFox-add-on in je Firefox- of Thunderbird-profiel bewaarde",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Een add-on kan niet in de mappen van andere programma's kijken, dus kies het bestand zelf: de ReminderFox-add-on bewaarde het als reminderfox.ics, in de map reminderfox van je Thunderbird- of Firefox-profiel.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Zo open je de profielmap: Help → Probleemoplossingsinformatie (in Firefox: Meer probleemoplossingsinformatie) → Profielmap → Map openen.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Kies ook de prefs.js uit de profielmap om je lijstnamen mee te nemen.",
+ "Choose the file…": "Bestand kiezen…"
 }

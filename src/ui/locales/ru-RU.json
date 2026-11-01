@@ -1203,5 +1203,10 @@
  "no answer yet": "ответа пока нет",
  "No email address to invite.": "Нет адреса электронной почты для приглашения.",
  "Thunderbird has no email account to send the invitation from.": "В Thunderbird нет учётной записи почты, с которой можно отправить приглашение.",
- "That calendar could not be read.": "Не удалось прочитать этот календарь."
+ "That calendar could not be read.": "Не удалось прочитать этот календарь.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Выбрать reminderfox.ics, который дополнение ReminderFox хранило в вашем профиле Firefox или Thunderbird",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Дополнение не может заглядывать в папки других программ, поэтому выберите файл сами: дополнение ReminderFox хранило его как reminderfox.ics в папке reminderfox вашего профиля Thunderbird или Firefox.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Чтобы открыть папку профиля: Справка → Информация для решения проблем (в Firefox: Дополнительная информация для решения проблем) → Папка профиля → Открыть папку.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Выберите вместе с ним prefs.js из папки профиля, чтобы перенести и названия ваших списков.",
+ "Choose the file…": "Выбрать файл…"
 }

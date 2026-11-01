@@ -882,3 +882,8 @@
 881| Geen e-mailadres om uit te nodigen.
 882| Thunderbird heeft geen e-mailaccount om de uitnodiging vanaf te versturen.
 883| Die agenda kon niet worden gelezen.
+884| Kies de reminderfox.ics die de ReminderFox-add-on in je Firefox- of Thunderbird-profiel bewaarde
+885| Een add-on kan niet in de mappen van andere programma's kijken, dus kies het bestand zelf: de ReminderFox-add-on bewaarde het als reminderfox.ics, in de map reminderfox van je Thunderbird- of Firefox-profiel.
+886| Zo open je de profielmap: Help → Probleemoplossingsinformatie (in Firefox: Meer probleemoplossingsinformatie) → Profielmap → Map openen.
+887| Kies ook de prefs.js uit de profielmap om je lijstnamen mee te nemen.
+888| Bestand kiezen…

@@ -903,5 +903,10 @@
  "no answer yet": "még nem válaszolt",
  "No email address to invite.": "Nincs meghívandó e-mail-cím.",
  "Thunderbird has no email account to send the invitation from.": "A Thunderbirdben nincs e-mail-fiók, amelyről a meghívót el lehetne küldeni.",
- "That calendar could not be read.": "A naptárat nem sikerült beolvasni."
+ "That calendar could not be read.": "A naptárat nem sikerült beolvasni.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "A ReminderFox kiegészítő által a Firefox- vagy Thunderbird-profiljában tárolt reminderfox.ics kiválasztása",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Egy kiegészítő nem nézhet bele más programok mappáiba, ezért válassza ki a fájlt saját maga: a ReminderFox kiegészítő reminderfox.ics néven tárolta, a Thunderbird- vagy Firefox-profilja reminderfox mappájában.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "A profilmappa megnyitása: Súgó → Hibaelhárítási információk (Firefoxban: További hibaelhárítási információk) → Profilmappa → Mappa megnyitása.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Válassza ki vele együtt a profilmappa prefs.js fájlját is, hogy a listák nevei is átkerüljenek.",
+ "Choose the file…": "Fájl kiválasztása…"
 }

@@ -25,7 +25,6 @@ const line = (name, got, want) => console.log(`E2E TB ${name}: ${got} (expected 
 
 // Checks of the desktop scripts that the add-on answers differently on purpose
 const DIFFERENT = [
-  [/^E2E Settings → Data has import, ReminderFox, export: false/, 'the add-on hides "Import from ReminderFox…" (it cannot search other profiles)'],
 ];
 function expected(t) {
   for (const [re, why] of DIFFERENT) if (re.test(t) && t.endsWith('  WRONG')) return `${t.slice(0, -7)}  (different on purpose: ${why})`;
@@ -125,7 +124,7 @@ function serve() {
   await main.waitForFunction(() => window.__rf && document.querySelector('.tabs'), null, { timeout: 15000 });
   await sleep(2500);
   if (SCRIPT === 'tb-smoke.js') {
-    line('desktop settings hidden', await main.evaluate(() => ['stStart', 'stTray', 'stFolder', 'stBackups', 'stOldRf', 'stPath'].map((id) => document.getElementById(id)).filter((el) => el && el.offsetParent !== null).length), 0);
+    line('desktop settings hidden', await main.evaluate(() => ['stStart', 'stTray', 'stFolder', 'stBackups', 'stPath'].map((id) => document.getElementById(id)).filter((el) => el && el.offsetParent !== null).length), 0);
   }
   // The desktop scripts import test files by their path on disk; an add-on has no paths, only files the person picks.
   // Upload the same files the add-on's way and stand their tokens in for those paths.

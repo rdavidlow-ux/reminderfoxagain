@@ -1083,5 +1083,10 @@
  "no answer yet": "ei vielä vastausta",
  "No email address to invite.": "Ei kutsuttavaa sähköpostiosoitetta.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbirdissä ei ole sähköpostitiliä, josta kutsu voidaan lähettää.",
- "That calendar could not be read.": "Kalenteria ei voitu lukea."
+ "That calendar could not be read.": "Kalenteria ei voitu lukea.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Valitse reminderfox.ics, jota ReminderFox-lisäosa säilytti Firefox- tai Thunderbird-profiilissasi",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Lisäosa ei voi katsoa muiden ohjelmien kansioihin, joten valitse tiedosto itse: ReminderFox-lisäosa säilytti sen nimellä reminderfox.ics Thunderbird- tai Firefox-profiilisi reminderfox-kansiossa.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Profiilikansion avaaminen: Ohje → Tietoja ongelmanratkaisua varten (Firefoxissa: Lisää tietoja ongelmanratkaisua varten) → Profiilikansio → Avaa kansio.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Valitse samalla profiilikansion prefs.js, niin myös luetteloidesi nimet tulevat mukaan.",
+ "Choose the file…": "Valitse tiedosto…"
 }

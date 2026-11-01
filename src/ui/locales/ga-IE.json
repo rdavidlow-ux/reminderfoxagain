@@ -1047,5 +1047,10 @@
  "no answer yet": "gan freagra fós",
  "No email address to invite.": "Níl aon seoladh ríomhphoist le cuireadh a thabhairt dó.",
  "Thunderbird has no email account to send the invitation from.": "Níl aon chuntas ríomhphoist ag Thunderbird chun an cuireadh a sheoladh uaidh.",
- "That calendar could not be read.": "Níorbh fhéidir an féilire sin a léamh."
+ "That calendar could not be read.": "Níorbh fhéidir an féilire sin a léamh.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Roghnaigh an reminderfox.ics a choinnigh an breiseán ReminderFox i do phróifíl Firefox nó Thunderbird",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Ní féidir le breiseán féachaint i bhfillteáin clár eile, mar sin roghnaigh an comhad tú féin: choinnigh an breiseán ReminderFox é mar reminderfox.ics, san fhillteán reminderfox de do phróifíl Thunderbird nó Firefox.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Chun fillteán na próifíle a oscailt: Cabhair → Eolas Fabhtcheartaithe (i Firefox: Tuilleadh Eolais Fabhtcheartaithe) → Fillteán Próifíle → Oscail Fillteán.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Roghnaigh prefs.js ó fhillteán na próifíle leis chun ainmneacha do liostaí a thabhairt leat freisin.",
+ "Choose the file…": "Roghnaigh an comhad…"
 }

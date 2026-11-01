@@ -903,5 +903,10 @@
  "no answer yet": "хариу ирээгүй",
  "No email address to invite.": "Урих имэйл хаяг алга.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird-д урилга илгээх имэйл бүртгэл алга.",
- "That calendar could not be read.": "Тэр хуанлийг уншиж чадсангүй."
+ "That calendar could not be read.": "Тэр хуанлийг уншиж чадсангүй.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "ReminderFox нэмэлтийн таны Firefox эсвэл Thunderbird профайлд хадгалсан reminderfox.ics-ийг сонгох",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Нэмэлт бусад программын хавтсыг харж чадахгүй тул файлаа өөрөө сонгоно уу: ReminderFox нэмэлт үүнийг таны Thunderbird эсвэл Firefox профайлын reminderfox хавтсанд reminderfox.ics нэрээр хадгалдаг байсан.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Профайлын хавтсыг нээхийн тулд: Тусламж → Алдаа засах мэдээлэл (Firefox-д: Алдаа засах нэмэлт мэдээлэл) → Профайлын хавтас → Хавтас нээх.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Жагсаалтуудынхаа нэрийг бас авчрахын тулд профайлын хавтасны prefs.js-ийг хамт сонгоно уу.",
+ "Choose the file…": "Файл сонгох…"
 }

@@ -920,3 +920,9 @@ no answer yet
 No email address to invite.
 Thunderbird has no email account to send the invitation from.
 That calendar could not be read.
+# the Thunderbird add-on (experimental): Import from ReminderFox… (the person picks the file)
+Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile
+An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.
+To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.
+Pick the profile folder's prefs.js with it to bring your list names too.
+Choose the file…

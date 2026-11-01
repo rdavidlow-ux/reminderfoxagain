@@ -903,5 +903,10 @@
  "no answer yet": "まだ返事なし",
  "No email address to invite.": "招待するメールアドレスがありません。",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird に招待状を送信するメールアカウントがありません。",
- "That calendar could not be read.": "そのカレンダーを読み込めませんでした。"
+ "That calendar could not be read.": "そのカレンダーを読み込めませんでした。",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "ReminderFox アドオンが Firefox または Thunderbird のプロファイルに保存していた reminderfox.ics を選ぶ",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "アドオンは他のプログラムのフォルダーを見られないため、ファイルを自分で選んでください。ReminderFox アドオンは、Thunderbird または Firefox のプロファイルの reminderfox フォルダーに reminderfox.ics として保存していました。",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "プロファイルフォルダーを開くには: ヘルプ → トラブルシューティング情報（Firefox では: 他のトラブルシューティング情報）→ プロファイルフォルダー → フォルダーを開く。",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "リスト名も取り込むには、プロファイルフォルダーの prefs.js も一緒に選んでください。",
+ "Choose the file…": "ファイルを選ぶ…"
 }

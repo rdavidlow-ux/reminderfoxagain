@@ -1146,5 +1146,10 @@
  "no answer yet": "încă niciun răspuns",
  "No email address to invite.": "Nicio adresă de e-mail de invitat.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird nu are niciun cont de e-mail din care să trimită invitația.",
- "That calendar could not be read.": "Calendarul nu a putut fi citit."
+ "That calendar could not be read.": "Calendarul nu a putut fi citit.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Alege fișierul reminderfox.ics pe care suplimentul ReminderFox îl păstra în profilul tău Firefox sau Thunderbird",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Un supliment nu poate căuta în dosarele altor programe, așa că alege tu fișierul: suplimentul ReminderFox îl păstra ca reminderfox.ics, în dosarul reminderfox al profilului tău Thunderbird sau Firefox.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Pentru a deschide dosarul profilului: Ajutor → Informații de depanare (în Firefox: Mai multe informații de depanare) → Dosarul profilului → Deschide dosarul.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Alege împreună cu el și prefs.js din dosarul profilului, ca să aduci și numele listelor tale.",
+ "Choose the file…": "Alege fișierul…"
 }

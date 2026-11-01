@@ -1083,5 +1083,10 @@
  "no answer yet": "veel vastust pole",
  "No email address to invite.": "Pole e-posti aadressi, kuhu kutsuda.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbirdis pole e-posti kontot, kust kutset saata.",
- "That calendar could not be read.": "Seda kalendrit ei saanud lugeda."
+ "That calendar could not be read.": "Seda kalendrit ei saanud lugeda.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Vali reminderfox.ics, mida ReminderFoxi lisa hoidis sinu Firefoxi või Thunderbirdi profiilis",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Lisa ei saa vaadata teiste programmide kaustadesse, seega vali fail ise: ReminderFoxi lisa hoidis seda nimega reminderfox.ics sinu Thunderbirdi või Firefoxi profiili kaustas reminderfox.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Profiilikausta avamiseks: Abi → Veaotsingu teave (Firefoxis: Rohkem veaotsingu teavet) → Profiili kaust → Ava kaust.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Vali koos sellega ka profiilikausta prefs.js, et tuua kaasa ka su loendite nimed.",
+ "Choose the file…": "Vali fail…"
 }

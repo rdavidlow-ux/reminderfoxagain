@@ -1203,5 +1203,10 @@
  "no answer yet": "zatím bez odpovědi",
  "No email address to invite.": "Žádná e-mailová adresa k pozvání.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird nemá žádný e-mailový účet, ze kterého by pozvánku odeslal.",
- "That calendar could not be read.": "Tento kalendář nelze přečíst."
+ "That calendar could not be read.": "Tento kalendář nelze přečíst.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Vybrat soubor reminderfox.ics, který doplněk ReminderFox ukládal ve vašem profilu Firefoxu nebo Thunderbirdu",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Doplněk se nemůže dívat do složek jiných programů, vyberte proto soubor sami: doplněk ReminderFox ho ukládal jako reminderfox.ics ve složce reminderfox vašeho profilu Thunderbirdu nebo Firefoxu.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Jak otevřít složku profilu: Nápověda → Informace pro řešení problémů (ve Firefoxu: Další informace pro řešení problémů) → Složka profilu → Otevřít složku.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Vyberte s ním i soubor prefs.js ze složky profilu, abyste přenesli i názvy svých seznamů.",
+ "Choose the file…": "Vybrat soubor…"
 }

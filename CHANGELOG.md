@@ -35,6 +35,10 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   - **Invitations:** Invite people… on a reminder: the addresses you type (suggested from your address books) get an
     invitation from your Thunderbird account, in a new message for you to send. The reminder records who was invited,
     and the replies are read as they arrive: the editor shows who accepted, declined, said maybe or hasn't answered.
+- **Import from ReminderFox… is back in Settings → Data.** An add-on can't search the profile folders as the desktop
+  app does, so it first says where the original add-on kept `reminderfox.ics` (the `reminderfox` folder of your
+  Thunderbird or Firefox profile, opened from Help → Troubleshooting Information → Profile Folder), then you pick it,
+  with the profile's `prefs.js` if you want your list names too.
 - Tried in Thunderbird 153.6.0esr on Windows 11: it works, the alarm sound plays without a click, and the alarm
   window sits at the bottom right.
 

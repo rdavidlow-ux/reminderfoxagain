@@ -882,3 +882,8 @@
 881| Không có địa chỉ email để mời.
 882| Thunderbird không có tài khoản email nào để gửi lời mời.
 883| Không đọc được lịch đó.
+884| Chọn tệp reminderfox.ics mà tiện ích ReminderFox lưu trong hồ sơ Firefox hoặc Thunderbird của bạn
+885| Tiện ích không thể xem thư mục của chương trình khác, nên hãy tự chọn tệp: tiện ích ReminderFox lưu nó dưới tên reminderfox.ics, trong thư mục reminderfox của hồ sơ Thunderbird hoặc Firefox của bạn.
+886| Để mở thư mục hồ sơ: Trợ giúp → Thông tin gỡ rối (trong Firefox: Thêm thông tin gỡ rối) → Thư mục hồ sơ → Mở thư mục.
+887| Chọn kèm tệp prefs.js trong thư mục hồ sơ để mang theo cả tên các danh sách của bạn.
+888| Chọn tệp…

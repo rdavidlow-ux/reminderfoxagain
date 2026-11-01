@@ -882,3 +882,8 @@
 881| 沒有要邀請的電子郵件地址。
 882| Thunderbird 沒有可用來傳送邀請的郵件帳號。
 883| 無法讀取該行事曆。
+884| 選擇 ReminderFox 附加元件儲存在你的 Firefox 或 Thunderbird 設定檔中的 reminderfox.ics
+885| 附加元件無法查看其他程式的資料夾，所以請自己選擇該檔案：ReminderFox 附加元件將它儲存為 reminderfox.ics，位於你的 Thunderbird 或 Firefox 設定檔的 reminderfox 資料夾中。
+886| 開啟設定檔資料夾的方法：說明 → 疑難排解資訊（在 Firefox 中：更多疑難排解資訊）→ 設定檔資料夾 → 開啟資料夾。
+887| 同時選擇設定檔資料夾中的 prefs.js，也會帶入你的清單名稱。
+888| 選擇檔案…

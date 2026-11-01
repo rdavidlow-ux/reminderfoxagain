@@ -903,5 +903,10 @@
  "no answer yet": "henüz yanıt yok",
  "No email address to invite.": "Davet edilecek e-posta adresi yok.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird'de daveti gönderecek bir e-posta hesabı yok.",
- "That calendar could not be read.": "Bu takvim okunamadı."
+ "That calendar could not be read.": "Bu takvim okunamadı.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "ReminderFox eklentisinin Firefox veya Thunderbird profilinizde tuttuğu reminderfox.ics dosyasını seçin",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Bir eklenti başka programların klasörlerine bakamaz, bu yüzden dosyayı kendiniz seçin: ReminderFox eklentisi onu Thunderbird veya Firefox profilinizin reminderfox klasöründe reminderfox.ics olarak tutuyordu.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Profil klasörünü açmak için: Yardım → Sorun giderme bilgileri (Firefox'ta: Daha fazla sorun giderme bilgisi) → Profil klasörü → Klasörü aç.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Liste adlarınızı da getirmek için profil klasöründeki prefs.js dosyasını da birlikte seçin.",
+ "Choose the file…": "Dosyayı seç…"
 }

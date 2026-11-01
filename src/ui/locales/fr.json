@@ -1086,5 +1086,10 @@
  "no answer yet": "pas encore de réponse",
  "No email address to invite.": "Aucune adresse courriel à inviter.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird n'a aucun compte de courriel pour envoyer l'invitation.",
- "That calendar could not be read.": "Ce calendrier n'a pas pu être lu."
+ "That calendar could not be read.": "Ce calendrier n'a pas pu être lu.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Choisir le fichier reminderfox.ics que l'extension ReminderFox gardait dans votre profil Firefox ou Thunderbird",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Une extension ne peut pas regarder dans les dossiers d'autres programmes, choisissez donc le fichier vous-même : l'extension ReminderFox le gardait sous le nom reminderfox.ics, dans le dossier reminderfox de votre profil Thunderbird ou Firefox.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Pour ouvrir le dossier du profil : Aide → Informations de dépannage (dans Firefox : Plus d'informations de dépannage) → Dossier de profil → Ouvrir le dossier.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Choisissez aussi le fichier prefs.js du dossier du profil pour reprendre les noms de vos listes.",
+ "Choose the file…": "Choisir le fichier…"
 }

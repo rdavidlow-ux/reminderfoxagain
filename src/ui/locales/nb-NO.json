@@ -1083,5 +1083,10 @@
  "no answer yet": "ikke svart ennå",
  "No email address to invite.": "Ingen e-postadresse å invitere.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird har ingen e-postkonto å sende invitasjonen fra.",
- "That calendar could not be read.": "Kalenderen kunne ikke leses."
+ "That calendar could not be read.": "Kalenderen kunne ikke leses.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Velg reminderfox.ics som ReminderFox-tillegget lagret i Firefox- eller Thunderbird-profilen din",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Et tillegg kan ikke se i andre programmers mapper, så velg filen selv: ReminderFox-tillegget lagret den som reminderfox.ics i mappen reminderfox i Thunderbird- eller Firefox-profilen din.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Slik åpner du profilmappen: Hjelp → Feilsøkingsinformasjon (i Firefox: Mer feilsøkingsinformasjon) → Profilmappe → Åpne mappe.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Velg også prefs.js fra profilmappen for å få med navnene på listene dine.",
+ "Choose the file…": "Velg filen…"
 }

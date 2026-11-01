@@ -1088,5 +1088,10 @@
  "no answer yet": "encara sense resposta",
  "No email address to invite.": "No hi ha cap adreça de correu per convidar.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird no té cap compte de correu des d'on enviar la invitació.",
- "That calendar could not be read.": "No s'ha pogut llegir aquest calendari."
+ "That calendar could not be read.": "No s'ha pogut llegir aquest calendari.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Tria el reminderfox.ics que el complement ReminderFox desava al teu perfil del Firefox o del Thunderbird",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Un complement no pot mirar a les carpetes d'altres programes, així que tria el fitxer tu mateix: el complement ReminderFox el desava com a reminderfox.ics, a la carpeta reminderfox del teu perfil del Thunderbird o del Firefox.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Per obrir la carpeta del perfil: Ajuda → Informació de resolució de problemes (al Firefox: Més informació de resolució de problemes) → Carpeta del perfil → Obre la carpeta.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Tria també el prefs.js de la carpeta del perfil per portar els noms de les teves llistes.",
+ "Choose the file…": "Tria el fitxer…"
 }

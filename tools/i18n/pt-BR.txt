@@ -882,3 +882,8 @@
 881| Nenhum endereço de e-mail para convidar.
 882| O Thunderbird não tem uma conta de e-mail para enviar o convite.
 883| Não foi possível ler esse calendário.
+884| Escolher o reminderfox.ics que o complemento ReminderFox guardava no seu perfil do Firefox ou do Thunderbird
+885| Um complemento não pode olhar nas pastas de outros programas, então escolha o arquivo você mesmo: o complemento ReminderFox o guardava como reminderfox.ics, na pasta reminderfox do seu perfil do Thunderbird ou do Firefox.
+886| Para abrir a pasta do perfil: Ajuda → Informações para resolver problemas (no Firefox: Mais informações para resolver problemas) → Pasta do perfil → Abrir pasta.
+887| Escolha também o prefs.js da pasta do perfil para trazer os nomes das suas listas.
+888| Escolher o arquivo…

@@ -882,3 +882,8 @@
 881| Davet edilecek e-posta adresi yok.
 882| Thunderbird'de daveti gönderecek bir e-posta hesabı yok.
 883| Bu takvim okunamadı.
+884| ReminderFox eklentisinin Firefox veya Thunderbird profilinizde tuttuğu reminderfox.ics dosyasını seçin
+885| Bir eklenti başka programların klasörlerine bakamaz, bu yüzden dosyayı kendiniz seçin: ReminderFox eklentisi onu Thunderbird veya Firefox profilinizin reminderfox klasöründe reminderfox.ics olarak tutuyordu.
+886| Profil klasörünü açmak için: Yardım → Sorun giderme bilgileri (Firefox'ta: Daha fazla sorun giderme bilgisi) → Profil klasörü → Klasörü aç.
+887| Liste adlarınızı da getirmek için profil klasöründeki prefs.js dosyasını da birlikte seçin.
+888| Dosyayı seç…

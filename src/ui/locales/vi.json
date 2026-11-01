@@ -903,5 +903,10 @@
  "no answer yet": "chưa trả lời",
  "No email address to invite.": "Không có địa chỉ email để mời.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird không có tài khoản email nào để gửi lời mời.",
- "That calendar could not be read.": "Không đọc được lịch đó."
+ "That calendar could not be read.": "Không đọc được lịch đó.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "Chọn tệp reminderfox.ics mà tiện ích ReminderFox lưu trong hồ sơ Firefox hoặc Thunderbird của bạn",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "Tiện ích không thể xem thư mục của chương trình khác, nên hãy tự chọn tệp: tiện ích ReminderFox lưu nó dưới tên reminderfox.ics, trong thư mục reminderfox của hồ sơ Thunderbird hoặc Firefox của bạn.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "Để mở thư mục hồ sơ: Trợ giúp → Thông tin gỡ rối (trong Firefox: Thêm thông tin gỡ rối) → Thư mục hồ sơ → Mở thư mục.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "Chọn kèm tệp prefs.js trong thư mục hồ sơ để mang theo cả tên các danh sách của bạn.",
+ "Choose the file…": "Chọn tệp…"
 }

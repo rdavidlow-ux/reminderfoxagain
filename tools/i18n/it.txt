@@ -882,3 +882,8 @@
 881| Nessun indirizzo email da invitare.
 882| Thunderbird non ha un account email da cui inviare l'invito.
 883| Impossibile leggere quel calendario.
+884| Scegli il file reminderfox.ics che il componente aggiuntivo ReminderFox teneva nel tuo profilo di Firefox o Thunderbird
+885| Un componente aggiuntivo non può guardare nelle cartelle di altri programmi, quindi scegli tu il file: il componente aggiuntivo ReminderFox lo teneva come reminderfox.ics, nella cartella reminderfox del tuo profilo di Thunderbird o Firefox.
+886| Per aprire la cartella del profilo: Aiuto → Informazioni per la risoluzione di problemi (in Firefox: Altre informazioni per la risoluzione di problemi) → Cartella del profilo → Apri cartella.
+887| Scegli insieme anche il file prefs.js della cartella del profilo per portare i nomi dei tuoi elenchi.
+888| Scegli il file…

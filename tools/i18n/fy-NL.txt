@@ -882,3 +882,8 @@
 881| Gjin e-mailadres om út te noegjen.
 882| Thunderbird hat gjin e-mailaccount om de útnoeging fan te ferstjoeren.
 883| Dy aginda koe net lêzen wurde.
+884| Kies de reminderfox.ics dy't de ReminderFox-add-on yn dyn Firefox- of Thunderbird-profyl bewarre
+885| In add-on kin net yn de mappen fan oare programma's sjen, dus kies it bestân sels: de ReminderFox-add-on bewarre it as reminderfox.ics, yn de map reminderfox fan dyn Thunderbird- of Firefox-profyl.
+886| Sa iepenje jo de profylmap: Help → Probleemoplossingsynformaasje (yn Firefox: Mear probleemoplossingsynformaasje) → Profylmap → Map iepenje.
+887| Kies ek de prefs.js út de profylmap om dyn listnammen mei te nimmen.
+888| Bestân kieze…

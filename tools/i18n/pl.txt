@@ -882,3 +882,8 @@
 881| Brak adresu e-mail do zaproszenia.
 882| Thunderbird nie ma konta e-mail, z którego można wysłać zaproszenie.
 883| Nie udało się odczytać tego kalendarza.
+884| Wybierz plik reminderfox.ics, który dodatek ReminderFox przechowywał w Twoim profilu Firefoksa lub Thunderbirda
+885| Dodatek nie może zaglądać do folderów innych programów, więc wybierz plik samodzielnie: dodatek ReminderFox przechowywał go jako reminderfox.ics w folderze reminderfox Twojego profilu Thunderbirda lub Firefoksa.
+886| Aby otworzyć folder profilu: Pomoc → Informacje dla pomocy technicznej (w Firefoksie: Więcej informacji dla pomocy technicznej) → Folder profilu → Otwórz folder.
+887| Wybierz razem z nim plik prefs.js z folderu profilu, aby przenieść też nazwy list.
+888| Wybierz plik…

@@ -882,3 +882,8 @@
 881| Ei kutsuttavaa sähköpostiosoitetta.
 882| Thunderbirdissä ei ole sähköpostitiliä, josta kutsu voidaan lähettää.
 883| Kalenteria ei voitu lukea.
+884| Valitse reminderfox.ics, jota ReminderFox-lisäosa säilytti Firefox- tai Thunderbird-profiilissasi
+885| Lisäosa ei voi katsoa muiden ohjelmien kansioihin, joten valitse tiedosto itse: ReminderFox-lisäosa säilytti sen nimellä reminderfox.ics Thunderbird- tai Firefox-profiilisi reminderfox-kansiossa.
+886| Profiilikansion avaaminen: Ohje → Tietoja ongelmanratkaisua varten (Firefoxissa: Lisää tietoja ongelmanratkaisua varten) → Profiilikansio → Avaa kansio.
+887| Valitse samalla profiilikansion prefs.js, niin myös luetteloidesi nimet tulevat mukaan.
+888| Valitse tiedosto…

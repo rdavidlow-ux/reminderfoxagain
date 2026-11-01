@@ -903,5 +903,10 @@
  "no answer yet": "尚未答复",
  "No email address to invite.": "没有要邀请的电子邮件地址。",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird 没有可用来发送邀请的邮件帐户。",
- "That calendar could not be read.": "无法读取该日历。"
+ "That calendar could not be read.": "无法读取该日历。",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "选择 ReminderFox 附加组件保存在你的 Firefox 或 Thunderbird 配置文件中的 reminderfox.ics",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "附加组件无法查看其他程序的文件夹，所以请自己选择该文件：ReminderFox 附加组件把它保存为 reminderfox.ics，位于你的 Thunderbird 或 Firefox 配置文件的 reminderfox 文件夹中。",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "打开配置文件夹的方法：帮助 → 故障排除信息（在 Firefox 中：更多故障排除信息）→ 配置文件夹 → 打开文件夹。",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "同时选择配置文件夹中的 prefs.js，也会带上你的列表名称。",
+ "Choose the file…": "选择文件…"
 }

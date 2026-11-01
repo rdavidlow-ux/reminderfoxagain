@@ -882,3 +882,8 @@
 881| 没有要邀请的电子邮件地址。
 882| Thunderbird 没有可用来发送邀请的邮件帐户。
 883| 无法读取该日历。
+884| 选择 ReminderFox 附加组件保存在你的 Firefox 或 Thunderbird 配置文件中的 reminderfox.ics
+885| 附加组件无法查看其他程序的文件夹，所以请自己选择该文件：ReminderFox 附加组件把它保存为 reminderfox.ics，位于你的 Thunderbird 或 Firefox 配置文件的 reminderfox 文件夹中。
+886| 打开配置文件夹的方法：帮助 → 故障排除信息（在 Firefox 中：更多故障排除信息）→ 配置文件夹 → 打开文件夹。
+887| 同时选择配置文件夹中的 prefs.js，也会带上你的列表名称。
+888| 选择文件…

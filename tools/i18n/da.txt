@@ -882,3 +882,8 @@
 881| Ingen e-mailadresse at invitere.
 882| Thunderbird har ingen e-mailkonto at sende invitationen fra.
 883| Kalenderen kunne ikke læses.
+884| Vælg den reminderfox.ics, som ReminderFox-tilføjelsen gemte i din Firefox- eller Thunderbird-profil
+885| En tilføjelse kan ikke kigge i andre programmers mapper, så vælg selv filen: ReminderFox-tilføjelsen gemte den som reminderfox.ics i mappen reminderfox i din Thunderbird- eller Firefox-profil.
+886| Sådan åbner du profilmappen: Hjælp → Fejlsøgningsinformation (i Firefox: Mere fejlsøgningsinformation) → Profilmappe → Åbn mappe.
+887| Vælg også prefs.js fra profilmappen for at få dine listenavne med.
+888| Vælg filen…

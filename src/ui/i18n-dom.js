@@ -41,6 +41,8 @@
       [WELCOME]: 'Your reminders, to-dos and alarms in Thunderbird — a tribute to the original ReminderFox add-on.',
       'Show the reminders file in File Explorer': 'Save a copy of your reminders file',
       'Show a number on the tray and taskbar icons': 'Show a number on the ReminderFoxAgain toolbar button',
+      // an add-on can't search the profile folders, so the person picks the file (tb.js says where it is)
+      'Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile': 'Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile',
     });
   }
   // In Thunderbird the shortcuts are Thunderbird's (Alt+Shift+N…, which people can change): data.keys maps the desktop

@@ -903,5 +903,10 @@
  "no answer yet": "아직 응답 없음",
  "No email address to invite.": "초대할 이메일 주소가 없습니다.",
  "Thunderbird has no email account to send the invitation from.": "Thunderbird에 초대장을 보낼 이메일 계정이 없습니다.",
- "That calendar could not be read.": "그 캘린더를 읽을 수 없습니다."
+ "That calendar could not be read.": "그 캘린더를 읽을 수 없습니다.",
+ "Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile": "ReminderFox 부가 기능이 Firefox 또는 Thunderbird 프로필에 저장해 둔 reminderfox.ics 선택",
+ "An add-on can't look in other programs' folders, so pick the file yourself: the ReminderFox add-on kept it as reminderfox.ics, in the reminderfox folder of your Thunderbird or Firefox profile.": "부가 기능은 다른 프로그램의 폴더를 볼 수 없으므로 파일을 직접 선택하세요. ReminderFox 부가 기능은 Thunderbird 또는 Firefox 프로필의 reminderfox 폴더에 reminderfox.ics로 저장했습니다.",
+ "To open the profile folder: Help → Troubleshooting Information (in Firefox: More Troubleshooting Information) → Profile Folder → Open Folder.": "프로필 폴더를 여는 방법: 도움말 → 문제 해결 정보(Firefox에서는: 추가 문제 해결 정보) → 프로필 폴더 → 폴더 열기.",
+ "Pick the profile folder's prefs.js with it to bring your list names too.": "목록 이름도 가져오려면 프로필 폴더의 prefs.js도 함께 선택하세요.",
+ "Choose the file…": "파일 선택…"
 }

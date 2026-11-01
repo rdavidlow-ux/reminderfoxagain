@@ -882,3 +882,8 @@
 881| Nincs meghívandó e-mail-cím.
 882| A Thunderbirdben nincs e-mail-fiók, amelyről a meghívót el lehetne küldeni.
 883| A naptárat nem sikerült beolvasni.
+884| A ReminderFox kiegészítő által a Firefox- vagy Thunderbird-profiljában tárolt reminderfox.ics kiválasztása
+885| Egy kiegészítő nem nézhet bele más programok mappáiba, ezért válassza ki a fájlt saját maga: a ReminderFox kiegészítő reminderfox.ics néven tárolta, a Thunderbird- vagy Firefox-profilja reminderfox mappájában.
+886| A profilmappa megnyitása: Súgó → Hibaelhárítási információk (Firefoxban: További hibaelhárítási információk) → Profilmappa → Mappa megnyitása.
+887| Válassza ki vele együtt a profilmappa prefs.js fájlját is, hogy a listák nevei is átkerüljenek.
+888| Fájl kiválasztása…

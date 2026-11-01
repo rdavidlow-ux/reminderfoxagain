@@ -882,3 +882,8 @@
 881| 초대할 이메일 주소가 없습니다.
 882| Thunderbird에 초대장을 보낼 이메일 계정이 없습니다.
 883| 그 캘린더를 읽을 수 없습니다.
+884| ReminderFox 부가 기능이 Firefox 또는 Thunderbird 프로필에 저장해 둔 reminderfox.ics 선택
+885| 부가 기능은 다른 프로그램의 폴더를 볼 수 없으므로 파일을 직접 선택하세요. ReminderFox 부가 기능은 Thunderbird 또는 Firefox 프로필의 reminderfox 폴더에 reminderfox.ics로 저장했습니다.
+886| 프로필 폴더를 여는 방법: 도움말 → 문제 해결 정보(Firefox에서는: 추가 문제 해결 정보) → 프로필 폴더 → 폴더 열기.
+887| 목록 이름도 가져오려면 프로필 폴더의 prefs.js도 함께 선택하세요.
+888| 파일 선택…

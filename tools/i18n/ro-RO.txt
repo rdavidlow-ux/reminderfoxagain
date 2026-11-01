@@ -882,3 +882,8 @@
 881| Nicio adresă de e-mail de invitat.
 882| Thunderbird nu are niciun cont de e-mail din care să trimită invitația.
 883| Calendarul nu a putut fi citit.
+884| Alege fișierul reminderfox.ics pe care suplimentul ReminderFox îl păstra în profilul tău Firefox sau Thunderbird
+885| Un supliment nu poate căuta în dosarele altor programe, așa că alege tu fișierul: suplimentul ReminderFox îl păstra ca reminderfox.ics, în dosarul reminderfox al profilului tău Thunderbird sau Firefox.
+886| Pentru a deschide dosarul profilului: Ajutor → Informații de depanare (în Firefox: Mai multe informații de depanare) → Dosarul profilului → Deschide dosarul.
+887| Alege împreună cu el și prefs.js din dosarul profilului, ca să aduci și numele listelor tale.
+888| Alege fișierul…

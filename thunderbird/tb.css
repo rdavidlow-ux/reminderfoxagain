@@ -5,5 +5,4 @@ html[data-host="thunderbird"] label.inline-chk:has(#stTray),
 html[data-host="thunderbird"] #stTrayNote,
 html[data-host="thunderbird"] #stFolder,
 html[data-host="thunderbird"] #stBackups,
-html[data-host="thunderbird"] #stOldRf,
 html[data-host="thunderbird"] #stPath { display: none !important; }
