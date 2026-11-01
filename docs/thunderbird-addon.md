@@ -46,7 +46,7 @@ Every desktop feature is there; the ones tied to the operating system work the T
 | Links (maps, web pages in notes)                                         | Open in the system browser.                                                                                                                                                                                                                                                                                                                                                                                               |
 | After sleep or unlock: check alarms                                      | Checked 1 second after the computer is used again.                                                                                                                                                                                                                                                                                                                                                                        |
 
-Permissions: storage, unlimited storage, notifications, menus, tabs, idle, keyboard shortcuts, reading email messages (Add reminder… on an email, and replies to invitations), tagging and updating messages (the ReminderFoxAgain tag), composing messages (Send by email…, invitations), the address books (birthdays, address suggestions) and the accounts (who an invitation is from). The add-on collects nothing. It goes online only to read an .ics link you choose to import, after Thunderbird asks you to allow that one site, and it sends nothing by itself: every message it prepares waits for you to send it. It needs Thunderbird 128 or later (Manifest V2, with a background page that keeps running, so alarms keep their timers as in the desktop app).
+Permissions: storage, unlimited storage, notifications, menus, tabs, idle, keyboard shortcuts, reading email messages (Add reminder… on an email, and replies to invitations), tagging and updating messages (the ReminderFoxAgain tag), composing messages (Send by email…, invitations), the address books (birthdays, address suggestions) and the accounts (who an invitation is from). The add-on collects nothing. It goes online only to read an .ics link you choose to import or a calendar you subscribe to, after Thunderbird asks you to allow that one site, and it sends nothing by itself: every message it prepares waits for you to send it. It needs Thunderbird 128 or later (Manifest V2, with a background page that keeps running, so alarms keep their timers as in the desktop app).
 
 ## Keyboard shortcuts
 
@@ -104,6 +104,30 @@ In the add-on and the desktop app alike, the Month view is a run of weeks you sc
 - A change to your reminders, a filter (Show to-dos, Show completed) or a search keeps the view where it is.
 
 - Clicking a day picks it, double-clicking adds a reminder, and a reminder opens with a click, as before.
+
+## Calendar subscriptions
+
+In the add-on and the desktop app alike, you can subscribe to any calendar with a web address: holidays, sports, a school or team calendar (https://, http:// or webcal://). Its events show among your reminders in the subscription's own colour, marked with its name, and they are read-only.
+
+<img src="media/thunderbird-addon/subscriptions.png" style="width:6in;height:3.86441in" alt="The Month view with a subscribed holiday calendar in green, and the Calendars menu open, with made-up reminders" />
+
+- **Subscribe:** 📅 **Calendars** in the Reminders or Month toolbar → Subscribe to a calendar…, or Settings → Data → Calendar subscriptions…. Paste the address and click Subscribe; the calendar's own name is used. The add-on asks Thunderbird once for permission to read that site.
+
+- **Which views show it:** 📅 Calendars in each toolbar has a tick for every subscription, so one calendar can be in the Month view but not in the Reminders list (the calendar panel follows the Month view). A dot on the button means some are hidden in that view.
+
+- **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu, and Ctrl+D). It can't be ticked, changed or deleted.
+
+- **Kept up to date:** each subscription is fetched again on its own: every hour, 6 hours, 12 hours, day (at first) or week. If its site can't be reached, the last good copy stays and the dialog says why; it is tried again in half an hour. Calendar subscriptions… also renames, recolours, refreshes and removes them.
+
+- **Where it is kept:** settings.subscriptions and a copy of each calendar as subscriptions/\<id\>.ics, next to your reminders (in the add-on, in its storage), so they show without a connection.
+
+## Item colours in your own themes
+
+A theme of your own (Settings → Display → New theme… or Edit…) can now colour items' text by completed or not, starred or not, and past, today or coming. Tick a colour to use it; the most particular one wins: Completed, then Starred or Not starred, then Past, Today or Coming, then Not completed. Unticked ones follow the theme. They apply in the lists, the Month view and the calendar panel's day list.
+
+<img src="media/thunderbird-addon/item-colours.png" style="width:6in;height:3.86441in" alt="The theme editor&#39;s item text colours, with Past and Today ticked" />
+
+In every built-in theme, a past reminder that is neither completed nor starred now has the same colour as today's and coming ones (it used to be faded).
 
 ## Reminders and list items from email
 
