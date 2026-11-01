@@ -268,3 +268,75 @@ test('host 12. the email an item came from: kept with it, kept on edits, opened 
   await assert.rejects(tb.call('mail:open', ''), /no email/);
   await assert.rejects(tb.call('mail:open', '<gone@example.com>'), /not found/);
 });
+
+test('host 13. send an item by email, and the emails to tag', async () => {
+  const tb = fakeThunderbird();
+  await tb.host.start();
+  const uid = await tb.call('data:save', { kind: 'event', summary: 'Dentist — Dr. Patel', date: '2026-10-22', time: '14:30', allDay: false, location: 'Yonge & Eglinton', notes: 'Bring the form', messageId: '<a@x.example>' });
+  const m = await tb.call('mail:item', uid);
+  assert.equal(m.subject, 'Dentist — Dr. Patel');
+  assert.equal(m.file, 'Dentist — Dr. Patel.ics');
+  assert.match(m.body, /^Dentist — Dr\. Patel\nThu, Oct 22, 2026, 2:30\sp\.m\.\nYonge & Eglinton\n\nBring the form$/);
+  assert.match(m.ics, /BEGIN:VEVENT[\s\S]*SUMMARY:Dentist/);
+  const t = await tb.call('data:save', { kind: 'todo', summary: 'Renew passport', messageId: '<b@x.example>' });
+  assert.deepEqual(await tb.call('mail:linked'), { open: ['<a@x.example>', '<b@x.example>'], done: [] });
+  await tb.call('data:complete', t, true);
+  assert.deepEqual(await tb.call('mail:linked'), { open: ['<a@x.example>'], done: ['<b@x.example>'] });
+  assert.equal(await tb.call('host:t', 'Add reminder…'), 'Add reminder…');
+});
+
+test('host 14. birthdays from address-book contacts: added, kept in step, removed', async () => {
+  const tb = fakeThunderbird(); // today Oct 20, 2026
+  await tb.host.start();
+  const vc = (fn, bday) => `BEGIN:VCARD\r\nVERSION:4.0\r\nFN:${fn}\r\n${bday ? `BDAY:${bday}\r\n` : ''}END:VCARD\r\n`;
+  const r = await tb.call('contacts:sync', [{ id: 'c1', vcard: vc('Olivia Martin', '19900315') }, { id: 'c2', vcard: vc('Noah Chen', '--1103') }, { id: 'c3', vcard: vc('No Birthday') }], true);
+  assert.deepEqual(r, { added: 2, updated: 0, removed: 0 });
+  const o = await tb.call('data:get', 'contact-c1@reminderfoxagain');
+  assert.equal(o.summary, "Olivia Martin's birthday <1990>");
+  assert.equal(o.date, '1990-03-15');
+  assert.equal(o.repeat.freq, 'YEARLY');
+  assert.deepEqual(o.categories, ['Birthday']);
+  assert.equal((await tb.call('data:get', 'contact-c2@reminderfoxagain')).summary, "Noah Chen's birthday");
+  // the same again: nothing changes; a changed birthday is updated; a contact gone is removed
+  assert.deepEqual(await tb.call('contacts:sync', [{ id: 'c1', vcard: vc('Olivia Martin', '1990-03-15') }, { id: 'c2', vcard: vc('Noah Chen', '--11-03') }], true), { added: 0, updated: 0, removed: 0 });
+  assert.deepEqual(await tb.call('contacts:sync', [{ id: 'c1', vcard: vc('Olivia Martin', '1990-03-16') }], true), { added: 0, updated: 1, removed: 1 });
+  assert.equal((await tb.call('data:get', 'contact-c1@reminderfoxagain')).date, '1990-03-16');
+  assert.equal(await tb.call('data:get', 'contact-c2@reminderfoxagain'), null);
+});
+
+test('host 15. invitations: sent from the organizer to attendees, replies recorded and announced', async () => {
+  const tb = fakeThunderbird();
+  await tb.host.start();
+  const uid = await tb.call('data:save', { kind: 'event', summary: 'Thanksgiving dinner', date: '2026-10-25', time: '17:30', allDay: false });
+  await assert.rejects(tb.call('mail:invite', uid, null, ['a@x.example']), /no email account/);
+  await assert.rejects(tb.call('mail:invite', uid, { email: 'me@x.example' }, ['not an address']), /No email address/);
+  const inv = await tb.call('mail:invite', uid, { email: 'me@x.example', name: 'David' }, ['Olivia@X.example', 'leo@x.example', 'olivia@x.example']);
+  const unfold = (t) => t.replace(/\r\n[ \t]/g, '');
+  inv.ics = unfold(inv.ics);
+  assert.deepEqual(inv.to, ['olivia@x.example', 'leo@x.example']);
+  assert.equal(inv.subject, 'Invitation: Thanksgiving dinner');
+  assert.match(inv.ics, /\r\nMETHOD:REQUEST\r\n/);
+  // the time is sent as UTC: 5:30 PM on Oct 25 here
+  assert.match(inv.ics, new RegExp(`DTSTART:${new Date(2026, 9, 25, 17, 30).toISOString().replace(/[-:]/g, '').slice(0, 15)}Z`));
+  assert.match(inv.ics, /ORGANIZER;CN=David:mailto:me@x\.example/);
+  assert.match(inv.ics, /ATTENDEE;[^\r]*PARTSTAT=NEEDS-ACTION[^\r]*:mailto:olivia@x\.example/);
+  const seq = Number(/SEQUENCE:(\d+)/.exec(inv.ics)[1]);
+  let d = await tb.call('data:get', uid);
+  assert.deepEqual(d.attendees.map((a) => `${a.email} ${a.status}`), ['olivia@x.example needs-action', 'leo@x.example needs-action']);
+  // Olivia's reply
+  const reply = `BEGIN:VCALENDAR\r\nVERSION:2.0\r\nMETHOD:REPLY\r\nBEGIN:VEVENT\r\nUID:${uid}\r\nDTSTAMP:20261021T120000Z\r\nATTENDEE;PARTSTAT=ACCEPTED;CN=Olivia:mailto:olivia@x.example\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n`;
+  const r = await tb.call('mail:reply', reply);
+  assert.deepEqual(r, [{ uid, summary: 'Thanksgiving dinner', email: 'olivia@x.example', name: 'Olivia', status: 'accepted' }]);
+  assert.deepEqual(tb.log.notes.at(-1), { title: 'Olivia: accepted', body: 'Thanksgiving dinner' });
+  d = await tb.call('data:get', uid);
+  assert.deepEqual(d.attendees.map((a) => `${a.name || a.email} ${a.status}`), ['Olivia accepted', 'leo@x.example needs-action']);
+  // a second invitation keeps Olivia's answer and raises SEQUENCE; a reply from someone not invited changes nothing
+  const again = await tb.call('mail:invite', uid, { email: 'me@x.example' }, ['olivia@x.example', 'leo@x.example', 'eliana@x.example']);
+  again.ics = unfold(again.ics);
+  assert.match(again.ics, new RegExp(`SEQUENCE:${seq + 1}\r`));
+  assert.match(again.ics, /PARTSTAT=ACCEPTED[^\r]*:mailto:olivia@x\.example/);
+  // the saved item keeps its own local time
+  assert.equal((await tb.call('data:get', uid)).time, '17:30');
+  assert.equal(await tb.call('mail:reply', reply.replace('olivia@x.example', 'stranger@x.example')), null);
+  assert.equal(await tb.call('mail:reply', 'not a calendar'), null);
+});

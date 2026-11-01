@@ -862,3 +862,23 @@
 861| Die E-Mail öffnen, aus der dies stammt
 862| Zu diesem Eintrag gibt es keine E-Mail.
 863| Die E-Mail, aus der dies stammt, wurde nicht gefunden. Sie wurde vielleicht gelöscht, oder sie liegt in einem Konto, das in diesem Thunderbird nicht eingerichtet ist.
+864| Per E-Mail senden…
+865| Personen einladen…
+866| Diesen Kalender importieren…
+867| Nach dem Senden eine Erinnerung für diese E-Mail hinzufügen
+868| E-Mails mit einer Erinnerung oder einem Listeneintrag markieren
+869| Geburtstagserinnerungen aus Ihren Adressbüchern
+870| Geburtstag von {name}
+871| Einladung: {title}
+872| Personen einladen
+873| E-Mail-Adressen, durch Kommas getrennt
+874| Einladung erstellen
+875| Die Einladung öffnet sich in einer neuen Nachricht, die Sie prüfen und senden.
+876| Eingeladen:
+877| zugesagt
+878| abgesagt
+879| vielleicht
+880| noch keine Antwort
+881| Keine E-Mail-Adresse zum Einladen.
+882| Thunderbird hat kein E-Mail-Konto, von dem die Einladung gesendet werden kann.
+883| Dieser Kalender konnte nicht gelesen werden.

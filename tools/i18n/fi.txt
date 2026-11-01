@@ -862,3 +862,23 @@
 861| Avaa sähköposti, josta tämä tuli
 862| Tällä kohteella ei ole avattavaa sähköpostia.
 863| Sähköpostia, josta tämä tuli, ei löytynyt. Se on ehkä poistettu, tai se on tilillä, jota ei ole määritetty tähän Thunderbirdiin.
+864| Lähetä sähköpostilla…
+865| Kutsu ihmisiä…
+866| Tuo tämä kalenteri…
+867| Lisää lähettämisen jälkeen muistutus tästä sähköpostista
+868| Merkitse sähköpostit, joilla on muistutus tai luettelon kohde
+869| Syntymäpäivämuistutukset osoitekirjoistasi
+870| {name}: syntymäpäivä
+871| Kutsu: {title}
+872| Kutsu ihmisiä
+873| Sähköpostiosoitteet pilkuilla erotettuina
+874| Luo kutsu
+875| Kutsu avautuu uuteen viestiin, jonka tarkistat ja lähetät.
+876| Kutsutut:
+877| hyväksytty
+878| hylätty
+879| ehkä
+880| ei vielä vastausta
+881| Ei kutsuttavaa sähköpostiosoitetta.
+882| Thunderbirdissä ei ole sähköpostitiliä, josta kutsu voidaan lähettää.
+883| Kalenteria ei voitu lukea.

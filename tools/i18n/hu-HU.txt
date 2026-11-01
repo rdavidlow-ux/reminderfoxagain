@@ -862,3 +862,23 @@
 861| Annak az e-mailnek a megnyitása, amelyből ez származik
 862| Ehhez az elemhez nincs megnyitható e-mail.
 863| Nem található az e-mail, amelyből ez származik. Lehet, hogy törölték, vagy olyan fiókban van, amely nincs beállítva ebben a Thunderbirdben.
+864| Küldés e-mailben…
+865| Személyek meghívása…
+866| A naptár importálása…
+867| Küldés után emlékeztető hozzáadása ehhez az e-mailhez
+868| Címke azokon az e-maileken, amelyekhez emlékeztető vagy listaelem tartozik
+869| Születésnapi emlékeztetők a címjegyzékeiből
+870| {name} születésnapja
+871| Meghívó: {title}
+872| Személyek meghívása
+873| E-mail-címek, vesszővel elválasztva
+874| Meghívó létrehozása
+875| A meghívó új üzenetben nyílik meg, amelyet ellenőriz és elküld.
+876| Meghívottak:
+877| elfogadta
+878| elutasította
+879| talán
+880| még nem válaszolt
+881| Nincs meghívandó e-mail-cím.
+882| A Thunderbirdben nincs e-mail-fiók, amelyről a meghívót el lehetne küldeni.
+883| A naptárat nem sikerült beolvasni.

@@ -44,6 +44,7 @@
   const ready = { main: null, alarm: null, slider: null }; // the page's tab id once it said it is ready
   const waiting = { main: [], alarm: [], slider: [] }; // messages for a page that is still loading
   function emit(ch, payload, target) {
+    if (ch === 'data:changed') scheduleTags();   // the tags on emails follow the items
     const msg = { rf: 'emit', ch, payload, target: target || null };
     if (target && !ready[target]) {
       // a page that is opening gets it once it is ready; a page that isn't open doesn't need it (it asks on load)
@@ -134,14 +135,17 @@
     for (const it of items) {
       const id = it.type === 'separator' ? `sep-${n++}` : `rf-${it.id}`;
       const icons = it.contexts ? { 16: 'assets/tb/icon-16.png', 32: 'assets/tb/icon-32.png' } : undefined;
-      browser.menus.create({ id, type: it.type === 'separator' ? 'separator' : 'normal', title: it.title || '', contexts: it.contexts || ['browser_action'], ...(icons ? { icons } : {}) });
+      browser.menus.create({ id, type: it.type === 'separator' ? 'separator' : 'normal', title: it.title || '', contexts: it.contexts || ['browser_action'], ...(icons ? { icons } : {}), ...(it.targetUrlPatterns ? { targetUrlPatterns: it.targetUrlPatterns } : {}) });
       menuIds.push(id);
     }
   }
-  browser.menus.onClicked.addListener((info) => {
+  browser.menus.onClicked.addListener((info, tab) => {
     const id = String(info.menuItemId || '');
     if (id === 'rf-mail-reminder') reminderFromEmail(info, 'event');
     else if (id === 'rf-mail-todo') reminderFromEmail(info, 'todo');
+    else if (id === 'rf-sel-reminder') reminderFromSelection(info, tab, 'event');
+    else if (id === 'rf-sel-todo') reminderFromSelection(info, tab, 'todo');
+    else if (id === 'rf-link-ics') importLink(info);
     else if (id.startsWith('rf-')) host.menuClick(id.slice(3));
   });
 
@@ -213,6 +217,7 @@
     host = RFHost.createHost({
       platform: 'thunderbird', os: OS[info.os] || 'linux', version: RF_VERSION, dataLabel: DATA_LABEL,
       files, emit, windows, notify, badge, tooltip, menu, openUrl, loadDict, languageChanged, openEmail,
+      onSettings: (settings, patch) => onSettings(settings, patch),
       systemLocale: () => browser.i18n.getUILanguage() || navigator.language || 'en',
     });
     await host.start();
@@ -221,6 +226,10 @@
   browser.runtime.onMessage.addListener((msg, sender) => {
     if (!msg || typeof msg !== 'object') return undefined;
     if (msg.rf === 'ready') { started.then(() => pageReady(msg.page, sender.tab && sender.tab.id)); if (msg.page === 'main' && sender.tab) mainTab = sender.tab.id; return Promise.resolve(true); }
+    if (msg.rf === 'tb') {   // the add-on's own channels (Thunderbird's email, compose and address-book APIs)
+      return started.then(() => TB[msg.ch](...(msg.args || [])))
+        .then((value) => ({ ok: true, value: value === undefined ? null : value }), (err) => ({ ok: false, error: (err && err.message) || String(err) }));
+    }
     if (msg.rf !== 'call') return undefined;
     return started.then(() => host.call(msg.ch, msg.args))
       .then((value) => ({ ok: true, value: value === undefined ? null : value }), (err) => ({ ok: false, error: (err && err.message) || String(err) }));
@@ -253,6 +262,212 @@
     });
     if (browser.commands.onChanged) browser.commands.onChanged.addListener(() => publishKeys());
     publishKeys();
+  }
+
+  // ---------------------------------------------------------------- what Thunderbird makes possible
+  // 1 Send++ · 2 tags on emails · 3 send an item by email · 4 birthdays from address books · 5 selected text and .ics
+  // links · 6 invitations and their replies. The rules are in the host core (src/host/core.js) and the store; this part
+  // only talks to Thunderbird.
+  const t = (text, vars) => host.call('host:t', [text, vars]);
+  const ical = (text, name, method) => new File([text], name, { type: `text/calendar;charset=utf-8${method ? `;method=${method}` : ''}` });
+  const findMessage = async (mid) => {
+    const headerMessageId = String(mid || '').trim().replace(/^<|>$/g, '');
+    if (!headerMessageId) return null;
+    const r = await browser.messages.query({ headerMessageId }).catch(() => null);
+    return (r && r.messages && r.messages[0]) || null;
+  };
+  // the account to send from: the default account's default identity
+  async function identity() {
+    let acc = null;
+    try { acc = browser.accounts.getDefault ? await browser.accounts.getDefault() : null; } catch (e) { /* none */ }
+    if (!acc) { const all = await browser.accounts.list().catch(() => []); acc = all.find((a) => a.identities && a.identities.length) || null; }
+    if (!acc) return null;
+    let id = null;
+    try { id = browser.identities && browser.identities.getDefault ? await browser.identities.getDefault(acc.id) : null; } catch (e) { /* older */ }
+    return id || (acc.identities || [])[0] || null;
+  }
+
+  // 3. an item as an email: a new message with the item as text and as an .ics attachment, for the person to send
+  // 6. an invitation: the item records the attendees; the message goes to them from your account
+  const TB = {
+    sendItem: async (uid) => {
+      const m = await host.call('mail:item', [uid]);
+      await browser.compose.beginNew({ subject: m.subject, plainTextBody: m.body, isPlainText: true, attachments: [{ file: ical(m.ics, m.file) }] });
+      return true;
+    },
+    invite: async (uid, emails) => {
+      const me = await identity();
+      const inv = await host.call('mail:invite', [uid, me ? { email: me.email, name: me.name } : null, emails]);
+      await browser.compose.beginNew({ identityId: me.id, to: inv.to, subject: inv.subject, plainTextBody: inv.body, isPlainText: true, attachments: [{ file: ical(inv.ics, inv.file, 'REQUEST') }] });
+      return inv.to;
+    },
+    // people from the address books for the invitation dialog: [{name, email}]
+    contacts: async (text) => {
+      const q = String(text || '').trim();
+      if (q.length < 2 || !browser.addressBooks) return [];
+      const found = await browser.addressBooks.contacts.quickSearch(q).catch(() => []);
+      const out = [];
+      for (const c of found) {
+        const v = c.vCard || (c.properties && c.properties.vCard) || '';
+        const name = (/^FN(?:;[^:]*)?:(.*)$/im.exec(v) || [])[1] || (c.properties && c.properties.DisplayName) || '';
+        const mails = [...v.matchAll(/^EMAIL(?:;[^:]*)?:(.*)$/gim)].map((m) => m[1].trim());
+        if (!mails.length && c.properties && c.properties.PrimaryEmail) mails.push(c.properties.PrimaryEmail);
+        for (const email of mails) out.push({ name: name.trim(), email });
+      }
+      return out.slice(0, 8);
+    },
+  };
+
+  // 1. Send++: "Remind me" in the compose window; after the email is sent, the editor opens for a reminder linked to it
+  const remindTabs = new Set(); const pendingSend = new Map();
+  if (browser.composeAction) {
+    browser.composeAction.onClicked.addListener((tab) => {
+      const on = !remindTabs.has(tab.id);
+      if (on) remindTabs.add(tab.id); else remindTabs.delete(tab.id);
+      browser.composeAction.setBadgeText({ tabId: tab.id, text: on ? '✓' : '' }).catch(() => {});
+      browser.composeAction.setBadgeBackgroundColor({ tabId: tab.id, color: '#e26e26' }).catch(() => {});
+    });
+    started.then(() => titleCompose());
+  }
+  async function titleCompose() {
+    if (!browser.composeAction) return;
+    try {
+      await browser.composeAction.setTitle({ title: await t('After sending, add a reminder for this email') });
+      if (browser.composeAction.setLabel) await browser.composeAction.setLabel({ label: await t('Remind me') });
+    } catch (e) { /* older Thunderbird */ }
+  }
+  if (browser.compose && browser.compose.onBeforeSend) {
+    browser.compose.onBeforeSend.addListener((tab, details) => {
+      if (!remindTabs.has(tab.id)) return undefined;
+      const body = details.plainTextBody || (details.body ? new DOMParser().parseFromString(details.body, 'text/html').body.textContent : '');
+      pendingSend.set(tab.id, { subject: details.subject || '', body });
+      return undefined;
+    });
+    browser.compose.onAfterSend.addListener(async (tab, info) => {
+      const p = pendingSend.get(tab.id);
+      pendingSend.delete(tab.id); remindTabs.delete(tab.id);
+      if (!p || (info && info.error)) return;
+      const mid = (info && (info.headerMessageId || (info.messages && info.messages[0] && info.messages[0].headerMessageId))) || '';
+      const r = await host.call('mail:reminder', [{ subject: p.subject, body: p.body, date: Date.now(), messageId: mid }, 'event']);
+      await showMain();
+      emit('ui:new', r, 'main');
+    });
+  }
+
+  // 2. tags: emails that have an open reminder or list item get the ReminderFoxAgain tag, and lose it when it is done
+  const TAG = { key: 'reminderfoxagain', name: 'ReminderFoxAgain', color: '#E26E26' };
+  let tagOn = true; let tagTimer = null; let tagRunning = false;
+  const tagged = new Set((() => { try { return JSON.parse(localStorage.getItem('rf.tagged') || '[]'); } catch (e) { return []; } })());
+  const saveTagged = () => { try { localStorage.setItem('rf.tagged', JSON.stringify([...tagged])); } catch (e) { /* ignore */ } };
+  async function ensureTag() {
+    const api = browser.messages.tags || null;
+    const list = api ? await api.list() : await browser.messages.listTags();
+    if (list.some((x) => x.key === TAG.key)) return;
+    if (api) await api.create(TAG.key, TAG.name, TAG.color); else await browser.messages.createTag(TAG.key, TAG.name, TAG.color);
+  }
+  async function setTag(mid, on) {
+    const m = await findMessage(mid);
+    if (!m) return false;
+    const tags = new Set(m.tags || []);
+    if (on === tags.has(TAG.key)) return true;
+    if (on) tags.add(TAG.key); else tags.delete(TAG.key);
+    await browser.messages.update(m.id, { tags: [...tags] });
+    return true;
+  }
+  async function syncTags() {
+    if (tagRunning) { scheduleTags(); return; }
+    tagRunning = true;
+    try {
+      const { open } = await host.call('mail:linked');
+      const want = new Set(tagOn ? open : []);
+      if (want.size) await ensureTag();
+      for (const mid of want) if (!tagged.has(mid) && await setTag(mid, true).catch(() => false)) tagged.add(mid);
+      for (const mid of [...tagged]) if (!want.has(mid)) { await setTag(mid, false).catch(() => {}); tagged.delete(mid); }
+      saveTagged();
+    } catch (e) { console.error('tags', e); } finally { tagRunning = false; }
+  }
+  function scheduleTags() { clearTimeout(tagTimer); tagTimer = setTimeout(syncTags, 1500); }
+
+  // 4. birthdays from the address books (Settings, off at first): kept in step while it is on
+  let bdayOn = false; let bdayTimer = null;
+  async function syncBirthdays() {
+    if (!bdayOn || !browser.addressBooks) return;
+    const contacts = [];
+    const walk = (nodes) => { for (const n of nodes || []) { if (n.type === 'contact') contacts.push({ id: n.id, vcard: n.vCard || (n.properties && n.properties.vCard) || propsVcard(n.properties || {}) }); walk(n.contacts); } };
+    walk(await browser.addressBooks.list(true).catch(() => []));
+    await host.call('contacts:sync', [contacts, true]);
+  }
+  // an older Thunderbird's contact fields as a small vCard
+  const propsVcard = (p) => `BEGIN:VCARD\r\nFN:${p.DisplayName || [p.FirstName, p.LastName].filter(Boolean).join(' ')}\r\n${p.BirthMonth && p.BirthDay ? `BDAY:${p.BirthYear || '--'}${String(p.BirthMonth).padStart(2, '0')}${String(p.BirthDay).padStart(2, '0')}\r\n` : ''}END:VCARD`;
+  const scheduleBirthdays = () => { clearTimeout(bdayTimer); bdayTimer = setTimeout(() => syncBirthdays().catch((e) => console.error('birthdays', e)), 2000); };
+  if (browser.addressBooks && browser.addressBooks.contacts) {
+    for (const ev of ['onCreated', 'onUpdated', 'onDeleted']) if (browser.addressBooks.contacts[ev]) browser.addressBooks.contacts[ev].addListener(() => { if (bdayOn) scheduleBirthdays(); });
+  }
+
+  // the settings for 2 and 4 (in Settings → General, added by tb.js)
+  function onSettings(settings, patch) {
+    const tag = settings.tbTagEmails !== false; const bday = !!settings.tbBirthdays;
+    const tagChanged = tag !== tagOn; const bdayChanged = bday !== bdayOn;
+    tagOn = tag; bdayOn = bday;
+    if (patch === null || tagChanged) scheduleTags();
+    if ((patch === null && bday) || (bdayChanged && bday)) scheduleBirthdays();
+    if (patch && 'language' in patch) setTimeout(titleCompose, 800);
+  }
+
+  // 5. text selected in an email: a reminder or list item from the selection, linked to that email
+  async function reminderFromSelection(info, tab, kind) {
+    const text = String(info.selectionText || '').trim();
+    if (!text) return;
+    let msg = null;
+    try { msg = tab && browser.messageDisplay ? await browser.messageDisplay.getDisplayedMessage(tab.id) : null; } catch (e) { /* not an email */ }
+    const first = text.split(/\n/)[0].slice(0, 120);
+    const date = msg && msg.date ? (msg.date instanceof Date ? msg.date.getTime() : Number(new Date(msg.date))) : Date.now();
+    const p = await host.call('mail:reminder', [{ subject: first, body: text, date, messageId: (msg && msg.headerMessageId) || '' }, kind]);
+    await showMain();
+    emit('ui:new', p, 'main');
+  }
+  // an .ics link: read it (asking once for that site) and open the import dialog with it
+  async function importLink(info) {
+    let url = String(info.linkUrl || '').replace(/^webcals?:/i, 'https:');
+    try {
+      const origin = new URL(url).origin;
+      if (browser.permissions && !(await browser.permissions.contains({ origins: [`${origin}/*`] }))) {
+        if (!(await browser.permissions.request({ origins: [`${origin}/*`] }))) return;
+      }
+      const r = await fetch(url, { credentials: 'omit' });
+      if (!r.ok) throw new Error(String(r.status));
+      const text = await r.text();
+      const name = decodeURIComponent(new URL(url).pathname.split('/').pop() || 'calendar.ics');
+      const tokens = await host.call('upload', [[{ name: /\.(ics|ical)$/i.test(name) ? name : `${name}.ics`, text }]]);
+      await showMain();
+      emit('ui:importFiles', { tokens }, 'main');
+    } catch (e) {
+      notify(await t('That calendar could not be read.'), url);
+    }
+  }
+
+  // 6. replies to invitations: new mail with a calendar reply (METHOD:REPLY) records the answer on the item
+  function calendarParts(part, out = []) {
+    if (!part) return out;
+    if (/^text\/calendar/i.test(part.contentType || '') && part.body) out.push(part.body);
+    for (const c of part.parts || []) calendarParts(c, out);
+    return out;
+  }
+  if (browser.messages.onNewMailReceived) {
+    browser.messages.onNewMailReceived.addListener(async (folder, list) => {
+      await started;
+      for (const m of (list && list.messages) || []) {
+        try {
+          const texts = calendarParts(await browser.messages.getFull(m.id));
+          if (!texts.length && browser.messages.listAttachments) {
+            for (const a of await browser.messages.listAttachments(m.id)) {
+              if (/calendar/i.test(a.contentType || '') || /\.ics$/i.test(a.name || '')) texts.push(await (await browser.messages.getAttachmentFile(m.id, a.partName)).text());
+            }
+          }
+          for (const x of texts) if (/METHOD:REPLY/i.test(x)) await host.call('mail:reply', [x]);
+        } catch (e) { console.error('reply', e); }
+      }
+    });
   }
 
   // alarms: after the computer wakes or is unlocked, check at once (as the desktop app does after resume/unlock)

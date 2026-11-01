@@ -862,3 +862,23 @@
 861| Ava e-kiri, millest see pärineb
 862| Sellel kirjel pole avatavat e-kirja.
 863| E-kirja, millest see pärineb, ei leitud. See võib olla kustutatud või on see kontol, mida selles Thunderbirdis pole seadistatud.
+864| Saada e-kirjaga…
+865| Kutsu inimesi…
+866| Impordi see kalender…
+867| Pärast saatmist lisa selle e-kirja jaoks meeldetuletus
+868| Märgista e-kirjad, millel on meeldetuletus või loendi kirje
+869| Sünnipäevade meeldetuletused sinu aadressiraamatutest
+870| {name} – sünnipäev
+871| Kutse: {title}
+872| Kutsu inimesi
+873| E-posti aadressid, komadega eraldatud
+874| Loo kutse
+875| Kutse avaneb uues kirjas, mille sa üle vaatad ja saadad.
+876| Kutsutud:
+877| nõustus
+878| keeldus
+879| võib-olla
+880| veel vastust pole
+881| Pole e-posti aadressi, kuhu kutsuda.
+882| Thunderbirdis pole e-posti kontot, kust kutset saata.
+883| Seda kalendrit ei saanud lugeda.

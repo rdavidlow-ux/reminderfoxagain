@@ -862,3 +862,23 @@
 861| Åpne e-posten dette kom fra
 862| Dette elementet har ingen e-post å åpne.
 863| Fant ikke e-posten dette kom fra. Den kan være slettet, eller den ligger i en konto som ikke er satt opp i denne Thunderbird.
+864| Send med e-post…
+865| Inviter personer…
+866| Importer denne kalenderen…
+867| Legg til en påminnelse for denne e-posten etter sending
+868| Merk e-poster som har en påminnelse eller et listeelement
+869| Bursdagspåminnelser fra adressebøkene dine
+870| {name}s bursdag
+871| Invitasjon: {title}
+872| Inviter personer
+873| E-postadresser, atskilt med komma
+874| Lag invitasjon
+875| Invitasjonen åpnes i en ny melding som du sjekker og sender.
+876| Invitert:
+877| godtatt
+878| avslått
+879| kanskje
+880| ikke svart ennå
+881| Ingen e-postadresse å invitere.
+882| Thunderbird har ingen e-postkonto å sende invitasjonen fra.
+883| Kalenderen kunne ikke leses.

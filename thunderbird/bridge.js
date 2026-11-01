@@ -26,6 +26,12 @@
     if (!r || !r.ok) throw new Error((r && r.error) || 'Unknown error');
     return r.value;
   }
+  // the add-on's own channels: Thunderbird's compose and address-book APIs (background.js)
+  async function tb(ch, ...args) {
+    const r = await browser.runtime.sendMessage({ rf: 'tb', ch, args });
+    if (!r || !r.ok) throw new Error((r && r.error) || 'Unknown error');
+    return r.value;
+  }
 
   // ---------------------------------------------------------------- files the person picks or saves
   const ICS = '.ics,.ical,.ifb,.icalendar,text/calendar';
@@ -70,7 +76,7 @@
   // ---------------------------------------------------------------- events from the background page
   const listeners = {};
   const CHANNELS = ['data:changed', 'settings:changed', 'alarms:update', 'alarms:ring', 'ui:new', 'ui:edit', 'ui:quick', 'ui:suspend', 'slider:update',
-    'ui:import', 'ui:export', 'ui:settings', 'ui:goto', 'ui:side', 'ui:find'];
+    'ui:import', 'ui:export', 'ui:settings', 'ui:goto', 'ui:side', 'ui:find', 'ui:importFiles'];
   browser.runtime.onMessage.addListener((msg) => {
     if (!msg || msg.rf !== 'emit') return;
     if (msg.target && msg.target !== PAGE) return;
@@ -145,6 +151,11 @@
     openUrl: (u) => call('open:url', u),
     // the email a reminder or list item came from (Thunderbird only: the desktop has no openEmail, so it shows no button)
     openEmail: (messageId) => call('mail:open', messageId),
+    // Thunderbird only: a reminder or list item as an email, and an invitation to it (the desktop has neither)
+    sendByEmail: (uid) => tb('sendItem', uid),
+    invite: (uid) => (window.RFTB && window.RFTB.openInvite ? window.RFTB.openInvite(uid) : null),
+    inviteSend: (uid, emails) => tb('invite', uid, emails),
+    contacts: (text) => tb('contacts', text),
     setSettings: (patch) => call('settings:set', patch),
     importIcs: async () => {
       const t = await pickAndUpload({ accept: ICS, multiple: true });

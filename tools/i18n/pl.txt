@@ -862,3 +862,23 @@
 861| Otwórz e-mail, z którego to pochodzi
 862| Ten element nie ma e-maila do otwarcia.
 863| Nie znaleziono e-maila, z którego to pochodzi. Mógł zostać usunięty albo jest na koncie, które nie jest skonfigurowane w tym Thunderbirdzie.
+864| Wyślij e-mailem…
+865| Zaproś osoby…
+866| Importuj ten kalendarz…
+867| Po wysłaniu dodaj przypomnienie dla tego e-maila
+868| Oznaczaj etykietą e-maile, które mają przypomnienie lub element listy
+869| Przypomnienia o urodzinach z Twoich książek adresowych
+870| Urodziny: {name}
+871| Zaproszenie: {title}
+872| Zaproś osoby
+873| Adresy e-mail oddzielone przecinkami
+874| Utwórz zaproszenie
+875| Zaproszenie otworzy się w nowej wiadomości, którą sprawdzisz i wyślesz.
+876| Zaproszeni:
+877| akceptuje
+878| odrzuca
+879| może
+880| brak odpowiedzi
+881| Brak adresu e-mail do zaproszenia.
+882| Thunderbird nie ma konta e-mail, z którego można wysłać zaproszenie.
+883| Nie udało się odczytać tego kalendarza.

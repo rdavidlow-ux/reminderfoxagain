@@ -91,7 +91,10 @@ off. **0.9.1** reads dates that other programs write their own way, so importing
 
 On the `experimental-add-on` branch, ReminderFoxAgain also runs inside Thunderbird (128 or later) as an add-on, with
 the same features, in a Thunderbird tab with a toolbar button. A right-click on an email makes it a reminder or a list
-item, with the subject and the date, time and place the email mentions. It is not released yet. Build it with
+item, with the subject and the date, time and place the email mentions, and it can open that email again. It also
+does what only Thunderbird allows: a reminder after you send an email, a tag on emails that have a reminder, sending a
+reminder by email, birthdays from your address books, reminders from selected text and .ics links, and invitations
+with their replies. It is not released yet. Build it with
 `./build-thunderbird.sh`; how it works and what is still to be tried in a real Thunderbird are in
 [docs/thunderbird-addon.md](docs/thunderbird-addon.md).
 

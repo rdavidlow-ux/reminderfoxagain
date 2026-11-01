@@ -411,6 +411,9 @@ class Store {
       // the email it came from: the Message-ID ReminderFox kept, e.g. "<abc123@mail.example.com>" (the Thunderbird
       // add-on opens it; the desktop app only keeps it)
       messageId: str(c.getFirstPropertyValue(MESSAGEID_PROP)),
+      // invitations: who was invited and what they answered ({email, name, status}: accepted, declined, tentative, needs-action)
+      organizer: personOf(c.getFirstProperty('organizer')),
+      attendees: c.getAllProperties('attendee').map(personOf).filter(Boolean),
     };
     if (startT) {
       const sd = jsDate(startT);
@@ -1181,6 +1184,74 @@ class Store {
     return i;
   }
 
+  // ------------------------------------------------------------ invitations (iTIP by email)
+  // Makes the item an invitation from `organizer` {email, name} to `emails` (already invited people keep their answer),
+  // and returns the .ics to send (METHOD:REQUEST). SEQUENCE goes up each time, so calendars take the newest one.
+  invite(uid, organizer, emails) {
+    const it = this.items.get(String(uid));
+    if (!it) throw new Error('That item no longer exists.');
+    const c = it.master;
+    const mail = (e) => String(e || '').trim().replace(/^mailto:/i, '').toLowerCase();
+    const want = uniq([].concat(emails || []).map(mail).filter((e) => /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)));
+    if (!want.length) throw new Error('No email address to invite.');
+    const before = new Map(c.getAllProperties('attendee').map((p) => [mail(p.getFirstValue()), p]));
+    c.removeAllProperties('organizer');
+    const org = new ICAL.Property('organizer'); org.setValue(`mailto:${mail(organizer && organizer.email)}`);
+    if (organizer && organizer.name) org.setParameter('cn', organizer.name);
+    c.addProperty(org);
+    c.removeAllProperties('attendee');
+    for (const e of want) {
+      const old = before.get(e);
+      if (old) { c.addProperty(old); continue; }
+      const p = new ICAL.Property('attendee'); p.setValue(`mailto:${e}`);
+      p.setParameter('role', 'REQ-PARTICIPANT'); p.setParameter('partstat', 'NEEDS-ACTION'); p.setParameter('rsvp', 'TRUE');
+      c.addProperty(p);
+    }
+    const seq = parseInt(str(c.getFirstPropertyValue('sequence')), 10);
+    c.removeAllProperties('sequence'); c.addPropertyWithValue('sequence', Number.isFinite(seq) ? seq + 1 : 0);
+    c.removeAllProperties('dtstamp'); c.addPropertyWithValue('dtstamp', ICAL.Time.fromJSDate(new Date(this._now()), true));
+    // the copy that is sent: METHOD:REQUEST, and floating times (no time zone) as UTC, so every calendar shows the same moment
+    const cal = new ICAL.Component(ICAL.parse(this.export({ uids: [String(uid)] })));
+    cal.addPropertyWithValue('method', 'REQUEST');
+    for (const comp of [...cal.getAllSubcomponents('vevent'), ...cal.getAllSubcomponents('vtodo')]) {
+      for (const name of ['dtstart', 'dtend', 'due', 'recurrence-id']) {
+        for (const p of comp.getAllProperties(name)) {
+          const v = p.getFirstValue();
+          if (v && !v.isDate && !p.getParameter('tzid') && v.zone !== ICAL.Timezone.utcTimezone) {
+            p.setValue(ICAL.Time.fromJSDate(new Date(v.year, v.month - 1, v.day, v.hour, v.minute, v.second), true));
+          }
+        }
+      }
+    }
+    let text = cal.toString().replace(/\r?\n/g, '\r\n');
+    if (!text.endsWith('\r\n')) text += '\r\n';
+    return { text, attendees: want };
+  }
+  // Reads an invitation reply (METHOD:REPLY) and records the answer on the matching item. Returns what changed, or null
+  // when the reply isn't for one of our items or invited people.
+  applyReply(text) {
+    let comps = [];
+    try { const jc = ICAL.parse(String(text)); const root = new ICAL.Component(jc); if (String(root.getFirstPropertyValue('method') || '').toUpperCase() !== 'REPLY') return null; comps = [...root.getAllSubcomponents('vevent'), ...root.getAllSubcomponents('vtodo')]; } catch (e) { return null; }
+    const out = [];
+    for (const r of comps) {
+      const uid = str(r.getFirstPropertyValue('uid'));
+      const it = this.items.get(uid);
+      if (!it) continue;
+      for (const a of r.getAllProperties('attendee')) {
+        const email = String(a.getFirstValue() || '').replace(/^mailto:/i, '').toLowerCase();
+        const status = String(a.getParameter('partstat') || '').toUpperCase();
+        if (!['ACCEPTED', 'DECLINED', 'TENTATIVE'].includes(status)) continue;
+        const mine = it.master.getAllProperties('attendee').find((p) => String(p.getFirstValue() || '').replace(/^mailto:/i, '').toLowerCase() === email);
+        if (!mine) continue;
+        mine.setParameter('partstat', status);
+        const cn = a.getParameter('cn');
+        if (cn && !mine.getParameter('cn')) mine.setParameter('cn', cn);
+        out.push({ uid, summary: str(it.master.getFirstPropertyValue('summary')), email, name: str(mine.getParameter('cn')) || email, status: status.toLowerCase() });
+      }
+    }
+    return out.length ? out : null;
+  }
+
   // ------------------------------------------------------------ archive support
   // Takes an item out of this calendar, whole (master, exceptions and the time zones it uses), as plain jCal data.
   extract(uid) {
@@ -1350,6 +1421,13 @@ function addCategory(c, cat) {
 }
 function newUid() { return `${crypto.randomUUID()}@reminderfoxagain`; }
 function str(v) { return v == null ? '' : String(v); }
+// an ORGANIZER or ATTENDEE property as {email, name, status}
+function personOf(p) {
+  if (!p) return null;
+  const email = String(p.getFirstValue() || '').replace(/^mailto:/i, '').trim();
+  if (!email) return null;
+  return { email, name: str(p.getParameter('cn')), status: String(p.getParameter('partstat') || 'NEEDS-ACTION').toLowerCase() };
+}
 function uniq(a) { return [...new Set(a)]; }
 function byStart(x, y) { return (x.start == null) - (y.start == null) || (x.start || 0) - (y.start || 0) || String(x.summary).localeCompare(String(y.summary)); }
 function safeNext(it) { try { return it.next(); } catch (e) { return null; } }

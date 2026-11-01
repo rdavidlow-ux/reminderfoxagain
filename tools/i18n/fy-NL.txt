@@ -862,3 +862,23 @@
 861| De e-mail iepenje dêr't dit wei komt
 862| Dit item hat gjin e-mail om te iepenjen.
 863| De e-mail dêr't dit wei komt, is net fûn. Miskien is er fuortsmiten, of er stiet yn in account dat net yn dizze Thunderbird ynsteld is.
+864| Per e-mail ferstjoere…
+865| Minsken útnoegje…
+866| Dizze aginda ymportearje…
+867| Nei it ferstjoeren in herinnering foar dizze e-mail tafoegje
+868| E-mails mei in herinnering of listitem labelje
+869| Jierdeiherinneringen út dyn adresboeken
+870| Jierdei fan {name}
+871| Utnoeging: {title}
+872| Minsken útnoegje
+873| E-mailadressen, skieden troch komma's
+874| Utnoeging meitsje
+875| De útnoeging iepenet yn in nij berjocht dat do kontrolearrest en ferstjoerst.
+876| Utnoege:
+877| akseptearre
+878| ôfwiisd
+879| miskien
+880| noch gjin antwurd
+881| Gjin e-mailadres om út te noegjen.
+882| Thunderbird hat gjin e-mailaccount om de útnoeging fan te ferstjoeren.
+883| Dy aginda koe net lêzen wurde.

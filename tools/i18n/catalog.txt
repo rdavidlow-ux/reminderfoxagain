@@ -899,3 +899,24 @@ Open email
 Open the email this came from
 This item has no email to open.
 The email this came from was not found. It may have been deleted, or it is in an account that is not set up in this Thunderbird.
+# the Thunderbird add-on (experimental): Send++, tags, send by email, birthdays, selected text and .ics links, invitations
+Send by email…
+Invite people…
+Import this calendar…
+After sending, add a reminder for this email
+Tag emails that have a reminder or list item
+Birthday reminders from your address books
+{name}'s birthday
+Invitation: {title}
+Invite people
+Email addresses, separated by commas
+Create invitation
+The invitation opens in a new message for you to check and send.
+Invited:
+accepted
+declined
+maybe
+no answer yet
+No email address to invite.
+Thunderbird has no email account to send the invitation from.
+That calendar could not be read.

@@ -283,6 +283,10 @@ function createHost(ad) {
       { id: 'mail-reminder', title: tr('Add reminder…'), contexts: ['message_list'] },
       // … or a list item, the date and time found being its "due by"
       { id: 'mail-todo', title: tr('Add list item…'), contexts: ['message_list'] },
+      // text selected in an email, and an .ics link in an email (or on any page)
+      { id: 'sel-reminder', title: tr('Add reminder…'), contexts: ['selection'] },
+      { id: 'sel-todo', title: tr('Add list item…'), contexts: ['selection'] },
+      { id: 'link-ics', title: tr('Import this calendar…'), contexts: ['link'], targetUrlPatterns: ['*://*/*.ics', '*://*/*.ics?*', '*://*/*.ical', '*://*/*webcal*'] },
     ];
   }
   async function menuClick(id) {
@@ -592,6 +596,7 @@ function createHost(ad) {
     if (patch && 'soundFile' in patch && !patch.soundFile) soundCache = null;
     broadcast('settings:changed', state.settings);
     send('alarm', 'alarms:update', { alarms: currentAlarms, settings: state.settings });
+    if (ad.onSettings) { try { ad.onSettings(state.settings, patch || {}); } catch (e) { console.error('settings hook', e); } }
     if (patch && 'language' in patch) {
       T.set(async () => { await loadLanguage(); refreshTrayMenu(); lastTip = ''; updateTray(); broadcast('host:reload'); }, 50);
     }
@@ -741,6 +746,41 @@ function createHost(ad) {
     'backup:describe': (file) => describeBackup(file),
     'backup:restore': (file) => restoreBackup(file),
     'menu:click': (id) => menuClick(id),
+    'host:t': (text, vars) => tr(String(text || ''), vars || {}),
+    // ---- Thunderbird: emails, address books, invitations
+    // an item as an email: subject, a plain-text body and the item as .ics
+    'mail:item': (uid) => {
+      const d = store.get(uid);
+      if (!d) throw new Error('That item no longer exists.');
+      return { subject: d.summary, body: itemText(d), ics: store.export({ uids: [d.uid] }), file: `${fileName(d.summary)}.ics` };
+    },
+    // an invitation to `emails` from `organizer` {email, name}: the item records them; the email is for the person to send
+    'mail:invite': (uid, organizer, emails) => {
+      if (!organizer || !organizer.email) throw new Error('Thunderbird has no email account to send the invitation from.');
+      const r = store.invite(uid, organizer, emails);
+      changed();
+      const d = store.get(uid);
+      return { to: r.attendees, subject: tr('Invitation: {title}', { title: d.summary }), body: itemText(d), ics: r.text, file: 'invite.ics' };
+    },
+    // a reply to an invitation (the .ics of an incoming email): the answer is recorded and shown as a notification
+    'mail:reply': (text) => {
+      const r = store.applyReply(text);
+      if (!r) return null;
+      changed();
+      const word = { accepted: 'accepted', declined: 'declined', tentative: 'maybe' };
+      for (const x of r) { try { ad.notify(`${x.name}: ${tr(word[x.status] || x.status)}`, x.summary); } catch (e) { /* optional */ } }
+      return r;
+    },
+    // the emails that items came from: open ones (to tag) and done ones (to untag)
+    'mail:linked': () => {
+      const open = new Set(); const done = new Set();
+      for (const d of store.list()) if (d.messageId) (d.completed ? done : open).add(d.messageId);
+      for (const m of open) done.delete(m);
+      return { open: [...open], done: [...done] };
+    },
+    // birthdays from address-book contacts [{id, vcard}]: one yearly reminder per contact with a birthday, kept in step;
+    // with `all`, reminders of contacts no longer there (or without a birthday) are removed
+    'contacts:sync': (contacts, all) => syncBirthdays(contacts || [], !!all),
     // an email {subject, date (ms), body}: what the editor opens with (ui:new): its subject, date, time and place
     'mail:reminder': (mail, kind) => {
       const r = reminderFromEmail(mail, { now: now(), locale: dateLocale() });
@@ -757,6 +797,59 @@ function createHost(ad) {
     },
     'host:i18n': () => i18nInfo(),
   };
+  // ------------------------------------------------------------ helpers for the Thunderbird channels
+  function itemText(d) {
+    const loc = dateLocale();
+    const lines = [d.summary];
+    if (d.date) {
+      const [y, m, dd] = d.date.split('-').map(Number);
+      const [hh, mi] = (d.time || '0:0').split(':').map(Number);
+      const when = new Date(y, m - 1, dd, hh, mi);
+      lines.push(d.time && !d.allDay ? when.toLocaleString(loc, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
+        : when.toLocaleDateString(loc, { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }));
+    }
+    if (d.repeatText) lines.push(d.repeatText);
+    if (d.location) lines.push(d.location);
+    if (d.notes) lines.push('', d.notes);
+    return lines.join('\n');
+  }
+  const fileName = (s) => (String(s || 'reminder').replace(/[\\/:*?"<>|\r\n]+/g, ' ').trim().slice(0, 60) || 'reminder');
+  // a contact's name and birthday from its vCard (FN, else N; BDAY as 19600315, 1960-03-15, --0315 or --03-15)
+  function birthdayOf(vcard) {
+    const text = String(vcard || '').replace(/\r?\n[ \t]/g, '');
+    const val = (name) => { const m = new RegExp(`^${name}(?:;[^:\\r\\n]*)?:(.*)$`, 'im').exec(text); return m ? m[1].trim() : ''; };
+    const un = (v) => v.replace(/\\([,;\\])/g, '$1').replace(/\\n/gi, ' ').trim();
+    let name = un(val('FN'));
+    if (!name) { const n = val('N').split(';').map(un); name = [n[1], n[0]].filter(Boolean).join(' '); }
+    const b = val('BDAY');
+    let m = /^(\d{4})-?(\d{2})-?(\d{2})/.exec(b);
+    let y = null; let mo; let d;
+    if (m) { y = Number(m[1]); mo = Number(m[2]); d = Number(m[3]); } else if ((m = /^--(\d{2})-?(\d{2})/.exec(b))) { mo = Number(m[1]); d = Number(m[2]); } else return null;
+    if (!name || mo < 1 || mo > 12 || d < 1 || d > 31) return null;
+    if (y && (y < 1800 || y > new Date(now()).getFullYear())) y = null;
+    return { name, year: y, date: `${y || 2000}-${String(mo).padStart(2, '0')}-${String(d).padStart(2, '0')}` };
+  }
+  const contactUid = (id) => `contact-${String(id).replace(/[^\w.-]/g, '_')}@reminderfoxagain`;
+  function syncBirthdays(contacts, all) {
+    const out = { added: 0, updated: 0, removed: 0 };
+    const seen = new Set();
+    for (const c of contacts) {
+      const b = birthdayOf(c.vcard);
+      if (!b) continue;
+      const uid = contactUid(c.id);
+      seen.add(uid);
+      // the age shows in the title, as ReminderFox did: "Olivia Martin's birthday <1990>"
+      const summary = tr("{name}'s birthday", { name: b.name }) + (b.year ? ` <${b.year}>` : '');
+      const old = store.get(uid);
+      if (old && old.summary === summary && old.date === b.date) continue;
+      store.upsert({ ...(old || {}), uid, kind: 'event', summary, date: b.date, allDay: true, time: null, endDate: null, endTime: null,
+        repeat: { freq: 'YEARLY', interval: 1, end: 'never' }, categories: old ? old.categories : [tr('Birthday')], alarm: old ? old.alarm : null });
+      if (old) out.updated++; else out.added++;
+    }
+    if (all) for (const d of store.list()) if (/^contact-.*@reminderfoxagain$/.test(d.uid) && !seen.has(d.uid)) { store.remove(d.uid); out.removed++; }
+    if (out.added || out.updated || out.removed) changed();
+    return out;
+  }
   function newId() {
     const c = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : `${Math.random().toString(16).slice(2)}0000000`;
     return c.replace(/-/g, '').slice(0, 8);
@@ -782,6 +875,7 @@ function createHost(ad) {
     refreshTrayMenu();
     checkAlarms();
     timers.check = T.every(checkAlarms, 15000);
+    if (ad.onSettings) { try { ad.onSettings(state.settings, null); } catch (e) { console.error('settings hook', e); } }
     armSlider();
     T.set(() => showSlider(false), 8000);
   }

@@ -862,3 +862,23 @@
 861| Ouvrir le courriel d'où vient cet élément
 862| Cet élément n'a pas de courriel à ouvrir.
 863| Le courriel d'où vient cet élément est introuvable. Il a peut-être été supprimé, ou il se trouve dans un compte qui n'est pas configuré dans ce Thunderbird.
+864| Envoyer par courriel…
+865| Inviter des personnes…
+866| Importer ce calendrier…
+867| Après l'envoi, ajouter un rappel pour ce courriel
+868| Étiqueter les courriels qui ont un rappel ou un élément de liste
+869| Rappels d'anniversaire à partir de vos carnets d'adresses
+870| Anniversaire de {name}
+871| Invitation : {title}
+872| Inviter des personnes
+873| Adresses courriel, séparées par des virgules
+874| Créer l'invitation
+875| L'invitation s'ouvre dans un nouveau message que vous vérifiez et envoyez.
+876| Invités :
+877| accepté
+878| refusé
+879| peut-être
+880| pas encore de réponse
+881| Aucune adresse courriel à inviter.
+882| Thunderbird n'a aucun compte de courriel pour envoyer l'invitation.
+883| Ce calendrier n'a pas pu être lu.

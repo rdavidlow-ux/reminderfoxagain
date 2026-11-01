@@ -862,3 +862,23 @@
 861| Oscail an ríomhphost ar tháinig sé seo as
 862| Níl aon ríomhphost le hoscailt ag an mír seo.
 863| Níor aimsíodh an ríomhphost ar tháinig sé seo as. B'fhéidir gur scriosadh é, nó tá sé i gcuntas nach bhfuil socraithe sa Thunderbird seo.
+864| Seol trí ríomhphost…
+865| Tabhair cuireadh do dhaoine…
+866| Iompórtáil an féilire seo…
+867| Tar éis seolta, cuir meabhrúchán leis don ríomhphost seo
+868| Clibeáil ríomhphoist a bhfuil meabhrúchán nó mír liosta acu
+869| Meabhrúcháin breithlae ó do leabhair seoltaí
+870| Breithlá {name}
+871| Cuireadh: {title}
+872| Tabhair cuireadh do dhaoine
+873| Seoltaí ríomhphoist, scartha le camóga
+874| Cruthaigh cuireadh
+875| Osclaíonn an cuireadh i dteachtaireacht nua le go seiceálfaidh tú agus go seolfaidh tú í.
+876| Cuireadh ar:
+877| glactha
+878| diúltaithe
+879| b'fhéidir
+880| gan freagra fós
+881| Níl aon seoladh ríomhphoist le cuireadh a thabhairt dó.
+882| Níl aon chuntas ríomhphoist ag Thunderbird chun an cuireadh a sheoladh uaidh.
+883| Níorbh fhéidir an féilire sin a léamh.

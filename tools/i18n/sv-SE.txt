@@ -862,3 +862,23 @@
 861| Öppna e-postmeddelandet detta kom från
 862| Det här objektet har inget e-postmeddelande att öppna.
 863| E-postmeddelandet detta kom från hittades inte. Det kan ha tagits bort, eller så ligger det i ett konto som inte är konfigurerat i denna Thunderbird.
+864| Skicka med e-post…
+865| Bjud in personer…
+866| Importera den här kalendern…
+867| Lägg till en påminnelse för det här e-postmeddelandet efter att det skickats
+868| Tagga e-postmeddelanden som har en påminnelse eller ett listobjekt
+869| Födelsedagspåminnelser från dina adressböcker
+870| {name}s födelsedag
+871| Inbjudan: {title}
+872| Bjud in personer
+873| E-postadresser, åtskilda med kommatecken
+874| Skapa inbjudan
+875| Inbjudan öppnas i ett nytt meddelande som du kontrollerar och skickar.
+876| Inbjudna:
+877| accepterat
+878| avböjt
+879| kanske
+880| inget svar än
+881| Ingen e-postadress att bjuda in.
+882| Thunderbird har inget e-postkonto att skicka inbjudan från.
+883| Kalendern kunde inte läsas.

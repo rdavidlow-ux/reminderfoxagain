@@ -945,6 +945,8 @@
       (dto.kind === 'todo' && todoTab() && !S.search.trim() ? '<button data-ctx="up">Move up <span class="kbd">Alt+↑</span></button><button data-ctx="down">Move down <span class="kbd">Alt+↓</span></button>' : '') +
       (dto.location ? '<button data-ctx="map">Show on a map</button>' : '') +
       (dto.messageId && window.rf.openEmail ? '<button data-ctx="mail">Open email</button>' : '') +
+      (window.rf.sendByEmail ? '<button data-ctx="send">Send by email…</button>' : '') +
+      (window.rf.invite && dto.kind === 'event' ? '<button data-ctx="invite">Invite people…</button>' : '') +
       '<button data-ctx="dup">Duplicate <span class="kbd">Ctrl+D</span></button><hr>' +
       (repeatingEvent ? '<button data-ctx="delOne">Delete this occurrence</button><button data-ctx="delAll">Delete all occurrences…</button>' : '<button data-ctx="del">Delete…</button>');
     ctx.classList.remove('hidden');
@@ -970,6 +972,8 @@
     else if (a === 'up' || a === 'down') { selectTr(listView.querySelector(`tr[data-key="${CSS.escape(tr0Key())}"]`)); await moveSelected(a === 'up' ? -1 : 1); }
     else if (a === 'map') openMap(dto.location);
     else if (a === 'mail') await guard(window.rf.openEmail(dto.messageId));
+    else if (a === 'send') await guard(window.rf.sendByEmail(uid));
+    else if (a === 'invite') await guard(window.rf.invite(uid));
     else if (a === 'ruc') { if (await guard(window.rf.save({ ...dto, untilDone: !dto.untilDone }))) toast(dto.untilDone ? 'No longer reminds daily' : 'Reminds daily until completed'); }
     else if (a === 'tip') { if (await guard(window.rf.save({ ...dto, showInTooltip: !dto.showInTooltip }))) toast(dto.showInTooltip ? 'Removed from the tray tooltip' : 'Shown in the tray tooltip'); }
     else if (a === 'delOne') { if (await guard(window.rf.remove(uid, start))) toast('Occurrence deleted'); }
@@ -1091,6 +1095,11 @@
     $('edLocation').value = d.location || '';
     $('edUrl').value = d.url || '';
     $('edNotes').value = d.notes || '';
+    // the people invited (Thunderbird add-on): names as written, the answer in the person's language
+    const att = d.attendees || [];
+    $('edAttendeesRow').classList.toggle('hidden', !att.length);
+    const ANSWER = { accepted: 'accepted', declined: 'declined', tentative: 'maybe' };
+    $('edAttendees').innerHTML = att.map((p) => `<span class="att att-${esc(p.status)}"><span translate="no">${esc(p.name || p.email)}</span> (${esc(T(ANSWER[p.status] || 'no answer yet'))})</span>`).join(', ');
     $('edDone').checked = !!d.completed;
     $('edRuc').checked = !!d.untilDone;
     $('edTip').checked = !!d.showInTooltip;
@@ -1771,6 +1780,12 @@
   window.rf.on('ui:quick', () => { if (!anyDialogOpen()) FX('openQuick'); });
   // the macOS application menu (0.9.0)
   window.rf.on('ui:import', () => { if (!anyDialogOpen()) doImport(); });
+  // a calendar file from a link (Thunderbird add-on): the usual import dialog, already holding the file
+  window.rf.on('ui:importFiles', async (p) => {
+    if (anyDialogOpen() || !p || !p.tokens) return;
+    const r = await FX('askImport', p.tokens);
+    if (r) await message('Import complete', esc(importSummary(r)));
+  });
   window.rf.on('ui:export', () => { if (!anyDialogOpen()) doExport(); });
   window.rf.on('ui:settings', (p) => { if (anyDialogOpen()) return; openSettings(); if (p && p.panel) FX('showPanel', p.panel); });
   window.rf.on('ui:goto', () => { if (!anyDialogOpen()) FX('openGoTo'); });

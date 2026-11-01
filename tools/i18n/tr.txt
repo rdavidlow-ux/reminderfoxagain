@@ -862,3 +862,23 @@
 861| Bunun geldiği e-postayı aç
 862| Bu öğenin açılacak bir e-postası yok.
 863| Bunun geldiği e-posta bulunamadı. Silinmiş olabilir ya da bu Thunderbird'de kurulu olmayan bir hesapta olabilir.
+864| E-postayla gönder…
+865| Kişileri davet et…
+866| Bu takvimi içe aktar…
+867| Gönderdikten sonra bu e-posta için bir anımsatıcı ekle
+868| Anımsatıcısı veya liste öğesi olan e-postaları etiketle
+869| Adres defterlerinizden doğum günü anımsatıcıları
+870| {name} doğum günü
+871| Davet: {title}
+872| Kişileri davet et
+873| Virgülle ayrılmış e-posta adresleri
+874| Davet oluştur
+875| Davet, kontrol edip göndermeniz için yeni bir iletide açılır.
+876| Davet edilenler:
+877| kabul etti
+878| reddetti
+879| belki
+880| henüz yanıt yok
+881| Davet edilecek e-posta adresi yok.
+882| Thunderbird'de daveti gönderecek bir e-posta hesabı yok.
+883| Bu takvim okunamadı.

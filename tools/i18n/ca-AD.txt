@@ -862,3 +862,23 @@
 861| Obre el correu d'on prové
 862| Aquest element no té cap correu per obrir.
 863| No s'ha trobat el correu d'on prové. Potser s'ha suprimit, o és en un compte que no està configurat en aquest Thunderbird.
+864| Envia per correu…
+865| Convida persones…
+866| Importa aquest calendari…
+867| Després d'enviar, afegeix un recordatori per a aquest correu
+868| Etiqueta els correus que tenen un recordatori o un element de llista
+869| Recordatoris d'aniversari de les teves llibretes d'adreces
+870| Aniversari de {name}
+871| Invitació: {title}
+872| Convida persones
+873| Adreces de correu, separades per comes
+874| Crea la invitació
+875| La invitació s'obre en un missatge nou perquè el revisis i l'enviïs.
+876| Convidats:
+877| acceptat
+878| rebutjat
+879| potser
+880| encara sense resposta
+881| No hi ha cap adreça de correu per convidar.
+882| Thunderbird no té cap compte de correu des d'on enviar la invitació.
+883| No s'ha pogut llegir aquest calendari.

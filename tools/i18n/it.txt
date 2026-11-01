@@ -862,3 +862,23 @@
 861| Apri l'email da cui proviene
 862| Questo elemento non ha un'email da aprire.
 863| L'email da cui proviene non è stata trovata. Forse è stata eliminata, oppure si trova in un account non configurato in questo Thunderbird.
+864| Invia per email…
+865| Invita persone…
+866| Importa questo calendario…
+867| Dopo l'invio, aggiungi un promemoria per questa email
+868| Etichetta le email che hanno un promemoria o un elemento di elenco
+869| Promemoria di compleanno dalle tue rubriche
+870| Compleanno di {name}
+871| Invito: {title}
+872| Invita persone
+873| Indirizzi email, separati da virgole
+874| Crea invito
+875| L'invito si apre in un nuovo messaggio da controllare e inviare.
+876| Invitati:
+877| accettato
+878| rifiutato
+879| forse
+880| nessuna risposta ancora
+881| Nessun indirizzo email da invitare.
+882| Thunderbird non ha un account email da cui inviare l'invito.
+883| Impossibile leggere quel calendario.

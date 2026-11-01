@@ -862,3 +862,23 @@
 861| Deschide e-mailul din care provine
 862| Acest element nu are niciun e-mail de deschis.
 863| E-mailul din care provine nu a fost găsit. Poate a fost șters sau se află într-un cont care nu este configurat în acest Thunderbird.
+864| Trimite prin e-mail…
+865| Invită persoane…
+866| Importă acest calendar…
+867| După trimitere, adaugă un memento pentru acest e-mail
+868| Etichetează e-mailurile care au un memento sau un element de listă
+869| Mementouri de zi de naștere din agendele tale
+870| Ziua de naștere a lui {name}
+871| Invitație: {title}
+872| Invită persoane
+873| Adrese de e-mail, separate prin virgule
+874| Creează invitația
+875| Invitația se deschide într-un mesaj nou, pe care îl verifici și îl trimiți.
+876| Invitați:
+877| acceptat
+878| refuzat
+879| poate
+880| încă niciun răspuns
+881| Nicio adresă de e-mail de invitat.
+882| Thunderbird nu are niciun cont de e-mail din care să trimită invitația.
+883| Calendarul nu a putut fi citit.

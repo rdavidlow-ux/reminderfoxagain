@@ -862,3 +862,23 @@
 861| Abrir el correo del que procede
 862| Este elemento no tiene ningún correo que abrir.
 863| No se encontró el correo del que procede. Puede que se haya eliminado o que esté en una cuenta que no está configurada en este Thunderbird.
+864| Enviar por correo…
+865| Invitar a personas…
+866| Importar este calendario…
+867| Después de enviar, añadir un recordatorio para este correo
+868| Etiquetar los correos que tienen un recordatorio o un elemento de lista
+869| Recordatorios de cumpleaños de tus libretas de direcciones
+870| Cumpleaños de {name}
+871| Invitación: {title}
+872| Invitar a personas
+873| Direcciones de correo, separadas por comas
+874| Crear invitación
+875| La invitación se abre en un mensaje nuevo para que lo revises y lo envíes.
+876| Invitados:
+877| aceptado
+878| rechazado
+879| quizás
+880| sin respuesta todavía
+881| No hay ninguna dirección de correo a la que invitar.
+882| Thunderbird no tiene ninguna cuenta de correo desde la que enviar la invitación.
+883| No se pudo leer ese calendario.

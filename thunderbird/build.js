@@ -94,8 +94,15 @@ const manifest = {
   icons,
   browser_action: { default_title: 'ReminderFoxAgain', default_icon: { 16: icons[16], 32: icons[32] } },
   background: { scripts: ['host.js', 'tb/background.js'] },
-  // messagesRead: "Add reminder…" on an email reads its subject and text (nothing leaves the computer)
-  permissions: ['storage', 'unlimitedStorage', 'notifications', 'menus', 'tabs', 'idle', 'messagesRead'],
+  // "Remind me" in the compose window: after the email is sent, a reminder for it (Send++)
+  compose_action: { default_title: 'Remind me', default_icon: { 16: icons[16], 32: icons[32] } },
+  // messagesRead: "Add reminder…" on an email reads its subject and text, and new mail is read for replies to invitations;
+  // messagesTags/messagesUpdate: the ReminderFoxAgain tag; compose: "Send by email…" and invitations open a new message
+  // (never sent without the person); addressBooks: birthdays and address suggestions; accountsRead: who an invitation is
+  // from. Nothing leaves the computer except the messages the person sends.
+  permissions: ['storage', 'unlimitedStorage', 'notifications', 'menus', 'tabs', 'idle', 'messagesRead', 'messagesTags', 'messagesUpdate', 'compose', 'addressBooks', 'accountsRead'],
+  // reading an .ics link in an email: asked for that one site when the person chooses "Import this calendar…"
+  optional_permissions: ['*://*/*'],
   // Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q… for itself, so the app's shortcuts are Thunderbird shortcuts with Alt+Shift
   // and the same letter (people can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts).
   commands: Object.fromEntries(Object.entries(require('./shortcuts.json')).map(([name, c]) => [name, { suggested_key: { default: c.key }, description: c.description }])),

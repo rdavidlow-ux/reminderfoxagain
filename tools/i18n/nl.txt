@@ -862,3 +862,23 @@
 861| De e-mail openen waar dit vandaan komt
 862| Dit item heeft geen e-mail om te openen.
 863| De e-mail waar dit vandaan komt, is niet gevonden. Misschien is hij verwijderd, of hij staat in een account dat niet in deze Thunderbird is ingesteld.
+864| Per e-mail versturen…
+865| Mensen uitnodigen…
+866| Deze agenda importeren…
+867| Na het versturen een herinnering voor deze e-mail toevoegen
+868| E-mails met een herinnering of lijstitem labelen
+869| Verjaardagsherinneringen uit je adresboeken
+870| Verjaardag van {name}
+871| Uitnodiging: {title}
+872| Mensen uitnodigen
+873| E-mailadressen, gescheiden door komma's
+874| Uitnodiging maken
+875| De uitnodiging opent in een nieuw bericht dat je controleert en verstuurt.
+876| Uitgenodigd:
+877| geaccepteerd
+878| afgewezen
+879| misschien
+880| nog geen antwoord
+881| Geen e-mailadres om uit te nodigen.
+882| Thunderbird heeft geen e-mailaccount om de uitnodiging vanaf te versturen.
+883| Die agenda kon niet worden gelezen.

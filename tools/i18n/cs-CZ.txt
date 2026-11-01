@@ -862,3 +862,23 @@
 861| Otevřít e-mail, ze kterého to pochází
 862| Tato položka nemá žádný e-mail k otevření.
 863| E-mail, ze kterého to pochází, nebyl nalezen. Možná byl smazán, nebo je v účtu, který v tomto Thunderbirdu není nastaven.
+864| Odeslat e-mailem…
+865| Pozvat lidi…
+866| Importovat tento kalendář…
+867| Po odeslání přidat připomínku k tomuto e-mailu
+868| Označit štítkem e-maily, které mají připomínku nebo položku seznamu
+869| Připomínky narozenin z vašich adresářů
+870| Narozeniny: {name}
+871| Pozvánka: {title}
+872| Pozvat lidi
+873| E-mailové adresy oddělené čárkami
+874| Vytvořit pozvánku
+875| Pozvánka se otevře v nové zprávě, kterou zkontrolujete a odešlete.
+876| Pozváni:
+877| přijato
+878| odmítnuto
+879| možná
+880| zatím bez odpovědi
+881| Žádná e-mailová adresa k pozvání.
+882| Thunderbird nemá žádný e-mailový účet, ze kterého by pozvánku odeslal.
+883| Tento kalendář nelze přečíst.

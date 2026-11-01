@@ -862,3 +862,23 @@
 861| Abrir o e-mail de onde isto veio
 862| Este item não tem nenhum e-mail para abrir.
 863| O e-mail de onde isto veio não foi encontrado. Pode ter sido eliminado, ou está numa conta que não está configurada neste Thunderbird.
+864| Enviar por e-mail…
+865| Convidar pessoas…
+866| Importar este calendário…
+867| Depois de enviar, adicionar um lembrete para este e-mail
+868| Etiquetar os e-mails que têm um lembrete ou item de lista
+869| Lembretes de aniversário dos seus livros de endereços
+870| Aniversário de {name}
+871| Convite: {title}
+872| Convidar pessoas
+873| Endereços de e-mail, separados por vírgulas
+874| Criar convite
+875| O convite abre numa nova mensagem para verificar e enviar.
+876| Convidados:
+877| aceite
+878| recusado
+879| talvez
+880| ainda sem resposta
+881| Nenhum endereço de e-mail para convidar.
+882| O Thunderbird não tem nenhuma conta de e-mail para enviar o convite.
+883| Não foi possível ler esse calendário.

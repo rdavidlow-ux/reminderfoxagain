@@ -20,6 +20,21 @@ Every ReminderFoxAgain release, newest first. Release files are on the
 - **Open the email it came from:** a reminder or list item made from an email keeps a link to it (ReminderFox's own
   `X-REMINDERFOX-MESSAGEID`); ✉ Open email in its editor, or Open email in its right-click menu, opens it in a
   Thunderbird tab. Reminders made from email in the original ReminderFox add-on open the same way.
+- **What only Thunderbird makes possible** (from the original ReminderFox add-on):
+  - **Remind me after sending (Send++):** the Remind me button in the message you are writing; after the email is
+    sent, the editor opens for a reminder linked to it, with its subject and any date it mentions.
+  - **Tags on emails:** an email with an open reminder or list item gets the orange ReminderFoxAgain tag, and loses
+    it when the item is done or deleted (Settings → General; on at first).
+  - **Send by email…** in a reminder's or list item's right-click menu: a new message with it as text and as an .ics
+    file, for you to check and send.
+  - **Birthdays from your address books** (Settings → General; off at first): a yearly reminder for each contact with
+    a birthday ("Ana Lima's birthday <1990>", ReminderFox's way of keeping the year), kept up to date as contacts change.
+  - **Selected text and calendar links in an email:** select text in an email and right-click → Add reminder… or Add
+    list item… (its first line is the description, its date, time and place are used, and it links to the email);
+    right-click a link to an .ics file → Import this calendar… (it asks once to read that site).
+  - **Invitations:** Invite people… on a reminder: the addresses you type (suggested from your address books) get an
+    invitation from your Thunderbird account, in a new message for you to send. The reminder records who was invited,
+    and the replies are read as they arrive: the editor shows who accepted, declined, said maybe or hasn't answered.
 - Tried in Thunderbird 153.6.0esr on Windows 11: it works, the alarm sound plays without a click, and the alarm
   window sits at the bottom right.
 
