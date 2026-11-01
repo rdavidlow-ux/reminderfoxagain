@@ -133,14 +133,48 @@
     let n = 0;
     for (const it of items) {
       const id = it.type === 'separator' ? `sep-${n++}` : `rf-${it.id}`;
-      browser.menus.create({ id, type: it.type === 'separator' ? 'separator' : 'normal', title: it.title || '', contexts: ['browser_action'] });
+      const icons = it.contexts ? { 16: 'assets/tb/icon-16.png', 32: 'assets/tb/icon-32.png' } : undefined;
+      browser.menus.create({ id, type: it.type === 'separator' ? 'separator' : 'normal', title: it.title || '', contexts: it.contexts || ['browser_action'], ...(icons ? { icons } : {}) });
       menuIds.push(id);
     }
   }
   browser.menus.onClicked.addListener((info) => {
     const id = String(info.menuItemId || '');
-    if (id.startsWith('rf-')) host.menuClick(id.slice(3));
+    if (id === 'rf-mail-reminder') reminderFromEmail(info);
+    else if (id.startsWith('rf-')) host.menuClick(id.slice(3));
   });
+
+  // ---------------------------------------------------------------- "Add reminder…" on an email
+  // The right-clicked email's subject becomes the description; the first date ahead in the subject, else in the text,
+  // becomes the reminder's date (with the time next to it, if any). The person checks it in the editor and saves.
+  async function reminderFromEmail(info) {
+    const sel = info.selectedMessages && info.selectedMessages.messages;
+    const msg = sel && sel.length ? sel[0] : null;
+    if (!msg) return;
+    let body = '';
+    try { body = textOf(await browser.messages.getFull(msg.id)); } catch (e) { /* the subject alone */ }
+    const date = msg.date instanceof Date ? msg.date.getTime() : Number(new Date(msg.date)) || Date.now();
+    const p = await host.call('mail:reminder', [{ subject: msg.subject || '', date, body }]);
+    await showMain();
+    emit('ui:new', p, 'main');
+  }
+  // the readable text of a message: its plain-text parts, else its HTML parts without the markup
+  function textOf(part) {
+    const plain = []; const html = [];
+    (function walk(p) {
+      if (!p) return;
+      const type = String(p.contentType || '').toLowerCase();
+      if (p.body && type === 'text/plain') plain.push(p.body);
+      else if (p.body && type === 'text/html') html.push(p.body);
+      for (const c of p.parts || []) walk(c);
+    }(part));
+    if (plain.length) return plain.join('\n');
+    const doc = new DOMParser().parseFromString(html.join('\n'), 'text/html');
+    for (const el of doc.querySelectorAll('script, style')) el.remove();
+    for (const el of doc.querySelectorAll('br, p, div, li, tr, h1, h2, h3, blockquote')) el.append('\n');
+    for (const q of doc.querySelectorAll('blockquote[type="cite"]')) q.remove(); // quoted replies
+    return doc.body ? doc.body.textContent : '';
+  }
   ACTION.onClicked.addListener(() => showMain());
 
   // ---------------------------------------------------------------- notifications, links, language

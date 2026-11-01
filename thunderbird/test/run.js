@@ -64,7 +64,12 @@ function serve() {
   const origin = `http://127.0.0.1:${server.address().port}`;
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ viewport: { width: SIZE[0], height: SIZE[1] } });
-  await ctx.addInitScript({ content: `window.__seed = ${JSON.stringify({ storage, os: 'linux', uiLanguage: 'en-CA' })};\n${fs.readFileSync(path.join(__dirname, 'mock-browser.js'), 'utf8')}` });
+  // an email for "Add reminder…": an HTML message whose text names a date ten days ahead at 8:00 am
+  const ahead = new Date(Date.now() + 10 * 86400000);
+  const aheadKey = `${ahead.getFullYear()}-${String(ahead.getMonth() + 1).padStart(2, '0')}-${String(ahead.getDate()).padStart(2, '0')}`;
+  const aheadWords = ahead.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+  const messages = { 42: { contentType: 'multipart/alternative', parts: [{ contentType: 'text/html', body: `<html><body><p>Hi Leo,</p><p>Your car service at the dealer is booked for <b>${aheadWords}</b> at 8:00 am.</p><blockquote type="cite">On an earlier day you wrote: January 1, 2030</blockquote></body></html>` }] } };
+  await ctx.addInitScript({ content: `window.__seed = ${JSON.stringify({ storage, os: 'linux', uiLanguage: 'en-CA', messages })};\n${fs.readFileSync(path.join(__dirname, 'mock-browser.js'), 'utf8')}` });
   const pages = new Map(); // tab or window id → page
   const errors = [];
   const watch = (page, label) => {
@@ -98,7 +103,7 @@ function serve() {
   const waitFor = async (name, ms = 8000) => { for (let t = 0; t < ms; t += 100) { const p = find(name); if (p) return p; await sleep(100); } return null; };
 
   // the toolbar button opens the main tab
-  const menu = await bg.evaluate(() => window.__mock.state.menus.filter((m) => m.type !== 'separator').map((m) => m.title).join(' | '));
+  const menu = await bg.evaluate(() => window.__mock.state.menus.filter((m) => m.type !== 'separator' && m.contexts.includes('browser_action')).map((m) => m.title).join(' | '));
   if (!LANG) line('toolbar menu', menu, "Open ReminderFoxAgain | Add reminder… | Add list item… | Quick alarm… | Suspend alarms… | Show today's reminders");
   await bg.evaluate(() => window.__mock.clickButton());
   const main = await waitFor('index');
@@ -169,6 +174,18 @@ function serve() {
     line('Alt+Shift+B shows or hides the calendar panel', (await side()) !== before, true);
     await bg.evaluate(() => window.__mock.command('calendar-panel'));
     await sleep(400);
+    // right-click on an email → Add reminder…
+    const mailItem = await bg.evaluate(() => window.__mock.state.menus.find((m) => m.id === 'rf-mail-reminder'));
+    line('"Add reminder…" is on the email menu', mailItem ? `${mailItem.title} [${mailItem.contexts}]` : 'missing', 'Add reminder… [message_list]');
+    await bg.evaluate(() => window.__mock.clickMenu('rf-mail-reminder', { selectedMessages: { messages: [{ id: 42, subject: 'Fwd: Car service at the dealer', author: 'Service <service@example.com>', date: new Date().toISOString() }] } }));
+    await sleep(1200);
+    const ed = await main.evaluate(() => ({ open: document.getElementById('edSummary').offsetParent !== null, summary: document.getElementById('edSummary').value, date: document.getElementById('edDate').value, time: document.getElementById('edTime').value, allDay: document.getElementById('edAllDay').checked }));
+    line('the email opens the editor', ed.open, true);
+    line('its subject is the description', ed.summary, 'Car service at the dealer');
+    line('the date found in the email', ed.date, aheadKey);
+    line('the time next to it', `${ed.time}${ed.allDay ? ' (all day)' : ''}`, '08:00');
+    await main.evaluate(() => document.getElementById('edCancel').click());
+    await sleep(300);
     const alarm = await waitFor('alarm', 6000);
     line('the alarm window opened for the quick alarm', !!alarm, true);
     if (alarm) {

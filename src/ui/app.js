@@ -1035,6 +1035,10 @@
         alarm: da != null && da !== '' ? { minutes: -540 } : null, timezone: null, completed: false,
         list: kind === 'todo' ? (curList() || DEFAULT_LIST) : null,
       };
+      // filled in by the host, e.g. the Thunderbird add-on's "Add reminder…" on an email: its subject and the time found in it
+      const pf = opts.prefill || {};
+      if (typeof pf.summary === 'string') dto.summary = pf.summary;
+      if (typeof pf.time === 'string' && /^\d{2}:\d{2}$/.test(pf.time)) { dto.time = pf.time; dto.allDay = false; }
       E.isNew = true;
     }
     E.dto = dto;
@@ -1765,7 +1769,7 @@
   window.rf.on('ui:side', () => toggleSide());
   window.rf.on('ui:find', () => { if (!anyDialogOpen()) { $('search').focus(); $('search').select(); } });
   window.rf.on('ui:suspend', () => { if (!anyDialogOpen()) FX('openSuspend'); });
-  window.rf.on('ui:new', (p) => { if (ed.open) ed.close(); openEditor({ kind: (p && p.kind) || 'event' }); });
+  window.rf.on('ui:new', (p) => { if (ed.open) ed.close(); openEditor({ kind: (p && p.kind) || 'event', date: (p && /^\d{4}-\d{2}-\d{2}$/.test(p.date || '') && p.date) || undefined, prefill: p && p.prefill }); });
   window.rf.on('ui:edit', (p) => { if (ed.open) ed.close(); if (p && p.uid) openEditor({ uid: p.uid, start: p.start }); });
 
   // midnight

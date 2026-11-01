@@ -24,6 +24,7 @@
 // }
 const { Store, dayKey, timeKey, setPhrases } = require('../core/store');
 const I18N = require('../ui/i18n.js');
+const { reminderFromEmail } = require('./maildate');
 
 const APP_NAME = 'ReminderFoxAgain';
 const HOUR = 3600000;
@@ -278,6 +279,8 @@ function createHost(ad) {
       { type: 'separator' },
       sus ? { id: 'resume', title: tr('Resume alarms') } : { id: 'suspend', title: tr('Suspend alarms…') },
       { id: 'slider', title: tr("Show today's reminders") },
+      // right-click on an email (the Thunderbird add-on): a new reminder with its subject and the date it mentions
+      { id: 'mail-reminder', title: tr('Add reminder…'), contexts: ['message_list'] },
     ];
   }
   async function menuClick(id) {
@@ -736,6 +739,11 @@ function createHost(ad) {
     'backup:describe': (file) => describeBackup(file),
     'backup:restore': (file) => restoreBackup(file),
     'menu:click': (id) => menuClick(id),
+    // an email {subject, date (ms), body}: what the editor opens with (ui:new)
+    'mail:reminder': (mail) => {
+      const r = reminderFromEmail(mail, { now: now(), locale: dateLocale() });
+      return { kind: 'event', date: r.date, prefill: { summary: r.summary, time: r.time }, found: r.found };
+    },
     'host:i18n': () => i18nInfo(),
   };
   function newId() {

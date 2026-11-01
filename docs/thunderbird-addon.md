@@ -2,7 +2,7 @@
 
 Oct 31, 2026 · David
 
-ReminderFoxAgain runs inside Thunderbird 128 or later as an add-on, with the same features as the desktop app: reminders, to-do lists, the Month view, alarms, quick alarms, the pop-up, saved filters, categories, themes, 34 languages, import and export, and daily backups. It is on the experimental-add-on branch and not released. It works in Thunderbird 153.6.0esr on Windows 11; the desktop app is unchanged by it.
+ReminderFoxAgain runs inside Thunderbird 128 or later as an add-on, with the same features as the desktop app: reminders, to-do lists, the Month view, alarms, quick alarms, the pop-up, saved filters, categories, themes, 34 languages, import and export, and daily backups. A right-click on an email also makes it a reminder. It is on the experimental-add-on branch and not released. It works in Thunderbird 153.6.0esr on Windows 11; the desktop app is unchanged by it.
 
 ## How it is built
 
@@ -45,7 +45,7 @@ Every desktop feature is there; the ones tied to the operating system work the T
 | Links (maps, web pages in notes)                                         | Open in the system browser.                                                                                                                                                                                                                                     |
 | After sleep or unlock: check alarms                                      | Checked 1 second after the computer is used again.                                                                                                                                                                                                              |
 
-Permissions: storage, unlimited storage, notifications, menus, tabs, idle, and keyboard shortcuts. The add-on uses no network and collects nothing. It needs Thunderbird 128 or later (Manifest V2, with a background page that keeps running, so alarms keep their timers as in the desktop app).
+Permissions: storage, unlimited storage, notifications, menus, tabs, idle, keyboard shortcuts, and reading email messages (only for Add reminder… on an email). The add-on uses no network and collects nothing. It needs Thunderbird 128 or later (Manifest V2, with a background page that keeps running, so alarms keep their timers as in the desktop app).
 
 ## Keyboard shortcuts
 
@@ -67,6 +67,21 @@ Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q and the other Ctrl keys for itself, so 
 
 To change one: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+N)”) show the shortcuts as they are set, in every language; a shortcut that was removed is left out of its tooltip.
 
+## Reminders from email
+
+Right-click an email in the message list and choose **Add reminder…** (with the fox icon). The reminder editor opens with the email's subject as the description and the date the email mentions as the reminder's date, with the time next to it if there is one. Check it, change anything, and save.
+
+| What                  | How                                                                                                                                                                                                                                                                                        |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description           | The subject, without “Re:”, “Fwd:”, “AW:” and the like.                                                                                                                                                                                                                                    |
+| Date                  | The first date that is today or later, from the subject, else from the email's text. Dates already past and dates more than three years away are passed over. No date found: the editor opens on today, as for a new reminder.                                                             |
+| Time                  | A time written next to the date: “at 2:30 pm”, “2pm”, “14:30”, “9 a.m.”, “noon”, “15h30”, “14:00 Uhr”. With a time the reminder is timed; without one it is all day.                                                                                                                       |
+| Dates it understands  | 2026-11-03 · November 3, 2026 · Nov 3 · Tuesday, Nov 3rd · 3 November 2026 · 3. November · 03/11/2026, in the order your language writes it · today, tonight, tomorrow · on Friday, this Friday, next Friday. Month and weekday names are understood in English and in the app's language. |
+| Words like “tomorrow” | Read from the day the email was sent, so “tomorrow” in last week's email is not today's tomorrow. A year left out means the next time that date comes after the email was sent.                                                                                                            |
+| What is left out      | Quoted replies (lines starting with “\>”, and everything after “On … wrote:” or “Original message”), so an old date in the conversation below isn't picked.                                                                                                                                |
+
+The add-on reads the email only when you choose Add reminder…, on your computer; nothing is sent anywhere. Reading it needs Thunderbird's “read your email messages” permission, which Thunderbird asks for when the add-on is installed or updated. The code is src/host/maildate.js (tested in test/maildate.test.js).
+
 ## The data
 
 The add-on keeps its own copy of your reminders in the Thunderbird profile, in the same iCalendar format as the desktop app; the two don't share a file. To move from one to the other, export in one and import in the other (Settings → Data).
@@ -76,19 +91,19 @@ Everything the desktop import keeps is kept here too: the ReminderFox add-on's X
 ## Building, installing, testing
 
 ./build-thunderbird.sh \# unit tests, then dist/release-thunderbird/ReminderFoxAgain-\<ver\>-thunderbird.xpi  
-thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last line: 606 checks, 0 problem(s)
+thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last line: 611 checks, 0 problem(s)
 
 - **Install:** Add-ons and Themes → ⚙ → Install Add-on From File… → the .xpi. Thunderbird asks to confirm because the add-on isn't signed. To try it without installing: Tools → Developer Tools → Debug Add-ons → Load Temporary Add-on… → dist/thunderbird/manifest.json (removed when Thunderbird closes).
 
 - **Deterministic:** two builds give the same .xpi, byte for byte.
 
-- **Unit tests:** test/host-core.test.js (10 tests, part of npm test, 46 in all, in 7 time zones) runs the host core with an in-memory adapter and a clock the test moves: saving and reloading, daily backups, import with a picked prefs.js, an unreadable file kept aside, alarms (due, snooze, dismiss), quick alarms and suspend, backup and restore, export, the toolbar menu, a chosen language and a chosen sound.
+- **Unit tests:** test/host-core.test.js (11 tests) and test/maildate.test.js (7 tests, the dates found in emails), part of npm test (54 in all, in 7 time zones). The host-core tests run the core with an in-memory adapter and a clock the test moves: saving and reloading, daily backups, import with a picked prefs.js, an unreadable file kept aside, alarms (due, snooze, dismiss), quick alarms and suspend, backup and restore, export, the toolbar menu, a chosen language, a chosen sound, and the reminder made from an email.
 
-- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, the pop-up and a quick alarm). Desktop scripts that import test files by their path get those files uploaded the add-on's way. One desktop check is different on purpose (the hidden “Import from ReminderFox…”) and is reported as such.
+- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, Add reminder… on an HTML email, the pop-up and a quick alarm). Desktop scripts that import test files by their path get those files uploaded the add-on's way. One desktop check is different on purpose (the hidden “Import from ReminderFox…”) and is reported as such.
 
 - **Desktop app:** its own checks still pass (tools/e2e.sh, 658 checks), since the add-on shares its pages.
 
-- **Lint:** Mozilla's web-ext lint gives no errors. It warns that windows.openDefaultBrowser is not a Firefox API (it is Thunderbird's) and that the pages set innerHTML (the UI escapes every value it puts in).
+- **Lint:** Mozilla's web-ext lint gives no errors. It warns that windows.openDefaultBrowser and messages.getFull, and the messagesRead permission, are not Firefox's (they are Thunderbird's) and that the pages set innerHTML (the UI escapes every value it puts in).
 
 ## Tried in a real Thunderbird
 
@@ -115,9 +130,11 @@ Still to try in a real Thunderbird:
 
 - [ ] Storage size with years of backups (the unlimited-storage permission should cover it).
 
+- [ ] Add reminder… on real emails: the dates it finds in plain-text and HTML messages, and in other languages.
+
 Ideas for later:
 
-- **Reminders from email:** a message-list menu item “Add reminder…” that opens the editor with the subject and a link back to the message, and later the email scanning in the plans.
+- **Email scanning:** suggest reminders from new mail on its own (invitations, bookings, due dates), as in the plans, building on the date finder that Add reminder… uses. A link back from the reminder to its email could come with it.
 
 - **Sharing data with the desktop app:** the same file through a synced folder, or Thunderbird's native messaging to the app (which the antivirus discussion argued against for now).
 

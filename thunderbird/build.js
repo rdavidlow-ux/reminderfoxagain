@@ -22,7 +22,8 @@ fs.rmSync(OUT, { recursive: true, force: true });
 // ------------------------------------------------------------ host.js: the core, the store, ical.js and i18n in one file
 // A small CommonJS loader: each module gets module/exports/require; require maps the few names the modules use.
 const MODULES = {
-  core: { file: 'src/host/core.js', req: { '../core/store': 'store', '../ui/i18n.js': 'i18n' } },
+  core: { file: 'src/host/core.js', req: { '../core/store': 'store', '../ui/i18n.js': 'i18n', './maildate': 'maildate' } },
+  maildate: { file: 'src/host/maildate.js', req: {} },
   store: { file: 'src/core/store.js', req: { crypto: 'crypto', 'ical.js': 'ical' } },
   i18n: { file: 'src/ui/i18n.js', req: {} },
   ical: { file: 'node_modules/ical.js/dist/ical.es5.cjs', req: {} },
@@ -93,7 +94,8 @@ const manifest = {
   icons,
   browser_action: { default_title: 'ReminderFoxAgain', default_icon: { 16: icons[16], 32: icons[32] } },
   background: { scripts: ['host.js', 'tb/background.js'] },
-  permissions: ['storage', 'unlimitedStorage', 'notifications', 'menus', 'tabs', 'idle'],
+  // messagesRead: "Add reminder…" on an email reads its subject and text (nothing leaves the computer)
+  permissions: ['storage', 'unlimitedStorage', 'notifications', 'menus', 'tabs', 'idle', 'messagesRead'],
   // Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q… for itself, so the app's shortcuts are Thunderbird shortcuts with Alt+Shift
   // and the same letter (people can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts).
   commands: Object.fromEntries(Object.entries(require('./shortcuts.json')).map(([name, c]) => [name, { suggested_key: { default: c.key }, description: c.description }])),

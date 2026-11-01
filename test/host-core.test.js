@@ -226,3 +226,16 @@ test('host 10. a chosen sound is kept, typed by its extension, and handed to the
   assert.equal(s.soundName, 'bell.ogg');
   assert.equal(await tb.call('sound:data'), 'data:audio/ogg;base64,YWJj');
 });
+
+test('host 11. "Add reminder…" on an email: the menu item, and what the editor opens with', async () => {
+  const tb = fakeThunderbird(); // today is Tue Oct 20, 2026, 9:00
+  await tb.host.start();
+  const item = tb.log.menu.find((i) => i.id === 'mail-reminder');
+  assert.equal(item.title, 'Add reminder…');
+  assert.deepEqual(item.contexts, ['message_list']);
+  const p = await tb.call('mail:reminder', { subject: 'Re: Dentist — Dr. Patel', date: tb.now(), body: 'Your appointment is on Thursday, October 22 at 2:30 pm.\n\nOn Mon, Oct 19, 2026 at 9:00 AM, the office wrote:\n> old text' });
+  assert.deepEqual(p, { kind: 'event', date: '2026-10-22', prefill: { summary: 'Dentist — Dr. Patel', time: '14:30' }, found: 'Thursday, October 22' });
+  const none = await tb.call('mail:reminder', { subject: 'Hello', date: tb.now(), body: 'No date.' });
+  assert.equal(none.date, null);
+  assert.equal(none.prefill.summary, 'Hello');
+});

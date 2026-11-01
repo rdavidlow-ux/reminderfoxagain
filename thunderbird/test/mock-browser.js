@@ -45,7 +45,7 @@
     opened: (kind, id, url) => { if (kind === 'tab') state.tabs.set(id, { id, url, windowId: 1 }); },
     closed: (kind, id) => { if (kind === 'tab') { state.tabs.delete(id); onRemovedTab._fire(id); } else { state.windows.delete(id); onRemovedWin._fire(id); } },
     clickButton: () => onClicked._fire({}),
-    clickMenu: (id) => onMenu._fire({ menuItemId: id }),
+    clickMenu: (id, info) => onMenu._fire({ menuItemId: id, ...(info || {}) }),
     command: (name) => onCommand._fire(name),
   };
   const seed = window.__seed || {};
@@ -92,6 +92,8 @@
     },
     notifications: { create: (id, o) => { state.notes.push(o); return ok(id); }, onClicked: listeners('notifications.onClicked') },
     idle: { onStateChanged: listeners('idle.onStateChanged') },
+    // the emails the runner offers (seed.messages: id → the MessagePart tree messages.getFull returns)
+    messages: { getFull: async (id) => { const m = (seed.messages || {})[id]; if (!m) throw new Error('no message'); return m; } },
     // the shortcuts the manifest suggests (seed.shortcuts can change one, as a person can in Thunderbird)
     commands: {
       getAll: async () => {
