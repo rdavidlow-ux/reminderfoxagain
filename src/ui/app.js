@@ -283,7 +283,7 @@
   async function renderMain(reason) {
     if (S.tab === 'reminders') await renderReminders(reason);
     else if (todoTab()) await renderTodos(reason);
-    else await renderMonth();
+    else await renderMonth({ jump: reason === 'enter' && !MV.from });
   }
 
   // ---------------------------------------------------------------- reminders list
@@ -696,41 +696,94 @@
     const tm = r.allDay ? '' : `<span class="tm">${esc(fmt.time(r.start))}</span>`;
     return `<div class="${cls.join(' ')}" data-uid="${esc(r.uid)}" data-start="${occOf(r)}" title="${esc((r.allDay ? '' : fmt.time(r.start) + ' ') + r.summary + (r.carried ? ` (overdue since ${fmt.date(r.overdueSince)})` : ''))}">${tm}${esc(pre + r.summary)}</div>`;
   }
-  async function renderMonth() {
-    const first = new Date(S.monthView);
-    $('mTitle').textContent = fmt.month(first);
-    const ws = Number(S.settings.weekStart) || 0;
-    const gs = gridStart(first);
-    $('monthHead').innerHTML = Array.from({ length: 7 }, (_, i) => `<div>${esc(fmt.weekday(addDays(gs, i)))}</div>`).join('');
-    const ge = addDays(gs, 42);
+  // The Month view scrolls: weeks run on above and below the month in focus, so past and coming months are a scroll
+  // away. A month's worth of weeks fills the view, the month in focus is the one in the title (the others are dimmed),
+  // more weeks load as you near either end, and ‹ › Today, Go to… and Page Up / Page Down move a month at a time.
+  const DAY = 864e5;
+  const MV = { from: null, weeks: 0, step: 0, lockUntil: 0, busy: false, focus: '' };
+  const monthAdd = (d, n) => new Date(d.getFullYear(), d.getMonth() + n, 1);
+  const monKey = (d) => dayKey(d).slice(0, 7);
+  const fMon = () => new Intl.DateTimeFormat(RF.LOCALE, { month: 'short' });
+  const MAX_WEEKS = 160; // about three years at once; the far end is dropped as more loads
+  // opts.jump: show S.monthView at the top (smoothly when it is already there); opts.extend: 'up' | 'down'
+  async function renderMonth(opts = {}) {
+    const grid = $('monthGrid');
+    const focus = new Date(S.monthView);
+    const gs0 = gridStart(focus);
+    $('monthHead').innerHTML = Array.from({ length: 7 }, (_, i) => `<div>${esc(fmt.weekday(addDays(gs0, i)))}</div>`).join('');
+    const rowH = Math.max(76, Math.floor((grid.clientHeight - 5) / 6) - 1);
+    const step = rowH + 1;
+    const oldFrom = MV.from; const oldStep = MV.step;
+    // what is at the top now, to keep it there when weeks are added or the data changes
+    const anchor = oldFrom && oldStep && !opts.jump ? { day: addDays(oldFrom, Math.floor(grid.scrollTop / oldStep) * 7), off: grid.scrollTop % oldStep } : null;
+    let from = MV.from; let weeks = MV.weeks;
+    const covers = (d) => from && d >= from && d < addDays(from, (weeks - 6) * 7);
+    if (opts.extend === 'up') { from = gridStart(monthAdd(from, -3)); weeks += Math.round((oldFrom - from) / (7 * DAY)); }
+    else if (opts.extend === 'down') weeks += 13;
+    else if (!from || (opts.jump && !covers(gs0)) || Number(S.settings.weekStart || 0) !== from.getDay()) { from = gridStart(monthAdd(focus, -3)); weeks = Math.round((gridStart(monthAdd(focus, 5)) - from) / (7 * DAY)); }
+    if (weeks > MAX_WEEKS) {
+      if (opts.extend === 'up') weeks = MAX_WEEKS;
+      else { const cut = weeks - MAX_WEEKS; from = addDays(from, cut * 7); weeks = MAX_WEEKS; }
+    }
+    const to = addDays(from, weeks * 7);
     const q = S.search.trim().toLowerCase();
     // Show completed (the Month toolbar, off at first): ticked reminders and list items
-    const rows = (await window.rf.range(gs.getTime(), ge.getTime(), { includeTodos: S.mTodos })).filter((r) => (S.mShowDone || !r.completed) && matches(r, q));
-    const map = spreadByDay(rows, gs, ge);
-    const grid = $('monthGrid');
+    const rows = (await window.rf.range(from.getTime(), to.getTime(), { includeTodos: S.mTodos })).filter((r) => (S.mShowDone || !r.completed) && matches(r, q));
+    const map = spreadByDay(rows, from, to);
+    // how many lines fit in a day: its number (about 20 px with the padding), then 19 px a line plus a 2 px gap
+    const fit = Math.max(1, Math.floor((rowH - 28) / 21));
+    const mon = fMon();
+    const fk = monKey(focus);
     let html = '';
-    for (let i = 0; i < 42; i++) {
-      const d = addDays(gs, i);
+    for (let i = 0; i < weeks * 7; i++) {
+      const d = addDays(from, i);
       const k = dayKey(d);
       const cls = ['cell'];
-      if (d.getMonth() !== first.getMonth()) cls.push('out');
+      if (k.slice(0, 7) !== fk) cls.push('out');
+      if (d.getDate() === 1) cls.push('m1');
       if (k === S.today) cls.push('today');
       if (k === S.selDay) cls.push('picked');
-      html += `<div class="${cls.join(' ')}" data-day="${k}"><span class="num">${d.getDate()}</span></div>`;
-    }
-    grid.innerHTML = html;
-    void ws;
-    const cell = grid.firstElementChild;
-    const h = cell ? cell.clientHeight : 100;
-    const fit = Math.max(1, Math.floor((h - 26) / 20));
-    for (const c of grid.children) {
-      const list = map.get(c.dataset.day) || [];
-      let shown = list;
-      let more = 0;
+      const list = map.get(k) || [];
+      let shown = list; let more = 0;
       if (list.length > fit) { shown = list.slice(0, Math.max(0, fit - 1)); more = list.length - shown.length; }
-      c.insertAdjacentHTML('beforeend', shown.map(chipHtml).join('') + (more ? `<div class="more" data-day="${c.dataset.day}">${esc(T('+{n} more', { n: more }))}</div>` : ''));
+      const num = d.getDate() === 1 ? `${esc(mon.format(d).replace(/\.$/, ''))} 1` : d.getDate();
+      html += `<div class="${cls.join(' ')}" data-day="${k}"><span class="num">${num}</span>${shown.map(chipHtml).join('')}${more ? `<div class="more" data-day="${k}">${esc(T('+{n} more', { n: more }))}</div>` : ''}</div>`;
     }
+    grid.style.setProperty('--wk-h', `${rowH}px`);
+    grid.innerHTML = html;
+    MV.from = from; MV.weeks = weeks; MV.step = step; MV.focus = fk;
+    $('mTitle').textContent = fmt.month(focus);
+    const rowOf = (d) => Math.round((startOfDay(d) - from) / (7 * DAY));
+    const target = rowOf(gs0) * step;
+    if (opts.jump) {
+      // smoothly only within the weeks already shown (a new stretch of weeks is jumped to)
+      const smooth = opts.smooth && oldFrom && from.getTime() === oldFrom.getTime() && Math.abs(grid.scrollTop - target) < step * 30;
+      MV.lockUntil = Date.now() + (smooth ? 900 : 200);
+      grid.scrollTo({ top: target, behavior: smooth ? 'smooth' : 'auto' });
+    } else if (anchor) grid.scrollTop = rowOf(anchor.day) * step + Math.min(anchor.off, step - 1);
+    else { MV.lockUntil = Date.now() + 200; grid.scrollTop = target; }
   }
+  // which month is in focus: the one of the second week from the top (with a month at the top, all of it is that month)
+  function monthFocus() {
+    const grid = $('monthGrid');
+    if (!MV.from || !MV.step || S.tab !== 'month') return;
+    const row = Math.floor((grid.scrollTop + MV.step * 1.5) / MV.step);
+    const d = addDays(MV.from, row * 7);
+    if (Date.now() >= MV.lockUntil && monKey(d) !== MV.focus) {
+      S.monthView = new Date(d.getFullYear(), d.getMonth(), 1);
+      MV.focus = monKey(d);
+      $('mTitle').textContent = fmt.month(S.monthView);
+      for (const c of grid.children) c.classList.toggle('out', c.dataset.day.slice(0, 7) !== MV.focus);
+    }
+    // near either end: load three more months there
+    if (MV.busy || Date.now() < MV.lockUntil) return;
+    const ext = grid.scrollTop < MV.step * 4 ? 'up' : grid.scrollTop + grid.clientHeight > grid.scrollHeight - MV.step * 4 ? 'down' : null;
+    if (ext) { MV.busy = true; renderMonth({ extend: ext }).finally(() => { MV.busy = false; }); }
+  }
+  let monthTick = 0;
+  $('monthGrid').addEventListener('scroll', () => { if (!monthTick) monthTick = requestAnimationFrame(() => { monthTick = 0; monthFocus(); }); }, { passive: true });
+  $('monthGrid').addEventListener('scrollend', () => { MV.lockUntil = 0; monthFocus(); });
+  function moveMonth(n) { S.monthView = monthAdd(S.monthView, n); return renderMonth({ jump: true, smooth: true }); }
 
   // ---------------------------------------------------------------- side panel
   function monthHtml(m, rowsMap, first, last) {
@@ -814,7 +867,7 @@
       const d = parseKey(k);
       S.monthView = new Date(d.getFullYear(), d.getMonth(), 1);
       await selectDay(k);
-      await renderMonth();
+      await renderMonth({ jump: true, smooth: true });
     } else { S.calMonth = new Date(parseKey(k).getFullYear(), parseKey(k).getMonth(), 1); await showDayInList(k); }
   }
   async function toggleSide() {
@@ -1595,7 +1648,7 @@
   $('stStart').addEventListener('change', () => setSetting({ startWithWindows: $('stStart').checked }));
   $('stTray').addEventListener('change', () => setSetting({ closeToTray: $('stTray').checked }));
   $('stSound').addEventListener('change', () => { if ($('stSound').checked) FX('testSound'); setSetting({ alarmSound: $('stSound').checked }); });
-  $('stWeek').addEventListener('change', async () => { await setSetting({ weekStart: Number($('stWeek').value) }); await Promise.all([renderSide(), S.tab === 'month' ? renderMonth() : null]); });
+  $('stWeek').addEventListener('change', async () => { await setSetting({ weekStart: Number($('stWeek').value) }); await Promise.all([renderSide(), S.tab === 'month' ? renderMonth({ jump: true }) : null]); });
   $('stAlarm').addEventListener('change', () => setSetting({ defaultAlarm: $('stAlarm').value === '' ? null : Number($('stAlarm').value) }));
   // the Theme list and swatches: the six built-in themes, then your own (0.8.1), with New, Edit and Delete beside them
   function fillThemes() {
@@ -1682,9 +1735,9 @@
   $('mDone').addEventListener('change', () => { S.mShowDone = $('mDone').checked; renderMonth(); });
   // Show completed keeps the rows you were looking at in place (rows come and go above and below them)
   $('remDone').addEventListener('change', async () => { await setSetting({ hideCompleted: !$('remDone').checked }); renderReminders('anchor'); });
-  $('mPrev').addEventListener('click', () => { S.monthView = new Date(S.monthView.getFullYear(), S.monthView.getMonth() - 1, 1); renderMonth(); });
-  $('mNext').addEventListener('click', () => { S.monthView = new Date(S.monthView.getFullYear(), S.monthView.getMonth() + 1, 1); renderMonth(); });
-  $('mToday').addEventListener('click', () => { const t = todayStart(); S.monthView = new Date(t.getFullYear(), t.getMonth(), 1); selectDay(S.today); renderMonth(); });
+  $('mPrev').addEventListener('click', () => moveMonth(-1));
+  $('mNext').addEventListener('click', () => moveMonth(1));
+  $('mToday').addEventListener('click', () => { const t = todayStart(); S.monthView = new Date(t.getFullYear(), t.getMonth(), 1); selectDay(S.today); renderMonth({ jump: true, smooth: true }); });
   let searchTimer = null;
   let wasSearching = false;
   $('search').addEventListener('input', () => {
@@ -1745,6 +1798,10 @@
       e.preventDefault();
       await moveSelected(e.key === 'ArrowUp' ? -1 : 1);
       return;
+    }
+    // the Month view: Page Up / Page Down move a month (the arrow keys and the wheel scroll it)
+    if (S.tab === 'month' && !ctrl && !e.altKey && (e.key === 'PageUp' || e.key === 'PageDown') && !anyDialogOpen() && !typing(e.target)) {
+      e.preventDefault(); moveMonth(e.key === 'PageUp' ? -1 : 1); return;
     }
     if (anyDialogOpen() || typing(e.target) || S.tab === 'month') return;
     const trs = [...listView.querySelectorAll('tbody tr[data-key]')];

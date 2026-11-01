@@ -34,6 +34,7 @@ run lists-views basic lists-views.js
 run lists basic lists.js
 run alarms-data basic alarms-data.js
 run alarms-view basic alarms-view.js
+run month-scroll basic month-scroll.js
 run import-month basic import-month.js
 run view-options basic view-options.js
 run place-themes bills place-themes.js

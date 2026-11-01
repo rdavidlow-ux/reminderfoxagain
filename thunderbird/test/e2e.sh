@@ -22,6 +22,7 @@ run lists-views.js
 run lists.js
 run alarms-data.js
 run alarms-view.js
+run month-scroll.js
 run import-month.js
 run view-options.js
 run --sample bills place-themes.js

@@ -3,7 +3,13 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
-## Next — the Alarms view (branch `experimental-add-on`, not released)
+## Next — the Alarms view and a scrolling Month view (branch `experimental-add-on`, not released)
+
+- **The Month view scrolls**, in the desktop app and the Thunderbird add-on: the weeks run on above and below the
+  month, so past and coming months are a scroll (or a swipe) away instead of a click per month. A month's worth of
+  weeks still fills the view; the month in focus is in the title and the others are dimmed; each month's 1st is
+  labelled ("Dec 1"); more weeks load as you near either end. ‹ › and Page Up / Page Down move a month at a time,
+  Today and Go to… jump there, and a change to your reminders keeps the view where it is.
 
 - **One place for every alarm**, in the desktop app and the Thunderbird add-on: ⏰ Alarms in the status bar, Alarms…
   in the tray (or toolbar button) menu and the macOS View menu, or Ctrl+L (⌘L on a Mac, Alt+Shift+L in Thunderbird).

@@ -188,7 +188,11 @@ table.list { width: 100%; border-collapse: separate; border-spacing: 0; backgrou
 .month { flex: 1; display: grid; grid-template-rows: auto 1fr; padding: 0 14px 14px; min-height: 0; }
 .month-head { display: grid; grid-template-columns: repeat(7, 1fr); }
 .month-head div { padding: 6px 8px; font-size: 12px; font-weight: 600; color: var(--ink-3); text-transform: uppercase; letter-spacing: .04em; }
-.month-grid { display: grid; grid-template-columns: repeat(7, 1fr); grid-auto-rows: 1fr; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--line); gap: 1px; min-height: 0; }
+.month-grid { display: grid; grid-template-columns: repeat(7, 1fr); grid-auto-rows: var(--wk-h, 96px); border: 1px solid var(--line); border-radius: 10px; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; scroll-snap-type: y proximity; background: var(--line); gap: 1px; min-height: 0; }
+.month-grid > .cell:nth-child(7n+1) { scroll-snap-align: start; }
+.cell.m1:not(.today) .num { color: var(--fox-ink); }
+.cell.m1 { box-shadow: inset 3px 0 0 var(--fox-soft); }
+.cell.m1.picked { box-shadow: inset 0 0 0 2px var(--fox); }
 .cell { background: var(--surface); padding: 4px 5px; min-height: 0; overflow: hidden; display: flex; flex-direction: column; gap: 2px; cursor: default; }
 .cell.out { background: var(--surface-2); }
 .cell.out .num { color: var(--ink-3); }
