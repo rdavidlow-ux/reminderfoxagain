@@ -4,11 +4,11 @@
 3| ⚙ Inställningar
 4| Inställningar
 5| Sök
-6| Sök (Ctrl+F)
+6| Sök (Alt+Shift+K)
 7| Sök bland påminnelser och uppgifter
-8| Ny påminnelse (Ctrl+N)
-9| Ny post i listan som visas (Ctrl+T)
-10| Snabblarm: ett engångslarm om några minuter (Ctrl+Q)
+8| Ny påminnelse (Alt+Shift+A)
+9| Ny post i listan som visas (Alt+Shift+O)
+10| Snabblarm: ett engångslarm om några minuter (Alt+Shift+Q)
 11| ⏰ Snabblarm
 12| Påminnelser
 13| Månad
@@ -21,7 +21,7 @@
 20| Uppgifter
 21| Avslutade eller pausade
 22| Visa eller dölj kalenderpanelen
-23| Visa eller dölj kalenderpanelen (Ctrl+B)
+23| Visa eller dölj kalenderpanelen (Alt+Shift+B)
 24| Larm på
 25| Larm pausade
 26| Larm pausade till {time}
@@ -97,7 +97,7 @@
 96| Kopiera till…
 97| Flytta den till en annan lista
 98| Lägg en kopia i en annan lista
-99| En exakt kopia i den här listan (Ctrl+D)
+99| En exakt kopia i den här listan (Alt+Shift+D)
 100| Ta bort (Del)
 101| Vald post
 102| Vald post:
@@ -136,7 +136,7 @@
 135| Föregående månad
 136| Nästa månad
 137| Gå till idag
-138| Gå till ett datum (Ctrl+G)
+138| Gå till ett datum (Alt+Shift+J)
 139| Gå till datum
 140| Gå till…
 141| Gå
@@ -529,13 +529,13 @@
 528| Dölj klara påminnelser
 529| Import och export
 530| Importera en .ics-fil…
-531| Lägg till posterna från en .ics-fil (Ctrl+I)
+531| Lägg till posterna från en .ics-fil (Alt+Shift+I)
 532| Importera från ReminderFox…
 533| Hitta reminderfox.ics som ReminderFox-tillägget sparade i din Firefox- eller Thunderbird-profil
 534| Exportera till .ics…
 535| Exportera till .ics
 536| Exportera…
-537| Spara en .ics-fil (Ctrl+E)
+537| Spara en .ics-fil (Alt+Shift+X)
 538| Import läggs till det du har; poster som redan finns uppdateras bara om kopian i filen är nyare. Exporter öppnas i Outlook, Google Kalender, Thunderbird, Apple Kalender och det ursprungliga ReminderFox-tillägget.
 539| Säkerhetskopior
 540| Säkerhetskopiera nu
@@ -889,7 +889,7 @@
 888| Välj filen…
 889| Alarm…
 890| ⏰ Alarm
-891| Alla alarm som ringer, är snoozade eller ska ringa (Ctrl+L)
+891| Alla alarm som ringer, är snoozade eller ska ringa (Alt+Shift+L)
 892| Nästa 24 timmar
 893| Nästa 7 dagar
 894| Nästa 30 dagar

@@ -5,6 +5,12 @@ Every ReminderFoxAgain release, newest first. Release files are on the
 
 ## Next — calendar subscriptions, item colours, the Alarms view and a scrolling Month view (branch `experimental-add-on`, not released)
 
+- **The desktop app's shortcuts are now the Thunderbird add-on's**, so both work the same: Alt+Shift+A new reminder,
+  Alt+Shift+O new list item, Alt+Shift+Q quick alarm, Alt+Shift+K search, Alt+Shift+J go to a date, Alt+Shift+B
+  calendar panel, Alt+Shift+I import, Alt+Shift+X export, Alt+Shift+D duplicate, Alt+Shift+S save, Alt+Shift+L
+  alarms (on a Mac ⌥⇧ and the letter, in the menus too; ⌘, Settings and ⌘Q quit as before). The tooltips show them
+  in every language. The Ctrl shortcuts are gone.
+
 - **The editor for a list item is titled "New list item" / "Edit list item"** (it said "New to-do"), in the desktop
   app and the add-on.
 - The add-on shows its author as David Low in Thunderbird's Add-ons Manager.
@@ -33,7 +39,7 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   Today and Go to… jump there, and a change to your reminders keeps the view where it is.
 
 - **One place for every alarm**, in the desktop app and the Thunderbird add-on: ⏰ Alarms in the status bar, Alarms…
-  in the tray (or toolbar button) menu and the macOS View menu, or Ctrl+L (⌘L on a Mac, Alt+Shift+L in Thunderbird).
+  in the tray (or toolbar button) menu and the macOS View menu, or Alt+Shift+L.
   It lists what is ringing, what is snoozed and until when, and every alarm still to ring in the next 24 hours, 7 days,
   30 days or 12 months, in the order they ring, with quick alarms among them.
 - **What you can do there:** snooze a ringing alarm (for your default snooze time) or dismiss it; make a snoozed one

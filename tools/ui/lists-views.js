@@ -137,8 +137,8 @@ try {
   $('sideToggle').click(); await sleep(400);
   check('panel hidden', getComputedStyle(document.querySelector('aside.side')).display, 'none');
   check('saved', (await window.rf.meta()).settings.sidePanel, false);
-  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'b', ctrlKey: true, bubbles: true })); await sleep(400);
-  check('Ctrl+B shows it again', document.body.classList.contains('no-side'), false);
+  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'B', code: 'KeyB', altKey: true, shiftKey: true, bubbles: true })); await sleep(400);
+  check('Alt+Shift+B shows it again', document.body.classList.contains('no-side'), false);
   // overdue mark: "Renew passport" (2 days ago) is still open
   await window.__rf.selectDay(R.S.today); await sleep(300);
   const pass = (await window.rf.all()).find((d) => d.summary === 'Renew passport');

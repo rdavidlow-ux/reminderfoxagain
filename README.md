@@ -96,7 +96,7 @@ does what only Thunderbird allows: a reminder after you send an email, a tag on 
 reminder by email, birthdays from your address books, reminders from selected text and .ics links, and invitations
 with their replies. It is not released yet. The branch also has, in both the app and the add-on, calendar subscriptions (holidays,
 sports or a team calendar from a web address, shown per view), item colours in your own themes, an Alarms view
-(Ctrl+L: every alarm ringing, snoozed or still to ring, with snooze, dismiss, skip and cancel) and a Month view that
+(Alt+Shift+L: every alarm ringing, snoozed or still to ring, with snooze, dismiss, skip and cancel) and a Month view that
 scrolls through past and coming weeks. Build it with
 `./build-thunderbird.sh`; how it works and what is still to be tried in a real Thunderbird are in
 [docs/thunderbird-addon.md](docs/thunderbird-addon.md).

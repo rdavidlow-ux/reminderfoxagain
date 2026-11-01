@@ -4,11 +4,11 @@
 3| ⚙ Cài đặt
 4| Cài đặt
 5| Tìm kiếm
-6| Tìm kiếm (Ctrl+F)
+6| Tìm kiếm (Alt+Shift+K)
 7| Tìm trong lời nhắc và việc cần làm
-8| Lời nhắc mới (Ctrl+N)
-9| Mục mới trong danh sách đang hiển thị (Ctrl+T)
-10| Báo thức nhanh: một báo thức dùng một lần sau vài phút (Ctrl+Q)
+8| Lời nhắc mới (Alt+Shift+A)
+9| Mục mới trong danh sách đang hiển thị (Alt+Shift+O)
+10| Báo thức nhanh: một báo thức dùng một lần sau vài phút (Alt+Shift+Q)
 11| ⏰ Báo thức nhanh
 12| Lời nhắc
 13| Tháng
@@ -21,7 +21,7 @@
 20| Việc cần làm
 21| Đã kết thúc hoặc tạm dừng
 22| Hiện hoặc ẩn bảng lịch
-23| Hiện hoặc ẩn bảng lịch (Ctrl+B)
+23| Hiện hoặc ẩn bảng lịch (Alt+Shift+B)
 24| Báo thức đang bật
 25| Báo thức tạm dừng
 26| Báo thức tạm dừng đến {time}
@@ -97,7 +97,7 @@
 96| Sao chép sang…
 97| Chuyển sang danh sách khác
 98| Đặt một bản sao vào danh sách khác
-99| Một bản sao y hệt trong danh sách này (Ctrl+D)
+99| Một bản sao y hệt trong danh sách này (Alt+Shift+D)
 100| Xóa (Del)
 101| Mục đã chọn
 102| Mục đã chọn:
@@ -136,7 +136,7 @@
 135| Tháng trước
 136| Tháng sau
 137| Về hôm nay
-138| Đi đến một ngày (Ctrl+G)
+138| Đi đến một ngày (Alt+Shift+J)
 139| Đi đến ngày
 140| Đi đến…
 141| Đi
@@ -529,13 +529,13 @@
 528| Ẩn lời nhắc đã xong
 529| Nhập và xuất
 530| Nhập tệp .ics…
-531| Thêm các mục từ một tệp .ics (Ctrl+I)
+531| Thêm các mục từ một tệp .ics (Alt+Shift+I)
 532| Nhập từ ReminderFox…
 533| Tìm tệp reminderfox.ics mà tiện ích ReminderFox lưu trong hồ sơ Firefox hoặc Thunderbird của bạn
 534| Xuất ra .ics…
 535| Xuất ra .ics
 536| Xuất…
-537| Lưu một tệp .ics (Ctrl+E)
+537| Lưu một tệp .ics (Alt+Shift+X)
 538| Khi nhập, dữ liệu được thêm vào những gì bạn có; các mục đã có chỉ được cập nhật nếu bản trong tệp mới hơn. Tệp xuất mở được trong Outlook, Google Lịch, Thunderbird, Lịch Apple và tiện ích ReminderFox gốc.
 539| Bản sao lưu
 540| Sao lưu ngay
@@ -889,7 +889,7 @@
 888| Chọn tệp…
 889| Báo thức…
 890| ⏰ Báo thức
-891| Mọi báo thức đang reo, đang tạm hoãn hoặc sắp reo (Ctrl+L)
+891| Mọi báo thức đang reo, đang tạm hoãn hoặc sắp reo (Alt+Shift+L)
 892| 24 giờ tới
 893| 7 ngày tới
 894| 30 ngày tới

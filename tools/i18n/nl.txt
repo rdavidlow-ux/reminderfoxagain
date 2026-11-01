@@ -4,11 +4,11 @@
 3| ⚙ Instellingen
 4| Instellingen
 5| Zoeken
-6| Zoeken (Ctrl+F)
+6| Zoeken (Alt+Shift+K)
 7| Herinneringen en taken doorzoeken
-8| Nieuwe herinnering (Ctrl+N)
-9| Nieuw item in de getoonde lijst (Ctrl+T)
-10| Snel alarm: een eenmalig alarm over een paar minuten (Ctrl+Q)
+8| Nieuwe herinnering (Alt+Shift+A)
+9| Nieuw item in de getoonde lijst (Alt+Shift+O)
+10| Snel alarm: een eenmalig alarm over een paar minuten (Alt+Shift+Q)
 11| ⏰ Snel alarm
 12| Herinneringen
 13| Maand
@@ -21,7 +21,7 @@
 20| Taken
 21| Beëindigd of opgeschort
 22| Kalenderpaneel tonen of verbergen
-23| Kalenderpaneel tonen of verbergen (Ctrl+B)
+23| Kalenderpaneel tonen of verbergen (Alt+Shift+B)
 24| Alarmen aan
 25| Alarmen opgeschort
 26| Alarmen opgeschort tot {time}
@@ -97,7 +97,7 @@
 96| Kopiëren naar…
 97| Naar een andere lijst verplaatsen
 98| Een kopie op een andere lijst zetten
-99| Een exacte kopie in deze lijst (Ctrl+D)
+99| Een exacte kopie in deze lijst (Alt+Shift+D)
 100| Verwijderen (Del)
 101| Gekozen item
 102| Gekozen item:
@@ -136,7 +136,7 @@
 135| Vorige maand
 136| Volgende maand
 137| Naar vandaag
-138| Naar een datum gaan (Ctrl+G)
+138| Naar een datum gaan (Alt+Shift+J)
 139| Naar datum gaan
 140| Ga naar…
 141| Ga
@@ -529,13 +529,13 @@
 528| Voltooide herinneringen verbergen
 529| Importeren en exporteren
 530| Een .ics-bestand importeren…
-531| De items uit een .ics-bestand toevoegen (Ctrl+I)
+531| De items uit een .ics-bestand toevoegen (Alt+Shift+I)
 532| Importeren uit ReminderFox…
 533| De reminderfox.ics zoeken die de ReminderFox-add-on in uw Firefox- of Thunderbird-profiel bewaarde
 534| Exporteren naar .ics…
 535| Exporteren naar .ics
 536| Exporteren…
-537| Een .ics-bestand opslaan (Ctrl+E)
+537| Een .ics-bestand opslaan (Alt+Shift+X)
 538| Importeren voegt toe aan wat u hebt; bestaande items worden alleen bijgewerkt als de kopie in het bestand nieuwer is. Exports openen in Outlook, Google Agenda, Thunderbird, Apple Agenda en de oorspronkelijke ReminderFox-add-on.
 539| Back-ups
 540| Nu back-up maken
@@ -889,7 +889,7 @@
 888| Bestand kiezen…
 889| Alarmen…
 890| ⏰ Alarmen
-891| Elk alarm dat afgaat, gesnoozed is of nog af zal gaan (Ctrl+L)
+891| Elk alarm dat afgaat, gesnoozed is of nog af zal gaan (Alt+Shift+L)
 892| Komende 24 uur
 893| Komende 7 dagen
 894| Komende 30 dagen

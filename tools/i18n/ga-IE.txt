@@ -4,11 +4,11 @@
 3| ⚙ Socruithe
 4| Socruithe
 5| Cuardaigh
-6| Cuardaigh (Ctrl+F)
+6| Cuardaigh (Alt+Shift+K)
 7| Cuardaigh meabhrúcháin agus tascanna
-8| Meabhrúchán nua (Ctrl+N)
-9| Mír nua sa liosta atá ar taispeáint (Ctrl+T)
-10| Aláram tapa: aláram aonuaire i gceann cúpla nóiméad (Ctrl+Q)
+8| Meabhrúchán nua (Alt+Shift+A)
+9| Mír nua sa liosta atá ar taispeáint (Alt+Shift+O)
+10| Aláram tapa: aláram aonuaire i gceann cúpla nóiméad (Alt+Shift+Q)
 11| ⏰ Aláram tapa
 12| Meabhrúcháin
 13| Mí
@@ -21,7 +21,7 @@
 20| Tascanna
 21| Críochnaithe nó ar fionraí
 22| Taispeáin nó folaigh painéal an fhéilire
-23| Taispeáin nó folaigh painéal an fhéilire (Ctrl+B)
+23| Taispeáin nó folaigh painéal an fhéilire (Alt+Shift+B)
 24| Aláraim ar siúl
 25| Aláraim ar fionraí
 26| Aláraim ar fionraí go dtí {time}
@@ -97,7 +97,7 @@
 96| Cóipeáil chuig…
 97| Bog chuig liosta eile é
 98| Cuir cóip ar liosta eile
-99| Cóip chruinn sa liosta seo (Ctrl+D)
+99| Cóip chruinn sa liosta seo (Alt+Shift+D)
 100| Scrios (Del)
 101| An mhír roghnaithe
 102| An mhír roghnaithe:
@@ -136,7 +136,7 @@
 135| An mhí roimhe
 136| An mhí seo chugainn
 137| Téigh go dtí inniu
-138| Téigh go dtí dáta (Ctrl+G)
+138| Téigh go dtí dáta (Alt+Shift+J)
 139| Téigh go dtí an dáta
 140| Téigh go dtí…
 141| Téigh
@@ -529,13 +529,13 @@
 528| Folaigh meabhrúcháin chríochnaithe
 529| Iompórtáil agus easpórtáil
 530| Iompórtáil comhad .ics…
-531| Cuir na míreanna ó chomhad .ics leis (Ctrl+I)
+531| Cuir na míreanna ó chomhad .ics leis (Alt+Shift+I)
 532| Iompórtáil ó ReminderFox…
 533| Aimsigh an reminderfox.ics a choinnigh breiseán ReminderFox i do phróifíl Firefox nó Thunderbird
 534| Easpórtáil go .ics…
 535| Easpórtáil go .ics
 536| Easpórtáil…
-537| Sábháil comhad .ics (Ctrl+E)
+537| Sábháil comhad .ics (Alt+Shift+X)
 538| Cuirtear iompórtálacha leis an méid atá agat; ní nuashonraítear míreanna atá anseo cheana ach amháin má tá cóip an chomhaid níos nuaí. Osclaítear easpórtálacha in Outlook, Google Calendar, Thunderbird, Apple Calendar agus an breiseán ReminderFox bunaidh.
 539| Cúltacaí
 540| Déan cúltaca anois
@@ -889,7 +889,7 @@
 888| Roghnaigh an comhad…
 889| Aláraim…
 890| ⏰ Aláraim
-891| Gach aláram atá ag bualadh, curtha siar nó le bualadh fós (Ctrl+L)
+891| Gach aláram atá ag bualadh, curtha siar nó le bualadh fós (Alt+Shift+L)
 892| Na 24 uair an chloig seo chugainn
 893| Na 7 lá seo chugainn
 894| Na 30 lá seo chugainn

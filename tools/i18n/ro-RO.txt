@@ -4,11 +4,11 @@
 3| ⚙ Setări
 4| Setări
 5| Caută
-6| Caută (Ctrl+F)
+6| Caută (Alt+Shift+K)
 7| Caută în mementouri și sarcini
-8| Memento nou (Ctrl+N)
-9| Element nou în lista afișată (Ctrl+T)
-10| Alarmă rapidă: o alarmă unică peste câteva minute (Ctrl+Q)
+8| Memento nou (Alt+Shift+A)
+9| Element nou în lista afișată (Alt+Shift+O)
+10| Alarmă rapidă: o alarmă unică peste câteva minute (Alt+Shift+Q)
 11| ⏰ Alarmă rapidă
 12| Mementouri
 13| Lună
@@ -21,7 +21,7 @@
 20| Sarcini
 21| Încheiate sau suspendate
 22| Arată sau ascunde panoul calendarului
-23| Arată sau ascunde panoul calendarului (Ctrl+B)
+23| Arată sau ascunde panoul calendarului (Alt+Shift+B)
 24| Alarme pornite
 25| Alarme suspendate
 26| Alarme suspendate până la {time}
@@ -97,7 +97,7 @@
 96| Copiază în…
 97| Mută-l în altă listă
 98| Pune o copie în altă listă
-99| O copie exactă în această listă (Ctrl+D)
+99| O copie exactă în această listă (Alt+Shift+D)
 100| Șterge (Del)
 101| Element selectat
 102| Element selectat:
@@ -136,7 +136,7 @@
 135| Luna anterioară
 136| Luna următoare
 137| Mergi la azi
-138| Mergi la o dată (Ctrl+G)
+138| Mergi la o dată (Alt+Shift+J)
 139| Mergi la dată
 140| Mergi la…
 141| Mergi
@@ -529,13 +529,13 @@
 528| Ascunde mementourile finalizate
 529| Import și export
 530| Importă un fișier .ics…
-531| Adaugă elementele dintr-un fișier .ics (Ctrl+I)
+531| Adaugă elementele dintr-un fișier .ics (Alt+Shift+I)
 532| Importă din ReminderFox…
 533| Găsește reminderfox.ics pe care suplimentul ReminderFox îl ținea în profilul dvs. Firefox sau Thunderbird
 534| Exportă în .ics…
 535| Exportă în .ics
 536| Exportă…
-537| Salvează un fișier .ics (Ctrl+E)
+537| Salvează un fișier .ics (Alt+Shift+X)
 538| Importurile se adaugă la ce aveți; elementele existente se actualizează doar dacă copia din fișier e mai nouă. Exporturile se deschid în Outlook, Google Calendar, Thunderbird, Apple Calendar și suplimentul ReminderFox original.
 539| Copii de siguranță
 540| Fă o copie acum
@@ -889,7 +889,7 @@
 888| Alege fișierul…
 889| Alarme…
 890| ⏰ Alarme
-891| Fiecare alarmă care sună, este amânată sau va suna (Ctrl+L)
+891| Fiecare alarmă care sună, este amânată sau va suna (Alt+Shift+L)
 892| Următoarele 24 de ore
 893| Următoarele 7 zile
 894| Următoarele 30 de zile

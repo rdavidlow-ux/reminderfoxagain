@@ -54,8 +54,8 @@ try {
   check('Open: the editor with that reminder', `${d.open} ${$('edSummary').value}`, 'false Alarm view: later today');
   $('edCancel').click(); await sleep(400);
   // the keyboard shortcut opens it again, with the span remembered where the browser keeps it
-  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'l', ctrlKey: true, bubbles: true, cancelable: true })); await sleep(800);
-  check('Ctrl+L opens it', $('alarmsDlg').open, true);
+  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'L', code: 'KeyL', altKey: true, shiftKey: true, bubbles: true, cancelable: true })); await sleep(800);
+  check('Alt+Shift+L opens it', $('alarmsDlg').open, true);
   check('the span is remembered', $('alSpan').value, '1');
   $('alarmsDlg').close();
   // clean up

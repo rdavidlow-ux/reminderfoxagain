@@ -10,11 +10,11 @@
 ⚙ Settings
 Settings
 Search
-Search (Ctrl+F)
+Search (Alt+Shift+K)
 Search reminders and to-dos
-New reminder (Ctrl+N)
-New item in the list being shown (Ctrl+T)
-Quick alarm: a one-off alarm in a few minutes (Ctrl+Q)
+New reminder (Alt+Shift+A)
+New item in the list being shown (Alt+Shift+O)
+Quick alarm: a one-off alarm in a few minutes (Alt+Shift+Q)
 ⏰ Quick alarm
 Reminders
 Month
@@ -27,7 +27,7 @@ List to show
 To-Do's
 Terminated or Suspended
 Show or hide the calendar panel
-Show or hide the calendar panel (Ctrl+B)
+Show or hide the calendar panel (Alt+Shift+B)
 Alarms on
 Alarms suspended
 Alarms suspended until {time}
@@ -105,7 +105,7 @@ Move to…
 Copy to…
 Move it to another list
 Put a copy on another list
-An exact copy in this list (Ctrl+D)
+An exact copy in this list (Alt+Shift+D)
 Delete (Del)
 Selected item
 Selected item:
@@ -113,7 +113,7 @@ Move up
 Move down
 Alt+↑
 Alt+↓
-Ctrl+D
+Alt+Shift+D
 Duplicated “{s}”
 {s} (copy)
 Copied to “{s}”
@@ -146,7 +146,7 @@ Enter a location first.
 Previous month
 Next month
 Go to today
-Go to a date (Ctrl+G)
+Go to a date (Alt+Shift+J)
 Go to date
 Go to…
 Go
@@ -549,13 +549,13 @@ Hide repeating reminders
 Hide completed reminders
 Import and export
 Import an .ics file…
-Add the items from an .ics file (Ctrl+I)
+Add the items from an .ics file (Alt+Shift+I)
 Import from ReminderFox…
 Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile
 Export to .ics…
 Export to .ics
 Export…
-Save an .ics file (Ctrl+E)
+Save an .ics file (Alt+Shift+X)
 Imports add to what you have; items already here are updated only if the file's copy is newer. Exports open in Outlook, Google Calendar, Thunderbird, Apple Calendar and the original ReminderFox add-on.
 Backups
 Back up now
@@ -929,7 +929,7 @@ Choose the file…
 # the Alarms view (desktop app and Thunderbird add-on)
 Alarms…
 ⏰ Alarms
-Every alarm that is ringing, snoozed or still to ring (Ctrl+L)
+Every alarm that is ringing, snoozed or still to ring (Alt+Shift+L)
 Next 24 hours
 Next 7 days
 Next 30 days

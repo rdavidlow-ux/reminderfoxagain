@@ -4,11 +4,11 @@
 3| ⚙ Impostazioni
 4| Impostazioni
 5| Cerca
-6| Cerca (Ctrl+F)
+6| Cerca (Alt+Shift+K)
 7| Cerca nei promemoria e nelle attività
-8| Nuovo promemoria (Ctrl+N)
-9| Nuovo elemento nell'elenco mostrato (Ctrl+T)
-10| Allarme rapido: un allarme singolo tra pochi minuti (Ctrl+Q)
+8| Nuovo promemoria (Alt+Shift+A)
+9| Nuovo elemento nell'elenco mostrato (Alt+Shift+O)
+10| Allarme rapido: un allarme singolo tra pochi minuti (Alt+Shift+Q)
 11| ⏰ Allarme rapido
 12| Promemoria
 13| Mese
@@ -21,7 +21,7 @@
 20| Attività
 21| Terminati o sospesi
 22| Mostra o nascondi il pannello calendario
-23| Mostra o nascondi il pannello calendario (Ctrl+B)
+23| Mostra o nascondi il pannello calendario (Alt+Shift+B)
 24| Allarmi attivi
 25| Allarmi sospesi
 26| Allarmi sospesi fino alle {time}
@@ -97,7 +97,7 @@
 96| Copia in…
 97| Spostalo in un altro elenco
 98| Metti una copia in un altro elenco
-99| Una copia esatta in questo elenco (Ctrl+D)
+99| Una copia esatta in questo elenco (Alt+Shift+D)
 100| Elimina (Canc)
 101| Elemento selezionato
 102| Elemento selezionato:
@@ -136,7 +136,7 @@
 135| Mese precedente
 136| Mese successivo
 137| Vai a oggi
-138| Vai a una data (Ctrl+G)
+138| Vai a una data (Alt+Shift+J)
 139| Vai alla data
 140| Vai a…
 141| Vai
@@ -529,13 +529,13 @@
 528| Nascondi i promemoria completati
 529| Importa ed esporta
 530| Importa un file .ics…
-531| Aggiungi gli elementi da un file .ics (Ctrl+I)
+531| Aggiungi gli elementi da un file .ics (Alt+Shift+I)
 532| Importa da ReminderFox…
 533| Trova il reminderfox.ics che l'estensione ReminderFox teneva nel tuo profilo di Firefox o Thunderbird
 534| Esporta in .ics…
 535| Esporta in .ics
 536| Esporta…
-537| Salva un file .ics (Ctrl+E)
+537| Salva un file .ics (Alt+Shift+X)
 538| Le importazioni si aggiungono a ciò che hai; gli elementi già presenti vengono aggiornati solo se la copia nel file è più recente. Le esportazioni si aprono in Outlook, Google Calendar, Thunderbird, Calendario di Apple e nell'estensione ReminderFox originale.
 539| Backup
 540| Esegui backup ora
@@ -889,7 +889,7 @@
 888| Scegli il file…
 889| Allarmi…
 890| ⏰ Allarmi
-891| Ogni allarme che suona, è posticipato o deve ancora suonare (Ctrl+L)
+891| Ogni allarme che suona, è posticipato o deve ancora suonare (Alt+Shift+L)
 892| Prossime 24 ore
 893| Prossimi 7 giorni
 894| Prossimi 30 giorni

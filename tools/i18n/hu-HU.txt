@@ -4,11 +4,11 @@
 3| ⚙ Beállítások
 4| Beállítások
 5| Keresés
-6| Keresés (Ctrl+F)
+6| Keresés (Alt+Shift+K)
 7| Keresés az emlékeztetők és teendők között
-8| Új emlékeztető (Ctrl+N)
-9| Új elem a megjelenített listában (Ctrl+T)
-10| Gyors riasztás: egyszeri riasztás néhány perc múlva (Ctrl+Q)
+8| Új emlékeztető (Alt+Shift+A)
+9| Új elem a megjelenített listában (Alt+Shift+O)
+10| Gyors riasztás: egyszeri riasztás néhány perc múlva (Alt+Shift+Q)
 11| ⏰ Gyors riasztás
 12| Emlékeztetők
 13| Hónap
@@ -21,7 +21,7 @@
 20| Teendők
 21| Lezárt vagy felfüggesztett
 22| A naptárpanel megjelenítése vagy elrejtése
-23| A naptárpanel megjelenítése vagy elrejtése (Ctrl+B)
+23| A naptárpanel megjelenítése vagy elrejtése (Alt+Shift+B)
 24| Riasztások bekapcsolva
 25| Riasztások felfüggesztve
 26| Riasztások felfüggesztve eddig: {time}
@@ -97,7 +97,7 @@
 96| Másolás ide…
 97| Áthelyezés másik listába
 98| Másolat egy másik listába
-99| Pontos másolat ebben a listában (Ctrl+D)
+99| Pontos másolat ebben a listában (Alt+Shift+D)
 100| Törlés (Del)
 101| Kijelölt elem
 102| Kijelölt elem:
@@ -136,7 +136,7 @@
 135| Előző hónap
 136| Következő hónap
 137| Ugrás a mai napra
-138| Ugrás dátumra (Ctrl+G)
+138| Ugrás dátumra (Alt+Shift+J)
 139| Ugrás dátumra
 140| Ugrás…
 141| Ugrás
@@ -529,13 +529,13 @@
 528| Kész emlékeztetők elrejtése
 529| Importálás és exportálás
 530| .ics fájl importálása…
-531| Elemek hozzáadása egy .ics fájlból (Ctrl+I)
+531| Elemek hozzáadása egy .ics fájlból (Alt+Shift+I)
 532| Importálás a ReminderFoxból…
 533| A reminderfox.ics megkeresése, amelyet a ReminderFox bővítmény a Firefox- vagy Thunderbird-profiljában tárolt
 534| Exportálás .ics-be…
 535| Exportálás .ics-be
 536| Exportálás…
-537| .ics fájl mentése (Ctrl+E)
+537| .ics fájl mentése (Alt+Shift+X)
 538| Az importálás hozzáad a meglévőkhöz; a már meglévő elemek csak akkor frissülnek, ha a fájlban lévő másolat újabb. Az exportált fájlok megnyithatók az Outlookban, a Google Naptárban, a Thunderbirdben, az Apple Naptárban és az eredeti ReminderFox bővítményben.
 539| Biztonsági mentések
 540| Mentés most
@@ -889,7 +889,7 @@
 888| Fájl kiválasztása…
 889| Riasztások…
 890| ⏰ Riasztások
-891| Minden riasztás, amely szól, szundi módban van vagy még szólni fog (Ctrl+L)
+891| Minden riasztás, amely szól, szundi módban van vagy még szólni fog (Alt+Shift+L)
 892| Következő 24 óra
 893| Következő 7 nap
 894| Következő 30 nap

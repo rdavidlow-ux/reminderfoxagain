@@ -81,10 +81,11 @@
     if (!msg || msg.rf !== 'emit') return;
     if (msg.target && msg.target !== PAGE) return;
     if (msg.ch === 'host:reload') { location.reload(); return; }
-    // a Thunderbird shortcut: press the desktop key here, so the page's own keyboard handler does what it always does
+    // a Thunderbird shortcut: press the app's key here (Alt+Shift and the same letter as the desktop app), so the page's own keyboard handler does what it always does
     if (msg.ch === 'host:key') {
       const target = document.activeElement || document.body;
-      target.dispatchEvent(new KeyboardEvent('keydown', { key: msg.payload.key, ctrlKey: true, bubbles: true, cancelable: true }));
+      const k = String(msg.payload.key || '').toUpperCase();
+      target.dispatchEvent(new KeyboardEvent('keydown', { key: k, code: `Key${k}`, altKey: true, shiftKey: true, bubbles: true, cancelable: true }));
       return;
     }
     for (const fn of listeners[msg.ch] || []) { try { fn(msg.payload); } catch (e) { console.error(e); } }

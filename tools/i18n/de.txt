@@ -4,11 +4,11 @@
 3| ⚙ Einstellungen
 4| Einstellungen
 5| Suchen
-6| Suchen (Strg+F)
+6| Suchen (Alt+Shift+K)
 7| Erinnerungen und Aufgaben durchsuchen
-8| Neue Erinnerung (Strg+N)
-9| Neuer Eintrag in der angezeigten Liste (Strg+T)
-10| Schnellalarm: ein einmaliger Alarm in ein paar Minuten (Strg+Q)
+8| Neue Erinnerung (Alt+Shift+A)
+9| Neuer Eintrag in der angezeigten Liste (Alt+Shift+O)
+10| Schnellalarm: ein einmaliger Alarm in ein paar Minuten (Alt+Shift+Q)
 11| ⏰ Schnellalarm
 12| Erinnerungen
 13| Monat
@@ -21,7 +21,7 @@
 20| Aufgaben
 21| Beendet oder ausgesetzt
 22| Kalenderleiste ein- oder ausblenden
-23| Kalenderleiste ein- oder ausblenden (Strg+B)
+23| Kalenderleiste ein- oder ausblenden (Alt+Shift+B)
 24| Alarme an
 25| Alarme ausgesetzt
 26| Alarme ausgesetzt bis {time}
@@ -97,7 +97,7 @@
 96| Kopieren nach…
 97| In eine andere Liste verschieben
 98| Eine Kopie in eine andere Liste legen
-99| Eine genaue Kopie in dieser Liste (Strg+D)
+99| Eine genaue Kopie in dieser Liste (Alt+Shift+D)
 100| Löschen (Entf)
 101| Gewählter Eintrag
 102| Gewählter Eintrag:
@@ -105,7 +105,7 @@
 104| Nach unten
 105| -
 106| -
-107| Strg+D
+107| Alt+Shift+D
 108| „{s}“ dupliziert
 109| {s} (Kopie)
 110| Nach „{s}“ kopiert
@@ -136,7 +136,7 @@
 135| Vorheriger Monat
 136| Nächster Monat
 137| Zu heute
-138| Zu einem Datum gehen (Strg+G)
+138| Zu einem Datum gehen (Alt+Shift+J)
 139| Zum Datum gehen
 140| Gehe zu…
 141| Los
@@ -529,13 +529,13 @@
 528| Erledigte Erinnerungen ausblenden
 529| Import und Export
 530| Eine .ics-Datei importieren…
-531| Die Einträge aus einer .ics-Datei hinzufügen (Strg+I)
+531| Die Einträge aus einer .ics-Datei hinzufügen (Alt+Shift+I)
 532| Aus ReminderFox importieren…
 533| Die reminderfox.ics finden, die das ReminderFox-Add-on in Ihrem Firefox- oder Thunderbird-Profil abgelegt hat
 534| Als .ics exportieren…
 535| Als .ics exportieren
 536| Exportieren…
-537| Eine .ics-Datei speichern (Strg+E)
+537| Eine .ics-Datei speichern (Alt+Shift+X)
 538| Importe ergänzen Ihre Daten; vorhandene Einträge werden nur aktualisiert, wenn die Kopie in der Datei neuer ist. Exporte lassen sich in Outlook, Google Kalender, Thunderbird, Apple Kalender und dem ursprünglichen ReminderFox-Add-on öffnen.
 539| Sicherungen
 540| Jetzt sichern
@@ -889,7 +889,7 @@
 888| Datei auswählen…
 889| Alarme…
 890| ⏰ Alarme
-891| Jeder Alarm, der klingelt, schlummert oder noch klingeln wird (Strg+L)
+891| Jeder Alarm, der klingelt, schlummert oder noch klingeln wird (Alt+Shift+L)
 892| Nächste 24 Stunden
 893| Nächste 7 Tage
 894| Nächste 30 Tage

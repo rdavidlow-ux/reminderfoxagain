@@ -10,14 +10,14 @@ try {
   const de = RF.i18n.lang === 'de';
   check('platform from the host', `${meta.platform} ${RF.platform}`, `${P} ${P}`);
   const W = {
-    windows: { start: 'Start ReminderFoxAgain when Windows starts', tray: 'Keep running in the system tray when the window is closed', add: 'New reminder (Ctrl+N)', quick: 'Quick alarm: a one-off alarm in a few minutes (Ctrl+Q)', folder: 'Show the reminders file in File Explorer' },
-    macos: { start: 'Start ReminderFoxAgain when you log in', tray: 'Keep running in the menu bar when the window is closed', add: 'New reminder (⌘N)', quick: 'Quick alarm: a one-off alarm in a few minutes (⇧⌘A)', folder: 'Show the reminders file in Finder' },
-    linux: { start: 'Start ReminderFoxAgain when you log in', tray: 'Keep running in the system tray when the window is closed', add: 'New reminder (Ctrl+N)', quick: 'Quick alarm: a one-off alarm in a few minutes (Ctrl+Q)', folder: 'Show the reminders file in your file manager' },
+    windows: { start: 'Start ReminderFoxAgain when Windows starts', tray: 'Keep running in the system tray when the window is closed', add: 'New reminder (Alt+Shift+A)', quick: 'Quick alarm: a one-off alarm in a few minutes (Alt+Shift+Q)', folder: 'Show the reminders file in File Explorer' },
+    macos: { start: 'Start ReminderFoxAgain when you log in', tray: 'Keep running in the menu bar when the window is closed', add: 'New reminder (⌥⇧A)', quick: 'Quick alarm: a one-off alarm in a few minutes (⌥⇧Q)', folder: 'Show the reminders file in Finder' },
+    linux: { start: 'Start ReminderFoxAgain when you log in', tray: 'Keep running in the system tray when the window is closed', add: 'New reminder (Alt+Shift+A)', quick: 'Quick alarm: a one-off alarm in a few minutes (Alt+Shift+Q)', folder: 'Show the reminders file in your file manager' },
   }[P];
   if (de) {
     check('German: start at login', label('stStart'), P === 'windows' ? $('stStart').closest('label').textContent.trim() : 'ReminderFoxAgain bei der Anmeldung starten');
-    check('German: shortcut in a title', /\((⌘|Ctrl\+)N\)$/.test($('addReminder').title) && !/New reminder/.test($('addReminder').title), true);
-    check('German: ⌘ on macOS', $('addReminder').title.includes('⌘'), P === 'macos');
+    check('German: shortcut in a title', /\((⌥⇧|Alt\+Shift\+)A\)$/.test($('addReminder').title) && !/New reminder/.test($('addReminder').title), true);
+    check('German: ⌥⇧ on macOS', $('addReminder').title.includes('⌥⇧'), P === 'macos');
   } else {
     check('start at login', label('stStart'), W.start);
     check('keep running', label('stTray'), W.tray);

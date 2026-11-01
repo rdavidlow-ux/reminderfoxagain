@@ -11,7 +11,7 @@
   document.documentElement.lang = I.lang === 'en' ? 'en' : I.lang;
   document.documentElement.dir = I.dir;
   // The desktop (0.9.0): the markup is written for Windows; on macOS and Linux a few texts read differently (before
-  // they are translated), and on macOS the shortcuts show ⌘ (Quick alarm is ⇧⌘A, since ⌘Q quits).
+  // they are translated), and on macOS the shortcuts show as ⌥⇧ and the letter.
   const PLATFORM = data.platform || 'windows';
   RF.platform = PLATFORM;
   document.documentElement.dataset.platform = PLATFORM;
@@ -45,11 +45,13 @@
       'Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile': 'Pick the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile',
     });
   }
-  // In Thunderbird the shortcuts are Thunderbird's (Alt+Shift+A…, which people can change): data.keys maps the desktop
-  // letter to the shortcut it has now; a shortcut that was removed drops its "(Ctrl+N)" from the text
+  // In Thunderbird the shortcuts are Thunderbird's (Alt+Shift+A…, which people can change): data.keys maps the
+  // letter to the shortcut it has now; a shortcut that was removed drops its "(Alt+Shift+A)" from the text
   const TBKEYS = HOST === 'thunderbird' && data.keys ? data.keys : null;
-  const keys = TBKEYS ? (t) => t.replace(/ ?\(?\b(?:Ctrl|Strg)\+([A-Z])\b\)?/g, (m, k) => (k in TBKEYS ? (TBKEYS[k] ? m.replace(/(?:Ctrl|Strg)\+[A-Z]/, TBKEYS[k]) : '') : m))
-    : PLATFORM === 'macos' ? (t) => t.replace(/(Ctrl|Strg)\+Q\b/g, '⇧⌘A').replace(/(Ctrl|Strg)\+/g, '⌘') : (t) => t;
+  // The texts name the shortcuts as "Alt+Shift+N" (the desktop app's are the add-on's). In Thunderbird each one shows as it
+  // is set now (or is dropped from the text when it was removed); on macOS as ⌥⇧N.
+  const keys = TBKEYS ? (t) => t.replace(/ ?\(?\bAlt\+Shift\+([A-Z])\b\)?/g, (m, k) => (k in TBKEYS ? (TBKEYS[k] ? m.replace(/Alt\+Shift\+[A-Z]/, TBKEYS[k]) : '') : m))
+    : PLATFORM === 'macos' ? (t) => t.replace(/\bAlt\+Shift\+([A-Z])\b/g, '⌥⇧$1') : (t) => t;
   RF.platformText = (s) => PT[s] || s;
   RF.platformKeys = keys;
   if (I.lang === 'en' && !data.collect && PLATFORM === 'windows' && HOST === 'desktop') return;

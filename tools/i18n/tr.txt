@@ -4,11 +4,11 @@
 3| ⚙ Ayarlar
 4| Ayarlar
 5| Ara
-6| Ara (Ctrl+F)
+6| Ara (Alt+Shift+K)
 7| Hatırlatıcılarda ve görevlerde ara
-8| Yeni hatırlatıcı (Ctrl+N)
-9| Gösterilen listeye yeni öğe (Ctrl+T)
-10| Hızlı alarm: birkaç dakika sonra çalan tek seferlik alarm (Ctrl+Q)
+8| Yeni hatırlatıcı (Alt+Shift+A)
+9| Gösterilen listeye yeni öğe (Alt+Shift+O)
+10| Hızlı alarm: birkaç dakika sonra çalan tek seferlik alarm (Alt+Shift+Q)
 11| ⏰ Hızlı alarm
 12| Hatırlatıcılar
 13| Ay
@@ -21,7 +21,7 @@
 20| Görevler
 21| Sona erdi veya askıya alındı
 22| Takvim panelini göster veya gizle
-23| Takvim panelini göster veya gizle (Ctrl+B)
+23| Takvim panelini göster veya gizle (Alt+Shift+B)
 24| Alarmlar açık
 25| Alarmlar askıda
 26| Alarmlar {time} saatine kadar askıda
@@ -97,7 +97,7 @@
 96| Şuraya kopyala…
 97| Başka bir listeye taşı
 98| Başka bir listeye kopyasını koy
-99| Bu listede tam bir kopya (Ctrl+D)
+99| Bu listede tam bir kopya (Alt+Shift+D)
 100| Sil (Del)
 101| Seçili öğe
 102| Seçili öğe:
@@ -136,7 +136,7 @@
 135| Önceki ay
 136| Sonraki ay
 137| Bugüne git
-138| Bir tarihe git (Ctrl+G)
+138| Bir tarihe git (Alt+Shift+J)
 139| Tarihe git
 140| Git…
 141| Git
@@ -529,13 +529,13 @@
 528| Tamamlanan hatırlatıcıları gizle
 529| İçe ve dışa aktarma
 530| Bir .ics dosyası içe aktar…
-531| Bir .ics dosyasındaki öğeleri ekle (Ctrl+I)
+531| Bir .ics dosyasındaki öğeleri ekle (Alt+Shift+I)
 532| ReminderFox'tan içe aktar…
 533| ReminderFox eklentisinin Firefox veya Thunderbird profilinizde tuttuğu reminderfox.ics dosyasını bul
 534| .ics olarak dışa aktar…
 535| .ics olarak dışa aktar
 536| Dışa aktar…
-537| Bir .ics dosyası kaydet (Ctrl+E)
+537| Bir .ics dosyası kaydet (Alt+Shift+X)
 538| İçe aktarmalar mevcut olanlara eklenir; zaten var olan öğeler yalnızca dosyadaki kopya daha yeniyse güncellenir. Dışa aktarılan dosyalar Outlook, Google Takvim, Thunderbird, Apple Takvim ve özgün ReminderFox eklentisinde açılır.
 539| Yedekler
 540| Şimdi yedekle
@@ -889,7 +889,7 @@
 888| Dosyayı seç…
 889| Alarmlar…
 890| ⏰ Alarmlar
-891| Çalan, ertelenmiş veya henüz çalacak her alarm (Ctrl+L)
+891| Çalan, ertelenmiş veya henüz çalacak her alarm (Alt+Shift+L)
 892| Sonraki 24 saat
 893| Sonraki 7 gün
 894| Sonraki 30 gün

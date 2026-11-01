@@ -4,11 +4,11 @@
 3| ⚙ Nastavení
 4| Nastavení
 5| Hledat
-6| Hledat (Ctrl+F)
+6| Hledat (Alt+Shift+K)
 7| Hledat v připomínkách a úkolech
-8| Nová připomínka (Ctrl+N)
-9| Nová položka v zobrazeném seznamu (Ctrl+T)
-10| Rychlý budík: jednorázový alarm za pár minut (Ctrl+Q)
+8| Nová připomínka (Alt+Shift+A)
+9| Nová položka v zobrazeném seznamu (Alt+Shift+O)
+10| Rychlý budík: jednorázový alarm za pár minut (Alt+Shift+Q)
 11| ⏰ Rychlý budík
 12| Připomínky
 13| Měsíc
@@ -21,7 +21,7 @@
 20| Úkoly
 21| Ukončené nebo pozastavené
 22| Zobrazit nebo skrýt panel kalendáře
-23| Zobrazit nebo skrýt panel kalendáře (Ctrl+B)
+23| Zobrazit nebo skrýt panel kalendáře (Alt+Shift+B)
 24| Alarmy zapnuty
 25| Alarmy pozastaveny
 26| Alarmy pozastaveny do {time}
@@ -97,7 +97,7 @@
 96| Kopírovat do…
 97| Přesunout do jiného seznamu
 98| Dát kopii do jiného seznamu
-99| Přesná kopie v tomto seznamu (Ctrl+D)
+99| Přesná kopie v tomto seznamu (Alt+Shift+D)
 100| Smazat (Del)
 101| Vybraná položka
 102| Vybraná položka:
@@ -136,7 +136,7 @@
 135| Předchozí měsíc
 136| Další měsíc
 137| Přejít na dnešek
-138| Přejít na datum (Ctrl+G)
+138| Přejít na datum (Alt+Shift+J)
 139| Přejít na datum
 140| Přejít…
 141| Přejít
@@ -529,13 +529,13 @@
 528| Skrýt hotové připomínky
 529| Import a export
 530| Importovat soubor .ics…
-531| Přidat položky ze souboru .ics (Ctrl+I)
+531| Přidat položky ze souboru .ics (Alt+Shift+I)
 532| Importovat z ReminderFoxu…
 533| Najít reminderfox.ics, který doplněk ReminderFox ukládal ve vašem profilu Firefoxu nebo Thunderbirdu
 534| Exportovat do .ics…
 535| Exportovat do .ics
 536| Exportovat…
-537| Uložit soubor .ics (Ctrl+E)
+537| Uložit soubor .ics (Alt+Shift+X)
 538| Import se přidá k tomu, co máte; existující položky se aktualizují jen tehdy, když je kopie v souboru novější. Exporty lze otevřít v Outlooku, Kalendáři Google, Thunderbirdu, Kalendáři Apple a původním doplňku ReminderFox.
 539| Zálohy
 540| Zálohovat hned
@@ -889,7 +889,7 @@
 888| Vybrat soubor…
 889| Upozornění…
 890| ⏰ Upozornění
-891| Každé upozornění, které zvoní, je odložené nebo teprve zazvoní (Ctrl+L)
+891| Každé upozornění, které zvoní, je odložené nebo teprve zazvoní (Alt+Shift+L)
 892| Příštích 24 hodin
 893| Příštích 7 dní
 894| Příštích 30 dní

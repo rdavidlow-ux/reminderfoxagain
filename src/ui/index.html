@@ -11,11 +11,11 @@
 <div class="app">
   <header class="top">
     <div class="brand" translate="no"><img src="../../assets/icon.png" alt=""><div>ReminderFox<span>Again</span></div></div>
-    <button class="btn primary" id="addReminder" title="New reminder (Ctrl+N)"><span class="k">＋</span> Reminder</button>
-    <button class="btn primary" id="addTodo" title="New item in the list being shown (Ctrl+T)"><span class="k">＋</span> List Item</button>
-    <button class="btn ghost" id="quickBtn" title="Quick alarm: a one-off alarm in a few minutes (Ctrl+Q)">⏰ Quick alarm</button>
+    <button class="btn primary" id="addReminder" title="New reminder (Alt+Shift+A)"><span class="k">＋</span> Reminder</button>
+    <button class="btn primary" id="addTodo" title="New item in the list being shown (Alt+Shift+O)"><span class="k">＋</span> List Item</button>
+    <button class="btn ghost" id="quickBtn" title="Quick alarm: a one-off alarm in a few minutes (Alt+Shift+Q)">⏰ Quick alarm</button>
     <span class="spacer"></span>
-    <div class="search"><input class="inp" id="search" type="search" placeholder="Search reminders and to-dos" aria-label="Search" title="Search (Ctrl+F)"></div>
+    <div class="search"><input class="inp" id="search" type="search" placeholder="Search reminders and to-dos" aria-label="Search" title="Search (Alt+Shift+K)"></div>
     <button class="btn ghost" id="settingsBtn" title="Settings">⚙ Settings</button>
   </header>
 
@@ -26,7 +26,7 @@
         <div class="tab tab-list" role="tab" data-tab="todos" aria-selected="false"><select id="todoList" class="tab-select" aria-label="List to show"></select></div>
         <button class="tab" role="tab" data-tab="month" aria-selected="false">Month</button>
         <span class="spacer" style="flex:1"></span>
-        <button class="nav side-toggle" id="sideToggle" title="Show or hide the calendar panel (Ctrl+B)" aria-label="Show or hide the calendar panel">◧</button>
+        <button class="nav side-toggle" id="sideToggle" title="Show or hide the calendar panel (Alt+Shift+B)" aria-label="Show or hide the calendar panel">◧</button>
       </div>
 
       <!-- reminders toolbar -->
@@ -61,7 +61,7 @@
       <div class="toolbar sub hidden" id="tbTodoActs">
         <span class="sel-acts" id="todoActs" role="group" aria-label="Selected item">
           <span class="lbl-sel">Selected item:</span>
-          <button type="button" class="btn ghost sm" data-ta="dup" title="An exact copy in this list (Ctrl+D)" disabled>Duplicate</button>
+          <button type="button" class="btn ghost sm" data-ta="dup" title="An exact copy in this list (Alt+Shift+D)" disabled>Duplicate</button>
           <button type="button" class="btn ghost sm" data-ta="move" title="Move it to another list" disabled>Move to…</button>
           <button type="button" class="btn ghost sm" data-ta="copy" title="Put a copy on another list" disabled>Copy to…</button>
           <button type="button" class="btn ghost sm danger" data-ta="del" title="Delete (Del)" disabled>Delete</button>
@@ -99,7 +99,7 @@
   <footer class="status">
     <span id="statusCount"></span><span id="statusVersion"></span>
     <span class="spacer"></span>
-    <a id="alarmList" href="#" title="Every alarm that is ringing, snoozed or still to ring (Ctrl+L)">⏰ Alarms</a>
+    <a id="alarmList" href="#" title="Every alarm that is ringing, snoozed or still to ring (Alt+Shift+L)">⏰ Alarms</a>
     <a id="alarmState" title="Suspend or resume alarms">🔔 Alarms on</a>
     <a id="openFolder" title="Show the reminders file in File Explorer">Data file</a>
   </footer>
@@ -319,7 +319,7 @@
       </section>
       <section class="st-panel" data-st-panel="data" hidden>
         <h3 class="st-h st-first">Import and export</h3>
-        <div class="row"><button class="btn" id="stImport" title="Add the items from an .ics file (Ctrl+I)">Import an .ics file…</button><button class="btn" id="stOldRf" title="Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile">Import from ReminderFox…</button><button class="btn" id="stExport" title="Save an .ics file (Ctrl+E)">Export to .ics…</button></div>
+        <div class="row"><button class="btn" id="stImport" title="Add the items from an .ics file (Alt+Shift+I)">Import an .ics file…</button><button class="btn" id="stOldRf" title="Find the reminderfox.ics the ReminderFox add-on kept in your Firefox or Thunderbird profile">Import from ReminderFox…</button><button class="btn" id="stExport" title="Save an .ics file (Alt+Shift+X)">Export to .ics…</button></div>
         <div class="row"><button class="btn" id="stSubs" title="Calendars from the web (holidays, sports, a school or team calendar), read-only and kept up to date">Calendar subscriptions…</button></div>
         <div class="note">Imports add to what you have; items already here are updated only if the file's copy is newer. Exports open in Outlook, Google Calendar, Thunderbird, Apple Calendar and the original ReminderFox add-on.</div>
         <h3 class="st-h">Backups</h3>

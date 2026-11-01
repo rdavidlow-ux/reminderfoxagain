@@ -41,7 +41,7 @@ Every desktop feature is there; the ones tied to the operating system work the T
 | Export, Save a backup copy                                               | The file is saved as a download.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Choose a sound file                                                      | A file picker; the sound is kept in storage.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | Start when you log in, Keep running in the tray                          | Hidden: Thunderbird starts the add-on, and alarms ring whenever Thunderbird is running.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Keyboard shortcuts (Ctrl+N…)                                             | Alt+Shift shortcuts (next section).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Keyboard shortcuts (Alt+Shift+A…)                                        | The same Alt+Shift shortcuts, set in Thunderbird (next section).                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Text size                                                                | The page is zoomed (CSS zoom).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | Links (maps, web pages in notes)                                         | Open in the system browser.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | After sleep or unlock: check alarms                                      | Checked 1 second after the computer is used again.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -50,22 +50,22 @@ Permissions: storage, unlimited storage, notifications, menus, tabs, idle, keybo
 
 ## Keyboard shortcuts
 
-Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q and the other Ctrl keys for itself, so the add-on has its own Thunderbird shortcuts: **Alt+Shift** and, mostly, the same letter as the desktop app. Five use another letter, because Alt+Shift with the letter of a Thunderbird menu (File, Edit, View, Go, Message, Events and Tasks, Tools, Help) opens that menu instead: A for a new reminder, O for a new list item, K to search, J to go to a date and X to export. They work anywhere in Thunderbird, bring the ReminderFoxAgain tab to the front, and then do exactly what the Ctrl key does in the desktop app (nothing while a dialog is open, as there).
+Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q and the other Ctrl keys for itself, so the add-on has its own Thunderbird shortcuts: **Alt+Shift** and a letter, and the desktop app now uses the same keys (⌥⇧ and the letter on a Mac). The letters avoid those of Thunderbird's menus (File, Edit, View, Go, Message, Events and Tasks, Tools, Help), because Alt+Shift with one of them opens that menu instead: A for a new reminder, O for a new list item, K to search, J to go to a date and X to export. They work anywhere in Thunderbird, bring the ReminderFoxAgain tab to the front, and then do exactly what the same key does in the desktop app (nothing while a dialog is open, as there).
 
-| Shortcut    | Desktop app | What it does                     |
-|-------------|-------------|----------------------------------|
-| Alt+Shift+R | —           | Open ReminderFoxAgain            |
-| Alt+Shift+A | Ctrl+N      | New reminder                     |
-| Alt+Shift+O | Ctrl+T      | New item in the list being shown |
-| Alt+Shift+Q | Ctrl+Q      | Quick alarm                      |
-| Alt+Shift+K | Ctrl+F      | Search reminders and to-dos      |
-| Alt+Shift+J | Ctrl+G      | Go to a date                     |
-| Alt+Shift+B | Ctrl+B      | Show or hide the calendar panel  |
-| Alt+Shift+I | Ctrl+I      | Import an .ics file              |
-| Alt+Shift+X | Ctrl+E      | Export to .ics                   |
-| Alt+Shift+D | Ctrl+D      | Duplicate the selected item      |
-| Alt+Shift+S | Ctrl+S      | Save the reminder being edited   |
-| Alt+Shift+L | Ctrl+L      | The Alarms view                  |
+| Shortcut    | What it does                     |
+|-------------|----------------------------------|
+| Alt+Shift+R | Open ReminderFoxAgain            |
+| Alt+Shift+A | New reminder                     |
+| Alt+Shift+O | New item in the list being shown |
+| Alt+Shift+Q | Quick alarm                      |
+| Alt+Shift+K | Search reminders and to-dos      |
+| Alt+Shift+J | Go to a date                     |
+| Alt+Shift+B | Show or hide the calendar panel  |
+| Alt+Shift+I | Import an .ics file              |
+| Alt+Shift+X | Export to .ics                   |
+| Alt+Shift+D | Duplicate the selected item      |
+| Alt+Shift+S | Save the reminder being edited   |
+| Alt+Shift+L | The Alarms view                  |
 
 To change one: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+A)”) show the shortcuts as they are set, in every language; a shortcut that was removed is left out of its tooltip.
 

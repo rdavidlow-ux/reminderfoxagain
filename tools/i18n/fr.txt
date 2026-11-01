@@ -4,11 +4,11 @@
 3| ⚙ Paramètres
 4| Paramètres
 5| Rechercher
-6| Rechercher (Ctrl+F)
+6| Rechercher (Alt+Shift+K)
 7| Rechercher dans les rappels et les tâches
-8| Nouveau rappel (Ctrl+N)
-9| Nouvel élément dans la liste affichée (Ctrl+T)
-10| Alarme rapide : une alarme ponctuelle dans quelques minutes (Ctrl+Q)
+8| Nouveau rappel (Alt+Shift+A)
+9| Nouvel élément dans la liste affichée (Alt+Shift+O)
+10| Alarme rapide : une alarme ponctuelle dans quelques minutes (Alt+Shift+Q)
 11| ⏰ Alarme rapide
 12| Rappels
 13| Mois
@@ -21,7 +21,7 @@
 20| Tâches
 21| Terminé ou suspendu
 22| Afficher ou masquer le panneau calendrier
-23| Afficher ou masquer le panneau calendrier (Ctrl+B)
+23| Afficher ou masquer le panneau calendrier (Alt+Shift+B)
 24| Alarmes actives
 25| Alarmes suspendues
 26| Alarmes suspendues jusqu'à {time}
@@ -97,7 +97,7 @@
 96| Copier vers…
 97| Le déplacer vers une autre liste
 98| En mettre une copie dans une autre liste
-99| Une copie exacte dans cette liste (Ctrl+D)
+99| Une copie exacte dans cette liste (Alt+Shift+D)
 100| Supprimer (Suppr)
 101| Élément sélectionné
 102| Élément sélectionné :
@@ -136,7 +136,7 @@
 135| Mois précédent
 136| Mois suivant
 137| Aller à aujourd'hui
-138| Aller à une date (Ctrl+G)
+138| Aller à une date (Alt+Shift+J)
 139| Aller à la date
 140| Aller à…
 141| OK
@@ -529,13 +529,13 @@
 528| Masquer les rappels terminés
 529| Importer et exporter
 530| Importer un fichier .ics…
-531| Ajouter les éléments d'un fichier .ics (Ctrl+I)
+531| Ajouter les éléments d'un fichier .ics (Alt+Shift+I)
 532| Importer depuis ReminderFox…
 533| Trouver le fichier reminderfox.ics que le module ReminderFox gardait dans votre profil Firefox ou Thunderbird
 534| Exporter en .ics…
 535| Exporter en .ics
 536| Exporter…
-537| Enregistrer un fichier .ics (Ctrl+E)
+537| Enregistrer un fichier .ics (Alt+Shift+X)
 538| Les importations s'ajoutent à vos données ; les éléments déjà présents ne sont mis à jour que si la copie du fichier est plus récente. Les exportations s'ouvrent dans Outlook, Google Agenda, Thunderbird, Apple Calendrier et le module ReminderFox original.
 539| Sauvegardes
 540| Sauvegarder maintenant
@@ -889,7 +889,7 @@
 888| Choisir le fichier…
 889| Alarmes…
 890| ⏰ Alarmes
-891| Chaque alarme qui sonne, est en répétition ou sonnera (Ctrl+L)
+891| Chaque alarme qui sonne, est en répétition ou sonnera (Alt+Shift+L)
 892| 24 prochaines heures
 893| 7 prochains jours
 894| 30 prochains jours

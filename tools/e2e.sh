@@ -40,6 +40,7 @@ run alarms-view basic alarms-view.js
 run month-scroll basic month-scroll.js
 run subscriptions basic subscriptions.js
 run item-colours basic item-colours.js
+run shortcuts basic shortcuts.js
 run import-month basic import-month.js
 run view-options basic view-options.js
 run place-themes bills place-themes.js
@@ -67,7 +68,7 @@ const [en, de] = process.argv.slice(1).map((f) => JSON.parse(require("fs").readF
 const chk = (n, g, w) => console.log(`E2E macOS menu: ${n}: ${g} (expected ${w})${String(g) === String(w) ? "" : "  WRONG"}`);
 const acc = (m) => m.flatMap((t) => (t.submenu || []).filter((i) => i.accelerator).map((i) => i.accelerator)).join(" ");
 chk("menus", en.map((t) => t.label).join(","), "ReminderFoxAgain,File,Edit,View,Window");
-chk("shortcuts", acc(en), "Command+, Command+Q Command+N Command+T Shift+Command+A Command+I Command+E Command+B Command+G Command+F Command+L");
+chk("shortcuts", acc(en), "Command+, Command+Q Alt+Shift+A Alt+Shift+O Alt+Shift+Q Alt+Shift+I Alt+Shift+X Alt+Shift+B Alt+Shift+J Alt+Shift+K Alt+Shift+L");
 chk("Edit is the standard menu (copy, paste, undo)", en[2].role, "editMenu");
 chk("German menus", de.map((t) => t.label).join(","), "ReminderFoxAgain,Ablage,Bearbeiten,Ansicht,Fenster");
 chk("German: same shortcuts", acc(de), acc(en));

@@ -37,8 +37,8 @@ try {
   act('dup').click(); await sleep(900);
   check('toolbar duplicate', titles().sort().join('|'), 'Dune Part Two|Dune Part Two (copy)');
   rowOf('Dune Part Two').click(); await sleep(200);
-  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'd', ctrlKey: true, bubbles: true })); await sleep(900);
-  check('Ctrl+D duplicates', titles().filter((t) => t === 'Dune Part Two (copy)').length, 2);
+  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'D', code: 'KeyD', altKey: true, shiftKey: true, bubbles: true })); await sleep(900);
+  check('Alt+Shift+D duplicates', titles().filter((t) => t === 'Dune Part Two (copy)').length, 2);
   await ctxOn(rowOf('Dune Part Two'));
   check('menu has Duplicate, Move and Copy', ['dup', 'list', 'copy'].every((a) => document.querySelector(`#ctx button[data-ctx=${a}]`)), true);
   document.querySelector('#ctx button[data-ctx=dup]').click(); await sleep(900);

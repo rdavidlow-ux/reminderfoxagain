@@ -4,11 +4,11 @@
 3| ⚙ Ynstellingen
 4| Ynstellingen
 5| Sykje
-6| Sykje (Ctrl+F)
+6| Sykje (Alt+Shift+K)
 7| Sykje yn oantinkers en taken
-8| Nije oantinker (Ctrl+N)
-9| Nij item yn de toande list (Ctrl+T)
-10| Fluch alarm: in ienmalich alarm oer in pear minuten (Ctrl+Q)
+8| Nije oantinker (Alt+Shift+A)
+9| Nij item yn de toande list (Alt+Shift+O)
+10| Fluch alarm: in ienmalich alarm oer in pear minuten (Alt+Shift+Q)
 11| ⏰ Fluch alarm
 12| Oantinkers
 13| Moanne
@@ -21,7 +21,7 @@
 20| Taken
 21| Beëinige of skorst
 22| Kalinderpaniel sjen litte of ferbergje
-23| Kalinderpaniel sjen litte of ferbergje (Ctrl+B)
+23| Kalinderpaniel sjen litte of ferbergje (Alt+Shift+B)
 24| Alarms oan
 25| Alarms skorst
 26| Alarms skorst oant {time}
@@ -97,7 +97,7 @@
 96| Kopiearje nei…
 97| Nei in oare list ferpleatse
 98| In kopy op in oare list sette
-99| In krekte kopy yn dizze list (Ctrl+D)
+99| In krekte kopy yn dizze list (Alt+Shift+D)
 100| Fuortsmite (Del)
 101| Keazen item
 102| Keazen item:
@@ -136,7 +136,7 @@
 135| Foarige moanne
 136| Folgjende moanne
 137| Nei hjoed
-138| Nei in datum gean (Ctrl+G)
+138| Nei in datum gean (Alt+Shift+J)
 139| Nei datum gean
 140| Gean nei…
 141| Gean
@@ -529,13 +529,13 @@
 528| Foltôge oantinkers ferbergje
 529| Ymportearje en eksportearje
 530| In .ics-bestân ymportearje…
-531| De items út in .ics-bestân tafoegje (Ctrl+I)
+531| De items út in .ics-bestân tafoegje (Alt+Shift+I)
 532| Ymportearje út ReminderFox…
 533| De reminderfox.ics fine dy't de ReminderFox-add-on yn jo Firefox- of Thunderbird-profyl bewarre
 534| Eksportearje nei .ics…
 535| Eksportearje nei .ics
 536| Eksportearje…
-537| In .ics-bestân bewarje (Ctrl+E)
+537| In .ics-bestân bewarje (Alt+Shift+X)
 538| Ymportearjen foeget ta oan wat jo hawwe; besteande items wurde allinnich bywurke as de kopy yn it bestân nijer is. Eksports iepenje yn Outlook, Google Agenda, Thunderbird, Apple Agenda en de oarspronklike ReminderFox-add-on.
 539| Reservekopyen
 540| No reservekopy meitsje
@@ -889,7 +889,7 @@
 888| Bestân kieze…
 889| Alarms…
 890| ⏰ Alarms
-891| Elk alarm dat ôfgiet, snoozed is of noch ôfgean sil (Ctrl+L)
+891| Elk alarm dat ôfgiet, snoozed is of noch ôfgean sil (Alt+Shift+L)
 892| Kommende 24 oeren
 893| Kommende 7 dagen
 894| Kommende 30 dagen

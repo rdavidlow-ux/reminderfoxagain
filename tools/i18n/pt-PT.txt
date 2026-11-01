@@ -4,11 +4,11 @@
 3| ⚙ Definições
 4| Definições
 5| Pesquisar
-6| Pesquisar (Ctrl+F)
+6| Pesquisar (Alt+Shift+K)
 7| Pesquisar lembretes e tarefas
-8| Novo lembrete (Ctrl+N)
-9| Novo item na lista exibida (Ctrl+T)
-10| Alarme rápido: um alarme único daqui a alguns minutos (Ctrl+Q)
+8| Novo lembrete (Alt+Shift+A)
+9| Novo item na lista exibida (Alt+Shift+O)
+10| Alarme rápido: um alarme único daqui a alguns minutos (Alt+Shift+Q)
 11| ⏰ Alarme rápido
 12| Lembretes
 13| Mês
@@ -21,7 +21,7 @@
 20| Tarefas
 21| Encerrados ou suspensos
 22| Mostrar ou ocultar o painel de calendário
-23| Mostrar ou ocultar o painel de calendário (Ctrl+B)
+23| Mostrar ou ocultar o painel de calendário (Alt+Shift+B)
 24| Alarmes ligados
 25| Alarmes suspensos
 26| Alarmes suspensos até {time}
@@ -97,7 +97,7 @@
 96| Copiar para…
 97| Mover para outra lista
 98| Pôr uma cópia noutra lista
-99| Uma cópia exata nesta lista (Ctrl+D)
+99| Uma cópia exata nesta lista (Alt+Shift+D)
 100| Eliminar (Del)
 101| Item selecionado
 102| Item selecionado:
@@ -136,7 +136,7 @@
 135| Mês anterior
 136| Próximo mês
 137| Ir para hoje
-138| Ir para uma data (Ctrl+G)
+138| Ir para uma data (Alt+Shift+J)
 139| Ir para a data
 140| Ir para…
 141| Ir
@@ -529,13 +529,13 @@
 528| Ocultar lembretes concluídos
 529| Importar e exportar
 530| Importar um ficheiro .ics…
-531| Adicionar os itens de um ficheiro .ics (Ctrl+I)
+531| Adicionar os itens de um ficheiro .ics (Alt+Shift+I)
 532| Importar do ReminderFox…
 533| Encontrar o reminderfox.ics que a extensão ReminderFox guardava no seu perfil do Firefox ou Thunderbird
 534| Exportar para .ics…
 535| Exportar para .ics
 536| Exportar…
-537| Guardar um ficheiro .ics (Ctrl+E)
+537| Guardar um ficheiro .ics (Alt+Shift+X)
 538| As importações se somam ao que tem; os itens já existentes só são atualizados se a cópia do ficheiro for mais nova. As exportações abrem no Outlook, Google Calendar, Thunderbird, Calendário Apple e na extensão ReminderFox original.
 539| Backups
 540| Fazer backup agora
@@ -889,7 +889,7 @@
 888| Escolher o ficheiro…
 889| Alarmes…
 890| ⏰ Alarmes
-891| Cada alarme a tocar, adiado ou que ainda vai tocar (Ctrl+L)
+891| Cada alarme a tocar, adiado ou que ainda vai tocar (Alt+Shift+L)
 892| Próximas 24 horas
 893| Próximos 7 dias
 894| Próximos 30 dias

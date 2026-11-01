@@ -879,7 +879,7 @@
     const rows = (await rangeWithSubs(gs.getTime(), ge.getTime(), { includeTodos: true }, 'month')).filter(notDoneItem);
     const map = spreadByDay(rows, gs, ge);
     let html = months.map((m, i) => `<div class="mcal-month${i ? ' more-month' : ''}">${monthHtml(m, map, i === 0, i === n - 1)}</div>`).join('');
-    html += '<div class="mcal-foot"><button class="btn ghost" data-cal="today">Today</button><button class="btn ghost" data-cal="goto" title="Go to a date (Ctrl+G)">Go to…</button><button class="btn ghost" data-cal="list">Show day in list</button></div>';
+    html += '<div class="mcal-foot"><button class="btn ghost" data-cal="today">Today</button><button class="btn ghost" data-cal="goto" title="Go to a date (Alt+Shift+J)">Go to…</button><button class="btn ghost" data-cal="list">Show day in list</button></div>';
     $('mcal').innerHTML = html;
     $('mcal').classList.toggle('multi', n > 1);
     await renderAgenda();
@@ -1063,7 +1063,7 @@
       (dto.messageId && window.rf.openEmail ? '<button data-ctx="mail">Open email</button>' : '') +
       (window.rf.sendByEmail ? '<button data-ctx="send">Send by email…</button>' : '') +
       (window.rf.invite && dto.kind === 'event' ? '<button data-ctx="invite">Invite people…</button>' : '') +
-      '<button data-ctx="dup">Duplicate <span class="kbd">Ctrl+D</span></button><hr>' +
+      '<button data-ctx="dup">Duplicate <span class="kbd">Alt+Shift+D</span></button><hr>' +
       (repeatingEvent ? '<button data-ctx="delOne">Delete this occurrence</button><button data-ctx="delAll">Delete all occurrences…</button>' : '<button data-ctx="del">Delete…</button>');
     ctx.classList.remove('hidden');
     const w = ctx.offsetWidth; const h = ctx.offsetHeight;
@@ -1112,7 +1112,7 @@
     guard(window.rf.openUrl(mapUrl(place)));
   }
   // An exact copy right after the original (same list, same place in "My order"), titled "… (copy)".
-  // an item from a calendar subscription, as your own reminder (Ctrl+D does the same)
+  // an item from a calendar subscription, as your own reminder (Alt+Shift+D does the same)
   async function copyToMine(dto) {
     const uid = await guard(window.rf.subsCopy(dto.uid));
     if (uid) toast(T('“{s}” copied to your reminders', { s: dto.summary }), 4500, { label: 'Edit the copy', fn: () => openEditor({ uid }) });
@@ -1854,16 +1854,18 @@
   document.addEventListener('keydown', async (e) => {
     if (e.key === 'Escape') { hideCtx(); return; }
     const ctrl = e.ctrlKey || e.metaKey;
-    if (ctrl && !e.altKey) {
-      const k = e.key.toLowerCase();
+    // the shortcuts: Alt+Shift and a letter, the same as the Thunderbird add-on's (Ctrl+N, Ctrl+T… are Thunderbird's
+    // own there). The letter comes from the key's place (e.code), so ⌥⇧ on a Mac, which types other characters, works.
+    if (e.altKey && e.shiftKey && !ctrl && /^Key[A-Z]$/.test(e.code || '')) {
+      const k = e.code.slice(3).toLowerCase();
       if (k === 's') { if (ed.open) { e.preventDefault(); saveEditor(); } return; }
       if (anyDialogOpen()) return;
-      if (k === 'n') { e.preventDefault(); openEditor({ kind: 'event' }); }
-      else if (k === 't') { e.preventDefault(); openEditor({ kind: 'todo' }); }
-      else if (k === 'f') { e.preventDefault(); $('search').focus(); $('search').select(); }
+      if (k === 'a') { e.preventDefault(); openEditor({ kind: 'event' }); }
+      else if (k === 'o') { e.preventDefault(); openEditor({ kind: 'todo' }); }
+      else if (k === 'k') { e.preventDefault(); $('search').focus(); $('search').select(); }
       else if (k === 'i') { e.preventDefault(); doImport(); }
-      else if (k === 'e') { e.preventDefault(); doExport(); }
-      else if (k === 'g') { e.preventDefault(); FX('openGoTo'); }
+      else if (k === 'x') { e.preventDefault(); doExport(); }
+      else if (k === 'j') { e.preventDefault(); FX('openGoTo'); }
       else if (k === 'b') { e.preventDefault(); toggleSide(); }
       else if (k === 'q') { e.preventDefault(); FX('openQuick'); }
       else if (k === 'l') { e.preventDefault(); FX('openAlarms'); }

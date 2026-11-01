@@ -4,11 +4,11 @@
 3| ⚙ Innstillinger
 4| Innstillinger
 5| Søk
-6| Søk (Ctrl+F)
+6| Søk (Alt+Shift+K)
 7| Søk i påminnelser og oppgaver
-8| Ny påminnelse (Ctrl+N)
-9| Nytt punkt i listen som vises (Ctrl+T)
-10| Hurtigalarm: én enkelt alarm om noen minutter (Ctrl+Q)
+8| Ny påminnelse (Alt+Shift+A)
+9| Nytt punkt i listen som vises (Alt+Shift+O)
+10| Hurtigalarm: én enkelt alarm om noen minutter (Alt+Shift+Q)
 11| ⏰ Hurtigalarm
 12| Påminnelser
 13| Måned
@@ -21,7 +21,7 @@
 20| Oppgaver
 21| Avsluttet eller satt på pause
 22| Vis eller skjul kalenderpanelet
-23| Vis eller skjul kalenderpanelet (Ctrl+B)
+23| Vis eller skjul kalenderpanelet (Alt+Shift+B)
 24| Alarmer på
 25| Alarmer satt på pause
 26| Alarmer satt på pause til {time}
@@ -97,7 +97,7 @@
 96| Kopier til…
 97| Flytt den til en annen liste
 98| Legg en kopi på en annen liste
-99| En nøyaktig kopi i denne listen (Ctrl+D)
+99| En nøyaktig kopi i denne listen (Alt+Shift+D)
 100| Slett (Del)
 101| Valgt punkt
 102| Valgt punkt:
@@ -136,7 +136,7 @@
 135| Forrige måned
 136| Neste måned
 137| Gå til i dag
-138| Gå til en dato (Ctrl+G)
+138| Gå til en dato (Alt+Shift+J)
 139| Gå til dato
 140| Gå til…
 141| Gå
@@ -529,13 +529,13 @@
 528| Skjul fullførte påminnelser
 529| Import og eksport
 530| Importer en .ics-fil…
-531| Legg til punktene fra en .ics-fil (Ctrl+I)
+531| Legg til punktene fra en .ics-fil (Alt+Shift+I)
 532| Importer fra ReminderFox…
 533| Finn reminderfox.ics som ReminderFox-tillegget lagret i Firefox- eller Thunderbird-profilen din
 534| Eksporter til .ics…
 535| Eksporter til .ics
 536| Eksporter…
-537| Lagre en .ics-fil (Ctrl+E)
+537| Lagre en .ics-fil (Alt+Shift+X)
 538| Import legges til det du har; punkter som finnes fra før, oppdateres bare hvis kopien i filen er nyere. Eksport kan åpnes i Outlook, Google Kalender, Thunderbird, Apple Kalender og det opprinnelige ReminderFox-tillegget.
 539| Sikkerhetskopier
 540| Sikkerhetskopier nå
@@ -889,7 +889,7 @@
 888| Velg filen…
 889| Alarmer…
 890| ⏰ Alarmer
-891| Alle alarmer som ringer, er utsatt eller skal ringe (Ctrl+L)
+891| Alle alarmer som ringer, er utsatt eller skal ringe (Alt+Shift+L)
 892| Neste 24 timer
 893| Neste 7 dager
 894| Neste 30 dager

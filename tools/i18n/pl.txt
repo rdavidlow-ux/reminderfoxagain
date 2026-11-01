@@ -4,11 +4,11 @@
 3| ⚙ Ustawienia
 4| Ustawienia
 5| Szukaj
-6| Szukaj (Ctrl+F)
+6| Szukaj (Alt+Shift+K)
 7| Szukaj w przypomnieniach i zadaniach
-8| Nowe przypomnienie (Ctrl+N)
-9| Nowa pozycja na wyświetlanej liście (Ctrl+T)
-10| Szybki alarm: jednorazowy alarm za kilka minut (Ctrl+Q)
+8| Nowe przypomnienie (Alt+Shift+A)
+9| Nowa pozycja na wyświetlanej liście (Alt+Shift+O)
+10| Szybki alarm: jednorazowy alarm za kilka minut (Alt+Shift+Q)
 11| ⏰ Szybki alarm
 12| Przypomnienia
 13| Miesiąc
@@ -21,7 +21,7 @@
 20| Zadania
 21| Zakończone lub wstrzymane
 22| Pokaż lub ukryj panel kalendarza
-23| Pokaż lub ukryj panel kalendarza (Ctrl+B)
+23| Pokaż lub ukryj panel kalendarza (Alt+Shift+B)
 24| Alarmy włączone
 25| Alarmy wstrzymane
 26| Alarmy wstrzymane do {time}
@@ -97,7 +97,7 @@
 96| Kopiuj do…
 97| Przenieś na inną listę
 98| Umieść kopię na innej liście
-99| Dokładna kopia na tej liście (Ctrl+D)
+99| Dokładna kopia na tej liście (Alt+Shift+D)
 100| Usuń (Del)
 101| Wybrana pozycja
 102| Wybrana pozycja:
@@ -136,7 +136,7 @@
 135| Poprzedni miesiąc
 136| Następny miesiąc
 137| Przejdź do dziś
-138| Przejdź do daty (Ctrl+G)
+138| Przejdź do daty (Alt+Shift+J)
 139| Przejdź do daty
 140| Przejdź…
 141| Przejdź
@@ -529,13 +529,13 @@
 528| Ukryj ukończone przypomnienia
 529| Import i eksport
 530| Importuj plik .ics…
-531| Dodaj pozycje z pliku .ics (Ctrl+I)
+531| Dodaj pozycje z pliku .ics (Alt+Shift+I)
 532| Importuj z ReminderFox…
 533| Znajdź plik reminderfox.ics, który dodatek ReminderFox trzymał w Twoim profilu Firefoksa lub Thunderbirda
 534| Eksportuj do .ics…
 535| Eksportuj do .ics
 536| Eksportuj…
-537| Zapisz plik .ics (Ctrl+E)
+537| Zapisz plik .ics (Alt+Shift+X)
 538| Import dodaje do tego, co masz; istniejące pozycje są aktualizowane tylko wtedy, gdy kopia w pliku jest nowsza. Eksport otwiera się w Outlooku, Kalendarzu Google, Thunderbirdzie, Kalendarzu Apple i oryginalnym dodatku ReminderFox.
 539| Kopie zapasowe
 540| Utwórz kopię teraz
@@ -889,7 +889,7 @@
 888| Wybierz plik…
 889| Alarmy…
 890| ⏰ Alarmy
-891| Każdy alarm, który dzwoni, jest odłożony lub dopiero zadzwoni (Ctrl+L)
+891| Każdy alarm, który dzwoni, jest odłożony lub dopiero zadzwoni (Alt+Shift+L)
 892| Następne 24 godziny
 893| Następne 7 dni
 894| Następne 30 dni

@@ -4,11 +4,11 @@
 3| ⚙ Sätted
 4| Sätted
 5| Otsi
-6| Otsi (Ctrl+F)
+6| Otsi (Alt+Shift+K)
 7| Otsi meeldetuletustest ja ülesannetest
-8| Uus meeldetuletus (Ctrl+N)
-9| Uus kirje kuvatavasse loendisse (Ctrl+T)
-10| Kiiralarm: ühekordne alarm mõne minuti pärast (Ctrl+Q)
+8| Uus meeldetuletus (Alt+Shift+A)
+9| Uus kirje kuvatavasse loendisse (Alt+Shift+O)
+10| Kiiralarm: ühekordne alarm mõne minuti pärast (Alt+Shift+Q)
 11| ⏰ Kiiralarm
 12| Meeldetuletused
 13| Kuu
@@ -21,7 +21,7 @@
 20| Ülesanded
 21| Lõpetatud või peatatud
 22| Näita või peida kalendripaan
-23| Näita või peida kalendripaan (Ctrl+B)
+23| Näita või peida kalendripaan (Alt+Shift+B)
 24| Alarmid sees
 25| Alarmid peatatud
 26| Alarmid peatatud kuni {time}
@@ -97,7 +97,7 @@
 96| Kopeeri…
 97| Teisalda teise loendisse
 98| Pane koopia teise loendisse
-99| Täpne koopia selles loendis (Ctrl+D)
+99| Täpne koopia selles loendis (Alt+Shift+D)
 100| Kustuta (Del)
 101| Valitud kirje
 102| Valitud kirje:
@@ -136,7 +136,7 @@
 135| Eelmine kuu
 136| Järgmine kuu
 137| Mine tänasele
-138| Mine kuupäevale (Ctrl+G)
+138| Mine kuupäevale (Alt+Shift+J)
 139| Mine kuupäevale
 140| Mine…
 141| Mine
@@ -529,13 +529,13 @@
 528| Peida tehtud meeldetuletused
 529| Import ja eksport
 530| Impordi .ics-fail…
-531| Lisa kirjed .ics-failist (Ctrl+I)
+531| Lisa kirjed .ics-failist (Alt+Shift+I)
 532| Impordi ReminderFoxist…
 533| Leia reminderfox.ics, mida ReminderFoxi lisa hoidis sinu Firefoxi või Thunderbirdi profiilis
 534| Ekspordi .ics-failiks…
 535| Ekspordi .ics-failiks
 536| Ekspordi…
-537| Salvesta .ics-fail (Ctrl+E)
+537| Salvesta .ics-fail (Alt+Shift+X)
 538| Import lisab olemasolevale; juba olemas olevaid kirjeid uuendatakse ainult siis, kui faili koopia on uuem. Eksporditud failid avanevad Outlookis, Google'i kalendris, Thunderbirdis, Apple'i kalendris ja algses ReminderFoxi lisas.
 539| Varukoopiad
 540| Tee varukoopia kohe
@@ -889,7 +889,7 @@
 888| Vali fail…
 889| Äratused…
 890| ⏰ Äratused
-891| Iga äratus, mis heliseb, on edasi lükatud või alles heliseb (Ctrl+L)
+891| Iga äratus, mis heliseb, on edasi lükatud või alles heliseb (Alt+Shift+L)
 892| Järgmised 24 tundi
 893| Järgmised 7 päeva
 894| Järgmised 30 päeva

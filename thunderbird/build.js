@@ -107,9 +107,9 @@ const manifest = {
   optional_permissions: ['*://*/*'],
   // Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q… for itself, so the app's shortcuts are Thunderbird shortcuts with Alt+Shift
   // (people can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts). Alt+Shift with the access key
-  // of a Thunderbird menu (F E V G M N T H) opens that menu instead, so those five use other letters: A (add a
-  // reminder), O (to-do), K (search, as Ctrl+K in Thunderbird), J (jump to a date), X (export); the rest keep the
-  // desktop letter.
+  // of a Thunderbird menu (F E V G M N T H) opens that menu instead, so they avoid those letters: A (add a reminder),
+  // O (to-do), K (search, as Ctrl+K in Thunderbird), J (jump to a date), X (export), Q, B, I, D, S, L. The desktop app
+  // uses the same keys.
   commands: Object.fromEntries(Object.entries(require('./shortcuts.json')).map(([name, c]) => [name, { suggested_key: { default: c.key }, description: c.description }])),
 };
 write('manifest.json', `${JSON.stringify(manifest, null, 2)}\n`);

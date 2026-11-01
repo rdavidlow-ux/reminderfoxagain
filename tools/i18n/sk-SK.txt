@@ -4,11 +4,11 @@
 3| ⚙ Nastavenia
 4| Nastavenia
 5| Hľadať
-6| Hľadať (Ctrl+F)
+6| Hľadať (Alt+Shift+K)
 7| Hľadať v pripomienkach a úlohách
-8| Nová pripomienka (Ctrl+N)
-9| Nová položka v zobrazenom zozname (Ctrl+T)
-10| Rýchly budík: jednorazový alarm o pár minút (Ctrl+Q)
+8| Nová pripomienka (Alt+Shift+A)
+9| Nová položka v zobrazenom zozname (Alt+Shift+O)
+10| Rýchly budík: jednorazový alarm o pár minút (Alt+Shift+Q)
 11| ⏰ Rýchly budík
 12| Pripomienky
 13| Mesiac
@@ -21,7 +21,7 @@
 20| Úlohy
 21| Ukončené alebo pozastavené
 22| Zobraziť alebo skryť panel kalendára
-23| Zobraziť alebo skryť panel kalendára (Ctrl+B)
+23| Zobraziť alebo skryť panel kalendára (Alt+Shift+B)
 24| Alarmy zapnuté
 25| Alarmy pozastavené
 26| Alarmy pozastavené do {time}
@@ -97,7 +97,7 @@
 96| Kopírovať do…
 97| Presunúť do iného zoznamu
 98| Dať kópiu do iného zoznamu
-99| Presná kópia v tomto zozname (Ctrl+D)
+99| Presná kópia v tomto zozname (Alt+Shift+D)
 100| Odstrániť (Del)
 101| Vybraná položka
 102| Vybraná položka:
@@ -136,7 +136,7 @@
 135| Predchádzajúci mesiac
 136| Nasledujúci mesiac
 137| Prejsť na dnešok
-138| Prejsť na dátum (Ctrl+G)
+138| Prejsť na dátum (Alt+Shift+J)
 139| Prejsť na dátum
 140| Prejsť…
 141| Prejsť
@@ -529,13 +529,13 @@
 528| Skryť hotové pripomienky
 529| Import a export
 530| Importovať súbor .ics…
-531| Pridať položky zo súboru .ics (Ctrl+I)
+531| Pridať položky zo súboru .ics (Alt+Shift+I)
 532| Importovať z ReminderFoxu…
 533| Nájsť reminderfox.ics, ktorý doplnok ReminderFox ukladal vo vašom profile Firefoxu alebo Thunderbirdu
 534| Exportovať do .ics…
 535| Exportovať do .ics
 536| Exportovať…
-537| Uložiť súbor .ics (Ctrl+E)
+537| Uložiť súbor .ics (Alt+Shift+X)
 538| Import sa pridá k tomu, čo máte; existujúce položky sa aktualizujú len vtedy, keď je kópia v súbore novšia. Exporty možno otvoriť v Outlooku, Kalendári Google, Thunderbirde, Kalendári Apple a pôvodnom doplnku ReminderFox.
 539| Zálohy
 540| Zálohovať hneď
@@ -889,7 +889,7 @@
 888| Vybrať súbor…
 889| Upozornenia…
 890| ⏰ Upozornenia
-891| Každé upozornenie, ktoré zvoní, je odložené alebo ešte zazvoní (Ctrl+L)
+891| Každé upozornenie, ktoré zvoní, je odložené alebo ešte zazvoní (Alt+Shift+L)
 892| Ďalších 24 hodín
 893| Ďalších 7 dní
 894| Ďalších 30 dní

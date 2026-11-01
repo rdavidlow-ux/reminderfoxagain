@@ -4,11 +4,11 @@
 3| ⚙ Configuració
 4| Configuració
 5| Cerca
-6| Cerca (Ctrl+F)
+6| Cerca (Alt+Shift+K)
 7| Cerca als recordatoris i les tasques
-8| Recordatori nou (Ctrl+N)
-9| Element nou a la llista que es mostra (Ctrl+T)
-10| Alarma ràpida: una alarma única d'aquí a uns minuts (Ctrl+Q)
+8| Recordatori nou (Alt+Shift+A)
+9| Element nou a la llista que es mostra (Alt+Shift+O)
+10| Alarma ràpida: una alarma única d'aquí a uns minuts (Alt+Shift+Q)
 11| ⏰ Alarma ràpida
 12| Recordatoris
 13| Mes
@@ -21,7 +21,7 @@
 20| Tasques
 21| Acabat o suspès
 22| Mostra o amaga el plafó del calendari
-23| Mostra o amaga el plafó del calendari (Ctrl+B)
+23| Mostra o amaga el plafó del calendari (Alt+Shift+B)
 24| Alarmes actives
 25| Alarmes suspeses
 26| Alarmes suspeses fins a les {time}
@@ -97,7 +97,7 @@
 96| Copia a…
 97| Mou-lo a una altra llista
 98| Posa'n una còpia a una altra llista
-99| Una còpia exacta en aquesta llista (Ctrl+D)
+99| Una còpia exacta en aquesta llista (Alt+Shift+D)
 100| Suprimeix (Supr)
 101| Element seleccionat
 102| Element seleccionat:
@@ -136,7 +136,7 @@
 135| Mes anterior
 136| Mes següent
 137| Vés a avui
-138| Vés a una data (Ctrl+G)
+138| Vés a una data (Alt+Shift+J)
 139| Vés a la data
 140| Vés a…
 141| Vés
@@ -529,13 +529,13 @@
 528| Amaga els recordatoris completats
 529| Importa i exporta
 530| Importa un fitxer .ics…
-531| Afegeix els elements d'un fitxer .ics (Ctrl+I)
+531| Afegeix els elements d'un fitxer .ics (Alt+Shift+I)
 532| Importa de ReminderFox…
 533| Troba el reminderfox.ics que el complement ReminderFox guardava al vostre perfil de Firefox o Thunderbird
 534| Exporta a .ics…
 535| Exporta a .ics
 536| Exporta…
-537| Desa un fitxer .ics (Ctrl+E)
+537| Desa un fitxer .ics (Alt+Shift+X)
 538| Les importacions s'afegeixen al que teniu; els elements que ja hi són només s'actualitzen si la còpia del fitxer és més nova. Les exportacions s'obren a l'Outlook, Google Calendar, Thunderbird, Calendari d'Apple i el complement ReminderFox original.
 539| Còpies de seguretat
 540| Fes una còpia ara
@@ -889,7 +889,7 @@
 888| Tria el fitxer…
 889| Alarmes…
 890| ⏰ Alarmes
-891| Cada alarma que sona, està posposada o encara sonarà (Ctrl+L)
+891| Cada alarma que sona, està posposada o encara sonarà (Alt+Shift+L)
 892| Properes 24 hores
 893| Propers 7 dies
 894| Propers 30 dies

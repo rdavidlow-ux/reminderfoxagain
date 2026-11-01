@@ -48,7 +48,7 @@ try {
   $('stExport').click(); await sleep(300);
   check('export dialog opens over Settings', `${$('exportDlg').open} ${$('settingsDlg').open}`, 'true true');
   $('exportDlg').close(); $('settingsDlg').close(); await sleep(200);
-  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'e', ctrlKey: true, bubbles: true })); await sleep(300);
-  check('Ctrl+E still exports', $('exportDlg').open, true);
+  document.dispatchEvent(new KeyboardEvent('keydown', { key: 'X', code: 'KeyX', altKey: true, shiftKey: true, bubbles: true })); await sleep(300);
+  check('Alt+Shift+X still exports', $('exportDlg').open, true);
   $('exportDlg').close();
 } catch (e) { console.log(`E2E ERROR ${e && e.stack}`); }

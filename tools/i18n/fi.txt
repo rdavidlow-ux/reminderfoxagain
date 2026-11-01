@@ -4,11 +4,11 @@
 3| ⚙ Asetukset
 4| Asetukset
 5| Hae
-6| Hae (Ctrl+F)
+6| Hae (Alt+Shift+K)
 7| Hae muistutuksista ja tehtävistä
-8| Uusi muistutus (Ctrl+N)
-9| Uusi kohta näytettävään listaan (Ctrl+T)
-10| Pikahälytys: kertahälytys muutaman minuutin päästä (Ctrl+Q)
+8| Uusi muistutus (Alt+Shift+A)
+9| Uusi kohta näytettävään listaan (Alt+Shift+O)
+10| Pikahälytys: kertahälytys muutaman minuutin päästä (Alt+Shift+Q)
 11| ⏰ Pikahälytys
 12| Muistutukset
 13| Kuukausi
@@ -21,7 +21,7 @@
 20| Tehtävät
 21| Päättyneet tai keskeytetyt
 22| Näytä tai piilota kalenteripaneeli
-23| Näytä tai piilota kalenteripaneeli (Ctrl+B)
+23| Näytä tai piilota kalenteripaneeli (Alt+Shift+B)
 24| Hälytykset päällä
 25| Hälytykset tauolla
 26| Hälytykset tauolla klo {time} asti
@@ -97,7 +97,7 @@
 96| Kopioi…
 97| Siirrä toiseen listaan
 98| Laita kopio toiseen listaan
-99| Tarkka kopio tähän listaan (Ctrl+D)
+99| Tarkka kopio tähän listaan (Alt+Shift+D)
 100| Poista (Del)
 101| Valittu kohta
 102| Valittu kohta:
@@ -136,7 +136,7 @@
 135| Edellinen kuukausi
 136| Seuraava kuukausi
 137| Siirry tähän päivään
-138| Siirry päivämäärään (Ctrl+G)
+138| Siirry päivämäärään (Alt+Shift+J)
 139| Siirry päivämäärään
 140| Siirry…
 141| Siirry
@@ -529,13 +529,13 @@
 528| Piilota valmiit muistutukset
 529| Tuonti ja vienti
 530| Tuo .ics-tiedosto…
-531| Lisää kohdat .ics-tiedostosta (Ctrl+I)
+531| Lisää kohdat .ics-tiedostosta (Alt+Shift+I)
 532| Tuo ReminderFoxista…
 533| Etsi reminderfox.ics, jonka ReminderFox-lisäosa säilytti Firefox- tai Thunderbird-profiilissasi
 534| Vie .ics-muotoon…
 535| Vie .ics-muotoon
 536| Vie…
-537| Tallenna .ics-tiedosto (Ctrl+E)
+537| Tallenna .ics-tiedosto (Alt+Shift+X)
 538| Tuonti lisää olemassa oleviin; jo olemassa olevat kohdat päivitetään vain, jos tiedoston kopio on uudempi. Viedyt tiedostot avautuvat Outlookissa, Google Kalenterissa, Thunderbirdissä, Applen Kalenterissa ja alkuperäisessä ReminderFox-lisäosassa.
 539| Varmuuskopiot
 540| Varmuuskopioi nyt
@@ -889,7 +889,7 @@
 888| Valitse tiedosto…
 889| Hälytykset…
 890| ⏰ Hälytykset
-891| Kaikki hälytykset, jotka soivat, on torkutettu tai vielä soivat (Ctrl+L)
+891| Kaikki hälytykset, jotka soivat, on torkutettu tai vielä soivat (Alt+Shift+L)
 892| Seuraavat 24 tuntia
 893| Seuraavat 7 päivää
 894| Seuraavat 30 päivää
