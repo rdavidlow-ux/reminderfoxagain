@@ -187,6 +187,18 @@ function serve() {
     line('the place from the email', ed.location, 'Maple Motors service desk, 500 Queen St E, Toronto');
     await main.evaluate(() => document.getElementById('edCancel').click());
     await sleep(300);
+    // … or Add list item…: the same email as an item in the list being shown, its date and time the "due by"
+    const todoItem = await bg.evaluate(() => window.__mock.state.menus.find((m) => m.id === 'rf-mail-todo'));
+    line('"Add list item…" is on the email menu', todoItem ? `${todoItem.title} [${todoItem.contexts}]` : 'missing', 'Add list item… [message_list]');
+    await bg.evaluate(() => window.__mock.clickMenu('rf-mail-todo', { selectedMessages: { messages: [{ id: 42, subject: 'Re: Car service at the dealer', date: new Date().toISOString() }] } }));
+    await sleep(1200);
+    const td = await main.evaluate(() => ({ open: document.getElementById('edSummary').offsetParent !== null, summary: document.getElementById('edSummary').value, noDateShown: document.getElementById('edNoDate').offsetParent !== null, noDate: document.getElementById('edNoDate').checked, date: document.getElementById('edDate').value, time: document.getElementById('edTime').value, allDay: document.getElementById('edAllDay').checked }));
+    line('the email opens a list item', td.open && td.noDateShown, true);
+    line('list item: the subject', td.summary, 'Car service at the dealer');
+    line('list item: due by date', td.noDate ? 'no date' : td.date, aheadKey);
+    line('list item: due by time', `${td.time}${td.allDay ? ' (all day)' : ''}`, '08:00');
+    await main.evaluate(() => document.getElementById('edCancel').click());
+    await sleep(300);
     const alarm = await waitFor('alarm', 6000);
     line('the alarm window opened for the quick alarm', !!alarm, true);
     if (alarm) {

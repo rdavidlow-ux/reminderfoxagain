@@ -67,9 +67,13 @@ Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q and the other Ctrl keys for itself, so 
 
 To change one: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+N)”) show the shortcuts as they are set, in every language; a shortcut that was removed is left out of its tooltip.
 
-## Reminders from email
+## Reminders and list items from email
 
-Right-click an email in the message list and choose **Add reminder…** (with the fox icon). The reminder editor opens with the email's subject as the description and the date the email mentions as the reminder's date, with its time and place if the email gives them. Check it, change anything, and save.
+Right-click an email in the message list and choose **Add reminder…** or **Add list item…**. Thunderbird shows them under a ReminderFoxAgain submenu, with the fox icon, because the add-on puts two items there. The editor opens with the email's subject as the description and the date, time and place the email mentions, if it gives them. Check it, change anything, and save.
+
+- **Add reminder…** — a new reminder: the date found is the reminder's date.
+
+- **Add list item…** — a new item in the list being shown: the date and time found are its **due by** date and time. With no date found, the item is due today, as for any new list item; tick “No date” in the editor if it has none.
 
 | What                  | How                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -92,7 +96,7 @@ Everything the desktop import keeps is kept here too: the ReminderFox add-on's X
 ## Building, installing, testing
 
 ./build-thunderbird.sh \# unit tests, then dist/release-thunderbird/ReminderFoxAgain-\<ver\>-thunderbird.xpi  
-thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last line: 612 checks, 0 problem(s)
+thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last line: 617 checks, 0 problem(s)
 
 - **Install:** Add-ons and Themes → ⚙ → Install Add-on From File… → the .xpi. Thunderbird asks to confirm because the add-on isn't signed. To try it without installing: Tools → Developer Tools → Debug Add-ons → Load Temporary Add-on… → dist/thunderbird/manifest.json (removed when Thunderbird closes).
 
@@ -100,7 +104,7 @@ thunderbird/test/e2e.sh \# UI checks in Chromium with a mock Thunderbird; last l
 
 - **Unit tests:** test/host-core.test.js (11 tests) and test/maildate.test.js (9 tests, the dates, times and places found in emails), part of npm test (56 in all, in 7 time zones). The host-core tests run the core with an in-memory adapter and a clock the test moves: saving and reloading, daily backups, import with a picked prefs.js, an unreadable file kept aside, alarms (due, snooze, dismiss), quick alarms and suspend, backup and restore, export, the toolbar menu, a chosen language, a chosen sound, and the reminder made from an email.
 
-- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, Add reminder… on an HTML email with its date, time and place, the pop-up and a quick alarm). Desktop scripts that import test files by their path get those files uploaded the add-on's way. One desktop check is different on purpose (the hidden “Import from ReminderFox…”) and is reported as such.
+- **UI checks:** thunderbird/test/run.js serves the built add-on, opens its background page in Chromium with mock-browser.js (storage, tabs, popup windows, the toolbar button, menus, notifications, shortcuts, messages), clicks the toolbar button, and runs the desktop's tools/ui/\*.js scripts in the tab and the alarm window, plus tb-smoke.js for what the add-on does its own way (storage, export, the hidden settings, the tooltips, Alt+Shift+N and Alt+Shift+B, Add reminder… and Add list item… on an HTML email with its date, time and place, the pop-up and a quick alarm). Desktop scripts that import test files by their path get those files uploaded the add-on's way. One desktop check is different on purpose (the hidden “Import from ReminderFox…”) and is reported as such.
 
 - **Desktop app:** its own checks still pass (tools/e2e.sh, 658 checks), since the add-on shares its pages.
 
@@ -131,7 +135,7 @@ Still to try in a real Thunderbird:
 
 - [ ] Storage size with years of backups (the unlimited-storage permission should cover it).
 
-- [ ] Add reminder… on real emails: the dates it finds in plain-text and HTML messages, and in other languages.
+- [ ] Add reminder… and Add list item… on real emails: the dates, times and places they find in plain-text and HTML messages and in other languages, and where Thunderbird shows the two items in the menu.
 
 Ideas for later:
 

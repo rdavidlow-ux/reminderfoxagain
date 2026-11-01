@@ -281,6 +281,8 @@ function createHost(ad) {
       { id: 'slider', title: tr("Show today's reminders") },
       // right-click on an email (the Thunderbird add-on): a new reminder with its subject and the date it mentions
       { id: 'mail-reminder', title: tr('Add reminder…'), contexts: ['message_list'] },
+      // … or a list item, the date and time found being its "due by"
+      { id: 'mail-todo', title: tr('Add list item…'), contexts: ['message_list'] },
     ];
   }
   async function menuClick(id) {
@@ -740,9 +742,9 @@ function createHost(ad) {
     'backup:restore': (file) => restoreBackup(file),
     'menu:click': (id) => menuClick(id),
     // an email {subject, date (ms), body}: what the editor opens with (ui:new): its subject, date, time and place
-    'mail:reminder': (mail) => {
+    'mail:reminder': (mail, kind) => {
       const r = reminderFromEmail(mail, { now: now(), locale: dateLocale() });
-      return { kind: 'event', date: r.date, prefill: { summary: r.summary, time: r.time, location: r.location }, found: r.found };
+      return { kind: kind === 'todo' ? 'todo' : 'event', date: r.date, prefill: { summary: r.summary, time: r.time, location: r.location }, found: r.found };
     },
     'host:i18n': () => i18nInfo(),
   };

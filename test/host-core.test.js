@@ -233,8 +233,14 @@ test('host 11. "Add reminder…" on an email: the menu item, and what the editor
   const item = tb.log.menu.find((i) => i.id === 'mail-reminder');
   assert.equal(item.title, 'Add reminder…');
   assert.deepEqual(item.contexts, ['message_list']);
+  const todoItem = tb.log.menu.find((i) => i.id === 'mail-todo');
+  assert.equal(todoItem.title, 'Add list item…');
+  assert.deepEqual(todoItem.contexts, ['message_list']);
   const p = await tb.call('mail:reminder', { subject: 'Re: Dentist — Dr. Patel', date: tb.now(), body: 'Your appointment is on Thursday, October 22 at 2:30 pm.\n\nOn Mon, Oct 19, 2026 at 9:00 AM, the office wrote:\n> old text' });
   assert.deepEqual(p, { kind: 'event', date: '2026-10-22', prefill: { summary: 'Dentist — Dr. Patel', time: '14:30', location: null }, found: 'Thursday, October 22' });
+  // the same email as a list item: the date and time become its "due by"
+  const t = await tb.call('mail:reminder', { subject: 'Re: Renew passport', date: tb.now(), body: 'Due by Friday, October 30 at 5 pm.\nWhere: Service Canada' }, 'todo');
+  assert.deepEqual(t, { kind: 'todo', date: '2026-10-30', prefill: { summary: 'Renew passport', time: '17:00', location: 'Service Canada' }, found: 'Friday, October 30' });
   const none = await tb.call('mail:reminder', { subject: 'Hello', date: tb.now(), body: 'No date.' });
   assert.equal(none.date, null);
   assert.equal(none.prefill.summary, 'Hello');
