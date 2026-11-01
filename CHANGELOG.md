@@ -3,6 +3,23 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
+## Experimental — ReminderFoxAgain for Thunderbird (branch `experimental-add-on`, not released)
+
+- **The app inside Thunderbird** (128 or later) as an add-on, with the same features as the desktop app: in a
+  Thunderbird tab, with the alarm and the pop-up in their own windows, and a toolbar button that shows today's count,
+  lists today's reminders in its tooltip and has the tray menu on a right-click. Your reminders and daily backups are
+  kept in your Thunderbird profile. Build it with `./build-thunderbird.sh`; see `docs/thunderbird-addon.md`.
+- **Shortcuts:** Thunderbird keeps the Ctrl keys for itself, so the add-on uses Alt+Shift and the same letter
+  (Alt+Shift+N new reminder, Alt+Shift+T new list item, Alt+Shift+Q quick alarm…), plus Alt+Shift+R to open it. You
+  can change them in Thunderbird's Manage Extension Shortcuts; the tooltips show them as they are set.
+- **Reminders and list items from email:** right-click an email → Add reminder… or Add list item…. The editor opens
+  with the subject as the description, and the date, time and place the email mentions (for a list item, the date and
+  time are its "due by"). Dates such as "Tuesday, Nov 3rd", "3 November", "2026/11/02", "tomorrow" or "next Friday",
+  times next to the date or labelled ("Time 11:40 AM"), and places from a "Location:", "Where:" or "Address:" field or
+  a street address. Quoted replies are left out.
+- Tried in Thunderbird 153.6.0esr on Windows 11: it works, the alarm sound plays without a click, and the alarm
+  window sits at the bottom right.
+
 ## 0.9.2 — fits the smallest window
 
 - **The window can be made as small as it allows (820 px wide) without anything being cut off.** Before, at that
