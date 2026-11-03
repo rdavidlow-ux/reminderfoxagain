@@ -980,3 +980,5 @@
 979| Is deacair míreanna “{item}” a léamh sna liostaí (codarsnacht {n}:1; is fearr 3:1 nó níos mó).
 980| Mír liosta nua
 981| Cuir mír liosta in eagar
+982| Marcáil imeachtaí atá thart mar críochnaithe
+983| Áirítear imeachtaí mar chríochnaithe nuair a bhíonn siad thart; is féidir leat tic a bhaint de cheann fós

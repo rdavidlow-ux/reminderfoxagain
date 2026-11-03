@@ -1181,5 +1181,7 @@
  "Coming (future)": "In arrivo (futuro)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Gli elementi «{item}» sono difficili da leggere negli elenchi (contrasto {n}:1; 3:1 o più è meglio).",
  "New list item": "Nuovo elemento di elenco",
- "Edit list item": "Modifica elemento di elenco"
+ "Edit list item": "Modifica elemento di elenco",
+ "Mark past events completed": "Segna come completati gli eventi passati",
+ "Events count as completed once they are over; you can still untick one": "Gli eventi contano come completati una volta passati; puoi comunque togliere la spunta a uno"
 }

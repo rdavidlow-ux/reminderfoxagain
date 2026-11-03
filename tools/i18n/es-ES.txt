@@ -980,3 +980,5 @@
 979| Los elementos «{item}» son difíciles de leer en las listas (contraste {n}:1; 3:1 o más es mejor).
 980| Nuevo elemento de lista
 981| Editar elemento de lista
+982| Marcar los eventos pasados como completados
+983| Los eventos cuentan como completados cuando ya han pasado; aún puedes desmarcar uno

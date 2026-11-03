@@ -367,6 +367,8 @@ Subscribe to any calendar with a web address: holidays, sports, a school or team
 
 - **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu). It can be ticked like your own reminders (in the list, or **Mark completed** on its right-click menu), and stays ticked when the calendar is fetched again; it can't be changed or deleted.
 
+- **Mark past events completed:** an option for each subscription in **Calendar subscriptions…** (off at first). Its events then count as completed once they are over, so past holidays or games don't stand out as open. You can still untick one, and it stays open.
+
 - **Kept up to date:** each subscription is fetched again every hour, 6 hours, 12 hours, day (at first) or week. If its site can't be reached, the last good copy stays and the dialog says why. **Calendar subscriptions…** also renames, recolours, refreshes and removes them.
 
 *Example:* paste the web address of your country's public holidays, click Subscribe, then in the Reminders toolbar's 📅 Calendars untick it: the holidays show in the Month tab only.

@@ -17,6 +17,9 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   shows them, and they stay ticked when the calendar is fetched again and after a restart. The ticks are kept with your
   settings, not in the calendar (which each refresh replaces); a tick goes when the calendar no longer has the item, and
   removing a subscription removes its ticks. The rest of a subscribed item stays read-only.
+- **Mark past events completed**, an option for each subscription (Calendar subscriptions…, off at first): its events
+  count as completed once they are over (an all-day event after its day, a timed one after it ends), with nothing
+  stored for them. You can still untick one, and it stays open.
 
 ## 0.9.4 (beta) — safe HTML for the add-on review
 

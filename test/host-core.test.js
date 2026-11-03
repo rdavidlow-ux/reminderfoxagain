@@ -487,3 +487,31 @@ test('host 18. calendar subscriptions: items can be ticked, and the ticks surviv
   await tb.host.flush();
   assert.deepEqual(JSON.parse(tb.files.get('state.json').text).subsDone || {}, {});
 });
+
+test('host 19. calendar subscriptions: an option marks events completed once they are over', async () => {
+  const tb = fakeThunderbird(); // Oct 20, 2026, 9:00
+  await tb.host.start();
+  const ev = (uid, title, start, end) => ['BEGIN:VEVENT', `UID:${uid}`, 'DTSTAMP:20260101T000000Z', `DTSTART${end ? '' : ';VALUE=DATE'}:${start}`, ...(end ? [`DTEND:${end}`] : []), `SUMMARY:${title}`, 'END:VEVENT'];
+  const url = 'https://cal.example.com/games.ics';
+  tb.log.web.set(url, ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Example//Games//EN', ...ev('p@x', 'Past game', '20261018'),
+    ...ev('t@x', 'Morning game', '20261020T070000', '20261020T083000'), ...ev('f@x', 'Next game', '20261022'), 'END:VCALENDAR', ''].join('\r\n'));
+  const sub = await tb.call('subs:add', { url });
+  assert.equal(sub.autoDone, false);
+  const from = new Date(2026, 9, 15).getTime(); const to = new Date(2026, 9, 31).getTime();
+  const done = async () => (await tb.call('subs:range', from, to, 'list')).map((r) => `${r.summary}:${r.completed}`).join(' ');
+  assert.equal(await done(), 'Past game:false Morning game:false Next game:false');
+  // on: what is over counts as completed (the all-day game the day before, the timed one that ended at 8:30)
+  await tb.call('subs:update', sub.id, { autoDone: true });
+  assert.equal(await done(), 'Past game:true Morning game:true Next game:false');
+  // unticking one keeps it open, also after a refresh
+  const past = (await tb.call('subs:range', from, to, 'list')).find((r) => r.summary === 'Past game');
+  await tb.call('data:complete', past.uid, false, past.start);
+  await tb.call('subs:refresh', sub.id);
+  assert.equal(await done(), 'Past game:false Morning game:true Next game:false');
+  // once the next one is over, it counts as completed too
+  await tb.advance(3 * 24 * 3600000);
+  assert.equal(await done(), 'Past game:false Morning game:true Next game:true');
+  // off again: only what you ticked yourself
+  await tb.call('subs:update', sub.id, { autoDone: false });
+  assert.equal(await done(), 'Past game:false Morning game:false Next game:false');
+});

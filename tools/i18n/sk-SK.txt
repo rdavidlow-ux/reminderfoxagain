@@ -980,3 +980,5 @@
 979| Položky „{item}“ sú v zoznamoch zle čitateľné (kontrast {n}:1; lepšie je 3:1 alebo viac).
 980| Nová položka zoznamu
 981| Upraviť položku zoznamu
+982| Označiť minulé udalosti ako dokončené
+983| Udalosti sa považujú za dokončené, keď skončia; začiarknutie pri jednej môžete stále zrušiť

@@ -1145,5 +1145,7 @@
  "Coming (future)": "Le teacht (todhchaí)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Is deacair míreanna “{item}” a léamh sna liostaí (codarsnacht {n}:1; is fearr 3:1 nó níos mó).",
  "New list item": "Mír liosta nua",
- "Edit list item": "Cuir mír liosta in eagar"
+ "Edit list item": "Cuir mír liosta in eagar",
+ "Mark past events completed": "Marcáil imeachtaí atá thart mar críochnaithe",
+ "Events count as completed once they are over; you can still untick one": "Áirítear imeachtaí mar chríochnaithe nuair a bhíonn siad thart; is féidir leat tic a bhaint de cheann fós"
 }

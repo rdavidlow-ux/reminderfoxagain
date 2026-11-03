@@ -980,3 +980,5 @@
 979| A(z) „{item}” elemek nehezen olvashatók a listákon (kontraszt {n}:1; 3:1 vagy több a jobb).
 980| Új listaelem
 981| Listaelem szerkesztése
+982| Elmúlt események megjelölése elvégzettként
+983| Az események elvégzettnek számítanak, ha véget értek; egyről így is leveheted a pipát

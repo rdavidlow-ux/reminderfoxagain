@@ -980,3 +980,5 @@
 979| Mục “{item}” khó đọc trong danh sách (độ tương phản {n}:1; từ 3:1 trở lên thì tốt hơn).
 980| Mục danh sách mới
 981| Sửa mục danh sách
+982| Đánh dấu các sự kiện đã qua là hoàn thành
+983| Sự kiện được tính là hoàn thành khi đã kết thúc; bạn vẫn có thể bỏ đánh dấu một sự kiện

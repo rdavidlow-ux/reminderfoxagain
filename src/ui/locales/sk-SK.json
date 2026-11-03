@@ -1301,5 +1301,7 @@
  "Coming (future)": "Nadchádzajúce (budúce)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Položky „{item}“ sú v zoznamoch zle čitateľné (kontrast {n}:1; lepšie je 3:1 alebo viac).",
  "New list item": "Nová položka zoznamu",
- "Edit list item": "Upraviť položku zoznamu"
+ "Edit list item": "Upraviť položku zoznamu",
+ "Mark past events completed": "Označiť minulé udalosti ako dokončené",
+ "Events count as completed once they are over; you can still untick one": "Udalosti sa považujú za dokončené, keď skončia; začiarknutie pri jednej môžete stále zrušiť"
 }

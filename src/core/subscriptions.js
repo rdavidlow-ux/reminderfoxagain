@@ -3,11 +3,12 @@
 // read-only, kept next to the reminders as subscriptions/<id>.ics (so they show without a connection), refreshed on a
 // timer, and shown in the Reminders and Month views as each subscription's "show in" choices say.
 // Shared by the desktop main process (src/main.js) and the host core of the Thunderbird add-on (src/host/core.js).
-// A subscription: { id, url, name, color, refreshHours, showList, showMonth, updated, error, count }, kept in
+// A subscription: { id, url, name, color, refreshHours, showList, showMonth, autoDone, updated, error, count }, kept in
 // settings.subscriptions. Its items' uids are "sub:<id>:<uid>" in the views.
 // Ticks: an item from a subscription can be marked completed. The calendar's file is replaced on every refresh, so the
 // ticks are kept apart from it (the host keeps them in state.json as subsDone: { <id>: { "<uid>|<YYYY-MM-DD>": when } })
-// and laid over its rows; a refresh drops the ticks of items the calendar no longer has.
+// and laid over its rows; a refresh drops the ticks of items the calendar no longer has. With autoDone, an item whose
+// time is over counts as completed without a tick; unticking one keeps it open (stored as 0).
 const HOUR = 3600000;
 const MAX_BYTES = 10 * 1024 * 1024;
 const COLORS = ['#2e7d32', '#1565c0', '#6a1b9a', '#00838f', '#c62828', '#ef6c00', '#5d4037', '#ad1457'];
@@ -91,7 +92,7 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
     const sub = {
       id, url, name: String((o && o.name) || '').trim().slice(0, 80) || calendarName(text) || host,
       color: /^#[0-9a-f]{6}$/i.test((o && o.color) || '') ? o.color.toLowerCase() : (COLORS.find((c) => !used.has(c)) || COLORS[list().length % COLORS.length]),
-      refreshHours: 24, showList: true, showMonth: true, updated: now(), error: '', count: countOf(store),
+      refreshHours: 24, showList: true, showMonth: true, autoDone: false, updated: now(), error: '', count: countOf(store),
     };
     await write(fileOf(id), text);
     stores.set(id, store);
@@ -108,6 +109,7 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
     if (REFRESH.includes(Number(patch.refreshHours))) p.refreshHours = Number(patch.refreshHours);
     if (typeof patch.showList === 'boolean') p.showList = patch.showList;
     if (typeof patch.showMonth === 'boolean') p.showMonth = patch.showMonth;
+    if (typeof patch.autoDone === 'boolean') p.autoDone = patch.autoDone;
     patchOne(id, p);
     schedule();
     return find(id);
@@ -169,11 +171,15 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
       let r = [];
       try { r = fn(store); } catch (e) { r = []; }
       const ticks = doneOf(s.id);
+      const at0 = now();
       for (const x of r) {
         if (x.kind !== 'event') continue;
         const at = ticks[`${x.uid}|${dayOf(x.start)}`];
+        // ticked (a time), unticked on purpose (0), or, with autoDone, over: its end (or start) has passed
+        const over = !!s.autoDone && at !== 0 && (x.end != null && x.end > x.start ? x.end : x.start) <= at0;
+        const done = !!at || over;
         out.push({ ...x, uid: `${PREFIX}${s.id}:${x.uid}`, sub: s.id, subName: s.name, subColor: s.color, readOnly: true, hasAlarm: false,
-          completed: !!at, completedAt: at || null, completedDate: at ? dayOf(at) : '' });
+          completed: done, completedAt: at || null, completedDate: at ? dayOf(at) : '', autoDone: over && !at });
       }
     }
     return out;
@@ -206,7 +212,8 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
     const day = occ != null && Number.isFinite(Number(occ)) ? dayOf(occ) : String(d.date || '');
     const ticks = { ...doneOf(id) };
     const k = `${inner}|${day}`;
-    if (done) ticks[k] = now(); else delete ticks[k];
+    // unticking with autoDone on keeps it open even once it is over: 0
+    if (done) ticks[k] = now(); else if (find(id).autoDone) ticks[k] = 0; else delete ticks[k];
     saveDone(id, ticks);
     if (onChange) onChange();
     return !!done;

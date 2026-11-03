@@ -109,6 +109,13 @@ try {
   // refresh now
   $('subList').querySelector('[data-sa=refresh]').click(); await sleep(1200);
   check('refreshed without a problem', (await window.rf.subsList())[0].error, '');
+  // the option to mark past events completed: off at first; on, what is over counts as completed
+  const auto = $('subList').querySelector('[data-f=autoDone]');
+  check('"Mark past events completed" is there, off', `${!!auto} ${auto && auto.checked}`, 'true false');
+  const pastDone = async () => (await window.rf.subsRange(Date.now() - 400 * 864e5, Date.now() + 400 * 864e5, 'month')).map((r) => `${r.summary.replace(' (sample)', '')}:${r.completed}`).filter((t) => /Spring Fair|Lantern Night/.test(t)).sort().join(' ');
+  check('… past events not completed', await pastDone(), 'Lantern Night:false Spring Fair:false');
+  auto.click(); await sleep(900);
+  check('… on: the past one is completed, the coming one not', `${(await window.rf.subsList())[0].autoDone} ${await pastDone()}`, 'true Lantern Night:false Spring Fair:true');
   // remove
   $('subList').querySelector('[data-sa=remove]').click(); await sleep(400);
   [...$('cfFoot').querySelectorAll('button')].find((b) => b.textContent === 'Remove').click(); await sleep(1000);

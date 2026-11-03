@@ -73,6 +73,7 @@
         `<div class="row"><label class="inline-chk"><input type="checkbox" class="chk" data-f="showList"${x.showList !== false ? ' checked' : ''}> Reminders view</label>` +
         `<label class="inline-chk"><input type="checkbox" class="chk" data-f="showMonth"${x.showMonth !== false ? ' checked' : ''}> Month view</label><span class="spacer"></span>` +
         '<button type="button" class="btn ghost sm" data-sa="refresh">Refresh now</button><button type="button" class="btn ghost sm danger" data-sa="remove">Remove</button></div>' +
+        `<div class="row"><label class="inline-chk" title="${esc(RF.T('Events count as completed once they are over; you can still untick one'))}"><input type="checkbox" class="chk" data-f="autoDone"${x.autoDone ? ' checked' : ''}> Mark past events completed</label></div>` +
         `<div class="note${x.error ? ' warn' : ''}">${esc(x.error ? RF.T('Could not be updated: {why}', { why: RF.T(x.error) }) + (x.updated ? ` ${RF.T('Showing the copy from {time}.', { time: `${fmt.date(x.updated)}, ${fmt.time(x.updated)}` })}` : '')
           : RF.T('Updated {time} · {events}', { time: `${fmt.date(x.updated)}, ${fmt.time(x.updated)}`, events: plural(x.count || 0, 'event', 'events') }))}</div></div>`).join('')
         : '<div class="note">No calendar subscriptions yet.</div>');

@@ -1181,5 +1181,7 @@
  "Coming (future)": "Tuleva (tulevaisuus)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Kohteita ”{item}” on vaikea lukea luetteloissa (kontrasti {n}:1; 3:1 tai enemmän on parempi).",
  "New list item": "Uusi luettelon kohde",
- "Edit list item": "Muokkaa luettelon kohdetta"
+ "Edit list item": "Muokkaa luettelon kohdetta",
+ "Mark past events completed": "Merkitse menneet tapahtumat tehdyiksi",
+ "Events count as completed once they are over; you can still untick one": "Tapahtumat lasketaan tehdyiksi, kun ne ovat ohi; voit silti poistaa merkinnän yhdestä"
 }

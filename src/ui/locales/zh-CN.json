@@ -1001,5 +1001,7 @@
  "Coming (future)": "即将到来（未来）",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "“{item}”项目在列表中难以阅读（对比度 {n}:1；3:1 或以上更好）。",
  "New list item": "新建列表项",
- "Edit list item": "编辑列表项"
+ "Edit list item": "编辑列表项",
+ "Mark past events completed": "将过去的事件标记为已完成",
+ "Events count as completed once they are over; you can still untick one": "事件结束后即视为已完成；你仍可以取消勾选"
 }

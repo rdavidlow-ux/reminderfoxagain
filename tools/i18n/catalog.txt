@@ -1022,3 +1022,6 @@ Coming (future)
 # the editor title for a list item
 New list item
 Edit list item
+# calendar subscriptions: mark an event completed once it is over
+Mark past events completed
+Events count as completed once they are over; you can still untick one
