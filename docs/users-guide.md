@@ -1,6 +1,6 @@
-# ReminderFoxAgain 0.9.4 (beta) — User's Guide
+# ReminderFoxAgain 0.9.5 — User's Guide
 
-Nov 1, 2026 · David
+Nov 3, 2026 · David
 
 ReminderFoxAgain is a Thunderbird add-on for reminders, to-dos and pop-up alarms, and a tribute to the original [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl. It reads and writes ReminderFox's own file, so everything you kept in ReminderFox comes across unchanged, and it turns emails into reminders.
 
@@ -12,7 +12,7 @@ Where Thunderbird isn't available or can't be used, the same app runs on its own
 
 You need Thunderbird 128 or later, on Windows, macOS or Linux.
 
-1.  Download **ReminderFoxAgain-0.9.4-thunderbird.xpi**.
+1.  Download **ReminderFoxAgain-0.9.5-thunderbird.xpi**.
 
 2.  In Thunderbird, open **≡ → Add-ons and Themes**, click **⚙ → Install Add-on From File…** and pick the .xpi.
 
@@ -38,8 +38,8 @@ Put every release file in one folder, then double-click **Install or Update Remi
 |------------------------------------------------------|--------------------------------------|
 | Install or Update ReminderFoxAgain.bat               | Always                               |
 | ReminderFoxAgain-Setup.ps1                           | Always                               |
-| ReminderFoxAgain-app-0.9.4.asar                      | Always                               |
-| ReminderFoxAgain-runtime-0.9.4.part1.bin … part6.bin | New installs, and updates from 0.6.x |
+| ReminderFoxAgain-app-0.9.5.asar                      | Always                               |
+| ReminderFoxAgain-runtime-0.9.5.part1.bin … part6.bin | New installs, and updates from 0.6.x |
 
 - The app goes to %LOCALAPPDATA%\Programs\ReminderFoxAgain, with Start-menu and desktop shortcuts and an entry in Settings → Apps.
 
@@ -49,7 +49,7 @@ Put every release file in one folder, then double-click **Install or Update Remi
 
 #### On a Mac
 
-Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.4-macos-universal.zip.
+Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.5-macos-universal.zip.
 
 1.  Double-click the zip, then drag **ReminderFoxAgain.app** into **Applications**.
 
@@ -61,9 +61,9 @@ On a Mac the shortcuts use ⌥⇧ and the letter (⌥⇧A new reminder, ⌥⇧O 
 
 #### On Linux
 
-- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.4_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.4_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
+- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.5_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.5_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
 
-- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.4-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
+- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.5-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
 
 - **GNOME:** add the "AppIndicator and KStatusNotifierItem Support" extension to see the fox in the top bar. Without it, closing the window quits the app, and Settings says so.
 
@@ -321,14 +321,19 @@ In **Manage reminders** you can Show, Edit, Delete and reorder saved filters (�
 
 ### Month tab: Day, Week and Month views
 
-The **Day | Week | Month** switch at the left of the toolbar picks the view, and the tab is named after it. The choice is remembered.
+The **Day \| Week \| Month** switch at the left of the toolbar picks the view, and the tab is named after it. The choice is remembered.
 
 - **Day** shows the day picked in the calendar panel; **Week** shows its week in seven columns, from the first day of the week set in Settings. Click a day's heading to pick it.
+
 - Both show the full 24 hours, which scroll (they open at 7 AM, or earlier when something starts earlier, and stay where you scrolled). Each timed item sits at its start time and is as tall as it lasts; items at the same time sit side by side. All-day items and list items without a time are in the **All day** row at the top. A red line marks the time now. In Day, an item also shows its place, how it repeats and, for a subscribed calendar, its name.
+
 - **‹ ›** and **Page Up / Page Down** move a day or a week, **Today** and **Go to…** jump there, and a day picked in the calendar panel shows that day (or its week). Click an item to open it. Double-click in the hours to add a reminder on that day at that half hour, or in the All day row for an all-day one. **Show to-dos** and **Show completed** work as in the Month view.
+
 - Back in **Month**, the month of the picked day is shown.
 
-**Month** is a full month grid. Timed items show their time, all-day ones are solid, and to-dos start with ☐. Click an item to open it. Double-click an empty spot to add a reminder on that day. “+3 more” opens that day in the list. **Show to-dos** turns to-dos on and off. **Show completed** is ticked every time the app starts, so the reminders and list items you have ticked show too, struck through; untick it to see only what is still to do (until you close the app).
+<img src="media/users-guide/image2.png" style="width:6in;height:3.86441in" alt="The Week view in the add-on: a week of 24 hours with made-up reminders at their times, all-day items and a subscribed holiday at the top, and a line at the time now" />
+
+The Month view is a full month grid. Timed items show their time, all-day ones are solid, and to-dos start with ☐. Click an item to open it. Double-click an empty spot to add a reminder on that day. “+3 more” opens that day in the list. **Show to-dos** turns to-dos on and off. **Show completed** is ticked every time the app starts, so the reminders and list items you have ticked show too, struck through; untick it to see only what is still to do (until you close the app).
 
 The Month tab scrolls: it is a run of weeks, so past and coming months are a turn of the mouse wheel or a swipe on the touchpad away.
 
@@ -340,9 +345,9 @@ The Month tab scrolls: it is a run of weeks, so past and coming months are a tur
 
 - A change to your reminders, a filter or a search keeps the view where it is.
 
-<img src="media/users-guide/image2.png" style="width:6in;height:3.86441in" alt="The Month tab scrolled halfway between November and December, with made-up reminders" />
+<img src="media/users-guide/image3.png" style="width:6in;height:3.86441in" alt="The Month tab scrolled halfway between November and December, with made-up reminders" />
 
-<img src="media/users-guide/image3.png" style="width:6in;height:3.86441in" alt="The Month tab with Show completed ticked: a ticked reminder and a completed list item, struck through" />
+<img src="media/users-guide/image4.png" style="width:6in;height:3.86441in" alt="The Month tab with Show completed ticked: a ticked reminder and a completed list item, struck through" />
 
 ### Calendar panel and Go to date
 
@@ -366,13 +371,13 @@ For an item with a location, right-click → **Show on a map**, or click 🗺 in
 
 Subscribe to any calendar with a web address: holidays, sports, a school or team calendar (https://, http:// or webcal://). Its events show among your reminders in the subscription's own colour, marked with its name, and they are read-only.
 
-<img src="media/users-guide/image4.png" style="width:6in;height:3.86441in" alt="The Month tab with a subscribed holiday calendar in green, and the Calendars menu open, with made-up reminders" />
+<img src="media/users-guide/image5.png" style="width:6in;height:3.86441in" alt="The Month tab with a subscribed holiday calendar in green, and the Calendars menu open, with made-up reminders" />
 
 - **Subscribe:** **📅 Calendars** in the Reminders or Month toolbar → **Subscribe to a calendar…**, or Settings → Data → **Calendar subscriptions…**. Paste the address and click **Subscribe**; the calendar's own name is used. The add-on asks Thunderbird once for permission to read that site.
 
 - **Which views show it:** 📅 Calendars in each toolbar has a tick for every subscription, so one calendar can be in the Month tab but not in the Reminders list (the calendar panel follows the Month tab). A dot on the button means some are hidden in that view.
 
-- **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu). It can be ticked like your own reminders (in the list, or **Mark completed** on its right-click menu), and stays ticked when the calendar is fetched again; it can't be changed or deleted.
+- **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu). It can be ticked like your own reminders (in the list, or Mark completed on its right-click menu), and stays ticked when the calendar is fetched again; it can't be changed or deleted.
 
 - **Mark past events completed:** an option for each subscription in **Calendar subscriptions…** (off at first). Its events then count as completed once they are over, so past holidays or games don't stand out as open. You can still untick one, and it stays open.
 
@@ -402,7 +407,7 @@ When an alarm is due, a window opens in the bottom-right corner of the screen, o
 
 Every alarm in one place: **⏰ Alarms** in the status bar, **Alarms…** in the fox button's menu (the tray menu on the desktop), or **Alt+Shift+L**.
 
-<img src="media/users-guide/image5.png" style="width:6in;height:3.86441in" alt="The Alarms view with made-up reminders: one ringing, one snoozed, a quick alarm, alarms to come and one skipped" />
+<img src="media/users-guide/image6.png" style="width:6in;height:3.86441in" alt="The Alarms view with made-up reminders: one ringing, one snoozed, a quick alarm, alarms to come and one skipped" />
 
 It lists what is ringing, what is snoozed and until when, then every alarm still to ring in the next 24 hours, 7 days, 30 days or 12 months (the choice is remembered), in the order they ring, with quick alarms among them. It refreshes itself while open.
 
@@ -504,7 +509,7 @@ The Import dialog names the file, counts its reminders and list items, and says 
 | Duplicates | **Skip items with the same title and date as one I have**, or **Import them anyway**       |
 | Category   | None, or a category added to every imported item (pick one you have or type a new one)     |
 
-<img src="media/users-guide/image6.png" style="width:6in;height:3.86441in" alt="The Import dialog for an add-on file, with one likely duplicate and a category typed in" />
+<img src="media/users-guide/image7.png" style="width:6in;height:3.86441in" alt="The Import dialog for an add-on file, with one likely duplicate and a category typed in" />
 
 Replace everything asks once more. What you had is saved as “Saved before an import replaced everything”, so **Restore from a backup…** can bring it back. Duplicates only matter when adding: replacing brings in everything in the file.
 
@@ -610,13 +615,13 @@ For even larger text, combine High contrast with Text size 125 % or 150 %.
 
 **Item text colours** (optional): tick a colour to use it for items that are **Completed**, **Not completed**, **Starred** or **Not starred**, and **Past**, **Today** or **Coming**. The most particular one wins: Completed, then Starred or Not starred, then Past, Today or Coming, then Not completed. Unticked ones follow the theme. They apply in the lists, the Month tab and the calendar panel's day list.
 
-<img src="media/users-guide/image7.png" style="width:6in;height:3.86441in" alt="The theme editor&#39;s item text colours, with Past and Today ticked" />
+<img src="media/users-guide/image8.png" style="width:6in;height:3.86441in" alt="The theme editor&#39;s item text colours, with Past and Today ticked" />
 
 In every built-in theme, a past reminder that is neither completed nor starred has the same colour as today's and coming ones.
 
-<img src="media/users-guide/image8.png" style="width:6in;height:3.86441in" alt="The theme editor with a dark green theme being made" />
+<img src="media/users-guide/image9.png" style="width:6in;height:3.86441in" alt="The theme editor with a dark green theme being made" />
 
-<img src="media/users-guide/image9.png" style="width:6in;height:3.86441in" alt="The main window in the new theme" />
+<img src="media/users-guide/image10.png" style="width:6in;height:3.86441in" alt="The main window in the new theme" />
 
 *Example — a calm dark theme:* ＋ New theme…, Start from Dark, set Accent to a soft teal (#4db6ac) and Starred items to amber (#ffca28), name it “Evening” and Save.
 
@@ -634,7 +639,7 @@ ReminderFoxAgain speaks the same 34 languages as the original ReminderFox add-on
 
 - Your own words — titles, notes, categories, list names — are never translated. The main list “To-Do's” shows under its name in your language (“Aufgaben” in German), but the file keeps the add-on's name, so the add-on still finds it.
 
-<img src="media/users-guide/image10.png" style="width:6in;height:3.86441in" alt="Settings → Display in Japanese, with the Language list" />
+<img src="media/users-guide/image11.png" style="width:6in;height:3.86441in" alt="Settings → Display in Japanese, with the Language list" />
 
 The translations were written for ReminderFoxAgain and have not yet been checked by native speakers; the Language setting says so too. Corrections are welcome.
 
@@ -644,7 +649,7 @@ The translations were written for ReminderFoxAgain and have not yet been checked
 
 **Settings → Display → Columns** chooses which columns the Reminders tab and the lists show. Each has a row of ticks: ✓ Completed, ★ Important, Date (Due by in the lists), Day (Reminders only), Time, Repeat, Category and 🔔 Alarm. Untick one to hide it; the Description always shows and takes the room. The two rows are separate, so the lists can be simpler than the Reminders tab.
 
-<img src="media/users-guide/image11.png" style="width:6in;height:3.86441in" alt="Settings → Display → Columns, with Day and Repeat hidden in the Reminders tab" />
+<img src="media/users-guide/image12.png" style="width:6in;height:3.86441in" alt="Settings → Display → Columns, with Day and Repeat hidden in the Reminders tab" />
 
 *Example — a cleaner shopping list:* in the Lists row, untick Due by, Time, Repeat and 🔔 Alarm. The lists now show just the tick, the star, the item and its category.
 
@@ -652,23 +657,23 @@ The translations were written for ReminderFoxAgain and have not yet been checked
 
 The shortcuts are **Alt+Shift** and a letter, the same in the add-on and the desktop app (⌥⇧ and the letter on a Mac). In Thunderbird they work anywhere, not just in the ReminderFoxAgain tab: they bring it to the front first. Thunderbird keeps the Ctrl keys for itself, and Alt+Shift with the first letter of one of its menus opens that menu, so the letters avoid those.
 
-| Keys                      | Action                                |
-|---------------------------|---------------------------------------|
-| Alt+Shift+R               | Open ReminderFoxAgain (add-on)        |
-| Alt+Shift+A               | New reminder                          |
-| Alt+Shift+O               | New item in the list being shown      |
-| Alt+Shift+Q               | Quick alarm                           |
-| Alt+Shift+K               | Search                                |
-| Alt+Shift+J               | Go to a date                          |
-| Alt+Shift+B               | Show or hide the calendar panel       |
-| Alt+Shift+I / Alt+Shift+X | Import / export                       |
-| Alt+Shift+S               | Save in the editor                    |
-| Alt+Shift+D               | Duplicate the selected item           |
-| Alt+Shift+L               | The Alarms view                       |
-| ↑ / ↓, Enter, Delete      | Select, open, delete the selected row |
-| Alt+↑ / Alt+↓             | Move a to-do up or down (My order)    |
+| Keys                      | Action                                                            |
+|---------------------------|-------------------------------------------------------------------|
+| Alt+Shift+R               | Open ReminderFoxAgain (add-on)                                    |
+| Alt+Shift+A               | New reminder                                                      |
+| Alt+Shift+O               | New item in the list being shown                                  |
+| Alt+Shift+Q               | Quick alarm                                                       |
+| Alt+Shift+K               | Search                                                            |
+| Alt+Shift+J               | Go to a date                                                      |
+| Alt+Shift+B               | Show or hide the calendar panel                                   |
+| Alt+Shift+I / Alt+Shift+X | Import / export                                                   |
+| Alt+Shift+S               | Save in the editor                                                |
+| Alt+Shift+D               | Duplicate the selected item                                       |
+| Alt+Shift+L               | The Alarms view                                                   |
+| ↑ / ↓, Enter, Delete      | Select, open, delete the selected row                             |
+| Alt+↑ / Alt+↓             | Move a to-do up or down (My order)                                |
 | Page Up / Page Down       | A day, week or month back or on, in the Day, Week and Month views |
-| Esc                       | Close a menu or dialog                |
+| Esc                       | Close a menu or dialog                                            |
 
 To change a shortcut in Thunderbird: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+A)”) show the shortcuts as they are set.
 

@@ -1,6 +1,6 @@
-# ReminderFoxAgain 0.9.4 (beta) — Quick Start
+# ReminderFoxAgain 0.9.5 — Quick Start
 
-Nov 1, 2026 · David
+Nov 3, 2026 · David
 
 Install the Thunderbird add-on (or, without Thunderbird, the desktop app), bring in your old reminders or start empty, then add your first one-time and repeating reminders. Ten minutes covers it all.
 
@@ -8,13 +8,13 @@ Install the Thunderbird add-on (or, without Thunderbird, the desktop app), bring
 
 **In Thunderbird** (128 or later, on Windows, macOS or Linux):
 
-1.  Download ReminderFoxAgain-0.9.4-thunderbird.xpi.
+1.  Download ReminderFoxAgain-0.9.5-thunderbird.xpi.
 
 2.  In Thunderbird, open **≡ → Add-ons and Themes → ⚙ → Install Add-on From File…** and pick the .xpi.
 
 3.  Thunderbird asks you to confirm and lists what the add-on may do. Click **Add**. The fox button appears in the toolbar at the top right, and ReminderFoxAgain opens in a tab.
 
-**Without Thunderbird**, use the desktop app. It has the same features, except those that need email. **On Windows**, put the .bat, the .ps1, the .asar and the six runtime parts in one folder and double-click **Install or Update ReminderFoxAgain.bat** (no administrator rights needed). **On a Mac**, unzip ReminderFoxAgain-0.9.4-macos-universal.zip, drag the app into Applications, and open it once with System Settings → Privacy & Security → **Open Anyway** (macOS 15 and later), or Control-click → **Open** (macOS 13–14). **On Linux**, run sudo apt install ./reminderfoxagain_0.9.4_amd64.deb, or unpack the .tar.gz and run ./install.sh.
+**Without Thunderbird**, use the desktop app. It has the same features, except those that need email. **On Windows**, put the .bat, the .ps1, the .asar and the six runtime parts in one folder and double-click **Install or Update ReminderFoxAgain.bat** (no administrator rights needed). **On a Mac**, unzip ReminderFoxAgain-0.9.5-macos-universal.zip, drag the app into Applications, and open it once with System Settings → Privacy & Security → **Open Anyway** (macOS 15 and later), or Control-click → **Open** (macOS 13–14). **On Linux**, run sudo apt install ./reminderfoxagain_0.9.5_amd64.deb, or unpack the .tar.gz and run ./install.sh.
 
 Updating? Install the newer .xpi the same way, or, for the desktop app on Windows, run the .bat with the new .ps1 and .asar. Your data is never touched by an update.
 
@@ -132,18 +132,18 @@ Alarms ring while Thunderbird is running. The desktop app keeps running in the s
 
 **Worth setting up next**
 
-| To                                                                                         | Go to                                                                |
-|--------------------------------------------------------------------------------------------|----------------------------------------------------------------------|
-| Turn an email into a reminder or a list item (add-on)                                      | Right-click the email → **ReminderFoxAgain → Add reminder…**         |
-| Be reminded about an email you send (add-on)                                               | **Remind me** in the message's toolbar, then send                    |
-| Add a to-do with a due-by date and reminders until it's done                               | **＋ List Item** (Alt+Shift+O)                                       |
-| Keep lists of your own (Groceries, Movies to see…)                                         | The **List dropdown** in the tab bar → **＋ New list…**              |
-| Set a one-off “in 20 minutes” alarm                                                        | **⏰ Quick alarm** (Alt+Shift+Q)                                     |
-| See holidays, sports or a team calendar among your reminders                               | **📅 Calendars → Subscribe to a calendar…** in the Reminders toolbar |
-| Scroll through past and coming months, or see a day or a week                              | The **Month** tab: the mouse wheel, or Page Up / Page Down; **Day / Week / Month** in its toolbar |
-| Pick a theme or make your own, with colours for past, today's, starred and completed items | **Settings → General / Display**                                     |
-| Use the app in another language (34 languages)                                             | **Settings → Display → Language**                                    |
-| Pick one of five alarm sounds (or your own), or get a daily pop-up of today's reminders    | **Settings → Alarms**                                                |
-| Make a backup you can restore                                                              | **Settings → Data → Back up now**                                    |
+| To                                                                                         | Go to                                                                                         |
+|--------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| Turn an email into a reminder or a list item (add-on)                                      | Right-click the email → **ReminderFoxAgain → Add reminder…**                                  |
+| Be reminded about an email you send (add-on)                                               | **Remind me** in the message's toolbar, then send                                             |
+| Add a to-do with a due-by date and reminders until it's done                               | **＋ List Item** (Alt+Shift+O)                                                                |
+| Keep lists of your own (Groceries, Movies to see…)                                         | The **List dropdown** in the tab bar → **＋ New list…**                                       |
+| Set a one-off “in 20 minutes” alarm                                                        | **⏰ Quick alarm** (Alt+Shift+Q)                                                              |
+| See holidays, sports or a team calendar among your reminders                               | **📅 Calendars → Subscribe to a calendar…** in the Reminders toolbar                          |
+| Scroll through past and coming months, or see a day or a week                              | The **Month** tab: the mouse wheel, or Page Up / Page Down; Day / Week / Month in its toolbar |
+| Pick a theme or make your own, with colours for past, today's, starred and completed items | **Settings → General / Display**                                                              |
+| Use the app in another language (34 languages)                                             | **Settings → Display → Language**                                                             |
+| Pick one of five alarm sounds (or your own), or get a daily pop-up of today's reminders    | **Settings → Alarms**                                                                         |
+| Make a backup you can restore                                                              | **Settings → Data → Back up now**                                                             |
 
 The User's Guide covers every feature in detail.

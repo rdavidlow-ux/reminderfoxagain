@@ -114,7 +114,7 @@ span.imp, .star-btn[aria-pressed="true"] { color: var(--imp); }
 .list tr.important td.c-desc .t { font-weight: 650; }
 .ev.important { background: var(--imp-soft); font-weight: 600; }
 .ev.important.allday { background: var(--imp); color: #fff; }
-.ev.important.todo { background: var(--imp-soft); }
+.ev.important.todo { background: var(--imp-soft); color: var(--it-c); }
 .mday.has.imp::after { background: var(--imp); }
 .mday.picked.has.imp::after { background: var(--on-accent); }
 .agenda .item.important { border-left: 4px solid var(--imp); padding-left: 7px; }

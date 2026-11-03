@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.9.4 (beta)
+# ReminderFoxAgain 0.9.5
 
 A Thunderbird add-on for reminders, to-dos and pop-up alarms — a tribute to the original
 [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and
@@ -24,6 +24,11 @@ agenda on the right.
 double-click a day to add one.
 
 ![The Month view](docs/readme/month.png)
+
+**Week and Day** — the same tab as Month, as a day or a week of 24 hours that scroll, each item at its start time;
+all-day items and list items in a row at the top, and a line at the time now.
+
+![The Week view](docs/readme/week.png)
 
 **Alarms** — a pop-up window when a reminder is due: snooze it, open it, mark it done or dismiss it. The Alarms view
 (Alt+Shift+L) lists every alarm ringing, snoozed or still to ring.
@@ -61,11 +66,13 @@ layouts and several months at once, go to date, date formats, "Show map", backup
 - **To-dos with a due-by date and their own reminders**: a "remind me" start, a time and how often, until it's done; a
   to-do can become a dated reminder once the date is known.
 - **Planning**: future repeats shown in every list, with counts per month; past occurrences listed ticked or not; an
-  Alarms view of every alarm to come, with skip and undo; a Month view that scrolls.
+  Alarms view of every alarm to come, with skip and undo; a Month view that scrolls, and Day and Week views of the
+  24 hours.
 - **Lists**: picked from a dropdown that includes To-Do's; duplicate, move and copy items between lists; the "Terminated
-  or Suspended" list keeps expired items for reference; the add-on's list names come across on import.
+  or Suspended" list keeps expired items for reference, out of the other views, and can't be renamed or removed; the add-on's list names come across on import.
 - **Your layout**: Show completed in every view (keeping your place), the columns you want, ordering by any column, and
-  a day picked in the calendar starting the list there; each subscribed calendar shown in the views you choose.
+  a day picked in the calendar starting the list there; each subscribed calendar shown in the views you choose, its
+  items ticked off like your own (or marked completed once they are over).
 - **Your look**: six themes including high contrast, starred items in their own colour, and your own themes from five
   colours plus colours for completed, starred, past, today's and coming items, with contrast warnings.
 - **Email**: the date, time and place found in an email when you make it a reminder.
@@ -82,8 +89,12 @@ layouts and several months at once, go to date, date formats, "Show map", backup
 
 ## What's new
 
-**0.9.4 (beta)** puts the HTML that the windows build into the page through one safe function instead of
-`innerHTML`, so Mozilla's add-on checker no longer warns about it; nothing else changes. **0.9.3** made the Thunderbird add-on the main way to use ReminderFoxAgain: reminders and list items from email,
+**0.9.5** fixes subscribing to a calendar in the Thunderbird add-on ("permissions.request may only be called from a
+user input handler"), lets you **tick off items from a subscribed calendar** (they stay ticked when it refreshes) or
+mark them completed once they are over, adds **Day and Week views** of the 24 hours beside Month, keeps your place
+when you turn **Show completed** off and on, and protects the **"Terminated or Suspended"** list: it can't be renamed
+or removed, and its items stay out of the Reminders and calendar views. **0.9.4 (beta)** put the HTML that the windows
+build into the page through one safe function instead of `innerHTML`. **0.9.3** made the Thunderbird add-on the main way to use ReminderFoxAgain: reminders and list items from email,
 Remind me after sending, tags, Send by email, birthdays from address books, selected text and .ics links, and
 invitations with replies. In the add-on and the desktop app alike it adds **calendar subscriptions** (holidays, sports
 or a team calendar from a web address, shown per view), an **Alarms view** (Alt+Shift+L), a **Month view that
@@ -97,7 +108,7 @@ Download the files for your system from the [Releases](https://github.com/rdavid
 
 ### Thunderbird add-on (recommended)
 
-1. Download `ReminderFoxAgain-0.9.4-tb.xpi`.
+1. Download `ReminderFoxAgain-0.9.5-thunderbird.xpi`.
 2. In Thunderbird 128 or later: **≡ → Add-ons and Themes → ⚙ → Install Add-on From File…** and pick the .xpi.
    Thunderbird asks you to confirm, since the add-on isn't on addons.thunderbird.net yet, and lists what it may do.
 3. The fox button appears in the toolbar at the top right, and ReminderFoxAgain opens in a tab on its welcome page.
@@ -117,7 +128,7 @@ The desktop app and the add-on keep separate data; to move between them, export 
 
 #### macOS
 
-1. Download `ReminderFoxAgain-0.9.4-macos-universal.zip` and double-click it to unzip.
+1. Download `ReminderFoxAgain-0.9.5-macos-universal.zip` and double-click it to unzip.
 2. Drag **ReminderFoxAgain.app** into **Applications**.
 3. The first time, macOS says it can't check the app for malicious software: it is signed ad hoc, not by an Apple
    developer account, and not notarized. Open it once anyway — on macOS 15 Sequoia and later, try to open it, then
@@ -129,17 +140,17 @@ it, drag it to the Bin. Your data is in `~/Library/Application Support/ReminderF
 
 #### Linux
 
-**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.4_amd64.deb` (`arm64` for ARM) and run
-`sudo apt install ./reminderfoxagain_0.9.4_amd64.deb` (or open it with your software centre). Updating is the same
+**Debian, Ubuntu, Linux Mint, Pop!_OS…** — download `reminderfoxagain_0.9.5_amd64.deb` (`arm64` for ARM) and run
+`sudo apt install ./reminderfoxagain_0.9.5_amd64.deb` (or open it with your software centre). Updating is the same
 command with the newer file; `sudo apt remove reminderfoxagain` removes it. The package puts the app in
 `/opt/ReminderFoxAgain` with the command `reminderfoxagain`, a menu entry and icons, and sets up Chromium's sandbox
 (on Ubuntu 24.04 and later it adds the AppArmor profile Electron apps need).
 
-**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.4-linux-x64.tar.gz` (or `-arm64`), then:
+**Any other distribution (no root needed)** — download `ReminderFoxAgain-0.9.5-linux-x64.tar.gz` (or `-arm64`), then:
 
 ```sh
-tar -xzf ReminderFoxAgain-0.9.4-linux-x64.tar.gz
-cd ReminderFoxAgain-0.9.4-linux-x64
+tar -xzf ReminderFoxAgain-0.9.5-linux-x64.tar.gz
+cd ReminderFoxAgain-0.9.5-linux-x64
 ./install.sh          # again with a newer download to update
 ./uninstall.sh        # removes the app, keeps your reminders (--purge removes them too)
 ```
@@ -160,8 +171,8 @@ Put every file from `dist/release/` in one folder and double-click **Install or 
 | --- | --- |
 | `Install or Update ReminderFoxAgain.bat` | always |
 | `ReminderFoxAgain-Setup.ps1` | always |
-| `ReminderFoxAgain-app-0.9.4.asar` | always |
-| `ReminderFoxAgain-runtime-0.9.4.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
+| `ReminderFoxAgain-app-0.9.5.asar` | always |
+| `ReminderFoxAgain-runtime-0.9.5.part1.bin` … `part6.bin` | new installs, and updates from 0.6.x |
 
 Updating a 0.7.x, 0.8.x or 0.9.x install needs only the .bat, the .ps1 and the .asar; the setup reuses the installed runtime. When
 updating from 0.6.x, include the runtime parts too: the earlier runtime has English date pickers only, and the setup
@@ -179,7 +190,7 @@ Settings → Data → Import from ReminderFox…): the desktop app finds the fil
 - **From the source (the supported way):** clone this repository and run `./build-thunderbird.sh` (the add-on),
   `./build.sh` (Windows), `./build-linux.sh` or `./build-macos.sh` on Linux with Node.js 22 (see [Develop](#develop) below). Each build gives byte-identical files,
   so you can check them against a release's `SHA256SUMS.txt`.
-- **From the build prompt pack:** [`build-prompt/`](build-prompt/) (and `ReminderFoxAgain-0.9.4-build-prompt.zip` on the
+- **From the build prompt pack:** [`build-prompt/`](build-prompt/) (and `ReminderFoxAgain-0.9.5-build-prompt.zip` on the
   Releases page, which adds the full source as its reference) is a specification for an AI coding agent. It rebuilds
   the add-on or the app for Windows, Linux or macOS, or ports it to Android or iOS. A rebuild from it works and looks the same, but its
   files won't match the release checksums.
@@ -210,7 +221,7 @@ node tools/i18n/build.js # rebuild src/ui/locales/ after editing tools/i18n/*.tx
 | `src/ui/` | `index.html`, `alarm.html`, `styles.css` and `common.js`, `app.js`, `features.js` (settings sections and the feature dialogs), `alarm.js`, `slider.html`/`slider.js` (reminder pop-up), `i18n.js` (translation core: language choice, patterns, plurals) and `i18n-dom.js` (translates each window as it renders) |
 | `src/ui/locales/` | One JSON file per language, built from `tools/i18n/` |
 | `tools/i18n/` | `catalog.txt` (every English string, the keys), `<language>.txt` (its translations, one numbered line each) and `build.js` (checks placeholders and writes `src/ui/locales/`) |
-| `test/*.test.js` | 62 unit tests: the data layer, translations, the host core, the email date finder, the Alarms view and subscriptions, against `test/reminderfox-addon-sample.ics` and `test/reminderfox-addon-full.ics` (`test/reminderfox-addon-prefs.js` is an add-on profile's prefs for the list import check) |
+| `test/*.test.js` | 65 unit tests: the data layer, translations, the host core, the email date finder, the Alarms view and subscriptions, against `test/reminderfox-addon-sample.ics` and `test/reminderfox-addon-full.ics` (`test/reminderfox-addon-prefs.js` is an add-on profile's prefs for the list import check) |
 | `installer/` | Setup template (filled in by `build.sh` via `fill-setup.sh`) and the .bat |
 | `build/linux/` | install.sh, uninstall.sh, the menu entry, icons and the .deb's scripts and AppArmor profile |
 | `build/macos/` | The icon, Info.plist additions, entitlements, `universal.mjs` (joins the arm64 and x64 apps) and `lipo` (a small stand-in for Apple's, so the universal app builds on Linux) |
@@ -223,7 +234,7 @@ for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney 
 tools/e2e.sh             # UI checks (incl. every theme's contrast and starred colours, and German, French from the system locale, Japanese picked in Settings, Arabic right to left, and the continuous alarm sound in the alarm window): every line shows the value and the expected one; no WRONG/ERROR lines
 thunderbird/test/e2e.sh  # the add-on's UI checks in Chromium with a mock Thunderbird: last line 0 problem(s)
 tools/test-setup.sh      # 20 checks (optional argument: the pwsh binary)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.4-linux-x64.tar.gz   # 19 checks in a fake home
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.5-linux-x64.tar.gz   # 19 checks in a fake home
 tools/shots.sh shots/    # every screen, to compare with reference/screenshots/
 tools/screenshot.sh <dataDir> <out.png> [script.js]
 node tools/sounds.js <outDir>   # the built-in alarm sounds as .wav files (for platforms that need sound files)

@@ -1,8 +1,8 @@
-# ReminderFoxAgain 0.9.4 (beta) — Developer's Guide
+# ReminderFoxAgain 0.9.5 — Developer's Guide
 
-Nov 1, 2026 · David
+Nov 3, 2026 · David
 
-This guide is the reference for working on the ReminderFoxAgain 0.9.4 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
+This guide is the reference for working on the ReminderFoxAgain 0.9.5 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
 
 ## 1. Setup and layout
 
@@ -40,8 +40,8 @@ Both build on Linux and give the same SHA-256 hashes on every run.
 ```sh
 ./build-linux.sh   # dist/release-linux/: .tar.gz and .deb for x64 and arm64 (ARCHS=x64 for one)
 ./build-macos.sh   # dist/release-macos/: one universal .zip (Apple silicon + Intel)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.4-linux-x64.tar.gz
-python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.4
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.5-linux-x64.tar.gz
+python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.5
 ```
 
 - **Linux:** `build/linux/` holds `install.sh`, `uninstall.sh`, the menu entry, the icons and the .deb's `postinst`, `postrm` and AppArmor profile. The .deb installs to `/opt/ReminderFoxAgain`, links `/usr/bin/reminderfoxagain` and makes `chrome-sandbox` setuid root. The tarball installs per user under `~/.local`, and its launcher adds `--no-sandbox` only where unprivileged user namespaces are off.
@@ -285,7 +285,7 @@ Every method returns a Promise. The preload calls `ipcRenderer.invoke(channel, �
 | `subsRange(from, to, view)` / `subsNext(from, opts, view)` | `subs:range` / `subs:next` | as `range`/`next`, for `'list'` or `'month'`: the subscribed occurrences shown there, uids `sub:<id>:<uid>`, `readOnly: true` |
 | `subsCopy(uid)` | `subs:copy` | a subscribed item → the uid of your own copy |
 
-Every write channel calls `guardReadOnly(uid)` first, so a subscribed item can't be changed or deleted. Ticking is the exception: `data:complete` with a subscribed uid calls `subs.markDone(uid, done, occ)`, which keeps the tick in `state.subsDone` (not in the calendar's copy, which each refresh replaces) and lays it over the rows; a refresh drops ticks of items the calendar no longer has. A subscription's `autoDone` (set with `subsUpdate`) makes occurrences that are over count as completed; an explicit untick is stored as `0`.
+Every write channel calls `guardReadOnly(uid)` first, so a subscribed item can't be changed or deleted. Ticking is the exception (0.9.5): `data:complete` with a subscribed uid calls `subs.markDone(uid, done, occ)`, which keeps the tick in `state.subsDone` (not in the calendar's copy, which each refresh replaces) and lays it over the rows; a refresh drops ticks of items the calendar no longer has. A subscription's `autoDone` (set with `subsUpdate`) makes occurrences that are over count as completed; an explicit untick is stored as `0`.
 
 ### Events (main → windows)
 
@@ -341,7 +341,7 @@ The state object `S` holds `tab` (`reminders`, `todos` for the List dropdown, `m
 | Reminders | `reminderRows()` (filter, view, category, repeat count, hide options; month separators carry a per-month count), `rowHtml(r, opts)`, `renderReminders`, `position` (first-visit scroll to today) |
 | To-dos | `renderTodos`, `todoSorter()`, `reorder(uid, target, after)`, `moveSelected(dir)`, drag-and-drop handlers |
 | Views | `viewOf`, `viewRange`, `viewMatches` |
-| Calendar | `renderCal` (`applyCalMode`, then `renderMonth` or `renderDays` for the Day and Week views), `moveCal`, `renderMonth`, `renderSide` (1–3 months via `monthHtml`, overdue marks), `renderAgenda`, `selectDay`, `goToDate`, `toggleSide` |
+| Calendar | `renderCal` (`applyCalMode`, then `renderMonth` or `renderDays` for the Day and Week views, 0.9.5), `moveCal`, `renderMonth`, `renderSide` (1–3 months via `monthHtml`, overdue marks), `renderAgenda`, `selectDay`, `goToDate`, `toggleSide` |
 | Interaction | `showCtx` (context menu), `selectTr`, keyboard handler, `openMap`, `mapUrl` |
 | Editor | `openEditor({uid, start} \| {kind, date})`, `fillEditor`, `renderRepeat`, `readRepeat`, `renderAlarm`, `currentAlarm`, `saveEditor` |
 | Settings | `openSettings` (General controls), `setSetting(patch)`, then `FX('fillSettings')` |
@@ -427,10 +427,10 @@ The UI speaks the original add-on's 34 languages. English text is the key everyw
 
 | Suite | Command | Passes when |
 | --- | --- | --- |
-| Add-on UI | `thunderbird/test/e2e.sh` (options for `run.js`: `--sample empty\|bills`, `--lang`, `--size`) | Last line `0 problem(s)` (about 790 checks in 0.9.3) |
+| Add-on UI | `thunderbird/test/e2e.sh` (options for `run.js`: `--sample empty\|bills`, `--lang`, `--size`) | Last line `0 problem(s)` (about 870 checks in 0.9.5) |
 | Add-on lint | `web-ext lint -s dist/thunderbird` | 0 errors (the warnings are Thunderbird-only APIs) |
-| Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 62/62 in every zone |
-| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 765 checks in 0.9.4) |
+| Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 65/65 in every zone |
+| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 830 checks in 0.9.5) |
 | Screens | `tools/shots.sh <outDir>` | 70 PNGs; compare by eye |
 | Installer | `tools/test-setup.sh [pwsh]` | 20/20 |
 

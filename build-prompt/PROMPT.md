@@ -1,9 +1,9 @@
-# Build ReminderFoxAgain 0.9.4
+# Build ReminderFoxAgain 0.9.5
 
 > **TARGET PLATFORM:** `thunderbird` ← change this word to `thunderbird`, `windows`, `linux`, `macos`, `android` or `ios` before sending.
 > If it is missing or unclear, ask the user which one, once, before doing anything else.
 
-Build **ReminderFoxAgain 0.9.4** for the target platform above: a Thunderbird add-on (the main platform) or a desktop or phone app for reminders, to-dos and pop-up alarms that
+Build **ReminderFoxAgain 0.9.5** for the target platform above: a Thunderbird add-on (the main platform) or a desktop or phone app for reminders, to-dos and pop-up alarms that
 is a tribute to the original **ReminderFox** add-on for Firefox and Thunderbird (https://github.com/tommut/reminderfox),
 created by Tom Mutdosch and Daniel Lee with Guenter Wahl. Honour its work: it must read and write ReminderFox's own
 iCalendar file so its users keep everything they built up, refer to it warmly in the UI and docs ("the original
@@ -19,8 +19,8 @@ Where both are silent, the reference source (below) decides.
 
 | Path | Use |
 | --- | --- |
-| `reference/source/` | The complete source of ReminderFoxAgain 0.9.4 (the Thunderbird add-on, Windows, macOS and Linux from one source): `src/` (store, alarm list, subscriptions, host core, main process, preload, UI), `thunderbird/` (the add-on's adapter, bridge, overlay, shortcuts, build and tests), `test/` (62 unit tests: the Store, translations, host core, the email date finder; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
-| `reference/screenshots/*.png` | 70 screenshots of every screen, dialog, theme and the alarm and pop-up windows, made from `tools/sample-data.js` with a 1180×760 main window. The target look on desktop. Mobile layouts follow `platforms/mobile-common.md`. |
+| `reference/source/` | The complete source of ReminderFoxAgain 0.9.5 (the Thunderbird add-on, Windows, macOS and Linux from one source): `src/` (store, alarm list, subscriptions, host core, main process, preload, UI), `thunderbird/` (the add-on's adapter, bridge, overlay, shortcuts, build and tests), `test/` (65 unit tests: the Store, translations, host core, the email date finder; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
+| `reference/screenshots/*.png` | 72 screenshots of every screen, dialog, theme and the alarm and pop-up windows, made from `tools/sample-data.js` with a 1180×760 main window. The target look on desktop. Mobile layouts follow `platforms/mobile-common.md`. |
 | `reference/assets/` | App icon (`icon.png` 256 px, `icon.ico` 16–256 px, `tray.png` 32 px), vector masters (`svg/`), and every platform's icon set already made: `png/` (16–1024 px), `linux/hicolor/…`, `macos/icon.icns` + `trayTemplate.png`/`@2x`, `ios/AppIcon-1024.png` (opaque, full bleed), `android/` (adaptive foreground/background, legacy mipmaps, white notification icons, Play Store 512 px). `sounds/<id>.wav` and `<id>.caf` are the five built-in sounds (chime, bell, marimba, beeps, clock) as files, rendered by `tools/sounds.js` (for notification sounds). |
 | `reference/fixtures/` | `reminderfox-addon-sample.ics` and `reminderfox-addon-full.ics`, plus `reminderfox-addon-prefs.js` (the add-on's list names, as its profile's `prefs.js` holds them; the UI checks put it beside a copy of the full file) and `archive-sample.ics` (an archive.ics as 0.2.6–0.5.0 left it, for the archive-to-list check): files written the way the add-on writes `reminderfox.ics`. Unit-test fixtures and the compatibility benchmark. |
 
@@ -66,6 +66,11 @@ re-design: same element ids, classes, wording, colours and behaviour.
   ring now, skip and undo, cancel; `src/core/alarmlist.js`), a **Month view that scrolls** through weeks, seven optional
   **item colours** in custom themes, and the list item editor titled "New list item".
 - **0.9.4 (beta)**: HTML goes into the page only through `RF.setHTML(el, html)` / `RF.addHTML(el, where, html)` in `common.js` (DOMParser, then script/iframe/object elements, `on…` attributes and unsafe links removed); never `innerHTML` or `insertAdjacentHTML`, which Mozilla's add-on checker flags.
+- **0.9.5**: the add-on asks for a calendar site's permission within the click (`permissions.request` with no await
+  before it); **subscribed items can be ticked** (`state.subsDone`, kept across refreshes) and a per-subscription
+  **Mark past events completed** (`autoDone`); **Day and Week views** in the Month tab, a 24-hour time grid (§6.6);
+  **Show completed** comes back to the same items when turned off and on; the **"Terminated or Suspended"** list
+  can't be renamed or removed and its items stay out of the Reminders and calendar views (§6.7).
 - **Email (Thunderbird only)**: reminders and list items from an email (date, time and place found), Open email,
   Remind me after sending, tags, Send by email…, birthdays from address books, selected text and .ics links,
   invitations and replies. See `platforms/thunderbird.md`.
@@ -377,10 +382,22 @@ and day agenda never show completed list items** (0.7.0); they stay in their lis
 edge. As many chips as fit, then "+n more". Clicking edits, double-clicking adds a reminder, "+n more" shows that day
 in the list, "Show to-dos" toggles to-dos.
 
+**Day and Week views (0.9.5).** A `.seg` switch `#calMode` (Day | Week | Month, remembered in localStorage `calMode`;
+the tab takes the view's name, from the catalog keys "Day (calendar view)" and "Week (calendar view)") picks the view.
+Day shows `S.selDay`, Week its week from the week-start day. Both are a time grid in `#calDays`: a heading row, an
+**All day** row (all-day, carried and untimed items as chips) and a scrolling body of 24 hours (48 px an hour, hour
+labels in a gutter) where each timed item is placed at its start, as tall as it lasts (no end = 30 minutes, at least
+20 px), overlapping items side by side in lanes; a red line at the time now on today. It opens at 7 AM (or the first
+item, when earlier) and keeps its scroll position. ‹ › and Page Up/Down move a day or a week; Today, Go to… and the
+calendar panel move it; clicking an item edits it; double-clicking in the hours adds a reminder at that half hour.
+
 ### 6.7 No Archive tab (0.6.0)
 
 There is no Archive tab, no Move to archive… (menu or editor), no Archive finished items… and no "The archive" export
-choice. Items kept for reference go on a list; earlier versions' archives are moved there on start (§4.1).
+choice. Items kept for reference go on a list; earlier versions' archives are moved there on start (§4.1). Since 0.9.5
+the **"Terminated or Suspended"** list can't be renamed or removed (`lists:rename` / `lists:remove` throw; the Lists
+dialog shows "archive" instead of Rename… and Remove…), and its to-dos are left out of every Reminders and calendar
+view (`rangeWithSubs` / `nextWithSubs` in the renderer); its own list still shows them.
 
 ### 6.8 Alarm window (`alarm.html`, `alarm.js`)
 
@@ -530,7 +547,7 @@ imports and to the reminders file itself. Unit test 31 checks it.
 
 ## 8. Done when (all platforms)
 
-- All 62 unit tests pass in the seven time zones. The compatibility benchmark is identical.
+- All 65 unit tests pass in the seven time zones. The compatibility benchmark is identical.
 - The UI checks print no WRONG or ERROR. Screenshots match. The platform file's own checks pass.
 - The platform file's deliverables exist, two builds in a row are identical where the platform file says they can be,
   and a `README.md` for the build says how to install, update and uninstall on that platform.

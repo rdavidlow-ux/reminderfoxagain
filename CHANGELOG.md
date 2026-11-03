@@ -3,7 +3,7 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
-## Next — calendar subscriptions: fixed in Thunderbird, and ticks (branch `fix/calendar-sub`, not released)
+## 0.9.5 — calendar subscriptions fixed in Thunderbird and ticked off, Day and Week views, the archive list kept safe
 
 - **Subscribing to a calendar works in the Thunderbird add-on.** Adding a subscription (for example
   https://canada-holidays.ca/ics/ON) stopped with "permissions.request may only be called from a user input handler"

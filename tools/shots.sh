@@ -35,7 +35,7 @@ for n in 26-settings-alarms 27-settings-display 28-settings-lists 29-settings-da
   shot "$n" basic "$n.js"
 done
 shot 47-import-dialog basic 47-import-dialog.js
-for n in 51-month-show-completed 52-settings-columns 53-reminders-columns-hidden 54-manage-reminders 55-lists-order 56-theme-editor 57-custom-theme; do shot "$n" basic "$n.js"; done
+for n in 51-month-show-completed 52-settings-columns 53-reminders-columns-hidden 54-manage-reminders 55-lists-order 56-theme-editor 57-custom-theme 58-week-view 59-day-view; do shot "$n" basic "$n.js"; done
 # languages: German, Japanese settings, Arabic right to left (RF_LANG sets the language for one run)
 RF_LANG=de shot 48-german-reminders basic
 RF_LANG=ja-JP shot 50-japanese-settings basic 27-settings-display.js
