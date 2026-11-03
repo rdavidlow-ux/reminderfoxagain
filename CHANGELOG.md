@@ -3,17 +3,6 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
-## 0.9.5 (beta) — calendar subscriptions in Thunderbird
-
-- **Subscribing to a calendar works in the Thunderbird add-on.** Adding a subscription (for example
-  https://canada-holidays.ca/ics/ON) stopped with "permissions.request may only be called from a user input handler"
-  and added nothing: the add-on checked whether it already had permission for the site before asking, and by then
-  Thunderbird no longer counted the request as part of your click. It now asks straight away (Thunderbird doesn't ask
-  again for a site already allowed). The same fix applies to Import this calendar… on an .ics link in an email.
-- The add-on's UI checks now refuse a permission request made after the click, as Thunderbird does, so this can't
-  slip through again; a Month view colour check no longer depends on the day it runs.
-- The desktop app is unchanged.
-
 ## 0.9.4 (beta) — safe HTML for the add-on review
 
 - **No more "Unsafe assignment to innerHTML" warnings** from Mozilla's add-on checker on addons.thunderbird.net. The

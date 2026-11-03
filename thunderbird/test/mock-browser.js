@@ -44,25 +44,20 @@
   const onNewMail = listeners('messages.onNewMailReceived');
   const onContact = { onCreated: listeners('contacts.onCreated'), onUpdated: listeners('contacts.onUpdated'), onDeleted: listeners('contacts.onDeleted') };
   const abs = (u) => new URL(u, location.origin).href;
-  // Like Thunderbird, permissions.request only works while a click, a key or a menu item is being handled: the flag is
-  // cleared in the first microtask after the event, so a request made after an await is refused.
-  let userInput = 0;
-  const handlingInput = (fn) => { userInput++; queueMicrotask(() => { userInput--; }); return fn(); };
-  if (!IS_BG) for (const t of ['click', 'keydown', 'keyup', 'mousedown', 'mouseup', 'submit']) window.addEventListener(t, () => { userInput++; queueMicrotask(() => { userInput--; }); }, true);
   window.__mock = {
     state,
     // the runner: a page it opened, or one the person closed
     opened: (kind, id, url) => { if (kind === 'tab') state.tabs.set(id, { id, url, windowId: 1 }); },
     closed: (kind, id) => { if (kind === 'tab') { state.tabs.delete(id); onRemovedTab._fire(id); } else { state.windows.delete(id); onRemovedWin._fire(id); } },
-    clickButton: () => handlingInput(() => onClicked._fire({})),
-    clickMenu: (id, info, tab) => handlingInput(() => onMenu._fire({ menuItemId: id, ...(info || {}) }, tab)),
+    clickButton: () => onClicked._fire({}),
+    clickMenu: (id, info, tab) => onMenu._fire({ menuItemId: id, ...(info || {}) }, tab),
     // the compose window: its "Remind me" button, then sending (onBeforeSend, then onAfterSend)
     clickCompose: (tabId) => onCompose._fire({ id: tabId }),
     send: async (tabId, details, info) => { for (const r of onBeforeSend._fire({ id: tabId }, details)) await r; await Promise.all(onAfterSend._fire({ id: tabId }, info)); },
     newMail: (ids) => Promise.all(onNewMail._fire({ path: '/Inbox' }, { messages: ids.map((id) => ({ id })) })),
     addMessage: (id, part) => { state.msgs[id] = part; },
     contactChanged: () => onContact.onUpdated._fire({}),
-    command: (name) => handlingInput(() => onCommand._fire(name)),
+    command: (name) => onCommand._fire(name),
   };
   const seed = window.__seed || {};
   const store = new Map(Object.entries(seed.storage || {}));
@@ -157,12 +152,7 @@
     },
     permissions: {
       contains: async ({ origins }) => origins.every((o) => state.permissions.includes(o)),
-      request: ({ origins }) => {
-        if (!userInput) return Promise.reject(new Error('permissions.request may only be called from a user input handler'));
-        state.requested = (state.requested || 0) + 1;
-        for (const o of origins) if (!state.permissions.includes(o)) state.permissions.push(o);
-        return Promise.resolve(true);
-      },
+      request: async ({ origins }) => { state.permissions.push(...origins); return true; },
     },
     // opening an email by its Message-ID: recorded; an unknown one is not found
     messageDisplay: { getDisplayedMessage: async () => (seed.displayed || null), open: async (o) => { if (!(seed.knownMessageIds || []).includes(o.headerMessageId)) throw new Error('not found'); state.openedEmails = (state.openedEmails || []).concat(o.headerMessageId); return {}; } },

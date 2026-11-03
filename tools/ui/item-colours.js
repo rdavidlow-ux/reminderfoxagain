@@ -40,9 +40,7 @@ try {
   check('own theme: not completed', col('Colour test: coming'), rgb('#336633'));
   // the Month view and the theme editor
   await R.setTab('month'); await sleep(800);
-  // the test item can be hidden behind "+n more" on a busy day, so a sample stand-up (timed, open, not starred) stands in
-  const evs = [...document.querySelectorAll('#monthGrid .ev')];
-  const chip = evs.find((c) => c.textContent.includes('Colour test: coming')) || evs.find((c) => c.textContent.includes('Team stand-up'));
+  const chip = [...document.querySelectorAll('#monthGrid .ev')].find((c) => c.textContent.includes('Colour test: coming'));
   check('the Month view uses them too', chip ? getComputedStyle(chip).color : 'missing', rgb('#336633'));
   await R.setTab('reminders'); await sleep(400);
   const p = window.__rfx.editTheme('ct'); await sleep(600);
