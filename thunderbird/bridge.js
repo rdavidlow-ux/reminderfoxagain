@@ -183,14 +183,19 @@
     alarmsList: (days) => call('alarms:list', days),
     // calendar subscriptions: Thunderbird asks once to let the add-on read the calendar's web site
     subsList: () => call('subs:list'),
-    subsAdd: async (o) => {
+    // Thunderbird only lets permissions.request run while it is handling the click (or Enter) itself, so it is called
+    // at once, before anything is awaited; when the site is already allowed it answers true without asking.
+    subsAdd: (o) => {
       let origin = '';
       try { origin = new URL(String((o && o.url) || '').trim().replace(/^webcals?:\/\//i, 'https://')).origin; } catch (e) { origin = ''; }
+      let asked = Promise.resolve(true);
       if (origin && /^https?:/.test(origin) && browser.permissions && browser.permissions.request) {
-        const has = browser.permissions.contains ? await browser.permissions.contains({ origins: [`${origin}/*`] }) : false;
-        if (!has && !(await browser.permissions.request({ origins: [`${origin}/*`] }))) throw new Error('ReminderFoxAgain needs your permission to read that web site.');
+        try { asked = Promise.resolve(browser.permissions.request({ origins: [`${origin}/*`] })); } catch (e) { asked = Promise.reject(e); }
       }
-      return call('subs:add', o);
+      return asked.then((ok) => {
+        if (!ok) throw new Error('ReminderFoxAgain needs your permission to read that web site.');
+        return call('subs:add', o);
+      });
     },
     subsUpdate: (id, patch) => call('subs:update', id, patch),
     subsRemove: (id) => call('subs:remove', id),
