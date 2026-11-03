@@ -22,8 +22,13 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   stored for them. You can still untick one, and it stays open.
 - **Day and Week views** beside Month: a **Day | Week | Month** switch in the Month tab's toolbar (the tab takes the
   view's name, and the choice is remembered). Day lists the picked day's items with their times, places and repeats;
-  Week shows the picked day's week in seven columns with every item in full. ‹ › and Page Up / Page Down move a day or a
-  week, and Today, Go to… and the calendar panel move them too. New UI check: `tools/ui/day-week.js`.
+  Week shows the picked day's week in seven columns. Both show the full 24 hours, scrolling, with each item placed at
+  its start time and as tall as it lasts (items at the same time side by side), all-day items in a row at the top, and
+  a line at the time now. Double-click in the hours to add a reminder at that time. ‹ › and Page Up / Page Down move a
+  day or a week, and Today, Go to… and the calendar panel move them too. New UI check: `tools/ui/day-week.js`.
+- **The "Terminated or Suspended" list can't be renamed or removed**, and its items no longer show in the Reminders
+  list, the Month, Week and Day views or the calendar panel; they stay on that list. New UI check:
+  `tools/ui/archive-list.js`.
 - **Show completed keeps the list where it was.** In the Reminders and Lists views, turning Show completed off and on
   again comes back to the same items. Before, when the shorter list couldn't scroll as far (the Past view, for one), the
   list stayed months away after turning it on again.

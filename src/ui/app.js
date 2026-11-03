@@ -5,6 +5,9 @@
   const { dayKey, parseKey, startOfDay, addDays, fmt, esc } = RF;
   const $ = (id) => document.getElementById(id);
   const DEFAULT_LIST = "To-Do's";
+  // archived items (from earlier versions, or moved there): kept on their list, out of the Reminders and calendar views
+  const ARCHIVE_LIST = 'Terminated or Suspended';
+  const notArchived = (r) => !(r.kind === 'todo' && r.list === ARCHIVE_LIST);
   const WD = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
   const T = window.RF.T;
   const I18 = window.RF.i18n || { lang: 'en' };
@@ -337,13 +340,13 @@
   // for it under 📅 Calendars; their items are read-only and marked with the subscription's colour.
   const subsFor = (view) => (S.settings.subscriptions || []).filter((x) => (view === 'month' ? x.showMonth : x.showList) !== false);
   async function rangeWithSubs(a, b, opts, view) {
-    const own = await window.rf.range(a, b, opts);
+    const own = (await window.rf.range(a, b, opts)).filter(notArchived);
     if (!window.rf.subsRange || !subsFor(view).length) return own;
     const more = (await window.rf.subsRange(a, b, view).catch(() => [])) || [];
     return more.length ? [...own, ...more].sort((x, y) => x.start - y.start) : own;
   }
   async function nextWithSubs(from, opts, view) {
-    const own = await window.rf.next(from, opts);
+    const own = (await window.rf.next(from, opts)).filter(notArchived);
     if (!window.rf.subsNext || !subsFor(view).length) return own;
     const more = (await window.rf.subsNext(from, opts, view).catch(() => [])) || [];
     return more.length ? [...own, ...more] : own;
@@ -873,12 +876,56 @@
     applyCalMode();
     return S.calMode === 'month' ? renderMonth(opts) : renderDays();
   }
-  function calItemHtml(r, k) {
-    const tm = r.kind === 'todo' ? 'To-do' : r.allDay ? 'All day' : fmt.time(r.start);
-    const small = [r.carried ? `Overdue since ${fmt.date(r.overdueSince)}` : '', r.location, r.repeatText ? `↻ ${r.repeatText}` : '', r.sub ? r.subName : ''].filter(Boolean).map(esc).join(' · ');
-    const when = k === S.today ? ' today' : k < S.today ? ' past' : '';
-    return `<div class="item${r.completed ? ' done' : ''}${r.important ? ' important' : ''}${r.carried ? ' carried' : ''}${when}${r.sub ? ' subcal' : ''}"${subAttrs(r)} data-uid="${esc(r.uid)}" data-start="${occOf(r)}"><div class="tm">${esc(tm)}</div><div class="tx"><b>${r.kind === 'todo' ? '☐ ' : ''}${r.important ? '★ ' : ''}${esc(r.summary)}</b>${small ? `<small>${small}</small>` : ''}</div></div>`;
+  // The Day and Week views are a time grid: a row for all-day items and list items at the top, then the 24 hours of
+  // each day in a column that scrolls, with every timed item placed at its start and as tall as it lasts (at least a
+  // line). Items at the same time sit side by side. A red line marks the time now on today.
+  const HOUR_PX = 48;
+  const TG = { scroll: null, nowTimer: 0 };
+  // when on the day k an item starts and ends, in minutes from midnight; null = it goes in the all-day row
+  function minutesOn(r, k) {
+    if (r.allDay || r.carried || r.start == null) return null;
+    const d0 = parseKey(k).getTime();
+    const d1 = addDays(parseKey(k), 1).getTime();
+    const end = r.end != null && r.end > r.start ? r.end : r.start + 30 * 6e4;
+    const a = Math.max(r.start, d0); const b = Math.min(end, d1);
+    if (a >= d1 || b <= d0) return null;
+    // minutes on the clock (a day with a daylight-saving change is 23 or 25 hours long)
+    const at = (t) => { const x = new Date(t); return t >= d1 ? 1440 : x.getHours() * 60 + x.getMinutes(); };
+    return { from: at(a), to: Math.max(at(b), at(a) + 1) };
   }
+  // side by side: items that overlap share the column's width
+  function layoutDay(list) {
+    list.sort((x, y) => (x.from - y.from) || (y.to - x.to));
+    let group = []; let end = -1;
+    const close = () => { const n = Math.max(...group.map((g) => g.lane)) + 1; for (const g of group) g.lanes = n; group = []; };
+    for (const it of list) {
+      if (group.length && it.from >= end) close();
+      const used = new Set(group.filter((g) => g.to > it.from).map((g) => g.lane));
+      let lane = 0; while (used.has(lane)) lane++;
+      it.lane = lane; group.push(it); end = Math.max(end, it.to);
+    }
+    if (group.length) close();
+    return list;
+  }
+  function timedHtml(it, k, wk) {
+    const r = it.r;
+    const cls = ['ev', 'tev'];
+    if (r.kind === 'todo') cls.push('todo');
+    if (r.completed) cls.push('done');
+    if (r.important) cls.push('important');
+    if (k === S.today) cls.push('today'); else if (isPast(r)) cls.push('past');
+    if (r.sub) cls.push('subcal');
+    const top = it.from / 60 * HOUR_PX;
+    const h = Math.max(20, (it.to - it.from) / 60 * HOUR_PX - 2);
+    if (h < 36) cls.push('short');
+    const w = 100 / it.lanes;
+    const pre = (r.kind === 'todo' ? '☐ ' : '') + (r.important ? '★ ' : '');
+    const end = r.end != null && r.end > r.start ? ` – ${fmt.time(r.end)}` : '';
+    const small = wk ? '' : [r.location, r.repeatText ? `↻ ${r.repeatText}` : '', r.sub ? r.subName : ''].filter(Boolean).map(esc).join(' · ');
+    const style = `top:${top.toFixed(1)}px;height:${h.toFixed(1)}px;left:calc(${(it.lane * w).toFixed(3)}% + 2px);width:calc(${w.toFixed(3)}% - 4px);${r.sub ? `--sub-c:${esc(r.subColor || '#888888')}` : ''}`;
+    return `<div class="${cls.join(' ')}" style="${style}" data-uid="${esc(r.uid)}" data-start="${occOf(r)}" title="${esc(`${fmt.time(r.start)}${end} ${r.summary}${r.location ? ` · ${r.location}` : ''}`)}"><span class="tm">${esc(fmt.time(r.start))}</span><b translate="no">${esc(pre + r.summary)}</b>${small ? `<small>${small}</small>` : ''}</div>`;
+  }
+  function nowTop() { const n = new Date(); return (n.getHours() * 60 + n.getMinutes()) / 60 * HOUR_PX; }
   async function renderDays() {
     const wk = S.calMode === 'week';
     const sel = parseKey(S.selDay);
@@ -888,23 +935,44 @@
     const q = S.search.trim().toLowerCase();
     const rows = (await rangeWithSubs(from.getTime(), to.getTime(), { includeTodos: S.mTodos }, 'month')).filter((r) => (S.mShowDone || !r.completed) && matches(r, q));
     const map = spreadByDay(rows, from, to);
-    let html = '';
+    let head = '<div class="tg-gut"></div>'; let all = `<div class="tg-gut">${esc('All day')}</div>`; let cols = '';
+    let first = 24 * 60;
     for (let i = 0; i < n; i++) {
       const d = addDays(from, i);
       const k = dayKey(d);
-      const cls = ['col'];
+      const cls = [];
       if (k === S.today) cls.push('today');
       if (wk && k === S.selDay) cls.push('picked');
       if (k < S.today) cls.push('past');
-      const list = map.get(k) || [];
-      const head = wk ? `<span class="wd">${esc(fmt.weekday(d))}</span><span class="num">${d.getDate()}</span>` : `<span class="wd">${esc(fmt.weekdayLong(d))}</span><span class="num">${d.getDate()}</span>`;
-      const body = list.length ? (wk ? list.map(chipHtml) : list.map((r) => calItemHtml(r, k))).join('') : wk ? '' : '<div class="none">Nothing on this day.</div>';
-      html += `<div class="${cls.join(' ')}" data-day="${k}"><div class="dh">${head}</div><div class="db">${body}</div></div>`;
+      const c = cls.length ? ` ${cls.join(' ')}` : '';
+      const allDay = []; const timed = [];
+      for (const r of map.get(k) || []) { const m = minutesOn(r, k); if (m) timed.push({ r, ...m }); else allDay.push(r); }
+      for (const t of timed) first = Math.min(first, t.from);
+      head += `<div class="dh col${c}" data-day="${k}"><span class="wd">${esc(wk ? fmt.weekday(d) : fmt.weekdayLong(d))}</span><span class="num">${d.getDate()}</span></div>`;
+      all += `<div class="tg-ac col${c}" data-day="${k}">${allDay.map(chipHtml).join('')}</div>`;
+      cols += `<div class="tg-col col${c}" data-day="${k}">${k === S.today ? `<div class="tg-now" style="top:${nowTop().toFixed(1)}px"></div>` : ''}${layoutDay(timed).map((t) => timedHtml(t, k, wk)).join('')}</div>`;
     }
+    const hours = Array.from({ length: 24 }, (_, h) => `<div class="tg-h"><span>${h ? esc(fmt.time(new Date(2000, 0, 1, h))) : ''}</span></div>`).join('');
     const box = $('calDays');
+    const old = box.querySelector('.tg-body');
+    const keep = old && TG.scroll != null ? old.scrollTop : null;
     box.classList.toggle('week', wk);
     box.classList.toggle('day', !wk);
-    RF.setHTML(box, html);
+    box.style.setProperty('--tg-n', n);
+    box.style.setProperty('--tg-hour', `${HOUR_PX}px`);
+    RF.setHTML(box, `<div class="tg-row tg-head">${head}</div><div class="tg-row tg-all">${all}</div>` +
+      `<div class="tg-body"><div class="tg-row tg-grid"><div class="tg-gut tg-hours">${hours}</div>${cols}</div></div>`);
+    const body = box.querySelector('.tg-body');
+    // where the hours start: as it was, else 7 AM (or the first item, when earlier); now and then the time line moves
+    body.scrollTop = keep != null ? keep : Math.max(0, (Math.min(7 * 60, first) / 60 - 0.25) * HOUR_PX);
+    TG.scroll = body.scrollTop;
+    body.addEventListener('scroll', () => { TG.scroll = body.scrollTop; }, { passive: true });
+    clearInterval(TG.nowTimer);
+    TG.nowTimer = setInterval(() => {
+      if (S.tab !== 'month' || S.calMode === 'month') { clearInterval(TG.nowTimer); return; }
+      const line = box.querySelector('.tg-now');
+      if (line) line.style.top = `${nowTop().toFixed(1)}px`;
+    }, 60e3);
     $('mTitle').textContent = wk ? `${fmt.date(from)} – ${fmt.date(addDays(from, 6))}` : fmt.long(sel);
   }
   function moveCal(n) {
@@ -1941,15 +2009,20 @@
     if (cell) openEditor({ kind: 'event', date: cell.dataset.day });
   });
   $('calDays').addEventListener('click', (e) => {
-    const it = e.target.closest('.ev,.item');
+    const it = e.target.closest('.ev');
     if (it) { openEditor({ uid: it.dataset.uid, start: Number(it.dataset.start) }); return; }
     const col = e.target.closest('.col');
     if (col && S.calMode === 'week' && col.dataset.day !== S.selDay) selectDay(col.dataset.day);
   });
+  // double-click an empty spot: a new reminder on that day, at that half hour in the hours (all day at the top)
   $('calDays').addEventListener('dblclick', (e) => {
-    if (e.target.closest('.ev,.item')) return;
+    if (e.target.closest('.ev')) return;
     const col = e.target.closest('.col');
-    if (col) openEditor({ kind: 'event', date: col.dataset.day });
+    if (!col) return;
+    if (!col.classList.contains('tg-col')) { openEditor({ kind: 'event', date: col.dataset.day }); return; }
+    const y = e.clientY - col.getBoundingClientRect().top;
+    const m = Math.min(23 * 60 + 30, Math.max(0, Math.floor(y / HOUR_PX * 2) * 30));
+    openEditor({ kind: 'event', date: col.dataset.day, prefill: { time: `${RF.pad(Math.floor(m / 60))}:${RF.pad(m % 60)}` } });
   });
   let resizeTimer = null;
   window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (S.tab === 'month' && S.calMode === 'month') renderMonth(); }, 120); });
@@ -2066,7 +2139,7 @@
     await guard(refresh());
     if (S.tab === 'reminders' && !S.welcome) await renderReminders('enter');
     if (S.meta.archiveMoved) {
-      const l = 'Terminated or Suspended';
+      const l = ARCHIVE_LIST;
       toast(T(S.meta.archiveMoved === 1 ? '{n} archived item moved to the “{list}” list' : '{n} archived items moved to the “{list}” list', { n: S.meta.archiveMoved, list: T(l) }), 8000, { label: 'Show', fn: () => showList(l) });
     }
     // back on the Display settings after a language change reloaded the window

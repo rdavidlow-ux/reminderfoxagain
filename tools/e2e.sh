@@ -39,6 +39,7 @@ run alarms-data basic alarms-data.js
 run alarms-view basic alarms-view.js
 run month-scroll basic month-scroll.js
 run day-week bills day-week.js
+run archive-list basic archive-list.js
 run subscriptions basic subscriptions.js
 run item-colours basic item-colours.js
 run safe-html basic safe-html.js

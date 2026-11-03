@@ -988,3 +988,7 @@
 987| Neste dag
 988| Forrige uke
 989| Neste uke
+990| arkiv
+991| Denne listen tar vare på arkiverte elementer: den kan ikke gis nytt navn eller fjernes, og elementene vises ikke i Påminnelser og kalendervisningene
+992| Listen «{list}» tar vare på arkiverte elementer og kan ikke gis nytt navn.
+993| Listen «{list}» tar vare på arkiverte elementer og kan ikke fjernes.

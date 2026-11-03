@@ -1153,5 +1153,9 @@
  "Previous day": "An lá roimhe",
  "Next day": "An chéad lá eile",
  "Previous week": "An tseachtain roimhe",
- "Next week": "An tseachtain seo chugainn"
+ "Next week": "An tseachtain seo chugainn",
+ "archive": "cartlann",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Coinníonn an liosta seo míreanna cartlannaithe: ní féidir é a athainmniú ná a bhaint, agus ní thaispeántar a mhíreanna sna meabhrúcháin ná sna radhairc féilire",
+ "The “{list}” list keeps archived items and can't be renamed.": "Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a athainmniú.",
+ "The “{list}” list keeps archived items and can't be removed.": "Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a bhaint."
 }

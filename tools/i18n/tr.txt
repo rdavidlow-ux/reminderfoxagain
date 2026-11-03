@@ -988,3 +988,7 @@
 987| Sonraki gün
 988| Önceki hafta
 989| Sonraki hafta
+990| arşiv
+991| Bu liste arşivlenmiş öğeleri tutar: yeniden adlandırılamaz veya kaldırılamaz ve öğeleri Anımsatıcılar ile takvim görünümlerinde gösterilmez
+992| “{list}” listesi arşivlenmiş öğeleri tutar ve yeniden adlandırılamaz.
+993| “{list}” listesi arşivlenmiş öğeleri tutar ve kaldırılamaz.

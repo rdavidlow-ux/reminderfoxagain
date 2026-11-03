@@ -988,3 +988,7 @@
 987| Próximo dia
 988| Semana anterior
 989| Próxima semana
+990| arquivo
+991| Esta lista guarda itens arquivados: não pode ser renomeada nem removida, e seus itens não aparecem em Lembretes nem nas visualizações de calendário
+992| A lista “{list}” guarda itens arquivados e não pode ser renomeada.
+993| A lista “{list}” guarda itens arquivados e não pode ser removida.

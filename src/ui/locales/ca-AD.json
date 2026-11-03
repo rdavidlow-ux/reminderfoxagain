@@ -1194,5 +1194,9 @@
  "Previous day": "Dia anterior",
  "Next day": "Dia següent",
  "Previous week": "Setmana anterior",
- "Next week": "Setmana següent"
+ "Next week": "Setmana següent",
+ "archive": "arxiu",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Aquesta llista guarda els elements arxivats: no es pot reanomenar ni eliminar, i els seus elements no apareixen als recordatoris ni a les vistes de calendari",
+ "The “{list}” list keeps archived items and can't be renamed.": "La llista «{list}» guarda els elements arxivats i no es pot reanomenar.",
+ "The “{list}” list keeps archived items and can't be removed.": "La llista «{list}» guarda els elements arxivats i no es pot eliminar."
 }

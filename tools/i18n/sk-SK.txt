@@ -988,3 +988,7 @@
 987| Nasledujúci deň
 988| Predchádzajúci týždeň
 989| Nasledujúci týždeň
+990| archív
+991| Tento zoznam uchováva archivované položky: nedá sa premenovať ani odstrániť a jeho položky sa nezobrazujú v pripomienkach ani v zobrazeniach kalendára
+992| Zoznam „{list}“ uchováva archivované položky a nedá sa premenovať.
+993| Zoznam „{list}“ uchováva archivované položky a nedá sa odstrániť.

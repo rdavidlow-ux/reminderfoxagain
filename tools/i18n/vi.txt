@@ -988,3 +988,7 @@
 987| Ngày sau
 988| Tuần trước
 989| Tuần sau
+990| lưu trữ
+991| Danh sách này giữ các mục đã lưu trữ: không thể đổi tên hay xóa, và các mục của nó không hiện trong Lời nhắc và các chế độ xem lịch
+992| Danh sách “{list}” giữ các mục đã lưu trữ và không thể đổi tên.
+993| Danh sách “{list}” giữ các mục đã lưu trữ và không thể xóa.

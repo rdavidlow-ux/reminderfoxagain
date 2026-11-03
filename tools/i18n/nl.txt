@@ -988,3 +988,7 @@
 987| Volgende dag
 988| Vorige week
 989| Volgende week
+990| archief
+991| Deze lijst bewaart gearchiveerde items: hij kan niet worden hernoemd of verwijderd, en de items staan niet in Herinneringen en de agendaweergaven
+992| De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden hernoemd.
+993| De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden verwijderd.

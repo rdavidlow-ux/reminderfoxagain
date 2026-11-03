@@ -1252,5 +1252,9 @@
  "Previous day": "Ziua anterioară",
  "Next day": "Ziua următoare",
  "Previous week": "Săptămâna anterioară",
- "Next week": "Săptămâna următoare"
+ "Next week": "Săptămâna următoare",
+ "archive": "arhivă",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Această listă păstrează elementele arhivate: nu poate fi redenumită sau eliminată, iar elementele ei nu apar în Mementouri și în vizualizările calendarului",
+ "The “{list}” list keeps archived items and can't be renamed.": "Lista „{list}” păstrează elementele arhivate și nu poate fi redenumită.",
+ "The “{list}” list keeps archived items and can't be removed.": "Lista „{list}” păstrează elementele arhivate și nu poate fi eliminată."
 }

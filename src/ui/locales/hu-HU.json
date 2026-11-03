@@ -1009,5 +1009,9 @@
  "Previous day": "Előző nap",
  "Next day": "Következő nap",
  "Previous week": "Előző hét",
- "Next week": "Következő hét"
+ "Next week": "Következő hét",
+ "archive": "archívum",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Ez a lista az archivált elemeket őrzi: nem nevezhető át és nem távolítható el, elemei pedig nem jelennek meg az emlékeztetőkben és a naptárnézetekben",
+ "The “{list}” list keeps archived items and can't be renamed.": "A „{list}” lista az archivált elemeket őrzi, és nem nevezhető át.",
+ "The “{list}” list keeps archived items and can't be removed.": "A „{list}” lista az archivált elemeket őrzi, és nem távolítható el."
 }

@@ -988,3 +988,7 @@
 987| Næste dag
 988| Forrige uge
 989| Næste uge
+990| arkiv
+991| Denne liste gemmer arkiverede elementer: den kan ikke omdøbes eller fjernes, og dens elementer vises ikke i Påmindelser og kalendervisningerne
+992| Listen “{list}” gemmer arkiverede elementer og kan ikke omdøbes.
+993| Listen “{list}” gemmer arkiverede elementer og kan ikke fjernes.

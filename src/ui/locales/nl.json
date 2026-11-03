@@ -1189,5 +1189,9 @@
  "Previous day": "Vorige dag",
  "Next day": "Volgende dag",
  "Previous week": "Vorige week",
- "Next week": "Volgende week"
+ "Next week": "Volgende week",
+ "archive": "archief",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Deze lijst bewaart gearchiveerde items: hij kan niet worden hernoemd of verwijderd, en de items staan niet in Herinneringen en de agendaweergaven",
+ "The “{list}” list keeps archived items and can't be renamed.": "De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden hernoemd.",
+ "The “{list}” list keeps archived items and can't be removed.": "De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden verwijderd."
 }

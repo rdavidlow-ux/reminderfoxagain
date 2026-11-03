@@ -1309,5 +1309,9 @@
  "Previous day": "Predchádzajúci deň",
  "Next day": "Nasledujúci deň",
  "Previous week": "Predchádzajúci týždeň",
- "Next week": "Nasledujúci týždeň"
+ "Next week": "Nasledujúci týždeň",
+ "archive": "archív",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Tento zoznam uchováva archivované položky: nedá sa premenovať ani odstrániť a jeho položky sa nezobrazujú v pripomienkach ani v zobrazeniach kalendára",
+ "The “{list}” list keeps archived items and can't be renamed.": "Zoznam „{list}“ uchováva archivované položky a nedá sa premenovať.",
+ "The “{list}” list keeps archived items and can't be removed.": "Zoznam „{list}“ uchováva archivované položky a nedá sa odstrániť."
 }

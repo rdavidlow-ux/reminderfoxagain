@@ -988,3 +988,7 @@
 987| Giorno successivo
 988| Settimana precedente
 989| Settimana successiva
+990| archivio
+991| Questo elenco conserva gli elementi archiviati: non può essere rinominato né rimosso, e i suoi elementi non compaiono nei promemoria né nelle viste del calendario
+992| L'elenco «{list}» conserva gli elementi archiviati e non può essere rinominato.
+993| L'elenco «{list}» conserva gli elementi archiviati e non può essere rimosso.

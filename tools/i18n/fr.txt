@@ -988,3 +988,7 @@
 987| Jour suivant
 988| Semaine précédente
 989| Semaine suivante
+990| archive
+991| Cette liste garde les éléments archivés : elle ne peut pas être renommée ni supprimée, et ses éléments n'apparaissent pas dans les rappels ni dans les vues du calendrier
+992| La liste «{list}» garde les éléments archivés et ne peut pas être renommée.
+993| La liste «{list}» garde les éléments archivés et ne peut pas être supprimée.

@@ -1189,5 +1189,9 @@
  "Previous day": "Forrige dag",
  "Next day": "Næste dag",
  "Previous week": "Forrige uge",
- "Next week": "Næste uge"
+ "Next week": "Næste uge",
+ "archive": "arkiv",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Denne liste gemmer arkiverede elementer: den kan ikke omdøbes eller fjernes, og dens elementer vises ikke i Påmindelser og kalendervisningerne",
+ "The “{list}” list keeps archived items and can't be renamed.": "Listen “{list}” gemmer arkiverede elementer og kan ikke omdøbes.",
+ "The “{list}” list keeps archived items and can't be removed.": "Listen “{list}” gemmer arkiverede elementer og kan ikke fjernes."
 }

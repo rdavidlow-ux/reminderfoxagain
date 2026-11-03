@@ -1009,5 +1009,9 @@
  "Previous day": "前一天",
  "Next day": "後一天",
  "Previous week": "上一週",
- "Next week": "下一週"
+ "Next week": "下一週",
+ "archive": "封存",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "此清單保存已封存的項目：無法重新命名或移除，其中的項目不會顯示在提醒和行事曆檢視中",
+ "The “{list}” list keeps archived items and can't be renamed.": "「{list}」清單保存已封存的項目，無法重新命名。",
+ "The “{list}” list keeps archived items and can't be removed.": "「{list}」清單保存已封存的項目，無法移除。"
 }

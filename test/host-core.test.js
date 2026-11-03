@@ -515,3 +515,18 @@ test('host 19. calendar subscriptions: an option marks events completed once the
   await tb.call('subs:update', sub.id, { autoDone: false });
   assert.equal(await done(), 'Past game:false Morning game:false Next game:false');
 });
+
+test('host 20. the "Terminated or Suspended" list keeps archived items: it can\'t be renamed or removed', async () => {
+  const tb = fakeThunderbird();
+  await tb.host.start();
+  const ARCH = 'Terminated or Suspended';
+  await tb.call('data:save', { kind: 'todo', summary: 'Old gym membership', list: ARCH });
+  await tb.call('data:save', { kind: 'todo', summary: 'Errand', list: 'Errands' });
+  await assert.rejects(() => tb.call('lists:rename', ARCH, 'Old'), /can't be renamed/);
+  await assert.rejects(() => tb.call('lists:remove', ARCH, { deleteItems: true }), /can't be removed/);
+  const all = await tb.call('data:all');
+  assert.equal(all.find((d) => d.summary === 'Old gym membership').list, ARCH);
+  // other lists still can
+  assert.equal(await tb.call('lists:rename', 'Errands', 'Chores'), 1);
+  assert.equal((await tb.call('data:all')).find((d) => d.summary === 'Errand').list, 'Chores');
+});

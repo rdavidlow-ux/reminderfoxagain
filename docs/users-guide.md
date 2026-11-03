@@ -323,9 +323,9 @@ In **Manage reminders** you can Show, Edit, Delete and reorder saved filters (�
 
 The **Day | Week | Month** switch at the left of the toolbar picks the view, and the tab is named after it. The choice is remembered.
 
-- **Day** shows the day picked in the calendar panel, with each item's time (or All day, or To-do), its place, how it repeats and, for a subscribed calendar, its name.
-- **Week** shows the week of the picked day in seven columns, from the first day of the week set in Settings. Every item of a day is listed in full, with no “+3 more”. Click a day to pick it.
-- In both, **‹ ›** and **Page Up / Page Down** move a day or a week, **Today** and **Go to…** jump there, and a day picked in the calendar panel shows that day (or its week). Click an item to open it; double-click an empty spot to add a reminder on that day. **Show to-dos** and **Show completed** work as in the Month view.
+- **Day** shows the day picked in the calendar panel; **Week** shows its week in seven columns, from the first day of the week set in Settings. Click a day's heading to pick it.
+- Both show the full 24 hours, which scroll (they open at 7 AM, or earlier when something starts earlier, and stay where you scrolled). Each timed item sits at its start time and is as tall as it lasts; items at the same time sit side by side. All-day items and list items without a time are in the **All day** row at the top. A red line marks the time now. In Day, an item also shows its place, how it repeats and, for a subscribed calendar, its name.
+- **‹ ›** and **Page Up / Page Down** move a day or a week, **Today** and **Go to…** jump there, and a day picked in the calendar panel shows that day (or its week). Click an item to open it. Double-click in the hours to add a reminder on that day at that half hour, or in the All day row for an all-day one. **Show to-dos** and **Show completed** work as in the Month view.
 - Back in **Month**, the month of the picked day is shown.
 
 **Month** is a full month grid. Timed items show their time, all-day ones are solid, and to-dos start with ☐. Click an item to open it. Double-click an empty spot to add a reminder on that day. “+3 more” opens that day in the list. **Show to-dos** turns to-dos on and off. **Show completed** is ticked every time the app starts, so the reminders and list items you have ticked show too, struck through; untick it to see only what is still to do (until you close the app).
@@ -483,6 +483,8 @@ In Thunderbird the fox button in the toolbar does what the tray icon does in the
 ### Items you no longer need
 
 There is no Archive tab. Put items you want to keep for reference on a list, for example **Terminated or Suspended**: select them and use **Move to…**, or right-click a reminder and choose **Make it a to-do…**. Tick them if they shouldn't set off alarms any more, or delete what you don't need.
+
+The **Terminated or Suspended** list is kept for this: it can't be renamed or removed, and its items stay on the list only. They don't show in the Reminders list, the Month, Week and Day views or the calendar panel. (Alarms set on them still ring until you tick them.)
 
 If an earlier version left items in its archive, the app moves them into the “Terminated or Suspended” list the first time it starts, and says how many, with a **Show** button. A copy of the old archive is kept in the backups folder first (“The archive, before it became a list”). An archived reminder becomes a list item there, keeping its repeat, alarm, notes and categories; the archive reason isn't kept.
 

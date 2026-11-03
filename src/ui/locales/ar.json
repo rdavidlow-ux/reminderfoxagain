@@ -1373,5 +1373,9 @@
  "Previous day": "اليوم السابق",
  "Next day": "اليوم التالي",
  "Previous week": "الأسبوع السابق",
- "Next week": "الأسبوع التالي"
+ "Next week": "الأسبوع التالي",
+ "archive": "أرشيف",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "تحتفظ هذه القائمة بالعناصر المؤرشفة: لا يمكن إعادة تسميتها أو إزالتها، ولا تظهر عناصرها في التذكيرات ولا في طرق عرض التقويم",
+ "The “{list}” list keeps archived items and can't be renamed.": "تحتفظ قائمة «{list}» بالعناصر المؤرشفة ولا يمكن إعادة تسميتها.",
+ "The “{list}” list keeps archived items and can't be removed.": "تحتفظ قائمة «{list}» بالعناصر المؤرشفة ولا يمكن إزالتها."
 }

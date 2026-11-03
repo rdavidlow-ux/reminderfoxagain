@@ -1192,5 +1192,9 @@
  "Previous day": "Jour précédent",
  "Next day": "Jour suivant",
  "Previous week": "Semaine précédente",
- "Next week": "Semaine suivante"
+ "Next week": "Semaine suivante",
+ "archive": "archive",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Cette liste garde les éléments archivés : elle ne peut pas être renommée ni supprimée, et ses éléments n'apparaissent pas dans les rappels ni dans les vues du calendrier",
+ "The “{list}” list keeps archived items and can't be renamed.": "La liste «{list}» garde les éléments archivés et ne peut pas être renommée.",
+ "The “{list}” list keeps archived items and can't be removed.": "La liste «{list}» garde les éléments archivés et ne peut pas être supprimée."
 }

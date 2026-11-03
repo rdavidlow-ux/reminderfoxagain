@@ -988,3 +988,7 @@
 987| Ziua următoare
 988| Săptămâna anterioară
 989| Săptămâna următoare
+990| arhivă
+991| Această listă păstrează elementele arhivate: nu poate fi redenumită sau eliminată, iar elementele ei nu apar în Mementouri și în vizualizările calendarului
+992| Lista „{list}” păstrează elementele arhivate și nu poate fi redenumită.
+993| Lista „{list}” păstrează elementele arhivate și nu poate fi eliminată.

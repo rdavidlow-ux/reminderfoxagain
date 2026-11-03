@@ -988,3 +988,7 @@
 987| Dia següent
 988| Setmana anterior
 989| Setmana següent
+990| arxiu
+991| Aquesta llista guarda els elements arxivats: no es pot reanomenar ni eliminar, i els seus elements no apareixen als recordatoris ni a les vistes de calendari
+992| La llista «{list}» guarda els elements arxivats i no es pot reanomenar.
+993| La llista «{list}» guarda els elements arxivats i no es pot eliminar.

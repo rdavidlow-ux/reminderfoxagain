@@ -737,6 +737,7 @@ function createHost(ad) {
     },
     'data:order': (uids) => { store.setOrder(uids || []); changed(); return true; },
     'lists:rename': (from, to) => {
+      if (from === ARCHIVE_LIST) throw new Error('The “Terminated or Suspended” list keeps archived items and can\'t be renamed.');
       to = String(to || '').trim();
       if (!to || /[,:]/.test(to)) throw new Error('A list name can\'t be empty or contain a comma or a colon.');
       const n = store.renameList(from, to) + archive.renameList(from, to);
@@ -748,6 +749,7 @@ function createHost(ad) {
       return n;
     },
     'lists:remove': (name, opts) => {
+      if (name === ARCHIVE_LIST) throw new Error('The “Terminated or Suspended” list keeps archived items and can\'t be removed.');
       const n = (opts && opts.deleteItems ? store.removeListItems(name) : store.renameList(name, "To-Do's")) + archive.renameList(name, "To-Do's");
       state.settings.lists = state.settings.lists.filter((l) => l !== name);
       saveState(true);

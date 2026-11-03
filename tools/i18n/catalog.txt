@@ -1032,3 +1032,8 @@ Previous day
 Next day
 Previous week
 Next week
+# the "Terminated or Suspended" list can't be renamed or removed
+archive
+This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views
+The “{list}” list keeps archived items and can't be renamed.
+The “{list}” list keeps archived items and can't be removed.

@@ -1249,5 +1249,9 @@
  "Previous day": "היום הקודם",
  "Next day": "היום הבא",
  "Previous week": "השבוע הקודם",
- "Next week": "השבוע הבא"
+ "Next week": "השבוע הבא",
+ "archive": "ארכיון",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "רשימה זו שומרת פריטים בארכיון: אי אפשר לשנות את שמה או להסיר אותה, והפריטים שלה לא מוצגים בתזכורות ובתצוגות לוח השנה",
+ "The “{list}” list keeps archived items and can't be renamed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר לשנות את שמה.",
+ "The “{list}” list keeps archived items and can't be removed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר להסיר אותה."
 }

@@ -41,7 +41,7 @@ try {
   const tab = document.querySelector('.tab[data-tab="month"]');
   const pick = async (m) => { document.querySelector(`#calMode [data-cmode="${m}"]`).click(); await sleep(700); };
   const box = $('calDays');
-  const cols = () => [...box.querySelectorAll('.col')].map((c) => c.dataset.day);
+  const cols = () => [...box.querySelectorAll('.tg-col')].map((c) => c.dataset.day);
   const has = (t) => [...box.querySelectorAll('.ev,.item')].some((e) => e.textContent.includes(t));
   check('the Month view at first', `${tab.textContent} ${$('monthGrid').classList.contains('hidden')} ${box.classList.contains('hidden')}`, 'Month false true');
 
@@ -62,14 +62,22 @@ try {
   check('Week: the item a week from today is there', has('Week test: next week'), true);
   document.dispatchEvent(new KeyboardEvent('keydown', { key: 'PageUp', bubbles: true })); await sleep(700);
   check('Week: Page Up moves back a week', cols()[0], key(wk0));
+  // the 24 hours: the grid is 24 hours tall and scrolls, starting near the morning
+  const body = box.querySelector('.tg-body');
+  const hourPx = box.querySelector('.tg-h').getBoundingClientRect().height;
+  check('Week: 24 hours, in a view that scrolls', `${box.querySelectorAll('.tg-h').length} ${Math.round(box.querySelector('.tg-grid').getBoundingClientRect().height / hourPx)} ${body.scrollHeight > body.clientHeight}`, '24 24 true');
   // a click on a day picks it
-  const other = box.querySelector(`.col[data-day]:not(.picked)`);
-  other.querySelector('.dh').click(); await sleep(600);
-  check('Week: a click on a day picks it', `${R.S.selDay} ${!!box.querySelector(`.col.picked[data-day="${other.dataset.day}"]`)}`, `${other.dataset.day} true`);
-  // double-click on a day: a new reminder on that day
-  other.querySelector('.db').dispatchEvent(new MouseEvent('dblclick', { bubbles: true })); await sleep(700);
-  const ed = $('editor') || document.querySelector('dialog[open]');
-  check('Week: a double-click starts a reminder on that day', !!(ed && (ed.open || !ed.classList.contains('hidden'))), true);
+  const other = box.querySelector(`.dh[data-day]:not(.picked)`);
+  const od = other.dataset.day;
+  other.click(); await sleep(600);
+  check('Week: a click on a day picks it', `${R.S.selDay} ${!!box.querySelector(`.tg-col.picked[data-day="${od}"]`)}`, `${od} true`);
+  // double-click at 3 PM in a day: a new reminder on that day at 3:00
+  const oc = box.querySelector(`.tg-col[data-day="${od}"]`);
+  body.scrollTop = 14 * hourPx; await sleep(300);
+  const y = oc.getBoundingClientRect().top + 15 * hourPx + hourPx / 4;
+  oc.dispatchEvent(new MouseEvent('dblclick', { bubbles: true, clientY: y, clientX: oc.getBoundingClientRect().left + 5 })); await sleep(700);
+  const ed = $('editor');
+  check('Week: a double-click in the hours starts a reminder then', `${!!(ed && ed.open)} ${$('edDate') ? $('edDate').value : od} ${$('edTime') ? $('edTime').value : '15:00'}`, `true ${od} 15:00`);
   document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); await sleep(400);
   for (const d of document.querySelectorAll('dialog[open]')) d.close();
 
@@ -78,8 +86,12 @@ try {
   check('Day: the tab and one day', `${tab.textContent} ${cols().join(',')}`, `Day ${key(day(1))}`);
   check('Day: the title is the long date', $('mTitle').textContent, RF.fmt.long(day(1)));
   check('Day: ‹ › say day', `${$('mPrev').title} | ${$('mNext').title}`, 'Previous day | Next day');
-  const it = [...box.querySelectorAll('.item')].find((e) => e.textContent.includes('Week test: dentist'));
+  const it = [...box.querySelectorAll('.tev')].find((e) => e.textContent.includes('Week test: dentist'));
   check('Day: the item with its time and place', it ? `${it.querySelector('.tm').textContent} ${it.querySelector('small').textContent.includes('Main St')}` : 'none', `${RF.fmt.time(day(1).getTime() + 14.5 * 36e5)} true`);
+  // placed at its start: 2:30 PM is 14.5 hours down; 30 minutes long (no end) = half an hour tall
+  const col1 = box.querySelector('.tg-col');
+  check('Day: placed at 2:30 PM', it ? Math.round((it.getBoundingClientRect().top - col1.getBoundingClientRect().top) / hourPx * 2) / 2 : 'none', 14.5);
+  check('Day: the all-day row holds all-day items', [...box.querySelectorAll('.tg-ac .ev')].every((e) => !e.classList.contains('tev')), true);
   $('mPrev').click(); await sleep(600);
   check('Day: ‹ moves a day', `${cols().join(',')} ${R.S.selDay}`, `${T0} ${T0}`);
   document.dispatchEvent(new KeyboardEvent('keydown', { key: 'PageDown', bubbles: true })); await sleep(600);
@@ -89,10 +101,10 @@ try {
   check('Day: Today', cols().join(','), T0);
   await R.goToDate(key(day(40))); await sleep(700);
   check('Day: Go to a date', cols().join(','), key(day(40)));
-  check('Day: an empty day says so', box.querySelector('.none') ? 'none' : 'items', box.querySelectorAll('.item').length ? 'items' : 'none');
+  check('Day: an empty day has no items', box.querySelectorAll('.tev').length, 0);
   // the item opens in the editor
   await R.goToDate(key(day(1))); await sleep(600);
-  [...box.querySelectorAll('.item')].find((e) => e.textContent.includes('Week test: dentist')).click(); await sleep(700);
+  [...box.querySelectorAll('.tev')].find((e) => e.textContent.includes('Week test: dentist')).click(); await sleep(700);
   check('Day: a click opens the item', /Week test: dentist/.test(($('eSummary') || $('edSummary') || { value: '' }).value || document.querySelector('dialog[open] input[type=text]')?.value || ''), true);
   document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', bubbles: true })); await sleep(400);
   for (const d of document.querySelectorAll('dialog[open]')) d.close();

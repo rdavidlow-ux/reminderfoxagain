@@ -1009,5 +1009,9 @@
  "Previous day": "Өмнөх өдөр",
  "Next day": "Дараагийн өдөр",
  "Previous week": "Өмнөх долоо хоног",
- "Next week": "Дараагийн долоо хоног"
+ "Next week": "Дараагийн долоо хоног",
+ "archive": "архив",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Энэ жагсаалт архивласан зүйлсийг хадгална: нэрийг нь өөрчлөх эсвэл устгах боломжгүй бөгөөд зүйлс нь сануулга болон хуанлийн харагдацад харагдахгүй",
+ "The “{list}” list keeps archived items and can't be renamed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул нэрийг нь өөрчлөх боломжгүй.",
+ "The “{list}” list keeps archived items and can't be removed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул устгах боломжгүй."
 }

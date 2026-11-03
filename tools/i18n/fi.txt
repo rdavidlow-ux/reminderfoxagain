@@ -988,3 +988,7 @@
 987| Seuraava päivä
 988| Edellinen viikko
 989| Seuraava viikko
+990| arkisto
+991| Tämä luettelo säilyttää arkistoidut kohteet: sitä ei voi nimetä uudelleen tai poistaa, eikä sen kohteita näytetä muistutuksissa tai kalenterinäkymissä
+992| Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi nimetä uudelleen.
+993| Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi poistaa.

@@ -988,3 +988,7 @@
 987| An chéad lá eile
 988| An tseachtain roimhe
 989| An tseachtain seo chugainn
+990| cartlann
+991| Coinníonn an liosta seo míreanna cartlannaithe: ní féidir é a athainmniú ná a bhaint, agus ní thaispeántar a mhíreanna sna meabhrúcháin ná sna radhairc féilire
+992| Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a athainmniú.
+993| Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a bhaint.

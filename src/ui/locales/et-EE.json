@@ -1189,5 +1189,9 @@
  "Previous day": "Eelmine päev",
  "Next day": "Järgmine päev",
  "Previous week": "Eelmine nädal",
- "Next week": "Järgmine nädal"
+ "Next week": "Järgmine nädal",
+ "archive": "arhiiv",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "See loend hoiab arhiveeritud üksusi: seda ei saa ümber nimetada ega eemaldada ning selle üksusi ei näidata meeldetuletustes ega kalendrivaadetes",
+ "The “{list}” list keeps archived items and can't be renamed.": "Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa ümber nimetada.",
+ "The “{list}” list keeps archived items and can't be removed.": "Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa eemaldada."
 }

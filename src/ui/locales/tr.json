@@ -1009,5 +1009,9 @@
  "Previous day": "Önceki gün",
  "Next day": "Sonraki gün",
  "Previous week": "Önceki hafta",
- "Next week": "Sonraki hafta"
+ "Next week": "Sonraki hafta",
+ "archive": "arşiv",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Bu liste arşivlenmiş öğeleri tutar: yeniden adlandırılamaz veya kaldırılamaz ve öğeleri Anımsatıcılar ile takvim görünümlerinde gösterilmez",
+ "The “{list}” list keeps archived items and can't be renamed.": "“{list}” listesi arşivlenmiş öğeleri tutar ve yeniden adlandırılamaz.",
+ "The “{list}” list keeps archived items and can't be removed.": "“{list}” listesi arşivlenmiş öğeleri tutar ve kaldırılamaz."
 }
