@@ -26,6 +26,10 @@ try {
   await R.showList("To-Do's"); await sleep(400);
   check('shown in the list (Show completed)', [...document.querySelectorAll('#listView tbody tr .t')].some((t) => t.textContent === 'Pick up the cake'), true);
   // ---------- import: preview, duplicates skipped, a category added
+  // the sample's "Renew passport" is dated two days ago; on Nov 3 that is the fixture's own date for it, which would make
+  // a second duplicate, so on that day it moves back a day (the check is about the fixture's one duplicate)
+  const pass = (await window.rf.all()).find((d) => d.summary === 'Renew passport');
+  if (pass && pass.date && pass.date.slice(5) === '11-01') await window.rf.save({ ...pass, date: RF.dayKey(new Date(Date.now() - 3 * 864e5)) });
   const dataDir = (await window.rf.meta()).dataFile.replace(/[\\/][^\\/]+$/, '');
   const file = `${dataDir}/addon-sample.ics`;
   const count0 = (await window.rf.meta()).count;
