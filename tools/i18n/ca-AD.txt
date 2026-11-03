@@ -982,3 +982,9 @@
 981| Edita l'element de llista
 982| Marca els esdeveniments passats com a completats
 983| Els esdeveniments compten com a completats quan s'acaben; encara en pots desmarcar un
+984| Dia
+985| Setmana
+986| Dia anterior
+987| Dia següent
+988| Setmana anterior
+989| Setmana següent

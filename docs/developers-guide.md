@@ -341,7 +341,7 @@ The state object `S` holds `tab` (`reminders`, `todos` for the List dropdown, `m
 | Reminders | `reminderRows()` (filter, view, category, repeat count, hide options; month separators carry a per-month count), `rowHtml(r, opts)`, `renderReminders`, `position` (first-visit scroll to today) |
 | To-dos | `renderTodos`, `todoSorter()`, `reorder(uid, target, after)`, `moveSelected(dir)`, drag-and-drop handlers |
 | Views | `viewOf`, `viewRange`, `viewMatches` |
-| Calendar | `renderMonth`, `renderSide` (1–3 months via `monthHtml`, overdue marks), `renderAgenda`, `selectDay`, `goToDate`, `toggleSide` |
+| Calendar | `renderCal` (`applyCalMode`, then `renderMonth` or `renderDays` for the Day and Week views), `moveCal`, `renderMonth`, `renderSide` (1–3 months via `monthHtml`, overdue marks), `renderAgenda`, `selectDay`, `goToDate`, `toggleSide` |
 | Interaction | `showCtx` (context menu), `selectTr`, keyboard handler, `openMap`, `mapUrl` |
 | Editor | `openEditor({uid, start} \| {kind, date})`, `fillEditor`, `renderRepeat`, `readRepeat`, `renderAlarm`, `currentAlarm`, `saveEditor` |
 | Settings | `openSettings` (General controls), `setSetting(patch)`, then `FX('fillSettings')` |

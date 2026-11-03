@@ -982,3 +982,9 @@
 981| Listeneintrag bearbeiten
 982| Vergangene Termine als erledigt markieren
 983| Termine gelten als erledigt, sobald sie vorbei sind; Sie können einen trotzdem wieder abhaken
+984| Tag
+985| Woche
+986| Vorheriger Tag
+987| Nächster Tag
+988| Vorherige Woche
+989| Nächste Woche

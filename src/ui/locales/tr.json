@@ -1003,5 +1003,11 @@
  "New list item": "Yeni liste öğesi",
  "Edit list item": "Liste öğesini düzenle",
  "Mark past events completed": "Geçmiş etkinlikleri tamamlandı olarak işaretle",
- "Events count as completed once they are over; you can still untick one": "Etkinlikler bittiğinde tamamlanmış sayılır; yine de birinin işaretini kaldırabilirsiniz"
+ "Events count as completed once they are over; you can still untick one": "Etkinlikler bittiğinde tamamlanmış sayılır; yine de birinin işaretini kaldırabilirsiniz",
+ "Day (calendar view)": "Gün",
+ "Week (calendar view)": "Hafta",
+ "Previous day": "Önceki gün",
+ "Next day": "Sonraki gün",
+ "Previous week": "Önceki hafta",
+ "Next week": "Sonraki hafta"
 }

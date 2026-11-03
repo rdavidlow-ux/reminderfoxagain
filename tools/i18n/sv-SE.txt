@@ -982,3 +982,9 @@
 981| Redigera listobjekt
 982| Markera tidigare händelser som klara
 983| Händelser räknas som klara när de är över; du kan fortfarande bocka av en igen
+984| Dag
+985| Vecka
+986| Föregående dag
+987| Nästa dag
+988| Föregående vecka
+989| Nästa vecka

@@ -1243,5 +1243,11 @@
  "New list item": "פריט חדש ברשימה",
  "Edit list item": "עריכת פריט ברשימה",
  "Mark past events completed": "סימון אירועים שעברו כהושלמו",
- "Events count as completed once they are over; you can still untick one": "אירועים נחשבים כהושלמו לאחר שהסתיימו; עדיין אפשר לבטל את הסימון של אחד מהם"
+ "Events count as completed once they are over; you can still untick one": "אירועים נחשבים כהושלמו לאחר שהסתיימו; עדיין אפשר לבטל את הסימון של אחד מהם",
+ "Day (calendar view)": "יום",
+ "Week (calendar view)": "שבוע",
+ "Previous day": "היום הקודם",
+ "Next day": "היום הבא",
+ "Previous week": "השבוע הקודם",
+ "Next week": "השבוע הבא"
 }

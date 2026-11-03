@@ -982,3 +982,9 @@
 981| Editează elementul de listă
 982| Marchează evenimentele trecute ca finalizate
 983| Evenimentele contează ca finalizate după ce s-au încheiat; poți totuși debifa unul
+984| Zi
+985| Săptămână
+986| Ziua anterioară
+987| Ziua următoare
+988| Săptămâna anterioară
+989| Săptămâna următoare

@@ -1188,5 +1188,11 @@
  "New list item": "Element de llista nou",
  "Edit list item": "Edita l'element de llista",
  "Mark past events completed": "Marca els esdeveniments passats com a completats",
- "Events count as completed once they are over; you can still untick one": "Els esdeveniments compten com a completats quan s'acaben; encara en pots desmarcar un"
+ "Events count as completed once they are over; you can still untick one": "Els esdeveniments compten com a completats quan s'acaben; encara en pots desmarcar un",
+ "Day (calendar view)": "Dia",
+ "Week (calendar view)": "Setmana",
+ "Previous day": "Dia anterior",
+ "Next day": "Dia següent",
+ "Previous week": "Setmana anterior",
+ "Next week": "Setmana següent"
 }

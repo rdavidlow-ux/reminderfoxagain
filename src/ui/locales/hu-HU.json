@@ -1003,5 +1003,11 @@
  "New list item": "Új listaelem",
  "Edit list item": "Listaelem szerkesztése",
  "Mark past events completed": "Elmúlt események megjelölése elvégzettként",
- "Events count as completed once they are over; you can still untick one": "Az események elvégzettnek számítanak, ha véget értek; egyről így is leveheted a pipát"
+ "Events count as completed once they are over; you can still untick one": "Az események elvégzettnek számítanak, ha véget értek; egyről így is leveheted a pipát",
+ "Day (calendar view)": "Nap",
+ "Week (calendar view)": "Hét",
+ "Previous day": "Előző nap",
+ "Next day": "Következő nap",
+ "Previous week": "Előző hét",
+ "Next week": "Következő hét"
 }

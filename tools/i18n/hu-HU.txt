@@ -982,3 +982,9 @@
 981| Listaelem szerkesztése
 982| Elmúlt események megjelölése elvégzettként
 983| Az események elvégzettnek számítanak, ha véget értek; egyről így is leveheted a pipát
+984| Nap
+985| Hét
+986| Előző nap
+987| Következő nap
+988| Előző hét
+989| Következő hét

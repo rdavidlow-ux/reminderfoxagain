@@ -1183,5 +1183,11 @@
  "New list item": "Nuevo elemento de lista",
  "Edit list item": "Editar elemento de lista",
  "Mark past events completed": "Marcar los eventos pasados como completados",
- "Events count as completed once they are over; you can still untick one": "Los eventos cuentan como completados cuando ya han pasado; aún puedes desmarcar uno"
+ "Events count as completed once they are over; you can still untick one": "Los eventos cuentan como completados cuando ya han pasado; aún puedes desmarcar uno",
+ "Day (calendar view)": "Día",
+ "Week (calendar view)": "Semana",
+ "Previous day": "Día anterior",
+ "Next day": "Día siguiente",
+ "Previous week": "Semana anterior",
+ "Next week": "Semana siguiente"
 }

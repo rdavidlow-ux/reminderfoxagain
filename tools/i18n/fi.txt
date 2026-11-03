@@ -982,3 +982,9 @@
 981| Muokkaa luettelon kohdetta
 982| Merkitse menneet tapahtumat tehdyiksi
 983| Tapahtumat lasketaan tehdyiksi, kun ne ovat ohi; voit silti poistaa merkinnän yhdestä
+984| Päivä
+985| Viikko
+986| Edellinen päivä
+987| Seuraava päivä
+988| Edellinen viikko
+989| Seuraava viikko

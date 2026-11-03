@@ -1303,5 +1303,11 @@
  "New list item": "Новы элемент спіса",
  "Edit list item": "Змяніць элемент спіса",
  "Mark past events completed": "Адзначаць мінулыя падзеі выкананымі",
- "Events count as completed once they are over; you can still untick one": "Падзеі лічацца выкананымі, калі яны мінулі; адзнаку з любой можна зняць"
+ "Events count as completed once they are over; you can still untick one": "Падзеі лічацца выкананымі, калі яны мінулі; адзнаку з любой можна зняць",
+ "Day (calendar view)": "Дзень",
+ "Week (calendar view)": "Тыдзень",
+ "Previous day": "Папярэдні дзень",
+ "Next day": "Наступны дзень",
+ "Previous week": "Папярэдні тыдзень",
+ "Next week": "Наступны тыдзень"
 }

@@ -982,3 +982,9 @@
 981| Sửa mục danh sách
 982| Đánh dấu các sự kiện đã qua là hoàn thành
 983| Sự kiện được tính là hoàn thành khi đã kết thúc; bạn vẫn có thể bỏ đánh dấu một sự kiện
+984| Ngày
+985| Tuần
+986| Ngày trước
+987| Ngày sau
+988| Tuần trước
+989| Tuần sau

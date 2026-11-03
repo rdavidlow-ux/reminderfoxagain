@@ -140,7 +140,7 @@ Alarms ring while Thunderbird is running. The desktop app keeps running in the s
 | Keep lists of your own (Groceries, Movies to see…)                                         | The **List dropdown** in the tab bar → **＋ New list…**              |
 | Set a one-off “in 20 minutes” alarm                                                        | **⏰ Quick alarm** (Alt+Shift+Q)                                     |
 | See holidays, sports or a team calendar among your reminders                               | **📅 Calendars → Subscribe to a calendar…** in the Reminders toolbar |
-| Scroll through past and coming months                                                      | The **Month** tab: the mouse wheel, or Page Up / Page Down           |
+| Scroll through past and coming months, or see a day or a week                              | The **Month** tab: the mouse wheel, or Page Up / Page Down; **Day / Week / Month** in its toolbar |
 | Pick a theme or make your own, with colours for past, today's, starred and completed items | **Settings → General / Display**                                     |
 | Use the app in another language (34 languages)                                             | **Settings → Display → Language**                                    |
 | Pick one of five alarm sounds (or your own), or get a daily pop-up of today's reminders    | **Settings → Alarms**                                                |

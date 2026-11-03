@@ -1003,5 +1003,11 @@
  "New list item": "Шинэ жагсаалтын зүйл",
  "Edit list item": "Жагсаалтын зүйлийг засах",
  "Mark past events completed": "Өнгөрсөн үйл явдлуудыг дууссан гэж тэмдэглэх",
- "Events count as completed once they are over; you can still untick one": "Үйл явдал дууссаны дараа дууссанд тооцогдоно; та нэгийг нь тэмдэглэлээс авч болно"
+ "Events count as completed once they are over; you can still untick one": "Үйл явдал дууссаны дараа дууссанд тооцогдоно; та нэгийг нь тэмдэглэлээс авч болно",
+ "Day (calendar view)": "Өдөр",
+ "Week (calendar view)": "Долоо хоног",
+ "Previous day": "Өмнөх өдөр",
+ "Next day": "Дараагийн өдөр",
+ "Previous week": "Өмнөх долоо хоног",
+ "Next week": "Дараагийн долоо хоног"
 }

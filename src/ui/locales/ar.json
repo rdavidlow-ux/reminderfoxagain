@@ -1367,5 +1367,11 @@
  "New list item": "عنصر قائمة جديد",
  "Edit list item": "تعديل عنصر القائمة",
  "Mark past events completed": "تعليم الأحداث الماضية كمكتملة",
- "Events count as completed once they are over; you can still untick one": "تُعدّ الأحداث مكتملة عند انتهائها؛ ولا يزال بإمكانك إلغاء تحديد أي منها"
+ "Events count as completed once they are over; you can still untick one": "تُعدّ الأحداث مكتملة عند انتهائها؛ ولا يزال بإمكانك إلغاء تحديد أي منها",
+ "Day (calendar view)": "يوم",
+ "Week (calendar view)": "أسبوع",
+ "Previous day": "اليوم السابق",
+ "Next day": "اليوم التالي",
+ "Previous week": "الأسبوع السابق",
+ "Next week": "الأسبوع التالي"
 }

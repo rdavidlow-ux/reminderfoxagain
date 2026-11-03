@@ -982,3 +982,9 @@
 981| Cuir mír liosta in eagar
 982| Marcáil imeachtaí atá thart mar críochnaithe
 983| Áirítear imeachtaí mar chríochnaithe nuair a bhíonn siad thart; is féidir leat tic a bhaint de cheann fós
+984| Lá
+985| Seachtain
+986| An lá roimhe
+987| An chéad lá eile
+988| An tseachtain roimhe
+989| An tseachtain seo chugainn

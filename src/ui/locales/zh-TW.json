@@ -1003,5 +1003,11 @@
  "New list item": "新增清單項目",
  "Edit list item": "編輯清單項目",
  "Mark past events completed": "將過去的活動標示為已完成",
- "Events count as completed once they are over; you can still untick one": "活動結束後即視為已完成；你仍可取消勾選"
+ "Events count as completed once they are over; you can still untick one": "活動結束後即視為已完成；你仍可取消勾選",
+ "Day (calendar view)": "日",
+ "Week (calendar view)": "週",
+ "Previous day": "前一天",
+ "Next day": "後一天",
+ "Previous week": "上一週",
+ "Next week": "下一週"
 }

@@ -1003,5 +1003,11 @@
  "New list item": "새 목록 항목",
  "Edit list item": "목록 항목 편집",
  "Mark past events completed": "지난 일정을 완료로 표시",
- "Events count as completed once they are over; you can still untick one": "일정이 끝나면 완료로 간주됩니다. 체크를 해제할 수도 있습니다"
+ "Events count as completed once they are over; you can still untick one": "일정이 끝나면 완료로 간주됩니다. 체크를 해제할 수도 있습니다",
+ "Day (calendar view)": "일",
+ "Week (calendar view)": "주",
+ "Previous day": "이전 날",
+ "Next day": "다음 날",
+ "Previous week": "이전 주",
+ "Next week": "다음 주"
 }

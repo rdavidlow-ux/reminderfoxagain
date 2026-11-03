@@ -982,3 +982,9 @@
 981| Muuda loendi kirjet
 982| Märgi möödunud sündmused tehtuks
 983| Sündmused loetakse tehtuks, kui need on möödas; saad ühe märke siiski eemaldada
+984| Päev
+985| Nädal
+986| Eelmine päev
+987| Järgmine päev
+988| Eelmine nädal
+989| Järgmine nädal

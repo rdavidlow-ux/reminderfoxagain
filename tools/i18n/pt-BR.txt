@@ -982,3 +982,9 @@
 981| Editar item de lista
 982| Marcar eventos passados como concluídos
 983| Os eventos contam como concluídos quando terminam; você ainda pode desmarcar um
+984| Dia
+985| Semana
+986| Dia anterior
+987| Próximo dia
+988| Semana anterior
+989| Próxima semana

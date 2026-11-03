@@ -1303,5 +1303,11 @@
  "New list item": "Nová položka seznamu",
  "Edit list item": "Upravit položku seznamu",
  "Mark past events completed": "Označit minulé události jako dokončené",
- "Events count as completed once they are over; you can still untick one": "Události se počítají jako dokončené, jakmile skončí; zaškrtnutí u jedné můžete stále zrušit"
+ "Events count as completed once they are over; you can still untick one": "Události se počítají jako dokončené, jakmile skončí; zaškrtnutí u jedné můžete stále zrušit",
+ "Day (calendar view)": "Den",
+ "Week (calendar view)": "Týden",
+ "Previous day": "Předchozí den",
+ "Next day": "Další den",
+ "Previous week": "Předchozí týden",
+ "Next week": "Další týden"
 }

@@ -1303,5 +1303,11 @@
  "New list item": "Новый элемент списка",
  "Edit list item": "Изменить элемент списка",
  "Mark past events completed": "Отмечать прошедшие события как выполненные",
- "Events count as completed once they are over; you can still untick one": "События считаются выполненными, когда они прошли; отметку с любого можно снять"
+ "Events count as completed once they are over; you can still untick one": "События считаются выполненными, когда они прошли; отметку с любого можно снять",
+ "Day (calendar view)": "День",
+ "Week (calendar view)": "Неделя",
+ "Previous day": "Предыдущий день",
+ "Next day": "Следующий день",
+ "Previous week": "Предыдущая неделя",
+ "Next week": "Следующая неделя"
 }

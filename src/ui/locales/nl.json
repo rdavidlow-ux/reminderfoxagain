@@ -1183,5 +1183,11 @@
  "New list item": "Nieuw lijstitem",
  "Edit list item": "Lijstitem bewerken",
  "Mark past events completed": "Voorbije afspraken als voltooid markeren",
- "Events count as completed once they are over; you can still untick one": "Afspraken tellen als voltooid zodra ze voorbij zijn; je kunt er nog steeds een afvinken ongedaan maken"
+ "Events count as completed once they are over; you can still untick one": "Afspraken tellen als voltooid zodra ze voorbij zijn; je kunt er nog steeds een afvinken ongedaan maken",
+ "Day (calendar view)": "Dag",
+ "Week (calendar view)": "Week",
+ "Previous day": "Vorige dag",
+ "Next day": "Volgende dag",
+ "Previous week": "Vorige week",
+ "Next week": "Volgende week"
 }

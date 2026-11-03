@@ -1183,5 +1183,11 @@
  "New list item": "Uus loendi kirje",
  "Edit list item": "Muuda loendi kirjet",
  "Mark past events completed": "Märgi möödunud sündmused tehtuks",
- "Events count as completed once they are over; you can still untick one": "Sündmused loetakse tehtuks, kui need on möödas; saad ühe märke siiski eemaldada"
+ "Events count as completed once they are over; you can still untick one": "Sündmused loetakse tehtuks, kui need on möödas; saad ühe märke siiski eemaldada",
+ "Day (calendar view)": "Päev",
+ "Week (calendar view)": "Nädal",
+ "Previous day": "Eelmine päev",
+ "Next day": "Järgmine päev",
+ "Previous week": "Eelmine nädal",
+ "Next week": "Järgmine nädal"
 }

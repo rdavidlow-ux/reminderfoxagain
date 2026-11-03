@@ -982,3 +982,9 @@
 981| Lijstitem bewerken
 982| Voorbije afspraken als voltooid markeren
 983| Afspraken tellen als voltooid zodra ze voorbij zijn; je kunt er nog steeds een afvinken ongedaan maken
+984| Dag
+985| Week
+986| Vorige dag
+987| Volgende dag
+988| Vorige week
+989| Volgende week

@@ -1303,5 +1303,11 @@
  "New list item": "Nová položka zoznamu",
  "Edit list item": "Upraviť položku zoznamu",
  "Mark past events completed": "Označiť minulé udalosti ako dokončené",
- "Events count as completed once they are over; you can still untick one": "Udalosti sa považujú za dokončené, keď skončia; začiarknutie pri jednej môžete stále zrušiť"
+ "Events count as completed once they are over; you can still untick one": "Udalosti sa považujú za dokončené, keď skončia; začiarknutie pri jednej môžete stále zrušiť",
+ "Day (calendar view)": "Deň",
+ "Week (calendar view)": "Týždeň",
+ "Previous day": "Predchádzajúci deň",
+ "Next day": "Nasledujúci deň",
+ "Previous week": "Predchádzajúci týždeň",
+ "Next week": "Nasledujúci týždeň"
 }

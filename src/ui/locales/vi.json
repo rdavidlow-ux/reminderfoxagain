@@ -1003,5 +1003,11 @@
  "New list item": "Mục danh sách mới",
  "Edit list item": "Sửa mục danh sách",
  "Mark past events completed": "Đánh dấu các sự kiện đã qua là hoàn thành",
- "Events count as completed once they are over; you can still untick one": "Sự kiện được tính là hoàn thành khi đã kết thúc; bạn vẫn có thể bỏ đánh dấu một sự kiện"
+ "Events count as completed once they are over; you can still untick one": "Sự kiện được tính là hoàn thành khi đã kết thúc; bạn vẫn có thể bỏ đánh dấu một sự kiện",
+ "Day (calendar view)": "Ngày",
+ "Week (calendar view)": "Tuần",
+ "Previous day": "Ngày trước",
+ "Next day": "Ngày sau",
+ "Previous week": "Tuần trước",
+ "Next week": "Tuần sau"
 }

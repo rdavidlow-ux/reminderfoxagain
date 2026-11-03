@@ -319,9 +319,16 @@ In **Manage reminders** you can Show, Edit, Delete and reorder saved filters (�
 
 - **Add common ones** adds Anniversary, Appointment, Birthday, Business, Call, Holiday, Meeting, Personal, Shopping and Travel.
 
-### Month tab
+### Month tab: Day, Week and Month views
 
-A full month grid. Timed items show their time, all-day ones are solid, and to-dos start with ☐. Click an item to open it. Double-click an empty spot to add a reminder on that day. “+3 more” opens that day in the list. **Show to-dos** turns to-dos on and off. **Show completed** is ticked every time the app starts, so the reminders and list items you have ticked show too, struck through; untick it to see only what is still to do (until you close the app).
+The **Day | Week | Month** switch at the left of the toolbar picks the view, and the tab is named after it. The choice is remembered.
+
+- **Day** shows the day picked in the calendar panel, with each item's time (or All day, or To-do), its place, how it repeats and, for a subscribed calendar, its name.
+- **Week** shows the week of the picked day in seven columns, from the first day of the week set in Settings. Every item of a day is listed in full, with no “+3 more”. Click a day to pick it.
+- In both, **‹ ›** and **Page Up / Page Down** move a day or a week, **Today** and **Go to…** jump there, and a day picked in the calendar panel shows that day (or its week). Click an item to open it; double-click an empty spot to add a reminder on that day. **Show to-dos** and **Show completed** work as in the Month view.
+- Back in **Month**, the month of the picked day is shown.
+
+**Month** is a full month grid. Timed items show their time, all-day ones are solid, and to-dos start with ☐. Click an item to open it. Double-click an empty spot to add a reminder on that day. “+3 more” opens that day in the list. **Show to-dos** turns to-dos on and off. **Show completed** is ticked every time the app starts, so the reminders and list items you have ticked show too, struck through; untick it to see only what is still to do (until you close the app).
 
 The Month tab scrolls: it is a run of weeks, so past and coming months are a turn of the mouse wheel or a swipe on the touchpad away.
 
@@ -658,7 +665,7 @@ The shortcuts are **Alt+Shift** and a letter, the same in the add-on and the des
 | Alt+Shift+L               | The Alarms view                       |
 | ↑ / ↓, Enter, Delete      | Select, open, delete the selected row |
 | Alt+↑ / Alt+↓             | Move a to-do up or down (My order)    |
-| Page Up / Page Down       | A month back or on, in the Month tab  |
+| Page Up / Page Down       | A day, week or month back or on, in the Day, Week and Month views |
 | Esc                       | Close a menu or dialog                |
 
 To change a shortcut in Thunderbird: Add-ons and Themes → ⚙ → Manage Extension Shortcuts. The tooltips (“New reminder (Alt+Shift+A)”) show the shortcuts as they are set.

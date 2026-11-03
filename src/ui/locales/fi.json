@@ -1183,5 +1183,11 @@
  "New list item": "Uusi luettelon kohde",
  "Edit list item": "Muokkaa luettelon kohdetta",
  "Mark past events completed": "Merkitse menneet tapahtumat tehdyiksi",
- "Events count as completed once they are over; you can still untick one": "Tapahtumat lasketaan tehdyiksi, kun ne ovat ohi; voit silti poistaa merkinnän yhdestä"
+ "Events count as completed once they are over; you can still untick one": "Tapahtumat lasketaan tehdyiksi, kun ne ovat ohi; voit silti poistaa merkinnän yhdestä",
+ "Day (calendar view)": "Päivä",
+ "Week (calendar view)": "Viikko",
+ "Previous day": "Edellinen päivä",
+ "Next day": "Seuraava päivä",
+ "Previous week": "Edellinen viikko",
+ "Next week": "Seuraava viikko"
 }

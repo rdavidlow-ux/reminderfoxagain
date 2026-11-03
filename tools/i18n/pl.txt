@@ -982,3 +982,9 @@
 981| Edytuj element listy
 982| Oznacz minione wydarzenia jako ukończone
 983| Wydarzenia liczą się jako ukończone, gdy się skończą; nadal możesz odznaczyć jedno z nich
+984| Dzień
+985| Tydzień
+986| Poprzedni dzień
+987| Następny dzień
+988| Poprzedni tydzień
+989| Następny tydzień

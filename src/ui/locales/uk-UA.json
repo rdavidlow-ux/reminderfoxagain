@@ -1303,5 +1303,11 @@
  "New list item": "Новий елемент списку",
  "Edit list item": "Змінити елемент списку",
  "Mark past events completed": "Позначати минулі події виконаними",
- "Events count as completed once they are over; you can still untick one": "Події вважаються виконаними, коли вони минули; позначку з будь-якої можна зняти"
+ "Events count as completed once they are over; you can still untick one": "Події вважаються виконаними, коли вони минули; позначку з будь-якої можна зняти",
+ "Day (calendar view)": "День",
+ "Week (calendar view)": "Тиждень",
+ "Previous day": "Попередній день",
+ "Next day": "Наступний день",
+ "Previous week": "Попередній тиждень",
+ "Next week": "Наступний тиждень"
 }

@@ -1246,5 +1246,11 @@
  "New list item": "Element de listă nou",
  "Edit list item": "Editează elementul de listă",
  "Mark past events completed": "Marchează evenimentele trecute ca finalizate",
- "Events count as completed once they are over; you can still untick one": "Evenimentele contează ca finalizate după ce s-au încheiat; poți totuși debifa unul"
+ "Events count as completed once they are over; you can still untick one": "Evenimentele contează ca finalizate după ce s-au încheiat; poți totuși debifa unul",
+ "Day (calendar view)": "Zi",
+ "Week (calendar view)": "Săptămână",
+ "Previous day": "Ziua anterioară",
+ "Next day": "Ziua următoare",
+ "Previous week": "Săptămâna anterioară",
+ "Next week": "Săptămâna următoare"
 }

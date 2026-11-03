@@ -1183,5 +1183,11 @@
  "New list item": "Nytt listeelement",
  "Edit list item": "Rediger listeelement",
  "Mark past events completed": "Merk tidligere hendelser som fullført",
- "Events count as completed once they are over; you can still untick one": "Hendelser regnes som fullført når de er over; du kan fortsatt fjerne haken på en"
+ "Events count as completed once they are over; you can still untick one": "Hendelser regnes som fullført når de er over; du kan fortsatt fjerne haken på en",
+ "Day (calendar view)": "Dag",
+ "Week (calendar view)": "Uke",
+ "Previous day": "Forrige dag",
+ "Next day": "Neste dag",
+ "Previous week": "Forrige uke",
+ "Next week": "Neste uke"
 }

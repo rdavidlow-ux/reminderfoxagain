@@ -1147,5 +1147,11 @@
  "New list item": "Mír liosta nua",
  "Edit list item": "Cuir mír liosta in eagar",
  "Mark past events completed": "Marcáil imeachtaí atá thart mar críochnaithe",
- "Events count as completed once they are over; you can still untick one": "Áirítear imeachtaí mar chríochnaithe nuair a bhíonn siad thart; is féidir leat tic a bhaint de cheann fós"
+ "Events count as completed once they are over; you can still untick one": "Áirítear imeachtaí mar chríochnaithe nuair a bhíonn siad thart; is féidir leat tic a bhaint de cheann fós",
+ "Day (calendar view)": "Lá",
+ "Week (calendar view)": "Seachtain",
+ "Previous day": "An lá roimhe",
+ "Next day": "An chéad lá eile",
+ "Previous week": "An tseachtain roimhe",
+ "Next week": "An tseachtain seo chugainn"
 }

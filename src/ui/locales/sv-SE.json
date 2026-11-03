@@ -1187,5 +1187,11 @@
  "New list item": "Nytt listobjekt",
  "Edit list item": "Redigera listobjekt",
  "Mark past events completed": "Markera tidigare händelser som klara",
- "Events count as completed once they are over; you can still untick one": "Händelser räknas som klara när de är över; du kan fortfarande bocka av en igen"
+ "Events count as completed once they are over; you can still untick one": "Händelser räknas som klara när de är över; du kan fortfarande bocka av en igen",
+ "Day (calendar view)": "Dag",
+ "Week (calendar view)": "Vecka",
+ "Previous day": "Föregående dag",
+ "Next day": "Nästa dag",
+ "Previous week": "Föregående vecka",
+ "Next week": "Nästa vecka"
 }

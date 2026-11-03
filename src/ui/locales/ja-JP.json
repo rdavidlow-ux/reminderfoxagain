@@ -1003,5 +1003,11 @@
  "New list item": "新しいリスト項目",
  "Edit list item": "リスト項目を編集",
  "Mark past events completed": "過ぎた予定を完了にする",
- "Events count as completed once they are over; you can still untick one": "終わった予定は完了として扱われます。チェックを外すこともできます"
+ "Events count as completed once they are over; you can still untick one": "終わった予定は完了として扱われます。チェックを外すこともできます",
+ "Day (calendar view)": "日",
+ "Week (calendar view)": "週",
+ "Previous day": "前の日",
+ "Next day": "次の日",
+ "Previous week": "前の週",
+ "Next week": "次の週"
 }

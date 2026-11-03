@@ -982,3 +982,9 @@
 981| Liste öğesini düzenle
 982| Geçmiş etkinlikleri tamamlandı olarak işaretle
 983| Etkinlikler bittiğinde tamamlanmış sayılır; yine de birinin işaretini kaldırabilirsiniz
+984| Gün
+985| Hafta
+986| Önceki gün
+987| Sonraki gün
+988| Önceki hafta
+989| Sonraki hafta

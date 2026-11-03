@@ -982,3 +982,9 @@
 981| Upravit položku seznamu
 982| Označit minulé události jako dokončené
 983| Události se počítají jako dokončené, jakmile skončí; zaškrtnutí u jedné můžete stále zrušit
+984| Den
+985| Týden
+986| Předchozí den
+987| Další den
+988| Předchozí týden
+989| Další týden

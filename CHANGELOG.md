@@ -20,6 +20,13 @@ Every ReminderFoxAgain release, newest first. Release files are on the
 - **Mark past events completed**, an option for each subscription (Calendar subscriptions…, off at first): its events
   count as completed once they are over (an all-day event after its day, a timed one after it ends), with nothing
   stored for them. You can still untick one, and it stays open.
+- **Day and Week views** beside Month: a **Day | Week | Month** switch in the Month tab's toolbar (the tab takes the
+  view's name, and the choice is remembered). Day lists the picked day's items with their times, places and repeats;
+  Week shows the picked day's week in seven columns with every item in full. ‹ › and Page Up / Page Down move a day or a
+  week, and Today, Go to… and the calendar panel move them too. New UI check: `tools/ui/day-week.js`.
+- **Show completed keeps the list where it was.** In the Reminders and Lists views, turning Show completed off and on
+  again comes back to the same items. Before, when the shorter list couldn't scroll as far (the Past view, for one), the
+  list stayed months away after turning it on again.
 
 ## 0.9.4 (beta) — safe HTML for the add-on review
 

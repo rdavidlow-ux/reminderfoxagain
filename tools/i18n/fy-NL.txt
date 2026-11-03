@@ -982,3 +982,9 @@
 981| Listitem bewurkje
 982| Foarbye barrens as foltôge markearje
 983| Barrens telle as foltôge sa gau't se foarby binne; jo kinne der noch altyd ien ôfvinkje
+984| Dei
+985| Wike
+986| Foarige dei
+987| Folgjende dei
+988| Foarige wike
+989| Folgjende wike

@@ -982,3 +982,9 @@
 981| Rediger listeelement
 982| Markér tidligere begivenheder som fuldført
 983| Begivenheder tæller som fuldført, når de er overstået; du kan stadig fjerne fluebenet fra en
+984| Dag
+985| Uge
+986| Forrige dag
+987| Næste dag
+988| Forrige uge
+989| Næste uge

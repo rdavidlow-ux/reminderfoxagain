@@ -1183,5 +1183,11 @@
  "New list item": "Nij listitem",
  "Edit list item": "Listitem bewurkje",
  "Mark past events completed": "Foarbye barrens as foltôge markearje",
- "Events count as completed once they are over; you can still untick one": "Barrens telle as foltôge sa gau't se foarby binne; jo kinne der noch altyd ien ôfvinkje"
+ "Events count as completed once they are over; you can still untick one": "Barrens telle as foltôge sa gau't se foarby binne; jo kinne der noch altyd ien ôfvinkje",
+ "Day (calendar view)": "Dei",
+ "Week (calendar view)": "Wike",
+ "Previous day": "Foarige dei",
+ "Next day": "Folgjende dei",
+ "Previous week": "Foarige wike",
+ "Next week": "Folgjende wike"
 }

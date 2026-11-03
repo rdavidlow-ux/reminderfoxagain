@@ -982,3 +982,9 @@
 981| Rediger listeelement
 982| Merk tidligere hendelser som fullført
 983| Hendelser regnes som fullført når de er over; du kan fortsatt fjerne haken på en
+984| Dag
+985| Uke
+986| Forrige dag
+987| Neste dag
+988| Forrige uke
+989| Neste uke

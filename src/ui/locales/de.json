@@ -1185,5 +1185,11 @@
  "New list item": "Neuer Listeneintrag",
  "Edit list item": "Listeneintrag bearbeiten",
  "Mark past events completed": "Vergangene Termine als erledigt markieren",
- "Events count as completed once they are over; you can still untick one": "Termine gelten als erledigt, sobald sie vorbei sind; Sie können einen trotzdem wieder abhaken"
+ "Events count as completed once they are over; you can still untick one": "Termine gelten als erledigt, sobald sie vorbei sind; Sie können einen trotzdem wieder abhaken",
+ "Day (calendar view)": "Tag",
+ "Week (calendar view)": "Woche",
+ "Previous day": "Vorheriger Tag",
+ "Next day": "Nächster Tag",
+ "Previous week": "Vorherige Woche",
+ "Next week": "Nächste Woche"
 }

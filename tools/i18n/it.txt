@@ -982,3 +982,9 @@
 981| Modifica elemento di elenco
 982| Segna come completati gli eventi passati
 983| Gli eventi contano come completati una volta passati; puoi comunque togliere la spunta a uno
+984| Giorno
+985| Settimana
+986| Giorno precedente
+987| Giorno successivo
+988| Settimana precedente
+989| Settimana successiva
