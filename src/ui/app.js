@@ -478,7 +478,7 @@
     }
     if (r.carried) cls.push('carried');
     return `<tr class="${cls.join(' ')}" data-key="${esc(key)}" data-uid="${esc(r.uid)}" data-start="${occOf(r) == null ? '' : occOf(r)}" data-sort="${r.start == null ? '' : r.start}"${subAttrs(r)}>` +
-      `<td class="c-chk"><input type="checkbox" class="chk" data-act="done"${r.completed ? ' checked' : ''}${r.sub ? ' disabled title="From a calendar you subscribe to"' : ''} aria-label="Completed"></td>` +
+      `<td class="c-chk"><input type="checkbox" class="chk" data-act="done"${r.completed ? ' checked' : ''} aria-label="Completed"></td>` +
       `<td class="c-imp">${r.important ? '<span class="imp" title="Important">★</span>' : ''}</td>` +
       dateCells +
       `<td class="c-desc"><span class="t">${esc(r.summary || '(no description)')}</span>${sub}${listSub}${flags}${doneAt}</td>` +
@@ -1052,7 +1052,9 @@
     ctxRow = { uid: dto.uid, start, dto, checked };
     const repeatingEvent = dto.kind === 'event' && dto.repeat;
     if (dto.readOnly) { // from a calendar subscription: look, copy, map
-      RF.setHTML(ctx, '<button data-ctx="edit">Open…</button><button data-ctx="mine">Copy to my reminders</button>' + (dto.location ? '<button data-ctx="map">Show on a map</button>' : ''));
+      RF.setHTML(ctx, '<button data-ctx="edit">Open…</button>' +
+        `<button data-ctx="toggle">${checked ? 'Mark not completed' : 'Mark completed'}</button>` +
+        '<button data-ctx="mine">Copy to my reminders</button>' + (dto.location ? '<button data-ctx="map">Show on a map</button>' : ''));
     } else RF.setHTML(ctx, '<button data-ctx="edit">Edit…</button>' +
       `<button data-ctx="toggle">${checked ? 'Mark not completed' : 'Mark completed'}</button>` +
       (dto.kind === 'event' ? `<button data-ctx="ruc">${dto.untilDone ? '✓ ' : ''}Remind daily until completed</button>` : `<button data-ctx="tip">${dto.showInTooltip ? '✓ ' : ''}Show in the tray tooltip</button>`) +

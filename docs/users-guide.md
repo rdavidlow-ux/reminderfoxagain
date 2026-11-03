@@ -365,7 +365,7 @@ Subscribe to any calendar with a web address: holidays, sports, a school or team
 
 - **Which views show it:** 📅 Calendars in each toolbar has a tick for every subscription, so one calendar can be in the Month tab but not in the Reminders list (the calendar panel follows the Month tab). A dot on the button means some are hidden in that view.
 
-- **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu). It can't be ticked, changed or deleted.
+- **Its events:** opening one shows it read-only, with **Copy to my reminders** to make your own copy (also on its right-click menu). It can be ticked like your own reminders (in the list, or **Mark completed** on its right-click menu), and stays ticked when the calendar is fetched again; it can't be changed or deleted.
 
 - **Kept up to date:** each subscription is fetched again every hour, 6 hours, 12 hours, day (at first) or week. If its site can't be reached, the last good copy stays and the dialog says why. **Calendar subscriptions…** also renames, recolours, refreshes and removes them.
 

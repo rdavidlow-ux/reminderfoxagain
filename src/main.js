@@ -975,6 +975,9 @@ const subs = createSubscriptions({
   Store, newId: () => require('crypto').randomUUID().slice(0, 8), now: () => Date.now(), fetchText,
   getList: () => state.settings.subscriptions || [],
   setList: (l) => { state.settings.subscriptions = l; saveState(true); broadcast('settings:changed', state.settings); },
+  // ticks on items from subscriptions, kept in state.json (not in the calendars, which each refresh replaces)
+  getDone: () => state.subsDone || {},
+  setDone: (m) => { state.subsDone = m; saveState(true); },
   read: async (n) => { try { return fs.readFileSync(subFile(n), 'utf8'); } catch (e) { return null; } },
   write: async (n, text) => writeAtomic(subFile(n), text),
   remove: async (n) => fs.rmSync(subFile(n), { force: true }),
@@ -995,7 +998,7 @@ function setupIpc() {
   handle('data:get', (e, uid) => (isSubUid(uid) ? subs.get(uid) : store.get(uid)));
   handle('data:save', (e, dto) => { (dto && dto.uid) ? guardReadOnly(dto.uid) : null; const uid = store.upsert(dto); changed(); return uid; });
   handle('data:delete', (e, uid, occ) => { guardReadOnly(uid); const r = store.remove(uid, occ); changed(); return r; });
-  handle('data:complete', (e, uid, done, occ) => { guardReadOnly(uid); const r = store.setCompleted(uid, done, occ); changed(); return r; });
+  handle('data:complete', (e, uid, done, occ) => { if (isSubUid(uid)) return subs.markDone(uid, done, occ); const r = store.setCompleted(uid, done, occ); changed(); return r; });
   // calendar subscriptions (read-only calendars from a web address)
   for (const [ch, fn] of Object.entries(subscriptionChannels(subs, () => store, changed))) handle(ch, (e, ...a) => fn(...a));
   handle('data:meta', () => meta());

@@ -5,6 +5,9 @@
 // Shared by the desktop main process (src/main.js) and the host core of the Thunderbird add-on (src/host/core.js).
 // A subscription: { id, url, name, color, refreshHours, showList, showMonth, updated, error, count }, kept in
 // settings.subscriptions. Its items' uids are "sub:<id>:<uid>" in the views.
+// Ticks: an item from a subscription can be marked completed. The calendar's file is replaced on every refresh, so the
+// ticks are kept apart from it (the host keeps them in state.json as subsDone: { <id>: { "<uid>|<YYYY-MM-DD>": when } })
+// and laid over its rows; a refresh drops the ticks of items the calendar no longer has.
 const HOUR = 3600000;
 const MAX_BYTES = 10 * 1024 * 1024;
 const COLORS = ['#2e7d32', '#1565c0', '#6a1b9a', '#00838f', '#c62828', '#ef6c00', '#5d4037', '#ad1457'];
@@ -31,7 +34,7 @@ function splitUid(uid) {
   return i < 0 ? { id: '', uid: '' } : { id: s.slice(0, i), uid: s.slice(i + 1) };
 }
 
-function createSubscriptions({ Store, getList, setList, read, write, remove, fetchText, now, setTimer, clearTimer, onChange, newId }) {
+function createSubscriptions({ Store, getList, setList, read, write, remove, fetchText, now, setTimer, clearTimer, onChange, newId, getDone, setDone }) {
   const stores = new Map(); // id → Store of its last good copy
   let timer = null;
   let running = null;
@@ -40,6 +43,24 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
   const find = (id) => list().find((s) => s.id === id) || null;
   const save = (next) => { setList(next); if (onChange) onChange(); };
   const patchOne = (id, patch) => save(list().map((s) => (s.id === id ? { ...s, ...patch } : s)));
+  // ticks: { <id>: { "<uid>|<day>": when ticked } }
+  const pad2 = (n) => String(n).padStart(2, '0');
+  const dayOf = (ms) => { const d = new Date(Number(ms)); return `${d.getFullYear()}-${pad2(d.getMonth() + 1)}-${pad2(d.getDate())}`; };
+  const doneAll = () => { const d = getDone ? getDone() : null; return d && typeof d === 'object' ? d : {}; };
+  const doneOf = (id) => doneAll()[id] || {};
+  function saveDone(id, ticks) {
+    if (!setDone) return;
+    const all = { ...doneAll() };
+    if (ticks && Object.keys(ticks).length) all[id] = ticks; else delete all[id];
+    setDone(all);
+  }
+  // after a refresh: keep only the ticks of items the calendar still has
+  function pruneDone(id, store) {
+    const ticks = doneOf(id);
+    const keep = {};
+    for (const [k, at] of Object.entries(ticks)) if (store.items.has(k.slice(0, k.lastIndexOf('|')))) keep[k] = at;
+    if (Object.keys(keep).length !== Object.keys(ticks).length) saveDone(id, keep);
+  }
 
   // a fetched text that is a calendar, as a store; otherwise an error the person can understand
   function parse(text) {
@@ -95,6 +116,7 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
   async function removeSub(id) {
     if (!find(id)) return false;
     stores.delete(id);
+    saveDone(id, null);
     try { await remove(fileOf(id)); } catch (e) { /* already gone */ }
     save(list().filter((s) => s.id !== id));
     schedule();
@@ -110,6 +132,7 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
       const store = parse(text);
       await write(fileOf(id), text);
       stores.set(id, store);
+      pruneDone(id, store);
       patchOne(id, { updated: now(), error: '', count: countOf(store), tried: now() });
       return true;
     } catch (e) {
@@ -145,9 +168,12 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
       if (!store) continue;
       let r = [];
       try { r = fn(store); } catch (e) { r = []; }
+      const ticks = doneOf(s.id);
       for (const x of r) {
         if (x.kind !== 'event') continue;
-        out.push({ ...x, uid: `${PREFIX}${s.id}:${x.uid}`, sub: s.id, subName: s.name, subColor: s.color, readOnly: true, hasAlarm: false, completed: false });
+        const at = ticks[`${x.uid}|${dayOf(x.start)}`];
+        out.push({ ...x, uid: `${PREFIX}${s.id}:${x.uid}`, sub: s.id, subName: s.name, subColor: s.color, readOnly: true, hasAlarm: false,
+          completed: !!at, completedAt: at || null, completedDate: at ? dayOf(at) : '' });
       }
     }
     return out;
@@ -171,9 +197,23 @@ function createSubscriptions({ Store, getList, setList, read, write, remove, fet
     for (const k of ['uid', 'sub', 'subName', 'subColor', 'readOnly', 'completed', 'completedAt']) delete out[k];
     return out;
   }
+  // tick or untick one item (one date of a repeating one); the calendar itself is not changed
+  function markDone(uid, done, occ) {
+    const { id, uid: inner } = splitUid(uid);
+    const store = stores.get(id);
+    const d = find(id) && store ? store.get(inner) : null;
+    if (!d) throw new Error('That item no longer exists.');
+    const day = occ != null && Number.isFinite(Number(occ)) ? dayOf(occ) : String(d.date || '');
+    const ticks = { ...doneOf(id) };
+    const k = `${inner}|${day}`;
+    if (done) ticks[k] = now(); else delete ticks[k];
+    saveDone(id, ticks);
+    if (onChange) onChange();
+    return !!done;
+  }
   function stop() { if (timer != null) clearTimer(timer); timer = null; }
 
-  return { load, add, update, remove: removeSub, refresh, range, next, get, copyOf, list, stop, REFRESH };
+  return { load, add, update, remove: removeSub, refresh, range, next, get, copyOf, list, stop, markDone, REFRESH };
 }
 
 

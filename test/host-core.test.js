@@ -405,7 +405,6 @@ test('host 17. calendar subscriptions: subscribe, show per view, read-only, copy
   assert.equal((await tb.call('subs:next', from, {}, 'list')).length, 1);
   // not in your own reminders, and it can't be changed
   assert.equal((await tb.call('data:range', from, to, {})).length, 0);
-  await assert.rejects(tb.call('data:complete', r.uid, true), /subscribe to/);
   await assert.rejects(tb.call('data:delete', r.uid), /subscribe to/);
   await assert.rejects(tb.call('data:save', { uid: r.uid, summary: 'x' }), /subscribe to/);
   const d = await tb.call('data:get', r.uid);
@@ -439,4 +438,52 @@ test('host 17. calendar subscriptions: subscribe, show per view, read-only, copy
   await tb.host.flush();
   assert.equal((await tb.call('subs:list')).length, 0);
   assert.equal(tb.files.has(`subscriptions/${sub.id}.ics`), false);
+});
+
+test('host 18. calendar subscriptions: items can be ticked, and the ticks survive refreshes and restarts', async () => {
+  const tb = fakeThunderbird(); // Oct 20, 2026, 9:00
+  await tb.host.start();
+  const ev = (uid, title, start, extra = []) => ['BEGIN:VEVENT', `UID:${uid}`, 'DTSTAMP:20260101T000000Z', `DTSTART;VALUE=DATE:${start}`, `SUMMARY:${title}`, ...extra, 'END:VEVENT'];
+  const cal = (...events) => ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Example//Team//EN', ...events.flat(), 'END:VCALENDAR', ''].join('\r\n');
+  const url = 'https://cal.example.com/team.ics';
+  tb.log.web.set(url, cal(ev('a@x', 'Planning day', '20261022'), ev('w@x', 'Weekly sync', '20261021', ['RRULE:FREQ=WEEKLY'])));
+  const sub = await tb.call('subs:add', { url });
+  const from = new Date(2026, 9, 20).getTime(); const to = new Date(2026, 10, 10).getTime();
+  const rows = async () => tb.call('subs:range', from, to, 'list');
+  const one = async (t, i = 0) => (await rows()).filter((r) => r.summary === t)[i];
+  // tick a one-off item and one date of a repeating one
+  assert.equal(await tb.call('data:complete', (await one('Planning day')).uid, true), true);
+  const w2 = await one('Weekly sync', 1);
+  await tb.call('data:complete', w2.uid, true, w2.start);
+  assert.equal(`${(await one('Planning day')).completed} ${!!(await one('Planning day')).completedAt}`, 'true true');
+  const weekly = (await rows()).filter((r) => r.summary === 'Weekly sync').map((r) => r.completed);
+  assert.deepEqual(weekly.slice(0, 3), [false, true, false]);
+  // the calendar's own file is not changed; the ticks are kept in state.json
+  await tb.host.flush();
+  assert.ok(!/X-REMINDERFOX/.test(tb.files.get(`subscriptions/${sub.id}.ics`).text));
+  assert.equal(Object.keys(JSON.parse(tb.files.get('state.json').text).subsDone[sub.id]).length, 2);
+  // a refresh (same calendar) keeps them
+  assert.equal(await tb.call('subs:refresh', sub.id), true);
+  assert.equal((await one('Planning day')).completed, true);
+  assert.equal((await one('Weekly sync', 1)).completed, true);
+  // and so does a new start
+  await tb.host.flush();
+  const again = fakeThunderbird(tb.files, tb.now());
+  await again.host.start();
+  assert.equal((await again.call('subs:range', from, to, 'list')).filter((r) => r.completed).length, 2);
+  // unticked
+  await tb.call('data:complete', (await one('Planning day')).uid, false);
+  assert.equal((await one('Planning day')).completed, false);
+  // an item the calendar no longer has: its tick goes on the next refresh
+  tb.log.web.set(url, cal(ev('a@x', 'Planning day', '20261022')));
+  await tb.call('subs:refresh', sub.id);
+  await tb.host.flush();
+  assert.equal(JSON.parse(tb.files.get('state.json').text).subsDone[sub.id], undefined);
+  // the rest of it is still read-only
+  await assert.rejects(tb.call('data:delete', (await one('Planning day')).uid), /subscribe to/);
+  // removing the subscription removes its ticks
+  await tb.call('data:complete', (await one('Planning day')).uid, true);
+  await tb.call('subs:remove', sub.id);
+  await tb.host.flush();
+  assert.deepEqual(JSON.parse(tb.files.get('state.json').text).subsDone || {}, {});
 });

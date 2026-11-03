@@ -37,8 +37,18 @@ try {
   check('its coming events in the Reminders view', titles().filter((t) => /\(sample\)/.test(t)).sort().join(' | '), "City marathon (sample) | Founders' Day (sample) | Lantern Night (sample)");
   const row = subRows().find((r) => r.querySelector('.t').textContent === "Founders' Day (sample)");
   check('marked with the calendar\'s name', row.querySelector('.subcal-name').textContent, 'Sample holidays');
-  check('it can\'t be ticked', row.querySelector('input[data-act=done]').disabled, true);
+  check('it can be ticked', row.querySelector('input[data-act=done]').disabled, false);
   check('in the subscription\'s colour', !!row.style.getPropertyValue('--sub-c'), true);
+  // ticked: marked completed, and still ticked after the calendar is fetched again (the calendar itself is unchanged)
+  const subRow = (t) => subRows().find((r) => r.querySelector('.t').textContent === t);
+  subRow("Founders' Day (sample)").querySelector('input[data-act=done]').click(); await sleep(900);
+  check('ticked: completed', subRow("Founders' Day (sample)").classList.contains('done') && subRow("Founders' Day (sample)").querySelector('input[data-act=done]').checked, true);
+  check('… with when it was ticked', !!subRow("Founders' Day (sample)").querySelector('.done-at'), true);
+  await window.rf.subsRefresh((await window.rf.subsList())[0].id); await sleep(1200);
+  check('… still ticked after a refresh', !!subRow("Founders' Day (sample)") && subRow("Founders' Day (sample)").classList.contains('done'), true);
+  check('… the others are not', subRow('Lantern Night (sample)').classList.contains('done'), false);
+  subRow("Founders' Day (sample)").querySelector('input[data-act=done]').click(); await sleep(900);
+  check('unticked again', subRow("Founders' Day (sample)").classList.contains('done'), false);
   $('remFilter').value = 'past'; $('remFilter').dispatchEvent(new Event('change')); await sleep(700);
   check('the past one under Past', titles().includes('Spring Fair (sample)'), true);
   $('remFilter').value = 'upcoming'; $('remFilter').dispatchEvent(new Event('change')); await sleep(700);
@@ -75,11 +85,16 @@ try {
   await R.openEditor({ kind: 'event' }); await sleep(400);
   check('your own reminders still open for editing', `${$('editor').classList.contains('readonly')} ${$('edSave').classList.contains('hidden')}`, 'false false');
   $('edCancel').click(); await sleep(300);
-  // right-click on it in the list: Open and Copy only
+  // right-click on it in the list: Open, Mark completed and Copy
   await R.setTab('reminders'); await sleep(700);
   const r2 = subRows()[0];
   r2.dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, clientX: 100, clientY: 100 })); await sleep(400);
-  check('its right-click menu', [...document.querySelectorAll('#ctx:not(.hidden) button')].map((b) => b.dataset.ctx).join(','), 'edit,mine');
+  check('its right-click menu', [...document.querySelectorAll('#ctx:not(.hidden) button')].map((b) => b.dataset.ctx).join(','), 'edit,toggle,mine');
+  [...document.querySelectorAll('#ctx:not(.hidden) button')].find((b) => b.dataset.ctx === 'toggle').click(); await sleep(900);
+  check('Mark completed from the menu', subRows()[0].classList.contains('done'), true);
+  subRows()[0].dispatchEvent(new MouseEvent('contextmenu', { bubbles: true, clientX: 100, clientY: 100 })); await sleep(400);
+  [...document.querySelectorAll('#ctx:not(.hidden) button')].find((b) => b.dataset.ctx === 'toggle').click(); await sleep(900);
+  check('Mark not completed from the menu', subRows()[0].classList.contains('done'), false);
   document.dispatchEvent(new MouseEvent('mousedown', { bubbles: true })); await sleep(200);
   // manage: rename and colour; Settings → Data has the way in too
   $('settingsBtn').click(); await sleep(400);

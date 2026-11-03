@@ -3,7 +3,7 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
-## Next — calendar subscriptions in Thunderbird (branch `fix/calendar-sub`, not released)
+## Next — calendar subscriptions: fixed in Thunderbird, and ticks (branch `fix/calendar-sub`, not released)
 
 - **Subscribing to a calendar works in the Thunderbird add-on.** Adding a subscription (for example
   https://canada-holidays.ca/ics/ON) stopped with "permissions.request may only be called from a user input handler"
@@ -12,7 +12,11 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   again for a site already allowed). The same fix applies to Import this calendar… on an .ics link in an email.
 - The add-on's UI checks now refuse a permission request made after the click, as Thunderbird does, so this can't
   slip through again; a Month view colour check no longer depends on the day it runs.
-- The desktop app is unchanged.
+- **Items from a calendar subscription can be ticked off**, in the add-on and the desktop app: tick one in the list, or
+  Mark completed on its right-click menu. Each date of a repeating event is ticked on its own, Show completed hides or
+  shows them, and they stay ticked when the calendar is fetched again and after a restart. The ticks are kept with your
+  settings, not in the calendar (which each refresh replaces); a tick goes when the calendar no longer has the item, and
+  removing a subscription removes its ticks. The rest of a subscribed item stays read-only.
 
 ## 0.9.4 (beta) — safe HTML for the add-on review
 

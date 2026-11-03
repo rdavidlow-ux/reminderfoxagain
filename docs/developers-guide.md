@@ -285,7 +285,7 @@ Every method returns a Promise. The preload calls `ipcRenderer.invoke(channel, �
 | `subsRange(from, to, view)` / `subsNext(from, opts, view)` | `subs:range` / `subs:next` | as `range`/`next`, for `'list'` or `'month'`: the subscribed occurrences shown there, uids `sub:<id>:<uid>`, `readOnly: true` |
 | `subsCopy(uid)` | `subs:copy` | a subscribed item → the uid of your own copy |
 
-Every write channel calls `guardReadOnly(uid)` first, so a subscribed item can't be changed, ticked or deleted.
+Every write channel calls `guardReadOnly(uid)` first, so a subscribed item can't be changed or deleted. Ticking is the exception: `data:complete` with a subscribed uid calls `subs.markDone(uid, done, occ)`, which keeps the tick in `state.subsDone` (not in the calendar's copy, which each refresh replaces) and lays it over the rows; a refresh drops ticks of items the calendar no longer has.
 
 ### Events (main → windows)
 

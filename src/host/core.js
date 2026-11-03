@@ -84,6 +84,9 @@ function createHost(ad) {
     fetchText: (url) => { if (!ad.fetchText) throw new Error('Calendar subscriptions are not available here.'); return ad.fetchText(url); },
     getList: () => state.settings.subscriptions || [],
     setList: (l) => { state.settings.subscriptions = l; saveState(true); broadcast('settings:changed', state.settings); },
+    // ticks on items from subscriptions, kept in state.json (not in the calendars, which each refresh replaces)
+    getDone: () => state.subsDone || {},
+    setDone: (m) => { state.subsDone = m; saveState(true); },
     read: (n) => read(n), write: (n, text) => put(n, text), remove: async (n) => drop(n),
     setTimer: (fn, ms) => T.set(fn, ms), clearTimer: (id) => T.clear(id),
     onChange: () => broadcast('data:changed'),
@@ -658,7 +661,7 @@ function createHost(ad) {
     'data:get': (uid) => (isSubUid(uid) ? subs.get(uid) : store.get(uid)),
     'data:save': (dto) => { (dto && dto.uid) ? guardReadOnly(dto.uid) : null; const uid = store.upsert(dto); changed(); return uid; },
     'data:delete': (uid, occ) => { guardReadOnly(uid); const r = store.remove(uid, occ); changed(); return r; },
-    'data:complete': (uid, done, occ) => { guardReadOnly(uid); const r = store.setCompleted(uid, done, occ); changed(); return r; },
+    'data:complete': (uid, done, occ) => { if (isSubUid(uid)) return subs.markDone(uid, done, occ); const r = store.setCompleted(uid, done, occ); changed(); return r; },
     // calendar subscriptions (read-only calendars from a web address)
     ...subscriptionChannels(subs, () => store, () => changed()),
     'data:meta': () => meta(),
