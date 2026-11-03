@@ -440,9 +440,8 @@
     let url = String(info.linkUrl || '').replace(/^webcals?:/i, 'https:');
     try {
       const origin = new URL(url).origin;
-      if (browser.permissions && !(await browser.permissions.contains({ origins: [`${origin}/*`] }))) {
-        if (!(await browser.permissions.request({ origins: [`${origin}/*`] }))) return;
-      }
+      // asked at once, while Thunderbird is still handling the menu click (it refuses later); no prompt if already allowed
+      if (browser.permissions && !(await browser.permissions.request({ origins: [`${origin}/*`] }))) return;
       const r = await fetch(url, { credentials: 'omit' });
       if (!r.ok) throw new Error(String(r.status));
       const text = await r.text();
