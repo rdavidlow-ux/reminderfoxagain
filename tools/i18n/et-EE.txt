@@ -980,3 +980,15 @@
 979| Kirjeid „{item}” on loendites raske lugeda (kontrast {n}:1; 3:1 või rohkem on parem).
 980| Uus loendi kirje
 981| Muuda loendi kirjet
+982| Märgi möödunud sündmused tehtuks
+983| Sündmused loetakse tehtuks, kui need on möödas; saad ühe märke siiski eemaldada
+984| Päev
+985| Nädal
+986| Eelmine päev
+987| Järgmine päev
+988| Eelmine nädal
+989| Järgmine nädal
+990| arhiiv
+991| See loend hoiab arhiveeritud üksusi: seda ei saa ümber nimetada ega eemaldada ning selle üksusi ei näidata meeldetuletustes ega kalendrivaadetes
+992| Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa ümber nimetada.
+993| Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa eemaldada.

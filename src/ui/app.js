@@ -5,6 +5,9 @@
   const { dayKey, parseKey, startOfDay, addDays, fmt, esc } = RF;
   const $ = (id) => document.getElementById(id);
   const DEFAULT_LIST = "To-Do's";
+  // archived items (from earlier versions, or moved there): kept on their list, out of the Reminders and calendar views
+  const ARCHIVE_LIST = 'Terminated or Suspended';
+  const notArchived = (r) => !(r.kind === 'todo' && r.list === ARCHIVE_LIST);
   const WD = ['SU', 'MO', 'TU', 'WE', 'TH', 'FR', 'SA'];
   const T = window.RF.T;
   const I18 = window.RF.i18n || { lang: 'en' };
@@ -27,6 +30,7 @@
     cat: '', todoList: ls.get('todoList', DEFAULT_LIST), todoCat: '',
     showDone: ls.get('showDone', '1') === '1',
     mTodos: true,
+    calMode: ['day', 'week', 'month'].includes(ls.get('calMode', 'month')) ? ls.get('calMode', 'month') : 'month',
     mShowDone: true, // the Month toolbar's Show completed: ticked at every start (0.8.1)
     today: dayKey(new Date()),
     selDay: dayKey(new Date()),
@@ -283,7 +287,7 @@
   async function renderMain(reason) {
     if (S.tab === 'reminders') await renderReminders(reason);
     else if (todoTab()) await renderTodos(reason);
-    else await renderMonth({ jump: reason === 'enter' && !MV.from });
+    else await renderCal({ jump: reason === 'enter' && !MV.from });
   }
 
   // ---------------------------------------------------------------- reminders list
@@ -336,13 +340,13 @@
   // for it under 📅 Calendars; their items are read-only and marked with the subscription's colour.
   const subsFor = (view) => (S.settings.subscriptions || []).filter((x) => (view === 'month' ? x.showMonth : x.showList) !== false);
   async function rangeWithSubs(a, b, opts, view) {
-    const own = await window.rf.range(a, b, opts);
+    const own = (await window.rf.range(a, b, opts)).filter(notArchived);
     if (!window.rf.subsRange || !subsFor(view).length) return own;
     const more = (await window.rf.subsRange(a, b, view).catch(() => [])) || [];
     return more.length ? [...own, ...more].sort((x, y) => x.start - y.start) : own;
   }
   async function nextWithSubs(from, opts, view) {
-    const own = await window.rf.next(from, opts);
+    const own = (await window.rf.next(from, opts)).filter(notArchived);
     if (!window.rf.subsNext || !subsFor(view).length) return own;
     const more = (await window.rf.subsNext(from, opts, view).catch(() => [])) || [];
     return more.length ? [...own, ...more] : own;
@@ -478,7 +482,7 @@
     }
     if (r.carried) cls.push('carried');
     return `<tr class="${cls.join(' ')}" data-key="${esc(key)}" data-uid="${esc(r.uid)}" data-start="${occOf(r) == null ? '' : occOf(r)}" data-sort="${r.start == null ? '' : r.start}"${subAttrs(r)}>` +
-      `<td class="c-chk"><input type="checkbox" class="chk" data-act="done"${r.completed ? ' checked' : ''}${r.sub ? ' disabled title="From a calendar you subscribe to"' : ''} aria-label="Completed"></td>` +
+      `<td class="c-chk"><input type="checkbox" class="chk" data-act="done"${r.completed ? ' checked' : ''} aria-label="Completed"></td>` +
       `<td class="c-imp">${r.important ? '<span class="imp" title="Important">★</span>' : ''}</td>` +
       dateCells +
       `<td class="c-desc"><span class="t">${esc(r.summary || '(no description)')}</span>${sub}${listSub}${flags}${doneAt}</td>` +
@@ -502,10 +506,10 @@
     return T(key, { every, from, time });
   }
 
-  async function renderReminders(reason) {
+  async function renderReminders(reason, useAnchor) {
     if (S.welcome) { renderWelcome(); return; }
     const keep = listView.scrollTop;
-    const anchor = reason === 'anchor' ? anchorOf() : null;
+    const anchor = useAnchor || (reason === 'anchor' ? anchorOf() : null);
     const rows = await reminderRows();
     S.rows = rows;
     $('remHint').textContent = hintFor(rows.length);
@@ -613,9 +617,9 @@
   });
 
   // ---------------------------------------------------------------- to-do list
-  async function renderTodos(reason) {
+  async function renderTodos(reason, useAnchor) {
     const keep = listView.scrollTop;
-    const anchor = reason === 'anchor' ? anchorOf() : null;
+    const anchor = useAnchor || (reason === 'anchor' ? anchorOf() : null);
     const all = (await window.rf.all()).filter((d) => d.kind === 'todo');
     const q = S.search.trim().toLowerCase();
     const list = curList();
@@ -845,6 +849,137 @@
   $('monthGrid').addEventListener('scrollend', () => { MV.lockUntil = 0; monthFocus(); });
   function moveMonth(n) { S.monthView = monthAdd(S.monthView, n); return renderMonth({ jump: true, smooth: true }); }
 
+  // The Day and Week views (the same tab as Month; the switch in its toolbar, remembered): the picked day, or the week
+  // it is in, with everything on each day in full (no "+n more"). ‹ › and Page Up / Page Down move a day or a week.
+  const CAL_TITLES = { day: ['Previous day', 'Next day'], week: ['Previous week', 'Next week'], month: ['Previous month', 'Next month'] };
+  // The names of the views have keys of their own: in some languages "Day" (the list's column) is the day of the week
+  const VIEW_EN = { day: 'Day', week: 'Week', month: 'Month' };
+  const viewName = (m) => {
+    const i = RF.i18n;
+    if (!i || i.lang === 'en' || !i.translate) return VIEW_EN[m];
+    return i.translate(`${VIEW_EN[m]} (calendar view)`) || i.translate(VIEW_EN[m]) || VIEW_EN[m];
+  };
+  function applyCalMode() {
+    const m = S.calMode;
+    for (const b of document.querySelectorAll('#calMode [data-cmode]')) b.setAttribute('aria-pressed', String(b.dataset.cmode === m));
+    $('monthView').classList.toggle('days', m !== 'month');
+    $('monthHead').classList.toggle('hidden', m !== 'month');
+    $('monthGrid').classList.toggle('hidden', m !== 'month');
+    $('calDays').classList.toggle('hidden', m === 'month');
+    $('mPrev').title = CAL_TITLES[m][0];
+    $('mNext').title = CAL_TITLES[m][1];
+    const tab = document.querySelector('.tab[data-tab="month"]');
+    if (tab) tab.textContent = viewName(m);
+    for (const b of document.querySelectorAll('#calMode [data-cmode]')) b.textContent = viewName(b.dataset.cmode);
+  }
+  function renderCal(opts = {}) {
+    applyCalMode();
+    return S.calMode === 'month' ? renderMonth(opts) : renderDays();
+  }
+  // The Day and Week views are a time grid: a row for all-day items and list items at the top, then the 24 hours of
+  // each day in a column that scrolls, with every timed item placed at its start and as tall as it lasts (at least a
+  // line). Items at the same time sit side by side. A red line marks the time now on today.
+  const HOUR_PX = 48;
+  const TG = { scroll: null, nowTimer: 0 };
+  // when on the day k an item starts and ends, in minutes from midnight; null = it goes in the all-day row
+  function minutesOn(r, k) {
+    if (r.allDay || r.carried || r.start == null) return null;
+    const d0 = parseKey(k).getTime();
+    const d1 = addDays(parseKey(k), 1).getTime();
+    const end = r.end != null && r.end > r.start ? r.end : r.start + 30 * 6e4;
+    const a = Math.max(r.start, d0); const b = Math.min(end, d1);
+    if (a >= d1 || b <= d0) return null;
+    // minutes on the clock (a day with a daylight-saving change is 23 or 25 hours long)
+    const at = (t) => { const x = new Date(t); return t >= d1 ? 1440 : x.getHours() * 60 + x.getMinutes(); };
+    return { from: at(a), to: Math.max(at(b), at(a) + 1) };
+  }
+  // side by side: items that overlap share the column's width
+  function layoutDay(list) {
+    list.sort((x, y) => (x.from - y.from) || (y.to - x.to));
+    let group = []; let end = -1;
+    const close = () => { const n = Math.max(...group.map((g) => g.lane)) + 1; for (const g of group) g.lanes = n; group = []; };
+    for (const it of list) {
+      if (group.length && it.from >= end) close();
+      const used = new Set(group.filter((g) => g.to > it.from).map((g) => g.lane));
+      let lane = 0; while (used.has(lane)) lane++;
+      it.lane = lane; group.push(it); end = Math.max(end, it.to);
+    }
+    if (group.length) close();
+    return list;
+  }
+  function timedHtml(it, k, wk) {
+    const r = it.r;
+    const cls = ['ev', 'tev'];
+    if (r.kind === 'todo') cls.push('todo');
+    if (r.completed) cls.push('done');
+    if (r.important) cls.push('important');
+    if (k === S.today) cls.push('today'); else if (isPast(r)) cls.push('past');
+    if (r.sub) cls.push('subcal');
+    const top = it.from / 60 * HOUR_PX;
+    const h = Math.max(20, (it.to - it.from) / 60 * HOUR_PX - 2);
+    if (h < 36) cls.push('short');
+    const w = 100 / it.lanes;
+    const pre = (r.kind === 'todo' ? '☐ ' : '') + (r.important ? '★ ' : '');
+    const end = r.end != null && r.end > r.start ? ` – ${fmt.time(r.end)}` : '';
+    const small = wk ? '' : [r.location, r.repeatText ? `↻ ${r.repeatText}` : '', r.sub ? r.subName : ''].filter(Boolean).map(esc).join(' · ');
+    const style = `top:${top.toFixed(1)}px;height:${h.toFixed(1)}px;left:calc(${(it.lane * w).toFixed(3)}% + 2px);width:calc(${w.toFixed(3)}% - 4px);${r.sub ? `--sub-c:${esc(r.subColor || '#888888')}` : ''}`;
+    return `<div class="${cls.join(' ')}" style="${style}" data-uid="${esc(r.uid)}" data-start="${occOf(r)}" title="${esc(`${fmt.time(r.start)}${end} ${r.summary}${r.location ? ` · ${r.location}` : ''}`)}"><span class="tm">${esc(fmt.time(r.start))}</span><b translate="no">${esc(pre + r.summary)}</b>${small ? `<small>${small}</small>` : ''}</div>`;
+  }
+  function nowTop() { const n = new Date(); return (n.getHours() * 60 + n.getMinutes()) / 60 * HOUR_PX; }
+  async function renderDays() {
+    const wk = S.calMode === 'week';
+    const sel = parseKey(S.selDay);
+    const from = wk ? gridStart(sel) : sel;
+    const n = wk ? 7 : 1;
+    const to = addDays(from, n);
+    const q = S.search.trim().toLowerCase();
+    const rows = (await rangeWithSubs(from.getTime(), to.getTime(), { includeTodos: S.mTodos }, 'month')).filter((r) => (S.mShowDone || !r.completed) && matches(r, q));
+    const map = spreadByDay(rows, from, to);
+    let head = '<div class="tg-gut"></div>'; let all = `<div class="tg-gut">${esc('All day')}</div>`; let cols = '';
+    let first = 24 * 60;
+    for (let i = 0; i < n; i++) {
+      const d = addDays(from, i);
+      const k = dayKey(d);
+      const cls = [];
+      if (k === S.today) cls.push('today');
+      if (wk && k === S.selDay) cls.push('picked');
+      if (k < S.today) cls.push('past');
+      const c = cls.length ? ` ${cls.join(' ')}` : '';
+      const allDay = []; const timed = [];
+      for (const r of map.get(k) || []) { const m = minutesOn(r, k); if (m) timed.push({ r, ...m }); else allDay.push(r); }
+      for (const t of timed) first = Math.min(first, t.from);
+      head += `<div class="dh col${c}" data-day="${k}"><span class="wd">${esc(wk ? fmt.weekday(d) : fmt.weekdayLong(d))}</span><span class="num">${d.getDate()}</span></div>`;
+      all += `<div class="tg-ac col${c}" data-day="${k}">${allDay.map(chipHtml).join('')}</div>`;
+      cols += `<div class="tg-col col${c}" data-day="${k}">${k === S.today ? `<div class="tg-now" style="top:${nowTop().toFixed(1)}px"></div>` : ''}${layoutDay(timed).map((t) => timedHtml(t, k, wk)).join('')}</div>`;
+    }
+    const hours = Array.from({ length: 24 }, (_, h) => `<div class="tg-h"><span>${h ? esc(fmt.time(new Date(2000, 0, 1, h))) : ''}</span></div>`).join('');
+    const box = $('calDays');
+    const old = box.querySelector('.tg-body');
+    const keep = old && TG.scroll != null ? old.scrollTop : null;
+    box.classList.toggle('week', wk);
+    box.classList.toggle('day', !wk);
+    box.style.setProperty('--tg-n', n);
+    box.style.setProperty('--tg-hour', `${HOUR_PX}px`);
+    RF.setHTML(box, `<div class="tg-row tg-head">${head}</div><div class="tg-row tg-all">${all}</div>` +
+      `<div class="tg-body"><div class="tg-row tg-grid"><div class="tg-gut tg-hours">${hours}</div>${cols}</div></div>`);
+    const body = box.querySelector('.tg-body');
+    // where the hours start: as it was, else 7 AM (or the first item, when earlier); now and then the time line moves
+    body.scrollTop = keep != null ? keep : Math.max(0, (Math.min(7 * 60, first) / 60 - 0.25) * HOUR_PX);
+    TG.scroll = body.scrollTop;
+    body.addEventListener('scroll', () => { TG.scroll = body.scrollTop; }, { passive: true });
+    clearInterval(TG.nowTimer);
+    TG.nowTimer = setInterval(() => {
+      if (S.tab !== 'month' || S.calMode === 'month') { clearInterval(TG.nowTimer); return; }
+      const line = box.querySelector('.tg-now');
+      if (line) line.style.top = `${nowTop().toFixed(1)}px`;
+    }, 60e3);
+    $('mTitle').textContent = wk ? `${fmt.date(from)} – ${fmt.date(addDays(from, 6))}` : fmt.long(sel);
+  }
+  function moveCal(n) {
+    if (S.calMode === 'month') return moveMonth(n);
+    return selectDay(dayKey(addDays(parseKey(S.selDay), n * (S.calMode === 'week' ? 7 : 1))));
+  }
+
   // ---------------------------------------------------------------- side panel
   function monthHtml(m, rowsMap, first, last) {
     const gs = gridStart(m);
@@ -908,7 +1043,8 @@
     if (opts.list !== false && S.tab === 'reminders' && (S.filter === 'day' || S.filter === 'month') && !S.search) await renderReminders('refresh');
     // a day picked in the calendar panel starts the Reminders list there, within what the Show choice lists
     else if (opts.scroll && S.tab === 'reminders' && !S.welcome) scrollToDay(k);
-    if (S.tab === 'month') for (const c of $('monthGrid').children) c.classList.toggle('picked', c.dataset.day === k);
+    if (S.tab === 'month' && S.calMode !== 'month') await renderDays();
+    else if (S.tab === 'month') for (const c of $('monthGrid').children) c.classList.toggle('picked', c.dataset.day === k);
   }
   $('mcal').addEventListener('click', async (e) => {
     const b = e.target.closest('[data-cal],[data-day]');
@@ -923,7 +1059,8 @@
   // Go to a date: select it in the calendar; the Month tab moves to it, the lists show that day
   async function goToDate(k) {
     if (!k) return;
-    if (S.tab === 'month') {
+    if (S.tab === 'month' && S.calMode !== 'month') await selectDay(k);
+    else if (S.tab === 'month') {
       const d = parseKey(k);
       S.monthView = new Date(d.getFullYear(), d.getMonth(), 1);
       await selectDay(k);
@@ -934,7 +1071,7 @@
     const on = S.settings.sidePanel === false;
     document.body.classList.toggle('no-side', !on);
     await setSetting({ sidePanel: on });
-    if (S.tab === 'month') renderMonth();
+    if (S.tab === 'month') renderCal();
   }
   $('sideToggle').addEventListener('click', toggleSide);
   $('alarmState').addEventListener('click', async () => {
@@ -1052,7 +1189,9 @@
     ctxRow = { uid: dto.uid, start, dto, checked };
     const repeatingEvent = dto.kind === 'event' && dto.repeat;
     if (dto.readOnly) { // from a calendar subscription: look, copy, map
-      RF.setHTML(ctx, '<button data-ctx="edit">Open…</button><button data-ctx="mine">Copy to my reminders</button>' + (dto.location ? '<button data-ctx="map">Show on a map</button>' : ''));
+      RF.setHTML(ctx, '<button data-ctx="edit">Open…</button>' +
+        `<button data-ctx="toggle">${checked ? 'Mark not completed' : 'Mark completed'}</button>` +
+        '<button data-ctx="mine">Copy to my reminders</button>' + (dto.location ? '<button data-ctx="map">Show on a map</button>' : ''));
     } else RF.setHTML(ctx, '<button data-ctx="edit">Edit…</button>' +
       `<button data-ctx="toggle">${checked ? 'Mark not completed' : 'Mark completed'}</button>` +
       (dto.kind === 'event' ? `<button data-ctx="ruc">${dto.untilDone ? '✓ ' : ''}Remind daily until completed</button>` : `<button data-ctx="tip">${dto.showInTooltip ? '✓ ' : ''}Show in the tray tooltip</button>`) +
@@ -1729,7 +1868,7 @@
   $('stStart').addEventListener('change', () => setSetting({ startWithWindows: $('stStart').checked }));
   $('stTray').addEventListener('change', () => setSetting({ closeToTray: $('stTray').checked }));
   $('stSound').addEventListener('change', () => { if ($('stSound').checked) FX('testSound'); setSetting({ alarmSound: $('stSound').checked }); });
-  $('stWeek').addEventListener('change', async () => { await setSetting({ weekStart: Number($('stWeek').value) }); await Promise.all([renderSide(), S.tab === 'month' ? renderMonth({ jump: true }) : null]); });
+  $('stWeek').addEventListener('change', async () => { await setSetting({ weekStart: Number($('stWeek').value) }); await Promise.all([renderSide(), S.tab === 'month' ? renderCal({ jump: true }) : null]); });
   $('stAlarm').addEventListener('change', () => setSetting({ defaultAlarm: $('stAlarm').value === '' ? null : Number($('stAlarm').value) }));
   // the Theme list and swatches: the six built-in themes, then your own (0.8.1), with New, Edit and Delete beside them
   function fillThemes() {
@@ -1811,14 +1950,37 @@
   $('todoCat').addEventListener('change', () => { S.todoCat = $('todoCat').value; renderTodos(); });
   $('todoSort').addEventListener('change', async () => { await setSetting({ todoSort: $('todoSort').value }); renderTodos('refresh'); });
   $('showDone').checked = S.showDone;
-  $('showDone').addEventListener('change', () => { S.showDone = $('showDone').checked; ls.set('showDone', S.showDone ? '1' : '0'); renderTodos('anchor'); });
-  $('mTodos').addEventListener('change', () => { S.mTodos = $('mTodos').checked; renderMonth(); });
-  $('mDone').addEventListener('change', () => { S.mShowDone = $('mDone').checked; renderMonth(); });
-  // Show completed keeps the rows you were looking at in place (rows come and go above and below them)
-  $('remDone').addEventListener('change', async () => { await setSetting({ hideCompleted: !$('remDone').checked }); renderReminders('anchor'); });
-  $('mPrev').addEventListener('click', () => moveMonth(-1));
-  $('mNext').addEventListener('click', () => moveMonth(1));
-  $('mToday').addEventListener('click', () => { const t = todayStart(); S.monthView = new Date(t.getFullYear(), t.getMonth(), 1); selectDay(S.today); renderMonth({ jump: true, smooth: true }); });
+  // Show completed keeps the rows you were looking at in place (rows come and go above and below them). Ticked back
+  // without scrolling in between, it goes back to exactly where it was before, also where the shorter list could not
+  // be scrolled that far (near the end of Past, say), so the same stretch of reminders is shown again.
+  let doneMemo = null;
+  async function toggleShowDone(tag, apply, render) {
+    const before = anchorOf();
+    const back = doneMemo && doneMemo.tag === tag && doneMemo.scroll === listView.scrollTop ? doneMemo.anchor : null;
+    S.quietUntil = Date.now() + 1500; // the settings change this makes needs no second render (it would move the list)
+    await apply();
+    await render('anchor', back);
+    doneMemo = back ? null : { tag, anchor: before, scroll: listView.scrollTop };
+  }
+  $('showDone').addEventListener('change', () => toggleShowDone(`list:${curList()}:${S.search}`,
+    () => { S.showDone = $('showDone').checked; ls.set('showDone', S.showDone ? '1' : '0'); }, renderTodos));
+  $('mTodos').addEventListener('change', () => { S.mTodos = $('mTodos').checked; renderCal(); });
+  $('mDone').addEventListener('change', () => { S.mShowDone = $('mDone').checked; renderCal(); });
+  $('calMode').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-cmode]');
+    if (!b || b.dataset.cmode === S.calMode) return;
+    S.calMode = b.dataset.cmode;
+    ls.set('calMode', S.calMode);
+    // the month of the picked day, when going back to Month
+    if (S.calMode === 'month') { const d = parseKey(S.selDay); S.monthView = new Date(d.getFullYear(), d.getMonth(), 1); }
+    renderCal({ jump: true });
+  });
+  applyCalMode();
+  $('remDone').addEventListener('change', () => toggleShowDone(`rem:${S.filter}:${S.search}`,
+    () => setSetting({ hideCompleted: !$('remDone').checked }), renderReminders));
+  $('mPrev').addEventListener('click', () => moveCal(-1));
+  $('mNext').addEventListener('click', () => moveCal(1));
+  $('mToday').addEventListener('click', () => { if (S.calMode !== 'month') { selectDay(S.today); return; } const t = todayStart(); S.monthView = new Date(t.getFullYear(), t.getMonth(), 1); selectDay(S.today); renderMonth({ jump: true, smooth: true }); });
   let searchTimer = null;
   let wasSearching = false;
   $('search').addEventListener('input', () => {
@@ -1846,8 +2008,24 @@
     const cell = e.target.closest('.cell');
     if (cell) openEditor({ kind: 'event', date: cell.dataset.day });
   });
+  $('calDays').addEventListener('click', (e) => {
+    const it = e.target.closest('.ev');
+    if (it) { openEditor({ uid: it.dataset.uid, start: Number(it.dataset.start) }); return; }
+    const col = e.target.closest('.col');
+    if (col && S.calMode === 'week' && col.dataset.day !== S.selDay) selectDay(col.dataset.day);
+  });
+  // double-click an empty spot: a new reminder on that day, at that half hour in the hours (all day at the top)
+  $('calDays').addEventListener('dblclick', (e) => {
+    if (e.target.closest('.ev')) return;
+    const col = e.target.closest('.col');
+    if (!col) return;
+    if (!col.classList.contains('tg-col')) { openEditor({ kind: 'event', date: col.dataset.day }); return; }
+    const y = e.clientY - col.getBoundingClientRect().top;
+    const m = Math.min(23 * 60 + 30, Math.max(0, Math.floor(y / HOUR_PX * 2) * 30));
+    openEditor({ kind: 'event', date: col.dataset.day, prefill: { time: `${RF.pad(Math.floor(m / 60))}:${RF.pad(m % 60)}` } });
+  });
   let resizeTimer = null;
-  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (S.tab === 'month') renderMonth(); }, 120); });
+  window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(() => { if (S.tab === 'month' && S.calMode === 'month') renderMonth(); }, 120); });
 
   // ---------------------------------------------------------------- keyboard
   const typing = (t) => t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
@@ -1882,9 +2060,10 @@
       await moveSelected(e.key === 'ArrowUp' ? -1 : 1);
       return;
     }
-    // the Month view: Page Up / Page Down move a month (the arrow keys and the wheel scroll it)
+    // the Month view: Page Up / Page Down move a month (the arrow keys and the wheel scroll it); a day or a week in the
+    // Day and Week views
     if (S.tab === 'month' && !ctrl && !e.altKey && (e.key === 'PageUp' || e.key === 'PageDown') && !anyDialogOpen() && !typing(e.target)) {
-      e.preventDefault(); moveMonth(e.key === 'PageUp' ? -1 : 1); return;
+      e.preventDefault(); moveCal(e.key === 'PageUp' ? -1 : 1); return;
     }
     if (anyDialogOpen() || typing(e.target) || S.tab === 'month') return;
     const trs = [...listView.querySelectorAll('tbody tr[data-key]')];
@@ -1917,6 +2096,7 @@
     RF.setFormats(s);
     try { S.meta.suspend = await window.rf.suspended(); } catch (e) { /* keep */ }
     renderAlarmState();
+    if (Date.now() < (S.quietUntil || 0)) return;
     refresh();
   });
   window.rf.on('ui:quick', () => { if (!anyDialogOpen()) FX('openQuick'); });
@@ -1959,7 +2139,7 @@
     await guard(refresh());
     if (S.tab === 'reminders' && !S.welcome) await renderReminders('enter');
     if (S.meta.archiveMoved) {
-      const l = 'Terminated or Suspended';
+      const l = ARCHIVE_LIST;
       toast(T(S.meta.archiveMoved === 1 ? '{n} archived item moved to the “{list}” list' : '{n} archived items moved to the “{list}” list', { n: S.meta.archiveMoved, list: T(l) }), 8000, { label: 'Show', fn: () => showList(l) });
     }
     // back on the Display settings after a language change reloaded the window

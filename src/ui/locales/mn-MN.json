@@ -1001,5 +1001,17 @@
  "Coming (future)": "Удахгүй (ирээдүй)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "“{item}” зүйлсийг жагсаалтад уншихад хэцүү байна (тодрол {n}:1; 3:1 ба түүнээс дээш нь илүү).",
  "New list item": "Шинэ жагсаалтын зүйл",
- "Edit list item": "Жагсаалтын зүйлийг засах"
+ "Edit list item": "Жагсаалтын зүйлийг засах",
+ "Mark past events completed": "Өнгөрсөн үйл явдлуудыг дууссан гэж тэмдэглэх",
+ "Events count as completed once they are over; you can still untick one": "Үйл явдал дууссаны дараа дууссанд тооцогдоно; та нэгийг нь тэмдэглэлээс авч болно",
+ "Day (calendar view)": "Өдөр",
+ "Week (calendar view)": "Долоо хоног",
+ "Previous day": "Өмнөх өдөр",
+ "Next day": "Дараагийн өдөр",
+ "Previous week": "Өмнөх долоо хоног",
+ "Next week": "Дараагийн долоо хоног",
+ "archive": "архив",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Энэ жагсаалт архивласан зүйлсийг хадгална: нэрийг нь өөрчлөх эсвэл устгах боломжгүй бөгөөд зүйлс нь сануулга болон хуанлийн харагдацад харагдахгүй",
+ "The “{list}” list keeps archived items and can't be renamed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул нэрийг нь өөрчлөх боломжгүй.",
+ "The “{list}” list keeps archived items and can't be removed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул устгах боломжгүй."
 }

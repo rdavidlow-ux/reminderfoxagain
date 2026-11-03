@@ -980,3 +980,15 @@
 979| Elementer «{item}» er vanskelige å lese i listene (kontrast {n}:1; 3:1 eller mer er bedre).
 980| Nytt listeelement
 981| Rediger listeelement
+982| Merk tidligere hendelser som fullført
+983| Hendelser regnes som fullført når de er over; du kan fortsatt fjerne haken på en
+984| Dag
+985| Uke
+986| Forrige dag
+987| Neste dag
+988| Forrige uke
+989| Neste uke
+990| arkiv
+991| Denne listen tar vare på arkiverte elementer: den kan ikke gis nytt navn eller fjernes, og elementene vises ikke i Påminnelser og kalendervisningene
+992| Listen «{list}» tar vare på arkiverte elementer og kan ikke gis nytt navn.
+993| Listen «{list}» tar vare på arkiverte elementer og kan ikke fjernes.

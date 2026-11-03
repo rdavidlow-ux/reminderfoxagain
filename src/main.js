@@ -975,6 +975,9 @@ const subs = createSubscriptions({
   Store, newId: () => require('crypto').randomUUID().slice(0, 8), now: () => Date.now(), fetchText,
   getList: () => state.settings.subscriptions || [],
   setList: (l) => { state.settings.subscriptions = l; saveState(true); broadcast('settings:changed', state.settings); },
+  // ticks on items from subscriptions, kept in state.json (not in the calendars, which each refresh replaces)
+  getDone: () => state.subsDone || {},
+  setDone: (m) => { state.subsDone = m; saveState(true); },
   read: async (n) => { try { return fs.readFileSync(subFile(n), 'utf8'); } catch (e) { return null; } },
   write: async (n, text) => writeAtomic(subFile(n), text),
   remove: async (n) => fs.rmSync(subFile(n), { force: true }),
@@ -995,7 +998,7 @@ function setupIpc() {
   handle('data:get', (e, uid) => (isSubUid(uid) ? subs.get(uid) : store.get(uid)));
   handle('data:save', (e, dto) => { (dto && dto.uid) ? guardReadOnly(dto.uid) : null; const uid = store.upsert(dto); changed(); return uid; });
   handle('data:delete', (e, uid, occ) => { guardReadOnly(uid); const r = store.remove(uid, occ); changed(); return r; });
-  handle('data:complete', (e, uid, done, occ) => { guardReadOnly(uid); const r = store.setCompleted(uid, done, occ); changed(); return r; });
+  handle('data:complete', (e, uid, done, occ) => { if (isSubUid(uid)) return subs.markDone(uid, done, occ); const r = store.setCompleted(uid, done, occ); changed(); return r; });
   // calendar subscriptions (read-only calendars from a web address)
   for (const [ch, fn] of Object.entries(subscriptionChannels(subs, () => store, changed))) handle(ch, (e, ...a) => fn(...a));
   handle('data:meta', () => meta());
@@ -1145,6 +1148,7 @@ function setupIpc() {
   });
   handle('data:order', (e, uids) => { store.setOrder(uids || []); changed(); return true; });
   handle('lists:rename', (e, from, to) => {
+    if (from === ARCHIVE_LIST) throw new Error('The “Terminated or Suspended” list keeps archived items and can\'t be renamed.');
     to = String(to || '').trim();
     if (!to || /[,:]/.test(to)) throw new Error('A list name can\'t be empty or contain a comma or a colon.');
     const n = store.renameList(from, to) + archive.renameList(from, to);
@@ -1157,6 +1161,7 @@ function setupIpc() {
   });
   // opts.deleteItems: delete the list's to-dos instead of moving them to "To-Do's" (archived ones always move)
   handle('lists:remove', (e, name, opts) => {
+    if (name === ARCHIVE_LIST) throw new Error('The “Terminated or Suspended” list keeps archived items and can\'t be removed.');
     const n = (opts && opts.deleteItems ? store.removeListItems(name) : store.renameList(name, "To-Do's")) + archive.renameList(name, "To-Do's");
     state.settings.lists = state.settings.lists.filter((l) => l !== name);
     saveState(true);

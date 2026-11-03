@@ -285,7 +285,7 @@ Every method returns a Promise. The preload calls `ipcRenderer.invoke(channel, �
 | `subsRange(from, to, view)` / `subsNext(from, opts, view)` | `subs:range` / `subs:next` | as `range`/`next`, for `'list'` or `'month'`: the subscribed occurrences shown there, uids `sub:<id>:<uid>`, `readOnly: true` |
 | `subsCopy(uid)` | `subs:copy` | a subscribed item → the uid of your own copy |
 
-Every write channel calls `guardReadOnly(uid)` first, so a subscribed item can't be changed, ticked or deleted.
+Every write channel calls `guardReadOnly(uid)` first, so a subscribed item can't be changed or deleted. Ticking is the exception: `data:complete` with a subscribed uid calls `subs.markDone(uid, done, occ)`, which keeps the tick in `state.subsDone` (not in the calendar's copy, which each refresh replaces) and lays it over the rows; a refresh drops ticks of items the calendar no longer has. A subscription's `autoDone` (set with `subsUpdate`) makes occurrences that are over count as completed; an explicit untick is stored as `0`.
 
 ### Events (main → windows)
 
@@ -341,7 +341,7 @@ The state object `S` holds `tab` (`reminders`, `todos` for the List dropdown, `m
 | Reminders | `reminderRows()` (filter, view, category, repeat count, hide options; month separators carry a per-month count), `rowHtml(r, opts)`, `renderReminders`, `position` (first-visit scroll to today) |
 | To-dos | `renderTodos`, `todoSorter()`, `reorder(uid, target, after)`, `moveSelected(dir)`, drag-and-drop handlers |
 | Views | `viewOf`, `viewRange`, `viewMatches` |
-| Calendar | `renderMonth`, `renderSide` (1–3 months via `monthHtml`, overdue marks), `renderAgenda`, `selectDay`, `goToDate`, `toggleSide` |
+| Calendar | `renderCal` (`applyCalMode`, then `renderMonth` or `renderDays` for the Day and Week views), `moveCal`, `renderMonth`, `renderSide` (1–3 months via `monthHtml`, overdue marks), `renderAgenda`, `selectDay`, `goToDate`, `toggleSide` |
 | Interaction | `showCtx` (context menu), `selectTr`, keyboard handler, `openMap`, `mapUrl` |
 | Editor | `openEditor({uid, start} \| {kind, date})`, `fillEditor`, `renderRepeat`, `readRepeat`, `renderAlarm`, `currentAlarm`, `saveEditor` |
 | Settings | `openSettings` (General controls), `setSetting(patch)`, then `FX('fillSettings')` |

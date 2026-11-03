@@ -1181,5 +1181,17 @@
  "Coming (future)": "Kommend (takomst)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Items ‘{item}’ binne dreech te lêzen yn de listen (kontrast {n}:1; 3:1 of mear is better).",
  "New list item": "Nij listitem",
- "Edit list item": "Listitem bewurkje"
+ "Edit list item": "Listitem bewurkje",
+ "Mark past events completed": "Foarbye barrens as foltôge markearje",
+ "Events count as completed once they are over; you can still untick one": "Barrens telle as foltôge sa gau't se foarby binne; jo kinne der noch altyd ien ôfvinkje",
+ "Day (calendar view)": "Dei",
+ "Week (calendar view)": "Wike",
+ "Previous day": "Foarige dei",
+ "Next day": "Folgjende dei",
+ "Previous week": "Foarige wike",
+ "Next week": "Folgjende wike",
+ "archive": "argyf",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Dizze list bewarret argivearre items: hy kin net omneamd of fuortsmiten wurde, en de items steane net yn Oantinkens en de aginda-werjeften",
+ "The “{list}” list keeps archived items and can't be renamed.": "De list ‘{list}’ bewarret argivearre items en kin net omneamd wurde.",
+ "The “{list}” list keeps archived items and can't be removed.": "De list ‘{list}’ bewarret argivearre items en kin net fuortsmiten wurde."
 }

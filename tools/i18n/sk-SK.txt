@@ -980,3 +980,15 @@
 979| Položky „{item}“ sú v zoznamoch zle čitateľné (kontrast {n}:1; lepšie je 3:1 alebo viac).
 980| Nová položka zoznamu
 981| Upraviť položku zoznamu
+982| Označiť minulé udalosti ako dokončené
+983| Udalosti sa považujú za dokončené, keď skončia; začiarknutie pri jednej môžete stále zrušiť
+984| Deň
+985| Týždeň
+986| Predchádzajúci deň
+987| Nasledujúci deň
+988| Predchádzajúci týždeň
+989| Nasledujúci týždeň
+990| archív
+991| Tento zoznam uchováva archivované položky: nedá sa premenovať ani odstrániť a jeho položky sa nezobrazujú v pripomienkach ani v zobrazeniach kalendára
+992| Zoznam „{list}“ uchováva archivované položky a nedá sa premenovať.
+993| Zoznam „{list}“ uchováva archivované položky a nedá sa odstrániť.

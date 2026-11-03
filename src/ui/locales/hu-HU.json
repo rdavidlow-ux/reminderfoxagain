@@ -1001,5 +1001,17 @@
  "Coming (future)": "Közelgő (jövőbeli)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "A(z) „{item}” elemek nehezen olvashatók a listákon (kontraszt {n}:1; 3:1 vagy több a jobb).",
  "New list item": "Új listaelem",
- "Edit list item": "Listaelem szerkesztése"
+ "Edit list item": "Listaelem szerkesztése",
+ "Mark past events completed": "Elmúlt események megjelölése elvégzettként",
+ "Events count as completed once they are over; you can still untick one": "Az események elvégzettnek számítanak, ha véget értek; egyről így is leveheted a pipát",
+ "Day (calendar view)": "Nap",
+ "Week (calendar view)": "Hét",
+ "Previous day": "Előző nap",
+ "Next day": "Következő nap",
+ "Previous week": "Előző hét",
+ "Next week": "Következő hét",
+ "archive": "archívum",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Ez a lista az archivált elemeket őrzi: nem nevezhető át és nem távolítható el, elemei pedig nem jelennek meg az emlékeztetőkben és a naptárnézetekben",
+ "The “{list}” list keeps archived items and can't be renamed.": "A „{list}” lista az archivált elemeket őrzi, és nem nevezhető át.",
+ "The “{list}” list keeps archived items and can't be removed.": "A „{list}” lista az archivált elemeket őrzi, és nem távolítható el."
 }

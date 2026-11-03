@@ -1301,5 +1301,17 @@
  "Coming (future)": "Nadcházející (budoucí)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Položky „{item}“ jsou v seznamech špatně čitelné (kontrast {n}:1; lepší je 3:1 nebo více).",
  "New list item": "Nová položka seznamu",
- "Edit list item": "Upravit položku seznamu"
+ "Edit list item": "Upravit položku seznamu",
+ "Mark past events completed": "Označit minulé události jako dokončené",
+ "Events count as completed once they are over; you can still untick one": "Události se počítají jako dokončené, jakmile skončí; zaškrtnutí u jedné můžete stále zrušit",
+ "Day (calendar view)": "Den",
+ "Week (calendar view)": "Týden",
+ "Previous day": "Předchozí den",
+ "Next day": "Další den",
+ "Previous week": "Předchozí týden",
+ "Next week": "Další týden",
+ "archive": "archiv",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Tento seznam uchovává archivované položky: nelze jej přejmenovat ani odebrat a jeho položky se nezobrazují v připomínkách ani v zobrazeních kalendáře",
+ "The “{list}” list keeps archived items and can't be renamed.": "Seznam „{list}“ uchovává archivované položky a nelze jej přejmenovat.",
+ "The “{list}” list keeps archived items and can't be removed.": "Seznam „{list}“ uchovává archivované položky a nelze jej odebrat."
 }

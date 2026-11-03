@@ -980,3 +980,15 @@
 979| Os elementos «{item}» son difíciles de ler nas listas (contraste {n}:1; 3:1 ou máis é mellor).
 980| Novo elemento de lista
 981| Editar elemento de lista
+982| Marcar os eventos pasados como completados
+983| Os eventos contan como completados cando rematan; aínda podes desmarcar un
+984| Día
+985| Semana
+986| Día anterior
+987| Día seguinte
+988| Semana anterior
+989| Semana seguinte
+990| arquivo
+991| Esta lista garda os elementos arquivados: non se pode renomear nin quitar, e os seus elementos non aparecen nos recordatorios nin nas vistas de calendario
+992| A lista «{list}» garda os elementos arquivados e non se pode renomear.
+993| A lista «{list}» garda os elementos arquivados e non se pode quitar.

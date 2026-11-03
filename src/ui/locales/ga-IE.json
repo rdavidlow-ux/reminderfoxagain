@@ -1145,5 +1145,17 @@
  "Coming (future)": "Le teacht (todhchaí)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Is deacair míreanna “{item}” a léamh sna liostaí (codarsnacht {n}:1; is fearr 3:1 nó níos mó).",
  "New list item": "Mír liosta nua",
- "Edit list item": "Cuir mír liosta in eagar"
+ "Edit list item": "Cuir mír liosta in eagar",
+ "Mark past events completed": "Marcáil imeachtaí atá thart mar críochnaithe",
+ "Events count as completed once they are over; you can still untick one": "Áirítear imeachtaí mar chríochnaithe nuair a bhíonn siad thart; is féidir leat tic a bhaint de cheann fós",
+ "Day (calendar view)": "Lá",
+ "Week (calendar view)": "Seachtain",
+ "Previous day": "An lá roimhe",
+ "Next day": "An chéad lá eile",
+ "Previous week": "An tseachtain roimhe",
+ "Next week": "An tseachtain seo chugainn",
+ "archive": "cartlann",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Coinníonn an liosta seo míreanna cartlannaithe: ní féidir é a athainmniú ná a bhaint, agus ní thaispeántar a mhíreanna sna meabhrúcháin ná sna radhairc féilire",
+ "The “{list}” list keeps archived items and can't be renamed.": "Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a athainmniú.",
+ "The “{list}” list keeps archived items and can't be removed.": "Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a bhaint."
 }

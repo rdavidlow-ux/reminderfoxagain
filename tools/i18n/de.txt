@@ -980,3 +980,15 @@
 979| Einträge „{item}“ sind auf den Listen schwer zu lesen (Kontrast {n}:1; 3:1 oder mehr ist besser).
 980| Neuer Listeneintrag
 981| Listeneintrag bearbeiten
+982| Vergangene Termine als erledigt markieren
+983| Termine gelten als erledigt, sobald sie vorbei sind; Sie können einen trotzdem wieder abhaken
+984| Tag
+985| Woche
+986| Vorheriger Tag
+987| Nächster Tag
+988| Vorherige Woche
+989| Nächste Woche
+990| Archiv
+991| Diese Liste enthält archivierte Einträge: Sie kann nicht umbenannt oder entfernt werden, und ihre Einträge erscheinen nicht in den Erinnerungen und Kalenderansichten
+992| Die Liste „{list}“ enthält archivierte Einträge und kann nicht umbenannt werden.
+993| Die Liste „{list}“ enthält archivierte Einträge und kann nicht entfernt werden.

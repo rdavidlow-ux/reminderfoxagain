@@ -220,6 +220,40 @@ table.list { width: 100%; border-collapse: separate; border-spacing: 0; backgrou
 .ev.todo, .ev.allday.todo { background: var(--surface-3); color: var(--ink-2); }
 .ev.done { text-decoration: line-through; opacity: .6; }
 .ev .tm { font-weight: 600; margin-right: 4px; font-variant-numeric: tabular-nums; }
+/* the Day and Week views (the Month tab's View switch) */
+.month.days { grid-template-rows: 1fr; }
+.seg.sm button { padding: 4px 10px; font-size: 12.5px; }
+.cal-days { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; min-height: 0; background: var(--surface); --tg-gut: 64px; }
+.cal-days .tg-row { display: grid; grid-template-columns: var(--tg-gut) repeat(var(--tg-n, 7), minmax(0, 1fr)); }
+.cal-days .tg-head, .cal-days .tg-all { overflow-y: hidden; scrollbar-gutter: stable; flex: none; border-bottom: 1px solid var(--line); }
+.cal-days .tg-gut { font-size: 11.5px; color: var(--ink-3); padding: 6px 6px 0 0; text-align: right; }
+.cal-days .col { min-width: 0; border-left: 1px solid var(--line); }
+.cal-days .col.past { background: var(--surface-2); }
+.cal-days .dh { display: flex; align-items: baseline; gap: 6px; padding: 6px 8px; font-size: 12px; font-weight: 600; color: var(--ink-3); }
+.cal-days .dh .wd { text-transform: uppercase; letter-spacing: .04em; }
+.cal-days .dh .num { font-size: 13px; color: var(--ink-2); padding: 1px 6px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+.cal-days .dh.today .num { background: var(--fox); color: #fff; }
+.cal-days .col.picked { box-shadow: inset 2px 0 0 var(--fox), inset -2px 0 0 var(--fox); }
+.cal-days .dh.picked { box-shadow: inset 2px 0 0 var(--fox), inset -2px 0 0 var(--fox), inset 0 2px 0 var(--fox); }
+.cal-days .tg-ac { display: flex; flex-direction: column; gap: 2px; padding: 3px; min-height: 26px; max-height: 96px; overflow-y: auto; }
+.cal-days.week .tg-ac .ev { white-space: normal; overflow-wrap: anywhere; }
+.cal-days .tg-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+.cal-days .tg-grid { height: calc(24 * var(--tg-hour, 48px)); }
+.cal-days .tg-hours { padding: 0; }
+.cal-days .tg-h { height: var(--tg-hour, 48px); position: relative; }
+.cal-days .tg-h span { position: absolute; top: -7px; right: 6px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cal-days .tg-col { position: relative; background-image: linear-gradient(to bottom, var(--line) 1px, transparent 1px), linear-gradient(to bottom, transparent calc(50% - .5px), color-mix(in srgb, var(--line) 45%, transparent) calc(50% - .5px), color-mix(in srgb, var(--line) 45%, transparent) calc(50% + .5px), transparent calc(50% + .5px)); background-size: 100% var(--tg-hour, 48px); }
+.cal-days .tg-col.past { background-color: var(--surface-2); }
+.cal-days .tg-now { position: absolute; left: 0; right: 0; height: 2px; background: var(--danger, #d93025); z-index: 3; pointer-events: none; }
+.cal-days .tg-now::before { content: ""; position: absolute; left: -4px; top: -3px; width: 8px; height: 8px; border-radius: 50%; background: inherit; }
+.cal-days .tev { position: absolute; z-index: 2; white-space: normal; overflow: hidden; display: flex; flex-direction: column; padding: 2px 5px; border-left: 3px solid var(--fox); box-sizing: border-box; line-height: 1.25; }
+.cal-days .tev.short { flex-direction: row; gap: 4px; white-space: nowrap; align-items: baseline; }
+.cal-days .tev b { font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
+.cal-days .tev.short b { white-space: nowrap; }
+.cal-days .tev small { color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; }
+.cal-days .tev .tm { margin-right: 0; font-size: 11px; }
+.cal-days.day .tev { font-size: 12.5px; padding: 3px 8px; }
+.cal-days .tev.todo { border-left-color: var(--ink-3); }
 .more { font-size: 11.5px; color: var(--ink-3); padding-left: 4px; cursor: pointer; }
 
 /* ---------- status bar */

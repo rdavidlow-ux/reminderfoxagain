@@ -1001,5 +1001,17 @@
  "Coming (future)": "即將到來（未來）",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "「{item}」項目在清單中難以閱讀（對比 {n}:1；3:1 或以上較好）。",
  "New list item": "新增清單項目",
- "Edit list item": "編輯清單項目"
+ "Edit list item": "編輯清單項目",
+ "Mark past events completed": "將過去的活動標示為已完成",
+ "Events count as completed once they are over; you can still untick one": "活動結束後即視為已完成；你仍可取消勾選",
+ "Day (calendar view)": "日",
+ "Week (calendar view)": "週",
+ "Previous day": "前一天",
+ "Next day": "後一天",
+ "Previous week": "上一週",
+ "Next week": "下一週",
+ "archive": "封存",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "此清單保存已封存的項目：無法重新命名或移除，其中的項目不會顯示在提醒和行事曆檢視中",
+ "The “{list}” list keeps archived items and can't be renamed.": "「{list}」清單保存已封存的項目，無法重新命名。",
+ "The “{list}” list keeps archived items and can't be removed.": "「{list}」清單保存已封存的項目，無法移除。"
 }

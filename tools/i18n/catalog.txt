@@ -1022,3 +1022,18 @@ Coming (future)
 # the editor title for a list item
 New list item
 Edit list item
+# calendar subscriptions: mark an event completed once it is over
+Mark past events completed
+Events count as completed once they are over; you can still untick one
+# the Month tab: Day and Week views
+Day (calendar view)
+Week (calendar view)
+Previous day
+Next day
+Previous week
+Next week
+# the "Terminated or Suspended" list can't be renamed or removed
+archive
+This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views
+The “{list}” list keeps archived items and can't be renamed.
+The “{list}” list keeps archived items and can't be removed.

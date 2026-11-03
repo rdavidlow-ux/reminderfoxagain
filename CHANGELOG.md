@@ -3,6 +3,36 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
+## Next — calendar subscriptions: fixed in Thunderbird, and ticks (branch `fix/calendar-sub`, not released)
+
+- **Subscribing to a calendar works in the Thunderbird add-on.** Adding a subscription (for example
+  https://canada-holidays.ca/ics/ON) stopped with "permissions.request may only be called from a user input handler"
+  and added nothing: the add-on checked whether it already had permission for the site before asking, and by then
+  Thunderbird no longer counted the request as part of your click. It now asks straight away (Thunderbird doesn't ask
+  again for a site already allowed). The same fix applies to Import this calendar… on an .ics link in an email.
+- The add-on's UI checks now refuse a permission request made after the click, as Thunderbird does, so this can't
+  slip through again; a Month view colour check no longer depends on the day it runs.
+- **Items from a calendar subscription can be ticked off**, in the add-on and the desktop app: tick one in the list, or
+  Mark completed on its right-click menu. Each date of a repeating event is ticked on its own, Show completed hides or
+  shows them, and they stay ticked when the calendar is fetched again and after a restart. The ticks are kept with your
+  settings, not in the calendar (which each refresh replaces); a tick goes when the calendar no longer has the item, and
+  removing a subscription removes its ticks. The rest of a subscribed item stays read-only.
+- **Mark past events completed**, an option for each subscription (Calendar subscriptions…, off at first): its events
+  count as completed once they are over (an all-day event after its day, a timed one after it ends), with nothing
+  stored for them. You can still untick one, and it stays open.
+- **Day and Week views** beside Month: a **Day | Week | Month** switch in the Month tab's toolbar (the tab takes the
+  view's name, and the choice is remembered). Day lists the picked day's items with their times, places and repeats;
+  Week shows the picked day's week in seven columns. Both show the full 24 hours, scrolling, with each item placed at
+  its start time and as tall as it lasts (items at the same time side by side), all-day items in a row at the top, and
+  a line at the time now. Double-click in the hours to add a reminder at that time. ‹ › and Page Up / Page Down move a
+  day or a week, and Today, Go to… and the calendar panel move them too. New UI check: `tools/ui/day-week.js`.
+- **The "Terminated or Suspended" list can't be renamed or removed**, and its items no longer show in the Reminders
+  list, the Month, Week and Day views or the calendar panel; they stay on that list. New UI check:
+  `tools/ui/archive-list.js`.
+- **Show completed keeps the list where it was.** In the Reminders and Lists views, turning Show completed off and on
+  again comes back to the same items. Before, when the shorter list couldn't scroll as far (the Past view, for one), the
+  list stayed months away after turning it on again.
+
 ## 0.9.4 (beta) — safe HTML for the add-on review
 
 - **No more "Unsafe assignment to innerHTML" warnings** from Mozilla's add-on checker on addons.thunderbird.net. The

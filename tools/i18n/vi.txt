@@ -980,3 +980,15 @@
 979| Mục “{item}” khó đọc trong danh sách (độ tương phản {n}:1; từ 3:1 trở lên thì tốt hơn).
 980| Mục danh sách mới
 981| Sửa mục danh sách
+982| Đánh dấu các sự kiện đã qua là hoàn thành
+983| Sự kiện được tính là hoàn thành khi đã kết thúc; bạn vẫn có thể bỏ đánh dấu một sự kiện
+984| Ngày
+985| Tuần
+986| Ngày trước
+987| Ngày sau
+988| Tuần trước
+989| Tuần sau
+990| lưu trữ
+991| Danh sách này giữ các mục đã lưu trữ: không thể đổi tên hay xóa, và các mục của nó không hiện trong Lời nhắc và các chế độ xem lịch
+992| Danh sách “{list}” giữ các mục đã lưu trữ và không thể đổi tên.
+993| Danh sách “{list}” giữ các mục đã lưu trữ và không thể xóa.

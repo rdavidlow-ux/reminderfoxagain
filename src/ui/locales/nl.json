@@ -1181,5 +1181,17 @@
  "Coming (future)": "Komend (toekomst)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Items ‘{item}’ zijn moeilijk te lezen in de lijsten (contrast {n}:1; 3:1 of meer is beter).",
  "New list item": "Nieuw lijstitem",
- "Edit list item": "Lijstitem bewerken"
+ "Edit list item": "Lijstitem bewerken",
+ "Mark past events completed": "Voorbije afspraken als voltooid markeren",
+ "Events count as completed once they are over; you can still untick one": "Afspraken tellen als voltooid zodra ze voorbij zijn; je kunt er nog steeds een afvinken ongedaan maken",
+ "Day (calendar view)": "Dag",
+ "Week (calendar view)": "Week",
+ "Previous day": "Vorige dag",
+ "Next day": "Volgende dag",
+ "Previous week": "Vorige week",
+ "Next week": "Volgende week",
+ "archive": "archief",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Deze lijst bewaart gearchiveerde items: hij kan niet worden hernoemd of verwijderd, en de items staan niet in Herinneringen en de agendaweergaven",
+ "The “{list}” list keeps archived items and can't be renamed.": "De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden hernoemd.",
+ "The “{list}” list keeps archived items and can't be removed.": "De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden verwijderd."
 }

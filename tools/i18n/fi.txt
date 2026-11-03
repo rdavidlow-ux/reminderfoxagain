@@ -980,3 +980,15 @@
 979| Kohteita ”{item}” on vaikea lukea luetteloissa (kontrasti {n}:1; 3:1 tai enemmän on parempi).
 980| Uusi luettelon kohde
 981| Muokkaa luettelon kohdetta
+982| Merkitse menneet tapahtumat tehdyiksi
+983| Tapahtumat lasketaan tehdyiksi, kun ne ovat ohi; voit silti poistaa merkinnän yhdestä
+984| Päivä
+985| Viikko
+986| Edellinen päivä
+987| Seuraava päivä
+988| Edellinen viikko
+989| Seuraava viikko
+990| arkisto
+991| Tämä luettelo säilyttää arkistoidut kohteet: sitä ei voi nimetä uudelleen tai poistaa, eikä sen kohteita näytetä muistutuksissa tai kalenterinäkymissä
+992| Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi nimetä uudelleen.
+993| Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi poistaa.

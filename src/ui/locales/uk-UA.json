@@ -1301,5 +1301,17 @@
  "Coming (future)": "Майбутнє (наступне)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Елементи «{item}» погано читаються у списках (контраст {n}:1; краще 3:1 або більше).",
  "New list item": "Новий елемент списку",
- "Edit list item": "Змінити елемент списку"
+ "Edit list item": "Змінити елемент списку",
+ "Mark past events completed": "Позначати минулі події виконаними",
+ "Events count as completed once they are over; you can still untick one": "Події вважаються виконаними, коли вони минули; позначку з будь-якої можна зняти",
+ "Day (calendar view)": "День",
+ "Week (calendar view)": "Тиждень",
+ "Previous day": "Попередній день",
+ "Next day": "Наступний день",
+ "Previous week": "Попередній тиждень",
+ "Next week": "Наступний тиждень",
+ "archive": "архів",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "У цьому списку зберігаються архівні елементи: його не можна перейменувати чи вилучити, а його елементи не показуються в нагадуваннях і поданнях календаря",
+ "The “{list}” list keeps archived items and can't be renamed.": "У списку «{list}» зберігаються архівні елементи, його не можна перейменувати.",
+ "The “{list}” list keeps archived items and can't be removed.": "У списку «{list}» зберігаються архівні елементи, його не можна вилучити."
 }

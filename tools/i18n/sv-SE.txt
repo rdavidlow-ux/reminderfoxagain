@@ -980,3 +980,15 @@
 979| Objekt ”{item}” är svåra att läsa i listorna (kontrast {n}:1; 3:1 eller mer är bättre).
 980| Nytt listobjekt
 981| Redigera listobjekt
+982| Markera tidigare händelser som klara
+983| Händelser räknas som klara när de är över; du kan fortfarande bocka av en igen
+984| Dag
+985| Vecka
+986| Föregående dag
+987| Nästa dag
+988| Föregående vecka
+989| Nästa vecka
+990| arkiv
+991| Den här listan sparar arkiverade objekt: den kan inte byta namn eller tas bort, och dess objekt visas inte i Påminnelser och kalendervyerna
+992| Listan ”{list}” sparar arkiverade objekt och kan inte byta namn.
+993| Listan ”{list}” sparar arkiverade objekt och kan inte tas bort.

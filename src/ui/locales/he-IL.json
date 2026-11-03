@@ -1241,5 +1241,17 @@
  "Coming (future)": "בקרוב (עתיד)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "קשה לקרוא פריטים „{item}” ברשימות (ניגודיות {n}:1; עדיף 3:1 ומעלה).",
  "New list item": "פריט חדש ברשימה",
- "Edit list item": "עריכת פריט ברשימה"
+ "Edit list item": "עריכת פריט ברשימה",
+ "Mark past events completed": "סימון אירועים שעברו כהושלמו",
+ "Events count as completed once they are over; you can still untick one": "אירועים נחשבים כהושלמו לאחר שהסתיימו; עדיין אפשר לבטל את הסימון של אחד מהם",
+ "Day (calendar view)": "יום",
+ "Week (calendar view)": "שבוע",
+ "Previous day": "היום הקודם",
+ "Next day": "היום הבא",
+ "Previous week": "השבוע הקודם",
+ "Next week": "השבוע הבא",
+ "archive": "ארכיון",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "רשימה זו שומרת פריטים בארכיון: אי אפשר לשנות את שמה או להסיר אותה, והפריטים שלה לא מוצגים בתזכורות ובתצוגות לוח השנה",
+ "The “{list}” list keeps archived items and can't be renamed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר לשנות את שמה.",
+ "The “{list}” list keeps archived items and can't be removed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר להסיר אותה."
 }

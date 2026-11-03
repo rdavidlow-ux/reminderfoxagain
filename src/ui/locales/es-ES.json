@@ -1181,5 +1181,17 @@
  "Coming (future)": "Próximo (futuro)",
  "{item} items are hard to read on the lists (contrast {n}:1; 3:1 or more is better).": "Los elementos «{item}» son difíciles de leer en las listas (contraste {n}:1; 3:1 o más es mejor).",
  "New list item": "Nuevo elemento de lista",
- "Edit list item": "Editar elemento de lista"
+ "Edit list item": "Editar elemento de lista",
+ "Mark past events completed": "Marcar los eventos pasados como completados",
+ "Events count as completed once they are over; you can still untick one": "Los eventos cuentan como completados cuando ya han pasado; aún puedes desmarcar uno",
+ "Day (calendar view)": "Día",
+ "Week (calendar view)": "Semana",
+ "Previous day": "Día anterior",
+ "Next day": "Día siguiente",
+ "Previous week": "Semana anterior",
+ "Next week": "Semana siguiente",
+ "archive": "archivo",
+ "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Esta lista guarda los elementos archivados: no se puede renombrar ni quitar, y sus elementos no aparecen en Recordatorios ni en las vistas de calendario",
+ "The “{list}” list keeps archived items and can't be renamed.": "La lista «{list}» guarda los elementos archivados y no se puede renombrar.",
+ "The “{list}” list keeps archived items and can't be removed.": "La lista «{list}» guarda los elementos archivados y no se puede quitar."
 }

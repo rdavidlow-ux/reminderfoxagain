@@ -24,7 +24,7 @@
       <div class="tabs" role="tablist">
         <button class="tab" role="tab" data-tab="reminders" aria-selected="true">Reminders<span class="count" id="cntRem"></span></button>
         <div class="tab tab-list" role="tab" data-tab="todos" aria-selected="false"><select id="todoList" class="tab-select" aria-label="List to show"></select></div>
-        <button class="tab" role="tab" data-tab="month" aria-selected="false">Month</button>
+        <button class="tab" role="tab" data-tab="month" aria-selected="false" translate="no">Month</button>
         <span class="spacer" style="flex:1"></span>
         <button class="nav side-toggle" id="sideToggle" title="Show or hide the calendar panel (Alt+Shift+B)" aria-label="Show or hide the calendar panel">◧</button>
       </div>
@@ -72,6 +72,9 @@
 
       <!-- month toolbar -->
       <div class="toolbar hidden" id="tbMonth">
+        <div class="seg sm" role="group" aria-label="View" id="calMode">
+          <button type="button" data-cmode="day" aria-pressed="false" translate="no">Day</button><button type="button" data-cmode="week" aria-pressed="false" translate="no">Week</button><button type="button" data-cmode="month" aria-pressed="true" translate="no">Month</button>
+        </div>
         <button class="nav" id="mPrev" title="Previous month">‹</button>
         <strong id="mTitle" style="min-width:150px;text-align:center"></strong>
         <button class="nav" id="mNext" title="Next month">›</button>
@@ -87,6 +90,7 @@
       <div class="month hidden" id="monthView">
         <div class="month-head" id="monthHead"></div>
         <div class="month-grid" id="monthGrid"></div>
+        <div class="cal-days hidden" id="calDays"></div>
       </div>
     </main>
 

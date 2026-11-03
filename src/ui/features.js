@@ -9,6 +9,7 @@
   const $ = (id) => document.getElementById(id);
   const S = A.S;
   const DEFAULT_LIST = A.DEFAULT_LIST;
+  const ARCHIVE_LIST = 'Terminated or Suspended';
   const plural = A.plural;
   const DEFAULT_LABELS = { todayLabel: '[time]  [reminderDesc]', upcomingLabel: '[shortMonth] [date]  [reminderDesc]' };
   const COMMON_CATEGORIES = ['Anniversary', 'Appointment', 'Birthday', 'Business', 'Call', 'Holiday', 'Meeting', 'Personal', 'Shopping', 'Travel'];
@@ -73,6 +74,7 @@
         `<div class="row"><label class="inline-chk"><input type="checkbox" class="chk" data-f="showList"${x.showList !== false ? ' checked' : ''}> Reminders view</label>` +
         `<label class="inline-chk"><input type="checkbox" class="chk" data-f="showMonth"${x.showMonth !== false ? ' checked' : ''}> Month view</label><span class="spacer"></span>` +
         '<button type="button" class="btn ghost sm" data-sa="refresh">Refresh now</button><button type="button" class="btn ghost sm danger" data-sa="remove">Remove</button></div>' +
+        `<div class="row"><label class="inline-chk" title="${esc(RF.T('Events count as completed once they are over; you can still untick one'))}"><input type="checkbox" class="chk" data-f="autoDone"${x.autoDone ? ' checked' : ''}> Mark past events completed</label></div>` +
         `<div class="note${x.error ? ' warn' : ''}">${esc(x.error ? RF.T('Could not be updated: {why}', { why: RF.T(x.error) }) + (x.updated ? ` ${RF.T('Showing the copy from {time}.', { time: `${fmt.date(x.updated)}, ${fmt.time(x.updated)}` })}` : '')
           : RF.T('Updated {time} · {events}', { time: `${fmt.date(x.updated)}, ${fmt.time(x.updated)}`, events: plural(x.count || 0, 'event', 'events') }))}</div></div>`).join('')
         : '<div class="note">No calendar subscriptions yet.</div>');
@@ -559,7 +561,8 @@
       const lists = S.meta.todoLists;
       RF.setHTML(q(d, '#lsList'), lists.map((l, i) => `<div class="mini-row" data-l="${esc(l)}"><span class="grow"><b>${esc(l)}</b> <span class="note">${plural(counts[l] || 0, 'to-do', 'to-dos')}</span></span>` +
         (i ? `<button type="button" class="nav" data-a="up" title="Move up"${i > 1 ? '' : ' disabled'}>↑</button><button type="button" class="nav" data-a="down" title="Move down"${i < lists.length - 1 ? '' : ' disabled'}>↓</button>` +
-          '<button type="button" class="btn ghost" data-a="ren">Rename…</button><button type="button" class="btn ghost danger" data-a="del">Remove…</button>' : '<span class="note">main list</span>') + '</div>').join(''));
+          (l === ARCHIVE_LIST ? '<span class="note" title="This list keeps archived items: it can\'t be renamed or removed, and its items stay out of the Reminders and calendar views">archive</span>'
+            : '<button type="button" class="btn ghost" data-a="ren">Rename…</button><button type="button" class="btn ghost danger" data-a="del">Remove…</button>') : '<span class="note">main list</span>') + '</div>').join(''));
     }
     async function reload() { await A.refresh(); render(); }
     q(d, '#lsList').addEventListener('click', async (e) => {
@@ -574,6 +577,8 @@
         [others[i], others[j]] = [others[j], others[i]];
         await A.setSetting({ lists: others });
         await reload();
+      } else if (name === ARCHIVE_LIST) {
+        return;
       } else if (a === 'ren') {
         const to = await askText('Rename list', esc(RF.T('New name for “{name}”:', { name })), name);
         if (to == null || to === name) return;
