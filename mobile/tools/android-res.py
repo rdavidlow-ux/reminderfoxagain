@@ -70,8 +70,8 @@ if 'dataExtractionRules' not in m:
     m = m.replace('android:allowBackup="true"', 'android:allowBackup="true"\n        android:dataExtractionRules="@xml/data_extraction_rules"\n        android:fullBackupContent="@xml/backup_rules"')
 open(man, 'w').write(m)
 with open(os.path.join(RES, 'xml', 'data_extraction_rules.xml'), 'w') as fh:
-    fh.write('<?xml version="1.0" encoding="utf-8"?>\n<!-- Android\'s backup and device transfer keep the reminders, settings and backups (files/rfa), not half-written copies -->\n'
-             '<data-extraction-rules>\n    <cloud-backup>\n        <include domain="file" path="rfa/" />\n        <exclude domain="file" path="rfa/" requireFlags="" />\n    </cloud-backup>\n'
+    fh.write('<?xml version="1.0" encoding="utf-8"?>\n<!-- Android\'s backup and device transfer keep the reminders, settings and backups (files/rfa) -->\n'
+             '<data-extraction-rules>\n    <cloud-backup>\n        <include domain="file" path="rfa/" />\n    </cloud-backup>\n'
              '    <device-transfer>\n        <include domain="file" path="rfa/" />\n    </device-transfer>\n</data-extraction-rules>\n')
 with open(os.path.join(RES, 'xml', 'backup_rules.xml'), 'w') as fh:
     fh.write('<?xml version="1.0" encoding="utf-8"?>\n<full-backup-content>\n    <include domain="file" path="rfa/" />\n</full-backup-content>\n')
