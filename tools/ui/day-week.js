@@ -24,13 +24,15 @@ try {
     const a = topRow();
     $('remDone').click(); await sleep(1200);
     const b = topRow();
+    // a shorter list that can't scroll as far shows its end instead (the nearest it can)
+    const bEnd = lv.scrollTop + lv.clientHeight >= lv.scrollHeight - 2;
     $('remDone').click(); await sleep(1200);
     const c = topRow();
     // the item that was at the top is still in view (when the shorter list can't scroll that far, lower down)
     const lr = lv.getBoundingClientRect();
     const same = a && lv.querySelector(`tbody tr[data-key="${CSS.escape(a.dataset.key)}"]`);
     const seen = !!same && same.getBoundingClientRect().bottom > lr.top + 30 && same.getBoundingClientRect().top < lr.bottom;
-    check(`${f}: Show completed off keeps the same dates in view`, a && a.classList.contains('done') ? Math.abs(at(b) - at(a)) / 864e5 <= 35 : seen, true);
+    check(`${f}: Show completed off keeps the same dates in view`, a && a.classList.contains('done') ? (Math.abs(at(b) - at(a)) / 864e5 <= 35 || bEnd) : seen, true);
     check(`${f}: … and on again comes back to the same item`, !!(a && c && a.dataset.key === c.dataset.key), true);
   }
 
