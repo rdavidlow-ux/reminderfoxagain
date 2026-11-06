@@ -1200,5 +1200,6 @@
  "Alarms (silent)": "Alarmid (vaikne)",
  "Share a copy of your reminders file": "Jaga oma meeldetuletuste faili koopiat",
  "Your reminders are kept on this device, with a backup every day.": "Sinu meeldetuletusi hoitakse selles seadmes, iga päev tehakse varukoopia.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopeeri reminderfox.ics oma arvuti Firefoxi või Thunderbirdi profiilist (selle kaustast reminderfox) sellesse seadmesse ja vali see siis siin."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopeeri reminderfox.ics oma arvuti Firefoxi või Thunderbirdi profiilist (selle kaustast reminderfox) sellesse seadmesse ja vali see siis siin.",
+ "More": "Veel"
 }

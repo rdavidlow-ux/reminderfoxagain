@@ -999,3 +999,4 @@
 998| Partilhar uma cópia do ficheiro de lembretes
 999| Os seus lembretes ficam neste dispositivo, com uma cópia de segurança todos os dias.
 1000| Copie reminderfox.ics do perfil do Firefox ou Thunderbird do computador (a pasta reminderfox) para este dispositivo e depois escolha-o aqui.
+1001| Mais

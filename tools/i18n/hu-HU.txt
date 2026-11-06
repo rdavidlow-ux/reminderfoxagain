@@ -999,3 +999,4 @@
 998| Az emlékeztetőfájl másolatának megosztása
 999| Az emlékeztetőid ezen az eszközön vannak, minden nap biztonsági mentéssel.
 1000| Másold a reminderfox.ics fájlt a számítógéped Firefox- vagy Thunderbird-profiljából (annak reminderfox mappájából) erre az eszközre, majd válaszd ki itt.
+1001| Továbbiak

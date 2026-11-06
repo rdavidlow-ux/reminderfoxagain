@@ -1045,3 +1045,5 @@ Alarms (silent)
 Share a copy of your reminders file
 Your reminders are kept on this device, with a backup every day.
 Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.
+# the Android app: the phone layout
+More

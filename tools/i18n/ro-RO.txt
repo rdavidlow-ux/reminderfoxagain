@@ -999,3 +999,4 @@
 998| Partajează o copie a fișierului de mementouri
 999| Mementourile tale sunt păstrate pe acest dispozitiv, cu o copie de rezervă în fiecare zi.
 1000| Copiază reminderfox.ics din profilul Firefox sau Thunderbird al computerului (dosarul reminderfox) pe acest dispozitiv, apoi alege-l aici.
+1001| Mai mult

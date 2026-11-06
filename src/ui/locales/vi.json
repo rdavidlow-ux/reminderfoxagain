@@ -1020,5 +1020,6 @@
  "Alarms (silent)": "Báo thức (im lặng)",
  "Share a copy of your reminders file": "Chia sẻ bản sao tệp lời nhắc",
  "Your reminders are kept on this device, with a backup every day.": "Lời nhắc của bạn được lưu trên thiết bị này, sao lưu mỗi ngày.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Sao chép reminderfox.ics từ hồ sơ Firefox hoặc Thunderbird trên máy tính (thư mục reminderfox) sang thiết bị này, rồi chọn nó ở đây."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Sao chép reminderfox.ics từ hồ sơ Firefox hoặc Thunderbird trên máy tính (thư mục reminderfox) sang thiết bị này, rồi chọn nó ở đây.",
+ "More": "Thêm"
 }

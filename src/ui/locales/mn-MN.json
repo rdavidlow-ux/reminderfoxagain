@@ -1020,5 +1020,6 @@
  "Alarms (silent)": "Сэрүүлэг (дуугүй)",
  "Share a copy of your reminders file": "Сануулгын файлын хуулбарыг хуваалцах",
  "Your reminders are kept on this device, with a backup every day.": "Таны сануулгууд энэ төхөөрөмжид хадгалагдаж, өдөр бүр нөөцлөгдөнө.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Компьютерийнхээ Firefox эсвэл Thunderbird профайлаас (reminderfox хавтас) reminderfox.ics-г энэ төхөөрөмж рүү хуулаад энд сонгоно уу."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Компьютерийнхээ Firefox эсвэл Thunderbird профайлаас (reminderfox хавтас) reminderfox.ics-г энэ төхөөрөмж рүү хуулаад энд сонгоно уу.",
+ "More": "Бусад"
 }

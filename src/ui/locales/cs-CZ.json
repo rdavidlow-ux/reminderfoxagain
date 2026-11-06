@@ -1320,5 +1320,6 @@
  "Alarms (silent)": "Budíky (tiché)",
  "Share a copy of your reminders file": "Sdílet kopii souboru s připomínkami",
  "Your reminders are kept on this device, with a backup every day.": "Vaše připomínky jsou uloženy v tomto zařízení, se zálohou každý den.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Zkopírujte reminderfox.ics z profilu Firefoxu nebo Thunderbirdu v počítači (jeho složky reminderfox) do tohoto zařízení a pak ho vyberte zde."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Zkopírujte reminderfox.ics z profilu Firefoxu nebo Thunderbirdu v počítači (jeho složky reminderfox) do tohoto zařízení a pak ho vyberte zde.",
+ "More": "Další"
 }

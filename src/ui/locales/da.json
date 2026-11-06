@@ -1200,5 +1200,6 @@
  "Alarms (silent)": "Alarmer (lydløse)",
  "Share a copy of your reminders file": "Del en kopi af din påmindelsesfil",
  "Your reminders are kept on this device, with a backup every day.": "Dine påmindelser gemmes på denne enhed med en sikkerhedskopi hver dag.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopiér reminderfox.ics fra Firefox- eller Thunderbird-profilen på din computer (mappen reminderfox) til denne enhed, og vælg den så her."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopiér reminderfox.ics fra Firefox- eller Thunderbird-profilen på din computer (mappen reminderfox) til denne enhed, og vælg den så her.",
+ "More": "Mere"
 }

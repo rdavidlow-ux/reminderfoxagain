@@ -999,3 +999,4 @@
 998| Chia sẻ bản sao tệp lời nhắc
 999| Lời nhắc của bạn được lưu trên thiết bị này, sao lưu mỗi ngày.
 1000| Sao chép reminderfox.ics từ hồ sơ Firefox hoặc Thunderbird trên máy tính (thư mục reminderfox) sang thiết bị này, rồi chọn nó ở đây.
+1001| Thêm

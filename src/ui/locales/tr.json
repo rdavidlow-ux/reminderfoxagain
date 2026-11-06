@@ -1020,5 +1020,6 @@
  "Alarms (silent)": "Alarmlar (sessiz)",
  "Share a copy of your reminders file": "Anımsatıcı dosyanızın bir kopyasını paylaşın",
  "Your reminders are kept on this device, with a backup every day.": "Anımsatıcılarınız bu cihazda, her gün bir yedekle saklanır.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "reminderfox.ics dosyasını bilgisayarınızdaki Firefox veya Thunderbird profilinden (reminderfox klasöründen) bu cihaza kopyalayın, sonra burada seçin."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "reminderfox.ics dosyasını bilgisayarınızdaki Firefox veya Thunderbird profilinden (reminderfox klasöründen) bu cihaza kopyalayın, sonra burada seçin.",
+ "More": "Daha fazla"
 }

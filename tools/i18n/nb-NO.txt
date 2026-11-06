@@ -999,3 +999,4 @@
 998| Del en kopi av påminnelsesfilen
 999| Påminnelsene dine lagres på denne enheten, med en sikkerhetskopi hver dag.
 1000| Kopier reminderfox.ics fra Firefox- eller Thunderbird-profilen på datamaskinen (mappen reminderfox) til denne enheten, og velg den så her.
+1001| Mer

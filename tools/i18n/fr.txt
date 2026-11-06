@@ -999,3 +999,4 @@
 998| Partager une copie de votre fichier de rappels
 999| Vos rappels sont gardés sur cet appareil, avec une sauvegarde chaque jour.
 1000| Copiez reminderfox.ics depuis le profil Firefox ou Thunderbird de votre ordinateur (son dossier reminderfox) vers cet appareil, puis choisissez-le ici.
+1001| Plus

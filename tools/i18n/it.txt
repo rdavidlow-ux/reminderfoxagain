@@ -999,3 +999,4 @@
 998| Condividi una copia del file dei promemoria
 999| I promemoria sono conservati su questo dispositivo, con un backup ogni giorno.
 1000| Copia reminderfox.ics dal profilo di Firefox o Thunderbird del computer (la sua cartella reminderfox) su questo dispositivo, poi sceglilo qui.
+1001| Altro

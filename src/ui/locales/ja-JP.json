@@ -1020,5 +1020,6 @@
  "Alarms (silent)": "アラーム（サイレント）",
  "Share a copy of your reminders file": "リマインダーファイルのコピーを共有",
  "Your reminders are kept on this device, with a backup every day.": "リマインダーはこのデバイスに保存され、毎日バックアップされます。",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "パソコンの Firefox または Thunderbird のプロファイル（reminderfox フォルダー）から reminderfox.ics をこのデバイスにコピーし、ここで選んでください。"
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "パソコンの Firefox または Thunderbird のプロファイル（reminderfox フォルダー）から reminderfox.ics をこのデバイスにコピーし、ここで選んでください。",
+ "More": "その他"
 }

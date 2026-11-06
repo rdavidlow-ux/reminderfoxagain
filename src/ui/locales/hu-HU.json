@@ -1020,5 +1020,6 @@
  "Alarms (silent)": "Riasztások (némák)",
  "Share a copy of your reminders file": "Az emlékeztetőfájl másolatának megosztása",
  "Your reminders are kept on this device, with a backup every day.": "Az emlékeztetőid ezen az eszközön vannak, minden nap biztonsági mentéssel.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Másold a reminderfox.ics fájlt a számítógéped Firefox- vagy Thunderbird-profiljából (annak reminderfox mappájából) erre az eszközre, majd válaszd ki itt."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Másold a reminderfox.ics fájlt a számítógéped Firefox- vagy Thunderbird-profiljából (annak reminderfox mappájából) erre az eszközre, majd válaszd ki itt.",
+ "More": "Továbbiak"
 }

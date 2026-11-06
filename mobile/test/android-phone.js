@@ -6,7 +6,7 @@ const check = (name, got, want) => console.log(`E2E ANDROID ${name}: ${got} (exp
 const $ = (id) => document.getElementById(id);
 const R = window.__rf;
 const T = (s) => RF.T(s);
-const shown = (el) => !!el && el.offsetParent !== null && getComputedStyle(el).visibility !== 'hidden';
+const shown = (el) => !!el && el.getClientRects().length > 0 && getComputedStyle(el).visibility !== 'hidden';
 try {
   const phone = window.innerWidth < 720;
   const size = phone ? 'phone' : 'tablet';
@@ -15,6 +15,38 @@ try {
   // what the Android app leaves out
   check(`${size}: no email features`, ['openEmail', 'sendByEmail', 'invite'].filter((k) => window.rf[k]).join(',') || 'none', 'none');
   check(`${size}: the host is Android`, `${document.documentElement.dataset.host} ${(await window.rf.meta()).platform}`, 'android android');
+
+  // a phone: an app bar with the view's name, search and a ⋮ menu, and a navigation bar instead of the tabs
+  if (phone) {
+    const nav = document.querySelector('.rfa-nav');
+    check('phone: the navigation bar', shown(nav) ? [...nav.querySelectorAll('[data-nav]')].map((b) => b.dataset.nav).join(',') : 'hidden', 'reminders,todos,month,calendar');
+    check('phone: no tabs, no status bar, no desktop header buttons', ['.tabs', '.status', '#quickBtn', '#settingsBtn', '.brand'].filter((q) => shown(document.querySelector(q))).join(',') || 'none', 'none');
+    check('phone: the title', $('rfaTitle').textContent, T('Reminders'));
+    nav.querySelector('[data-nav="calendar"]').click(); await sleep(600);
+    check('phone: the bar opens the Calendar', `${R.S.tab} ${$('rfaTitle').textContent} ${nav.querySelector('[aria-selected="true"]').dataset.nav}`, `calendar ${T('Calendar')} calendar`);
+    nav.querySelector('[data-nav="todos"]').click(); await sleep(600);
+    check('phone: the lists: the list picker is the title', `${R.S.tab} ${!!$('rfaTitle').querySelector('#todoList')}`, 'todos true');
+    nav.querySelector('[data-nav="month"]').click(); await sleep(600);
+    check('phone: Month, Week or Day: its name', $('rfaTitle').textContent, document.querySelector('.tab[data-tab="month"]').textContent);
+    nav.querySelector('[data-nav="reminders"]').click(); await sleep(600);
+    check('phone: back to Reminders, the list picker back in its tab', `${R.S.tab} ${!!document.querySelector('.tab-list #todoList')}`, 'reminders true');
+    // search: the icon opens the field, ✕ closes and clears it
+    document.querySelector('[data-ab="search"]').click(); await sleep(300);
+    check('phone: search opens', `${shown($('search'))} ${document.activeElement === $('search')}`, 'true true');
+    $('search').value = 'stand-up'; $('search').dispatchEvent(new Event('input', { bubbles: true })); await sleep(900);
+    const found = [...document.querySelectorAll('#listView tbody tr[data-key] .t')].map((t) => t.textContent);
+    check('phone: search finds', found.length > 0 && found.every((t) => /stand-up/i.test(t)), true);
+    document.querySelector('[data-ab="close"]').click(); await sleep(900);
+    check('phone: ✕ closes and clears it', `${shown($('search'))} ${$('search').value === ''}`, 'false true');
+    // the ⋮ menu: what the header and the status bar had
+    document.querySelector('[data-ab="more"]').click(); await sleep(300);
+    const items = [...document.querySelectorAll('.rfa-more [data-more]')].map((b) => b.dataset.more).join(',');
+    check('phone: the ⋮ menu', items, 'quickBtn,alarmList,alarmState,openFolder,settingsBtn');
+    document.querySelector('.rfa-more [data-more="settingsBtn"]').click(); await sleep(600);
+    check('phone: ⋮ → Settings', !!document.querySelector('dialog[open]'), true);
+    window.RFA_BACK(); await sleep(400);
+    for (const d of document.querySelectorAll('dialog[open]')) d.close();
+  }
 
   // the alarm sheet: the sample has alarms due, so it is open; Back puts it away
   const sheet = () => document.querySelector('.rfa-sheet.rfa-alarm');

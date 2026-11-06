@@ -1020,5 +1020,6 @@
  "Alarms (silent)": "알람(무음)",
  "Share a copy of your reminders file": "미리 알림 파일 사본 공유",
  "Your reminders are kept on this device, with a backup every day.": "미리 알림은 이 기기에 보관되며 매일 백업됩니다.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "컴퓨터의 Firefox 또는 Thunderbird 프로필(reminderfox 폴더)에서 reminderfox.ics를 이 기기로 복사한 다음 여기에서 선택하세요."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "컴퓨터의 Firefox 또는 Thunderbird 프로필(reminderfox 폴더)에서 reminderfox.ics를 이 기기로 복사한 다음 여기에서 선택하세요.",
+ "More": "더보기"
 }

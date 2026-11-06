@@ -1200,5 +1200,6 @@
  "Alarms (silent)": "Alarmes (silenciosos)",
  "Share a copy of your reminders file": "Compartilhar uma cópia do arquivo de lembretes",
  "Your reminders are kept on this device, with a backup every day.": "Seus lembretes ficam neste dispositivo, com um backup todo dia.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Copie reminderfox.ics do perfil do Firefox ou Thunderbird do seu computador (a pasta reminderfox) para este dispositivo e depois escolha-o aqui."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Copie reminderfox.ics do perfil do Firefox ou Thunderbird do seu computador (a pasta reminderfox) para este dispositivo e depois escolha-o aqui.",
+ "More": "Mais"
 }

@@ -26,6 +26,89 @@
   }
   document.body.dataset.tab = 'reminders';
 
+  // ---------------------------------------------------------------- the phone's app bar, ⋮ menu and navigation bar
+  // (shown by android.css below 720 px; on a tablet the desktop's header, tabs and status bar stay)
+  const ICON = {
+    search: '<path d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.43 1.06-1.06-4.43-4.43A6.5 6.5 0 0 0 10.5 4Zm0 1.5a5 5 0 1 1 0 10 5 5 0 0 1 0-10Z"/>',
+    close: '<path d="m6.4 5.3 5.6 5.6 5.6-5.6 1.1 1.1-5.6 5.6 5.6 5.6-1.1 1.1-5.6-5.6-5.6 5.6-1.1-1.1 5.6-5.6-5.6-5.6z"/>',
+    more: '<circle cx="12" cy="5" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="12" cy="19" r="1.8"/>',
+    reminders: '<path d="M12 3a6 6 0 0 0-6 6v3.6L4.3 15.4A1 1 0 0 0 5.2 17h13.6a1 1 0 0 0 .9-1.6L18 12.6V9a6 6 0 0 0-6-6Zm0 1.5A4.5 4.5 0 0 1 16.5 9v4l1.3 2.5H6.2L7.5 13V9A4.5 4.5 0 0 1 12 4.5ZM9.8 18.5a2.3 2.3 0 0 0 4.4 0Z"/>',
+    todos: '<path d="M4 6.2 5.1 5l1.6 1.6L9.6 3.7l1.1 1.1-4 4Zm8 .3h8V8h-8Zm-8 5.7L5.1 11l1.6 1.6 2.9-2.9 1.1 1.1-4 4Zm8 .3h8V14h-8Zm-7.5 4h4v4h-4Zm1.5 1.5v1h1v-1Zm6-1h8V20h-8Z"/>',
+    month: '<path d="M7 2.5h1.5V4h7V2.5H17V4h1.5A2.5 2.5 0 0 1 21 6.5v12a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-12A2.5 2.5 0 0 1 5.5 4H7Zm-1.5 3A1 1 0 0 0 4.5 6.5V9h15V6.5a1 1 0 0 0-1-1Zm-1 5v8a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-8ZM7 12h2v2H7Zm4 0h2v2h-2Zm4 0h2v2h-2Zm-8 3.5h2v2H7Zm4 0h2v2h-2Z"/>',
+    calendar: '<path d="M7 2.5h1.5V4h7V2.5H17V4h1.5A2.5 2.5 0 0 1 21 6.5v12a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 18.5v-12A2.5 2.5 0 0 1 5.5 4H7Zm-1.5 3A1 1 0 0 0 4.5 6.5V9h15V6.5a1 1 0 0 0-1-1Zm-1 5v8a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1v-8ZM8 12.5h8V14H8Zm0 3h5V17H8Z"/>',
+  };
+  const svg = (n) => `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${ICON[n]}</svg>`;
+  const top = document.querySelector('.top');
+  const bar = document.createElement('div');
+  bar.className = 'rfa-appbar';
+  window.RF.setHTML(bar, '<div class="rfa-title" id="rfaTitle"></div>' +
+    `<button type="button" class="rfa-icon" data-ab="search" title="Search" aria-label="Search">${svg('search')}</button>` +
+    `<button type="button" class="rfa-icon" data-ab="close" title="Close" aria-label="Close">${svg('close')}</button>` +
+    `<button type="button" class="rfa-icon" data-ab="more" title="More" aria-label="More">${svg('more')}</button>`);
+  top.prepend(bar);
+  // the search field sits in the app bar on a phone, and where the desktop has it on a tablet
+  const search = top.querySelector('.search');
+  const searchHome = search ? search.parentElement : null;
+  const searchNext = search ? search.nextElementSibling : null;
+  function placeSearch() {
+    if (!search) return;
+    if (phone()) { if (search.parentElement !== bar) bar.querySelector('[data-ab="close"]').before(search); }
+    else if (search.parentElement !== searchHome) { searchHome.insertBefore(search, searchNext); top.classList.remove('rfa-searching'); }
+  }
+  const more = document.createElement('div');
+  more.className = 'rfa-more';
+  more.hidden = true;
+  more.setAttribute('role', 'menu');
+  document.body.appendChild(more);
+  const closeMore = () => { more.hidden = true; };
+  // the ⋮ menu: what the desktop has in its header and status bar, with the same words
+  const MORE = [['quickBtn', 'Quick alarm'], ['alarmList', 'Alarms'], ['alarmState', null], ['openFolder', null], ['settingsBtn', 'Settings']];
+  function openMore() {
+    window.RF.setHTML(more, MORE.map(([id, w]) => { const el = $(id); if (!el) return ''; const text = w ? T(w) : el.textContent.replace(/^[^\p{L}\p{N}]+/u, '').trim(); return `<button type="button" role="menuitem" data-more="${id}">${window.RF.esc(text)}</button>`; }).join(''));
+    more.hidden = false;
+  }
+  more.addEventListener('click', (e) => { const b = e.target.closest('[data-more]'); if (!b) return; closeMore(); $(b.dataset.more).click(); });
+  bar.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-ab]');
+    if (!b) return;
+    if (b.dataset.ab === 'more') { if (more.hidden) openMore(); else closeMore(); return; }
+    if (b.dataset.ab === 'search') { top.classList.add('rfa-searching'); $('search').focus(); return; }
+    if (b.dataset.ab === 'close') {
+      top.classList.remove('rfa-searching');
+      if ($('search').value) { $('search').value = ''; $('search').dispatchEvent(new Event('input', { bubbles: true })); }
+    }
+  });
+  document.addEventListener('click', (e) => { if (!more.hidden && !more.contains(e.target) && !e.target.closest('[data-ab="more"]')) closeMore(); }, true);
+
+  // the navigation bar: Reminders, the lists, Month (or Day or Week) and the Calendar
+  const nav = document.createElement('nav');
+  nav.className = 'rfa-nav';
+  nav.setAttribute('aria-label', 'Views');
+  const NAV = [['reminders', 'Reminders'], ['todos', 'Lists'], ['month', null], ['calendar', 'Calendar']];
+  window.RF.setHTML(nav, NAV.map(([t, w]) => `<button type="button" data-nav="${t}" aria-selected="false"><span class="pill">${svg(t)}</span><span class="l"${w ? '' : ' translate="no"'}>${w ? window.RF.esc(w) : ''}</span></button>`).join(''));
+  document.body.appendChild(nav);
+  nav.addEventListener('click', (e) => { const b = e.target.closest('[data-nav]'); if (b) A().setTab(b.dataset.nav); });
+
+  // the title: the view's name; for the lists, the list picker itself
+  const listSel = $('todoList');
+  const listHome = listSel ? listSel.parentElement : null;
+  function chrome() {
+    placeSearch();
+    const tab = document.body.dataset.tab || 'reminders';
+    const monthName = monthTab ? monthTab.textContent.trim() : 'Month';
+    nav.querySelector('[data-nav="month"] .l').textContent = monthName;
+    for (const b of nav.querySelectorAll('[data-nav]')) b.setAttribute('aria-selected', String(b.dataset.nav === tab));
+    const title = $('rfaTitle');
+    if (phone() && tab === 'todos' && listSel) { if (listSel.parentElement !== title) { title.textContent = ''; title.appendChild(listSel); } return; }
+    if (listSel && listSel.parentElement !== listHome) listHome.appendChild(listSel);
+    const names = { reminders: T('Reminders'), month: monthName, calendar: T('Calendar') };
+    title.textContent = names[tab] || '';
+  }
+  new MutationObserver(chrome).observe(document.body, { attributes: true, attributeFilter: ['data-tab'] });
+  if (monthTab) new MutationObserver(chrome).observe(monthTab, { childList: true, characterData: true, subtree: true });
+  window.matchMedia('(max-width: 719px)').addEventListener('change', chrome);
+  setTimeout(chrome, 0);
+
   // ---------------------------------------------------------------- the ＋ button
   const fab = document.createElement('div');
   fab.className = 'rfa-fab';
@@ -84,6 +167,8 @@
     const ctx = document.querySelector('.ctx:not(.hidden)');
     if (ctx) { document.body.dispatchEvent(new MouseEvent('mousedown', { bubbles: true })); document.body.click(); ctx.classList.add('hidden'); return true; }
     if (!fabMenu.hidden) { closeFab(); return true; }
+    if (!more.hidden) { closeMore(); return true; }
+    if (top.classList.contains('rfa-searching')) { bar.querySelector('[data-ab="close"]').click(); return true; }
     const open = [...document.querySelectorAll('dialog[open]')];
     if (open.length) {
       const d = open[open.length - 1];

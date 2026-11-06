@@ -13,9 +13,17 @@ What is different on Android:
   **Snooze**, **Done** and **Open**, so it rings when the app is closed. They are scheduled again whenever reminders
   or settings change, and when the app is put away or opened. With the app open, what is due shows in a sheet from
   the bottom (the desktop's alarm window); the "Today and upcoming" pop-up is a sheet too.
-- **A round ＋ button** replaces "＋ Reminder" and "＋ List Item". On a phone the lists are cards, dialogs fill the
-  screen, a tap opens an item, and a long press opens its menu from the bottom. **Back** closes what is open, then goes
-  back to Reminders.
+- **A phone layout in today's style** (below 720 px wide; tablets keep the desktop layout with touch sizes):
+  - a **navigation bar** at the bottom for Reminders, Lists, Month (or Week or Day) and Calendar, instead of the tabs;
+  - a **top bar** with the view's name (on Lists, the list picker), 🔍 search that opens across the bar, and a **⋮ menu**
+    with Quick alarm, Alarms, suspend or resume alarms, Data file and Settings (the desktop's header and status bar);
+  - the filters as a row of **chips** that scrolls sideways (Upcoming ▾, a category, ✓ Show completed, Calendars);
+  - roomy list items with **round tick boxes**, the date and time on the right, how it repeats underneath, months as
+    quiet headings, and a ★ before starred items;
+  - a ＋ button for a new reminder or list item; dialogs fill the screen with their buttons at the bottom; a tap opens
+    an item, and a long press opens its menu as a sheet from the bottom. **Back** closes what is open (a menu, the
+    search, a dialog, the alarm sheet), then goes back to Reminders.
+  The colours come from the theme, so dark and high contrast work as on the desktop.
 - **Files:** reminders, settings and the daily backups are kept in the app's private folder (Android's own backup
   includes them). Export, "Save a backup copy…" and "Data file" open Android's share sheet (save to Files or Drive, or
   send). Import picks a file with Android's file picker. To bring the ReminderFox add-on's file, copy
@@ -80,7 +88,7 @@ and a large font size; the alarm sounds on each channel.
 | `mobile/src/android-host.js` | Runs the host core in the main page with an Android adapter: files (Capacitor Filesystem, `rfa/` in the app's data folder, written atomically), the alarm and pop-up sheets (`alarm.html`, `slider.html` in a frame), scheduled notifications and their actions, links in the system browser |
 | `mobile/src/shim.js` | Gives the add-on's `thunderbird/bridge.js` a `browser.runtime` that reaches the host directly (the sheets reach it through their parent) |
 | `mobile/src/android-page.js` | After the bridge: no email features; saving a file shares it |
-| `mobile/src/android.js`, `android.css` | The Calendar tab, the ＋ button, touch, Back, the phone layout, hidden desktop settings |
+| `mobile/src/android.js`, `android.css` | The Calendar tab, the ＋ button, touch, Back, the phone layout (app bar, ⋮ menu, navigation bar, chips, list items), hidden desktop settings |
 | `mobile/src/plugins.js` | The Capacitor plugins, bundled into `www/m/cap.js` |
 | `mobile/build-web.js` | Builds `www/` with esbuild (the host core into `www/m/host.js`) |
 | `mobile/android/` | The native project (`npx cap add android`, then `mobile/tools/android-res.py`: icons, splash, sounds, permissions, version 0.9.5 / 905) |

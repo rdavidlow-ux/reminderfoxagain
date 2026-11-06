@@ -999,3 +999,4 @@
 998| 分享提醒檔案的副本
 999| 你的提醒保存在此裝置上，每天備份一次。
 1000| 將 reminderfox.ics 從電腦的 Firefox 或 Thunderbird 設定檔（其 reminderfox 資料夾）複製到此裝置，然後在這裡選擇它。
+1001| 更多

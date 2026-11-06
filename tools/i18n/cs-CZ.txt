@@ -999,3 +999,4 @@
 998| Sdílet kopii souboru s připomínkami
 999| Vaše připomínky jsou uloženy v tomto zařízení, se zálohou každý den.
 1000| Zkopírujte reminderfox.ics z profilu Firefoxu nebo Thunderbirdu v počítači (jeho složky reminderfox) do tohoto zařízení a pak ho vyberte zde.
+1001| Další

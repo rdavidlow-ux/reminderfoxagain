@@ -10,10 +10,12 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   with Snooze, Done and Open); with the app open, what is due shows in a sheet from the bottom.
 - **The calendar panel is a view of its own** on Android: the **Calendar** tab, beside Reminders, the lists and
   Month/Week/Day, with the mini calendar and the picked day's agenda.
-- Phone layout: a round ＋ button, list cards, full-screen dialogs, a long press for an item's menu, Back.
+- A modern phone layout: a navigation bar at the bottom (Reminders, Lists, Month/Week/Day, Calendar), a top bar with
+  the view's name, search and a ⋮ menu, filters as chips, roomy list items with round tick boxes, a ＋ button,
+  full-screen dialogs, a long press for an item's menu, and Back. Tablets keep the desktop layout with touch sizes.
 - The APK is built by GitHub Actions (`.github/workflows/android.yml`); this workspace can't reach Google's Android
   downloads. UI checks in Chromium: `mobile/test/e2e.sh`.
-- Seven new strings in all 33 languages (`tools/i18n/add-android.py`).
+- Eight new strings in all 33 languages (`tools/i18n/add-android.py`, `add-android-phone.py`).
 - The Month view's UI check no longer depends on how busy a day is (its items could hide behind "+n more").
 
 ## 0.9.5 — calendar subscriptions fixed in Thunderbird and ticked off, Day and Week views, the archive list kept safe

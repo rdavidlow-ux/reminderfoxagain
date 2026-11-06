@@ -1263,5 +1263,6 @@
  "Alarms (silent)": "Alarme (silențioase)",
  "Share a copy of your reminders file": "Partajează o copie a fișierului de mementouri",
  "Your reminders are kept on this device, with a backup every day.": "Mementourile tale sunt păstrate pe acest dispozitiv, cu o copie de rezervă în fiecare zi.",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Copiază reminderfox.ics din profilul Firefox sau Thunderbird al computerului (dosarul reminderfox) pe acest dispozitiv, apoi alege-l aici."
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Copiază reminderfox.ics din profilul Firefox sau Thunderbird al computerului (dosarul reminderfox) pe acest dispozitiv, apoi alege-l aici.",
+ "More": "Mai mult"
 }

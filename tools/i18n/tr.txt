@@ -999,3 +999,4 @@
 998| Anımsatıcı dosyanızın bir kopyasını paylaşın
 999| Anımsatıcılarınız bu cihazda, her gün bir yedekle saklanır.
 1000| reminderfox.ics dosyasını bilgisayarınızdaki Firefox veya Thunderbird profilinden (reminderfox klasöründen) bu cihaza kopyalayın, sonra burada seçin.
+1001| Daha fazla

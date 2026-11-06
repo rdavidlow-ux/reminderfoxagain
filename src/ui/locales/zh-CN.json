@@ -1020,5 +1020,6 @@
  "Alarms (silent)": "闹钟（静音）",
  "Share a copy of your reminders file": "分享提醒文件的副本",
  "Your reminders are kept on this device, with a backup every day.": "你的提醒保存在此设备上，每天备份一次。",
- "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "将 reminderfox.ics 从电脑的 Firefox 或 Thunderbird 配置文件（其 reminderfox 文件夹）复制到此设备，然后在这里选择它。"
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "将 reminderfox.ics 从电脑的 Firefox 或 Thunderbird 配置文件（其 reminderfox 文件夹）复制到此设备，然后在这里选择它。",
+ "More": "更多"
 }
