@@ -1198,5 +1198,12 @@
  "archive": "arxiu",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Aquesta llista guarda els elements arxivats: no es pot reanomenar ni eliminar, i els seus elements no apareixen als recordatoris ni a les vistes de calendari",
  "The “{list}” list keeps archived items and can't be renamed.": "La llista «{list}» guarda els elements arxivats i no es pot reanomenar.",
- "The “{list}” list keeps archived items and can't be removed.": "La llista «{list}» guarda els elements arxivats i no es pot eliminar."
+ "The “{list}” list keeps archived items and can't be removed.": "La llista «{list}» guarda els elements arxivats i no es pot eliminar.",
+ "Calendar": "Calendari",
+ "New": "Nou",
+ "Today and upcoming": "Avui i properament",
+ "Alarms (silent)": "Alarmes (en silenci)",
+ "Share a copy of your reminders file": "Comparteix una còpia del fitxer de recordatoris",
+ "Your reminders are kept on this device, with a backup every day.": "Els recordatoris es guarden en aquest dispositiu, amb una còpia de seguretat cada dia.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Copia reminderfox.ics del perfil de Firefox o Thunderbird de l'ordinador (la carpeta reminderfox) a aquest dispositiu i després tria'l aquí."
 }

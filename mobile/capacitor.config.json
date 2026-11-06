@@ -1,0 +1,15 @@
+{
+  "appId": "org.reminderfoxagain.app",
+  "appName": "ReminderFoxAgain",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  },
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "CapacitorHttp": { "enabled": true },
+    "LocalNotifications": { "smallIcon": "ic_stat_reminderfoxagain", "iconColor": "#E26E26" }
+  }
+}

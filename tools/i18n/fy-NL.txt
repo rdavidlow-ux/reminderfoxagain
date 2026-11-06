@@ -992,3 +992,10 @@
 991| Dizze list bewarret argivearre items: hy kin net omneamd of fuortsmiten wurde, en de items steane net yn Oantinkens en de aginda-werjeften
 992| De list ‘{list}’ bewarret argivearre items en kin net omneamd wurde.
 993| De list ‘{list}’ bewarret argivearre items en kin net fuortsmiten wurde.
+994| Aginda
+995| Nij
+996| Hjoed en meikoarten
+997| Alarms (stil)
+998| In kopy fan dyn oantinkensbestân diele
+999| Dyn oantinkens wurde op dit apparaat bewarre, mei elke dei in reservekopy.
+1000| Kopiearje reminderfox.ics út it Firefox- of Thunderbird-profyl fan dyn kompjûter (de map reminderfox) nei dit apparaat en kies it dan hjir.

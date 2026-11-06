@@ -1013,5 +1013,12 @@
  "archive": "archívum",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Ez a lista az archivált elemeket őrzi: nem nevezhető át és nem távolítható el, elemei pedig nem jelennek meg az emlékeztetőkben és a naptárnézetekben",
  "The “{list}” list keeps archived items and can't be renamed.": "A „{list}” lista az archivált elemeket őrzi, és nem nevezhető át.",
- "The “{list}” list keeps archived items and can't be removed.": "A „{list}” lista az archivált elemeket őrzi, és nem távolítható el."
+ "The “{list}” list keeps archived items and can't be removed.": "A „{list}” lista az archivált elemeket őrzi, és nem távolítható el.",
+ "Calendar": "Naptár",
+ "New": "Új",
+ "Today and upcoming": "Ma és hamarosan",
+ "Alarms (silent)": "Riasztások (némák)",
+ "Share a copy of your reminders file": "Az emlékeztetőfájl másolatának megosztása",
+ "Your reminders are kept on this device, with a backup every day.": "Az emlékeztetőid ezen az eszközön vannak, minden nap biztonsági mentéssel.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Másold a reminderfox.ics fájlt a számítógéped Firefox- vagy Thunderbird-profiljából (annak reminderfox mappájából) erre az eszközre, majd válaszd ki itt."
 }

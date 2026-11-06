@@ -3,6 +3,19 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
+## Next — an Android app (branch `new/android-test`, a test, not released)
+
+- **ReminderFoxAgain for Android** (`mobile/`, see `mobile/README.md`): the same pages and host core as the add-on in a
+  Capacitor app, with the desktop app's features except email. Alarms are scheduled notifications (14 days ahead,
+  with Snooze, Done and Open); with the app open, what is due shows in a sheet from the bottom.
+- **The calendar panel is a view of its own** on Android: the **Calendar** tab, beside Reminders, the lists and
+  Month/Week/Day, with the mini calendar and the picked day's agenda.
+- Phone layout: a round ＋ button, list cards, full-screen dialogs, a long press for an item's menu, Back.
+- The APK is built by GitHub Actions (`.github/workflows/android.yml`); this workspace can't reach Google's Android
+  downloads. UI checks in Chromium: `mobile/test/e2e.sh`.
+- Seven new strings in all 33 languages (`tools/i18n/add-android.py`).
+- The Month view's UI check no longer depends on how busy a day is (its items could hide behind "+n more").
+
 ## 0.9.5 — calendar subscriptions fixed in Thunderbird and ticked off, Day and Week views, the archive list kept safe
 
 - **Subscribing to a calendar works in the Thunderbird add-on.** Adding a subscription (for example

@@ -1253,5 +1253,12 @@
  "archive": "ארכיון",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "רשימה זו שומרת פריטים בארכיון: אי אפשר לשנות את שמה או להסיר אותה, והפריטים שלה לא מוצגים בתזכורות ובתצוגות לוח השנה",
  "The “{list}” list keeps archived items and can't be renamed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר לשנות את שמה.",
- "The “{list}” list keeps archived items and can't be removed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר להסיר אותה."
+ "The “{list}” list keeps archived items and can't be removed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר להסיר אותה.",
+ "Calendar": "לוח שנה",
+ "New": "חדש",
+ "Today and upcoming": "היום ובקרוב",
+ "Alarms (silent)": "התראות (שקטות)",
+ "Share a copy of your reminders file": "שיתוף עותק של קובץ התזכורות",
+ "Your reminders are kept on this device, with a backup every day.": "התזכורות שלך נשמרות במכשיר הזה, עם גיבוי בכל יום.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "העתק את reminderfox.ics מפרופיל Firefox או Thunderbird במחשב (התיקייה reminderfox) למכשיר הזה, ואז בחר אותו כאן."
 }

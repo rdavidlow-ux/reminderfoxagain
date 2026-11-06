@@ -992,3 +992,10 @@
 991| Tento zoznam uchováva archivované položky: nedá sa premenovať ani odstrániť a jeho položky sa nezobrazujú v pripomienkach ani v zobrazeniach kalendára
 992| Zoznam „{list}“ uchováva archivované položky a nedá sa premenovať.
 993| Zoznam „{list}“ uchováva archivované položky a nedá sa odstrániť.
+994| Kalendár
+995| Nový
+996| Dnes a nadchádzajúce
+997| Budíky (tiché)
+998| Zdieľať kópiu súboru s pripomienkami
+999| Vaše pripomienky sa uchovávajú v tomto zariadení, so zálohou každý deň.
+1000| Skopírujte reminderfox.ics z profilu Firefoxu alebo Thunderbirdu v počítači (jeho priečinka reminderfox) do tohto zariadenia a potom ho vyberte tu.

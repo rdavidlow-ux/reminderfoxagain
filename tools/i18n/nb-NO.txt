@@ -992,3 +992,10 @@
 991| Denne listen tar vare på arkiverte elementer: den kan ikke gis nytt navn eller fjernes, og elementene vises ikke i Påminnelser og kalendervisningene
 992| Listen «{list}» tar vare på arkiverte elementer og kan ikke gis nytt navn.
 993| Listen «{list}» tar vare på arkiverte elementer og kan ikke fjernes.
+994| Kalender
+995| Ny
+996| I dag og kommende
+997| Alarmer (lydløse)
+998| Del en kopi av påminnelsesfilen
+999| Påminnelsene dine lagres på denne enheten, med en sikkerhetskopi hver dag.
+1000| Kopier reminderfox.ics fra Firefox- eller Thunderbird-profilen på datamaskinen (mappen reminderfox) til denne enheten, og velg den så her.

@@ -1,4 +1,5 @@
 // E2E (scrollable Month view): weeks run on above and below the month in focus; desktop app and Thunderbird add-on.
+// (The test items start with "A" so they sort first on a busy day and are never behind "+n more".)
 const sleep = (t) => new Promise((r) => setTimeout(r, t));
 const check = (name, got, want) => console.log(`E2E ${name}: ${got} (expected ${want})${String(got) === String(want) ? '' : '  WRONG'}`);
 const $ = (id) => document.getElementById(id);
@@ -11,8 +12,8 @@ try {
   // an item 45 days ago and one 70 days ahead
   const past = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 45);
   const ahead = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 70);
-  await window.rf.save({ kind: 'event', summary: 'Scroll test: long ago', date: key(past), allDay: true });
-  await window.rf.save({ kind: 'event', summary: 'Scroll test: far ahead', date: key(ahead), allDay: true });
+  await window.rf.save({ kind: 'event', summary: 'A scroll test: long ago', date: key(past), allDay: true });
+  await window.rf.save({ kind: 'event', summary: 'A scroll test: far ahead', date: key(ahead), allDay: true });
   await R.setTab('month'); await sleep(900);
   const g = $('monthGrid');
   const step = () => g.firstElementChild.getBoundingClientRect().height + 1;
@@ -26,7 +27,7 @@ try {
   check('weeks before this month are there to scroll to', wk[0] < key(monthStart(now)), true);
   check('the 1st of a month shows its name', g.querySelector(`.cell[data-day="${key(monthStart(now, 1))}"] .num`).textContent, `${new Intl.DateTimeFormat(RF.LOCALE, { month: 'short' }).format(monthStart(now, 1)).replace(/\.$/, '')} 1`);
   check('other months are dimmed', `${g.querySelector(`.cell[data-day="${key(monthStart(now, 1))}"]`).classList.contains('out')} ${g.querySelector(`.cell[data-day="${key(now)}"]`).classList.contains('out')}`, 'true false');
-  check('past and coming items are in it', `${has('Scroll test: long ago')} ${has('Scroll test: far ahead')}`, 'true true');
+  check('past and coming items are in it', `${has('A scroll test: long ago')} ${has('A scroll test: far ahead')}`, 'true true');
   // scroll down five weeks: the next month is in focus
   g.scrollTop += step() * 5; await sleep(700);
   check('scrolling down: next month in the title', $('mTitle').textContent, title(monthStart(now, 1)));
@@ -56,7 +57,7 @@ try {
   check('Page Up twice and ‹: the month before this one', $('mTitle').textContent, title(monthStart(now, -1)));
   // a change to the data keeps the view where it is
   const before = g.scrollTop;
-  await window.rf.save({ kind: 'event', summary: 'Scroll test: added', date: key(now), allDay: true }); await R.refresh(); await sleep(800);
+  await window.rf.save({ kind: 'event', summary: 'A scroll test: added', date: key(now), allDay: true }); await R.refresh(); await sleep(800);
   check('a change keeps the place', Math.abs(g.scrollTop - before) < 2, true);
   // Go to a date far away
   await R.goToDate(key(new Date(now.getFullYear() + 2, 2, 15))); await sleep(1300);
@@ -64,10 +65,10 @@ try {
   check('… with that day picked', !!g.querySelector(`.cell.picked[data-day="${key(new Date(now.getFullYear() + 2, 2, 15))}"]`), true);
   // clicking a day still picks it; a chip still opens it
   $('mToday').click(); await sleep(1300);
-  const chip = [...g.querySelectorAll('.ev')].find((e) => e.textContent.includes('Scroll test: added'));
+  const chip = [...g.querySelectorAll('.ev')].find((e) => e.textContent.includes('A scroll test: added'));
   chip.click(); await sleep(600);
-  check('a chip opens the editor', $('edSummary').value, 'Scroll test: added');
+  check('a chip opens the editor', $('edSummary').value, 'A scroll test: added');
   $('edCancel').click(); await sleep(300);
-  for (const it of await window.rf.all()) if (/^Scroll test:/.test(it.summary)) await window.rf.remove(it.uid);
+  for (const it of await window.rf.all()) if (/^A scroll test:/.test(it.summary)) await window.rf.remove(it.uid);
   await R.setTab('reminders'); await sleep(300);
 } catch (e) { console.log(`E2E ERROR ${e.message}`); }

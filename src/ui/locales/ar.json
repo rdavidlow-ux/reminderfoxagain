@@ -1377,5 +1377,12 @@
  "archive": "أرشيف",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "تحتفظ هذه القائمة بالعناصر المؤرشفة: لا يمكن إعادة تسميتها أو إزالتها، ولا تظهر عناصرها في التذكيرات ولا في طرق عرض التقويم",
  "The “{list}” list keeps archived items and can't be renamed.": "تحتفظ قائمة «{list}» بالعناصر المؤرشفة ولا يمكن إعادة تسميتها.",
- "The “{list}” list keeps archived items and can't be removed.": "تحتفظ قائمة «{list}» بالعناصر المؤرشفة ولا يمكن إزالتها."
+ "The “{list}” list keeps archived items and can't be removed.": "تحتفظ قائمة «{list}» بالعناصر المؤرشفة ولا يمكن إزالتها.",
+ "Calendar": "التقويم",
+ "New": "جديد",
+ "Today and upcoming": "اليوم والقادم",
+ "Alarms (silent)": "المنبهات (صامتة)",
+ "Share a copy of your reminders file": "مشاركة نسخة من ملف التذكيرات",
+ "Your reminders are kept on this device, with a backup every day.": "تُحفظ تذكيراتك على هذا الجهاز، مع نسخة احتياطية كل يوم.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "انسخ reminderfox.ics من ملف تعريف Firefox أو Thunderbird على حاسوبك (مجلد reminderfox) إلى هذا الجهاز، ثم اختره هنا."
 }

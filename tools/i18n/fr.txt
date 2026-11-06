@@ -992,3 +992,10 @@
 991| Cette liste garde les éléments archivés : elle ne peut pas être renommée ni supprimée, et ses éléments n'apparaissent pas dans les rappels ni dans les vues du calendrier
 992| La liste «{list}» garde les éléments archivés et ne peut pas être renommée.
 993| La liste «{list}» garde les éléments archivés et ne peut pas être supprimée.
+994| Calendrier
+995| Nouveau
+996| Aujourd'hui et à venir
+997| Alarmes (silencieuses)
+998| Partager une copie de votre fichier de rappels
+999| Vos rappels sont gardés sur cet appareil, avec une sauvegarde chaque jour.
+1000| Copiez reminderfox.ics depuis le profil Firefox ou Thunderbird de votre ordinateur (son dossier reminderfox) vers cet appareil, puis choisissez-le ici.

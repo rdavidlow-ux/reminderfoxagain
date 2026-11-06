@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android's backup and device transfer keep the reminders, settings and backups (files/rfa), not half-written copies -->
+<data-extraction-rules>
+    <cloud-backup>
+        <include domain="file" path="rfa/" />
+        <exclude domain="file" path="rfa/" requireFlags="" />
+    </cloud-backup>
+    <device-transfer>
+        <include domain="file" path="rfa/" />
+    </device-transfer>
+</data-extraction-rules>

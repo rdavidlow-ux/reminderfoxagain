@@ -1193,5 +1193,12 @@
  "archive": "archief",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Deze lijst bewaart gearchiveerde items: hij kan niet worden hernoemd of verwijderd, en de items staan niet in Herinneringen en de agendaweergaven",
  "The “{list}” list keeps archived items and can't be renamed.": "De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden hernoemd.",
- "The “{list}” list keeps archived items and can't be removed.": "De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden verwijderd."
+ "The “{list}” list keeps archived items and can't be removed.": "De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden verwijderd.",
+ "Calendar": "Agenda",
+ "New": "Nieuw",
+ "Today and upcoming": "Vandaag en binnenkort",
+ "Alarms (silent)": "Alarmen (stil)",
+ "Share a copy of your reminders file": "Een kopie van je herinneringenbestand delen",
+ "Your reminders are kept on this device, with a backup every day.": "Je herinneringen worden op dit apparaat bewaard, met elke dag een back-up.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopieer reminderfox.ics uit het Firefox- of Thunderbird-profiel van je computer (de map reminderfox) naar dit apparaat en kies het dan hier."
 }

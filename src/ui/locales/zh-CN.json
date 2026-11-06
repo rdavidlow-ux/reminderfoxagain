@@ -1013,5 +1013,12 @@
  "archive": "归档",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "此列表保存已归档的项目：不能重命名或移除，其中的项目不会显示在提醒和日历视图中",
  "The “{list}” list keeps archived items and can't be renamed.": "“{list}”列表保存已归档的项目，不能重命名。",
- "The “{list}” list keeps archived items and can't be removed.": "“{list}”列表保存已归档的项目，不能移除。"
+ "The “{list}” list keeps archived items and can't be removed.": "“{list}”列表保存已归档的项目，不能移除。",
+ "Calendar": "日历",
+ "New": "新建",
+ "Today and upcoming": "今天和即将到来",
+ "Alarms (silent)": "闹钟（静音）",
+ "Share a copy of your reminders file": "分享提醒文件的副本",
+ "Your reminders are kept on this device, with a backup every day.": "你的提醒保存在此设备上，每天备份一次。",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "将 reminderfox.ics 从电脑的 Firefox 或 Thunderbird 配置文件（其 reminderfox 文件夹）复制到此设备，然后在这里选择它。"
 }

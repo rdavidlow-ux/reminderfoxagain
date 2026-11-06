@@ -1193,5 +1193,12 @@
  "archive": "arkiv",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Denne liste gemmer arkiverede elementer: den kan ikke omdøbes eller fjernes, og dens elementer vises ikke i Påmindelser og kalendervisningerne",
  "The “{list}” list keeps archived items and can't be renamed.": "Listen “{list}” gemmer arkiverede elementer og kan ikke omdøbes.",
- "The “{list}” list keeps archived items and can't be removed.": "Listen “{list}” gemmer arkiverede elementer og kan ikke fjernes."
+ "The “{list}” list keeps archived items and can't be removed.": "Listen “{list}” gemmer arkiverede elementer og kan ikke fjernes.",
+ "Calendar": "Kalender",
+ "New": "Ny",
+ "Today and upcoming": "I dag og kommende",
+ "Alarms (silent)": "Alarmer (lydløse)",
+ "Share a copy of your reminders file": "Del en kopi af din påmindelsesfil",
+ "Your reminders are kept on this device, with a backup every day.": "Dine påmindelser gemmes på denne enhed med en sikkerhedskopi hver dag.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopiér reminderfox.ics fra Firefox- eller Thunderbird-profilen på din computer (mappen reminderfox) til denne enhed, og vælg den så her."
 }

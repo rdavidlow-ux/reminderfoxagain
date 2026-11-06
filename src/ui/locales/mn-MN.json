@@ -1013,5 +1013,12 @@
  "archive": "архив",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Энэ жагсаалт архивласан зүйлсийг хадгална: нэрийг нь өөрчлөх эсвэл устгах боломжгүй бөгөөд зүйлс нь сануулга болон хуанлийн харагдацад харагдахгүй",
  "The “{list}” list keeps archived items and can't be renamed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул нэрийг нь өөрчлөх боломжгүй.",
- "The “{list}” list keeps archived items and can't be removed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул устгах боломжгүй."
+ "The “{list}” list keeps archived items and can't be removed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул устгах боломжгүй.",
+ "Calendar": "Хуанли",
+ "New": "Шинэ",
+ "Today and upcoming": "Өнөөдөр ба удахгүй",
+ "Alarms (silent)": "Сэрүүлэг (дуугүй)",
+ "Share a copy of your reminders file": "Сануулгын файлын хуулбарыг хуваалцах",
+ "Your reminders are kept on this device, with a backup every day.": "Таны сануулгууд энэ төхөөрөмжид хадгалагдаж, өдөр бүр нөөцлөгдөнө.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Компьютерийнхээ Firefox эсвэл Thunderbird профайлаас (reminderfox хавтас) reminderfox.ics-г энэ төхөөрөмж рүү хуулаад энд сонгоно уу."
 }

@@ -1193,5 +1193,12 @@
  "archive": "arkisto",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Tämä luettelo säilyttää arkistoidut kohteet: sitä ei voi nimetä uudelleen tai poistaa, eikä sen kohteita näytetä muistutuksissa tai kalenterinäkymissä",
  "The “{list}” list keeps archived items and can't be renamed.": "Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi nimetä uudelleen.",
- "The “{list}” list keeps archived items and can't be removed.": "Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi poistaa."
+ "The “{list}” list keeps archived items and can't be removed.": "Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi poistaa.",
+ "Calendar": "Kalenteri",
+ "New": "Uusi",
+ "Today and upcoming": "Tänään ja tulossa",
+ "Alarms (silent)": "Hälytykset (äänettömät)",
+ "Share a copy of your reminders file": "Jaa kopio muistutustiedostostasi",
+ "Your reminders are kept on this device, with a backup every day.": "Muistutuksesi säilytetään tällä laitteella, ja niistä tehdään varmuuskopio joka päivä.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopioi reminderfox.ics tietokoneesi Firefox- tai Thunderbird-profiilista (sen reminderfox-kansiosta) tälle laitteelle ja valitse se sitten tästä."
 }

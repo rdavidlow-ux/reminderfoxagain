@@ -992,3 +992,10 @@
 991| Deze lijst bewaart gearchiveerde items: hij kan niet worden hernoemd of verwijderd, en de items staan niet in Herinneringen en de agendaweergaven
 992| De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden hernoemd.
 993| De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden verwijderd.
+994| Agenda
+995| Nieuw
+996| Vandaag en binnenkort
+997| Alarmen (stil)
+998| Een kopie van je herinneringenbestand delen
+999| Je herinneringen worden op dit apparaat bewaard, met elke dag een back-up.
+1000| Kopieer reminderfox.ics uit het Firefox- of Thunderbird-profiel van je computer (de map reminderfox) naar dit apparaat en kies het dan hier.

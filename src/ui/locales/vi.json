@@ -1013,5 +1013,12 @@
  "archive": "lưu trữ",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Danh sách này giữ các mục đã lưu trữ: không thể đổi tên hay xóa, và các mục của nó không hiện trong Lời nhắc và các chế độ xem lịch",
  "The “{list}” list keeps archived items and can't be renamed.": "Danh sách “{list}” giữ các mục đã lưu trữ và không thể đổi tên.",
- "The “{list}” list keeps archived items and can't be removed.": "Danh sách “{list}” giữ các mục đã lưu trữ và không thể xóa."
+ "The “{list}” list keeps archived items and can't be removed.": "Danh sách “{list}” giữ các mục đã lưu trữ và không thể xóa.",
+ "Calendar": "Lịch",
+ "New": "Mới",
+ "Today and upcoming": "Hôm nay và sắp tới",
+ "Alarms (silent)": "Báo thức (im lặng)",
+ "Share a copy of your reminders file": "Chia sẻ bản sao tệp lời nhắc",
+ "Your reminders are kept on this device, with a backup every day.": "Lời nhắc của bạn được lưu trên thiết bị này, sao lưu mỗi ngày.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Sao chép reminderfox.ics từ hồ sơ Firefox hoặc Thunderbird trên máy tính (thư mục reminderfox) sang thiết bị này, rồi chọn nó ở đây."
 }

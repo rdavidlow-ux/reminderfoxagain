@@ -992,3 +992,10 @@
 991| Aquesta llista guarda els elements arxivats: no es pot reanomenar ni eliminar, i els seus elements no apareixen als recordatoris ni a les vistes de calendari
 992| La llista «{list}» guarda els elements arxivats i no es pot reanomenar.
 993| La llista «{list}» guarda els elements arxivats i no es pot eliminar.
+994| Calendari
+995| Nou
+996| Avui i properament
+997| Alarmes (en silenci)
+998| Comparteix una còpia del fitxer de recordatoris
+999| Els recordatoris es guarden en aquest dispositiu, amb una còpia de seguretat cada dia.
+1000| Copia reminderfox.ics del perfil de Firefox o Thunderbird de l'ordinador (la carpeta reminderfox) a aquest dispositiu i després tria'l aquí.

@@ -1313,5 +1313,12 @@
  "archive": "archiv",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Tento seznam uchovává archivované položky: nelze jej přejmenovat ani odebrat a jeho položky se nezobrazují v připomínkách ani v zobrazeních kalendáře",
  "The “{list}” list keeps archived items and can't be renamed.": "Seznam „{list}“ uchovává archivované položky a nelze jej přejmenovat.",
- "The “{list}” list keeps archived items and can't be removed.": "Seznam „{list}“ uchovává archivované položky a nelze jej odebrat."
+ "The “{list}” list keeps archived items and can't be removed.": "Seznam „{list}“ uchovává archivované položky a nelze jej odebrat.",
+ "Calendar": "Kalendář",
+ "New": "Nový",
+ "Today and upcoming": "Dnes a nadcházející",
+ "Alarms (silent)": "Budíky (tiché)",
+ "Share a copy of your reminders file": "Sdílet kopii souboru s připomínkami",
+ "Your reminders are kept on this device, with a backup every day.": "Vaše připomínky jsou uloženy v tomto zařízení, se zálohou každý den.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Zkopírujte reminderfox.ics z profilu Firefoxu nebo Thunderbirdu v počítači (jeho složky reminderfox) do tohoto zařízení a pak ho vyberte zde."
 }

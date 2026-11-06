@@ -1013,5 +1013,12 @@
  "archive": "arşiv",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Bu liste arşivlenmiş öğeleri tutar: yeniden adlandırılamaz veya kaldırılamaz ve öğeleri Anımsatıcılar ile takvim görünümlerinde gösterilmez",
  "The “{list}” list keeps archived items and can't be renamed.": "“{list}” listesi arşivlenmiş öğeleri tutar ve yeniden adlandırılamaz.",
- "The “{list}” list keeps archived items and can't be removed.": "“{list}” listesi arşivlenmiş öğeleri tutar ve kaldırılamaz."
+ "The “{list}” list keeps archived items and can't be removed.": "“{list}” listesi arşivlenmiş öğeleri tutar ve kaldırılamaz.",
+ "Calendar": "Takvim",
+ "New": "Yeni",
+ "Today and upcoming": "Bugün ve yaklaşanlar",
+ "Alarms (silent)": "Alarmlar (sessiz)",
+ "Share a copy of your reminders file": "Anımsatıcı dosyanızın bir kopyasını paylaşın",
+ "Your reminders are kept on this device, with a backup every day.": "Anımsatıcılarınız bu cihazda, her gün bir yedekle saklanır.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "reminderfox.ics dosyasını bilgisayarınızdaki Firefox veya Thunderbird profilinden (reminderfox klasöründen) bu cihaza kopyalayın, sonra burada seçin."
 }

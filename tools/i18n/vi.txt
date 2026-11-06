@@ -992,3 +992,10 @@
 991| Danh sách này giữ các mục đã lưu trữ: không thể đổi tên hay xóa, và các mục của nó không hiện trong Lời nhắc và các chế độ xem lịch
 992| Danh sách “{list}” giữ các mục đã lưu trữ và không thể đổi tên.
 993| Danh sách “{list}” giữ các mục đã lưu trữ và không thể xóa.
+994| Lịch
+995| Mới
+996| Hôm nay và sắp tới
+997| Báo thức (im lặng)
+998| Chia sẻ bản sao tệp lời nhắc
+999| Lời nhắc của bạn được lưu trên thiết bị này, sao lưu mỗi ngày.
+1000| Sao chép reminderfox.ics từ hồ sơ Firefox hoặc Thunderbird trên máy tính (thư mục reminderfox) sang thiết bị này, rồi chọn nó ở đây.

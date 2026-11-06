@@ -992,3 +992,10 @@
 991| Coinníonn an liosta seo míreanna cartlannaithe: ní féidir é a athainmniú ná a bhaint, agus ní thaispeántar a mhíreanna sna meabhrúcháin ná sna radhairc féilire
 992| Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a athainmniú.
 993| Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a bhaint.
+994| Féilire
+995| Nua
+996| Inniu agus le teacht
+997| Aláraim (ciúin)
+998| Comhroinn cóip de do chomhad meabhrúchán
+999| Coinnítear do mheabhrúcháin ar an ngléas seo, le cúltaca gach lá.
+1000| Cóipeáil reminderfox.ics ó phróifíl Firefox nó Thunderbird do ríomhaire (a fhillteán reminderfox) chuig an ngléas seo, ansin roghnaigh anseo é.

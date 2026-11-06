@@ -1193,5 +1193,12 @@
  "archive": "archivio",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Questo elenco conserva gli elementi archiviati: non può essere rinominato né rimosso, e i suoi elementi non compaiono nei promemoria né nelle viste del calendario",
  "The “{list}” list keeps archived items and can't be renamed.": "L'elenco «{list}» conserva gli elementi archiviati e non può essere rinominato.",
- "The “{list}” list keeps archived items and can't be removed.": "L'elenco «{list}» conserva gli elementi archiviati e non può essere rimosso."
+ "The “{list}” list keeps archived items and can't be removed.": "L'elenco «{list}» conserva gli elementi archiviati e non può essere rimosso.",
+ "Calendar": "Calendario",
+ "New": "Nuovo",
+ "Today and upcoming": "Oggi e prossimi",
+ "Alarms (silent)": "Allarmi (silenziosi)",
+ "Share a copy of your reminders file": "Condividi una copia del file dei promemoria",
+ "Your reminders are kept on this device, with a backup every day.": "I promemoria sono conservati su questo dispositivo, con un backup ogni giorno.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Copia reminderfox.ics dal profilo di Firefox o Thunderbird del computer (la sua cartella reminderfox) su questo dispositivo, poi sceglilo qui."
 }

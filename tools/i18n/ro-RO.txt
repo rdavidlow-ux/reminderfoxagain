@@ -992,3 +992,10 @@
 991| Această listă păstrează elementele arhivate: nu poate fi redenumită sau eliminată, iar elementele ei nu apar în Mementouri și în vizualizările calendarului
 992| Lista „{list}” păstrează elementele arhivate și nu poate fi redenumită.
 993| Lista „{list}” păstrează elementele arhivate și nu poate fi eliminată.
+994| Calendar
+995| Nou
+996| Azi și în curând
+997| Alarme (silențioase)
+998| Partajează o copie a fișierului de mementouri
+999| Mementourile tale sunt păstrate pe acest dispozitiv, cu o copie de rezervă în fiecare zi.
+1000| Copiază reminderfox.ics din profilul Firefox sau Thunderbird al computerului (dosarul reminderfox) pe acest dispozitiv, apoi alege-l aici.

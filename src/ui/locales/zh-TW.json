@@ -1013,5 +1013,12 @@
  "archive": "封存",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "此清單保存已封存的項目：無法重新命名或移除，其中的項目不會顯示在提醒和行事曆檢視中",
  "The “{list}” list keeps archived items and can't be renamed.": "「{list}」清單保存已封存的項目，無法重新命名。",
- "The “{list}” list keeps archived items and can't be removed.": "「{list}」清單保存已封存的項目，無法移除。"
+ "The “{list}” list keeps archived items and can't be removed.": "「{list}」清單保存已封存的項目，無法移除。",
+ "Calendar": "行事曆",
+ "New": "新增",
+ "Today and upcoming": "今天和即將到來",
+ "Alarms (silent)": "鬧鐘（靜音）",
+ "Share a copy of your reminders file": "分享提醒檔案的副本",
+ "Your reminders are kept on this device, with a backup every day.": "你的提醒保存在此裝置上，每天備份一次。",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "將 reminderfox.ics 從電腦的 Firefox 或 Thunderbird 設定檔（其 reminderfox 資料夾）複製到此裝置，然後在這裡選擇它。"
 }

@@ -1037,3 +1037,11 @@ archive
 This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views
 The “{list}” list keeps archived items and can't be renamed.
 The “{list}” list keeps archived items and can't be removed.
+# the Android app
+Calendar
+New
+Today and upcoming
+Alarms (silent)
+Share a copy of your reminders file
+Your reminders are kept on this device, with a backup every day.
+Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.

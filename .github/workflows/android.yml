@@ -1,0 +1,49 @@
+# Builds the Android app (mobile/) on GitHub's servers: a debug APK to install and try, and an unsigned release APK.
+# Runs on every push to the new/android-test branch, and from the Actions tab ("Run workflow").
+# The APKs are under the run's "Artifacts" (ReminderFoxAgain-android).
+name: Android app
+on:
+  push:
+    branches: [new/android-test]
+    paths: ['mobile/**', 'src/**', 'thunderbird/bridge.js', 'package.json', '.github/workflows/android.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '21' }
+      - name: Shared code (ical.js)
+        run: npm ci --ignore-scripts
+      - name: Unit tests
+        run: npm test
+      - name: Android project
+        working-directory: mobile
+        run: |
+          npm ci
+          node build-web.js
+          npx cap sync android
+      - name: APKs
+        working-directory: mobile/android
+        run: |
+          chmod +x gradlew
+          ./gradlew --no-daemon assembleDebug assembleRelease
+      - name: Name and checksum
+        run: |
+          V=$(node -p "require('./package.json').version")
+          mkdir -p out
+          cp mobile/android/app/build/outputs/apk/debug/app-debug.apk "out/ReminderFoxAgain-$V-debug.apk"
+          cp mobile/android/app/build/outputs/apk/release/app-release-unsigned.apk "out/ReminderFoxAgain-$V-release-unsigned.apk"
+          (cd out && sha256sum *.apk > SHA256SUMS.txt && cat SHA256SUMS.txt)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ReminderFoxAgain-android
+          path: out/

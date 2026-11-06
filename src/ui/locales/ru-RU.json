@@ -1313,5 +1313,12 @@
  "archive": "архив",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "В этом списке хранятся архивные элементы: его нельзя переименовать или удалить, а его элементы не показываются в напоминаниях и в представлениях календаря",
  "The “{list}” list keeps archived items and can't be renamed.": "В списке «{list}» хранятся архивные элементы, его нельзя переименовать.",
- "The “{list}” list keeps archived items and can't be removed.": "В списке «{list}» хранятся архивные элементы, его нельзя удалить."
+ "The “{list}” list keeps archived items and can't be removed.": "В списке «{list}» хранятся архивные элементы, его нельзя удалить.",
+ "Calendar": "Календарь",
+ "New": "Новое",
+ "Today and upcoming": "Сегодня и скоро",
+ "Alarms (silent)": "Будильники (без звука)",
+ "Share a copy of your reminders file": "Поделиться копией файла напоминаний",
+ "Your reminders are kept on this device, with a backup every day.": "Ваши напоминания хранятся на этом устройстве, с резервной копией каждый день.",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Скопируйте reminderfox.ics из профиля Firefox или Thunderbird на компьютере (папка reminderfox) на это устройство, затем выберите его здесь."
 }

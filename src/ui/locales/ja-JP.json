@@ -1013,5 +1013,12 @@
  "archive": "アーカイブ",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "このリストはアーカイブした項目を保管します。名前の変更や削除はできず、項目はリマインダーやカレンダー表示には出ません",
  "The “{list}” list keeps archived items and can't be renamed.": "「{list}」リストはアーカイブした項目を保管するため、名前を変更できません。",
- "The “{list}” list keeps archived items and can't be removed.": "「{list}」リストはアーカイブした項目を保管するため、削除できません。"
+ "The “{list}” list keeps archived items and can't be removed.": "「{list}」リストはアーカイブした項目を保管するため、削除できません。",
+ "Calendar": "カレンダー",
+ "New": "新規",
+ "Today and upcoming": "今日と今後",
+ "Alarms (silent)": "アラーム（サイレント）",
+ "Share a copy of your reminders file": "リマインダーファイルのコピーを共有",
+ "Your reminders are kept on this device, with a backup every day.": "リマインダーはこのデバイスに保存され、毎日バックアップされます。",
+ "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "パソコンの Firefox または Thunderbird のプロファイル（reminderfox フォルダー）から reminderfox.ics をこのデバイスにコピーし、ここで選んでください。"
 }

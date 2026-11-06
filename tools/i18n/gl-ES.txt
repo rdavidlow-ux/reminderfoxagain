@@ -992,3 +992,10 @@
 991| Esta lista garda os elementos arquivados: non se pode renomear nin quitar, e os seus elementos non aparecen nos recordatorios nin nas vistas de calendario
 992| A lista «{list}» garda os elementos arquivados e non se pode renomear.
 993| A lista «{list}» garda os elementos arquivados e non se pode quitar.
+994| Calendario
+995| Novo
+996| Hoxe e próximos
+997| Alarmas (en silencio)
+998| Compartir unha copia do ficheiro de recordatorios
+999| Os teus recordatorios gárdanse neste dispositivo, cunha copia de seguranza cada día.
+1000| Copia reminderfox.ics do perfil de Firefox ou Thunderbird do computador (o cartafol reminderfox) a este dispositivo e despois escólleo aquí.

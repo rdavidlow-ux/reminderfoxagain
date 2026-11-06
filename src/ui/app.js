@@ -278,8 +278,11 @@
     $('tbTodoActs').classList.toggle('hidden', !todoTab(tab));
     $('tbMonth').classList.toggle('hidden', tab !== 'month');
     updateTodoActs();
-    listView.classList.toggle('hidden', tab === 'month');
+    listView.classList.toggle('hidden', tab === 'month' || tab === 'calendar');
     $('monthView').classList.toggle('hidden', tab !== 'month');
+    // 'calendar': the calendar panel (mini months and the day's agenda) as a view of its own; only the Android app
+    // has a tab for it (its layout has no room for the panel beside the list)
+    document.body.dataset.tab = tab;
     S.selKey = null;
     applyColumns();
     await renderMain('enter');
@@ -287,6 +290,7 @@
   async function renderMain(reason) {
     if (S.tab === 'reminders') await renderReminders(reason);
     else if (todoTab()) await renderTodos(reason);
+    else if (S.tab === 'calendar') await renderSide();
     else await renderCal({ jump: reason === 'enter' && !MV.from });
   }
 
@@ -2065,7 +2069,7 @@
     if (S.tab === 'month' && !ctrl && !e.altKey && (e.key === 'PageUp' || e.key === 'PageDown') && !anyDialogOpen() && !typing(e.target)) {
       e.preventDefault(); moveCal(e.key === 'PageUp' ? -1 : 1); return;
     }
-    if (anyDialogOpen() || typing(e.target) || S.tab === 'month') return;
+    if (anyDialogOpen() || typing(e.target) || S.tab === 'month' || S.tab === 'calendar') return;
     const trs = [...listView.querySelectorAll('tbody tr[data-key]')];
     const cur = trs.findIndex((t) => t.dataset.key === S.selKey);
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {

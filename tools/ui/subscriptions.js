@@ -7,7 +7,8 @@ const R = window.__rf;
 const until = async (fn, ms = 10000) => { const t = Date.now(); while (Date.now() - t < ms) { if (await fn()) return true; await sleep(250); } return false; };
 try {
   const TB = document.documentElement.dataset.host === 'thunderbird';
-  const base = TB ? location.origin : 'http://127.0.0.1:8765';
+  // the add-on's and the Android app's checks serve the calendar from the pages' own server
+  const base = TB || document.documentElement.dataset.host === 'android' ? location.origin : 'http://127.0.0.1:8765';
   await R.setTab('reminders'); await sleep(400);
   $('remFilter').value = 'upcoming'; $('remFilter').dispatchEvent(new Event('change')); await sleep(500);
   // 📅 Calendars in the Reminders toolbar: none yet, and a way to subscribe

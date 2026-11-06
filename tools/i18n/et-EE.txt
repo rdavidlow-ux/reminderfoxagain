@@ -992,3 +992,10 @@
 991| See loend hoiab arhiveeritud üksusi: seda ei saa ümber nimetada ega eemaldada ning selle üksusi ei näidata meeldetuletustes ega kalendrivaadetes
 992| Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa ümber nimetada.
 993| Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa eemaldada.
+994| Kalender
+995| Uus
+996| Täna ja tulemas
+997| Alarmid (vaikne)
+998| Jaga oma meeldetuletuste faili koopiat
+999| Sinu meeldetuletusi hoitakse selles seadmes, iga päev tehakse varukoopia.
+1000| Kopeeri reminderfox.ics oma arvuti Firefoxi või Thunderbirdi profiilist (selle kaustast reminderfox) sellesse seadmesse ja vali see siis siin.

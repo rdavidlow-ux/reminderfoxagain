@@ -992,3 +992,10 @@
 991| Tämä luettelo säilyttää arkistoidut kohteet: sitä ei voi nimetä uudelleen tai poistaa, eikä sen kohteita näytetä muistutuksissa tai kalenterinäkymissä
 992| Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi nimetä uudelleen.
 993| Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi poistaa.
+994| Kalenteri
+995| Uusi
+996| Tänään ja tulossa
+997| Hälytykset (äänettömät)
+998| Jaa kopio muistutustiedostostasi
+999| Muistutuksesi säilytetään tällä laitteella, ja niistä tehdään varmuuskopio joka päivä.
+1000| Kopioi reminderfox.ics tietokoneesi Firefox- tai Thunderbird-profiilista (sen reminderfox-kansiosta) tälle laitteelle ja valitse se sitten tästä.

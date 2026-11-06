@@ -992,3 +992,10 @@
 991| Den här listan sparar arkiverade objekt: den kan inte byta namn eller tas bort, och dess objekt visas inte i Påminnelser och kalendervyerna
 992| Listan ”{list}” sparar arkiverade objekt och kan inte byta namn.
 993| Listan ”{list}” sparar arkiverade objekt och kan inte tas bort.
+994| Kalender
+995| Ny
+996| I dag och kommande
+997| Larm (tysta)
+998| Dela en kopia av din påminnelsefil
+999| Dina påminnelser sparas på den här enheten, med en säkerhetskopia varje dag.
+1000| Kopiera reminderfox.ics från Firefox- eller Thunderbird-profilen på datorn (mappen reminderfox) till den här enheten och välj den sedan här.

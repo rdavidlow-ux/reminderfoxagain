@@ -992,3 +992,10 @@
 991| Esta lista guarda itens arquivados: não pode ser renomeada nem removida, e seus itens não aparecem em Lembretes nem nas visualizações de calendário
 992| A lista “{list}” guarda itens arquivados e não pode ser renomeada.
 993| A lista “{list}” guarda itens arquivados e não pode ser removida.
+994| Calendário
+995| Novo
+996| Hoje e próximos
+997| Alarmes (silenciosos)
+998| Compartilhar uma cópia do arquivo de lembretes
+999| Seus lembretes ficam neste dispositivo, com um backup todo dia.
+1000| Copie reminderfox.ics do perfil do Firefox ou Thunderbird do seu computador (a pasta reminderfox) para este dispositivo e depois escolha-o aqui.

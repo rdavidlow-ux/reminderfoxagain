@@ -992,3 +992,10 @@
 991| Ez a lista az archivált elemeket őrzi: nem nevezhető át és nem távolítható el, elemei pedig nem jelennek meg az emlékeztetőkben és a naptárnézetekben
 992| A „{list}” lista az archivált elemeket őrzi, és nem nevezhető át.
 993| A „{list}” lista az archivált elemeket őrzi, és nem távolítható el.
+994| Naptár
+995| Új
+996| Ma és hamarosan
+997| Riasztások (némák)
+998| Az emlékeztetőfájl másolatának megosztása
+999| Az emlékeztetőid ezen az eszközön vannak, minden nap biztonsági mentéssel.
+1000| Másold a reminderfox.ics fájlt a számítógéped Firefox- vagy Thunderbird-profiljából (annak reminderfox mappájából) erre az eszközre, majd válaszd ki itt.
