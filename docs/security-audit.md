@@ -291,8 +291,8 @@ change needs a Windows install test.
 ## Tests
 
 - `npm test`: 65 unit tests pass.
-- `tools/e2e.sh` (desktop): 839 UI checks, 0 problems.
-- `thunderbird/test/e2e.sh` (add-on): 876 UI checks, 0 problems.
+- `tools/e2e.sh` (desktop): 852 UI checks, 0 problems.
+- `thunderbird/test/e2e.sh` (add-on): 891 UI checks, 0 problems.
 
 ## Changes on this branch
 
@@ -308,4 +308,5 @@ change needs a Windows install test.
 | `tools/ui/injection.js` (new), `tools/e2e.sh`, `thunderbird/test/e2e.sh` | markup in the data stays text everywhere; files not picked are refused |
 | `tools/ui/safe-html.js` | SVG animation check |
 | `tools/ui/subscriptions.js`, `tools/sample-calendar.js`, `thunderbird/test/run.js` | an 11 MB calendar is refused |
+| `src/ui/app.js`, `tools/ui/keep-place.js` (new) | found while testing the build: after a change the Reminders list goes back to the same row, not the same pixel offset (it could jump to the first date or a year ahead in Thunderbird) |
 | `tools/ui/month-scroll.js`, `tools/ui/day-week.js` | the date-dependent test fixes from the Android branch (they failed on some days of the month) |

@@ -18,6 +18,11 @@ were fixed:
 - The add-on's manifest states its content security policy: `script-src 'self'; object-src 'none'`.
 - New UI check: markup in reminder text, places, notes, lists, categories and saved filters shows as text in every
   view and dialog.
+- **The Reminders list keeps your place after a change.** Adding or deleting a reminder, or subscribing to or removing
+  a calendar, could move the list in Thunderbird, to the first date or about a year ahead. Before, the list went
+  back to the same number of pixels from the top; rows that came or went above that point moved the view. It now
+  comes back to the same row, even if the list was moved while a dialog was open. A list scrolled to its very top
+  stays at the top, so a new item there shows. New UI check: `tools/ui/keep-place.js`.
 
 ## 0.9.5 — calendar subscriptions fixed in Thunderbird and ticked off, Day and Week views, the archive list kept safe
 
