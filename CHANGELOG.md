@@ -3,13 +3,14 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
-## Unreleased — security audit (branch `security-audit`)
+## 0.9.5.1 — security audit fixes, and the Reminders list keeps your place
 
 Three outside security reviews were checked against the code; `docs/security-audit.md` has every claim and its
 verdict. Most claims were about the old ReminderFox add-on's code (XUL, JSM, XML storage) and don't apply. These
 were fixed:
 
-- **Electron 44.10.2** (was 44.7.0), for a high-severity advisory about compromised certificates.
+- **Electron 44.10.2** (was 44.7.0), for a high-severity advisory about compromised certificates. On Windows this
+  update needs the runtime parts too; without them the setup now says so and changes nothing.
 - **A calendar subscription stops downloading at 10 MB**, in the add-on and the desktop app. Before, the size was
   checked only after the whole download.
 - **The desktop app opens only files picked in it** (or in its data folder) for imports, previews and restores.

@@ -1,14 +1,14 @@
 # Security audit — November 2026
 
-This report checks three outside security reviews of ReminderFoxAgain against the code on the `security-audit`
-branch (made from `main` at 0.9.5). None of the reviewers could read the code. One reasoned from the README and file
+This report checks three outside security reviews of ReminderFoxAgain against the 0.9.5 code. The
+fixes were made on the `security-audit` branch and released in **0.9.5.1**. None of the reviewers could read the code. One reasoned from the README and file
 list. The other two assumed the old ReminderFox add-on (XUL, `chrome/content`, `.jsm` modules, XML storage,
 `install.rdf`), which ReminderFoxAgain doesn't share any code with. So each claim below was checked against the real
 code, and where possible tested.
 
 Each claim gets one verdict:
 
-- **Fixed** — a real gap, fixed on this branch, with a test.
+- **Fixed** — a real gap, fixed in 0.9.5.1, with a test.
 - **Already safe** — the code already does what the reviewer asked for.
 - **Not applicable** — the claim is about code or files that ReminderFoxAgain doesn't have.
 - **Recommendation** — worth doing, but not done here (the reason is given).
@@ -294,7 +294,7 @@ change needs a Windows install test.
 - `tools/e2e.sh` (desktop): 852 UI checks, 0 problems.
 - `thunderbird/test/e2e.sh` (add-on): 891 UI checks, 0 problems.
 
-## Changes on this branch
+## Changes in 0.9.5.1
 
 | File | Change |
 |---|---|

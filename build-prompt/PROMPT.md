@@ -1,9 +1,9 @@
-# Build ReminderFoxAgain 0.9.5
+# Build ReminderFoxAgain 0.9.5.1
 
 > **TARGET PLATFORM:** `thunderbird` ← change this word to `thunderbird`, `windows`, `linux`, `macos`, `android` or `ios` before sending.
 > If it is missing or unclear, ask the user which one, once, before doing anything else.
 
-Build **ReminderFoxAgain 0.9.5** for the target platform above: a Thunderbird add-on (the main platform) or a desktop or phone app for reminders, to-dos and pop-up alarms that
+Build **ReminderFoxAgain 0.9.5.1** for the target platform above: a Thunderbird add-on (the main platform) or a desktop or phone app for reminders, to-dos and pop-up alarms that
 is a tribute to the original **ReminderFox** add-on for Firefox and Thunderbird (https://github.com/tommut/reminderfox),
 created by Tom Mutdosch and Daniel Lee with Guenter Wahl. Honour its work: it must read and write ReminderFox's own
 iCalendar file so its users keep everything they built up, refer to it warmly in the UI and docs ("the original
@@ -19,7 +19,7 @@ Where both are silent, the reference source (below) decides.
 
 | Path | Use |
 | --- | --- |
-| `reference/source/` | The complete source of ReminderFoxAgain 0.9.5 (the Thunderbird add-on, Windows, macOS and Linux from one source): `src/` (store, alarm list, subscriptions, host core, main process, preload, UI), `thunderbird/` (the add-on's adapter, bridge, overlay, shortcuts, build and tests), `test/` (65 unit tests: the Store, translations, host core, the email date finder; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
+| `reference/source/` | The complete source of ReminderFoxAgain 0.9.5.1 (the Thunderbird add-on, Windows, macOS and Linux from one source): `src/` (store, alarm list, subscriptions, host core, main process, preload, UI), `thunderbird/` (the add-on's adapter, bridge, overlay, shortcuts, build and tests), `test/` (65 unit tests: the Store, translations, host core, the email date finder; two add-on fixtures and an add-on profile's `prefs.js`), `tools/` (sample data, UI checks, screenshot scripts, installer tests, and `tools/i18n/`: the string catalog, the 33 translation sources and the locale builder), `installer/`, `build.sh`, `package.json`, `package-lock.json`, `README.md` (full release notes 0.2.4–0.8.1). **This is the behavioural reference.** Reuse it: the Store (`src/core/store.js`) and the UI (`src/ui/*`) are platform-neutral and must be shared unchanged where possible; the host layer (`src/main.js`, `src/preload.js`) is what changes per platform. |
 | `reference/screenshots/*.png` | 72 screenshots of every screen, dialog, theme and the alarm and pop-up windows, made from `tools/sample-data.js` with a 1180×760 main window. The target look on desktop. Mobile layouts follow `platforms/mobile-common.md`. |
 | `reference/assets/` | App icon (`icon.png` 256 px, `icon.ico` 16–256 px, `tray.png` 32 px), vector masters (`svg/`), and every platform's icon set already made: `png/` (16–1024 px), `linux/hicolor/…`, `macos/icon.icns` + `trayTemplate.png`/`@2x`, `ios/AppIcon-1024.png` (opaque, full bleed), `android/` (adaptive foreground/background, legacy mipmaps, white notification icons, Play Store 512 px). `sounds/<id>.wav` and `<id>.caf` are the five built-in sounds (chime, bell, marimba, beeps, clock) as files, rendered by `tools/sounds.js` (for notification sounds). |
 | `reference/fixtures/` | `reminderfox-addon-sample.ics` and `reminderfox-addon-full.ics`, plus `reminderfox-addon-prefs.js` (the add-on's list names, as its profile's `prefs.js` holds them; the UI checks put it beside a copy of the full file) and `archive-sample.ics` (an archive.ics as 0.2.6–0.5.0 left it, for the archive-to-list check): files written the way the add-on writes `reminderfox.ics`. Unit-test fixtures and the compatibility benchmark. |
@@ -71,6 +71,14 @@ re-design: same element ids, classes, wording, colours and behaviour.
   **Mark past events completed** (`autoDone`); **Day and Week views** in the Month tab, a 24-hour time grid (§6.6);
   **Show completed** comes back to the same items when turned off and on; the **"Terminated or Suspended"** list
   can't be renamed or removed and its items stay out of the Reminders and calendar views (§6.7).
+- **0.9.5.1**: a security audit (`docs/security-audit.md` in the source): Electron 44.10.2; calendar downloads read in
+  parts and stopped at 10 MB; the desktop main process opens only files picked in a dialog, found by it, or in the data
+  folder (`offer()`/`chosen()`), refusing others with "That file was not picked in ReminderFoxAgain, so it was not
+  opened."; `RF.setHTML` also drops SVG animation (`animate`, `set`, …); the desktop windows refuse every browser
+  permission request; the add-on manifest's `content_security_policy` is `script-src 'self'; object-src 'none'`; the
+  email subject is cut to 2,000 characters before scanning. After a data change the Reminders list comes back to the
+  **same row** at its top (not the same pixel offset), also if it moved while a dialog was open; at its very top it
+  stays at the top. New UI checks `injection.js` and `keep-place.js`.
 - **Email (Thunderbird only)**: reminders and list items from an email (date, time and place found), Open email,
   Remind me after sending, tags, Send by email…, birthdays from address books, selected text and .ics links,
   invitations and replies. See `platforms/thunderbird.md`.

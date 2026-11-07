@@ -56,7 +56,7 @@ a compose window.
   `mock-browser.js` (storage, tabs, windows, browserAction, menus, notifications, commands, permissions, messages and
   tags, compose, addressBooks, accounts), clicks the toolbar button, and runs the desktop's `tools/ui/*.js` scripts in
   the tab and the alarm window, plus `tb-smoke.js` and `tb-welcome.js` for what the add-on does its own way. Last line:
-  `0 problem(s)` (about 870 checks).
+  `0 problem(s)` (about 890 checks).
 - **Lint:** `web-ext lint -s dist/thunderbird`: 0 errors. Its warnings name only Thunderbird-only APIs and permissions (since 0.9.4 the pages use `RF.setHTML` instead of `innerHTML`).
 - **Real Thunderbird:** install the .xpi (Add-ons and Themes → ⚙ → Install Add-on From File…) or load
   `dist/thunderbird/manifest.json` as a temporary add-on, and check the shortcuts, the welcome import, alarms and the

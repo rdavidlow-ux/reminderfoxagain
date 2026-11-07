@@ -5,7 +5,7 @@ built, installed and tested for real.
 
 ## Stack
 
-As Windows: Node.js 22, Electron **44.7.0**, `ical.js` **2.2.1**, `@electron/packager` **20.3.0**. Add nothing else to
+As Windows: Node.js 22, Electron **44.10.2**, `ical.js` **2.2.1**, `@electron/packager` **20.3.0**. Add nothing else to
 the runtime.
 
 ## Host changes (`src/main.js`)
@@ -31,10 +31,10 @@ Everything else is unchanged, including the UI, the alarm engine and the pop-up.
 1. Unit tests in seven zones.
 2. `electron-packager . ReminderFoxAgain --platform=linux --arch=x64 (and again with --arch=arm64) --asar --icon=assets/icon.png
    --executable-name=reminderfoxagain` with the same ignore list as Windows. Keep only the en-US and en-GB locales plus those in `CHROMIUM_LOCALES` in `src/main.js` (30 files).
-3. **Tarball** `ReminderFoxAgain-0.9.5-linux-x64.tar.gz` (and `-linux-arm64`): the app folder plus `install.sh`, `uninstall.sh`,
+3. **Tarball** `ReminderFoxAgain-0.9.5.1-linux-x64.tar.gz` (and `-linux-arm64`): the app folder plus `install.sh`, `uninstall.sh`,
    `reminderfoxagain.desktop` and the hicolor icons. Make it deterministic with `tar --sort=name
    --mtime=@$SOURCE_DATE_EPOCH --owner=0 --group=0 --numeric-owner | gzip -n -9`, where `SOURCE_DATE_EPOCH=1767225600`.
-4. **Debian package** `reminderfoxagain_0.9.5_amd64.deb` (and `_arm64.deb`) (`dpkg-deb --root-owner-group --build`, with
+4. **Debian package** `reminderfoxagain_0.9.5.1_amd64.deb` (and `_arm64.deb`) (`dpkg-deb --root-owner-group --build`, with
    `SOURCE_DATE_EPOCH` set and every file `touch`ed to it):
    - the app in `/opt/ReminderFoxAgain/`, a `/usr/bin/reminderfoxagain` symlink, the desktop file and
      `/usr/share/icons/hicolor/*/apps/reminderfoxagain.png`;
