@@ -992,3 +992,4 @@
 991| Den här listan sparar arkiverade objekt: den kan inte byta namn eller tas bort, och dess objekt visas inte i Påminnelser och kalendervyerna
 992| Listan ”{list}” sparar arkiverade objekt och kan inte byta namn.
 993| Listan ”{list}” sparar arkiverade objekt och kan inte tas bort.
+994| Den filen valdes inte i ReminderFoxAgain, så den öppnades inte.

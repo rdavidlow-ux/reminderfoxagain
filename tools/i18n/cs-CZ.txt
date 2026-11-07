@@ -992,3 +992,4 @@
 991| Tento seznam uchovává archivované položky: nelze jej přejmenovat ani odebrat a jeho položky se nezobrazují v připomínkách ani v zobrazeních kalendáře
 992| Seznam „{list}“ uchovává archivované položky a nelze jej přejmenovat.
 993| Seznam „{list}“ uchovává archivované položky a nelze jej odebrat.
+994| Tento soubor nebyl vybrán v ReminderFoxAgain, proto nebyl otevřen.

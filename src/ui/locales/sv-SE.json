@@ -1197,5 +1197,6 @@
  "archive": "arkiv",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Den här listan sparar arkiverade objekt: den kan inte byta namn eller tas bort, och dess objekt visas inte i Påminnelser och kalendervyerna",
  "The “{list}” list keeps archived items and can't be renamed.": "Listan ”{list}” sparar arkiverade objekt och kan inte byta namn.",
- "The “{list}” list keeps archived items and can't be removed.": "Listan ”{list}” sparar arkiverade objekt och kan inte tas bort."
+ "The “{list}” list keeps archived items and can't be removed.": "Listan ”{list}” sparar arkiverade objekt och kan inte tas bort.",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Den filen valdes inte i ReminderFoxAgain, så den öppnades inte."
 }

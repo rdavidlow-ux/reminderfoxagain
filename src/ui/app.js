@@ -285,8 +285,9 @@
     await renderMain('enter');
   }
   async function renderMain(reason) {
+    // 'changed': the data changed (the Reminders list keeps to the same rows); the others treat it as a refresh
     if (S.tab === 'reminders') await renderReminders(reason);
-    else if (todoTab()) await renderTodos(reason);
+    else if (todoTab()) await renderTodos(reason === 'changed' ? 'refresh' : reason);
     else await renderCal({ jump: reason === 'enter' && !MV.from });
   }
 
@@ -509,7 +510,30 @@
   async function renderReminders(reason, useAnchor) {
     if (S.welcome) { renderWelcome(); return; }
     const keep = listView.scrollTop;
-    const anchor = useAnchor || (reason === 'anchor' ? anchorOf() : null);
+    // after a change (an item added or deleted, a calendar subscribed…) the list comes back to the rows the person was
+    // looking at, not to the same number of pixels: rows may have come or gone above them
+    // (a list at its very top stays there, so a new item at the top shows)
+    let anchor = useAnchor || (reason === 'anchor' ? anchorOf() : reason === 'changed' && !S.search.trim() ? place || anchorOf() : null);
+    if (reason === 'changed' && anchor && anchor.top) { anchor = null; listView.scrollTop = 0; }
+    building++;
+    try { await buildReminders(); } catch (e) { building--; throw e; }
+    if (!(anchor && restoreAnchor(anchor))) position(reason === 'anchor' || reason === 'changed' ? 'refresh' : reason, reason === 'changed' && !anchor && !S.search.trim() ? 0 : keep);
+    // once more when the browser has laid the list out (Thunderbird can move it a moment later, as a dialog closes)
+    requestAnimationFrame(() => setTimeout(() => {
+      if (anchor && building === 1) restoreAnchor(anchor);
+      building--;
+      if (!building) notePlace();
+    }, 60));
+  }
+  // The place the person left the Reminders list at: noted as they scroll (not while the list is being rebuilt or a
+  // dialog is open), so a change made in a dialog finds the same rows even if the list moved meanwhile.
+  let place = null; let building = 0; let placeTick = 0;
+  function notePlace() { if (!building && !anyDialogOpen() && S.tab === 'reminders' && !S.search.trim()) place = anchorOf(); }
+  listView.addEventListener('scroll', () => {
+    if (building || placeTick) return;
+    placeTick = requestAnimationFrame(() => { placeTick = 0; notePlace(); });
+  }, { passive: true });
+  async function buildReminders() {
     const rows = await reminderRows();
     S.rows = rows;
     $('remHint').textContent = hintFor(rows.length);
@@ -534,7 +558,6 @@
       }
       RF.setHTML(listView, html + '</tbody></table>');
     }
-    if (anchor) restoreAnchor(anchor); else position(reason === 'anchor' ? 'refresh' : reason, keep);
   }
 
   // ---------------------------------------------------------------- keeping your place
@@ -548,21 +571,22 @@
     const i = trs.findIndex((tr) => rowTop(tr) + tr.offsetHeight / 2 > top);
     if (i < 0) return null;
     const sort = trs[i].dataset.sort;
-    return { keys: trs.slice(i).map((t) => t.dataset.key), before: trs.slice(0, i).reverse().map((t) => t.dataset.key), sort: sort === '' ? null : Number(sort), off: rowTop(trs[i]) - listView.scrollTop };
+    return { top: listView.scrollTop === 0, keys: trs.slice(i).map((t) => t.dataset.key), before: trs.slice(0, i).reverse().map((t) => t.dataset.key), sort: sort === '' ? null : Number(sort), off: rowTop(trs[i]) - listView.scrollTop };
   }
   // the same row again, else the next one still shown, else the first one on or after its date, else the one shown
   // just before it; it goes back to where it was on the screen
   function restoreAnchor(a) {
     const trs = [...listView.querySelectorAll('tbody tr[data-key]')];
-    if (!trs.length) return;
+    if (!trs.length) return false;
     const byKey = new Map(trs.map((t) => [t.dataset.key, t]));
     let tr = null;
     for (const k of a.keys) if (byKey.has(k)) { tr = byKey.get(k); break; }
     if (!tr && a.sort != null) tr = trs.find((t) => t.dataset.sort !== '' && Number(t.dataset.sort) >= a.sort) || null;
     if (!tr) for (const k of a.before) if (byKey.has(k)) { tr = byKey.get(k); break; }
-    if (!tr) return;
+    if (!tr) return false;
     listView.scrollTop = Math.max(0, rowTop(tr) - a.off);
     if (S.tab === 'reminders' && !S.search) S.scroll[S.filter] = listView.scrollTop;
+    return true;
   }
   // Puts the first row on or after day k at the top of the Reminders list (with its month heading), as far as the
   // list allows: a day before the first row shows the top, a day after the last row shows the end.
@@ -1108,7 +1132,7 @@
         await loadMeta();
         updateCalButtons();
         S.welcome = S.meta.count === 0 && !S.meta.archiveCount && !S.settings.welcomeDone;
-        await Promise.all([renderMain('refresh'), renderSide(), updateCounts()]);
+        await Promise.all([renderMain('changed'), renderSide(), updateCounts()]);
       } while (job.again);
     })().finally(() => { refreshing = null; });
     refreshing = job;

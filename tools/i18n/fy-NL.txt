@@ -992,3 +992,4 @@
 991| Dizze list bewarret argivearre items: hy kin net omneamd of fuortsmiten wurde, en de items steane net yn Oantinkens en de aginda-werjeften
 992| De list ‘{list}’ bewarret argivearre items en kin net omneamd wurde.
 993| De list ‘{list}’ bewarret argivearre items en kin net fuortsmiten wurde.
+994| Dat bestân is net yn ReminderFoxAgain keazen en is dêrom net iepene.

@@ -906,6 +906,17 @@ function addLists(names) {
   state.settings.lists = mine;
   return added;
 }
+// The files a window may name: ones the person picked in a file dialog, the add-on files found on this computer, and
+// files in the data folder (the backups). Anything else a window sends is refused, so a page that went wrong could
+// not read or restore from any other file.
+const offered = new Set();
+function offer(files) { for (const f of [].concat(files || [])) if (typeof f === 'string' && f) offered.add(path.resolve(f)); return files; }
+function chosen(file) {
+  const r = typeof file === 'string' && file ? path.resolve(file) : '';
+  const rel = r ? path.relative(DATA_DIR, r) : '..';
+  if (!r || (!offered.has(r) && (rel.startsWith('..') || path.isAbsolute(rel)))) throw new Error('That file was not picked in ReminderFoxAgain, so it was not opened.');
+  return r;
+}
 function findOldFiles() {
   const appData = app.getPath('appData');
   const home = os.homedir();
@@ -957,6 +968,20 @@ function parentOf(e) { return BrowserWindow.fromWebContents(e.sender) || mainWin
 // calendar subscriptions: their copies in subscriptions/ next to the reminders, fetched through Chromium's network stack
 // (so system proxies apply)
 const subFile = (name) => path.join(DATA_DIR, ...name.split('/'));
+// the body of a response, read in parts and stopped once it is over 10 MB (a site cannot fill the memory)
+async function readCapped(r, ctl, max = 10 * 1024 * 1024) {
+  if (Number(r.headers.get('content-length')) > max) { ctl.abort(); throw new Error('That calendar is too big (more than 10 MB).'); }
+  if (!r.body || !r.body.getReader) { const t = await r.text(); if (t.length > max) throw new Error('That calendar is too big (more than 10 MB).'); return t; }
+  const reader = r.body.getReader(); const parts = []; let size = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    size += value.byteLength;
+    if (size > max) { try { await reader.cancel(); } catch (e) { /* gone */ } ctl.abort(); throw new Error('That calendar is too big (more than 10 MB).'); }
+    parts.push(value);
+  }
+  return new TextDecoder('utf-8').decode(Buffer.concat(parts.map((p) => Buffer.from(p.buffer, p.byteOffset, p.byteLength))));
+}
 async function fetchText(url) {
   const { net } = require('electron');
   const ctl = new AbortController();
@@ -964,10 +989,10 @@ async function fetchText(url) {
   try {
     const r = await (net && net.fetch ? net.fetch(url, { signal: ctl.signal }) : fetch(url, { signal: ctl.signal }));
     if (!r.ok) throw new Error('The calendar\'s web site did not give the calendar. Check the address.');
-    return await r.text();
+    return await readCapped(r, ctl);
   } catch (err) {
     if (err && err.name === 'AbortError') throw new Error('The calendar\'s web site did not answer in time.');
-    if (err && /web site/.test(err.message)) throw err;
+    if (err && /web site|too big/.test(err.message)) throw err;
     throw new Error('The calendar could not be fetched. Check the address and your connection.');
   } finally { clearTimeout(t); }
 }
@@ -1026,7 +1051,7 @@ function setupIpc() {
     if (r.canceled || !r.filePaths.length) return null;
     return importFiles(r.filePaths);
   });
-  handle('ics:importPath', (e, p) => importFiles([p]));
+  handle('ics:importPath', (e, p) => importFiles([chosen(p)]));
   handle('ics:export', async (e, opts) => {
     const kind = opts && opts.kind;
     const prefix = kind === 'event' ? 'reminders' : kind === 'todo' ? 'todos' : 'reminderfoxagain';
@@ -1038,14 +1063,14 @@ function setupIpc() {
     fs.writeFileSync(r.filePath, store.export(kind === 'event' || kind === 'todo' ? { kinds: [kind] } : {}));
     return r.filePath;
   });
-  handle('rf:findOld', () => findOldFiles());
+  handle('rf:findOld', () => { const found = findOldFiles(); offer(found.map((f) => f.path)); return found; });
   // the import dialog: pick files, see what they hold, then import with the chosen options
   handle('ics:pick', async (e, kind) => {
     const r = await dialog.showOpenDialog(parentOf(e), { title: tr(kind === 'old' ? 'Choose your reminderfox.ics' : 'Import an iCalendar file'), filters: icsFilters(), properties: kind === 'old' ? ['openFile'] : ['openFile', 'multiSelections'] });
-    return r.canceled || !r.filePaths.length ? null : r.filePaths;
+    return r.canceled || !r.filePaths.length ? null : offer(r.filePaths);
   });
-  handle('ics:preview', (e, files) => previewFiles([].concat(files)));
-  handle('ics:importPaths', (e, files, opts) => importFiles([].concat(files), opts || {}));
+  handle('ics:preview', (e, files) => previewFiles([].concat(files).map(chosen)));
+  handle('ics:importPaths', (e, files, opts) => importFiles([].concat(files).map(chosen), opts || {}));
   handle('rf:pickFile', async (e) => {
     const r = await dialog.showOpenDialog(parentOf(e), { title: tr('Choose your reminderfox.ics'), filters: icsFilters(), properties: ['openFile'] });
     if (r.canceled || !r.filePaths.length) return null;
@@ -1191,13 +1216,13 @@ function setupIpc() {
     return r.filePath;
   });
   handle('backup:list', () => listBackups());
-  handle('backup:describe', (e, file) => describeBackup(file));
+  handle('backup:describe', (e, file) => describeBackup(chosen(file)));
   handle('backup:choose', async (e) => {
     const r = await dialog.showOpenDialog(parentOf(e), { title: tr('Choose a backup to restore'), defaultPath: BACKUP_DIR, filters: icsFilters(), properties: ['openFile'] });
     if (r.canceled || !r.filePaths.length) return null;
-    return describeBackup(r.filePaths[0]);
+    return describeBackup(offer(r.filePaths)[0]);
   });
-  handle('backup:restore', (e, file) => restoreBackup(file));
+  handle('backup:restore', (e, file) => restoreBackup(chosen(file)));
   handle('backup:openFolder', () => { fs.mkdirSync(BACKUP_DIR, { recursive: true }); shell.openPath(BACKUP_DIR); return true; });
 }
 
@@ -1241,6 +1266,10 @@ if (!app.requestSingleInstanceLock()) {
   app.on('window-all-closed', () => { if (IS_MAC && !quitting) return; if (quitting || !tray) app.quit(); });
   app.on('activate', () => { if (IS_MAC) showMain(); }); // the Dock icon
   app.whenReady().then(() => {
+    // the pages need no browser permissions (camera, microphone, location, notifications…): every request is refused
+    const { session } = require('electron');
+    session.defaultSession.setPermissionRequestHandler((wc, permission, done) => done(false));
+    session.defaultSession.setPermissionCheckHandler(() => false);
     fs.mkdirSync(DATA_DIR, { recursive: true });
     loadState();
     loadLanguage();

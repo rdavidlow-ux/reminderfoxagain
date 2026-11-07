@@ -992,3 +992,4 @@
 991| See loend hoiab arhiveeritud üksusi: seda ei saa ümber nimetada ega eemaldada ning selle üksusi ei näidata meeldetuletustes ega kalendrivaadetes
 992| Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa ümber nimetada.
 993| Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa eemaldada.
+994| Seda faili ei valitud ReminderFoxAgainis, seega seda ei avatud.

@@ -22,6 +22,10 @@ try {
   $('subUrl').value = `${base}/_cal/missing.ics`; $('subAdd').click();
   await until(() => $('subAdd').disabled === false && $('subMsg').textContent && !/Subscribing/.test($('subMsg').textContent));
   check('a wrong address says so', $('subMsg').classList.contains('warn'), true);
+  // a calendar over 10 MB is refused while it comes in (security audit)
+  $('subUrl').value = `${base}/_cal/huge.ics`; $('subAdd').click();
+  await until(() => $('subAdd').disabled === false && $('subMsg').textContent && !/Subscribing/.test($('subMsg').textContent), 30000);
+  check('a calendar over 10 MB is refused', $('subMsg').textContent, 'That calendar is too big (more than 10 MB).');
   // subscribe (webcal:// works as https:// does; here the test server is plain http)
   $('subUrl').value = `${base}/_cal/holidays.ics`; $('subAdd').click();
   await until(() => /Subscribed/.test($('subMsg').textContent));

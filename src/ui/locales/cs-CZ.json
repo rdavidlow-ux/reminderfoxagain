@@ -1313,5 +1313,6 @@
  "archive": "archiv",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Tento seznam uchovává archivované položky: nelze jej přejmenovat ani odebrat a jeho položky se nezobrazují v připomínkách ani v zobrazeních kalendáře",
  "The “{list}” list keeps archived items and can't be renamed.": "Seznam „{list}“ uchovává archivované položky a nelze jej přejmenovat.",
- "The “{list}” list keeps archived items and can't be removed.": "Seznam „{list}“ uchovává archivované položky a nelze jej odebrat."
+ "The “{list}” list keeps archived items and can't be removed.": "Seznam „{list}“ uchovává archivované položky a nelze jej odebrat.",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tento soubor nebyl vybrán v ReminderFoxAgain, proto nebyl otevřen."
 }

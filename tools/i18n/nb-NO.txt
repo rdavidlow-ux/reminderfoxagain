@@ -992,3 +992,4 @@
 991| Denne listen tar vare på arkiverte elementer: den kan ikke gis nytt navn eller fjernes, og elementene vises ikke i Påminnelser og kalendervisningene
 992| Listen «{list}» tar vare på arkiverte elementer og kan ikke gis nytt navn.
 993| Listen «{list}» tar vare på arkiverte elementer og kan ikke fjernes.
+994| Den filen ble ikke valgt i ReminderFoxAgain, så den ble ikke åpnet.

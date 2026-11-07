@@ -992,3 +992,4 @@
 991| Esta lista garda os elementos arquivados: non se pode renomear nin quitar, e os seus elementos non aparecen nos recordatorios nin nas vistas de calendario
 992| A lista «{list}» garda os elementos arquivados e non se pode renomear.
 993| A lista «{list}» garda os elementos arquivados e non se pode quitar.
+994| Ese ficheiro non se escolleu en ReminderFoxAgain, así que non se abriu.

@@ -218,6 +218,8 @@ Defaults live in `DEFAULT_SETTINGS`. `loadState()` merges saved values over them
 
 Every method returns a Promise. The preload calls `ipcRenderer.invoke(channel, …args)`, and each main-side handler is wrapped by `handle()` so that it returns `{ok: true, value}` or `{ok: false, error}`. The preload unwraps that: you get the value, or an `Error` with a readable message. In the renderer, wrap calls in `guard(p)` to show errors in a dialog.
 
+Calls that take a file path (`importPath`, `importPaths`, `previewImport`, `backupDescribe`, `backupRestore`) accept only a file the person picked in one of the app's file dialogs, an old ReminderFox file found by `findOld()`, or a file inside the data folder; `offer()` records the picked files and `chosen()` refuses any other path ("That file was not picked in ReminderFoxAgain, so it was not opened."). After a data change (`refresh()` renders with the reason `'changed'`), the Reminders list goes back to the row the person left at the top (`place`, noted on scroll while no dialog is open, else `anchorOf()`), right away and again a moment later; a list at its very top stays at the top. Subscription downloads are read in parts and stopped at 10 MB (`readCapped`), and the windows' browser permission requests are all refused. See `docs/security-audit.md`.
+
 ### Data
 
 | Method | Channel | Arguments → returns |
@@ -320,7 +322,7 @@ The pages are plain HTML, CSS and JavaScript, with no framework or bundler. Each
 | `fmt` | `time`, `date`, `weekday`, `weekdayLong`, `narrow`, `month`, `monthName`, `long`, `dateTime`, `relDay` (“Today”, “Tomorrow”, “Fri, Oct 16”), `rel`; all honour `setFormats` |
 | `setFormats(settings)`, `DATE_FORMATS` | The date (`''`, `dmy-text`, `iso`, `mdy`, `dmy`, `dmy-dot`) and time (`''`, `12`, `24`) formats |
 | `esc(s)` | HTML-escape; use it for every user string put into HTML |
-| `setHTML(el, html)`, `addHTML(el, where, html)` | Put HTML into the page without `innerHTML` (0.9.4): parsed off the page by `DOMParser`, cleaned (no `script`, `iframe`, `object` and the like, no `on…` attributes, only safe links), then moved in; table rows and options are parsed inside a table or select. Never assign `innerHTML` or call `insertAdjacentHTML`: Mozilla's checker flags it, and `tools/ui/safe-html.js` checks the cleaning. |
+| `setHTML(el, html)`, `addHTML(el, where, html)` | Put HTML into the page without `innerHTML` (0.9.4): parsed off the page by `DOMParser`, cleaned (no `script`, `iframe`, `object`, SVG animation and the like, no `on…` attributes, only safe links), then moved in; table rows and options are parsed inside a table or select. Never assign `innerHTML` or call `insertAdjacentHTML`: Mozilla's checker flags it, `tools/ui/safe-html.js` checks the cleaning, and `tools/ui/injection.js` checks that markup in the data stays text in every view and dialog. |
 | `THEMES`, `applyTheme(id)` | Theme list with swatches; sets `data-theme` on `<html>` |
 | `snooze` | `seconds(amount, unit)`, `untilSeconds(text, now)`, `label`, `fromSettings`, `UNITS`, `MAX` |
 | `TONES, playTone(id), chime(), playSound(url, tone), stopSound(``)` | The built-in sounds; playSound(url, tone) plays a data URL or, without one, the built-in tone, and resolves when it ends or is stopped; stopSound() stops it; TONES lists the five sounds (id, label, dur, draw(ctx, out, t0)) |

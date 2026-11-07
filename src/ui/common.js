@@ -76,9 +76,11 @@
   // Putting HTML into the page safely. The windows build their lists and dialogs as HTML text, with every value from
   // the data escaped by esc() first. setHTML() and addHTML() then put that text into an element without innerHTML:
   // the text is parsed off the page by DOMParser (which never runs scripts), anything that could run code is removed
-  // (script, iframe, object and similar elements, on… event attributes, and links other than http(s), mailto, data
+  // (script, iframe, object and similar elements, SVG animation, on… event attributes, and links other than http(s), mailto, data
   // images, relative paths and #anchors), and only the clean nodes are moved into the element.
-  const DROP_TAGS = new Set(['SCRIPT', 'IFRAME', 'FRAME', 'FRAMESET', 'OBJECT', 'EMBED', 'APPLET', 'BASE', 'META', 'LINK', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'PORTAL', 'NOEMBED', 'NOFRAMES']);
+  const DROP_TAGS = new Set(['SCRIPT', 'IFRAME', 'FRAME', 'FRAMESET', 'OBJECT', 'EMBED', 'APPLET', 'BASE', 'META', 'LINK', 'STYLE', 'NOSCRIPT', 'TEMPLATE', 'PORTAL', 'NOEMBED', 'NOFRAMES',
+    // SVG animation can set an attribute (a link's href) after the clean-up, so it goes too
+    'ANIMATE', 'SET', 'ANIMATEMOTION', 'ANIMATETRANSFORM', 'DISCARD']);
   const URL_ATTRS = new Set(['href', 'src', 'action', 'formaction', 'xlink:href', 'poster', 'data', 'srcset', 'background', 'ping', 'cite', 'longdesc']);
   const SAFE_URL = /^(?:https?:|mailto:|data:image\/(?:png|jpe?g|gif|webp|svg\+xml);|#|\.{0,2}\/|[^:]*$)/i;
   function cleanNodes(root) {

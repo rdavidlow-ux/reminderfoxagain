@@ -29,6 +29,8 @@ run archive-list.js
 run subscriptions.js
 run item-colours.js
 run safe-html.js
+run injection.js
+run --sample bills keep-place.js
 run shortcuts.js
 run import-month.js
 run view-options.js
