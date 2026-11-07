@@ -1,12 +1,12 @@
-# ReminderFoxAgain 0.9.5 — Developer's Guide
+# ReminderFoxAgain 0.9.5.1 — Developer's Guide
 
 Nov 3, 2026 · David
 
-This guide is the reference for working on the ReminderFoxAgain 0.9.5 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
+This guide is the reference for working on the ReminderFoxAgain 0.9.5.1 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
 
 ## 1. Setup and layout
 
-You need Node.js 22. The runtime dependency is `ical.js` 2.2.1; the dev dependencies are Electron 44.7.0 and `@electron/packager` 20.3.0. The UI checks need Xvfb, and the installer tests need PowerShell 7 (`pwsh`).
+You need Node.js 22. The runtime dependency is `ical.js` 2.2.1; the dev dependencies are Electron 44.10.2 and `@electron/packager` 20.3.0. The UI checks need Xvfb, and the installer tests need PowerShell 7 (`pwsh`).
 
 ```
 npm ci
@@ -40,8 +40,8 @@ Both build on Linux and give the same SHA-256 hashes on every run.
 ```sh
 ./build-linux.sh   # dist/release-linux/: .tar.gz and .deb for x64 and arm64 (ARCHS=x64 for one)
 ./build-macos.sh   # dist/release-macos/: one universal .zip (Apple silicon + Intel)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.5-linux-x64.tar.gz
-python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.5
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.5.1-linux-x64.tar.gz
+python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.5.1
 ```
 
 - **Linux:** `build/linux/` holds `install.sh`, `uninstall.sh`, the menu entry, the icons and the .deb's `postinst`, `postrm` and AppArmor profile. The .deb installs to `/opt/ReminderFoxAgain`, links `/usr/bin/reminderfoxagain` and makes `chrome-sandbox` setuid root. The tarball installs per user under `~/.local`, and its launcher adds `--no-sandbox` only where unprivileged user namespaces are off.
@@ -218,6 +218,8 @@ Defaults live in `DEFAULT_SETTINGS`. `loadState()` merges saved values over them
 
 Every method returns a Promise. The preload calls `ipcRenderer.invoke(channel, …args)`, and each main-side handler is wrapped by `handle()` so that it returns `{ok: true, value}` or `{ok: false, error}`. The preload unwraps that: you get the value, or an `Error` with a readable message. In the renderer, wrap calls in `guard(p)` to show errors in a dialog.
 
+Calls that take a file path (`importPath`, `importPaths`, `previewImport`, `backupDescribe`, `backupRestore`) accept only a file the person picked in one of the app's file dialogs, an old ReminderFox file found by `findOld()`, or a file inside the data folder; `offer()` records the picked files and `chosen()` refuses any other path ("That file was not picked in ReminderFoxAgain, so it was not opened."). After a data change (`refresh()` renders with the reason `'changed'`), the Reminders list goes back to the row the person left at the top (`place`, noted on scroll while no dialog is open, else `anchorOf()`), right away and again a moment later; a list at its very top stays at the top. Subscription downloads are read in parts and stopped at 10 MB (`readCapped`), and the windows' browser permission requests are all refused. See `docs/security-audit.md`.
+
 ### Data
 
 | Method | Channel | Arguments → returns |
@@ -320,7 +322,7 @@ The pages are plain HTML, CSS and JavaScript, with no framework or bundler. Each
 | `fmt` | `time`, `date`, `weekday`, `weekdayLong`, `narrow`, `month`, `monthName`, `long`, `dateTime`, `relDay` (“Today”, “Tomorrow”, “Fri, Oct 16”), `rel`; all honour `setFormats` |
 | `setFormats(settings)`, `DATE_FORMATS` | The date (`''`, `dmy-text`, `iso`, `mdy`, `dmy`, `dmy-dot`) and time (`''`, `12`, `24`) formats |
 | `esc(s)` | HTML-escape; use it for every user string put into HTML |
-| `setHTML(el, html)`, `addHTML(el, where, html)` | Put HTML into the page without `innerHTML` (0.9.4): parsed off the page by `DOMParser`, cleaned (no `script`, `iframe`, `object` and the like, no `on…` attributes, only safe links), then moved in; table rows and options are parsed inside a table or select. Never assign `innerHTML` or call `insertAdjacentHTML`: Mozilla's checker flags it, and `tools/ui/safe-html.js` checks the cleaning. |
+| `setHTML(el, html)`, `addHTML(el, where, html)` | Put HTML into the page without `innerHTML` (0.9.4): parsed off the page by `DOMParser`, cleaned (no `script`, `iframe`, `object`, SVG animation and the like, no `on…` attributes, only safe links), then moved in; table rows and options are parsed inside a table or select. Never assign `innerHTML` or call `insertAdjacentHTML`: Mozilla's checker flags it, `tools/ui/safe-html.js` checks the cleaning, and `tools/ui/injection.js` checks that markup in the data stays text in every view and dialog. |
 | `THEMES`, `applyTheme(id)` | Theme list with swatches; sets `data-theme` on `<html>` |
 | `snooze` | `seconds(amount, unit)`, `untilSeconds(text, now)`, `label`, `fromSettings`, `UNITS`, `MAX` |
 | `TONES, playTone(id), chime(), playSound(url, tone), stopSound(``)` | The built-in sounds; playSound(url, tone) plays a data URL or, without one, the built-in tone, and resolves when it ends or is stopped; stopSound() stops it; TONES lists the five sounds (id, label, dur, draw(ctx, out, t0)) |
@@ -427,10 +429,10 @@ The UI speaks the original add-on's 34 languages. English text is the key everyw
 
 | Suite | Command | Passes when |
 | --- | --- | --- |
-| Add-on UI | `thunderbird/test/e2e.sh` (options for `run.js`: `--sample empty\|bills`, `--lang`, `--size`) | Last line `0 problem(s)` (about 870 checks in 0.9.5) |
+| Add-on UI | `thunderbird/test/e2e.sh` (options for `run.js`: `--sample empty\|bills`, `--lang`, `--size`) | Last line `0 problem(s)` (about 890 checks in 0.9.5.1) |
 | Add-on lint | `web-ext lint -s dist/thunderbird` | 0 errors (the warnings are Thunderbird-only APIs) |
 | Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 65/65 in every zone |
-| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 830 checks in 0.9.5) |
+| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 850 checks in 0.9.5.1) |
 | Screens | `tools/shots.sh <outDir>` | 70 PNGs; compare by eye |
 | Installer | `tools/test-setup.sh [pwsh]` | 20/20 |
 

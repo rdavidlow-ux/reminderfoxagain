@@ -12,6 +12,9 @@ try {
   box.querySelector('button').click();
   await new Promise((r) => setTimeout(r, 300));
   check('nothing in it ran', window.__xss, 0);
+  // SVG animation could set a link's address after the clean-up; it is removed, the drawing kept
+  RF.setHTML(box, '<svg><a><animate attributeName="href" values="javascript:window.__xss=5"/><set attributeName="href" to="javascript:window.__xss=6"/><text y="20">a</text></a></svg>');
+  check('safe HTML drops SVG animation, keeps the drawing', `${box.querySelectorAll('animate,set').length} ${!!box.querySelector('svg text')}`, '0 true');
   const tb = document.createElement('tbody'); const t = document.createElement('table'); t.append(tb); box.append(t);
   RF.setHTML(tb, '<tr data-i="1"><td>one</td></tr><tr><td>two</td></tr>');
   check('table rows go into a table body', `${tb.rows.length} ${tb.rows[0].dataset.i} ${tb.rows[1].cells[0].textContent}`, '2 1 two');

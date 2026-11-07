@@ -1000,3 +1000,4 @@
 999| Mementourile tale sunt păstrate pe acest dispozitiv, cu o copie de rezervă în fiecare zi.
 1000| Copiază reminderfox.ics din profilul Firefox sau Thunderbird al computerului (dosarul reminderfox) pe acest dispozitiv, apoi alege-l aici.
 1001| Mai mult
+1002| Fișierul nu a fost ales în ReminderFoxAgain, așa că nu a fost deschis.

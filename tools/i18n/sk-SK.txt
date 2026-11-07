@@ -1000,3 +1000,4 @@
 999| Vaše pripomienky sa uchovávajú v tomto zariadení, so zálohou každý deň.
 1000| Skopírujte reminderfox.ics z profilu Firefoxu alebo Thunderbirdu v počítači (jeho priečinka reminderfox) do tohto zariadenia a potom ho vyberte tu.
 1001| Ďalšie
+1002| Tento súbor nebol vybraný v ReminderFoxAgain, preto sa neotvoril.

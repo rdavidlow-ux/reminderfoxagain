@@ -1321,5 +1321,6 @@
  "Share a copy of your reminders file": "Udostępnij kopię pliku przypomnień",
  "Your reminders are kept on this device, with a backup every day.": "Twoje przypomnienia są przechowywane na tym urządzeniu, z kopią zapasową każdego dnia.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Skopiuj reminderfox.ics z profilu Firefoksa lub Thunderbirda na komputerze (z folderu reminderfox) na to urządzenie, a potem wybierz go tutaj.",
- "More": "Więcej"
+ "More": "Więcej",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Ten plik nie został wybrany w ReminderFoxAgain, więc nie został otwarty."
 }

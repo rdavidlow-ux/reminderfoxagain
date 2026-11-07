@@ -1000,3 +1000,4 @@
 999| Els recordatoris es guarden en aquest dispositiu, amb una còpia de seguretat cada dia.
 1000| Copia reminderfox.ics del perfil de Firefox o Thunderbird de l'ordinador (la carpeta reminderfox) a aquest dispositiu i després tria'l aquí.
 1001| Més
+1002| Aquest fitxer no s'ha triat a ReminderFoxAgain, així que no s'ha obert.

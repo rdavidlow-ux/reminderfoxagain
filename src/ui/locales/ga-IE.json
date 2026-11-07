@@ -1165,5 +1165,6 @@
  "Share a copy of your reminders file": "Comhroinn cóip de do chomhad meabhrúchán",
  "Your reminders are kept on this device, with a backup every day.": "Coinnítear do mheabhrúcháin ar an ngléas seo, le cúltaca gach lá.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Cóipeáil reminderfox.ics ó phróifíl Firefox nó Thunderbird do ríomhaire (a fhillteán reminderfox) chuig an ngléas seo, ansin roghnaigh anseo é.",
- "More": "Tuilleadh"
+ "More": "Tuilleadh",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Níor roghnaíodh an comhad sin in ReminderFoxAgain, mar sin níor osclaíodh é."
 }

@@ -12,9 +12,18 @@ function text() {
     ...ev('fair', `DTSTART;VALUE=DATE:${day(-5)}`, 'Spring Fair (sample)'),
     'END:VCALENDAR', ''].join('\r\n');
 }
-module.exports = { text };
+// a calendar of 11 MB with no stated length, sent in parts: it is refused once it is over 10 MB (security audit)
+function sendHuge(res) {
+  res.writeHead(200, { 'content-type': 'text/calendar' });
+  const part = `BEGIN:VCALENDAR\r\n${'X-PAD:'.padEnd(1022, 'x')}\r\n`.repeat(64);
+  let n = 0;
+  const more = () => { while (n < 170) { n++; if (!res.write(part)) { res.once('drain', more); return; } } res.end(); };
+  res.on('error', () => {}); more();
+}
+module.exports = { text, sendHuge };
 if (require.main === module && process.argv[2] === 'serve') {
   require('http').createServer((req, res) => {
+    if (req.url.split('?')[0] === '/_cal/huge.ics') { sendHuge(res); return; }
     if (req.url.split('?')[0] === '/_cal/holidays.ics') { res.writeHead(200, { 'content-type': 'text/calendar' }); res.end(text()); return; }
     res.writeHead(404); res.end('not found');
   }).listen(Number(process.argv[3]) || 8765, '127.0.0.1');

@@ -17,6 +17,32 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   downloads. UI checks in Chromium: `mobile/test/e2e.sh`.
 - Eight new strings in all 33 languages (`tools/i18n/add-android.py`, `add-android-phone.py`).
 - The Month view's UI check no longer depends on how busy a day is (its items could hide behind "+n more").
+- **Brought up to 0.9.5.1** (merged from `main`): the security audit fixes and the Reminders list keeping your place.
+  On Android a subscribed calendar also stops downloading at 10 MB, and the new UI checks (`injection.js`,
+  `keep-place.js`) run in `mobile/test/e2e.sh`. The app is version 0.9.5.1, version code 9051 (the code now has room
+  for a fourth number: 0.9.6 will be 9060).
+
+## 0.9.5.1 — security audit fixes, and the Reminders list keeps your place
+
+Three outside security reviews were checked against the code; `docs/security-audit.md` has every claim and its
+verdict. Most claims were about the old ReminderFox add-on's code (XUL, JSM, XML storage) and don't apply. These
+were fixed:
+
+- **Electron 44.10.2** (was 44.7.0), for a high-severity advisory about compromised certificates. On Windows this
+  update needs the runtime parts too; without them the setup now says so and changes nothing.
+- **A calendar subscription stops downloading at 10 MB**, in the add-on and the desktop app. Before, the size was
+  checked only after the whole download.
+- **The desktop app opens only files picked in it** (or in its data folder) for imports, previews and restores.
+- **The HTML clean-up also removes SVG animation**, which could set a link's address after the clean-up.
+- **The desktop windows refuse every browser permission request** (camera, microphone, location…). They need none.
+- The add-on's manifest states its content security policy: `script-src 'self'; object-src 'none'`.
+- New UI check: markup in reminder text, places, notes, lists, categories and saved filters shows as text in every
+  view and dialog.
+- **The Reminders list keeps your place after a change.** Adding or deleting a reminder, or subscribing to or removing
+  a calendar, could move the list in Thunderbird, to the first date or about a year ahead. Before, the list went
+  back to the same number of pixels from the top; rows that came or went above that point moved the view. It now
+  comes back to the same row, even if the list was moved while a dialog was open. A list scrolled to its very top
+  stays at the top, so a new item there shows. New UI check: `tools/ui/keep-place.js`.
 
 ## 0.9.5 — calendar subscriptions fixed in Thunderbird and ticked off, Day and Week views, the archive list kept safe
 

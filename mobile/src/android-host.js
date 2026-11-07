@@ -200,7 +200,22 @@
       throw new Error('The calendar could not be fetched. Check the address and your connection.');
     }
     if (!r.ok) throw new Error('The calendar\'s web site did not give the calendar. Check the address.');
-    return r.text();
+    // over 10 MB is refused: read in parts and stopped there, or (when the native HTTP hands the body over whole)
+    // checked once it is in (security audit, 0.9.5.1)
+    const MAX = 10 * 1024 * 1024; const big = () => new Error('That calendar is too big (more than 10 MB).');
+    if (Number(r.headers.get('content-length')) > MAX) throw big();
+    if (!r.body || !r.body.getReader) { const t = await r.text(); if (t.length > MAX) throw big(); return t; }
+    const reader = r.body.getReader(); const parts = []; let size = 0;
+    for (;;) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      size += value.byteLength;
+      if (size > MAX) { try { await reader.cancel(); } catch (e) { /* gone */ } throw big(); }
+      parts.push(value);
+    }
+    const all = new Uint8Array(size); let at = 0;
+    for (const p of parts) { all.set(p, at); at += p.byteLength; }
+    return new TextDecoder('utf-8').decode(all);
   }
 
   // ---------------------------------------------------------------- the host

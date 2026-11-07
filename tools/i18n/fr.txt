@@ -1000,3 +1000,4 @@
 999| Vos rappels sont gardés sur cet appareil, avec une sauvegarde chaque jour.
 1000| Copiez reminderfox.ics depuis le profil Firefox ou Thunderbird de votre ordinateur (son dossier reminderfox) vers cet appareil, puis choisissez-le ici.
 1001| Plus
+1002| Ce fichier n'a pas été choisi dans ReminderFoxAgain : il n'a donc pas été ouvert.

@@ -1000,3 +1000,4 @@
 999| Muistutuksesi säilytetään tällä laitteella, ja niistä tehdään varmuuskopio joka päivä.
 1000| Kopioi reminderfox.ics tietokoneesi Firefox- tai Thunderbird-profiilista (sen reminderfox-kansiosta) tälle laitteelle ja valitse se sitten tästä.
 1001| Lisää
+1002| Tiedostoa ei valittu ReminderFoxAgainissa, joten sitä ei avattu.

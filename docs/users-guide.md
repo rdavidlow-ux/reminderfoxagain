@@ -1,6 +1,6 @@
-# ReminderFoxAgain 0.9.5 — User's Guide
+# ReminderFoxAgain 0.9.5.1 — User's Guide
 
-Nov 3, 2026 · David
+Nov 7, 2026 · David
 
 ReminderFoxAgain is a Thunderbird add-on for reminders, to-dos and pop-up alarms, and a tribute to the original [ReminderFox](https://github.com/tommut/reminderfox) add-on for Firefox and Thunderbird, created by Tom Mutdosch and Daniel Lee with Guenter Wahl. It reads and writes ReminderFox's own file, so everything you kept in ReminderFox comes across unchanged, and it turns emails into reminders.
 
@@ -12,7 +12,7 @@ Where Thunderbird isn't available or can't be used, the same app runs on its own
 
 You need Thunderbird 128 or later, on Windows, macOS or Linux.
 
-1.  Download **ReminderFoxAgain-0.9.5-thunderbird.xpi**.
+1.  Download **ReminderFoxAgain-0.9.5.1-thunderbird.xpi**.
 
 2.  In Thunderbird, open **≡ → Add-ons and Themes**, click **⚙ → Install Add-on From File…** and pick the .xpi.
 
@@ -34,22 +34,22 @@ Use the desktop app on a computer without Thunderbird, or where you can't add ad
 
 Put every release file in one folder, then double-click **Install or Update ReminderFoxAgain.bat**. No administrator rights are needed.
 
-| File                                                 | Needed for                           |
-|------------------------------------------------------|--------------------------------------|
-| Install or Update ReminderFoxAgain.bat               | Always                               |
-| ReminderFoxAgain-Setup.ps1                           | Always                               |
-| ReminderFoxAgain-app-0.9.5.asar                      | Always                               |
-| ReminderFoxAgain-runtime-0.9.5.part1.bin … part6.bin | New installs, and updates from 0.6.x |
+| File                                                   | Needed for                                                                  |
+|--------------------------------------------------------|-----------------------------------------------------------------------------|
+| Install or Update ReminderFoxAgain.bat                 | Always                                                                      |
+| ReminderFoxAgain-Setup.ps1                             | Always                                                                      |
+| ReminderFoxAgain-app-0.9.5.1.asar                      | Always                                                                      |
+| ReminderFoxAgain-runtime-0.9.5.1.part1.bin … part6.bin | New installs, and updates from 0.9.5 or earlier (0.9.5.1 has a new runtime) |
 
 - The app goes to %LOCALAPPDATA%\Programs\ReminderFoxAgain, with Start-menu and desktop shortcuts and an entry in Settings → Apps.
 
-- To update a 0.7.x, 0.8.x or 0.9.x install, you only need the .bat, the .ps1 and the .asar. The setup reuses the installed runtime. When you update from 0.6.x, include the runtime parts too, so the date and time pickers follow your language (without them everything else is still translated).
+- Updating to 0.9.5.1 needs the runtime parts too, because it comes with a new runtime (Electron 44.10.2). Without them the setup says so and changes nothing. Later updates that keep this runtime need only the .bat, the .ps1 and the .asar: the setup reuses the installed runtime. When you update from 0.6.x, include the runtime parts too, so the date and time pickers follow your language (without them everything else is still translated).
 
 - Your data lives in %APPDATA%\ReminderFoxAgain. Updating never touches it.
 
 #### On a Mac
 
-Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.5-macos-universal.zip.
+Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.5.1-macos-universal.zip.
 
 1.  Double-click the zip, then drag **ReminderFoxAgain.app** into **Applications**.
 
@@ -61,9 +61,9 @@ On a Mac the shortcuts use ⌥⇧ and the letter (⌥⇧A new reminder, ⌥⇧O 
 
 #### On Linux
 
-- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.5_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.5_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
+- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.5.1_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.5.1_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
 
-- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.5-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
+- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.5.1-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
 
 - **GNOME:** add the "AppIndicator and KStatusNotifierItem Support" extension to see the fox in the top bar. Without it, closing the window quits the app, and Settings says so.
 
@@ -267,7 +267,7 @@ Completed to-dos always stay at the bottom. Pressing Alt+↑/↓ while another o
 
 *Example — what is left to do this month:* Show → Selected month, then untick **Show completed**. Only the reminders you haven't ticked yet remain.
 
-Ticking or unticking **Show completed** keeps your place: the reminder at the top of the list stays at the top (or the next one, if it was a ticked one that is now hidden), however many rows appear or disappear above it.
+Ticking or unticking **Show completed** keeps your place: the reminder at the top of the list stays at the top (or the next one, if it was a ticked one that is now hidden), however many rows appear or disappear above it. Adding or deleting a reminder, and subscribing to a calendar or removing one, keep your place the same way; at the very top of the list you stay at the top, so a new reminder there shows.
 
 *Example — jumping to a date:* Show → Upcoming, then click Dec 24 in the calendar panel. The list now starts with the first reminder on or after Christmas Eve; scroll up for what comes before.
 
@@ -369,7 +369,7 @@ For an item with a location, right-click → **Show on a map**, or click 🗺 in
 
 ### Calendar subscriptions
 
-Subscribe to any calendar with a web address: holidays, sports, a school or team calendar (https://, http:// or webcal://). Its events show among your reminders in the subscription's own colour, marked with its name, and they are read-only.
+Subscribe to any calendar with a web address: holidays, sports, a school or team calendar (https://, http:// or webcal://). Its events show among your reminders in the subscription's own colour, marked with its name, and they are read-only. A calendar larger than 10 MB isn't added: the download stops there and says so.
 
 <img src="media/users-guide/image5.png" style="width:6in;height:3.86441in" alt="The Month tab with a subscribed holiday calendar in green, and the Calendars menu open, with made-up reminders" />
 

@@ -1000,3 +1000,4 @@
 999| 你的提醒保存在此设备上，每天备份一次。
 1000| 将 reminderfox.ics 从电脑的 Firefox 或 Thunderbird 配置文件（其 reminderfox 文件夹）复制到此设备，然后在这里选择它。
 1001| 更多
+1002| 该文件不是在 ReminderFoxAgain 中选择的，因此未打开。

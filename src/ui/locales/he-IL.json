@@ -1261,5 +1261,6 @@
  "Share a copy of your reminders file": "שיתוף עותק של קובץ התזכורות",
  "Your reminders are kept on this device, with a backup every day.": "התזכורות שלך נשמרות במכשיר הזה, עם גיבוי בכל יום.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "העתק את reminderfox.ics מפרופיל Firefox או Thunderbird במחשב (התיקייה reminderfox) למכשיר הזה, ואז בחר אותו כאן.",
- "More": "עוד"
+ "More": "עוד",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "הקובץ הזה לא נבחר ב־ReminderFoxAgain, ולכן הוא לא נפתח."
 }

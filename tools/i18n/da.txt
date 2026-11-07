@@ -1000,3 +1000,4 @@
 999| Dine påmindelser gemmes på denne enhed med en sikkerhedskopi hver dag.
 1000| Kopiér reminderfox.ics fra Firefox- eller Thunderbird-profilen på din computer (mappen reminderfox) til denne enhed, og vælg den så her.
 1001| Mere
+1002| Den fil blev ikke valgt i ReminderFoxAgain, så den blev ikke åbnet.

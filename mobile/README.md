@@ -38,8 +38,8 @@ This branch builds the APK on GitHub's servers: **Actions → Android app** runs
 `new/android-test` (or press **Run workflow**). Open the finished run and download **ReminderFoxAgain-android** under
 Artifacts. It has:
 
-- `ReminderFoxAgain-0.9.5-debug.apk` — install this one to try the app;
-- `ReminderFoxAgain-0.9.5-release-unsigned.apk` — for signing later;
+- `ReminderFoxAgain-0.9.5.1-debug.apk` — install this one to try the app;
+- `ReminderFoxAgain-0.9.5.1-release-unsigned.apk` — for signing later;
 - `SHA256SUMS.txt`.
 
 **Install:** copy the debug APK to the phone and open it; Android asks to allow installs from that app (Files or
@@ -91,7 +91,7 @@ and a large font size; the alarm sounds on each channel.
 | `mobile/src/android.js`, `android.css` | The Calendar tab, the ＋ button, touch, Back, the phone layout (app bar, ⋮ menu, navigation bar, chips, list items), hidden desktop settings |
 | `mobile/src/plugins.js` | The Capacitor plugins, bundled into `www/m/cap.js` |
 | `mobile/build-web.js` | Builds `www/` with esbuild (the host core into `www/m/host.js`) |
-| `mobile/android/` | The native project (`npx cap add android`, then `mobile/tools/android-res.py`: icons, splash, sounds, permissions, version 0.9.5 / 905) |
+| `mobile/android/` | The native project (`npx cap add android`, then `mobile/tools/android-res.py`: icons, splash, sounds, permissions, version 0.9.5.1 / 9051) |
 | `.github/workflows/android.yml` | Builds the APKs on GitHub |
 
 The app's shared code has one change for this: `src/ui/app.js` knows a `calendar` tab (the calendar panel as a view),

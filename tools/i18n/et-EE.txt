@@ -1000,3 +1000,4 @@
 999| Sinu meeldetuletusi hoitakse selles seadmes, iga päev tehakse varukoopia.
 1000| Kopeeri reminderfox.ics oma arvuti Firefoxi või Thunderbirdi profiilist (selle kaustast reminderfox) sellesse seadmesse ja vali see siis siin.
 1001| Veel
+1002| Seda faili ei valitud ReminderFoxAgainis, seega seda ei avatud.

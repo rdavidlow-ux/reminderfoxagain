@@ -6,9 +6,9 @@ on Linux).
 
 ## Stack
 
-Node.js 22, Electron **44.7.0**, `ical.js` **2.2.1** (only runtime dependency), `@electron/packager` **20.3.0**. Pin
+Node.js 22, Electron **44.10.2**, `ical.js` **2.2.1** (only runtime dependency), `@electron/packager` **20.3.0**. Pin
 exact versions; commit `package-lock.json`. Plain HTML/CSS/JS, no framework. `package.json` as in the reference
-(`name reminderfoxagain`, `productName ReminderFoxAgain`, `version 0.9.5`, `main src/main.js`) including its `package`
+(`name reminderfoxagain`, `productName ReminderFoxAgain`, `version 0.9.5.1`, `main src/main.js`) including its `package`
 script.
 
 ## Host specifics
@@ -33,7 +33,10 @@ Exactly as `reference/source/installer/`:
 - It verifies the `.asar`. For the runtime it uses the installed one if the Electron version matches, else the
   `…-runtime-<ver>.partN.bin` files (joined, SHA-256 checked, unzipped). From 0.7.0 an installed runtime without
   `locales\de.pak` (from 0.6.x, which kept only en-US, en-GB and fr) is replaced when the parts are present; without the
-  parts it is kept, with the note "Note: the installed runtime has date pickers in English only…".
+  parts it is kept, with the note "Note: the installed runtime has date pickers in English only…". An installed
+  runtime of another Electron version with no parts at hand stops the update with "This update comes with a new
+  runtime (Electron <ver>; the installed one is <old>). Put the runtime parts … next to this script. Nothing was
+  changed…" (0.9.5.1).
 - It stages `Programs\ReminderFoxAgain.new` and swaps it in with rollback, and creates the shortcuts and the HKCU Uninstall key. It writes `Uninstall ReminderFoxAgain.ps1`,
   which keeps the data unless the user types YES.
 
@@ -42,7 +45,7 @@ Exactly as `reference/source/installer/`:
 1. Unit tests in seven time zones.
 2. `npm run package` (win32 x64, asar, ignores tests/docs/installer).
 3. Keep only the en-US and en-GB Chromium locales plus those in `CHROMIUM_LOCALES` in `src/main.js` (30 files), so date pickers follow the chosen language.
-4. Copy `app.asar` → `ReminderFoxAgain-app-0.9.5.asar`.
+4. Copy `app.asar` → `ReminderFoxAgain-app-0.9.5.1.asar`.
 5. Runtime zip: `touch` everything to 2026-01-01 UTC, `zip -X -9 -D` from a sorted list, split into 28 MiB parts.
 6. Fill the setup template (CRLF) and the .bat (CRLF).
 
@@ -51,11 +54,11 @@ Two builds in a row must give identical SHA-256 for every release file.
 ## Checks
 
 `npm test` in 7 zones · `tools/e2e.sh` (37 runs, ~658 lines, no WRONG/ERROR; five of them in German, French as the system language, a pick in Settings, and Arabic; one in the alarm window for the continuous sound) ·
-`tools/test-setup.sh` 20/20 · `tools/shots.sh` vs `reference/screenshots/` · two identical builds.
+`tools/test-setup.sh` 22/22 · `tools/shots.sh` vs `reference/screenshots/` · two identical builds.
 
 ## Deliverables
 
 `dist/release/`: `Install or Update ReminderFoxAgain.bat`, `ReminderFoxAgain-Setup.ps1`,
-`ReminderFoxAgain-app-0.9.5.asar`, `ReminderFoxAgain-runtime-0.9.5.part1.bin … part6.bin`; a source zip (no
-`node_modules`, no `dist`); the screenshots. Updating from 0.7.x needs only the .bat, .ps1 and .asar; updating from 0.6.x should include the runtime parts so date
+`ReminderFoxAgain-app-0.9.5.1.asar`, `ReminderFoxAgain-runtime-0.9.5.1.part1.bin … part6.bin`; a source zip (no
+`node_modules`, no `dist`); the screenshots. Updating with the same runtime needs only the .bat, .ps1 and .asar (0.9.5.1 has a new runtime, so updating to it needs the parts); updating from 0.6.x should include the runtime parts so date
 pickers follow the language.

@@ -11,8 +11,8 @@ A = os.path.join(ROOT, 'build-prompt', 'reference', 'assets', 'android')
 RES = os.path.join(ROOT, 'mobile', 'android', 'app', 'src', 'main', 'res')
 APP = os.path.join(ROOT, 'mobile', 'android', 'app')
 VER = json.load(open(os.path.join(ROOT, 'package.json')))['version']
-a, b, c = (int(x) for x in VER.split('.')[:3])
-CODE = a * 10000 + b * 100 + c  # 0.9.5 -> 905, always growing
+a, b, c, d = ([int(x) for x in VER.split('.')] + [0])[:4]
+CODE = a * 100000 + b * 1000 + c * 10 + d  # 0.9.5.1 -> 9051, 0.9.6 -> 9060: always growing (0.9.5 was 905)
 BG = (0xFB, 0xF8, 0xF4)
 DPI = {'mdpi': 1, 'hdpi': 1.5, 'xhdpi': 2, 'xxhdpi': 3, 'xxxhdpi': 4}
 

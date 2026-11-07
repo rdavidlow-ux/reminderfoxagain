@@ -1000,3 +1000,4 @@
 999| Dyn oantinkens wurde op dit apparaat bewarre, mei elke dei in reservekopy.
 1000| Kopiearje reminderfox.ics út it Firefox- of Thunderbird-profyl fan dyn kompjûter (de map reminderfox) nei dit apparaat en kies it dan hjir.
 1001| Mear
+1002| Dat bestân is net yn ReminderFoxAgain keazen en is dêrom net iepene.

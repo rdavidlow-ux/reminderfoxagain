@@ -1385,5 +1385,6 @@
  "Share a copy of your reminders file": "مشاركة نسخة من ملف التذكيرات",
  "Your reminders are kept on this device, with a backup every day.": "تُحفظ تذكيراتك على هذا الجهاز، مع نسخة احتياطية كل يوم.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "انسخ reminderfox.ics من ملف تعريف Firefox أو Thunderbird على حاسوبك (مجلد reminderfox) إلى هذا الجهاز، ثم اختره هنا.",
- "More": "المزيد"
+ "More": "المزيد",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "لم يتم اختيار هذا الملف في ReminderFoxAgain، لذا لم يُفتح."
 }

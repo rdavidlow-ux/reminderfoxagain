@@ -1000,3 +1000,4 @@
 999| Coinnítear do mheabhrúcháin ar an ngléas seo, le cúltaca gach lá.
 1000| Cóipeáil reminderfox.ics ó phróifíl Firefox nó Thunderbird do ríomhaire (a fhillteán reminderfox) chuig an ngléas seo, ansin roghnaigh anseo é.
 1001| Tuilleadh
+1002| Níor roghnaíodh an comhad sin in ReminderFoxAgain, mar sin níor osclaíodh é.

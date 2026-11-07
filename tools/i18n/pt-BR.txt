@@ -1000,3 +1000,4 @@
 999| Seus lembretes ficam neste dispositivo, com um backup todo dia.
 1000| Copie reminderfox.ics do perfil do Firefox ou Thunderbird do seu computador (a pasta reminderfox) para este dispositivo e depois escolha-o aqui.
 1001| Mais
+1002| Esse arquivo não foi escolhido no ReminderFoxAgain, por isso não foi aberto.

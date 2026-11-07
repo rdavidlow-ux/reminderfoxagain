@@ -1000,3 +1000,4 @@
 999| Os teus recordatorios gárdanse neste dispositivo, cunha copia de seguranza cada día.
 1000| Copia reminderfox.ics do perfil de Firefox ou Thunderbird do computador (o cartafol reminderfox) a este dispositivo e despois escólleo aquí.
 1001| Máis
+1002| Ese ficheiro non se escolleu en ReminderFoxAgain, así que non se abriu.

@@ -1000,3 +1000,4 @@
 999| Je herinneringen worden op dit apparaat bewaard, met elke dag een back-up.
 1000| Kopieer reminderfox.ics uit het Firefox- of Thunderbird-profiel van je computer (de map reminderfox) naar dit apparaat en kies het dan hier.
 1001| Meer
+1002| Dat bestand is niet in ReminderFoxAgain gekozen en is daarom niet geopend.

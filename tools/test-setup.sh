@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Runs the installer in PowerShell 7 against fake %LOCALAPPDATA% / %APPDATA% folders. 20 checks.
+# Runs the installer in PowerShell 7 against fake %LOCALAPPDATA% / %APPDATA% folders. 22 checks.
 #   tools/test-setup.sh [pwsh]
 set -uo pipefail
 cd "$(dirname "$0")/.."
@@ -70,6 +70,13 @@ check "missing parts: nothing installed" test ! -e "$(P "$H" ReminderFoxAgain)"
 H="$TMP/h5"; run "$H" "$U"
 check "nothing installed, no parts: clear message" bash -c "[ \"\$(cat '$H/rc')\" = 1 ] && grep -q 'a new install needs the runtime parts' '$H/out.txt'"
 check "nothing installed, no parts: nothing created" test ! -e "$(P "$H" ReminderFoxAgain)" -a ! -e "$(P "$H" ReminderFoxAgain).new"
+
+# 5b. an update with a new runtime but without the parts says so, and changes nothing
+H="$TMP/h5b"; run "$H" "$REL"; D="$(P "$H" ReminderFoxAgain)"; echo "1.0.0" > "$D/version"
+BEFORE="$(cd "$D" && find . -type f -exec sha256sum {} + | sort | sha256sum)"
+run "$H" "$U"
+check "new runtime, no parts: says the update needs the runtime parts" bash -c "[ \"\$(cat '$H/rc')\" = 1 ] && grep -q 'comes with a new runtime' '$H/out.txt'"
+check "new runtime, no parts: installation unchanged" test "$(cd "$D" && find . -type f -exec sha256sum {} + | sort | sha256sum)" = "$BEFORE"
 
 # 6. an update over an install with stray files (a README, an old app backup) leaves a clean install, data untouched
 H="$TMP/h6"; run "$H" "$REL"; D="$(P "$H" ReminderFoxAgain)"

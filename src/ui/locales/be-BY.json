@@ -1321,5 +1321,6 @@
  "Share a copy of your reminders file": "Падзяліцца копіяй файла напамінаў",
  "Your reminders are kept on this device, with a backup every day.": "Вашы напаміны захоўваюцца на гэтай прыладзе, з рэзервовай копіяй кожны дзень.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Скапіруйце reminderfox.ics з профілю Firefox або Thunderbird на камп'ютары (тэчка reminderfox) на гэту прыладу, потым выберыце яго тут.",
- "More": "Яшчэ"
+ "More": "Яшчэ",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Гэты файл не быў выбраны ў ReminderFoxAgain, таму ён не адкрыты."
 }

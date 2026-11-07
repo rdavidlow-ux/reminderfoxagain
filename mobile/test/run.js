@@ -27,6 +27,7 @@ const TYPES = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/cs
 function serve() {
   const server = http.createServer((req, res) => {
     const u = new URL(req.url, 'http://x');
+    if (u.pathname === '/_cal/huge.ics') { res.setHeader('access-control-allow-origin', '*'); require(path.join(ROOT, 'tools', 'sample-calendar.js')).sendHuge(res); return; }
     if (u.pathname === '/_cal/holidays.ics') { res.writeHead(200, { 'content-type': 'text/calendar', 'access-control-allow-origin': '*' }); res.end(require(path.join(ROOT, 'tools', 'sample-calendar.js')).text()); return; }
     const p = path.join(WWW, decodeURIComponent(u.pathname));
     if (!p.startsWith(WWW) || !fs.existsSync(p) || fs.statSync(p).isDirectory()) { res.writeHead(404); res.end(); return; }

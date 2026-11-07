@@ -79,6 +79,10 @@ try {
     if ($parts.Count -gt 0) {
       Fail ("Some runtime parts are missing: " + ($missing -join ', ') + ". Put all $PartCount parts in the same folder as this script.")
     }
+    $installedRt = Read-RuntimeVersion $InstallDir
+    if ($installedRt -and (Test-Path -LiteralPath (Join-Path $InstallDir $Exe))) {
+      Fail "This update comes with a new runtime (Electron $RuntimeVersion; the installed one is $installedRt). Put the runtime parts (ReminderFoxAgain-runtime-$Version.part1.bin ... part$PartCount.bin) next to this script. Nothing was changed in your existing installation or your reminders."
+    }
     Fail "ReminderFoxAgain is not installed yet, and a new install needs the runtime parts (ReminderFoxAgain-runtime-$Version.part1.bin ... part$PartCount.bin) next to this script."
   }
 
