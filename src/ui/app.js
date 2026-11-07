@@ -19,6 +19,9 @@
   const monthDay = (d) => d.toLocaleDateString(window.RF.LOCALE, { month: 'long', day: 'numeric' });
   const ORD = (n) => (n === -1 ? T('last') : I18.ordinal ? I18.ordinal(n) : n + (n === 1 ? 'st' : n === 2 ? 'nd' : n === 3 ? 'rd' : 'th'));
 
+  // the Android app: the Calendar view is the main view (a small month and the day's agenda, as a list or the hours),
+  // and it has no Month, Week or Day views
+  const ANDROID = document.documentElement.dataset.host === 'android';
   const ls = {
     get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : v; } catch (e) { return d; } },
     set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* storage unavailable */ } },
@@ -270,6 +273,9 @@
     if (S.tab === 'reminders' && !S.search && !S.welcome && S.visited.has(S.filter)) S.scroll[S.filter] = listView.scrollTop;
   }
   async function setTab(tab) {
+    // (RFA_DESKTOP_CHECKS: the Android UI checks also run the desktop's checks, which use the shared Month view and
+    // the calendar panel's months setting; the app itself never sets it)
+    if (ANDROID && tab === 'month' && !window.RFA_DESKTOP_CHECKS) tab = 'calendar';
     saveScroll();
     S.tab = tab;
     for (const b of document.querySelectorAll('.tab')) b.setAttribute('aria-selected', String(b.dataset.tab === tab));
@@ -1014,7 +1020,9 @@
     const nav = (a, t, ch) => `<button class="nav" data-cal="${a}" title="${t}">${ch}</button>`;
     let html = `<div class="mcal-head">${first ? nav('prev', 'Previous month', '‹') : '<span class="nav-sp"></span>'}<span class="ttl" data-cal="today" title="Go to today">${esc(fmt.month(m))}</span>${last ? nav('next', 'Next month', '›') : '<span class="nav-sp"></span>'}</div><div class="mgrid">`;
     for (let i = 0; i < 7; i++) html += `<div class="wd">${esc(fmt.narrow(addDays(gs, i)))}</div>`;
-    for (let i = 0; i < 42; i++) {
+    // six weeks, or (in the Android app, where it is kept small) only the weeks the month needs
+    const weeks = ANDROID ? Math.ceil((Math.round((m - gs) / 864e5) + new Date(m.getFullYear(), m.getMonth() + 1, 0).getDate()) / 7) : 6;
+    for (let i = 0; i < weeks * 7; i++) {
       const d = addDays(gs, i);
       const k = dayKey(d);
       const out = d.getMonth() !== m.getMonth();
@@ -1035,7 +1043,7 @@
     return `${html}</div>`;
   }
   async function renderSide() {
-    const n = Math.min(3, Math.max(1, Number(S.settings.miniMonths) || 1));
+    const n = ANDROID && !window.RFA_DESKTOP_CHECKS ? 1 : Math.min(3, Math.max(1, Number(S.settings.miniMonths) || 1));
     const months = Array.from({ length: n }, (_, i) => new Date(S.calMonth.getFullYear(), S.calMonth.getMonth() + i, 1));
     const gs = gridStart(months[0]);
     const ge = addDays(gridStart(months[n - 1]), 42);
@@ -1047,24 +1055,58 @@
     $('mcal').classList.toggle('multi', n > 1);
     await renderAgenda();
   }
+  // The day's agenda: a list (all-day items first, then by time) or, in the Android app, the 24 hours like the Day
+  // view, opened at the time now on today (else at 7 AM or the first item) and kept where it was while on that day.
+  const AG = { mode: ANDROID && ls.get('agendaMode', 'list') === 'hours' ? 'hours' : 'list', day: null, scroll: null, timer: 0 };
+  function agendaItem(r) {
+    const tm = r.kind === 'todo' ? 'To-do' : r.allDay ? 'All day' : fmt.time(r.start);
+    const small = [r.carried ? `Overdue since ${fmt.date(r.overdueSince)}` : '', r.location, r.repeatText ? `↻ ${r.repeatText}` : ''].filter(Boolean).map(esc).join(' · ');
+    return `<div class="item${r.completed ? ' done' : ''}${r.important ? ' important' : ''}${r.carried ? ' carried' : ''}${S.selDay === S.today ? ' today' : S.selDay < S.today ? ' past' : ''}${r.sub ? ' subcal' : ''}"${subAttrs(r)} data-uid="${esc(r.uid)}" data-start="${occOf(r)}"><div class="tm">${esc(tm)}</div><div class="tx"><b>${r.important ? '★ ' : ''}${esc(r.summary)}</b>${small ? `<small>${small}</small>` : ''}</div></div>`;
+  }
   async function renderAgenda() {
     const d = parseKey(S.selDay);
     const rows = (await rangeWithSubs(d.getTime(), addDays(d, 1).getTime(), { includeTodos: true }, 'month')).filter(notDoneItem)
       .sort((a, b) => (b.allDay - a.allDay) || (a.start - b.start));
     const head = S.selDay === S.today ? `Today · ${fmt.date(d)}` : fmt.long(d);
-    let html = `<h3><span>${esc(head)}</span><button class="btn ghost" data-ag="add" title="Add a reminder on this day">＋</button></h3>`;
-    if (!rows.length) html += '<div class="none">Nothing on this day.</div>';
-    for (const r of rows) {
-      const tm = r.kind === 'todo' ? 'To-do' : r.allDay ? 'All day' : fmt.time(r.start);
-      const small = [r.carried ? `Overdue since ${fmt.date(r.overdueSince)}` : '', r.location, r.repeatText ? `↻ ${r.repeatText}` : ''].filter(Boolean).map(esc).join(' · ');
-      html += `<div class="item${r.completed ? ' done' : ''}${r.important ? ' important' : ''}${r.carried ? ' carried' : ''}${S.selDay === S.today ? ' today' : S.selDay < S.today ? ' past' : ''}${r.sub ? ' subcal' : ''}"${subAttrs(r)} data-uid="${esc(r.uid)}" data-start="${occOf(r)}"><div class="tm">${esc(tm)}</div><div class="tx"><b>${r.important ? '★ ' : ''}${esc(r.summary)}</b>${small ? `<small>${small}</small>` : ''}</div></div>`;
+    const sw = ANDROID ? `<span class="seg ag-mode" role="group" aria-label="${esc(T('Show the day as'))}">${[['list', 'List'], ['hours', 'Hours']].map(([m, w]) => `<button type="button" data-agm="${m}" aria-pressed="${AG.mode === m}">${esc(T(w))}</button>`).join('')}</span>` : '';
+    let html = `<h3><span>${esc(head)}</span>${sw}<button class="btn ghost" data-ag="add" title="Add a reminder on this day">＋</button></h3>`;
+    const box = $('agenda');
+    const old = box.querySelector('.tg-body');
+    const keep = old && AG.day === S.selDay ? old.scrollTop : null;
+    if (AG.mode === 'hours') {
+      const allDay = []; const timed = [];
+      for (const r of rows) { const m = minutesOn(r, S.selDay); if (m) timed.push({ r, ...m }); else allDay.push(r); }
+      const hours = Array.from({ length: 24 }, (_, h) => `<div class="tg-h"><span>${h ? esc(fmt.time(new Date(2000, 0, 1, h))) : ''}</span></div>`).join('');
+      const today = S.selDay === S.today;
+      const c = today ? ' today' : S.selDay < S.today ? ' past' : '';
+      html += `<div class="cal-days day ag-hours" style="--tg-n:1;--tg-hour:${HOUR_PX}px">` +
+        (allDay.length ? `<div class="ag-all">${allDay.map(agendaItem).join('')}</div>` : '') +
+        `<div class="tg-body"><div class="tg-row tg-grid"><div class="tg-gut tg-hours">${hours}</div><div class="tg-col col${c}" data-day="${S.selDay}">` +
+        `${today ? `<div class="tg-now" style="top:${nowTop().toFixed(1)}px"></div>` : ''}${layoutDay(timed).map((t) => timedHtml(t, S.selDay, false)).join('')}</div></div></div></div>`;
+      RF.setHTML(box, html);
+      const body = box.querySelector('.tg-body');
+      const first = timed.reduce((m, t) => Math.min(m, t.from), 24 * 60);
+      // today: the hour before now at the top; another day: 7 AM, or its first item when earlier
+      const at = today ? new Date().getHours() * 60 + new Date().getMinutes() - 60 : Math.min(7 * 60, first) - 15;
+      body.scrollTop = keep != null ? keep : Math.max(0, at / 60 * HOUR_PX);
+      clearInterval(AG.timer);
+      AG.timer = setInterval(() => {
+        const line = box.querySelector('.tg-now');
+        if (!line || !line.isConnected) { clearInterval(AG.timer); return; }
+        line.style.top = `${nowTop().toFixed(1)}px`;
+      }, 60e3);
+    } else {
+      if (!rows.length) html += '<div class="none">Nothing on this day.</div>';
+      for (const r of rows) html += agendaItem(r);
+      RF.setHTML(box, html);
     }
-    RF.setHTML($('agenda'), html);
+    box.classList.toggle('hours', AG.mode === 'hours');
+    AG.day = S.selDay;
   }
   async function selectDay(k, opts = {}) {
     S.selDay = k;
     const d = parseKey(k);
-    const n = Math.min(3, Math.max(1, Number(S.settings.miniMonths) || 1));
+    const n = ANDROID && !window.RFA_DESKTOP_CHECKS ? 1 : Math.min(3, Math.max(1, Number(S.settings.miniMonths) || 1));
     const idx = (d.getFullYear() - S.calMonth.getFullYear()) * 12 + d.getMonth() - S.calMonth.getMonth();
     if (idx < 0 || idx >= n) { S.calMonth = new Date(d.getFullYear(), d.getMonth(), 1); }
     await renderSide();
@@ -1112,8 +1154,16 @@
   });
   $('agenda').addEventListener('click', (e) => {
     if (e.target.closest('[data-ag=add]')) { openEditor({ kind: 'event', date: S.selDay }); return; }
-    const it = e.target.closest('.item');
+    const m = e.target.closest('[data-agm]');
+    if (m) { AG.mode = m.dataset.agm; AG.day = null; ls.set('agendaMode', AG.mode); renderAgenda(); return; }
+    const it = e.target.closest('.item, .tev');
     if (it) openEditor({ uid: it.dataset.uid, start: Number(it.dataset.start) });
+  });
+  $('agenda').addEventListener('dblclick', (e) => {
+    const col = e.target.closest('.tg-col');
+    if (!col || e.target.closest('.tev')) return;
+    const min = Math.max(0, Math.min(23 * 60 + 30, Math.floor((e.clientY - col.getBoundingClientRect().top) / HOUR_PX * 2) * 30));
+    openEditor({ kind: 'event', date: col.dataset.day, prefill: { time: `${RF.pad(Math.floor(min / 60))}:${RF.pad(min % 60)}` } });
   });
   async function showDayInList(k) {
     S.selDay = k;
@@ -2165,7 +2215,8 @@
   };
   (async () => {
     await guard(refresh());
-    if (S.tab === 'reminders' && !S.welcome) await renderReminders('enter');
+    if (ANDROID && !S.welcome) await setTab('calendar');
+    else if (S.tab === 'reminders' && !S.welcome) await renderReminders('enter');
     if (S.meta.archiveMoved) {
       const l = ARCHIVE_LIST;
       toast(T(S.meta.archiveMoved === 1 ? '{n} archived item moved to the “{list}” list' : '{n} archived items moved to the “{list}” list', { n: S.meta.archiveMoved, list: T(l) }), 8000, { label: 'Show', fn: () => showList(l) });

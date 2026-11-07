@@ -1001,3 +1001,7 @@
 1000| Copiază reminderfox.ics din profilul Firefox sau Thunderbird al computerului (dosarul reminderfox) pe acest dispozitiv, apoi alege-l aici.
 1001| Mai mult
 1002| Fișierul nu a fost ales în ReminderFoxAgain, așa că nu a fost deschis.
+1003| Ore
+1004| Arată ziua ca
+1005| Mai multe opțiuni
+1006| Mai puține opțiuni

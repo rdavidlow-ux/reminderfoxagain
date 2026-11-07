@@ -1001,3 +1001,7 @@
 1000| Copia reminderfox.ics do perfil de Firefox ou Thunderbird do computador (o cartafol reminderfox) a este dispositivo e despois escólleo aquí.
 1001| Máis
 1002| Ese ficheiro non se escolleu en ReminderFoxAgain, así que non se abriu.
+1003| Horas
+1004| Amosar o día como
+1005| Máis opcións
+1006| Menos opcións

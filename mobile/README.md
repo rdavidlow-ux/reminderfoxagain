@@ -6,15 +6,22 @@ ReminderFoxAgain as an Android app for phones and tablets (Android 7.0 and later
 
 What is different on Android:
 
-- **The calendar panel is a view of its own.** The mini calendar and the picked day's agenda are the **Calendar** tab,
-  beside Reminders, the lists and Month/Week/Day; there is no panel beside the list. On a tablet the mini calendar
-  and the agenda sit side by side.
+- **A simple, streamlined design, with the Calendar first.** The app opens on the **Calendar** view: a small month on
+  top (only the weeks it needs; a dot on days with something on them, a red dot when something there is overdue,
+  today ringed) and the picked day's agenda under it. **List | Hours** switches the agenda between a list and the
+  24 hours like a day planner, which opens at the time now with a line across it; the choice is remembered. A tap on
+  an item opens it; a double tap in the hours adds a reminder at that time. There are no Month, Week or Day views,
+  and no calendar panel beside the list. On a tablet the month and the agenda sit side by side.
+- **Simpler editors.** A reminder shows its title, date and time, how it repeats and its alarm; a list item its title,
+  due date, list, repeat and when to remind. The end time, "Remind me daily until completed", the category, place,
+  link and notes are under **More options**, which opens by itself when the item has any of them. A new list item
+  has no "Completed" or "Schedule as a reminder…" yet.
 - **Alarms are notifications.** Every alarm of the next 14 days is scheduled as an Android notification, with
   **Snooze**, **Done** and **Open**, so it rings when the app is closed. They are scheduled again whenever reminders
   or settings change, and when the app is put away or opened. With the app open, what is due shows in a sheet from
   the bottom (the desktop's alarm window); the "Today and upcoming" pop-up is a sheet too.
 - **A phone layout in today's style** (below 720 px wide; tablets keep the desktop layout with touch sizes):
-  - a **navigation bar** at the bottom for Reminders, Lists, Month (or Week or Day) and Calendar, instead of the tabs;
+  - a **navigation bar** at the bottom for the Calendar, Reminders and Lists, instead of the tabs;
   - a **top bar** with the view's name (on Lists, the list picker), 🔍 search that opens across the bar, and a **⋮ menu**
     with Quick alarm, Alarms, suspend or resume alarms, Data file and Settings (the desktop's header and status bar);
   - the filters as a row of **chips** that scrolls sideways (Upcoming ▾, a category, ✓ Show completed, Calendars);
@@ -22,7 +29,7 @@ What is different on Android:
     quiet headings, and a ★ before starred items;
   - a ＋ button for a new reminder or list item; dialogs fill the screen with their buttons at the bottom; a tap opens
     an item, and a long press opens its menu as a sheet from the bottom. **Back** closes what is open (a menu, the
-    search, a dialog, the alarm sheet), then goes back to Reminders.
+    search, a dialog, the alarm sheet), then goes back to the Calendar.
   The colours come from the theme, so dark and high contrast work as on the desktop.
 - **Files:** reminders, settings and the daily backups are kept in the app's private folder (Android's own backup
   includes them). Export, "Save a backup copy…" and "Data file" open Android's share sheet (save to Files or Drive, or
@@ -30,7 +37,8 @@ What is different on Android:
   `reminderfox.ics` to the phone first (Settings → Data → Import from ReminderFox… says so).
 - Not on Android: email features, the tray, start at login and the folders.
 
-Screenshots (made-up sample data, in a phone-sized browser): `mobile/screenshots/`.
+Screenshots (made-up sample data, in a phone-sized browser): `mobile/screenshots/` (the Calendar as a list and as the
+hours, Reminders, a list, the editors, the menus, an alarm, dark, and a tablet).
 
 ## Get the app (APK)
 
@@ -72,9 +80,12 @@ node mobile/build-web.js && mobile/test/e2e.sh   # last line: … checks, 0 prob
 ```
 
 `mobile/test/run.js` opens the app's pages in Chromium with Capacitor's web versions of the plugins and runs the
-desktop's `tools/ui` scripts at the desktop size (the same app must pass them) and `mobile/test/android-phone.js` at a
-phone and a tablet size, in English and German: the Calendar view, the ＋ button, cards, full-screen dialogs, the menu
-from the bottom, Back, the alarm sheet and the notifications that are scheduled.
+desktop's `tools/ui` scripts at the desktop size (the same app must pass them; they start on Reminders, as on the
+desktop, and may use the Month view and the calendar's months setting, whose code is shared but which the app never
+shows) and `mobile/test/android-phone.js` at a phone and a tablet size, in English and German: starting on the
+Calendar, the small month, the agenda as a list and as the hours (opened at the time now), no Month, Week or Day
+views, the simple editors and More options, the ＋ button, cards, full-screen dialogs, the menu from the bottom, Back,
+the alarm sheet and the notifications that are scheduled.
 
 **Not checked yet (needs a phone or an emulator):** installing the APK; the permission questions; a reminder a few
 minutes ahead ringing with the app closed and the screen off; Snooze, Done and Open on the notification; a
@@ -88,7 +99,7 @@ and a large font size; the alarm sounds on each channel.
 | `mobile/src/android-host.js` | Runs the host core in the main page with an Android adapter: files (Capacitor Filesystem, `rfa/` in the app's data folder, written atomically), the alarm and pop-up sheets (`alarm.html`, `slider.html` in a frame), scheduled notifications and their actions, links in the system browser |
 | `mobile/src/shim.js` | Gives the add-on's `thunderbird/bridge.js` a `browser.runtime` that reaches the host directly (the sheets reach it through their parent) |
 | `mobile/src/android-page.js` | After the bridge: no email features; saving a file shares it |
-| `mobile/src/android.js`, `android.css` | The Calendar tab, the ＋ button, touch, Back, the phone layout (app bar, ⋮ menu, navigation bar, chips, list items), hidden desktop settings |
+| `mobile/src/android.js`, `android.css` | The Calendar as the main view (the small month, List \| Hours), no Month view, the simple editors (More options), the ＋ button, touch, Back, the phone layout (app bar, ⋮ menu, navigation bar, chips, list items), hidden desktop settings |
 | `mobile/src/plugins.js` | The Capacitor plugins, bundled into `www/m/cap.js` |
 | `mobile/build-web.js` | Builds `www/` with esbuild (the host core into `www/m/host.js`) |
 | `mobile/android/` | The native project (`npx cap add android`, then `mobile/tools/android-res.py`: icons, splash, sounds, permissions, version 0.9.5.1 / 9051) |

@@ -1001,3 +1001,7 @@
 1000| Kopeeri reminderfox.ics oma arvuti Firefoxi või Thunderbirdi profiilist (selle kaustast reminderfox) sellesse seadmesse ja vali see siis siin.
 1001| Veel
 1002| Seda faili ei valitud ReminderFoxAgainis, seega seda ei avatud.
+1003| Tunnid
+1004| Näita päeva kui
+1005| Rohkem valikuid
+1006| Vähem valikuid

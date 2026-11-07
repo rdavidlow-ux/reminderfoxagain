@@ -1001,3 +1001,7 @@
 1000| 컴퓨터의 Firefox 또는 Thunderbird 프로필(reminderfox 폴더)에서 reminderfox.ics를 이 기기로 복사한 다음 여기에서 선택하세요.
 1001| 더보기
 1002| 이 파일은 ReminderFoxAgain에서 선택하지 않았으므로 열지 않았습니다.
+1003| 시간
+1004| 하루 보기 방식
+1005| 추가 옵션
+1006| 옵션 줄이기

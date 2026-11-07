@@ -1049,3 +1049,8 @@ Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its re
 More
 # the desktop app opens only files picked in it (security audit)
 That file was not picked in ReminderFoxAgain, so it was not opened.
+# Android: the agenda as the hours, and More options in the editors
+Hours
+Show the day as
+More options
+Fewer options

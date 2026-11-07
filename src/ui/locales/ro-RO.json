@@ -1265,5 +1265,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Mementourile tale sunt păstrate pe acest dispozitiv, cu o copie de rezervă în fiecare zi.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Copiază reminderfox.ics din profilul Firefox sau Thunderbird al computerului (dosarul reminderfox) pe acest dispozitiv, apoi alege-l aici.",
  "More": "Mai mult",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Fișierul nu a fost ales în ReminderFoxAgain, așa că nu a fost deschis."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Fișierul nu a fost ales în ReminderFoxAgain, așa că nu a fost deschis.",
+ "Hours": "Ore",
+ "Show the day as": "Arată ziua ca",
+ "More options": "Mai multe opțiuni",
+ "Fewer options": "Mai puține opțiuni"
 }

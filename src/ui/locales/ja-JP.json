@@ -1022,5 +1022,9 @@
  "Your reminders are kept on this device, with a backup every day.": "リマインダーはこのデバイスに保存され、毎日バックアップされます。",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "パソコンの Firefox または Thunderbird のプロファイル（reminderfox フォルダー）から reminderfox.ics をこのデバイスにコピーし、ここで選んでください。",
  "More": "その他",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "このファイルは ReminderFoxAgain で選ばれていないため、開きませんでした。"
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "このファイルは ReminderFoxAgain で選ばれていないため、開きませんでした。",
+ "Hours": "時間",
+ "Show the day as": "1日の表示",
+ "More options": "その他のオプション",
+ "Fewer options": "オプションを減らす"
 }

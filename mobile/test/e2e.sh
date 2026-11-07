@@ -24,8 +24,6 @@ run lists-views.js
 run lists.js
 run alarms-data.js
 run alarms-view.js
-run month-scroll.js
-run --sample bills day-week.js
 run archive-list.js
 run subscriptions.js
 run item-colours.js

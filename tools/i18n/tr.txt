@@ -1001,3 +1001,7 @@
 1000| reminderfox.ics dosyasını bilgisayarınızdaki Firefox veya Thunderbird profilinden (reminderfox klasöründen) bu cihaza kopyalayın, sonra burada seçin.
 1001| Daha fazla
 1002| Bu dosya ReminderFoxAgain içinde seçilmedi, bu yüzden açılmadı.
+1003| Saatler
+1004| Günü şöyle göster
+1005| Daha fazla seçenek
+1006| Daha az seçenek

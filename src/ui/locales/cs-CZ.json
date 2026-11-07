@@ -1322,5 +1322,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Vaše připomínky jsou uloženy v tomto zařízení, se zálohou každý den.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Zkopírujte reminderfox.ics z profilu Firefoxu nebo Thunderbirdu v počítači (jeho složky reminderfox) do tohoto zařízení a pak ho vyberte zde.",
  "More": "Další",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tento soubor nebyl vybrán v ReminderFoxAgain, proto nebyl otevřen."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tento soubor nebyl vybrán v ReminderFoxAgain, proto nebyl otevřen.",
+ "Hours": "Hodiny",
+ "Show the day as": "Zobrazit den jako",
+ "More options": "Další možnosti",
+ "Fewer options": "Méně možností"
 }

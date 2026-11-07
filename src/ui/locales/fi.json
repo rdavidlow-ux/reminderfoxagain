@@ -1202,5 +1202,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Muistutuksesi säilytetään tällä laitteella, ja niistä tehdään varmuuskopio joka päivä.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopioi reminderfox.ics tietokoneesi Firefox- tai Thunderbird-profiilista (sen reminderfox-kansiosta) tälle laitteelle ja valitse se sitten tästä.",
  "More": "Lisää",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tiedostoa ei valittu ReminderFoxAgainissa, joten sitä ei avattu."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tiedostoa ei valittu ReminderFoxAgainissa, joten sitä ei avattu.",
+ "Hours": "Tunnit",
+ "Show the day as": "Näytä päivä",
+ "More options": "Lisää valintoja",
+ "Fewer options": "Vähemmän valintoja"
 }

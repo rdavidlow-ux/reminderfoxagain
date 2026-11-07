@@ -8,6 +8,7 @@ html[data-host="android"] #stTrayNote,
 html[data-host="android"] #stFolder,
 html[data-host="android"] #stBackups,
 html[data-host="android"] #stPath,
+html[data-host="android"] .row:has(> #stMonths),
 html[data-host="android"] #sideToggle,
 html[data-host="android"] #addReminder,
 html[data-host="android"] #addTodo,
@@ -219,3 +220,76 @@ html[data-host="android"] .toast { bottom: calc(120px + env(safe-area-inset-bott
   html[data-host="android"] .ctx button { padding: 14px 16px; border-radius: 12px; }
   html[data-host="android"] .rfa-sheet { border-radius: 28px 28px 0 0; z-index: 85; }
 }
+
+/* ------------------------------------------------------------ simple and streamlined: the Calendar view
+   A small month on top (a dot on days with something on them, today ringed, the picked day filled), the day's agenda
+   under it filling the rest: a list, or the 24 hours with a line at the time now. On a tablet they sit side by side. */
+html[data-host="android"] .tab[data-tab="month"] { display: none !important; }
+html[data-host="android"] body[data-tab="calendar"] aside.side { display: flex; flex-direction: column; overflow: hidden; gap: 8px; }
+html[data-host="android"] body[data-tab="calendar"] .mcal { flex: none; padding: 6px 6px 4px; }
+html[data-host="android"] .mcal-head { margin-bottom: 2px; }
+html[data-host="android"] .mcal-head .ttl { font-size: 15px; }
+html[data-host="android"] .mcal .mgrid { gap: 0; }
+html[data-host="android"] .mcal .wd { font-size: 11px; padding: 2px 0; }
+html[data-host="android"] .mday { height: 30px; min-height: 0; font-size: 13.5px; border-radius: 999px; }
+html[data-host="android"] .mday.has::after { bottom: 2px; width: 4px; height: 4px; margin-left: -2px; }
+html[data-host="android"] .mday.has.imp::after { width: 6px; height: 6px; margin-left: -3px; bottom: 1px; }
+html[data-host="android"] .mcal-foot { margin-top: 2px; justify-content: center; gap: 4px; }
+html[data-host="android"] .mcal-foot [data-cal="list"] { display: none; }
+html[data-host="android"] .mcal-foot .btn { min-height: 28px; padding: 0 12px; font-size: 13px; }
+html[data-host="android"] body[data-tab="calendar"] .agenda { flex: 1; min-height: 0; display: flex; flex-direction: column; overflow-y: auto; }
+html[data-host="android"] .agenda h3 { display: flex; align-items: center; gap: 8px; flex: none; }
+html[data-host="android"] .agenda h3 > span:first-child { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html[data-host="android"] .agenda .ag-mode button { min-height: 30px; padding: 0 12px; font-size: 13px; }
+html[data-host="android"] .agenda.hours { overflow: hidden; }
+html[data-host="android"] .agenda .ag-hours { flex: 1; min-height: 0; border: 0; border-radius: 16px; }
+html[data-host="android"] .agenda .ag-hours .tg-body { padding-bottom: 88px; }
+html[data-host="android"] .agenda .ag-all { flex: none; display: flex; flex-direction: column; gap: 4px; padding: 6px; max-height: 30%; overflow-y: auto; border-bottom: 1px solid var(--line); }
+html[data-host="android"] .agenda .ag-all .item { margin: 0; padding: 8px 10px; }
+html[data-host="android"] .agenda .ag-hours .tev { border-radius: 8px; }
+@media (min-width: 720px) {
+  html[data-host="android"] body[data-tab="calendar"] aside.side { flex-direction: row; align-items: stretch; }
+  html[data-host="android"] body[data-tab="calendar"] .mcal { width: 360px; align-self: flex-start; }
+}
+
+/* ------------------------------------------------------------ simple and streamlined: the editors
+   No boxes or fixed label columns; labels sit above their fields; the rest is under More options. */
+html[data-host="android"] #editor .box { border: 0; background: transparent; padding: 0; margin: 0; }
+html[data-host="android"] #editor .lbl { width: auto !important; min-width: 0; font-size: 12.5px; color: var(--ink-3); font-weight: 600; }
+html[data-host="android"] #editor .dlg-body { display: flex; flex-direction: column; gap: 14px; }
+html[data-host="android"] #editor .dlg-body .row { gap: 10px; }
+html[data-host="android"] #editor .field { flex: 1 1 140px; min-width: 0; }
+html[data-host="android"] #editor .field > label { font-size: 12.5px; color: var(--ink-3); font-weight: 600; }
+html[data-host="android"] #editor .title-inp { font-size: 19px; font-weight: 600; min-height: 50px; }
+html[data-host="android"] #editor #edRepeatBox .row, html[data-host="android"] #editor #edRemindBox .row,
+html[data-host="android"] #editor #edAlarmRow { flex-wrap: wrap; align-items: center; }
+html[data-host="android"] #editor #edRepeatBox > .row:first-child .lbl, html[data-host="android"] #editor #edAlarmRow > .lbl,
+html[data-host="android"] #editor #edRemindBox > .row:first-child .lbl { flex: 0 0 100%; }
+html[data-host="android"] #editor #edFreq, html[data-host="android"] #editor #edAlarm, html[data-host="android"] #editor #edRmStart { flex: 1 1 auto; }
+html[data-host="android"] #editor .summary { font-size: 12.5px; color: var(--ink-3); padding: 0; margin: 0; }
+html[data-host="android"] #editor .summary:empty, html[data-host="android"] #editor .note:empty { display: none; }
+html[data-host="android"] #editor #edRepeatBox, html[data-host="android"] #editor #edRemindBox { display: flex; flex-direction: column; gap: 8px; }
+html[data-host="android"] #editor #edRepeatBox.hidden, html[data-host="android"] #editor #edRemindBox.hidden { display: none; }
+html[data-host="android"] #editor #edEndRow .note, html[data-host="android"] #editor #edFlagsRow > .lbl { display: none; }
+html[data-host="android"] #editor .rfa-list-row:has(#edListWrap.hidden) { display: none; }
+.rfa-moreopts { display: flex; align-items: center; justify-content: space-between; width: 100%; min-height: 46px; padding: 0 4px;
+  border: 0; border-top: 1px solid var(--line); background: transparent; color: var(--ink-2); font: inherit; font-weight: 600; cursor: pointer; }
+.rfa-moreopts .chev { font-size: 18px; transition: transform .15s ease; }
+.rfa-moreopts[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.rfa-opts { display: flex; flex-direction: column; gap: 14px; }
+.rfa-opts[hidden] { display: none; }
+/* the editor's other actions (Delete…, Schedule…, Completed) on a line of their own; Cancel and Save always on the right */
+html[data-host="android"] #editor .dlg-foot { justify-content: flex-end; row-gap: 6px; }
+html[data-host="android"] #editor .dlg-foot .spacer { flex: 1 0 100%; height: 0; }
+html[data-host="android"] #editor .dlg-foot > .hidden + .spacer:first-of-type { display: none; }
+html[data-host="android"] #editor.rfa-new #edDoneWrap, html[data-host="android"] #editor.rfa-new #edSchedule { display: none !important; }
+/* overdue days: a red dot rather than the desktop's underline, which doesn't suit the round days */
+html[data-host="android"] .mday.overdue { box-shadow: none !important; }
+html[data-host="android"] .mday.overdue.today { box-shadow: inset 0 0 0 1.5px var(--fox) !important; }
+html[data-host="android"] .mday.overdue::after { background: var(--danger, #d93025); }
+/* the agenda reaches down to the navigation bar; the ＋ button's room is at the end of what scrolls */
+@media (max-width: 719px) {
+  html[data-host="android"] body[data-tab="calendar"] aside.side { padding-bottom: calc(var(--rfa-nav-h) + 8px); }
+  html[data-host="android"] body[data-tab="calendar"] .agenda:not(.hours) { padding-bottom: 88px; }
+}
+html[data-host="android"] #editor .rfa-opts .field { flex-basis: 100%; }

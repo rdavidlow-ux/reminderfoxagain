@@ -1207,5 +1207,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Els recordatoris es guarden en aquest dispositiu, amb una còpia de seguretat cada dia.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Copia reminderfox.ics del perfil de Firefox o Thunderbird de l'ordinador (la carpeta reminderfox) a aquest dispositiu i després tria'l aquí.",
  "More": "Més",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Aquest fitxer no s'ha triat a ReminderFoxAgain, així que no s'ha obert."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Aquest fitxer no s'ha triat a ReminderFoxAgain, així que no s'ha obert.",
+ "Hours": "Hores",
+ "Show the day as": "Mostra el dia com a",
+ "More options": "Més opcions",
+ "Fewer options": "Menys opcions"
 }

@@ -1001,3 +1001,7 @@
 1000| Skopiuj reminderfox.ics z profilu Firefoksa lub Thunderbirda na komputerze (z folderu reminderfox) na to urządzenie, a potem wybierz go tutaj.
 1001| Więcej
 1002| Ten plik nie został wybrany w ReminderFoxAgain, więc nie został otwarty.
+1003| Godziny
+1004| Pokaż dzień jako
+1005| Więcej opcji
+1006| Mniej opcji

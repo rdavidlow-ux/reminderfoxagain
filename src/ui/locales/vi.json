@@ -1022,5 +1022,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Lời nhắc của bạn được lưu trên thiết bị này, sao lưu mỗi ngày.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Sao chép reminderfox.ics từ hồ sơ Firefox hoặc Thunderbird trên máy tính (thư mục reminderfox) sang thiết bị này, rồi chọn nó ở đây.",
  "More": "Thêm",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tệp này không được chọn trong ReminderFoxAgain nên không được mở."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tệp này không được chọn trong ReminderFoxAgain nên không được mở.",
+ "Hours": "Giờ",
+ "Show the day as": "Hiển thị ngày dạng",
+ "More options": "Thêm tùy chọn",
+ "Fewer options": "Ít tùy chọn hơn"
 }

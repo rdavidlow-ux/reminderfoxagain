@@ -1001,3 +1001,7 @@
 1000| 将 reminderfox.ics 从电脑的 Firefox 或 Thunderbird 配置文件（其 reminderfox 文件夹）复制到此设备，然后在这里选择它。
 1001| 更多
 1002| 该文件不是在 ReminderFoxAgain 中选择的，因此未打开。
+1003| 小时
+1004| 当天显示为
+1005| 更多选项
+1006| 更少选项

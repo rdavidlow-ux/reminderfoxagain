@@ -1022,5 +1022,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Таны сануулгууд энэ төхөөрөмжид хадгалагдаж, өдөр бүр нөөцлөгдөнө.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Компьютерийнхээ Firefox эсвэл Thunderbird профайлаас (reminderfox хавтас) reminderfox.ics-г энэ төхөөрөмж рүү хуулаад энд сонгоно уу.",
  "More": "Бусад",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Энэ файлыг ReminderFoxAgain-д сонгоогүй тул нээгээгүй."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Энэ файлыг ReminderFoxAgain-д сонгоогүй тул нээгээгүй.",
+ "Hours": "Цаг",
+ "Show the day as": "Өдрийг харуулах",
+ "More options": "Нэмэлт сонголт",
+ "Fewer options": "Цөөн сонголт"
 }

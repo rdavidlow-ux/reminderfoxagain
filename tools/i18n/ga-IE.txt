@@ -1001,3 +1001,7 @@
 1000| Cóipeáil reminderfox.ics ó phróifíl Firefox nó Thunderbird do ríomhaire (a fhillteán reminderfox) chuig an ngléas seo, ansin roghnaigh anseo é.
 1001| Tuilleadh
 1002| Níor roghnaíodh an comhad sin in ReminderFoxAgain, mar sin níor osclaíodh é.
+1003| Uaireanta
+1004| Taispeáin an lá mar
+1005| Tuilleadh roghanna
+1006| Níos lú roghanna

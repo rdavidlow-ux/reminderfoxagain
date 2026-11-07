@@ -1001,3 +1001,7 @@
 1000| Sao chép reminderfox.ics từ hồ sơ Firefox hoặc Thunderbird trên máy tính (thư mục reminderfox) sang thiết bị này, rồi chọn nó ở đây.
 1001| Thêm
 1002| Tệp này không được chọn trong ReminderFoxAgain nên không được mở.
+1003| Giờ
+1004| Hiển thị ngày dạng
+1005| Thêm tùy chọn
+1006| Ít tùy chọn hơn

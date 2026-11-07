@@ -1001,3 +1001,7 @@
 1000| Copiez reminderfox.ics depuis le profil Firefox ou Thunderbird de votre ordinateur (son dossier reminderfox) vers cet appareil, puis choisissez-le ici.
 1001| Plus
 1002| Ce fichier n'a pas été choisi dans ReminderFoxAgain : il n'a donc pas été ouvert.
+1003| Heures
+1004| Afficher la journée en
+1005| Plus d'options
+1006| Moins d'options

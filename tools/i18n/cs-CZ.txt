@@ -1001,3 +1001,7 @@
 1000| Zkopírujte reminderfox.ics z profilu Firefoxu nebo Thunderbirdu v počítači (jeho složky reminderfox) do tohoto zařízení a pak ho vyberte zde.
 1001| Další
 1002| Tento soubor nebyl vybrán v ReminderFoxAgain, proto nebyl otevřen.
+1003| Hodiny
+1004| Zobrazit den jako
+1005| Další možnosti
+1006| Méně možností

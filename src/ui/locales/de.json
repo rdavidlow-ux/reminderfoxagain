@@ -1204,5 +1204,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Ihre Erinnerungen werden auf diesem Gerät gespeichert, mit einer Sicherung jeden Tag.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopieren Sie reminderfox.ics aus dem Firefox- oder Thunderbird-Profil Ihres Computers (dessen Ordner reminderfox) auf dieses Gerät und wählen Sie die Datei dann hier aus.",
  "More": "Mehr",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Diese Datei wurde nicht in ReminderFoxAgain ausgewählt und daher nicht geöffnet."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Diese Datei wurde nicht in ReminderFoxAgain ausgewählt und daher nicht geöffnet.",
+ "Hours": "Stunden",
+ "Show the day as": "Den Tag zeigen als",
+ "More options": "Weitere Optionen",
+ "Fewer options": "Weniger Optionen"
 }

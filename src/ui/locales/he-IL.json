@@ -1262,5 +1262,9 @@
  "Your reminders are kept on this device, with a backup every day.": "התזכורות שלך נשמרות במכשיר הזה, עם גיבוי בכל יום.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "העתק את reminderfox.ics מפרופיל Firefox או Thunderbird במחשב (התיקייה reminderfox) למכשיר הזה, ואז בחר אותו כאן.",
  "More": "עוד",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "הקובץ הזה לא נבחר ב־ReminderFoxAgain, ולכן הוא לא נפתח."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "הקובץ הזה לא נבחר ב־ReminderFoxAgain, ולכן הוא לא נפתח.",
+ "Hours": "שעות",
+ "Show the day as": "הצגת היום כ",
+ "More options": "אפשרויות נוספות",
+ "Fewer options": "פחות אפשרויות"
 }

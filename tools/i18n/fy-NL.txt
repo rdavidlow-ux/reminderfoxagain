@@ -1001,3 +1001,7 @@
 1000| Kopiearje reminderfox.ics út it Firefox- of Thunderbird-profyl fan dyn kompjûter (de map reminderfox) nei dit apparaat en kies it dan hjir.
 1001| Mear
 1002| Dat bestân is net yn ReminderFoxAgain keazen en is dêrom net iepene.
+1003| Oeren
+1004| Lit de dei sjen as
+1005| Mear opsjes
+1006| Minder opsjes

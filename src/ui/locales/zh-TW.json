@@ -1022,5 +1022,9 @@
  "Your reminders are kept on this device, with a backup every day.": "你的提醒保存在此裝置上，每天備份一次。",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "將 reminderfox.ics 從電腦的 Firefox 或 Thunderbird 設定檔（其 reminderfox 資料夾）複製到此裝置，然後在這裡選擇它。",
  "More": "更多",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "這個檔案不是在 ReminderFoxAgain 中選取的，因此沒有開啟。"
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "這個檔案不是在 ReminderFoxAgain 中選取的，因此沒有開啟。",
+ "Hours": "小時",
+ "Show the day as": "當天顯示為",
+ "More options": "更多選項",
+ "Fewer options": "較少選項"
 }

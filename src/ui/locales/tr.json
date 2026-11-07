@@ -1022,5 +1022,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Anımsatıcılarınız bu cihazda, her gün bir yedekle saklanır.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "reminderfox.ics dosyasını bilgisayarınızdaki Firefox veya Thunderbird profilinden (reminderfox klasöründen) bu cihaza kopyalayın, sonra burada seçin.",
  "More": "Daha fazla",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Bu dosya ReminderFoxAgain içinde seçilmedi, bu yüzden açılmadı."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Bu dosya ReminderFoxAgain içinde seçilmedi, bu yüzden açılmadı.",
+ "Hours": "Saatler",
+ "Show the day as": "Günü şöyle göster",
+ "More options": "Daha fazla seçenek",
+ "Fewer options": "Daha az seçenek"
 }

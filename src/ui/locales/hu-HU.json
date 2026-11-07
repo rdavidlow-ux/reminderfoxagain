@@ -1022,5 +1022,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Az emlékeztetőid ezen az eszközön vannak, minden nap biztonsági mentéssel.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Másold a reminderfox.ics fájlt a számítógéped Firefox- vagy Thunderbird-profiljából (annak reminderfox mappájából) erre az eszközre, majd válaszd ki itt.",
  "More": "Továbbiak",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Ezt a fájlt nem a ReminderFoxAgainben választották ki, ezért nem nyílt meg."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Ezt a fájlt nem a ReminderFoxAgainben választották ki, ezért nem nyílt meg.",
+ "Hours": "Órák",
+ "Show the day as": "A nap megjelenítése",
+ "More options": "További beállítások",
+ "Fewer options": "Kevesebb beállítás"
 }

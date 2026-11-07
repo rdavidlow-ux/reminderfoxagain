@@ -1001,3 +1001,7 @@
 1000| Kopieer reminderfox.ics uit het Firefox- of Thunderbird-profiel van je computer (de map reminderfox) naar dit apparaat en kies het dan hier.
 1001| Meer
 1002| Dat bestand is niet in ReminderFoxAgain gekozen en is daarom niet geopend.
+1003| Uren
+1004| Toon de dag als
+1005| Meer opties
+1006| Minder opties

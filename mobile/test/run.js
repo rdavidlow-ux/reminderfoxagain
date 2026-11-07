@@ -53,6 +53,7 @@ function serve() {
   const ctx = await browser.newContext({ viewport: { width: SIZE[0], height: SIZE[1] }, hasTouch: touch, isMobile: touch, deviceScaleFactor: touch ? 2 : 1, locale: 'en-CA' });
   const page = await ctx.newPage();
   const errors = [];
+  const OWN = fs.existsSync(path.join(__dirname, SCRIPT));
   page.on('console', (m) => { const t = m.text(); if (t.startsWith('E2E')) console.log(t); else if (m.type() === 'error' && !/favicon|Failed to load resource|Not implemented on web|not implemented/i.test(t)) errors.push(t); });
   page.on('pageerror', (e) => errors.push(e.message));
 
@@ -104,6 +105,16 @@ function serve() {
     rf.importPaths = (files, opts) => importPaths(toks(files), opts);
   }, { full: fixture('reminderfox-addon-full.ics'), prefs: fixture('reminderfox-addon-prefs.js'), sample: fixture('reminderfox-addon-sample.ics') });
 
+  // the desktop starts on Reminders and its checks expect that; the Android app starts on the Calendar
+  // The desktop's checks (tools/ui/*.js) run here as they are: they start on Reminders, as the desktop does (the
+  // Android app starts on the Calendar), and may use the Month view, whose code is shared but which the Android app
+  // never shows (RFA_DESKTOP_CHECKS lets them reach it and the months setting; android-phone.js checks the app itself has neither).
+  if (!OWN && !path.isAbsolute(SCRIPT)) {
+    await page.evaluate(async () => {
+      window.RFA_DESKTOP_CHECKS = true;
+      if (!window.__rf.S.welcome) { await window.__rf.setTab('reminders'); await new Promise((r) => setTimeout(r, 800)); }
+    });
+  }
   const code = fs.readFileSync(path.isAbsolute(SCRIPT) ? SCRIPT : fs.existsSync(path.join(__dirname, SCRIPT)) ? path.join(__dirname, SCRIPT) : path.join(ROOT, 'tools', 'ui', SCRIPT), 'utf8');
   try { await page.evaluate(`(async () => {\n${code}\n})()`); } catch (e) { console.log(`E2E ERROR ${SCRIPT}: ${e.message.split('\n')[0]}`); }
   await sleep(1200);

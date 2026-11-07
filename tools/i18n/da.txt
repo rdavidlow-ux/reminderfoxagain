@@ -1001,3 +1001,7 @@
 1000| Kopiér reminderfox.ics fra Firefox- eller Thunderbird-profilen på din computer (mappen reminderfox) til denne enhed, og vælg den så her.
 1001| Mere
 1002| Den fil blev ikke valgt i ReminderFoxAgain, så den blev ikke åbnet.
+1003| Timer
+1004| Vis dagen som
+1005| Flere indstillinger
+1006| Færre indstillinger

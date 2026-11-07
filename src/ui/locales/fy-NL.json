@@ -1202,5 +1202,9 @@
  "Your reminders are kept on this device, with a backup every day.": "Dyn oantinkens wurde op dit apparaat bewarre, mei elke dei in reservekopy.",
  "Copy reminderfox.ics from your computer's Firefox or Thunderbird profile (its reminderfox folder) to this device, then choose it here.": "Kopiearje reminderfox.ics út it Firefox- of Thunderbird-profyl fan dyn kompjûter (de map reminderfox) nei dit apparaat en kies it dan hjir.",
  "More": "Mear",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Dat bestân is net yn ReminderFoxAgain keazen en is dêrom net iepene."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Dat bestân is net yn ReminderFoxAgain keazen en is dêrom net iepene.",
+ "Hours": "Oeren",
+ "Show the day as": "Lit de dei sjen as",
+ "More options": "Mear opsjes",
+ "Fewer options": "Minder opsjes"
 }

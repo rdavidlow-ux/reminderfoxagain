@@ -17,6 +17,14 @@ Every ReminderFoxAgain release, newest first. Release files are on the
   downloads. UI checks in Chromium: `mobile/test/e2e.sh`.
 - Eight new strings in all 33 languages (`tools/i18n/add-android.py`, `add-android-phone.py`).
 - The Month view's UI check no longer depends on how busy a day is (its items could hide behind "+n more").
+- **A simple, streamlined design, with the Calendar first.** The app opens on the Calendar view: a small month (only
+  the weeks it needs, a dot on days with something on them, today ringed) and the day's agenda as a **list** or as
+  the **hours** like the Day view, opened at the time now; the choice is remembered. The separate Month, Week and Day
+  views are gone from the Android app (the desktop and the add-on keep them). Back goes to the Calendar.
+- **Simpler reminder and list item editors** on Android: the title, date and time, repeat and alarm (for a list item,
+  its list and when to remind); the end, "Remind me daily until completed", category, place, link and notes under
+  **More options**, open by itself when the item uses them.
+- Four new strings in all 33 languages (`tools/i18n/add-android-simple.py`); new screenshots in `mobile/screenshots/`.
 - **Brought up to 0.9.5.1** (merged from `main`): the security audit fixes and the Reminders list keeping your place.
   On Android a subscribed calendar also stops downloading at 10 MB, and the new UI checks (`injection.js`,
   `keep-place.js`) run in `mobile/test/e2e.sh`. The app is version 0.9.5.1, version code 9051 (the code now has room
