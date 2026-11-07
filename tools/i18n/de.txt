@@ -992,3 +992,4 @@
 991| Diese Liste enthält archivierte Einträge: Sie kann nicht umbenannt oder entfernt werden, und ihre Einträge erscheinen nicht in den Erinnerungen und Kalenderansichten
 992| Die Liste „{list}“ enthält archivierte Einträge und kann nicht umbenannt werden.
 993| Die Liste „{list}“ enthält archivierte Einträge und kann nicht entfernt werden.
+994| Diese Datei wurde nicht in ReminderFoxAgain ausgewählt und daher nicht geöffnet.

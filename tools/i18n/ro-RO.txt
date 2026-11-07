@@ -992,3 +992,4 @@
 991| Această listă păstrează elementele arhivate: nu poate fi redenumită sau eliminată, iar elementele ei nu apar în Mementouri și în vizualizările calendarului
 992| Lista „{list}” păstrează elementele arhivate și nu poate fi redenumită.
 993| Lista „{list}” păstrează elementele arhivate și nu poate fi eliminată.
+994| Fișierul nu a fost ales în ReminderFoxAgain, așa că nu a fost deschis.

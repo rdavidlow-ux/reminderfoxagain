@@ -1193,5 +1193,6 @@
  "archive": "arquivo",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Esta lista guarda itens arquivados: não pode ser renomeada nem removida, e seus itens não aparecem em Lembretes nem nas visualizações de calendário",
  "The “{list}” list keeps archived items and can't be renamed.": "A lista “{list}” guarda itens arquivados e não pode ser renomeada.",
- "The “{list}” list keeps archived items and can't be removed.": "A lista “{list}” guarda itens arquivados e não pode ser removida."
+ "The “{list}” list keeps archived items and can't be removed.": "A lista “{list}” guarda itens arquivados e não pode ser removida.",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Esse arquivo não foi escolhido no ReminderFoxAgain, por isso não foi aberto."
 }

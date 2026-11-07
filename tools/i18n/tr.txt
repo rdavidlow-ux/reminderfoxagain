@@ -992,3 +992,4 @@
 991| Bu liste arşivlenmiş öğeleri tutar: yeniden adlandırılamaz veya kaldırılamaz ve öğeleri Anımsatıcılar ile takvim görünümlerinde gösterilmez
 992| “{list}” listesi arşivlenmiş öğeleri tutar ve yeniden adlandırılamaz.
 993| “{list}” listesi arşivlenmiş öğeleri tutar ve kaldırılamaz.
+994| Bu dosya ReminderFoxAgain içinde seçilmedi, bu yüzden açılmadı.

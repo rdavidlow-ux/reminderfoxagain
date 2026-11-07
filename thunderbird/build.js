@@ -105,6 +105,8 @@ const manifest = {
   permissions: ['storage', 'unlimitedStorage', 'notifications', 'menus', 'tabs', 'idle', 'messagesRead', 'messagesTags', 'messagesUpdate', 'compose', 'addressBooks', 'accountsRead'],
   // reading an .ics link in an email: asked for that one site when the person chooses "Import this calendar…"
   optional_permissions: ['*://*/*'],
+  // the pages run only the add-on's own scripts: no eval, no inline scripts, no plugins (the default, written out)
+  content_security_policy: "script-src 'self'; object-src 'none'",
   // Thunderbird keeps Ctrl+N, Ctrl+T, Ctrl+Q… for itself, so the app's shortcuts are Thunderbird shortcuts with Alt+Shift
   // (people can change them under Add-ons and Themes → ⚙ → Manage Extension Shortcuts). Alt+Shift with the access key
   // of a Thunderbird menu (F E V G M N T H) opens that menu instead, so they avoid those letters: A (add a reminder),

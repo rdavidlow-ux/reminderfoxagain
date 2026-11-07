@@ -992,3 +992,4 @@
 991| Ta lista przechowuje zarchiwizowane elementy: nie można zmienić jej nazwy ani jej usunąć, a jej elementy nie pojawiają się w przypomnieniach ani w widokach kalendarza
 992| Lista „{list}” przechowuje zarchiwizowane elementy i nie można zmienić jej nazwy.
 993| Lista „{list}” przechowuje zarchiwizowane elementy i nie można jej usunąć.
+994| Ten plik nie został wybrany w ReminderFoxAgain, więc nie został otwarty.

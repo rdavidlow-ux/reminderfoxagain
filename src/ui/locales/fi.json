@@ -1193,5 +1193,6 @@
  "archive": "arkisto",
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Tämä luettelo säilyttää arkistoidut kohteet: sitä ei voi nimetä uudelleen tai poistaa, eikä sen kohteita näytetä muistutuksissa tai kalenterinäkymissä",
  "The “{list}” list keeps archived items and can't be renamed.": "Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi nimetä uudelleen.",
- "The “{list}” list keeps archived items and can't be removed.": "Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi poistaa."
+ "The “{list}” list keeps archived items and can't be removed.": "Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi poistaa.",
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tiedostoa ei valittu ReminderFoxAgainissa, joten sitä ei avattu."
 }

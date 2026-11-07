@@ -218,7 +218,7 @@ function findLocation(text) {
 }
 
 function reminderFromEmail(mail, opts = {}) {
-  const subject = String((mail && mail.subject) || '').replace(/^\s*((re|fwd?|aw|wg|tr|sv|vs|r|rif|odp|antw)\s*(\[\d+\])?\s*:\s*)+/i, '').trim();
+  const subject = String((mail && mail.subject) || '').slice(0, 2000).replace(/^\s*((re|fwd?|aw|wg|tr|sv|vs|r|rif|odp|antw)\s*(\[\d+\])?\s*:\s*)+/i, '').trim();
   const o = { ...opts, ref: mail && mail.date ? Number(mail.date) : opts.ref };
   const hit = findDate(subject, o) || findDate(String((mail && mail.body) || '').slice(0, 20000), o);
   const location = findLocation(String((mail && mail.body) || '').slice(0, 20000));

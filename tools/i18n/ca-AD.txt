@@ -992,3 +992,4 @@
 991| Aquesta llista guarda els elements arxivats: no es pot reanomenar ni eliminar, i els seus elements no apareixen als recordatoris ni a les vistes de calendari
 992| La llista «{list}» guarda els elements arxivats i no es pot reanomenar.
 993| La llista «{list}» guarda els elements arxivats i no es pot eliminar.
+994| Aquest fitxer no s'ha triat a ReminderFoxAgain, així que no s'ha obert.
