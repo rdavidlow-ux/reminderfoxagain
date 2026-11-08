@@ -1014,5 +1014,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Энэ жагсаалт архивласан зүйлсийг хадгална: нэрийг нь өөрчлөх эсвэл устгах боломжгүй бөгөөд зүйлс нь сануулга болон хуанлийн харагдацад харагдахгүй",
  "The “{list}” list keeps archived items and can't be renamed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул нэрийг нь өөрчлөх боломжгүй.",
  "The “{list}” list keeps archived items and can't be removed.": "“{list}” жагсаалт архивласан зүйлсийг хадгалдаг тул устгах боломжгүй.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Энэ файлыг ReminderFoxAgain-д сонгоогүй тул нээгээгүй."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Энэ файлыг ReminderFoxAgain-д сонгоогүй тул нээгээгүй.",
+ "Yearly by day": "Жил бүр гаригаар",
+ "Monthly by day": "Сар бүр гаригаар",
+ "Biweekly": "Хоёр долоо хоног тутам",
+ "More repeat options…": "Давталтын нэмэлт сонголт…",
+ "{name}: {detail}": "{name}: {detail}"
 }

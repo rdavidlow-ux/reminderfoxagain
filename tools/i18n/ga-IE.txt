@@ -993,3 +993,8 @@
 992| Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a athainmniú.
 993| Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a bhaint.
 994| Níor roghnaíodh an comhad sin in ReminderFoxAgain, mar sin níor osclaíodh é.
+995| Bliantúil de réir lae
+996| Míosúil de réir lae
+997| Gach re seachtain
+998| Tuilleadh roghanna athdhéanta…
+999| {name}: {detail}

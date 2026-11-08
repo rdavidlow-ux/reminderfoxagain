@@ -993,3 +993,8 @@
 992| De list ‘{list}’ bewarret argivearre items en kin net omneamd wurde.
 993| De list ‘{list}’ bewarret argivearre items en kin net fuortsmiten wurde.
 994| Dat bestân is net yn ReminderFoxAgain keazen en is dêrom net iepene.
+995| Jierliks op wikedei
+996| Moanliks op wikedei
+997| Om de wike
+998| Mear werhellingsopsjes…
+999| {name}: {detail}

@@ -993,3 +993,8 @@
 992| Zoznam „{list}“ uchováva archivované položky a nedá sa premenovať.
 993| Zoznam „{list}“ uchováva archivované položky a nedá sa odstrániť.
 994| Tento súbor nebol vybraný v ReminderFoxAgain, preto sa neotvoril.
+995| Ročne podľa dňa v týždni
+996| Mesačne podľa dňa v týždni
+997| Každý druhý týždeň
+998| Ďalšie možnosti opakovania…
+999| {name}: {detail}

@@ -360,7 +360,13 @@ before"). Repeating to-dos advance when ticked ("Done — moved to the next date
 ### 6.4 Editor
 
 Reminder/To-Do switch, title + ★, Date/Time/All day (to-dos: **Due by**, **Any time**, **No date**), Ends (reminders),
-Repeat box with live summary, Alarm (reminders) or **Remind me** box (to-dos: start choice, date, at, then …, "until
+Repeat box with live summary (the menu `#edFreq` has the original ReminderFox's choices, each labelled with the day
+it means from the item's date, as "{name}: {detail}": Does not repeat, **Yearly** ("On November 10"), **Yearly by day**
+("On the 2nd Tuesday of November"; a 5th week = the last), **Monthly** ("On day 10"), **Monthly by day** ("On the 2nd
+Tuesday"), **Weekly** ("Tuesday"), **Biweekly** ("Every 2 weeks on Tuesday"), **Daily**, and **More repeat options…**,
+which shows every N `#edInterval` with a unit select `#edUnitSel` (days, weeks, months, years), the week days, by date
+or by week day, and Ends; it starts from the choice it replaces. An item opens on the choice it is exactly, else on
+More repeat options…, or on "Custom (…)" for a kept rule), Alarm (reminders) or **Remind me** box (to-dos: start choice, date, at, then …, "until
 it's done", "also after the due date", a summary line such as "Every day at 9:00 AM, from Tuesday, October 27, 2026,
 until it's done or due (Nov 3)."). Then remind-until-completed (reminders) or show-in-tooltip (to-dos), Category (▾
 picker), List, Location (🗺 map), Link (↗), Notes. Footer: Delete…, **Schedule as a reminder…**

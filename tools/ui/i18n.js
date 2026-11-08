@@ -23,7 +23,8 @@ try {
   check('month names in the language', window.RF.fmt.monthName(new Date(2026, 0, 15)), want.jan);
   // the editor's repeat summary (weekly on Tuesday and Thursday) is put together in the language
   window.__rf.openEditor({ kind: 'event' }); await sleep(400);
-  $('edFreq').value = 'WEEKLY'; $('edFreq').dispatchEvent(new Event('change', { bubbles: true })); await sleep(200);
+  $('edFreq').value = 'MORE'; $('edFreq').dispatchEvent(new Event('change', { bubbles: true }));
+  $('edUnitSel').value = 'WEEKLY'; $('edUnitSel').dispatchEvent(new Event('change', { bubbles: true })); await sleep(200);
   for (const b of document.querySelectorAll('#edDays button')) if (b.getAttribute('aria-pressed') === 'true') b.click();
   for (const wd of ['TU', 'TH']) document.querySelector(`#edDays button[data-wd="${wd}"]`).click();
   await sleep(300);

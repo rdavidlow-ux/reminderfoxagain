@@ -993,3 +993,8 @@
 992| La llista «{list}» guarda els elements arxivats i no es pot reanomenar.
 993| La llista «{list}» guarda els elements arxivats i no es pot eliminar.
 994| Aquest fitxer no s'ha triat a ReminderFoxAgain, així que no s'ha obert.
+995| Anual per dia
+996| Mensual per dia
+997| Cada dues setmanes
+998| Més opcions de repetició…
+999| {name}: {detail}

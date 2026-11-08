@@ -993,3 +993,8 @@
 992| Listen «{list}» tar vare på arkiverte elementer og kan ikke gis nytt navn.
 993| Listen «{list}» tar vare på arkiverte elementer og kan ikke fjernes.
 994| Den filen ble ikke valgt i ReminderFoxAgain, så den ble ikke åpnet.
+995| Årlig etter ukedag
+996| Månedlig etter ukedag
+997| Annenhver uke
+998| Flere gjentakelsesvalg…
+999| {name}: {detail}

@@ -1158,5 +1158,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Coinníonn an liosta seo míreanna cartlannaithe: ní féidir é a athainmniú ná a bhaint, agus ní thaispeántar a mhíreanna sna meabhrúcháin ná sna radhairc féilire",
  "The “{list}” list keeps archived items and can't be renamed.": "Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a athainmniú.",
  "The “{list}” list keeps archived items and can't be removed.": "Coinníonn an liosta “{list}” míreanna cartlannaithe agus ní féidir é a bhaint.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Níor roghnaíodh an comhad sin in ReminderFoxAgain, mar sin níor osclaíodh é."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Níor roghnaíodh an comhad sin in ReminderFoxAgain, mar sin níor osclaíodh é.",
+ "Yearly by day": "Bliantúil de réir lae",
+ "Monthly by day": "Míosúil de réir lae",
+ "Biweekly": "Gach re seachtain",
+ "More repeat options…": "Tuilleadh roghanna athdhéanta…",
+ "{name}: {detail}": "{name}: {detail}"
 }

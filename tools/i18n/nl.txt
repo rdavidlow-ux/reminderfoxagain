@@ -993,3 +993,8 @@
 992| De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden hernoemd.
 993| De lijst ‘{list}’ bewaart gearchiveerde items en kan niet worden verwijderd.
 994| Dat bestand is niet in ReminderFoxAgain gekozen en is daarom niet geopend.
+995| Jaarlijks op weekdag
+996| Maandelijks op weekdag
+997| Om de week
+998| Meer herhaalopties…
+999| {name}: {detail}

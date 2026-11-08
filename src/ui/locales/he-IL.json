@@ -1254,5 +1254,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "רשימה זו שומרת פריטים בארכיון: אי אפשר לשנות את שמה או להסיר אותה, והפריטים שלה לא מוצגים בתזכורות ובתצוגות לוח השנה",
  "The “{list}” list keeps archived items and can't be renamed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר לשנות את שמה.",
  "The “{list}” list keeps archived items and can't be removed.": "הרשימה „{list}” שומרת פריטים בארכיון ואי אפשר להסיר אותה.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "הקובץ הזה לא נבחר ב־ReminderFoxAgain, ולכן הוא לא נפתח."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "הקובץ הזה לא נבחר ב־ReminderFoxAgain, ולכן הוא לא נפתח.",
+ "Yearly by day": "שנתי לפי יום בשבוע",
+ "Monthly by day": "חודשי לפי יום בשבוע",
+ "Biweekly": "כל שבועיים",
+ "More repeat options…": "אפשרויות חזרה נוספות…",
+ "{name}: {detail}": "{name}: {detail}"
 }

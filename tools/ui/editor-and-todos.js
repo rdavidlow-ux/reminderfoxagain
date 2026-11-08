@@ -10,7 +10,8 @@ try {
   set('edAllDay', false, 'change');
   set('edTime', '16:15');
   set('edEndTime', '17:00');
-  set('edFreq', 'WEEKLY', 'change');
+  set('edFreq', 'MORE', 'change'); // More repeat options…: weekly on chosen days, 8 times
+  set('edUnitSel', 'WEEKLY', 'change');
   for (const b of document.querySelectorAll('#edDays button[aria-pressed="true"]')) b.click();
   document.querySelector('#edDays button[data-wd="TU"]').click();
   document.querySelector('#edDays button[data-wd="TH"]').click();

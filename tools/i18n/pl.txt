@@ -993,3 +993,8 @@
 992| Lista „{list}” przechowuje zarchiwizowane elementy i nie można zmienić jej nazwy.
 993| Lista „{list}” przechowuje zarchiwizowane elementy i nie można jej usunąć.
 994| Ten plik nie został wybrany w ReminderFoxAgain, więc nie został otwarty.
+995| Co roku według dnia tygodnia
+996| Co miesiąc według dnia tygodnia
+997| Co dwa tygodnie
+998| Więcej opcji powtarzania…
+999| {name}: {detail}

@@ -1197,5 +1197,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Cette liste garde les éléments archivés : elle ne peut pas être renommée ni supprimée, et ses éléments n'apparaissent pas dans les rappels ni dans les vues du calendrier",
  "The “{list}” list keeps archived items and can't be renamed.": "La liste «{list}» garde les éléments archivés et ne peut pas être renommée.",
  "The “{list}” list keeps archived items and can't be removed.": "La liste «{list}» garde les éléments archivés et ne peut pas être supprimée.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Ce fichier n'a pas été choisi dans ReminderFoxAgain : il n'a donc pas été ouvert."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Ce fichier n'a pas été choisi dans ReminderFoxAgain : il n'a donc pas été ouvert.",
+ "Yearly by day": "Annuel par jour",
+ "Monthly by day": "Mensuel par jour",
+ "Biweekly": "Toutes les deux semaines",
+ "More repeat options…": "Plus d'options de répétition…",
+ "{name}: {detail}": "{name} : {detail}"
 }

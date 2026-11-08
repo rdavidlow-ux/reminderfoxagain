@@ -993,3 +993,8 @@
 992| Lista „{list}” păstrează elementele arhivate și nu poate fi redenumită.
 993| Lista „{list}” păstrează elementele arhivate și nu poate fi eliminată.
 994| Fișierul nu a fost ales în ReminderFoxAgain, așa că nu a fost deschis.
+995| Anual după zi
+996| Lunar după zi
+997| La două săptămâni
+998| Mai multe opțiuni de repetare…
+999| {name}: {detail}

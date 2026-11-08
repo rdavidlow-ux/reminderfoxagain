@@ -993,3 +993,8 @@
 992| A lista “{list}” guarda itens arquivados e não pode ser renomeada.
 993| A lista “{list}” guarda itens arquivados e não pode ser removida.
 994| Esse arquivo não foi escolhido no ReminderFoxAgain, por isso não foi aberto.
+995| Anual por dia da semana
+996| Mensal por dia da semana
+997| Quinzenal
+998| Mais opções de repetição…
+999| {name}: {detail}

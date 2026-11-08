@@ -993,3 +993,8 @@
 992| Listen “{list}” gemmer arkiverede elementer og kan ikke omdøbes.
 993| Listen “{list}” gemmer arkiverede elementer og kan ikke fjernes.
 994| Den fil blev ikke valgt i ReminderFoxAgain, så den blev ikke åbnet.
+995| Årligt efter ugedag
+996| Månedligt efter ugedag
+997| Hver anden uge
+998| Flere gentagelsesmuligheder…
+999| {name}: {detail}

@@ -993,3 +993,8 @@
 992| Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi nimetä uudelleen.
 993| Luettelo ”{list}” säilyttää arkistoidut kohteet, eikä sitä voi poistaa.
 994| Tiedostoa ei valittu ReminderFoxAgainissa, joten sitä ei avattu.
+995| Vuosittain viikonpäivän mukaan
+996| Kuukausittain viikonpäivän mukaan
+997| Joka toinen viikko
+998| Lisää toistovalintoja…
+999| {name}: {detail}

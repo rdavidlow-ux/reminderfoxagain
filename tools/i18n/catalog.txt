@@ -1039,3 +1039,9 @@ The “{list}” list keeps archived items and can't be renamed.
 The “{list}” list keeps archived items and can't be removed.
 # the desktop app opens only files picked in it (security audit)
 That file was not picked in ReminderFoxAgain, so it was not opened.
+# the repeat choices of the original ReminderFox
+Yearly by day
+Monthly by day
+Biweekly
+More repeat options…
+{name}: {detail}

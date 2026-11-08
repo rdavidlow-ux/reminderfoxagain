@@ -109,18 +109,18 @@ A reminder is something that happens on a date: a one-off, a repeating event or 
 
 ### The editor, field by field
 
-| Field                           | What it does                                                                                                                                                                                   |
-|---------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Description                     | The title. ★ next to it marks the item as important (starred items get their own colour).                                                                                                      |
-| Date, Time, All day             | A timed reminder has a time; an all-day one fills the whole day.                                                                                                                               |
-| Ends                            | An optional end date and time, for events that last.                                                                                                                                           |
-| Repeat                          | Daily, Weekly, Monthly or Yearly, every N days, weeks, months or years, with an end: never, on a date, or after N times.                                                                       |
-| Alarm                           | For timed reminders: at the time, 5 minutes up to 1 week before, or a custom number of minutes, hours, days or weeks. For all-day ones: on the day, or 1–14 days before, at a time you choose. |
-| Remind me daily until completed | If you miss it, it moves to today and alarms every day until you tick it.                                                                                                                      |
-| Category                        | One or more, separated by commas. ▾ opens a tick list of the categories you have.                                                                                                              |
-| Location                        | 🗺 opens the place on a map.                                                                                                                                                                    |
-| Link                            | ↗ opens the web address.                                                                                                                                                                       |
-| Notes                           | Free text, shown in the alarm window.                                                                                                                                                          |
+| Field                           | What it does                                                                                                                                                                                                                                                                                                                                                   |
+|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Description                     | The title. ★ next to it marks the item as important (starred items get their own colour).                                                                                                                                                                                                                                                                      |
+| Date, Time, All day             | A timed reminder has a time; an all-day one fills the whole day.                                                                                                                                                                                                                                                                                               |
+| Ends                            | An optional end date and time, for events that last.                                                                                                                                                                                                                                                                                                           |
+| Repeat                          | The original ReminderFox's choices, each on the reminder's date: Yearly, Yearly by day (for example the 2nd Tuesday of November), Monthly, Monthly by day (the 2nd Tuesday), Weekly, Biweekly or Daily. More repeat options… sets every N days, weeks, months or years, the week days, by date or by week day, and an end: never, on a date, or after N times. |
+| Alarm                           | For timed reminders: at the time, 5 minutes up to 1 week before, or a custom number of minutes, hours, days or weeks. For all-day ones: on the day, or 1–14 days before, at a time you choose.                                                                                                                                                                 |
+| Remind me daily until completed | If you miss it, it moves to today and alarms every day until you tick it.                                                                                                                                                                                                                                                                                      |
+| Category                        | One or more, separated by commas. ▾ opens a tick list of the categories you have.                                                                                                                                                                                                                                                                              |
+| Location                        | 🗺 opens the place on a map.                                                                                                                                                                                                                                                                                                                                    |
+| Link                            | ↗ opens the web address.                                                                                                                                                                                                                                                                                                                                       |
+| Notes                           | Free text, shown in the alarm window.                                                                                                                                                                                                                                                                                                                          |
 
 The coloured line under Repeat says the rule in words, for example “Every 2 weeks on Thu”. **Save** (or Alt+Shift+S) stores the reminder.
 
@@ -128,11 +128,11 @@ The coloured line under Repeat says the rule in words, for example “Every 2 we
 
 - **Dentist next Monday at 2:30 PM, alarm an hour before.** Choose the date, untick All day, type 14:30, then set Alarm to “1 hour before”.
 
-- **Recycling every second Thursday.** Set Repeat to Weekly, every **2** weeks, then tick **Th**.
+- **Recycling every second Thursday.** Pick a Thursday and set Repeat to **Biweekly**.
 
-- **Book club on the last Tuesday of each month.** Pick a date that is a last Tuesday, set Repeat to Monthly, then choose “on the last Tuesday”.
+- **Book club on the last Tuesday of each month.** Pick a date that is a last Tuesday and set Repeat to Monthly by day (“On the last Tuesday”).
 
-- **Canadian Thanksgiving.** Set Repeat to Yearly on the 2nd Monday of October.
+- **Canadian Thanksgiving.** Pick the 2nd Monday of October and set Repeat to Yearly by day.
 
 - **Sarah's birthday with her age.** Type Sarah's \<1985\> birthday and set Repeat to Yearly. The lists show “Sarah's 41st birthday” in 2026 and “42nd” in 2027. \<1985#\> shows just the number (“41”). The editor keeps the raw text and previews the result underneath.
 

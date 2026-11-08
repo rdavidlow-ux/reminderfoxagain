@@ -993,3 +993,8 @@
 992| Listan ”{list}” sparar arkiverade objekt och kan inte byta namn.
 993| Listan ”{list}” sparar arkiverade objekt och kan inte tas bort.
 994| Den filen valdes inte i ReminderFoxAgain, så den öppnades inte.
+995| Årligen per veckodag
+996| Månadsvis per veckodag
+997| Varannan vecka
+998| Fler upprepningsalternativ…
+999| {name}: {detail}

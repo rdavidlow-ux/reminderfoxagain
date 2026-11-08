@@ -993,3 +993,8 @@
 992| Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa ümber nimetada.
 993| Loend „{list}“ hoiab arhiveeritud üksusi ja seda ei saa eemaldada.
 994| Seda faili ei valitud ReminderFoxAgainis, seega seda ei avatud.
+995| Igal aastal nädalapäeva järgi
+996| Igal kuul nädalapäeva järgi
+997| Ülenädalati
+998| Rohkem kordamise valikuid…
+999| {name}: {detail}

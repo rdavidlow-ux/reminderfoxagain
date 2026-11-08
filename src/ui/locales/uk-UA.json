@@ -1314,5 +1314,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "У цьому списку зберігаються архівні елементи: його не можна перейменувати чи вилучити, а його елементи не показуються в нагадуваннях і поданнях календаря",
  "The “{list}” list keeps archived items and can't be renamed.": "У списку «{list}» зберігаються архівні елементи, його не можна перейменувати.",
  "The “{list}” list keeps archived items and can't be removed.": "У списку «{list}» зберігаються архівні елементи, його не можна вилучити.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Цей файл не було вибрано в ReminderFoxAgain, тому його не відкрито."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Цей файл не було вибрано в ReminderFoxAgain, тому його не відкрито.",
+ "Yearly by day": "Щороку за днем тижня",
+ "Monthly by day": "Щомісяця за днем тижня",
+ "Biweekly": "Раз на два тижні",
+ "More repeat options…": "Інші варіанти повтору…",
+ "{name}: {detail}": "{name}: {detail}"
 }

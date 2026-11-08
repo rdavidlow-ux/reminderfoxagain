@@ -993,3 +993,8 @@
 992| Die Liste „{list}“ enthält archivierte Einträge und kann nicht umbenannt werden.
 993| Die Liste „{list}“ enthält archivierte Einträge und kann nicht entfernt werden.
 994| Diese Datei wurde nicht in ReminderFoxAgain ausgewählt und daher nicht geöffnet.
+995| Jährlich nach Wochentag
+996| Monatlich nach Wochentag
+997| Alle zwei Wochen
+998| Weitere Wiederholungsoptionen…
+999| {name}: {detail}

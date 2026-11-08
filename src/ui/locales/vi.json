@@ -1014,5 +1014,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Danh sách này giữ các mục đã lưu trữ: không thể đổi tên hay xóa, và các mục của nó không hiện trong Lời nhắc và các chế độ xem lịch",
  "The “{list}” list keeps archived items and can't be renamed.": "Danh sách “{list}” giữ các mục đã lưu trữ và không thể đổi tên.",
  "The “{list}” list keeps archived items and can't be removed.": "Danh sách “{list}” giữ các mục đã lưu trữ và không thể xóa.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tệp này không được chọn trong ReminderFoxAgain nên không được mở."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tệp này không được chọn trong ReminderFoxAgain nên không được mở.",
+ "Yearly by day": "Hằng năm theo thứ",
+ "Monthly by day": "Hằng tháng theo thứ",
+ "Biweekly": "Hai tuần một lần",
+ "More repeat options…": "Thêm tùy chọn lặp lại…",
+ "{name}: {detail}": "{name}: {detail}"
 }

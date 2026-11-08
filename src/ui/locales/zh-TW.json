@@ -1014,5 +1014,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "此清單保存已封存的項目：無法重新命名或移除，其中的項目不會顯示在提醒和行事曆檢視中",
  "The “{list}” list keeps archived items and can't be renamed.": "「{list}」清單保存已封存的項目，無法重新命名。",
  "The “{list}” list keeps archived items and can't be removed.": "「{list}」清單保存已封存的項目，無法移除。",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "這個檔案不是在 ReminderFoxAgain 中選取的，因此沒有開啟。"
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "這個檔案不是在 ReminderFoxAgain 中選取的，因此沒有開啟。",
+ "Yearly by day": "每年（依星期）",
+ "Monthly by day": "每月（依星期）",
+ "Biweekly": "每兩週",
+ "More repeat options…": "更多重複選項…",
+ "{name}: {detail}": "{name}：{detail}"
 }

@@ -1314,5 +1314,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Tento zoznam uchováva archivované položky: nedá sa premenovať ani odstrániť a jeho položky sa nezobrazujú v pripomienkach ani v zobrazeniach kalendára",
  "The “{list}” list keeps archived items and can't be renamed.": "Zoznam „{list}“ uchováva archivované položky a nedá sa premenovať.",
  "The “{list}” list keeps archived items and can't be removed.": "Zoznam „{list}“ uchováva archivované položky a nedá sa odstrániť.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tento súbor nebol vybraný v ReminderFoxAgain, preto sa neotvoril."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Tento súbor nebol vybraný v ReminderFoxAgain, preto sa neotvoril.",
+ "Yearly by day": "Ročne podľa dňa v týždni",
+ "Monthly by day": "Mesačne podľa dňa v týždni",
+ "Biweekly": "Každý druhý týždeň",
+ "More repeat options…": "Ďalšie možnosti opakovania…",
+ "{name}: {detail}": "{name}: {detail}"
 }

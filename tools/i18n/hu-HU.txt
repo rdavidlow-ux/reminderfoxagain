@@ -993,3 +993,8 @@
 992| A „{list}” lista az archivált elemeket őrzi, és nem nevezhető át.
 993| A „{list}” lista az archivált elemeket őrzi, és nem távolítható el.
 994| Ezt a fájlt nem a ReminderFoxAgainben választották ki, ezért nem nyílt meg.
+995| Évente a hét napja szerint
+996| Havonta a hét napja szerint
+997| Kéthetente
+998| További ismétlési beállítások…
+999| {name}: {detail}

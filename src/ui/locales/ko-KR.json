@@ -1014,5 +1014,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "이 목록은 보관한 항목을 담습니다. 이름을 바꾸거나 제거할 수 없으며, 항목은 미리 알림과 달력 보기에 표시되지 않습니다",
  "The “{list}” list keeps archived items and can't be renamed.": "“{list}” 목록은 보관한 항목을 담고 있어 이름을 바꿀 수 없습니다.",
  "The “{list}” list keeps archived items and can't be removed.": "“{list}” 목록은 보관한 항목을 담고 있어 제거할 수 없습니다.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "이 파일은 ReminderFoxAgain에서 선택하지 않았으므로 열지 않았습니다."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "이 파일은 ReminderFoxAgain에서 선택하지 않았으므로 열지 않았습니다.",
+ "Yearly by day": "매년(요일 기준)",
+ "Monthly by day": "매월(요일 기준)",
+ "Biweekly": "격주",
+ "More repeat options…": "추가 반복 옵션…",
+ "{name}: {detail}": "{name}: {detail}"
 }

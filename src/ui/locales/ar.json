@@ -1378,5 +1378,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "تحتفظ هذه القائمة بالعناصر المؤرشفة: لا يمكن إعادة تسميتها أو إزالتها، ولا تظهر عناصرها في التذكيرات ولا في طرق عرض التقويم",
  "The “{list}” list keeps archived items and can't be renamed.": "تحتفظ قائمة «{list}» بالعناصر المؤرشفة ولا يمكن إعادة تسميتها.",
  "The “{list}” list keeps archived items and can't be removed.": "تحتفظ قائمة «{list}» بالعناصر المؤرشفة ولا يمكن إزالتها.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "لم يتم اختيار هذا الملف في ReminderFoxAgain، لذا لم يُفتح."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "لم يتم اختيار هذا الملف في ReminderFoxAgain، لذا لم يُفتح.",
+ "Yearly by day": "سنويًا حسب يوم الأسبوع",
+ "Monthly by day": "شهريًا حسب يوم الأسبوع",
+ "Biweekly": "كل أسبوعين",
+ "More repeat options…": "خيارات تكرار أخرى…",
+ "{name}: {detail}": "{name}: {detail}"
 }

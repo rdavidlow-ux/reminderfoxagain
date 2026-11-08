@@ -5,7 +5,7 @@ const filter = async (f) => { set("remFilter", f, "change"); await sleep(500); }
 const row = (title) => [...document.querySelectorAll("#listView tbody tr")].find((tr) => tr.querySelector(".t") && tr.querySelector(".t").textContent === title);
 await window.__rf.openEditor({ kind: 'event' }); await sleep(200);
 set('edSummary', 'Piano lesson'); set('edAllDay', false, 'change'); set('edTime', '16:15'); set('edEndTime', '17:00');
-set('edFreq', 'WEEKLY', 'change');
+set('edFreq', 'MORE', 'change'); set('edUnitSel', 'WEEKLY', 'change'); // More repeat options…
 for (const b of document.querySelectorAll('#edDays button[aria-pressed="true"]')) b.click();
 document.querySelector('#edDays button[data-wd="WE"]').click(); document.querySelector('#edDays button[data-wd="TH"]').click();
 set('edEnds', 'count', 'change'); set('edCount', '8'); set('edAlarm', '30', 'change');

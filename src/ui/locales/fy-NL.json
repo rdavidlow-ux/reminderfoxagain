@@ -1194,5 +1194,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Dizze list bewarret argivearre items: hy kin net omneamd of fuortsmiten wurde, en de items steane net yn Oantinkens en de aginda-werjeften",
  "The “{list}” list keeps archived items and can't be renamed.": "De list ‘{list}’ bewarret argivearre items en kin net omneamd wurde.",
  "The “{list}” list keeps archived items and can't be removed.": "De list ‘{list}’ bewarret argivearre items en kin net fuortsmiten wurde.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Dat bestân is net yn ReminderFoxAgain keazen en is dêrom net iepene."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Dat bestân is net yn ReminderFoxAgain keazen en is dêrom net iepene.",
+ "Yearly by day": "Jierliks op wikedei",
+ "Monthly by day": "Moanliks op wikedei",
+ "Biweekly": "Om de wike",
+ "More repeat options…": "Mear werhellingsopsjes…",
+ "{name}: {detail}": "{name}: {detail}"
 }

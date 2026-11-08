@@ -993,3 +993,8 @@
 992| Danh sách “{list}” giữ các mục đã lưu trữ và không thể đổi tên.
 993| Danh sách “{list}” giữ các mục đã lưu trữ và không thể xóa.
 994| Tệp này không được chọn trong ReminderFoxAgain nên không được mở.
+995| Hằng năm theo thứ
+996| Hằng tháng theo thứ
+997| Hai tuần một lần
+998| Thêm tùy chọn lặp lại…
+999| {name}: {detail}

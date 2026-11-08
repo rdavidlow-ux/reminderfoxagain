@@ -993,3 +993,8 @@
 992| L'elenco «{list}» conserva gli elementi archiviati e non può essere rinominato.
 993| L'elenco «{list}» conserva gli elementi archiviati e non può essere rimosso.
 994| Quel file non è stato scelto in ReminderFoxAgain, quindi non è stato aperto.
+995| Annuale per giorno
+996| Mensile per giorno
+997| Ogni due settimane
+998| Altre opzioni di ripetizione…
+999| {name}: {detail}

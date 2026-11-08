@@ -993,3 +993,8 @@
 992| “{list}” listesi arşivlenmiş öğeleri tutar ve yeniden adlandırılamaz.
 993| “{list}” listesi arşivlenmiş öğeleri tutar ve kaldırılamaz.
 994| Bu dosya ReminderFoxAgain içinde seçilmedi, bu yüzden açılmadı.
+995| Yıllık, haftanın gününe göre
+996| Aylık, haftanın gününe göre
+997| İki haftada bir
+998| Diğer yineleme seçenekleri…
+999| {name}: {detail}

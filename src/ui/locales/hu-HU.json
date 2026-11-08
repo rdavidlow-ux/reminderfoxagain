@@ -1014,5 +1014,10 @@
  "This list keeps archived items: it can't be renamed or removed, and its items stay out of the Reminders and calendar views": "Ez a lista az archivált elemeket őrzi: nem nevezhető át és nem távolítható el, elemei pedig nem jelennek meg az emlékeztetőkben és a naptárnézetekben",
  "The “{list}” list keeps archived items and can't be renamed.": "A „{list}” lista az archivált elemeket őrzi, és nem nevezhető át.",
  "The “{list}” list keeps archived items and can't be removed.": "A „{list}” lista az archivált elemeket őrzi, és nem távolítható el.",
- "That file was not picked in ReminderFoxAgain, so it was not opened.": "Ezt a fájlt nem a ReminderFoxAgainben választották ki, ezért nem nyílt meg."
+ "That file was not picked in ReminderFoxAgain, so it was not opened.": "Ezt a fájlt nem a ReminderFoxAgainben választották ki, ezért nem nyílt meg.",
+ "Yearly by day": "Évente a hét napja szerint",
+ "Monthly by day": "Havonta a hét napja szerint",
+ "Biweekly": "Kéthetente",
+ "More repeat options…": "További ismétlési beállítások…",
+ "{name}: {detail}": "{name}: {detail}"
 }
