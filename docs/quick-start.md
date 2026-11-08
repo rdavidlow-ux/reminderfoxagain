@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.9.5.1 — Quick Start
+# ReminderFoxAgain 0.9.5.2 — Quick Start
 
 Nov 7, 2026 · David
 
@@ -8,15 +8,15 @@ Install the Thunderbird add-on (or, without Thunderbird, the desktop app), bring
 
 **In Thunderbird** (128 or later, on Windows, macOS or Linux):
 
-1.  Download ReminderFoxAgain-0.9.5.1-thunderbird.xpi.
+1.  Download ReminderFoxAgain-0.9.5.2-thunderbird.xpi.
 
 2.  In Thunderbird, open **≡ → Add-ons and Themes → ⚙ → Install Add-on From File…** and pick the .xpi.
 
 3.  Thunderbird asks you to confirm and lists what the add-on may do. Click **Add**. The fox button appears in the toolbar at the top right, and ReminderFoxAgain opens in a tab.
 
-**Without Thunderbird**, use the desktop app. It has the same features, except those that need email. **On Windows**, put the .bat, the .ps1, the .asar and the six runtime parts in one folder and double-click **Install or Update ReminderFoxAgain.bat** (no administrator rights needed). **On a Mac**, unzip ReminderFoxAgain-0.9.5.1-macos-universal.zip, drag the app into Applications, and open it once with System Settings → Privacy & Security → **Open Anyway** (macOS 15 and later), or Control-click → **Open** (macOS 13–14). **On Linux**, run sudo apt install ./reminderfoxagain_0.9.5.1_amd64.deb, or unpack the .tar.gz and run ./install.sh.
+**Without Thunderbird**, use the desktop app. It has the same features, except those that need email. **On Windows**, put the .bat, the .ps1, the .asar and the six runtime parts in one folder and double-click **Install or Update ReminderFoxAgain.bat** (no administrator rights needed). **On a Mac**, unzip ReminderFoxAgain-0.9.5.2-macos-universal.zip, drag the app into Applications, and open it once with System Settings → Privacy & Security → **Open Anyway** (macOS 15 and later), or Control-click → **Open** (macOS 13–14). **On Linux**, run sudo apt install ./reminderfoxagain_0.9.5.2_amd64.deb, or unpack the .tar.gz and run ./install.sh.
 
-Updating? Install the newer .xpi the same way, or, for the desktop app on Windows, run the .bat with the new .ps1 and .asar (updating to 0.9.5.1 needs the six runtime parts too, since it has a new runtime). Your data is never touched by an update.
+Updating? Install the newer .xpi the same way, or, for the desktop app on Windows, run the .bat with the new .ps1 and .asar (updating from 0.9.5 or earlier needs the six runtime parts too, since 0.9.5.1 brought a new runtime). Your data is never touched by an update.
 
 ## 2. Start with an existing reminder file
 

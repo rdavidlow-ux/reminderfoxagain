@@ -1,8 +1,8 @@
-# ReminderFoxAgain 0.9.5.1 — Developer's Guide
+# ReminderFoxAgain 0.9.5.2 — Developer's Guide
 
 Nov 3, 2026 · David
 
-This guide is the reference for working on the ReminderFoxAgain 0.9.5.1 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
+This guide is the reference for working on the ReminderFoxAgain 0.9.5.2 code. ReminderFoxAgain ships as a Thunderbird add-on (the main platform) and as an Electron desktop app; both run the same pages in `src/ui` and the same modules in `src/core`. This guide covers the add-on's host, the Store's data API, the desktop main process, every `window.rf` call, the renderer components and the test tools. The Technical System Design document explains why things are built this way; this guide says how to change them.
 
 ## 1. Setup and layout
 
@@ -40,8 +40,8 @@ Both build on Linux and give the same SHA-256 hashes on every run.
 ```sh
 ./build-linux.sh   # dist/release-linux/: .tar.gz and .deb for x64 and arm64 (ARCHS=x64 for one)
 ./build-macos.sh   # dist/release-macos/: one universal .zip (Apple silicon + Intel)
-tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.5.1-linux-x64.tar.gz
-python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.5.1
+tools/test-linux-install.sh dist/release-linux/ReminderFoxAgain-0.9.5.2-linux-x64.tar.gz
+python3 tools/check-macos-app.py dist/macos/universal/ReminderFoxAgain.app 0.9.5.2
 ```
 
 - **Linux:** `build/linux/` holds `install.sh`, `uninstall.sh`, the menu entry, the icons and the .deb's `postinst`, `postrm` and AppArmor profile. The .deb installs to `/opt/ReminderFoxAgain`, links `/usr/bin/reminderfoxagain` and makes `chrome-sandbox` setuid root. The tarball installs per user under `~/.local`, and its launcher adds `--no-sandbox` only where unprivileged user namespaces are off.
@@ -345,7 +345,7 @@ The state object `S` holds `tab` (`reminders`, `todos` for the List dropdown, `m
 | Views | `viewOf`, `viewRange`, `viewMatches` |
 | Calendar | `renderCal` (`applyCalMode`, then `renderMonth` or `renderDays` for the Day and Week views, 0.9.5), `moveCal`, `renderMonth`, `renderSide` (1–3 months via `monthHtml`, overdue marks), `renderAgenda`, `selectDay`, `goToDate`, `toggleSide` |
 | Interaction | `showCtx` (context menu), `selectTr`, keyboard handler, `openMap`, `mapUrl` |
-| Editor | `openEditor({uid, start} \| {kind, date})`, `fillEditor`, `renderRepeat`, `readRepeat`, `renderAlarm`, `currentAlarm`, `saveEditor` |
+| Editor | `openEditor({uid, start} \| {kind, date})`, `fillEditor`, `renderRepeat`, `readRepeat`, `renderAlarm`, `currentAlarm`, `saveEditor`. Repeat (0.9.5.2): `#edFreq` holds the original ReminderFox's choices (`YEARLY YEARLY_DAY MONTHLY MONTHLY_DAY WEEKLY BIWEEKLY DAILY`, `MORE` = More repeat options…, hidden `CUSTOM`); `presetLabels()` names each one's day, `dayNth()` gives the week (−1 = last for a 5th), `repFreq()` the real frequency, `presetFor(rp, d)` the choice an item opens on (exact match, else `MORE`) |
 | Settings | `openSettings` (General controls), `setSetting(patch)`, then `FX('fillSettings')` |
 | Refresh | `refresh()` coalesces: `loadMeta` + `renderMain` + `renderSide` + `updateCounts`; it runs on `data:changed` and `settings:changed` |
 
@@ -429,10 +429,10 @@ The UI speaks the original add-on's 34 languages. English text is the key everyw
 
 | Suite | Command | Passes when |
 | --- | --- | --- |
-| Add-on UI | `thunderbird/test/e2e.sh` (options for `run.js`: `--sample empty\|bills`, `--lang`, `--size`) | Last line `0 problem(s)` (about 890 checks in 0.9.5.1) |
+| Add-on UI | `thunderbird/test/e2e.sh` (options for `run.js`: `--sample empty\|bills`, `--lang`, `--size`) | Last line `0 problem(s)` (about 920 checks in 0.9.5.2) |
 | Add-on lint | `web-ext lint -s dist/thunderbird` | 0 errors (the warnings are Thunderbird-only APIs) |
 | Unit | `for tz in America/Toronto UTC America/Los_Angeles Asia/Kolkata Australia/Sydney Pacific/Auckland Pacific/Honolulu; do TZ=$tz npm test; done` | 65/65 in every zone |
-| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 850 checks in 0.9.5.1) |
+| UI | `tools/e2e.sh` | Last line `== done: 0 problem(s)` (about 880 checks in 0.9.5.2) |
 | Screens | `tools/shots.sh <outDir>` | 70 PNGs; compare by eye |
 | Installer | `tools/test-setup.sh [pwsh]` | 20/20 |
 

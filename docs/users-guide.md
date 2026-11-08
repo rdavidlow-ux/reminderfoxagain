@@ -1,4 +1,4 @@
-# ReminderFoxAgain 0.9.5.1 — User's Guide
+# ReminderFoxAgain 0.9.5.2 — User's Guide
 
 Nov 7, 2026 · David
 
@@ -12,7 +12,7 @@ Where Thunderbird isn't available or can't be used, the same app runs on its own
 
 You need Thunderbird 128 or later, on Windows, macOS or Linux.
 
-1.  Download **ReminderFoxAgain-0.9.5.1-thunderbird.xpi**.
+1.  Download **ReminderFoxAgain-0.9.5.2-thunderbird.xpi**.
 
 2.  In Thunderbird, open **≡ → Add-ons and Themes**, click **⚙ → Install Add-on From File…** and pick the .xpi.
 
@@ -34,22 +34,22 @@ Use the desktop app on a computer without Thunderbird, or where you can't add ad
 
 Put every release file in one folder, then double-click **Install or Update ReminderFoxAgain.bat**. No administrator rights are needed.
 
-| File                                                   | Needed for                                                                  |
-|--------------------------------------------------------|-----------------------------------------------------------------------------|
-| Install or Update ReminderFoxAgain.bat                 | Always                                                                      |
-| ReminderFoxAgain-Setup.ps1                             | Always                                                                      |
-| ReminderFoxAgain-app-0.9.5.1.asar                      | Always                                                                      |
-| ReminderFoxAgain-runtime-0.9.5.1.part1.bin … part6.bin | New installs, and updates from 0.9.5 or earlier (0.9.5.1 has a new runtime) |
+| File                                                   | Needed for                                                                      |
+|--------------------------------------------------------|---------------------------------------------------------------------------------|
+| Install or Update ReminderFoxAgain.bat                 | Always                                                                          |
+| ReminderFoxAgain-Setup.ps1                             | Always                                                                          |
+| ReminderFoxAgain-app-0.9.5.2.asar                      | Always                                                                          |
+| ReminderFoxAgain-runtime-0.9.5.2.part1.bin … part6.bin | New installs, and updates from 0.9.5 or earlier (0.9.5.1 brought a new runtime) |
 
 - The app goes to %LOCALAPPDATA%\Programs\ReminderFoxAgain, with Start-menu and desktop shortcuts and an entry in Settings → Apps.
 
-- Updating to 0.9.5.1 needs the runtime parts too, because it comes with a new runtime (Electron 44.10.2). Without them the setup says so and changes nothing. Later updates that keep this runtime need only the .bat, the .ps1 and the .asar: the setup reuses the installed runtime. When you update from 0.6.x, include the runtime parts too, so the date and time pickers follow your language (without them everything else is still translated).
+- To update from 0.9.5.1, you only need the .bat, the .ps1 and the .asar: the setup reuses the installed runtime (Electron 44.10.2). Updating from 0.9.5 or earlier needs the runtime parts too, because 0.9.5.1 brought that new runtime. Without them the setup says so and changes nothing. When you update from 0.6.x, include the runtime parts too, so the date and time pickers follow your language (without them everything else is still translated).
 
 - Your data lives in %APPDATA%\ReminderFoxAgain. Updating never touches it.
 
 #### On a Mac
 
-Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.5.1-macos-universal.zip.
+Since 0.9.0 there has been one app for Apple silicon and Intel Macs, macOS 13 Ventura or later: ReminderFoxAgain-0.9.5.2-macos-universal.zip.
 
 1.  Double-click the zip, then drag **ReminderFoxAgain.app** into **Applications**.
 
@@ -61,9 +61,9 @@ On a Mac the shortcuts use ⌥⇧ and the letter (⌥⇧A new reminder, ⌥⇧O 
 
 #### On Linux
 
-- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.5.1_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.5.1_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
+- **Debian, Ubuntu, Mint and similar:** download reminderfoxagain_0.9.5.2_amd64.deb (arm64 for ARM) and run sudo apt install ./reminderfoxagain_0.9.5.2_amd64.deb. Install a newer file the same way to update; sudo apt remove reminderfoxagain removes it.
 
-- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.5.1-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
+- **Any other distribution, without root:** unpack ReminderFoxAgain-0.9.5.2-linux-x64.tar.gz and run ./install.sh in its folder. Run it again from a newer download to update; ./uninstall.sh removes the app and keeps your reminders.
 
 - **GNOME:** add the "AppIndicator and KStatusNotifierItem Support" extension to see the fox in the top bar. Without it, closing the window quits the app, and Settings says so.
 
