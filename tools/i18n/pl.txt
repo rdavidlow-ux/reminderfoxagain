@@ -1005,3 +1005,8 @@
 1004| Pokaż dzień jako
 1005| Więcej opcji
 1006| Mniej opcji
+1007| Co roku według dnia tygodnia
+1008| Co miesiąc według dnia tygodnia
+1009| Co dwa tygodnie
+1010| Więcej opcji powtarzania…
+1011| {name}: {detail}

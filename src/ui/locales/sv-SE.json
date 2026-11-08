@@ -1210,5 +1210,10 @@
  "Hours": "Timmar",
  "Show the day as": "Visa dagen som",
  "More options": "Fler alternativ",
- "Fewer options": "Färre alternativ"
+ "Fewer options": "Färre alternativ",
+ "Yearly by day": "Årligen per veckodag",
+ "Monthly by day": "Månadsvis per veckodag",
+ "Biweekly": "Varannan vecka",
+ "More repeat options…": "Fler upprepningsalternativ…",
+ "{name}: {detail}": "{name}: {detail}"
 }

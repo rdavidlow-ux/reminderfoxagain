@@ -1005,3 +1005,8 @@
 1004| Mostra la giornata come
 1005| Altre opzioni
 1006| Meno opzioni
+1007| Annuale per giorno
+1008| Mensile per giorno
+1009| Ogni due settimane
+1010| Altre opzioni di ripetizione…
+1011| {name}: {detail}

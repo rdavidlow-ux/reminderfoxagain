@@ -1026,5 +1026,10 @@
  "Hours": "Órák",
  "Show the day as": "A nap megjelenítése",
  "More options": "További beállítások",
- "Fewer options": "Kevesebb beállítás"
+ "Fewer options": "Kevesebb beállítás",
+ "Yearly by day": "Évente a hét napja szerint",
+ "Monthly by day": "Havonta a hét napja szerint",
+ "Biweekly": "Kéthetente",
+ "More repeat options…": "További ismétlési beállítások…",
+ "{name}: {detail}": "{name}: {detail}"
 }

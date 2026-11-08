@@ -1390,5 +1390,10 @@
  "Hours": "الساعات",
  "Show the day as": "عرض اليوم على شكل",
  "More options": "خيارات أخرى",
- "Fewer options": "خيارات أقل"
+ "Fewer options": "خيارات أقل",
+ "Yearly by day": "سنويًا حسب يوم الأسبوع",
+ "Monthly by day": "شهريًا حسب يوم الأسبوع",
+ "Biweekly": "كل أسبوعين",
+ "More repeat options…": "خيارات تكرار أخرى…",
+ "{name}: {detail}": "{name}: {detail}"
 }

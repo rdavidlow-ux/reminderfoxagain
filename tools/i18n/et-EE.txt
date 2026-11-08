@@ -1005,3 +1005,8 @@
 1004| Näita päeva kui
 1005| Rohkem valikuid
 1006| Vähem valikuid
+1007| Igal aastal nädalapäeva järgi
+1008| Igal kuul nädalapäeva järgi
+1009| Ülenädalati
+1010| Rohkem kordamise valikuid…
+1011| {name}: {detail}

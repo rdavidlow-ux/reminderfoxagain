@@ -1026,5 +1026,10 @@
  "Hours": "Giờ",
  "Show the day as": "Hiển thị ngày dạng",
  "More options": "Thêm tùy chọn",
- "Fewer options": "Ít tùy chọn hơn"
+ "Fewer options": "Ít tùy chọn hơn",
+ "Yearly by day": "Hằng năm theo thứ",
+ "Monthly by day": "Hằng tháng theo thứ",
+ "Biweekly": "Hai tuần một lần",
+ "More repeat options…": "Thêm tùy chọn lặp lại…",
+ "{name}: {detail}": "{name}: {detail}"
 }

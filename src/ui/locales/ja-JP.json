@@ -1026,5 +1026,10 @@
  "Hours": "時間",
  "Show the day as": "1日の表示",
  "More options": "その他のオプション",
- "Fewer options": "オプションを減らす"
+ "Fewer options": "オプションを減らす",
+ "Yearly by day": "毎年（曜日指定）",
+ "Monthly by day": "毎月（曜日指定）",
+ "Biweekly": "隔週",
+ "More repeat options…": "その他の繰り返し…",
+ "{name}: {detail}": "{name}：{detail}"
 }

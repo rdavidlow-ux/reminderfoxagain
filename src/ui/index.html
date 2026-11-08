@@ -144,15 +144,24 @@
       <div class="box" id="edRepeatBox">
         <div class="row">
           <span class="lbl" style="width:60px">Repeat</span>
+          <!-- the original ReminderFox's choices; More repeat options… is its custom repeat (every n, days, ends) -->
           <select class="sel" id="edFreq">
             <option value="">Does not repeat</option>
-            <option value="DAILY">Daily</option>
-            <option value="WEEKLY">Weekly</option>
-            <option value="MONTHLY">Monthly</option>
             <option value="YEARLY">Yearly</option>
+            <option value="YEARLY_DAY">Yearly by day</option>
+            <option value="MONTHLY">Monthly</option>
+            <option value="MONTHLY_DAY">Monthly by day</option>
+            <option value="WEEKLY">Weekly</option>
+            <option value="BIWEEKLY">Biweekly</option>
+            <option value="DAILY">Daily</option>
+            <option value="MORE">More repeat options…</option>
             <option value="CUSTOM" hidden>Custom (imported)</option>
           </select>
-          <span id="edEveryWrap" class="row" style="gap:6px">every <input class="inp" id="edInterval" type="number" min="1" max="999" value="1" style="width:64px"> <span id="edUnit">days</span></span>
+        </div>
+        <div class="row hidden" id="edEveryRow">
+          <span class="lbl" style="width:60px"></span>
+          <span id="edEveryWrap" class="row" style="gap:6px">every <input class="inp" id="edInterval" type="number" min="1" max="999" value="1" style="width:64px">
+            <select class="sel" id="edUnitSel"><option value="DAILY">days</option><option value="WEEKLY">weeks</option><option value="MONTHLY">months</option><option value="YEARLY">years</option></select></span>
         </div>
         <div class="row hidden" id="edWeekRow"><span class="lbl" style="width:60px">On</span><div class="daypick" id="edDays"></div></div>
         <div class="row hidden" id="edMonthRow"><span class="lbl" style="width:60px">On</span><select class="sel" id="edMode"></select></div>

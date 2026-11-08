@@ -1005,3 +1005,8 @@
 1004| Mostrar o dia como
 1005| Mais opções
 1006| Menos opções
+1007| Anual por dia da semana
+1008| Mensal por dia da semana
+1009| Quinzenal
+1010| Mais opções de repetição…
+1011| {name}: {detail}

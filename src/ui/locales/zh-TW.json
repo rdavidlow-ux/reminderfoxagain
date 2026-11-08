@@ -1026,5 +1026,10 @@
  "Hours": "小時",
  "Show the day as": "當天顯示為",
  "More options": "更多選項",
- "Fewer options": "較少選項"
+ "Fewer options": "較少選項",
+ "Yearly by day": "每年（依星期）",
+ "Monthly by day": "每月（依星期）",
+ "Biweekly": "每兩週",
+ "More repeat options…": "更多重複選項…",
+ "{name}: {detail}": "{name}：{detail}"
 }

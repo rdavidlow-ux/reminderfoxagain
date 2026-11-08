@@ -1054,3 +1054,9 @@ Hours
 Show the day as
 More options
 Fewer options
+# the repeat choices of the original ReminderFox
+Yearly by day
+Monthly by day
+Biweekly
+More repeat options…
+{name}: {detail}

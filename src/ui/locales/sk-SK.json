@@ -1326,5 +1326,10 @@
  "Hours": "Hodiny",
  "Show the day as": "Zobraziť deň ako",
  "More options": "Ďalšie možnosti",
- "Fewer options": "Menej možností"
+ "Fewer options": "Menej možností",
+ "Yearly by day": "Ročne podľa dňa v týždni",
+ "Monthly by day": "Mesačne podľa dňa v týždni",
+ "Biweekly": "Každý druhý týždeň",
+ "More repeat options…": "Ďalšie možnosti opakovania…",
+ "{name}: {detail}": "{name}: {detail}"
 }

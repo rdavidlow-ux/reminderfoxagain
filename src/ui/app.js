@@ -1428,7 +1428,8 @@
     const customOpt = freq.querySelector('option[value=CUSTOM]');
     customOpt.hidden = !(rp && rp.custom);
     if (rp && rp.custom) customOpt.textContent = d.repeatText || 'Custom (imported)';
-    freq.value = rp ? (rp.custom ? 'CUSTOM' : rp.freq) : '';
+    freq.value = presetFor(rp, parseKey($('edDate').value || S.today));
+    $('edUnitSel').value = rp && !rp.custom ? rp.freq : 'WEEKLY';
     $('edInterval').value = rp && !rp.custom ? (rp.interval || 1) : 1;
     $('edEnds').value = rp && rp.end ? rp.end : 'never';
     $('edUntil').value = rp && rp.until ? rp.until : '';
@@ -1515,19 +1516,66 @@
   }
 
   // repeat UI
+  // The Repeat menu has the original ReminderFox's choices: Yearly, Yearly by day, Monthly, Monthly by day, Weekly,
+  // Biweekly and Daily, each on the item's date (the 2nd Tuesday, Wednesday…), and More repeat options… for the rest:
+  // every n days, weeks, months or years, on chosen week days, by date or by week day, and until a date or n times.
+  const PRESETS = { YEARLY: 'YEARLY', YEARLY_DAY: 'YEARLY', MONTHLY: 'MONTHLY', MONTHLY_DAY: 'MONTHLY', WEEKLY: 'WEEKLY', BIWEEKLY: 'WEEKLY', DAILY: 'DAILY' };
+  // the week of the month a "by day" choice uses: the 1st to 4th, or the last for a 5th
+  const dayNth = (d) => { const n = Math.ceil(d.getDate() / 7); return n <= 4 ? n : -1; };
+  // the frequency now chosen: DAILY, WEEKLY, MONTHLY or YEARLY ('' = none, 'CUSTOM' = an imported rule kept as it is)
+  function repFreq() { const v = $('edFreq').value; return v === 'MORE' ? $('edUnitSel').value : PRESETS[v] || v; }
+  // the menu choice for an item's repeat: one of the original's when it is exactly that, else More repeat options…
+  function presetFor(rp, d) {
+    if (!rp) return '';
+    if (rp.custom) return 'CUSTOM';
+    const n = rp.interval || 1;
+    const forever = !rp.end || rp.end === 'never';
+    const wd = WD[d.getDay()];
+    if (!forever) return 'MORE';
+    if (rp.freq === 'DAILY') return n === 1 ? 'DAILY' : 'MORE';
+    if (rp.freq === 'WEEKLY') {
+      const days = rp.byday && rp.byday.length ? rp.byday : [wd];
+      if (days.length !== 1 || days[0] !== wd) return 'MORE';
+      return n === 1 ? 'WEEKLY' : n === 2 ? 'BIWEEKLY' : 'MORE';
+    }
+    if (n !== 1) return 'MORE';
+    if (rp.mode !== 'weekday') return rp.freq;
+    return rp.wd === wd && rp.nth === dayNth(d) ? `${rp.freq}_DAY` : 'MORE';
+  }
   function unitWord(freq, n) {
     const w = { DAILY: 'day', WEEKLY: 'week', MONTHLY: 'month', YEARLY: 'year' }[freq] || 'day';
     return n === 1 ? w : `${w}s`;
   }
+  // each choice says which day it means, from the item's date
+  function presetLabels() {
+    const d = parseKey($('edDate').value || S.today);
+    const weekday = WD_LONG[d.getDay()]; const month = fmt.monthName(d); const nth = dayNth(d);
+    const detail = {
+      YEARLY: T('On {date}', { date: monthDay(d) }),
+      YEARLY_DAY: nth > 0 ? T('On the {nth} {weekday} of {month}', { nth: ORD(nth), weekday, month }) : T('On the last {weekday} of {month}', { weekday, month }),
+      MONTHLY: T('On day {day}', { day: d.getDate() }),
+      MONTHLY_DAY: nth > 0 ? T('On the {nth} {weekday}', { nth: ORD(nth), weekday }) : T('On the last {weekday}', { weekday }),
+      WEEKLY: weekday,
+      BIWEEKLY: T('Every {n} weeks on {days}', { n: 2, days: weekday }),
+    };
+    const NAME = { YEARLY: 'Yearly', YEARLY_DAY: 'Yearly by day', MONTHLY: 'Monthly', MONTHLY_DAY: 'Monthly by day', WEEKLY: 'Weekly', BIWEEKLY: 'Biweekly' };
+    for (const [v, name] of Object.entries(NAME)) {
+      const o = $('edFreq').querySelector(`option[value="${v}"]`);
+      if (o) o.textContent = T('{name}: {detail}', { name: T(name), detail: detail[v] });
+    }
+  }
   function renderRepeat() {
-    const f = $('edFreq').value;
+    presetLabels();
+    const more = $('edFreq').value === 'MORE';
+    const f = repFreq();
     const custom = f === 'CUSTOM';
     const n = Math.max(1, parseInt($('edInterval').value, 10) || 1);
-    $('edEveryWrap').classList.toggle('hidden', !f || custom);
-    $('edUnit').textContent = unitWord(f, n);
-    $('edWeekRow').classList.toggle('hidden', f !== 'WEEKLY');
-    $('edMonthRow').classList.toggle('hidden', f !== 'MONTHLY' && f !== 'YEARLY');
-    $('edEndsRow').classList.toggle('hidden', !f || custom);
+    // the units say "day" or "days" as the number asks
+    for (const o of $('edUnitSel').options) o.textContent = T(unitWord(o.value, n));
+    $('edEveryRow').classList.toggle('hidden', !more);
+    $('edWeekRow').classList.toggle('hidden', !more || f !== 'WEEKLY');
+    $('edMonthRow').classList.toggle('hidden', !more || (f !== 'MONTHLY' && f !== 'YEARLY'));
+    $('edEndsRow').classList.toggle('hidden', !more);
     $('edUntil').classList.toggle('hidden', $('edEnds').value !== 'until');
     $('edCountWrap').classList.toggle('hidden', $('edEnds').value !== 'count');
     // week days in week-start order
@@ -1563,9 +1611,18 @@
     updateDateState();
   }
   function readRepeat() {
-    const f = $('edFreq').value;
+    const v = $('edFreq').value;
+    const f = repFreq();
     if (!f) return null;
     if (f === 'CUSTOM') return E.origRepeat && E.origRepeat.custom ? { custom: true, rrule: E.origRepeat.rrule } : null;
+    if (v !== 'MORE') { // one of the original's choices, on the item's date
+      const d = parseKey($('edDate').value || S.today);
+      const p = { freq: f, interval: v === 'BIWEEKLY' ? 2 : 1, end: 'never' };
+      if (f === 'WEEKLY') p.byday = [WD[d.getDay()]];
+      if (v === 'YEARLY' || v === 'MONTHLY') p.mode = 'date';
+      if (v === 'YEARLY_DAY' || v === 'MONTHLY_DAY') { p.mode = 'weekday'; p.nth = dayNth(d); p.wd = WD[d.getDay()]; }
+      return p;
+    }
     const rep = { freq: f, interval: Math.max(1, parseInt($('edInterval').value, 10) || 1), end: $('edEnds').value };
     if (rep.end === 'until') rep.until = $('edUntil').value || null;
     if (rep.end === 'count') rep.count = Math.max(1, parseInt($('edCount').value, 10) || 1);
@@ -1779,7 +1836,24 @@
     }
     renderRepeat();
   });
-  $('edFreq').addEventListener('change', () => { if ($('edFreq').value === 'WEEKLY' && !E.days.length) E.days = [WD[parseKey($('edDate').value || S.today).getDay()]]; renderRepeat(); });
+  // More repeat options… starts from the choice it replaces (Biweekly: every 2 weeks; by day: that week day)
+  let lastPreset = '';
+  $('edFreq').addEventListener('focus', () => { lastPreset = $('edFreq').value; });
+  $('edFreq').addEventListener('change', () => {
+    const v = $('edFreq').value;
+    const d = parseKey($('edDate').value || S.today);
+    if (v === 'MORE' && PRESETS[lastPreset]) {
+      $('edUnitSel').value = PRESETS[lastPreset];
+      $('edInterval').value = lastPreset === 'BIWEEKLY' ? 2 : 1;
+      if (PRESETS[lastPreset] === 'WEEKLY') E.days = [WD[d.getDay()]];
+      E.mode = /_DAY$/.test(lastPreset) ? (dayNth(d) > 0 ? 'nth' : 'last') : 'date';
+      $('edEnds').value = 'never';
+    }
+    if (repFreq() === 'WEEKLY' && !E.days.length) E.days = [WD[d.getDay()]];
+    lastPreset = v;
+    renderRepeat();
+  });
+  $('edUnitSel').addEventListener('change', () => { if (repFreq() === 'WEEKLY' && !E.days.length) E.days = [WD[parseKey($('edDate').value || S.today).getDay()]]; renderRepeat(); });
   for (const id of ['edInterval', 'edCount', 'edUntil']) $(id).addEventListener('input', renderRepeat);
   $('edEnds').addEventListener('change', () => {
     if ($('edEnds').value === 'until' && !$('edUntil').value) {

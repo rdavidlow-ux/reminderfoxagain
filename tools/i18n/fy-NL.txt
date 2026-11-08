@@ -1005,3 +1005,8 @@
 1004| Lit de dei sjen as
 1005| Mear opsjes
 1006| Minder opsjes
+1007| Jierliks op wikedei
+1008| Moanliks op wikedei
+1009| Om de wike
+1010| Mear werhellingsopsjes…
+1011| {name}: {detail}

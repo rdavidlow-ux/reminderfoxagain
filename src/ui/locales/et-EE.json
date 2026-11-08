@@ -1206,5 +1206,10 @@
  "Hours": "Tunnid",
  "Show the day as": "Näita päeva kui",
  "More options": "Rohkem valikuid",
- "Fewer options": "Vähem valikuid"
+ "Fewer options": "Vähem valikuid",
+ "Yearly by day": "Igal aastal nädalapäeva järgi",
+ "Monthly by day": "Igal kuul nädalapäeva järgi",
+ "Biweekly": "Ülenädalati",
+ "More repeat options…": "Rohkem kordamise valikuid…",
+ "{name}: {detail}": "{name}: {detail}"
 }

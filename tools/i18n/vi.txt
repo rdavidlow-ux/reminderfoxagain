@@ -1005,3 +1005,8 @@
 1004| Hiển thị ngày dạng
 1005| Thêm tùy chọn
 1006| Ít tùy chọn hơn
+1007| Hằng năm theo thứ
+1008| Hằng tháng theo thứ
+1009| Hai tuần một lần
+1010| Thêm tùy chọn lặp lại…
+1011| {name}: {detail}

@@ -293,3 +293,8 @@ html[data-host="android"] .mday.overdue::after { background: var(--danger, #d930
   html[data-host="android"] body[data-tab="calendar"] .agenda:not(.hours) { padding-bottom: 88px; }
 }
 html[data-host="android"] #editor .rfa-opts .field { flex-basis: 100%; }
+/* the Repeat menu's choices name their day ("Yearly by day: On the 2nd Tuesday of November"): the menu keeps to the
+   screen's width, and More repeat options… lines up under it */
+html[data-host="android"] #editor #edFreq { min-width: 0; width: 100%; max-width: 100%; text-overflow: ellipsis; }
+html[data-host="android"] #editor #edRepeatBox > .row:first-child { flex-wrap: wrap; }
+html[data-host="android"] #editor #edEveryRow > .lbl:empty { display: none; }

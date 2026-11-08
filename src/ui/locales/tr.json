@@ -1026,5 +1026,10 @@
  "Hours": "Saatler",
  "Show the day as": "Günü şöyle göster",
  "More options": "Daha fazla seçenek",
- "Fewer options": "Daha az seçenek"
+ "Fewer options": "Daha az seçenek",
+ "Yearly by day": "Yıllık, haftanın gününe göre",
+ "Monthly by day": "Aylık, haftanın gününe göre",
+ "Biweekly": "İki haftada bir",
+ "More repeat options…": "Diğer yineleme seçenekleri…",
+ "{name}: {detail}": "{name}: {detail}"
 }

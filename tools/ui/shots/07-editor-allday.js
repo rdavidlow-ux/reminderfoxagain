@@ -4,5 +4,5 @@ const set = (id, v, ev = "input") => { const el = $(id); if (el.type === "checkb
 const filter = async (f) => { set("remFilter", f, "change"); await sleep(500); };
 const row = (title) => [...document.querySelectorAll("#listView tbody tr")].find((tr) => tr.querySelector(".t") && tr.querySelector(".t").textContent === title);
 await window.__rf.openEditor({ kind: 'event' }); await sleep(200);
-set('edSummary', 'Mom & Dad anniversary'); set('edFreq', 'YEARLY', 'change'); set('edMode', 'nth', 'change');
+set('edSummary', 'Mom & Dad anniversary'); set('edFreq', 'YEARLY_DAY', 'change');
 set('edAlarm', 'remind', 'change'); set('edAlarmDay', '1', 'change'); $('edSummary').focus();

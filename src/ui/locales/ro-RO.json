@@ -1269,5 +1269,10 @@
  "Hours": "Ore",
  "Show the day as": "Arată ziua ca",
  "More options": "Mai multe opțiuni",
- "Fewer options": "Mai puține opțiuni"
+ "Fewer options": "Mai puține opțiuni",
+ "Yearly by day": "Anual după zi",
+ "Monthly by day": "Lunar după zi",
+ "Biweekly": "La două săptămâni",
+ "More repeat options…": "Mai multe opțiuni de repetare…",
+ "{name}: {detail}": "{name}: {detail}"
 }

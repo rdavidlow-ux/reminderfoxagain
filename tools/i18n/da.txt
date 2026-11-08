@@ -1005,3 +1005,8 @@
 1004| Vis dagen som
 1005| Flere indstillinger
 1006| Færre indstillinger
+1007| Årligt efter ugedag
+1008| Månedligt efter ugedag
+1009| Hver anden uge
+1010| Flere gentagelsesmuligheder…
+1011| {name}: {detail}

@@ -1206,5 +1206,10 @@
  "Hours": "Timer",
  "Show the day as": "Vis dagen som",
  "More options": "Flere indstillinger",
- "Fewer options": "Færre indstillinger"
+ "Fewer options": "Færre indstillinger",
+ "Yearly by day": "Årligt efter ugedag",
+ "Monthly by day": "Månedligt efter ugedag",
+ "Biweekly": "Hver anden uge",
+ "More repeat options…": "Flere gentagelsesmuligheder…",
+ "{name}: {detail}": "{name}: {detail}"
 }

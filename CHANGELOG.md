@@ -3,6 +3,17 @@
 Every ReminderFoxAgain release, newest first. Release files are on the
 [Releases](https://github.com/rdavidlow-ux/reminderfoxagain/releases) page.
 
+## Unreleased
+
+- **The original ReminderFox's repeat choices are back**, in the add-on, the desktop app and the Android app: Yearly,
+  **Yearly by day**, Monthly, **Monthly by day**, Weekly, **Biweekly** and Daily, each saying the day it means from the
+  reminder's date ("Yearly by day: On the 2nd Tuesday of November"; in a 5th week, the last Tuesday). **More repeat
+  options…** is the original's custom repeat: every N days, weeks, months or years, the week days, by date or by week
+  day, and an end (never, on a date, after N times); it starts from the choice it replaces. An item opens on the choice
+  it matches, else on More repeat options…. Nothing about how repeats are stored changes.
+- Five new strings in all 33 languages (`tools/i18n/add-repeat-choices.py`); UI check `tools/ui/repeat-choices.js`;
+  the editor screenshots 06 and 07 and the User's Guide (Word and Markdown) updated.
+
 ## Next — an Android app (branch `new/android-test`, a test, not released)
 
 - **ReminderFoxAgain for Android** (`mobile/`, see `mobile/README.md`): the same pages and host core as the add-on in a

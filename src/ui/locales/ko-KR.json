@@ -1026,5 +1026,10 @@
  "Hours": "시간",
  "Show the day as": "하루 보기 방식",
  "More options": "추가 옵션",
- "Fewer options": "옵션 줄이기"
+ "Fewer options": "옵션 줄이기",
+ "Yearly by day": "매년(요일 기준)",
+ "Monthly by day": "매월(요일 기준)",
+ "Biweekly": "격주",
+ "More repeat options…": "추가 반복 옵션…",
+ "{name}: {detail}": "{name}: {detail}"
 }

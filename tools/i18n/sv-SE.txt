@@ -1005,3 +1005,8 @@
 1004| Visa dagen som
 1005| Fler alternativ
 1006| Färre alternativ
+1007| Årligen per veckodag
+1008| Månadsvis per veckodag
+1009| Varannan vecka
+1010| Fler upprepningsalternativ…
+1011| {name}: {detail}

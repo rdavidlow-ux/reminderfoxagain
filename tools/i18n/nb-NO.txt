@@ -1005,3 +1005,8 @@
 1004| Vis dagen som
 1005| Flere valg
 1006| Færre valg
+1007| Årlig etter ukedag
+1008| Månedlig etter ukedag
+1009| Annenhver uke
+1010| Flere gjentakelsesvalg…
+1011| {name}: {detail}

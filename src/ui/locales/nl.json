@@ -1206,5 +1206,10 @@
  "Hours": "Uren",
  "Show the day as": "Toon de dag als",
  "More options": "Meer opties",
- "Fewer options": "Minder opties"
+ "Fewer options": "Minder opties",
+ "Yearly by day": "Jaarlijks op weekdag",
+ "Monthly by day": "Maandelijks op weekdag",
+ "Biweekly": "Om de week",
+ "More repeat options…": "Meer herhaalopties…",
+ "{name}: {detail}": "{name}: {detail}"
 }

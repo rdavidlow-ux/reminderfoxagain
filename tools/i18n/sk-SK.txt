@@ -1005,3 +1005,8 @@
 1004| Zobraziť deň ako
 1005| Ďalšie možnosti
 1006| Menej možností
+1007| Ročne podľa dňa v týždni
+1008| Mesačne podľa dňa v týždni
+1009| Každý druhý týždeň
+1010| Ďalšie možnosti opakovania…
+1011| {name}: {detail}

@@ -1326,5 +1326,10 @@
  "Hours": "Гадзіны",
  "Show the day as": "Паказваць дзень як",
  "More options": "Іншыя параметры",
- "Fewer options": "Менш параметраў"
+ "Fewer options": "Менш параметраў",
+ "Yearly by day": "Штогод па дні тыдня",
+ "Monthly by day": "Штомесяц па дні тыдня",
+ "Biweekly": "Раз на два тыдні",
+ "More repeat options…": "Іншыя варыянты паўтору…",
+ "{name}: {detail}": "{name}: {detail}"
 }

@@ -1266,5 +1266,10 @@
  "Hours": "שעות",
  "Show the day as": "הצגת היום כ",
  "More options": "אפשרויות נוספות",
- "Fewer options": "פחות אפשרויות"
+ "Fewer options": "פחות אפשרויות",
+ "Yearly by day": "שנתי לפי יום בשבוע",
+ "Monthly by day": "חודשי לפי יום בשבוע",
+ "Biweekly": "כל שבועיים",
+ "More repeat options…": "אפשרויות חזרה נוספות…",
+ "{name}: {detail}": "{name}: {detail}"
 }

@@ -1005,3 +1005,8 @@
 1004| Toon de dag als
 1005| Meer opties
 1006| Minder opties
+1007| Jaarlijks op weekdag
+1008| Maandelijks op weekdag
+1009| Om de week
+1010| Meer herhaalopties…
+1011| {name}: {detail}

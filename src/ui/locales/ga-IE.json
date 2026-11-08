@@ -1170,5 +1170,10 @@
  "Hours": "Uaireanta",
  "Show the day as": "Taispeáin an lá mar",
  "More options": "Tuilleadh roghanna",
- "Fewer options": "Níos lú roghanna"
+ "Fewer options": "Níos lú roghanna",
+ "Yearly by day": "Bliantúil de réir lae",
+ "Monthly by day": "Míosúil de réir lae",
+ "Biweekly": "Gach re seachtain",
+ "More repeat options…": "Tuilleadh roghanna athdhéanta…",
+ "{name}: {detail}": "{name}: {detail}"
 }

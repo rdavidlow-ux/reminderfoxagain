@@ -1005,3 +1005,8 @@
 1004| Taispeáin an lá mar
 1005| Tuilleadh roghanna
 1006| Níos lú roghanna
+1007| Bliantúil de réir lae
+1008| Míosúil de réir lae
+1009| Gach re seachtain
+1010| Tuilleadh roghanna athdhéanta…
+1011| {name}: {detail}

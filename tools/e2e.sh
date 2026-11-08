@@ -45,6 +45,7 @@ run item-colours basic item-colours.js
 run safe-html basic safe-html.js
 run injection basic injection.js
 run keep-place bills keep-place.js
+run repeat-choices basic repeat-choices.js
 run shortcuts basic shortcuts.js
 run import-month basic import-month.js
 run view-options basic view-options.js

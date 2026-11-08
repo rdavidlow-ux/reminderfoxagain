@@ -1005,3 +1005,8 @@
 1004| Arată ziua ca
 1005| Mai multe opțiuni
 1006| Mai puține opțiuni
+1007| Anual după zi
+1008| Lunar după zi
+1009| La două săptămâni
+1010| Mai multe opțiuni de repetare…
+1011| {name}: {detail}

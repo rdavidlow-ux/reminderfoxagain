@@ -1005,3 +1005,8 @@
 1004| A nap megjelenítése
 1005| További beállítások
 1006| Kevesebb beállítás
+1007| Évente a hét napja szerint
+1008| Havonta a hét napja szerint
+1009| Kéthetente
+1010| További ismétlési beállítások…
+1011| {name}: {detail}

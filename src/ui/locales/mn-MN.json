@@ -1026,5 +1026,10 @@
  "Hours": "Цаг",
  "Show the day as": "Өдрийг харуулах",
  "More options": "Нэмэлт сонголт",
- "Fewer options": "Цөөн сонголт"
+ "Fewer options": "Цөөн сонголт",
+ "Yearly by day": "Жил бүр гаригаар",
+ "Monthly by day": "Сар бүр гаригаар",
+ "Biweekly": "Хоёр долоо хоног тутам",
+ "More repeat options…": "Давталтын нэмэлт сонголт…",
+ "{name}: {detail}": "{name}: {detail}"
 }

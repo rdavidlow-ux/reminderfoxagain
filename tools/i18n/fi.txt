@@ -1005,3 +1005,8 @@
 1004| Näytä päivä
 1005| Lisää valintoja
 1006| Vähemmän valintoja
+1007| Vuosittain viikonpäivän mukaan
+1008| Kuukausittain viikonpäivän mukaan
+1009| Joka toinen viikko
+1010| Lisää toistovalintoja…
+1011| {name}: {detail}

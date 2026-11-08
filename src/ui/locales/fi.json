@@ -1206,5 +1206,10 @@
  "Hours": "Tunnit",
  "Show the day as": "Näytä päivä",
  "More options": "Lisää valintoja",
- "Fewer options": "Vähemmän valintoja"
+ "Fewer options": "Vähemmän valintoja",
+ "Yearly by day": "Vuosittain viikonpäivän mukaan",
+ "Monthly by day": "Kuukausittain viikonpäivän mukaan",
+ "Biweekly": "Joka toinen viikko",
+ "More repeat options…": "Lisää toistovalintoja…",
+ "{name}: {detail}": "{name}: {detail}"
 }

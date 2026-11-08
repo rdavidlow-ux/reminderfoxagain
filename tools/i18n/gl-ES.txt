@@ -1005,3 +1005,8 @@
 1004| Amosar o día como
 1005| Máis opcións
 1006| Menos opcións
+1007| Anual por día
+1008| Mensual por día
+1009| Cada dúas semanas
+1010| Máis opcións de repetición…
+1011| {name}: {detail}

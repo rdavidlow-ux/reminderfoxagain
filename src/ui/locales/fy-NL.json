@@ -1206,5 +1206,10 @@
  "Hours": "Oeren",
  "Show the day as": "Lit de dei sjen as",
  "More options": "Mear opsjes",
- "Fewer options": "Minder opsjes"
+ "Fewer options": "Minder opsjes",
+ "Yearly by day": "Jierliks op wikedei",
+ "Monthly by day": "Moanliks op wikedei",
+ "Biweekly": "Om de wike",
+ "More repeat options…": "Mear werhellingsopsjes…",
+ "{name}: {detail}": "{name}: {detail}"
 }

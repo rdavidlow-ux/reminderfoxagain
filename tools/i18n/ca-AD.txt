@@ -1005,3 +1005,8 @@
 1004| Mostra el dia com a
 1005| Més opcions
 1006| Menys opcions
+1007| Anual per dia
+1008| Mensual per dia
+1009| Cada dues setmanes
+1010| Més opcions de repetició…
+1011| {name}: {detail}

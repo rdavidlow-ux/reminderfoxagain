@@ -1326,5 +1326,10 @@
  "Hours": "Godziny",
  "Show the day as": "Pokaż dzień jako",
  "More options": "Więcej opcji",
- "Fewer options": "Mniej opcji"
+ "Fewer options": "Mniej opcji",
+ "Yearly by day": "Co roku według dnia tygodnia",
+ "Monthly by day": "Co miesiąc według dnia tygodnia",
+ "Biweekly": "Co dwa tygodnie",
+ "More repeat options…": "Więcej opcji powtarzania…",
+ "{name}: {detail}": "{name}: {detail}"
 }

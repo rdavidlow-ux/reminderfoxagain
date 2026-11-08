@@ -1005,3 +1005,8 @@
 1004| Günü şöyle göster
 1005| Daha fazla seçenek
 1006| Daha az seçenek
+1007| Yıllık, haftanın gününe göre
+1008| Aylık, haftanın gününe göre
+1009| İki haftada bir
+1010| Diğer yineleme seçenekleri…
+1011| {name}: {detail}
